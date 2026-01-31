@@ -37,6 +37,12 @@
 ### Coming Soon
 - Comprehensive business folder to share (previously used with Claude/Cursor)
 
+## Core Goal
+
+**#1 Priority: Stay out of the permanent underclass as AGI unfolds.**
+
+Strategy: Own AI systems rather than compete with them. Build agent fleets, automate revenue streams, position early on emerging platforms, accumulate leverage.
+
 ## Vibe
 
 - Prefers voice messages over typing

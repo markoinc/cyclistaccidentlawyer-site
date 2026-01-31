@@ -1,0 +1,16 @@
+[Unit]
+Description=PI Vendors Data Collection Service
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/clawd/projects/pi-vendors
+ExecStart=/usr/bin/python3 /home/ec2-user/clawd/projects/pi-vendors/agents/coordinator.py
+Restart=always
+RestartSec=60
+StandardOutput=append:/home/ec2-user/clawd/projects/pi-vendors/logs/service.log
+StandardError=append:/home/ec2-user/clawd/projects/pi-vendors/logs/service.log
+
+[Install]
+WantedBy=multi-user.target

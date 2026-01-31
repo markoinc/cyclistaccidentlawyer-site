@@ -1,0 +1,642 @@
+{
+  "metadata": {
+    "source": "GoHighLevel Help Center",
+    "crawled_at": "2026-01-30",
+    "categories": ["SMS Campaigns", "Email Automation", "Phone & Calling", "Conversations", "Voicemail Drops", "Workflows"]
+  },
+  "documents": [
+    {
+      "id": "sms-001",
+      "title": "Getting Started - Automatic Email and SMS Followup",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005060-getting-started-automatic-email-and-sms-followup",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "Automated email and SMS drip campaigns",
+        "Lead nurturing over time",
+        "Form submission triggers",
+        "Email Drip Sequence recipe",
+        "Drip action for batch sending"
+      ],
+      "features": [
+        "Create automated form submission email followup",
+        "Create automated form submission SMS followup",
+        "Drip settings: batch size 100, interval every 1 day",
+        "Workflow automation from scratch or using recipes"
+      ],
+      "follow_up_use_cases": [
+        "Nurture 100+ leads over time without manual effort",
+        "Boost conversion rates with consistent follow-up",
+        "Form submission triggers automated sequences",
+        "Use drip mode to control message delivery rate"
+      ]
+    },
+    {
+      "id": "sms-002",
+      "title": "How To Build SMS Opt-In Campaigns",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001170758-how-to-build-sms-opt-in-campaigns",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "SMS opt-in campaigns (text-in campaigns)",
+        "Keyword-based text back",
+        "Customer Replied Workflow Trigger",
+        "Billboard/postcard marketing integration"
+      ],
+      "features": [
+        "Customers text keyword to claim offers",
+        "Customer Replied trigger detects responses",
+        "Works with offline marketing (billboards, postcards)"
+      ],
+      "follow_up_use_cases": [
+        "Capture leads from offline advertising",
+        "Build SMS subscriber lists with opt-in",
+        "Trigger automated sequences on keyword reply"
+      ]
+    },
+    {
+      "id": "sms-003",
+      "title": "Getting Started - Launch an SMS Campaign",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005065-getting-started-launch-an-sms-campaign",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "Bulk SMS campaigns",
+        "SMS templates/snippets",
+        "Drip mode for controlled sending",
+        "Bulk actions management"
+      ],
+      "features": [
+        "Select contacts via filters and checkboxes",
+        "Send SMS with drip mode settings (batch size, days)",
+        "Create and save SMS templates in Marketing > Snippets",
+        "View/edit campaigns in Contacts > Smart Lists > Bulk Actions",
+        "Launch bulk SMS via workflow automation"
+      ],
+      "follow_up_use_cases": [
+        "Re-engagement campaigns for cold leads",
+        "Promotional announcements to contact lists",
+        "Database reactivation with controlled drip sending"
+      ]
+    },
+    {
+      "id": "sms-004",
+      "title": "How to Use the Send SMS Action in HighLevel Workflows",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002474-action-send-sms",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "Send SMS workflow action",
+        "Personalization with dynamic fields",
+        "Appointment reminders via SMS",
+        "Promotional campaign SMS"
+      ],
+      "features": [
+        "Send personalized text messages in workflows",
+        "Use dynamic fields: {{contact.first_name}}, {{appointment.start_time}}",
+        "Add attachments via URLs",
+        "Test SMS before publishing workflow",
+        "Multi-stage reminder sequences"
+      ],
+      "follow_up_use_cases": [
+        "Appointment reminders: 24 hours and 1 hour before",
+        "Order/shipping updates",
+        "Event notifications and changes",
+        "No-show follow-up sequences"
+      ],
+      "example_workflow": {
+        "name": "Multi-Stage Appointment Reminder",
+        "steps": [
+          "Trigger: Customer booked appointment",
+          "Wait 24 hours before appointment",
+          "Send reminder SMS with appointment details",
+          "Wait 1 hour before appointment",
+          "Send final reminder SMS"
+        ]
+      }
+    },
+    {
+      "id": "sms-005",
+      "title": "SMS Templates (Snippets) - Overview",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000981405-sms-templates-snippets-overview",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "SMS templates/snippets",
+        "Reusable message templates",
+        "Template management"
+      ],
+      "features": [
+        "Create and save SMS templates",
+        "Access via Conversations > Templates",
+        "Use in conversations, triggers, campaigns, workflows",
+        "Maintain consistency in marketing efforts"
+      ],
+      "follow_up_use_cases": [
+        "Standardized follow-up messages",
+        "Quick response templates for common inquiries",
+        "Consistent nurture sequence messaging"
+      ]
+    },
+    {
+      "id": "sms-006",
+      "title": "Guide To Bulk SMS: Send Messages People Actually Want To Receive",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002100-guide-to-bulk-sms-send-messages-people-actually-want-to-receive",
+      "category": "SMS Campaigns",
+      "key_concepts": [
+        "SMS marketing compliance (US/Canada)",
+        "Bulk SMS best practices",
+        "Drip mode configuration",
+        "Opt-out management"
+      ],
+      "features": [
+        "Consent requirements before SMS campaigns",
+        "Identify yourself and business by name",
+        "Add unsubscribe clause (Reply STOP to opt out)",
+        "Use {{contact.first_name}} for personalization",
+        "Drip mode: batch quantity, repeat intervals, send windows"
+      ],
+      "best_practices": [
+        "Send sparingly, no more than once per month",
+        "Keep messages short and casual",
+        "Ask direct questions to spark conversations",
+        "Avoid links (can cause deliverability issues)",
+        "Respond quickly when contacts reply",
+        "Respect opt-outs and mark DND"
+      ],
+      "follow_up_use_cases": [
+        "Database reactivation campaigns",
+        "Promotional offers with strong CTAs",
+        "Appointment conversion messages",
+        "Re-engagement of cold leads"
+      ]
+    },
+    {
+      "id": "email-001",
+      "title": "Workflow Action - Send Email",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002472-workflow-action-send-email",
+      "category": "Email Automation",
+      "key_concepts": [
+        "Send Email workflow action",
+        "Email templates in workflows",
+        "Dynamic personalization",
+        "CC/BCC functionality"
+      ],
+      "features": [
+        "Automated personalized emails",
+        "Custom From Name and From Email",
+        "Use templates or custom email body",
+        "Dynamic fields: {{contact.first_name}}, {{appointment.start_time}}",
+        "File attachments via URLs",
+        "CC/BCC recipients",
+        "Test emails before publishing",
+        "Sync Edits to Template option"
+      ],
+      "follow_up_use_cases": [
+        "Booking confirmation emails",
+        "Appointment reminder sequences",
+        "Follow-up emails after form submission",
+        "Promotional campaign automation"
+      ],
+      "example_workflow": {
+        "name": "Booking Confirmation Email",
+        "trigger": "Appointment booked",
+        "email_content": "Hi {{contact.first_name}}, Thank you for booking! Your appointment is scheduled for {{appointment.start_time}} on {{appointment.only_start_date}}."
+      }
+    },
+    {
+      "id": "email-002",
+      "title": "How to use Email Template Builder in the Workflow Send Email Action",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002652-how-to-use-email-template-builder-in-the-workflow-send-email-action",
+      "category": "Email Automation",
+      "key_concepts": [
+        "Integrated email template builder",
+        "In-workflow template editing",
+        "Streamlined email creation"
+      ],
+      "features": [
+        "View and edit email templates directly in workflow",
+        "No tab switching required",
+        "Reduced back-and-forth confusion",
+        "Enhanced productivity"
+      ],
+      "follow_up_use_cases": [
+        "Quick template adjustments for specific campaigns",
+        "Rapid iteration on follow-up sequences"
+      ]
+    },
+    {
+      "id": "email-003",
+      "title": "Customize Review Request Messages (SMS/Email)",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000980328-how-to-customize-the-review-request-messages-sms-email-",
+      "category": "Email Automation",
+      "key_concepts": [
+        "Review request automation",
+        "SMS and Email review requests",
+        "Retry sequences",
+        "Review link balancing"
+      ],
+      "features": [
+        "Automated review requests after check-in",
+        "Customizable SMS and Email templates",
+        "Retry cadence until link clicked",
+        "Maximum retry settings",
+        "Review balancing across platforms",
+        "Custom review link option",
+        "Merge fields for personalization",
+        "{{reputation.review_link}} token"
+      ],
+      "follow_up_use_cases": [
+        "Post-appointment review requests",
+        "Multi-channel review collection (SMS + Email)",
+        "Automated retry sequences for non-responders"
+      ]
+    },
+    {
+      "id": "phone-001",
+      "title": "Voicemail Drop: How It Works and Why It Matters",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000006808-voicemail-drop-how-it-works-and-why-it-matters",
+      "category": "Voicemail Drops",
+      "key_concepts": [
+        "Ringless voicemail drops",
+        "Pre-recorded voicemail automation",
+        "Two-call technique",
+        "Human detection"
+      ],
+      "features": [
+        "Automatically leave pre-recorded voicemail",
+        "Two-step workflow: first call keeps line busy, second delivers voicemail",
+        "Auto-disconnect if human answers",
+        "First call not charged or logged",
+        "70% success rate (carrier-dependent)"
+      ],
+      "follow_up_use_cases": [
+        "Scale outreach without manual voicemails",
+        "Consistent professional messaging",
+        "Lead follow-up sequences",
+        "No-show re-engagement"
+      ]
+    },
+    {
+      "id": "phone-002",
+      "title": "How To Setup Automatic Calls and Voicemail Drops",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000981430-how-to-setup-automatic-calls-and-voicemail-drops",
+      "category": "Voicemail Drops",
+      "key_concepts": [
+        "Workflow voicemail drops",
+        "Call whisper messages",
+        "Voicemail detection",
+        "User assignment for calls"
+      ],
+      "features": [
+        "Assign to User action for call routing",
+        "Call action with whisper message",
+        "Voicemail Detection toggle",
+        "Connect Call After Keypress option",
+        "Upload pre-recorded voicemail files (MP3/WAV 64kbps)"
+      ],
+      "legal_requirements": [
+        "TCPA compliance required",
+        "Prior express consent needed",
+        "FCC regulations apply"
+      ],
+      "limits": [
+        "Day 1: 100 drops/day",
+        "Day 7+: 2000 drops/day",
+        "Contact support for higher limits"
+      ],
+      "follow_up_use_cases": [
+        "Trigger voicemail drops on contact status change",
+        "Automated outreach sequences",
+        "No-show follow-up with personal voicemail"
+      ]
+    },
+    {
+      "id": "phone-003",
+      "title": "Voicemail Drop File for HighLevel",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000981433-create-audio-file-for-voicemail-and-drops-",
+      "category": "Voicemail Drops",
+      "key_concepts": [
+        "Audio file requirements",
+        "MP3/WAV conversion",
+        "64kbps quality"
+      ],
+      "features": [
+        "Record custom voicemail messages",
+        "Online recording tools (Rev, RecordMP3Online)",
+        "Audio conversion to 64kbps MP3",
+        "Audacity for desktop recording/conversion"
+      ],
+      "technical_specs": {
+        "format": "MP3 or WAV",
+        "quality": "64kbps",
+        "sample_rate": "8000 (for WAV U-Law)"
+      },
+      "follow_up_use_cases": [
+        "Create personalized voicemail drops",
+        "Professional greetings for follow-up sequences"
+      ]
+    },
+    {
+      "id": "phone-004",
+      "title": "Overview of Phone Number Configuration Options",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001229976-phone-number-settings-explained",
+      "category": "Phone & Calling",
+      "key_concepts": [
+        "Phone number configuration",
+        "Call forwarding",
+        "Call Connect",
+        "Whisper messages",
+        "Call recording"
+      ],
+      "features": [
+        "Name Your Number (internal labeling)",
+        "Pass Called Number As Caller ID",
+        "Forward Calls To (external/mobile)",
+        "Verified Number as Caller ID",
+        "Call Connect (keypress confirmation)",
+        "Whisper Message customization",
+        "Call Recording ($0.0025/min)",
+        "Incoming/Outgoing Call Timeout",
+        "Ring to Multiple Users (up to 7)"
+      ],
+      "follow_up_use_cases": [
+        "Route calls to team members' phones",
+        "Enable Missed-Call Text-Back automations",
+        "Direct to CRM voicemail for lead capture"
+      ]
+    },
+    {
+      "id": "phone-005",
+      "title": "Inbound Call Routing - Explained",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000981432-inbound-call-routing-explained",
+      "category": "Phone & Calling",
+      "key_concepts": [
+        "Inbound call routing logic",
+        "User phone assignment",
+        "Lead assignment routing",
+        "Forwarding priorities"
+      ],
+      "routing_priority": [
+        "1. User Phone (if number assigned to user)",
+        "2. Call Forwarding Number (if configured)",
+        "3. Company Phone (fallback)"
+      ],
+      "features": [
+        "Route calls to web app, mobile app, or external phone",
+        "Lead assignment-based routing",
+        "Multiple forwarding options",
+        "Voicemail configuration for missed calls"
+      ],
+      "follow_up_use_cases": [
+        "Ensure leads reach assigned sales reps",
+        "Route calls to available team members",
+        "Capture voicemails for follow-up"
+      ]
+    },
+    {
+      "id": "phone-006",
+      "title": "Where and How to Configure the Missed Call Text Back Feature",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001239140-where-and-how-to-configure-the-missed-call-text-back-feature",
+      "category": "Phone & Calling",
+      "key_concepts": [
+        "Missed Call Text Back (MCTB)",
+        "Automatic SMS on missed calls",
+        "Lead capture automation"
+      ],
+      "features": [
+        "Enable in Settings > Phone Numbers > Advanced Settings",
+        "Customize automated response message",
+        "Adjust incoming call timeout (10-20 seconds recommended)",
+        "Upload custom voicemail audio",
+        "Test message before activation"
+      ],
+      "follow_up_use_cases": [
+        "Never miss a lead from missed calls",
+        "Immediate engagement when unavailable",
+        "After-hours lead capture",
+        "Combine with workflows for enhanced follow-up"
+      ]
+    },
+    {
+      "id": "conv-001",
+      "title": "Getting Started with the Conversations Tab Experience",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000006610-getting-started-with-the-new-conversations-experience",
+      "category": "Conversations",
+      "key_concepts": [
+        "Unified inbox",
+        "Four-panel layout",
+        "Multi-channel messaging",
+        "Internal comments",
+        "Advanced filtering"
+      ],
+      "features": [
+        "My Inbox / Team Inbox / Internal Chat",
+        "Chat List with bulk actions (Mark Read/Unread, Star, Delete)",
+        "Message History Panel with timeline filters",
+        "Channel switching (Email, SMS, WhatsApp, Facebook/Instagram)",
+        "Right Panel for contact context",
+        "Tags filter with AND/OR operators",
+        "Full-view email composer",
+        "Inline reply experience",
+        "Keyboard shortcuts"
+      ],
+      "performance_improvements": [
+        "~70% faster response times",
+        "~35% faster page navigation",
+        "~18% lower memory usage"
+      ],
+      "follow_up_use_cases": [
+        "Centralized lead management across channels",
+        "Team collaboration on follow-ups",
+        "Filter conversations for priority handling"
+      ]
+    },
+    {
+      "id": "conv-002",
+      "title": "Workflow Action - Edit Conversation",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001214153-workflow-action-edit-conversation",
+      "category": "Conversations",
+      "key_concepts": [
+        "Conversation status automation",
+        "Mark as read/unread",
+        "Archive/unarchive automation"
+      ],
+      "features": [
+        "Mark as Read/Unread automatically",
+        "Archive completed conversations",
+        "Unarchive for reactivation",
+        "Integrate into any workflow"
+      ],
+      "follow_up_use_cases": [
+        "Auto-archive after successful booking",
+        "Mark conversations unread for follow-up attention",
+        "Organize inbox based on lead status changes"
+      ]
+    },
+    {
+      "id": "workflow-001",
+      "title": "Getting Started with Workflows",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002288-getting-started-with-workflows",
+      "category": "Workflows",
+      "key_concepts": [
+        "Workflow triggers",
+        "Workflow actions",
+        "IF/Else conditions",
+        "Workflow chaining",
+        "Webhooks"
+      ],
+      "automation_use_cases": [
+        "Lead nurturing campaigns",
+        "Appointment scheduling and reminders",
+        "Follow-up communications",
+        "Customer onboarding sequences",
+        "Feedback surveys",
+        "Lead scoring and segmentation",
+        "Event registration and follow-ups",
+        "Abandoned cart recovery"
+      ],
+      "features": [
+        "Pre-built workflow recipes",
+        "Trigger filters for precise targeting",
+        "IF/Else branching for personalization",
+        "Multiple workflows chained together",
+        "Webhook integrations"
+      ],
+      "troubleshooting_tips": [
+        "Test with fresh contacts",
+        "Use live tests instead of Test Workflow button",
+        "Check trigger and action filters",
+        "Verify Allow Reentry settings"
+      ],
+      "follow_up_use_cases": [
+        "Multi-stage nurture sequences",
+        "Pipeline-based follow-up automation",
+        "No-show re-engagement workflows",
+        "Post-appointment survey automation"
+      ]
+    },
+    {
+      "id": "workflow-002",
+      "title": "Workflow Trigger - Customer Booked Appointment",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002675-workflow-trigger-customer-booked-appointment",
+      "category": "Workflows",
+      "key_concepts": [
+        "Appointment booking trigger",
+        "Automated appointment actions",
+        "Calendar-based filtering"
+      ],
+      "features": [
+        "Triggers when customer books independently",
+        "Filter by Has Tag",
+        "Filter by In Calendar",
+        "Filter by In Calendar Group",
+        "Works for regular (not recurring) appointments"
+      ],
+      "follow_up_use_cases": [
+        "Send appointment reminders 24h/1h before",
+        "Confirmation emails with details",
+        "Internal notifications for VIP clients",
+        "No-show prevention sequences"
+      ]
+    },
+    {
+      "id": "workflow-003",
+      "title": "Workflow Trigger - Appointment Status",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002619-workflow-trigger-appointment-status",
+      "category": "Workflows",
+      "key_concepts": [
+        "Appointment status changes",
+        "No-show handling",
+        "Confirmation workflows"
+      ],
+      "status_options": [
+        "New",
+        "Confirmed",
+        "Cancelled",
+        "Showed",
+        "No-show",
+        "Invalid"
+      ],
+      "filter_options": [
+        "Event Type (Any/Normal/Recurring)",
+        "Appointment Status",
+        "Filter by Tag",
+        "In Calendar",
+        "In Calendar Group",
+        "Only for Grouped Calendar",
+        "Modified By (API/Customer/User/Workflow)"
+      ],
+      "follow_up_use_cases": [
+        "Re-engagement for cancelled appointments",
+        "No-show follow-up sequences",
+        "Post-appointment surveys for Showed status",
+        "Confirmation workflows when status changes"
+      ]
+    },
+    {
+      "id": "workflow-004",
+      "title": "Workflow Action - Drip",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000003360-workflow-action-drip",
+      "category": "Workflows",
+      "key_concepts": [
+        "Drip action for batch processing",
+        "Controlled contact flow",
+        "Rate limiting for campaigns"
+      ],
+      "features": [
+        "Batch size: 1-10,000 contacts",
+        "Interval: minutes (1-60), hours (1-24), days (1-7)",
+        "Prevents system overload",
+        "Improves deliverability"
+      ],
+      "follow_up_use_cases": [
+        "Bulk email/SMS campaigns with controlled sending",
+        "Database reactivation with paced outreach",
+        "Nurture sequences with staggered delivery"
+      ]
+    }
+  ],
+  "follow_up_sequence_templates": {
+    "no_show_sequence": {
+      "description": "Re-engage contacts who missed appointments",
+      "triggers": ["Appointment Status = No-show"],
+      "actions": [
+        "Wait 1 hour",
+        "Send SMS: Sorry we missed you! Want to reschedule?",
+        "Wait 24 hours",
+        "Send Email: We'd love to reschedule your appointment",
+        "Wait 3 days",
+        "Voicemail Drop: Personal follow-up message"
+      ]
+    },
+    "nurture_sequence": {
+      "description": "Warm up leads over time",
+      "triggers": ["Form Submitted", "Contact Created"],
+      "actions": [
+        "Send immediate welcome SMS",
+        "Wait 1 day - Send value email #1",
+        "Wait 3 days - Send value email #2",
+        "Wait 5 days - Send offer SMS",
+        "Wait 7 days - Send case study email"
+      ],
+      "drip_settings": {
+        "batch_size": 100,
+        "interval": "1 day"
+      }
+    },
+    "appointment_reminder": {
+      "description": "Reduce no-shows with multi-touch reminders",
+      "triggers": ["Customer Booked Appointment"],
+      "actions": [
+        "Immediately - Send confirmation email",
+        "24 hours before - Send reminder SMS",
+        "2 hours before - Send final reminder SMS"
+      ]
+    },
+    "missed_call_followup": {
+      "description": "Capture leads from missed calls",
+      "triggers": ["Missed Call"],
+      "actions": [
+        "Immediately - Send MCTB text",
+        "Wait 30 min - If no reply, send follow-up SMS",
+        "Wait 2 hours - Voicemail drop"
+      ]
+    }
+  }
+}

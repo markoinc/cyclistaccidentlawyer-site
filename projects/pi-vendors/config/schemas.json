@@ -1,0 +1,153 @@
+{
+  "buyer_profile": {
+    "id": "string (uuid)",
+    "source": "string (reddit|linkedin|forum|etc)",
+    "source_url": "string",
+    "extracted_at": "datetime",
+    
+    "firm_info": {
+      "size": "solo|small|mid|large|unknown",
+      "location": {
+        "state": "string",
+        "city": "string",
+        "region": "string"
+      },
+      "case_types": ["mva", "slip_fall", "med_mal", "mass_tort", "workers_comp", "dog_bite", "wrongful_death", "nursing_home", "product_liability"],
+      "volume_tier": "low|mid|high|unknown",
+      "years_in_practice": "number|null"
+    },
+    
+    "signals": {
+      "pain_points": [
+        {
+          "category": "lead_quality|pricing|communication|conversion|trust|support",
+          "description": "string",
+          "intensity": "low|medium|high",
+          "quote": "string (original text)"
+        }
+      ],
+      "budget_signals": [
+        {
+          "type": "explicit_amount|range|sensitivity|willing_to_pay",
+          "value": "string",
+          "quote": "string"
+        }
+      ],
+      "trust_factors": [
+        {
+          "builds_trust": "string",
+          "breaks_trust": "string"
+        }
+      ],
+      "current_vendors": [
+        {
+          "name": "string",
+          "sentiment": "positive|negative|neutral|mixed",
+          "quote": "string"
+        }
+      ],
+      "switching_triggers": ["string"],
+      "decision_style": "data_driven|relationship_focused|price_focused|quality_focused|unknown"
+    },
+    
+    "raw_text": "string (original post/comment)",
+    "confidence_score": "number 0-1"
+  },
+  
+  "vendor_profile": {
+    "id": "string (uuid)",
+    "slug": "string (url-friendly name)",
+    "last_updated": "datetime",
+    
+    "basics": {
+      "name": "string",
+      "url": "string",
+      "phone": "string",
+      "email": "string",
+      "founded_year": "number",
+      "headquarters": {
+        "city": "string",
+        "state": "string"
+      },
+      "employee_count": "number|range",
+      "description": "string"
+    },
+    
+    "services": {
+      "types": ["leads", "intake", "marketing", "directory", "software", "answering"],
+      "case_types": ["mva", "mass_tort", "med_mal", "slip_fall", "workers_comp", "all"],
+      "pricing_models": [
+        {
+          "model": "pay_per_lead|pay_per_case|retainer|percentage|subscription",
+          "details": "string",
+          "price_range": "string"
+        }
+      ],
+      "geography": ["nationwide", "state_specific", "regional"],
+      "states_served": ["string"],
+      "integrations": ["Clio", "Filevine", "Lead Docket", "Salesforce", "etc"],
+      "features": ["string"]
+    },
+    
+    "reputation": {
+      "ratings": {
+        "google": {"score": "number", "count": "number"},
+        "trustpilot": {"score": "number", "count": "number"},
+        "g2": {"score": "number", "count": "number"},
+        "capterra": {"score": "number", "count": "number"},
+        "bbb": {"rating": "string", "accredited": "boolean"},
+        "clutch": {"score": "number", "count": "number"}
+      },
+      "aggregate_score": "number 0-5",
+      "total_reviews": "number",
+      "sentiment_breakdown": {
+        "positive": "percentage",
+        "neutral": "percentage", 
+        "negative": "percentage"
+      }
+    },
+    
+    "mentions": [
+      {
+        "source": "string",
+        "url": "string",
+        "date": "datetime",
+        "sentiment": "positive|negative|neutral|mixed",
+        "summary": "string",
+        "quote": "string"
+      }
+    ],
+    
+    "red_flags": [
+      {
+        "type": "lawsuit|complaint|scam_report|employee_churn|false_claims",
+        "description": "string",
+        "source": "string",
+        "date": "datetime",
+        "severity": "low|medium|high"
+      }
+    ],
+    
+    "differentiators": ["string"],
+    "marketing_claims": ["string"],
+    
+    "data_sources": ["string (urls where data was gathered)"],
+    "confidence_score": "number 0-1"
+  },
+  
+  "match_score": {
+    "buyer_id": "string",
+    "vendor_id": "string",
+    "overall_score": "number 0-100",
+    "breakdown": {
+      "pain_point_fit": "number 0-100",
+      "budget_fit": "number 0-100",
+      "size_fit": "number 0-100",
+      "geography_fit": "number 0-100",
+      "reputation_score": "number 0-100",
+      "case_type_match": "number 0-100"
+    },
+    "reasons": ["string"],
+    "warnings": ["string"]
+  }
+}

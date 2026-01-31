@@ -1,0 +1,28 @@
+{
+  "bot_token": "8226097868:AAEsk0uztctHS0_f5-ar5FN1N2OdBJZWjG0",
+  "head_agents_group": null,
+  "notification_settings": {
+    "x_agent_usecases": {
+      "enabled": true,
+      "min_quality_score": 0.7,
+      "max_per_day": 10,
+      "keywords": [
+        "claude code", "claude agent", "mcp server", "mcp plugin",
+        "ai agent workflow", "autonomous agent", "agentic ai",
+        "cursor ai", "cline ai", "codex cli",
+        "telegram bot ai", "personal ai assistant",
+        "built with claude", "claude automation"
+      ]
+    },
+    "vendor_alerts": {
+      "enabled": true,
+      "alert_on": ["new_red_flag", "rating_drop", "lawsuit"]
+    }
+  },
+  "scrape_schedules": {
+    "x_agent_usecases": 6,
+    "reddit": 4,
+    "reviews": 24,
+    "linkedin": 24
+  }
+}

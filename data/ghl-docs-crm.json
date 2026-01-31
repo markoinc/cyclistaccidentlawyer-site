@@ -1,0 +1,573 @@
+{
+  "metadata": {
+    "source": "GoHighLevel Help Center",
+    "base_url": "https://help.gohighlevel.com",
+    "crawl_date": "2026-01-30",
+    "total_pages": 28,
+    "categories": [
+      "Pipeline & Deal Management",
+      "Contact/Lead Management",
+      "Tags & Segmentation",
+      "Reporting & Analytics",
+      "Integrations",
+      "Workflow Automation"
+    ]
+  },
+  "documents": [
+    {
+      "title": "Understanding Pipelines",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001982-understanding-pipelines",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Pipelines as visual sales/workflow management tools",
+        "Pipeline stages representing steps in customer journey",
+        "Lead capture, qualification, appointment setting, proposal, closing stages",
+        "Pipeline automation triggers for follow-ups and task assignments",
+        "Data-driven optimization and conversion tracking",
+        "Pipeline reporting for bottleneck identification"
+      ],
+      "relevance_to_sales_tracking": "Core feature for visualizing and managing entire sales process. Enables tracking of where every lead stands, standardizes sales processes, and provides conversion rate metrics.",
+      "best_practices": [
+        "Keep stages simple and action-oriented",
+        "Define clear criteria for stage progression",
+        "Automate follow-ups for stuck leads",
+        "Review and clean pipelines weekly/monthly"
+      ]
+    },
+    {
+      "title": "Understanding Opportunities in HighLevel",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001983-understanding-opportunities-in-highlevel",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Opportunities represent potential sales/deals at various pipeline stages",
+        "Opportunity statuses: Open, Won, Lost, Abandoned",
+        "Stage progression through pipeline",
+        "Centralized tracking with notes, tasks, communications",
+        "Stage-based revenue forecasting",
+        "Automation triggers on opportunity changes",
+        "Team collaboration with owner assignments"
+      ],
+      "relevance_to_sales_tracking": "Fundamental sales tracking unit. Each opportunity stores deal value, contact info, and historical notes enabling revenue forecasting and performance reporting.",
+      "data_fields": [
+        "Opportunity Name",
+        "Opportunity Value",
+        "Status (Open/Won/Lost/Abandoned)",
+        "Pipeline Stage",
+        "Owner",
+        "Source",
+        "Notes"
+      ]
+    },
+    {
+      "title": "Getting Started - Setup Pipelines and Opportunities",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005062-getting-started-setup-pipelines-and-opportunities",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Creating sales pipelines with custom stages",
+        "Importing contacts as opportunities via CSV",
+        "Manual opportunity creation",
+        "Automated opportunity creation via workflows",
+        "Common automation triggers: form submission, appointment booking, contact tag, payment received"
+      ],
+      "relevance_to_sales_tracking": "Setup guide for establishing sales tracking infrastructure. Shows how to populate pipelines with leads and automate opportunity creation.",
+      "workflow_triggers": [
+        "Form Submitted",
+        "Customer Booked Appointment",
+        "Contact Tag",
+        "Facebook Lead Form Submitted",
+        "Payment Received",
+        "Contact Created",
+        "Call Status",
+        "Survey Submitted"
+      ]
+    },
+    {
+      "title": "How to Filter Opportunities",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001241-how-to-filter-opportunities",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Advanced filtering with AND/OR logic",
+        "Standard filters: Owner, Followers, Status, Source, Campaign Type, Value",
+        "Date-based filters: Last Stage Change, Status Change, Created, Updated, Won/Lost dates",
+        "Custom field filtering",
+        "Filter presets: Yesterday, Today, This Week, Last 30 Days, etc."
+      ],
+      "relevance_to_sales_tracking": "Essential for pipeline reviews, prioritizing deals, and generating accurate reports. Enables segmentation by value, source, and activity.",
+      "filter_operators": ["is", "is not", "is empty", "is not empty", "equal to", "not equal to", "less than", "greater than"]
+    },
+    {
+      "title": "Pipeline Permissions in HighLevel",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000006523-pipeline-permissions-in-highlevel",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Role-based access control for pipelines",
+        "Sharing modes: all users, selected users, exclude specific users",
+        "Access levels: View Only, Edit, No Access",
+        "60-day audit logs for permission changes",
+        "Cross-platform sync (web, mobile, API)"
+      ],
+      "relevance_to_sales_tracking": "Critical for data security and team organization. Protects sensitive revenue data and ensures reps focus only on relevant deals.",
+      "access_levels": {
+        "View Only": "Move/update opportunities, cannot edit stages or pipelines",
+        "Edit": "Full control including add/edit/delete stages and pipelines",
+        "No Access": "Pipeline completely hidden"
+      }
+    },
+    {
+      "title": "Multiple Opportunities for Same Person in Same Pipeline",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001066144-multiple-opportunities-for-the-same-person-in-the-same-pipeline",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Allow multiple opportunities per contact setting",
+        "Use cases: renewals, upsells, parallel offers",
+        "Workflow considerations for multiple opportunities",
+        "Accurate forecasting with multiple deals"
+      ],
+      "relevance_to_sales_tracking": "Enables tracking repeat business and multiple concurrent deals per customer, improving revenue forecasting accuracy.",
+      "setup_path": "Sub-Account Settings → Objects → Opportunities → Toggle Allow Multiple Opportunities per Contact"
+    },
+    {
+      "title": "Import Opportunities Using CSV",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002517-importing-opportunities-using-a-csv-file",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Bulk import of opportunities via CSV",
+        "Required fields: Contact ID, Opportunity Name, Pipeline",
+        "Optional fields: Opportunity Value, Opportunity ID",
+        "Field mapping process",
+        "Combined contacts + opportunities import"
+      ],
+      "relevance_to_sales_tracking": "Streamlines CRM migration and bulk data entry. Essential for onboarding clients from other systems.",
+      "requirements": {
+        "file_format": "CSV only",
+        "max_size": "30 MB",
+        "required_fields": ["Contact ID", "Opportunity Name", "Pipeline"]
+      }
+    },
+    {
+      "title": "Delete and Restore Pipelines or Opportunities",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002041-deleting-and-restoring-opportunities-pipelines",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Deleting individual opportunities",
+        "Deleting entire pipelines",
+        "Restoring deleted items",
+        "CRM cleanup best practices"
+      ],
+      "relevance_to_sales_tracking": "Data hygiene feature for maintaining accurate pipeline metrics and removing outdated deals."
+    },
+    {
+      "title": "Getting Started With Smart Lists",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001062094-how-to-create-manage-smart-lists",
+      "category": "Tags & Segmentation",
+      "key_concepts": [
+        "Dynamic contact lists with real-time updates",
+        "Automated segmentation based on tags, custom fields, activity",
+        "AND/OR filter logic",
+        "Workflow integration for automated actions",
+        "Column customization and reordering"
+      ],
+      "relevance_to_sales_tracking": "Enables automated lead segmentation without manual list updates. Powers targeted campaigns and workflow triggers based on lead status.",
+      "filter_options": [
+        "Tags",
+        "Custom fields",
+        "Engagement activity",
+        "Opportunity stages",
+        "Last activity date"
+      ]
+    },
+    {
+      "title": "Add Contact Tag Workflow Action",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000003111-workflow-action-add-contact-tag",
+      "category": "Tags & Segmentation",
+      "key_concepts": [
+        "Automated tagging based on behaviors/triggers",
+        "Tag organization for database structure",
+        "Standard vs Dynamic tagging modes",
+        "Tags are case-sensitive",
+        "Tags can trigger other workflows"
+      ],
+      "relevance_to_sales_tracking": "Foundation for contact segmentation and automation routing. Tags enable targeted messaging and workflow control based on lead behaviors.",
+      "use_cases": [
+        "Segmentation for targeted campaigns",
+        "Automation routing based on behaviors",
+        "Database organization",
+        "Lead scoring support"
+      ]
+    },
+    {
+      "title": "Contact Types",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001302-contact-types",
+      "category": "Tags & Segmentation",
+      "key_concepts": [
+        "Single-select dropdown field for contact role/status",
+        "Types: Lead, Client, Prospect, etc.",
+        "Mandatory field when creating contacts",
+        "Workflow triggers on contact type changes",
+        "Smart List filtering by type"
+      ],
+      "relevance_to_sales_tracking": "High-level segmentation by relationship status. Enables targeted messaging and automation based on where contacts are in customer lifecycle.",
+      "note": "Use Tags for multi-labeling; Contact Type is single-select"
+    },
+    {
+      "title": "Contact Engagement Score",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001251-contact-engagement-score",
+      "category": "Contact/Lead Management",
+      "key_concepts": [
+        "Numerical score based on contact interactions",
+        "Positive actions increase score (email opens, clicks, payments)",
+        "Negative actions decrease score (bounces, unsubscribes)",
+        "Score rules for custom point assignments",
+        "Workflow triggers based on score thresholds"
+      ],
+      "relevance_to_sales_tracking": "Lead prioritization tool. Identifies high-value leads ready for conversion and cold leads needing nurture, enabling sales focus optimization.",
+      "action_types": [
+        "Email Events",
+        "Contact Changed",
+        "Contact Tag",
+        "Payment Received",
+        "Contact Replied",
+        "Form Submitted",
+        "Order Placed",
+        "Survey Submitted",
+        "Trigger Link Clicked",
+        "Appointment Booked"
+      ]
+    },
+    {
+      "title": "How to Create and Use Custom Fields",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001161579-how-to-use-custom-fields",
+      "category": "Contact/Lead Management",
+      "key_concepts": [
+        "Contact vs Opportunity custom fields",
+        "Field types: Text, Dropdown, Radio, Date, Phone, Email, etc.",
+        "Organization with folders/groups",
+        "Use in forms, surveys, workflows, Smart Lists",
+        "Merge field personalization"
+      ],
+      "relevance_to_sales_tracking": "Enables capture of business-specific data for better lead qualification and segmentation. Critical for personalized automation and reporting.",
+      "field_types": [
+        "Short Text",
+        "Long Text",
+        "Dropdown",
+        "Date Picker",
+        "Phone",
+        "Email",
+        "Radio Select",
+        "Checkbox",
+        "File Upload",
+        "Signature"
+      ]
+    },
+    {
+      "title": "Custom Fields for Opportunities",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000521-how-to-use-custom-fields-for-opportunities",
+      "category": "Pipeline & Deal Management",
+      "key_concepts": [
+        "Opportunity-specific custom fields",
+        "Field organization with folders",
+        "Display custom fields on opportunity cards",
+        "Hide empty fields option",
+        "Use in filtering, reporting, automation"
+      ],
+      "relevance_to_sales_tracking": "Allows tracking deal-specific data like budget, timeline, product preferences. Enhances pipeline analysis and deal qualification.",
+      "example_fields": [
+        "Client Budget",
+        "Projected Close Date",
+        "Product Interest",
+        "Sales Stage Reason",
+        "Priority Level"
+      ]
+    },
+    {
+      "title": "How to Create a Custom Dashboard",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001531-how-to-create-a-custom-dashboard",
+      "category": "Reporting & Analytics",
+      "key_concepts": [
+        "Multiple dashboards for different teams/purposes",
+        "Custom widgets and metrics",
+        "Scheduled report delivery",
+        "Theme and color customization",
+        "Data visualization: tables, charts, scorecards"
+      ],
+      "relevance_to_sales_tracking": "Central analytics hub for tracking KPIs. Enables sales managers to monitor performance, track revenue, and identify trends.",
+      "widget_categories": [
+        "Contacts",
+        "Appointments",
+        "Opportunities",
+        "Visitor Data",
+        "Emails",
+        "Calls",
+        "Conversations",
+        "Payments"
+      ]
+    },
+    {
+      "title": "Dashboard Widgets",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001212-what-are-dashboard-widgets-",
+      "category": "Reporting & Analytics",
+      "key_concepts": [
+        "Predefined widgets for quick insights",
+        "Chart types: Numeric, Donut, Line, Bar, Table",
+        "Contact, Appointment, Opportunity, Email, Call widgets",
+        "Custom themes and elements",
+        "Metrics: Sum, Min, Max, Avg, Count"
+      ],
+      "relevance_to_sales_tracking": "Pre-built analytics components for monitoring sales metrics. Opportunity widgets track deal status, value, and revenue trends.",
+      "opportunity_widgets": [
+        "Opened Opportunities",
+        "Won Opportunities",
+        "Lost Opportunities",
+        "Abandoned Opportunities",
+        "Opportunity Count Over Time",
+        "Opportunity Revenue Over Time",
+        "Opportunity Value by Status",
+        "Lost Opportunities By Reason"
+      ]
+    },
+    {
+      "title": "Analytics Dashboard - Track and Optimize Performance",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000004044-analytics-dashboard-track-and-optimize-your-performance",
+      "category": "Reporting & Analytics",
+      "key_concepts": [
+        "Reports generated tracking",
+        "Leads generated metrics",
+        "Total conversions tracking",
+        "Highest viewed prospect reports",
+        "Form-generated reports"
+      ],
+      "relevance_to_sales_tracking": "Performance overview for agencies. Tracks lead generation effectiveness and conversion success rates.",
+      "metrics_tracked": [
+        "Reports Generated",
+        "Leads Generated",
+        "Total Conversions",
+        "Report Views",
+        "Highest Viewed Prospects"
+      ]
+    },
+    {
+      "title": "How to Create and Schedule Reports",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000003965-how-to-create-and-schedule-reports",
+      "category": "Reporting & Analytics",
+      "key_concepts": [
+        "Custom report builder",
+        "Scheduled report delivery",
+        "Cover page customization",
+        "Widget-based report sections",
+        "Date range and comparison settings"
+      ],
+      "relevance_to_sales_tracking": "Automated reporting for stakeholders. Enables scheduled delivery of sales metrics, pipeline status, and performance data.",
+      "scheduling_options": {
+        "frequency": "Daily, weekly, monthly, custom",
+        "date_range": "Configurable period",
+        "comparison": "Toggle Compare With for trends",
+        "recipients": "Multiple email addresses supported"
+      }
+    },
+    {
+      "title": "Workflow Action - Create/Update Opportunity",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002476-workflow-action-create-update-opportunity",
+      "category": "Workflow Automation",
+      "key_concepts": [
+        "Automated opportunity creation based on triggers",
+        "Pipeline and stage assignment",
+        "Opportunity value and source setting",
+        "Status management (open, closed)",
+        "Duplicate opportunity handling"
+      ],
+      "relevance_to_sales_tracking": "Automates lead-to-opportunity conversion. Ensures every qualified lead enters pipeline without manual intervention.",
+      "configurable_fields": [
+        "Pipeline",
+        "Pipeline Stage",
+        "Opportunity Name",
+        "Opportunity Source",
+        "Lead Value",
+        "Status"
+      ],
+      "note": "Being deprecated in favor of separate Create Opportunity and Update Opportunity actions"
+    },
+    {
+      "title": "Update Opportunity Action in Workflows",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000004753-workflow-action-update-opportunity",
+      "category": "Workflow Automation",
+      "key_concepts": [
+        "Programmatic opportunity modification",
+        "Change pipeline, stage, value, name dynamically",
+        "Allow backward stage movement toggle",
+        "Works with Find Opportunity action",
+        "Custom value support for dynamic updates"
+      ],
+      "relevance_to_sales_tracking": "Automates deal progression based on triggers. Keeps CRM accurate without manual updates as leads move through sales process.",
+      "update_fields": [
+        "Pipeline",
+        "Pipeline Stage",
+        "Status",
+        "Opportunity Source",
+        "Opportunity Value",
+        "Opportunity Name"
+      ]
+    },
+    {
+      "title": "Stale Opportunities Workflow Trigger",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000002492-workflow-trigger-stale-opportunities",
+      "category": "Workflow Automation",
+      "key_concepts": [
+        "Trigger when opportunity stagnant for set period",
+        "Configurable duration in days",
+        "Pipeline and stage-specific triggers",
+        "Automated follow-up sequences",
+        "Manager notification workflows"
+      ],
+      "relevance_to_sales_tracking": "Proactive pipeline management. Identifies and re-engages stalled deals before they're lost, improving win rates.",
+      "use_cases": [
+        "Re-engage stalled deals",
+        "Sales rep accountability alerts",
+        "Manager notifications for high-value stale deals",
+        "Move stale deals to review stage"
+      ]
+    },
+    {
+      "title": "Connect Stripe to HighLevel",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005073-getting-started-connect-stripe",
+      "category": "Integrations",
+      "key_concepts": [
+        "Stripe integration for payments",
+        "Credit card, subscription support",
+        "Sub-account level connection",
+        "Product import from Stripe",
+        "Multiple payment gateway support"
+      ],
+      "relevance_to_sales_tracking": "Payment processing integration. Links revenue collection to CRM for accurate deal closure tracking and revenue attribution.",
+      "supported_gateways": [
+        "Stripe",
+        "PayPal",
+        "Authorize.net",
+        "NMI",
+        "Square",
+        "Adyen",
+        "Razorpay"
+      ]
+    },
+    {
+      "title": "How to Connect Stripe to Sub-Account",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48000981400-how-to-connect-stripe-to-your-sub-account",
+      "category": "Integrations",
+      "key_concepts": [
+        "Three connection methods: Launchpad, Integrations, Payments",
+        "OAuth authorization flow",
+        "Country-specific availability",
+        "Multi-currency support"
+      ],
+      "relevance_to_sales_tracking": "Setup guide for payment integration. Enables automated payment collection linked to sales pipeline.",
+      "connection_paths": [
+        "Sub-Account Launchpad → Ecommerce → Start Collecting Payments",
+        "Settings → Integrations → Stripe",
+        "Payments → Integrations → Connect Stripe"
+      ]
+    },
+    {
+      "title": "Stripe One-Time Charge Workflow Action",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/48001202784-workflow-action-stripe-one-time-charge",
+      "category": "Integrations",
+      "key_concepts": [
+        "Automated payment charging via workflows",
+        "Per-lead or per-appointment billing",
+        "Stripe Customer ID requirement",
+        "Dynamic amount using custom variables",
+        "Multi-currency support"
+      ],
+      "relevance_to_sales_tracking": "Enables automated billing based on sales activities. Useful for pay-per-lead models and automated service charging.",
+      "configurable_fields": [
+        "Customer ID",
+        "Description",
+        "Amount",
+        "Currency"
+      ]
+    },
+    {
+      "title": "Documents & Contracts in HighLevel",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000000594-how-to-use-documents-contracts-",
+      "category": "Integrations",
+      "key_concepts": [
+        "Built-in document/contract management",
+        "E-signatures with audit trail",
+        "Integrated payments in contracts",
+        "Workflow automation for documents",
+        "Template library and custom templates"
+      ],
+      "relevance_to_sales_tracking": "Streamlines deal closure with integrated contracts and payments. Tracks document status (draft, sent, signed, completed) as part of sales process.",
+      "features": [
+        "Custom templates",
+        "E-signatures with IP/timestamp audit",
+        "One-time and recurring payments",
+        "Multiple recipients with signing order",
+        "Workflow triggers on document events"
+      ],
+      "document_statuses": [
+        "Draft",
+        "Waiting for others",
+        "Completed",
+        "Archived"
+      ]
+    },
+    {
+      "title": "Send Contracts via Workflows",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001301-how-to-create-and-send-document-or-contract-templates-automatically-in-a-workflow",
+      "category": "Integrations",
+      "key_concepts": [
+        "Automated document delivery",
+        "Template-based contract sending",
+        "Workflow integration for proposals",
+        "No-login signing experience"
+      ],
+      "relevance_to_sales_tracking": "Automates proposal/contract delivery at key sales stages. Accelerates deal closure by removing manual document handling."
+    },
+    {
+      "title": "Documents & Contracts Workflow Trigger",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000001491-workflow-trigger-documents-contracts",
+      "category": "Workflow Automation",
+      "key_concepts": [
+        "Trigger on document sent, signed, viewed, completed",
+        "Automated notifications on signing",
+        "Pipeline updates on document completion",
+        "Contact tagging based on document status"
+      ],
+      "relevance_to_sales_tracking": "Connects document lifecycle to sales pipeline. Automates deal stage updates when contracts are signed, improving pipeline accuracy."
+    },
+    {
+      "title": "Custom Metrics for Dashboard Reports",
+      "url": "https://help.gohighlevel.com/support/solutions/articles/155000005903-how-to-create-and-use-custom-metrics-for-dashboard-reports",
+      "category": "Reporting & Analytics",
+      "key_concepts": [
+        "Custom KPI creation",
+        "Formula editor for calculated metrics",
+        "Chart customization",
+        "Performance tracking across reports"
+      ],
+      "relevance_to_sales_tracking": "Enables custom sales KPI tracking. Build specific metrics like conversion rates, average deal size, or sales velocity."
+    }
+  ],
+  "summary": {
+    "pipeline_features": {
+      "core": "Visual sales pipeline with customizable stages",
+      "statuses": ["Open", "Won", "Lost", "Abandoned"],
+      "automation": "Workflow triggers for stage changes, stale deals, status updates",
+      "permissions": "Role-based access control with audit logging"
+    },
+    "contact_management": {
+      "core": "Contact records with custom fields and engagement scoring",
+      "segmentation": "Smart Lists, Tags, Contact Types",
+      "scoring": "Engagement score based on interaction points"
+    },
+    "reporting": {
+      "dashboards": "Custom dashboards with drag-drop widgets",
+      "widgets": "Pre-built for Contacts, Appointments, Opportunities, Payments",
+      "scheduling": "Automated report delivery to stakeholders"
+    },
+    "integrations": {
+      "payments": ["Stripe", "PayPal", "Authorize.net", "NMI", "Square"],
+      "documents": "Built-in e-signature and contract management",
+      "note": "No native DocuSign integration - HighLevel has built-in Documents & Contracts feature"
+    }
+  }
+}

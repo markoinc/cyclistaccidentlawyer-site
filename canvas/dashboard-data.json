@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-01-31T07:18:40Z",
+  "sessions": [
+    {
+      "key": "agent:main:main",
+      "displayName": "Main Session (Marko DM)",
+      "kind": "dm",
+      "model": "claude-opus-4-5",
+      "totalTokens": 135815,
+      "updatedAt": 1769843920000
+    },
+    {
+      "key": "agent:main:telegram:group:-5142100963",
+      "displayName": "telegram:g-head-agents",
+      "kind": "group",
+      "model": "claude-opus-4-5",
+      "totalTokens": 16074,
+      "updatedAt": 1769843920000
+    }
+  ],
+  "cronJobs": [
+    {
+      "id": "994485fd",
+      "name": "moltbook-engagement",
+      "enabled": true,
+      "state": { "nextRunAtMs": 1769844820000, "lastStatus": "ok" }
+    },
+    {
+      "id": "c2da6f88",
+      "name": "hourly-scrape-update",
+      "enabled": true,
+      "state": { "nextRunAtMs": 1769847520000, "lastStatus": "ok" }
+    },
+    {
+      "id": "40643069",
+      "name": "buyer-profile-scraper",
+      "enabled": true,
+      "state": { "nextRunAtMs": 1769858320000, "lastStatus": "ok" }
+    },
+    {
+      "id": "5cde7830",
+      "name": "dashboard-hourly-update",
+      "enabled": true,
+      "state": { "nextRunAtMs": 1769847520000, "lastStatus": "ok" }
+    },
+    {
+      "id": "e6109db7",
+      "name": "weekly-research-digest",
+      "enabled": true,
+      "state": { "nextRunAtMs": 1770448720000, "lastStatus": "never run" }
+    }
+  ],
+  "stats": {
+    "activeSessions": 2,
+    "cronJobs": 5,
+    "projects": 3,
+    "pipelineLeads": 13
+  }
+}

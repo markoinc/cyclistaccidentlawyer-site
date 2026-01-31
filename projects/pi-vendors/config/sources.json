@@ -1,0 +1,92 @@
+{
+  "reddit": {
+    "enabled": true,
+    "subreddits": [
+      "LawFirm", "lawyers", "Lawyertalk", "personalinjury", "legal",
+      "Insurance", "marketing", "PPC", "Entrepreneur", "smallbusiness",
+      "legaladvice", "Ask_Lawyers", "LawSchool", "paralegal"
+    ],
+    "keywords": [
+      "personal injury leads", "PI attorney marketing", "legal lead generation",
+      "lawyer leads", "mass tort leads", "medical malpractice leads",
+      "slip and fall leads", "workers comp leads", "legal intake services",
+      "legal answering service", "law firm marketing", "PI lawyer SEO",
+      "attorney lead gen", "case leads", "signed cases", "legal marketing agency",
+      "PPC for lawyers", "lawyer advertising", "legal leads scam",
+      "lead gen company", "intake service", "virtual receptionist legal",
+      "lawyer call center", "EJC", "Lead Docket", "Clio", "Filevine",
+      "Alert Communications", "Smith.ai", "Ruby Receptionist", "Lex Reception",
+      "Legal Conversion Center", "Market My Market", "Rankings.io",
+      "Scorpion Legal", "FindLaw", "Martindale", "Avvo", "Justia"
+    ],
+    "vendor_names": [
+      "Alert Communications", "Smith.ai", "Ruby Receptionist", "Lex Reception",
+      "Legal Conversion Center", "LegalMatch", "Nolo", "Avvo", "FindLaw",
+      "Martindale-Hubbell", "Justia", "Super Lawyers", "Lawyers.com",
+      "Rankings.io", "Market My Market", "Scorpion", "Postali",
+      "Consultwebs", "Mockingbird", "Foster Web Marketing", "PaperStreet",
+      "X Social Media", "CAMG", "eGenerationMarketing", "4LegalLeads",
+      "Legal Brand Marketing", "Case Fuel", "Hennessey Digital",
+      "Optimized Attorney", "Attorney Marketing Network"
+    ]
+  },
+  "linkedin": {
+    "enabled": true,
+    "search_queries": [
+      "legal lead generation", "PI attorney marketing", "personal injury leads",
+      "law firm marketing director", "legal marketing agency"
+    ],
+    "company_pages": [
+      "scorpion-legal", "findlaw", "martindale-avvo", "rankings-io"
+    ]
+  },
+  "review_sites": {
+    "google_reviews": {
+      "enabled": true,
+      "search_queries": ["legal lead generation company", "law firm marketing agency"]
+    },
+    "trustpilot": {
+      "enabled": true,
+      "categories": ["legal_services", "marketing_agencies"]
+    },
+    "g2": {
+      "enabled": true,
+      "categories": ["legal-marketing", "lead-generation"]
+    },
+    "capterra": {
+      "enabled": true,
+      "categories": ["legal-case-management", "lead-management"]
+    },
+    "bbb": {
+      "enabled": true,
+      "search_keywords": ["legal leads", "attorney marketing"]
+    },
+    "clutch": {
+      "enabled": true,
+      "categories": ["legal-marketing-agencies"]
+    }
+  },
+  "forums": {
+    "avvo": {
+      "enabled": true,
+      "sections": ["legal-marketing", "practice-management"]
+    },
+    "quora": {
+      "enabled": true,
+      "topics": ["Legal-Marketing", "Law-Firm-Management", "Personal-Injury-Law"]
+    }
+  },
+  "social": {
+    "twitter": {
+      "enabled": true,
+      "keywords": ["legal leads", "PI attorney marketing", "law firm marketing"],
+      "accounts_to_monitor": ["@scoraborinello", "@gikimarketing"]
+    }
+  },
+  "news": {
+    "google_news": {
+      "enabled": true,
+      "queries": ["legal marketing company lawsuit", "lead generation fraud lawyers"]
+    }
+  }
+}

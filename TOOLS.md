@@ -1,5 +1,32 @@
 # TOOLS.md - Local Notes
 
+## Model Architecture (Token Optimization)
+
+| Model | Use For | How |
+|-------|---------|-----|
+| **Claude Opus** | Brain - orchestration, decisions, talking to Marko | Main session |
+| **ChatGPT** | Planning, task breakdown | API/spawn |
+| **Codex CLI** | Coding (high reasoning) | `codex --model o4-mini --reasoning-effort high` |
+| **Grok** | X/Twitter search, social media | API |
+| **Gemini** | Internet research, bulk processing | API (key in .env.local) |
+| **Nano Banana** | Image generation | API |
+
+**Flow:** Marko → Opus (brain) → spawns muscles → Opus reviews → delivers
+
+## Coding Preference
+**Use Codex CLI with extra high thinking for all coding tasks.**
+- Command: `codex --model o4-mini --reasoning-effort high "task"`
+- Or spawn with thinking: `sessions_spawn` with `thinking: "high"`
+
+## IMPORTANT: Credentials Locations
+- **Notion API Key:** `~/.config/notion/` (just cat the file)
+- **Google Calendar:** `~/.config/gcal-pro/token.json`
+- **Google Drive:** Use OAuth token from gcal-pro (has drive scope). Refresh via `/oauth2.googleapis.com/token`, then hit Drive API directly.
+
+## Google Drive Folders
+- **Kurios Automated Business:** `1igaRyFYqMF0rAKR3rVcRWa747j9hroUQ`
+- **MVA Carlos & Mark Partnership:** `1qshu4wTkayK-3C_h8nPEy_YWtWoaPAUX`
+
 ## Google Calendar
 - **Authenticated as:** sierra@kuriosbrand.com
 - **Marko's calendar ID:** mark@kuriosbrand.com (use this, not 'primary')
@@ -48,6 +75,14 @@ When updating a document that already exists:
 5. **Keep same Name** - So it's clear it's an update
 
 This keeps history while surfacing only current/relevant docs.
+
+## X/Twitter API (@markkodg)
+- Credentials: `~/.config/x-api/credentials.json`
+- User ID: 1198729883867848706
+- OAuth 1.0a: Working (for posting)
+- Script: `/home/ec2-user/clawd/scripts/x_tools.py`
+- **READ:** Scrape (save API credits)
+- **WRITE:** Use API (posting, replies, likes)
 
 ## DataForSEO API
 - Login: mark@kuriosbrand.com

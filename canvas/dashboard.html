@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Dashboard - KuriosBrand</title>
+    <style>
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #242424;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-blue: #3b82f6;
+            --accent-green: #22c55e;
+            --accent-yellow: #eab308;
+            --accent-red: #ef4444;
+            --accent-purple: #a855f7;
+            --accent-orange: #f97316;
+            --border: #333;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .header-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        
+        .refresh-btn {
+            background: var(--accent-blue);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        
+        .refresh-btn:hover { opacity: 0.9; transform: scale(1.02); }
+        .refresh-btn.loading { opacity: 0.6; cursor: wait; }
+        .refresh-btn.loading svg { animation: spin 1s linear infinite; }
+        
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .last-updated { color: var(--text-secondary); font-size: 13px; }
+        
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+        }
+        
+        .status-dot.offline { background: var(--accent-red); }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .badge {
+            background: var(--bg-secondary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        
+        .item {
+            background: var(--bg-secondary);
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--accent-blue);
+            transition: transform 0.1s;
+        }
+        
+        .item:hover { transform: translateX(4px); }
+        .item:last-child { margin-bottom: 0; }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .item-title { font-weight: 500; font-size: 14px; }
+        
+        .item-status {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .status-active { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); }
+        .status-pending { background: rgba(234, 179, 8, 0.2); color: var(--accent-yellow); }
+        .status-error { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+        
+        .item-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item { display: flex; align-items: center; gap: 4px; }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .stat-card:hover { border-color: var(--accent-blue); transform: translateY(-2px); }
+        .stat-value { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+        .stat-label { font-size: 13px; color: var(--text-secondary); }
+        
+        .stat-blue { color: var(--accent-blue); }
+        .stat-green { color: var(--accent-green); }
+        .stat-yellow { color: var(--accent-yellow); }
+        .stat-purple { color: var(--accent-purple); }
+        
+        .project-item { border-left-color: var(--accent-purple); }
+        .cron-item { border-left-color: var(--accent-yellow); }
+        .session-item { border-left-color: var(--accent-green); }
+        
+        .empty-state { text-align: center; padding: 40px; color: var(--text-secondary); }
+        .full-width { grid-column: 1 / -1; }
+        
+        .pipeline-card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+        .pipeline-column {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 14px;
+        }
+        
+        .pipeline-header {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .pipeline-item {
+            background: var(--bg-card);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .pipeline-item:hover { border-left: 2px solid var(--accent-blue); }
+        .pipeline-item-meta { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .tool-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+        
+        .tool-btn:hover { border-color: var(--accent-blue); background: var(--bg-card); }
+        .tool-btn .icon { font-size: 20px; margin-bottom: 6px; }
+        
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+        
+        .tab {
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        
+        .tab:hover { color: var(--text-primary); background: var(--bg-secondary); }
+        .tab.active { color: var(--text-primary); background: var(--accent-blue); }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        @media (max-width: 900px) {
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .grid { grid-template-columns: 1fr; }
+            .pipeline-card { grid-template-columns: 1fr; }
+        }
+        
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-card) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+            height: 20px;
+        }
+        
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏔️ Sierra Dashboard</h1>
+        <div class="header-controls">
+            <div class="connection-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="connectionText">Connected</span>
+            </div>
+            <span class="last-updated" id="lastUpdated">Loading...</span>
+            <button class="refresh-btn" onclick="refreshData()" id="refreshBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12a9 9 0 11-6.219-8.56"/>
+                    <polyline points="21 3 21 9 15 9"/>
+                </svg>
+                Refresh
+            </button>
+        </div>
+    </div>
+
+    <div class="stats-row" id="statsRow">
+        <div class="stat-card" onclick="scrollToSection('sessions')">
+            <div class="stat-value stat-green" id="statSessions">-</div>
+            <div class="stat-label">Active Sessions</div>
+        </div>
+        <div class="stat-card" onclick="scrollToSection('cron')">
+            <div class="stat-value stat-yellow" id="statCron">-</div>
+            <div class="stat-label">Cron Jobs</div>
+        </div>
+        <div class="stat-card" onclick="scrollToSection('projects')">
+            <div class="stat-value stat-purple" id="statProjects">3</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-card" onclick="scrollToSection('pipeline')">
+            <div class="stat-value stat-blue" id="statPipeline">13</div>
+            <div class="stat-label">Pipeline Leads</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <!-- Active Sessions -->
+        <div class="card" id="sessions">
+            <div class="card-header">
+                <span class="card-title">🟢 Active Sessions</span>
+                <span class="badge" id="sessionCount">0</span>
+            </div>
+            <div id="sessionsList"><div class="loading-skeleton"></div></div>
+        </div>
+
+        <!-- Cron Jobs -->
+        <div class="card" id="cron">
+            <div class="card-header">
+                <span class="card-title">⏰ Scheduled Jobs</span>
+                <span class="badge" id="cronCount">0</span>
+            </div>
+            <div id="cronList"><div class="loading-skeleton"></div></div>
+        </div>
+
+        <!-- Projects -->
+        <div class="card" id="projects">
+            <div class="card-header">
+                <span class="card-title">📁 Active Projects</span>
+            </div>
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('projects', 'active')">Active</div>
+                <div class="tab" onclick="switchTab('projects', 'legacy')">Legacy</div>
+            </div>
+            <div id="projectsList">
+                <div class="tab-content active" id="projects-active">
+                    <div class="item project-item">
+                        <div class="item-header">
+                            <span class="item-title">🚗 MVA Lead Gen</span>
+                            <span class="item-status status-active">Active</span>
+                        </div>
+                        <div class="item-meta">
+                            <span class="meta-item">Motor vehicle accident leads for lawyers</span>
+                        </div>
+                        <div class="item-meta" style="margin-top: 6px;">
+                            <span class="meta-item">🤝 Partners: Cases on Demand, Inquired Esquire</span>
+                        </div>
+                    </div>
+                    <div class="item project-item">
+                        <div class="item-header">
+                            <span class="item-title">🌐 Texas MVA Site</span>
+                            <span class="item-status status-pending">In Dev</span>
+                        </div>
+                        <div class="item-meta">
+                            <span class="meta-item">🔗 github.com/markoinc/texas-mva-site</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="projects-legacy">
+                    <div class="item project-item">
+                        <div class="item-header">
+                            <span class="item-title">🏗️ Concrete Rank & Rent</span>
+                            <span class="item-status status-pending">Needs Monetization</span>
+                        </div>
+                        <div class="item-meta">
+                            <span class="meta-item">📍 Local SEO sites still generating leads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Tools -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">⚡ Quick Actions</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-btn" onclick="copyToClipboard('📊 Status check requested')">
+                    <div class="icon">📊</div>
+                    <div>Check Status</div>
+                </div>
+                <div class="tool-btn" onclick="copyToClipboard('📧 Check my email for urgent messages')">
+                    <div class="icon">📧</div>
+                    <div>Check Email</div>
+                </div>
+                <div class="tool-btn" onclick="copyToClipboard('📅 What\'s on my calendar today?')">
+                    <div class="icon">📅</div>
+                    <div>Calendar</div>
+                </div>
+                <div class="tool-btn" onclick="copyToClipboard('🔍 Search Notion for recent updates')">
+                    <div class="icon">🔍</div>
+                    <div>Search Notion</div>
+                </div>
+                <div class="tool-btn" onclick="copyToClipboard('📈 Pipeline update - summarize hot leads')">
+                    <div class="icon">📈</div>
+                    <div>Pipeline</div>
+                </div>
+                <div class="tool-btn" onclick="copyToClipboard('🤖 List active subagents and their status')">
+                    <div class="icon">🤖</div>
+                    <div>Agents</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales Pipeline -->
+        <div class="card full-width" id="pipeline">
+            <div class="card-header">
+                <span class="card-title">🔥 Sales Pipeline</span>
+            </div>
+            <div class="pipeline-card">
+                <div class="pipeline-column">
+                    <div class="pipeline-header">
+                        <span>🔴 Hot (Need Call)</span>
+                        <span class="badge">7</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Rich Hyde</strong> - Trial Tribe
+                        <div class="pipeline-item-meta">Wants reliable vendor replacement</div>
+                    </div>
+                    <div class="pipeline-item" style="border-left: 2px solid var(--accent-red);">
+                        <strong>Scott Barney</strong> - VA Beach
+                        <div class="pipeline-item-meta">⚠️ HIGH PRIORITY - burned $250k</div>
+                    </div>
+                    <div class="pipeline-item" style="border-left: 2px solid var(--accent-red);">
+                        <strong>Ross Robin</strong>
+                        <div class="pipeline-item-meta">⚠️ HIGH PRIORITY - new PI firm</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Jalal Abdallah</strong>
+                        <div class="pipeline-item-meta">$50k multi-state, verbal commit</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Omeed Hakimianpour</strong>
+                        <div class="pipeline-item-meta">$50k CA campaign</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Dagmawi Getachew</strong> - DG Firm
+                        <div class="pipeline-item-meta">Vetted leads, small test first</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Lucas Naccarati</strong> - Muniz Kim Law
+                        <div class="pipeline-item-meta">Scalable paid acquisition</div>
+                    </div>
+                </div>
+                <div class="pipeline-column">
+                    <div class="pipeline-header">
+                        <span>🟡 In Progress</span>
+                        <span class="badge">5</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Daniel Ramirez</strong>
+                        <div class="pipeline-item-meta">Dallas→Houston, Spanish leads</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Josh Sweeney</strong> - Shane Smith Law
+                        <div class="pipeline-item-meta">YouTube/TikTok interest</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Michael Shirts</strong> - BS Injury Law
+                        <div class="pipeline-item-meta">Las Vegas, needs branding</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Michael Schulz</strong> - RMD Law
+                        <div class="pipeline-item-meta">📅 Follow-up 02/10</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <strong>Joan Suh</strong>
+                        <div class="pipeline-item-meta">Call scheduled</div>
+                    </div>
+                </div>
+                <div class="pipeline-column">
+                    <div class="pipeline-header">
+                        <span>✅ Closed</span>
+                        <span class="badge">1</span>
+                    </div>
+                    <div class="pipeline-item" style="border-left: 2px solid var(--accent-green);">
+                        <strong>Jason E</strong> - GCE Law
+                        <div class="pipeline-item-meta">✅ CLOSED</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Info -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">💼 Business Info</span>
+            </div>
+            <div class="item">
+                <div class="item-title">💰 Lead Pricing Model</div>
+                <div class="item-meta" style="margin-top: 8px; flex-direction: column; gap: 4px;">
+                    <span>• $250-350/lead (varies by state)</span>
+                    <span>• ~$2,000/signed case target</span>
+                    <span>• 8-15% lead-to-signed conversion</span>
+                    <span>• $15k minimum media spend</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">🤝 Partners</div>
+                <div class="item-meta" style="margin-top: 8px; flex-direction: column; gap: 4px;">
+                    <span>• Max & Jeremy @ Cases on Demand</span>
+                    <span>• Patrick @ Inquired Esquire ($100/transfer OR $350/case)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">🖥️ System Status</span>
+            </div>
+            <div class="item">
+                <div class="item-title">📍 Current Location</div>
+                <div class="item-meta" style="margin-top: 8px;">
+                    <span>Pisac, Peru → Next: Israel</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">🤖 Model</div>
+                <div class="item-meta" style="margin-top: 8px;">
+                    <span>claude-opus-4-5 (Anthropic)</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">📊 Token Usage</div>
+                <div class="item-meta" style="margin-top: 8px;">
+                    <span id="tokenUsage">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utility functions
+        function timeAgo(timestamp) {
+            const seconds = Math.floor((Date.now() - timestamp) / 1000);
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return Math.floor(seconds / 60) + 'm ago';
+            if (seconds < 86400) return Math.floor(seconds / 3600) + 'h ago';
+            return Math.floor(seconds / 86400) + 'd ago';
+        }
+
+        function formatNextRun(timestamp) {
+            const diff = timestamp - Date.now();
+            if (diff < 0) return 'overdue';
+            if (diff < 60000) return 'in <1m';
+            if (diff < 3600000) return 'in ' + Math.floor(diff / 60000) + 'm';
+            if (diff < 86400000) return 'in ' + Math.floor(diff / 3600000) + 'h';
+            return 'in ' + Math.floor(diff / 86400000) + 'd';
+        }
+
+        function formatNumber(n) {
+            return n ? n.toLocaleString() : '0';
+        }
+
+        // Render functions
+        function renderSessions(sessions) {
+            const container = document.getElementById('sessionsList');
+            document.getElementById('sessionCount').textContent = sessions.length;
+            document.getElementById('statSessions').textContent = sessions.length;
+            
+            let totalTokens = 0;
+            sessions.forEach(s => totalTokens += (s.totalTokens || 0));
+            document.getElementById('tokenUsage').textContent = formatNumber(totalTokens) + ' total tokens';
+            
+            if (sessions.length === 0) {
+                container.innerHTML = '<div class="empty-state">No active sessions</div>';
+                return;
+            }
+
+            container.innerHTML = sessions.map(s => {
+                const name = s.displayName || s.key;
+                const shortName = name.length > 35 ? name.slice(0, 35) + '...' : name;
+                return `
+                <div class="item session-item">
+                    <div class="item-header">
+                        <span class="item-title">${shortName}</span>
+                        <span class="item-status status-active">${s.kind || 'session'}</span>
+                    </div>
+                    <div class="item-meta">
+                        <span class="meta-item">📊 ${formatNumber(s.totalTokens)} tokens</span>
+                        <span class="meta-item">⏱️ ${timeAgo(s.updatedAt)}</span>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function renderCronJobs(jobs) {
+            const container = document.getElementById('cronList');
+            const enabledJobs = jobs.filter(j => j.enabled);
+            document.getElementById('cronCount').textContent = enabledJobs.length;
+            document.getElementById('statCron').textContent = enabledJobs.length;
+            
+            if (jobs.length === 0) {
+                container.innerHTML = '<div class="empty-state">No scheduled jobs</div>';
+                return;
+            }
+
+            container.innerHTML = jobs.map(j => `
+                <div class="item cron-item">
+                    <div class="item-header">
+                        <span class="item-title">${j.name || j.id.slice(0,8)}</span>
+                        <span class="item-status ${j.enabled ? 'status-active' : 'status-pending'}">${j.enabled ? 'enabled' : 'disabled'}</span>
+                    </div>
+                    <div class="item-meta">
+                        <span class="meta-item">⏰ ${j.state?.nextRunAtMs ? formatNextRun(j.state.nextRunAtMs) : 'unknown'}</span>
+                        <span class="meta-item">📍 Last: ${j.state?.lastStatus || 'never'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateTimestamp() {
+            document.getElementById('lastUpdated').textContent = 
+                'Updated: ' + new Date().toLocaleTimeString();
+        }
+
+        // Tab switching
+        function switchTab(section, tabId) {
+            const tabs = document.querySelectorAll(`#${section} .tab`);
+            const contents = document.querySelectorAll(`#${section} .tab-content`);
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(`${section}-${tabId}`).classList.add('active');
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.currentTarget;
+                btn.style.borderColor = 'var(--accent-green)';
+                setTimeout(() => btn.style.borderColor = '', 1000);
+            });
+        }
+
+        // Data fetching
+        async function fetchData() {
+            try {
+                const response = await fetch('/dashboard-data.json?' + Date.now());
+                if (!response.ok) throw new Error('Failed to fetch');
+                return await response.json();
+            } catch (e) {
+                console.error('Fetch error:', e);
+                return null;
+            }
+        }
+
+        async function refreshData() {
+            const btn = document.getElementById('refreshBtn');
+            btn.classList.add('loading');
+            
+            const data = await fetchData();
+            
+            if (data) {
+                document.getElementById('statusDot').classList.remove('offline');
+                document.getElementById('connectionText').textContent = 'Connected';
+                
+                renderSessions(data.sessions || []);
+                renderCronJobs(data.cronJobs || []);
+            } else {
+                document.getElementById('statusDot').classList.add('offline');
+                document.getElementById('connectionText').textContent = 'Offline';
+            }
+            
+            updateTimestamp();
+            btn.classList.remove('loading');
+        }
+
+        // Initial load
+        refreshData();
+        
+        // Auto-refresh every 2 minutes
+        setInterval(refreshData, 120000);
+    </script>
+</body>
+</html>

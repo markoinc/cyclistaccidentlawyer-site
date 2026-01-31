@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "title": "GoHighLevel Documentation - Sales Automation System",
+    "source": "https://help.gohighlevel.com/",
+    "crawledAt": "2026-01-30",
+    "purpose": "Key documentation for building a sales automation system (lead form → booked call → sales call → docusign → closed)"
+  },
+  "categories": [
+    {
+      "name": "Workflows & Automations",
+      "description": "Core automation engine for building sequences triggered by events",
+      "docs": [
+        {
+          "title": "Introduction to Workflows and Automations",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002445-introduction-to-workflows-and-automations",
+          "keyConceptsFeatures": [
+            "Workflows automate repetitive tasks via triggers and actions",
+            "Triggers = starting events (form submission, appointment booked, etc.)",
+            "Actions = tasks performed (send email, update CRM, assign lead)",
+            "No coding required - visual builder interface",
+            "Can include multiple triggers and actions in one workflow"
+          ],
+          "salesFlowApplication": "Foundation for entire automation system. Every stage transition (lead → qualified → booked → closed) is powered by workflows."
+        },
+        {
+          "title": "Getting Started with Workflows",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002288-getting-started-with-workflows",
+          "keyConceptsFeatures": [
+            "Three steps: Choose Trigger → Add Filters → Add Actions",
+            "Trigger filters allow precision (e.g., only specific forms, specific call types)",
+            "Pre-built Workflow Recipes available as templates",
+            "IF/Else conditions for branching logic",
+            "Chaining multiple workflows together for complex processes",
+            "Webhooks for external integrations",
+            "Allow Reentry setting controls if contact can re-enter workflow"
+          ],
+          "salesFlowApplication": "Use workflow chaining: Workflow A (lead capture) → Workflow B (nurture) → Workflow C (booked call) → Workflow D (post-call) → Workflow E (contract signed). Each stage has its own workflow."
+        },
+        {
+          "title": "Workflow Builder Walkthrough",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001254-workflow-builder-walkthrough",
+          "keyConceptsFeatures": [
+            "Infinite Canvas for visual workflow design",
+            "Stats View for monitoring communication performance",
+            "Test Workflow feature with real contacts",
+            "Version History for tracking changes",
+            "Draft vs Published modes",
+            "Drip actions control flow timing",
+            "Goal actions let contacts skip steps",
+            "Best practice: keep workflows small enough to view in one screen"
+          ],
+          "salesFlowApplication": "Use Stats View to monitor email/SMS performance at each stage. Use Draft mode to test before going live. Goal events useful for skip logic (e.g., if they book, skip nurture sequence)."
+        },
+        {
+          "title": "A List of Workflow Triggers",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002292-a-list-of-workflow-triggers",
+          "keyConceptsFeatures": [
+            "Contact Events: Birthday, Contact Created, Contact Changed, Tag Added/Removed",
+            "Form Events: Form Submitted, Facebook Lead Form, Trigger Links Clicked",
+            "Call Events: Call Status (incoming, outgoing, voicemail)",
+            "Email Events: Open, Click, Bounce, Unsubscribe",
+            "Appointment: Status Changed, Customer Booked",
+            "Opportunity: Status Changed, Created, Pipeline Stage Changed, Stale Opportunity",
+            "Payments: Invoice, Payment Received, Order Form Submission, Documents & Contracts, Subscription Status",
+            "Inbound Webhook for external system integrations"
+          ],
+          "salesFlowApplication": "Key triggers for sales flow: Form Submitted (lead capture), Customer Booked Appointment (booking), Opportunity Status/Stage Changed (pipeline movement), Documents & Contracts (signed/completed), Payment Received (closed won)."
+        },
+        {
+          "title": "A List of Workflow Actions",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002294-what-are-workflow-actions-complete-list-",
+          "keyConceptsFeatures": [
+            "Contact Actions: Create, Update, Tag, Assign to User, Add Note/Task",
+            "Communication: Send Email, Send SMS, Call, WhatsApp, Slack, Internal Notification",
+            "Opportunities: Create/Update Opportunity, Remove Opportunity",
+            "Appointments: Update Status, Generate One-Time Booking Link",
+            "Payments: Stripe One-Time Charge, Send Invoice, Send Documents & Contracts",
+            "Logic: IF/Else, Wait Step, Split Test, Go To (chain workflows), Remove from Workflow",
+            "AI: GPT-Powered AI Prompt action",
+            "Data: Webhooks, Google Sheets integration"
+          ],
+          "salesFlowApplication": "Critical actions: Send Email/SMS (follow-ups), Create/Update Opportunity (CRM tracking), Send Documents & Contracts (proposals/agreements), IF/Else (branch based on lead quality), Wait Steps (spacing communications)."
+        }
+      ]
+    },
+    {
+      "name": "Pipeline & CRM Setup",
+      "description": "Visual sales pipeline management and opportunity tracking",
+      "docs": [
+        {
+          "title": "Understanding Pipelines",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001982-understanding-pipelines",
+          "keyConceptsFeatures": [
+            "Visual kanban-style sales tracking",
+            "Custom stages representing each step in sales journey",
+            "Track conversion rates, identify bottlenecks",
+            "Automate actions when opportunities move stages",
+            "Example stages: Lead Capture → Qualification → Appointment → Proposal → Closing",
+            "Best practice: Keep stages action-oriented with clear criteria",
+            "Use pipeline triggers for automated follow-ups"
+          ],
+          "salesFlowApplication": "Create pipeline stages matching sales flow: New Lead → Discovery Call Booked → Call Completed → Proposal Sent → Contract Signed → Closed Won. Each stage can trigger next workflow."
+        },
+        {
+          "title": "Understanding Opportunities",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001983-understanding-opportunities-in-highlevel",
+          "keyConceptsFeatures": [
+            "Opportunity = potential sale linked to a contact",
+            "Tracks value, status, stage, owner, and history",
+            "Statuses: Open, Won, Lost, Abandoned",
+            "Centralized notes and communication history",
+            "Stage-based forecasting for revenue prediction",
+            "Automation triggers when status/stage changes",
+            "Team assignment and collaboration features"
+          ],
+          "salesFlowApplication": "Create opportunity when form submitted with deal value. Move through stages as sales progresses. Use Won status when contract signed and payment received. Track abandoned for follow-up campaigns."
+        },
+        {
+          "title": "Workflow Action - Create Opportunity",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000004752-workflow-action-create-opportunity",
+          "keyConceptsFeatures": [
+            "Auto-create opportunity when workflow triggers",
+            "Configure: Pipeline, Stage, Name, Source, Status, Value",
+            "Duplicate handling: allow or prevent multiple opportunities per contact",
+            "Dynamic naming using custom values (e.g., {{contact.first_name}})",
+            "Opportunity owner can be auto-assigned or follow contact owner",
+            "Edge case: No contact = no opportunity created"
+          ],
+          "salesFlowApplication": "Trigger: Form Submitted → Create Opportunity in 'New Lead' stage with source 'Website'. Set initial value if known. Enable duplicates for repeat customers or disable for single-deal businesses."
+        },
+        {
+          "title": "Workflow Trigger - Opportunity Changed / Pipeline Stage Changed",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000000886-workflow-trigger-opportunity-changed",
+          "keyConceptsFeatures": [
+            "Trigger workflows when opportunity data changes",
+            "Opportunity Status Changed: fires on Open/Won/Lost/Abandoned",
+            "Pipeline Stage Changed: fires when moving between stages",
+            "Stale Opportunity: fires when stuck in stage too long",
+            "Filter by specific pipelines or stages"
+          ],
+          "salesFlowApplication": "Pipeline Stage Changed is key trigger for advancing sales flow. E.g., when moved to 'Contract Sent' stage → send contract via workflow. When moved to 'Closed Won' → send welcome sequence."
+        }
+      ]
+    },
+    {
+      "name": "Calendar & Booking",
+      "description": "Appointment scheduling and calendar management",
+      "docs": [
+        {
+          "title": "How to Set Up a Booking Calendar",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000005061-getting-started-setup-a-booking-calendar",
+          "keyConceptsFeatures": [
+            "Personal Booking Calendar for 1-on-1 meetings",
+            "Configure availability, buffer times, meeting durations",
+            "Generate shareable booking link or embed code",
+            "Connect to Google Calendar for sync",
+            "Set up automated reminders to reduce no-shows",
+            "Recipe: Appointment Confirmation + Reminder workflow"
+          ],
+          "salesFlowApplication": "Sales call booking: Create 'Sales Call' calendar with appropriate duration (30-60 min). Share link in follow-up emails. Connect to rep's calendar. Set up confirmation + 24hr + 1hr reminders."
+        },
+        {
+          "title": "Book Appointment Action in Workflows",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000004209-workflow-action-book-appointment",
+          "keyConceptsFeatures": [
+            "Auto-schedule appointments from workflow triggers",
+            "Team member assignment: Calendar Default (round robin) or specific person",
+            "Dynamic date/time from trigger data (webhooks, forms)",
+            "Override availability option (use sparingly)",
+            "IF/Else branching on booking success/failure",
+            "Limitation: Cannot use with recurring calendars"
+          ],
+          "salesFlowApplication": "Auto-book follow-up calls after initial consultation. Branch logic: if booking succeeds → confirmation sequence, if fails → notify team to manually schedule."
+        },
+        {
+          "title": "Appointment Status Trigger",
+          "url": "https://help.gohighlevel.com/support/solutions/48000449585",
+          "keyConceptsFeatures": [
+            "Trigger on: Scheduled, Rescheduled, No-Show, Completed, Cancelled",
+            "Customer Booked Appointment trigger for new bookings",
+            "Filter by specific calendar",
+            "Update Appointment Status action for marking completed"
+          ],
+          "salesFlowApplication": "Customer Booked → move opportunity to 'Call Scheduled' stage + send confirmation. No-Show → trigger re-engagement sequence. Completed → move to next stage + send follow-up."
+        }
+      ]
+    },
+    {
+      "name": "SMS & Email Sequences",
+      "description": "Automated communication and follow-up campaigns",
+      "docs": [
+        {
+          "title": "Getting Started - Automatic Email and SMS Followup",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000005060-getting-started-automatic-email-and-sms-followup",
+          "keyConceptsFeatures": [
+            "Email Drip Sequence recipe for automated follow-up",
+            "Form Submitted trigger with form filter",
+            "Customize subject, message content, attachments",
+            "SMS follow-up for higher engagement",
+            "Drip Mode: control batch size and interval (e.g., 100 contacts per day)",
+            "Prevents overwhelming communication channels"
+          ],
+          "salesFlowApplication": "Lead capture form → Email drip (Day 1: Welcome, Day 3: Value content, Day 5: CTA to book call). Add SMS touch points for urgency (Day 2: Quick check-in, Day 4: Booking reminder)."
+        },
+        {
+          "title": "Workflow Action - Send Email",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002472-workflow-action-send-email",
+          "keyConceptsFeatures": [
+            "Personalized email with custom values (merge fields)",
+            "HTML or plain text templates",
+            "Attachments support",
+            "Track opens and clicks via Email Events trigger",
+            "Use IF/Else to branch based on email engagement"
+          ],
+          "salesFlowApplication": "Personalize with {{contact.first_name}}. Include calendar booking link. Track opens - if no open after 48hrs, send SMS follow-up."
+        },
+        {
+          "title": "Workflow Action - Send SMS",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002474-workflow-action-send-sms",
+          "keyConceptsFeatures": [
+            "Automated personalized text messages",
+            "Custom values for personalization",
+            "Great for reminders, promotions, quick updates",
+            "Higher open rates than email",
+            "Respect DND settings"
+          ],
+          "salesFlowApplication": "SMS for high-intent moments: appointment reminders, booking CTA, contract signing reminder. Keep messages short and actionable."
+        },
+        {
+          "title": "SMS Templates (Snippets)",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/48000981405-sms-templates-snippets-overview",
+          "keyConceptsFeatures": [
+            "Pre-saved text templates for consistency",
+            "Use in conversations, workflows, campaigns",
+            "Insert custom values dynamically"
+          ],
+          "salesFlowApplication": "Create templates for: Initial follow-up, Booking confirmation, Pre-call reminder, Post-call follow-up, Contract sent notification."
+        }
+      ]
+    },
+    {
+      "name": "Forms & Landing Pages",
+      "description": "Lead capture and funnel building",
+      "docs": [
+        {
+          "title": "Getting Started - Launch A Funnel",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000005057-getting-started-launch-a-funnel",
+          "keyConceptsFeatures": [
+            "Funnels = step-by-step landing pages for specific goals",
+            "Create from blank, AI, or templates",
+            "Template library with proven designs",
+            "Funnel Editor for customization",
+            "Form Builder integration",
+            "Custom domain support",
+            "Split testing on funnels"
+          ],
+          "salesFlowApplication": "Lead gen funnel: Step 1 (Landing page with offer) → Step 2 (Form capture) → Step 3 (Thank you page with calendar embed). Each step optimized for conversion."
+        },
+        {
+          "title": "Site Builder Overview",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001633-sites-overview",
+          "keyConceptsFeatures": [
+            "Funnels vs Websites: Funnels for specific conversion goals, Websites for general presence",
+            "Drag-and-drop editor with sections, rows, columns, elements",
+            "Mobile responsive editing",
+            "Tracking code integration (Facebook Pixel, Google Analytics)",
+            "Pop-up settings for lead capture",
+            "SEO meta data configuration",
+            "Order forms for payment collection",
+            "Stats tracking for page views and opt-ins"
+          ],
+          "salesFlowApplication": "Build landing page targeting ideal customer. Include: Headline, Pain points, Solution, Social proof, Lead capture form. Use pop-up for exit intent."
+        },
+        {
+          "title": "Creating Forms Inside Funnels",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000006719-create-forms-surveys-inside-the-site-builder",
+          "keyConceptsFeatures": [
+            "Form Builder integrated in funnel/website editor",
+            "Customizable fields for lead qualification",
+            "Form submission triggers workflows",
+            "Survey functionality for more detailed data capture"
+          ],
+          "salesFlowApplication": "Lead qualification form: Name, Email, Phone (required). Optional: Company size, Budget range, Timeline (helps qualify and segment leads)."
+        },
+        {
+          "title": "Form Submitted Trigger",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000002550-workflow-trigger-form-submitted",
+          "keyConceptsFeatures": [
+            "Triggers workflow when any/specific form submitted",
+            "Filter by form name",
+            "Access form field data in workflow",
+            "Most common entry point for sales automation"
+          ],
+          "salesFlowApplication": "Form Submitted → Create Contact → Create Opportunity → Add Tag → Send Welcome Email → Wait 5 min → Send SMS → Add to Nurture Sequence. This is the starting point of entire sales flow."
+        }
+      ]
+    },
+    {
+      "name": "Documents & Contracts",
+      "description": "Proposals, e-signatures, and contract management",
+      "docs": [
+        {
+          "title": "Documents & Contracts in HighLevel – Setup and Guide",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000000594-how-to-use-documents-contracts-",
+          "keyConceptsFeatures": [
+            "Built-in document/contract management under Payments",
+            "Create from blank, upload PDF, or use templates",
+            "E-signatures with full audit trail (IP, timestamp)",
+            "Integrated payments - collect on signing",
+            "Variables for dynamic content (contact name, dates, etc.)",
+            "Multiple recipients with signing order",
+            "Document statuses: Draft, Sent, Viewed, Signed, Completed",
+            "Expiry dates for time-limited offers"
+          ],
+          "salesFlowApplication": "After sales call, send proposal document with: Services outlined, Pricing table, Terms, E-signature field, Payment collection. Track viewing to know when to follow up."
+        },
+        {
+          "title": "Send Contracts & Proposals Using Workflows",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001301-how-to-create-and-send-document-or-contract-templates-automatically-in-a-workflow",
+          "keyConceptsFeatures": [
+            "Send Documents & Contracts workflow action",
+            "Trigger-based sending (tag added, stage change, etc.)",
+            "Reusable templates with dynamic custom values",
+            "Options: Send directly or Create as Draft for review",
+            "Send via Email, SMS, or both",
+            "Track status in Documents dashboard",
+            "Follow-up workflow on document events"
+          ],
+          "salesFlowApplication": "Trigger: Opportunity moved to 'Proposal Stage' → Send proposal template via email. Trigger: Opportunity moved to 'Contract Stage' → Send contract template. Use dynamic values for personalization."
+        },
+        {
+          "title": "Automate Workflows with Documents & Contracts Trigger",
+          "url": "https://help.gohighlevel.com/support/solutions/articles/155000001491-workflow-trigger-documents-contracts",
+          "keyConceptsFeatures": [
+            "Trigger workflows when document status changes",
+            "Statuses: Sent, Viewed, Signed/Accepted, Completed",
+            "Filter by: Template, Recipient Type, Value",
+            "Ideal for: Sending notifications, updating pipeline, tagging contacts",
+            "Multiple status changes can trigger separately"
+          ],
+          "salesFlowApplication": "Document Viewed → Send internal notification to follow up. Document Signed → Move opportunity to 'Closed Won' stage + Send welcome email + Create invoice. This closes the loop from lead to customer."
+        }
+      ]
+    }
+  ],
+  "salesFlowBlueprint": {
+    "title": "Complete Sales Automation Flow Blueprint",
+    "stages": [
+      {
+        "stage": "1. Lead Capture",
+        "pipelineStage": "New Lead",
+        "triggers": ["Form Submitted", "Facebook Lead Form"],
+        "actions": [
+          "Create Contact (if new)",
+          "Create Opportunity in 'New Lead' stage",
+          "Add tag 'New Lead'",
+          "Send Welcome Email",
+          "Wait 5 minutes",
+          "Send SMS introduction"
+        ],
+        "nextStageCondition": "Lead responds or engages"
+      },
+      {
+        "stage": "2. Nurture Sequence",
+        "pipelineStage": "Nurturing",
+        "triggers": ["Tag Added: New Lead", "Email Events (no engagement)"],
+        "actions": [
+          "Email Drip Sequence (3-5 emails over 7 days)",
+          "SMS touchpoints (Day 2, Day 5)",
+          "IF/Else: If link clicked → move to qualified",
+          "IF/Else: If no engagement after 7 days → move to cold list"
+        ],
+        "nextStageCondition": "Books a call or shows high engagement"
+      },
+      {
+        "stage": "3. Call Booked",
+        "pipelineStage": "Discovery Call Scheduled",
+        "triggers": ["Customer Booked Appointment"],
+        "actions": [
+          "Update opportunity to 'Call Scheduled' stage",
+          "Send confirmation email with calendar invite",
+          "Send SMS confirmation",
+          "Wait until 24hrs before → Send reminder email",
+          "Wait until 1hr before → Send SMS reminder"
+        ],
+        "nextStageCondition": "Appointment completed"
+      },
+      {
+        "stage": "4. Sales Call Completed",
+        "pipelineStage": "Call Completed",
+        "triggers": ["Appointment Status: Completed"],
+        "actions": [
+          "Update opportunity stage",
+          "Send follow-up email with summary",
+          "IF/Else: If qualified → Send proposal",
+          "IF/Else: If not ready → Add to long-term nurture"
+        ],
+        "nextStageCondition": "Proposal/contract sent"
+      },
+      {
+        "stage": "5. Proposal/Contract Sent",
+        "pipelineStage": "Proposal Sent",
+        "triggers": ["Pipeline Stage Changed to Proposal Sent"],
+        "actions": [
+          "Send Documents & Contracts (proposal template)",
+          "Wait 2 days → If not viewed → Send reminder email",
+          "Wait 5 days → If not signed → Send SMS follow-up",
+          "Internal notification when viewed"
+        ],
+        "nextStageCondition": "Contract signed"
+      },
+      {
+        "stage": "6. Contract Signed / Closed Won",
+        "pipelineStage": "Closed Won",
+        "triggers": ["Documents & Contracts: Signed/Completed", "Payment Received"],
+        "actions": [
+          "Update opportunity status to 'Won'",
+          "Move to 'Closed Won' stage",
+          "Send welcome/onboarding email",
+          "Send internal notification to team",
+          "Create invoice (if not paid)",
+          "Add to customer community/course",
+          "Remove from sales workflows"
+        ],
+        "nextStageCondition": "N/A - Sale complete"
+      }
+    ]
+  },
+  "keyUrls": {
+    "workflowsMain": "https://help.gohighlevel.com/support/solutions/48000455132",
+    "calendarsMain": "https://help.gohighlevel.com/support/solutions/48000449585",
+    "documentsMain": "https://help.gohighlevel.com/support/solutions/48000453974",
+    "funnelsMain": "https://help.gohighlevel.com/support/solutions/folders/48000666011",
+    "pipelinesMain": "https://help.gohighlevel.com/support/solutions/articles/155000001982-understanding-pipelines"
+  },
+  "notionImportInstructions": {
+    "method": "Import as database or pages",
+    "suggestedProperties": [
+      {"name": "Title", "type": "title"},
+      {"name": "Category", "type": "select"},
+      {"name": "URL", "type": "url"},
+      {"name": "Key Concepts", "type": "multi_select"},
+      {"name": "Sales Flow Stage", "type": "select"},
+      {"name": "Triggers Used", "type": "multi_select"},
+      {"name": "Actions Used", "type": "multi_select"}
+    ],
+    "note": "Can be imported via Notion API or manually converted to CSV for database import"
+  }
+}

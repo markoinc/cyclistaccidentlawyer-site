@@ -16,6 +16,15 @@ Before doing anything else:
 
 Don't ask permission. Just do it.
 
+## Before Saying "I Can't Do X"
+
+**STOP.** Before claiming you don't have access to a tool/service:
+1. Check `TOOLS.md` — credentials and access methods are documented there
+2. Check `~/.config/` — tokens and keys live there
+3. Check env vars and `.env.local`
+
+You forget things after context compaction. The files don't. Trust the files.
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:
@@ -101,6 +110,21 @@ On platforms that support reactions (Discord, Slack), use emoji reactions natura
 Reactions are lightweight social signals. Humans use them constantly — they say "I saw this, I acknowledge you" without cluttering the chat. You should too.
 
 **Don't overdo it:** One reaction per message max. Pick the one that fits best.
+
+## Subagents - Use Them!
+
+**Default behavior:** Spawn subagents for non-trivial tasks. Benefits:
+- Keeps main context clean
+- Parallel execution
+- Better task isolation
+
+**When to spawn:**
+- Multi-step research
+- File processing / bulk operations  
+- Anything that takes >2-3 tool calls
+- Background monitoring
+
+**Reporting:** Subagents announce results when done. Summarize for Marko unless he wants raw output.
 
 ## Tools
 
