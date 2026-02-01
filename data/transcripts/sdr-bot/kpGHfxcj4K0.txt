@@ -1,0 +1,477 @@
+# How To Create AI Telegram Chatbot in 2025 Free Template
+# Video: https://www.youtube.com/watch?v=kpGHfxcj4K0
+# Category: omnichannel
+
+I will break down how you can create an
+AI telegram chat bot in 2024 and we are
+going to create a telegram bot that
+automatically replies to questions of an
+e-commerce business and is trained on a
+custom knowledge based document and I
+will guide you step by step so I will
+show you what chat automation tool you
+should use how you can create your own
+telegram chat pod and how you can add AI
+that is trained on your own data such as
+your websites or internal documents
+about your business and at the end I
+will even give you the template for free
+so you don't have to build it yourself
+and you can just copy and paste it and
+if you're new to the channel my name is
+Jordan and I'm the founder of chamise
+and at chamise we are inspiring over
+50,000 people to generate more leads
+boost revenue and reduce cost and we are
+working with businesses from small to
+large and in any industry so if you just
+follow the steps in this tutorial it
+will work for your business as well and
+in this video I'm using the example of
+an e-commerce business but this will
+actually work for any type of business
+business but you can just change the
+content of the knowledge based document
+and then train your AI chatbot on it and
+then your AI chatbot can answer any
+questions about your business as well so
+let's get started so the first thing
+that we need to do is create our manat
+account and manich chat is the chat
+automation platform that I've been using
+for over the last four years for almost
+all of my clients and I use manat
+because it's very easy to use you can
+use them without any chat automation
+experience they're very cheap so they
+offer already a free plan but their pay
+plan already starts at $15 a month and
+it's a no code platform so that means
+that we can create our telegram chat bot
+without writing any code so if you just
+go to chat.com
+slmc then this will bring you directly
+to the minap website and then here you
+can just click on get started and then
+click on Telegram and then what you need
+to do is you need to click on continue
+with telegram and then man chat will
+open up Telegram and we'll verify your
+telegram account and then you need to
+verify your email address and once you
+have done that your manat account is
+created but I already have a manat
+account so I will just sign in so now
+I'm signed in to my manat account and
+then when I click on settings and then
+click on telegram then here I can click
+on connect and then I need to connect
+with a telegram bot and in order to do
+that we first need to have a talk with
+the B father on telegram so I will just
+go to telegram on my desktop but this
+will also work on your phone and then
+you need to search for the Bol fer start
+it and then here we can start a
+conversation then it says okay you can
+control me so then we need to say Slash
+new bot or you can just click here on
+new bot so I just type that in and says
+all right a new bot how are we going to
+call it so I just call this Chad amise
+telegram AI bot it's pretty long but it
+works then we need to choose a username
+for the bot and with the username it's
+important that it always ends with bot
+so I'll just fill in the same thing and
+then says done and then we get a token
+for the HTTP API and we actually need to
+click on this token because then it will
+copy to our clipboard and if we go back
+to manat then we can just click on
+connect existing bot paste that bot
+token and then click on connect and now
+our telegram chatbot is connected to
+many Chad and we can get started with
+creating our first telegram automation
+so the first thing that we are going to
+do is automatically reply to a message
+so with e-commerce businesses a lot of
+people are asking about the return
+policy so basically every time someone
+asks a question about to return policy
+we want to automatically reply to that
+question with the return policy of our
+e-commerce business so in many chat you
+can just go to Automation and then click
+on new automation click on start from
+scratch and we will first rename this so
+I will rename this to return policy and
+then Telegram and then each Automation
+in manat consists of a trigger and the
+content of the flow so the trigger is
+the event that starts the Automation and
+the content of the automation is what
+will happen once it is triggered so in
+order to automatically reply to a
+message we can just click on new trigger
+here click on Telegram and then click on
+user sends a message then we will choose
+for detect specific words in a message
+and then we say if the message contains
+return and then we can add a message
+condition so we can click on this and
+then we can say okay if the message
+contains return and the message contains
+policy then we want to start this
+automation so here we can just click on
+Create and then we need to determine the
+content of the automation so here we can
+just click on Telegram and then we can
+say at e-commerce Bas you always have
+the option of returning your order
+within 14 days after delivery make sure
+that the products have not been worn and
+have all F Texs attached when they are
+returned so it's pretty simple and once
+you've answered a question with your
+chatbot you always want to ensure a good
+customer experience and in order to do
+that you can ask just a very simple
+question you can just ask Does this
+answer your question and if they say yes
+and we say okay awesome that was it and
+if they say no then we can say okay we
+can connect you with one of our support
+agents that can actually help them with
+solving their problem so what we can do
+here is we can add a Next Step choose
+again for telegram and then we can say
+does that answer your question and then
+we can add two buttons one button with
+yes it does and one button with nope so
+when they click on yes it does then we
+are just going to send a very simple
+message with great if you have any more
+questions feel free to ask them here if
+they say no I need help what we then can
+do is we can say no problem we will now
+connect you with one of our support
+agents and then in order to actually
+connect them with one of these support
+agents we need to add actions to our
+flow and this is great about man chat so
+man chat has a built-in live chat and
+that means that every time your chatbot
+doesn't know the answer to a question or
+one of your customers basically need
+help we can connect them with a live
+chat agent and then your live chat agent
+can actually solve the problem of the
+customer so in order to do that we can
+add a Next Step click on actions then
+click on plus action choose for live
+chat and then click on Mark the
+conversation as open so in many chat we
+have two types of conversations we have
+closed conversations and open
+conversations closed conversations are
+conversations that are handled by your
+chatbot open conversations are
+conversations that are handled by your
+support team and your life chat agents
+so in this case we need to Mark the
+conversation as open so once we have
+opened the conversation then we need to
+add another action choose for live chat
+again and then say assign the
+conversation so here we can assign the
+conversation to specific team member or
+to a specific group of team members so
+in this case I would just go with myself
+so I will go with joran and then lastly
+we need to notify the people that are
+assigned so here we can just click on
+ADD action click on live chat and then
+click on notify SNES and then here you
+can also determine who needs to be
+notified so you can notify the whole
+team or I can just Notify myself only
+and we can also change the notification
+text so instead of saying full name just
+did something you wanted to know about
+we can also say full name has a question
+probably about returns so we can now hit
+set live and then our automation is
+working so basically now every time
+someone sends a message about the return
+policy then we say the answer to the
+question so what the return policy is
+and then we ask does it answer your
+question if they say yes it does then we
+say great if you have any more questions
+feel free to ask them here if they say
+no I need help then we say no problem we
+will now connect you with one of our
+support agents and then we get actually
+notified of that conversation in our
+email with a button to the live chat CH
+of many chat so up until now it has been
+pretty simple someone ask us a question
+in our telegram bot we check if we can
+find certain words in it and if we can
+find the words then we can automatically
+reply to that question but we can
+actually take it one step further and we
+can add custom AI that is trained on
+your own data such as your website or
+internal documents about your business
+and manat doesn't have build-in ai so
+that's why we're going to use chatbase
+so chatbase is an AI tool that you can
+use to create a chatbot and train it on
+your own data such as your websites or
+documents about your business so if you
+haven't used chat mates before you can
+just go to chadis.com
+CB and this will bring you directly to
+the chatbase website so here you can
+just click on build your chatbot and
+then you can create your own account and
+then add your chatot there I already
+created a chatot so if I go to chatbots
+here then here I have a chatot and this
+chatbot is trained on a custom knowledge
+based document so here I have a simple
+document that contains information about
+an e-commerce business so it contains
+information about returns about the
+return term about the return policy
+about the delivery about the shipping
+cost about tracking your order about
+warranty like all that kind of stuff so
+what I've done in chatbase is that I
+created a new chatbot and if you go to
+sources then you can determine where you
+want to train your chatbot on and I
+already trained it on this custom
+knowledge based document and then if you
+go to here you can already talk to your
+chatbot directly so here I can say
+something like okay what are your
+warranty conditions then says if your
+product is broken within 8 weeks you
+will get a full refund or how long does
+it take to ship my order then says if
+you create an order before three it will
+be shipped from my warehouse within two
+business day and this is great and what
+I really like about chat Bas that's
+really easy to use but also if you go to
+the dashboard and then go to the logs
+then here you can see the conversation
+and if you don't like the answer that
+chatbase gave you can just click here on
+revise answer and then you can fill in
+the response you actually expected and
+when you're doing this chat base can
+automatically learn from the answers
+that you're giving and automatically
+improves itself so that's what I like
+about chat base very easy to use and can
+very easily improve the answers of your
+chatbot so basically what we need to do
+now is that every time someone is asking
+a question in man chat and in telegram
+we need to send that question to
+chatbase and then chat base can answer
+the question for us and we need to send
+the answer from chatbase back to man
+chat and in order to do that we are
+going to use make so make is an
+integration platform that you can use to
+connect to apps to each other without
+using any code and in this case we are
+going to use it to connect many chat to
+chat base and if this sounds pretty
+technical I actually have a step-by-step
+video where I explain every step of this
+integration and how you can create this
+yourself in this video I will just use
+the integration that I already created
+and I will explain it a bit but if you
+want to Deep dive in it and want to
+understand every step of this
+integration I highly recommend going to
+the video that probably appears over
+here so if you haven't used make before
+you can just go to chadis.com slake and
+if you use my link which is also in the
+description you get one month of the Pro
+Plan for free and then afterwards you
+can also decide to just go to the free
+plan of make because make already has a
+pretty good free plan but you can use
+the Pro Plan for free for one month if
+you're using my link so in order to
+create this integration we are going to
+start in many chat so if we go back to
+manat then here we have the settings
+then we have Telegram and then here we
+have the default reply and the default
+reply is the Automation in manat that
+triggers if no other automation is
+triggered so every time someone is
+sending a message to your telegram bot
+and no other automation is triggered for
+example by using one of the keywords
+like we did before with the return
+policy then the default reply is
+triggered so basically every time they
+ask a question we want to trigger the
+default reply and we're going to use the
+default reply to send that question to
+Jet base so what you need to do here is
+you need to click on select existing and
+then click on the telegram default reply
+and this automation is also part of the
+free template that you can download with
+the link in the description so you can
+just download that template in your
+manat account and then you can use that
+automation so here you can just click on
+pick this Automation and then click on
+it and then there are three important
+parts with this automation so the first
+thing is the trigger so we need to
+trigger this every time someone sends a
+message so we need to set this to every
+time that's very important then then we
+are going to save the last input so the
+last text input which is basically the
+question from someone we are going to
+save that to the user field chatbase
+question and this is just a field in man
+chat where we can store data and then
+lastly we are going to trigger make to
+send the question to chat base and then
+if we go to make then this is what that
+integration looks like so what we're
+doing is we're waiting on data from
+manat so every time this is triggered
+then this will start then we are going
+to send the question to chatbase then
+chatbase will answer the question for us
+and then we are going to add the answer
+to a custom field in many chat so that
+will be the custom field chatbase answer
+and then lastly we are going to send a
+man chat Automation and to show you what
+that automation looks like then I go to
+the chatbase answer Telegram and this is
+also part of my free template and then
+what we do here is we just give the
+answer from chat base and then we ask
+Does this answer your question and then
+if they say yes then say okay awesome
+that's fine if to say no I need help no
+problem one of our agents will contact
+you as soon as possible and it's
+basically the same flow as what we did
+with the return policy but now we're
+using custom Ai and we can automatically
+answer questions about the business and
+that's it so those are all the
+automations that you need to add AI to
+your telegram chatbot and before we're
+going to test our chatbot there's just
+one thing we need to do left we need to
+add a welcome message to our telegram
+bot and the welcome message is the first
+message that someone gets when they
+start a conversation with our bot and in
+order to set this up we can just go to
+settings go to Telegram and here you can
+find the welcome message so then we can
+just click on create a new reply and
+then we can say we can click here and
+then we can say I just copy this hey I'm
+the digital assistant of e-commerce base
+I will try to answer your question if I
+don't know the answer I can always
+connect you with a support agent what is
+your question about please type in your
+question below and that's basically all
+you need to do because now if somebody
+replies to this question then our return
+policy automation will trigger or the
+default reply will trigger so we can
+just click on update here and now it is
+live and then we need to make sure that
+the trigger is also enabled so I click
+on this then I enable this and then it
+should be working so now if we head over
+to telegram then we can test out our
+telegram bot so now I am in Telegram and
+I can just click on start and it says
+hey I'm the digital assistant of
+e-commerce base I will try to answer
+your question if I don't know the answer
+I can always connect you what is your
+question about so then I ask what is
+your return policy because this will
+trigger the return policy automation
+then it says at e-commerce B you always
+have the option of returning your order
+within 14 days does that answer your
+question and I can say yes it does and
+said great if you have any more
+questions feel free to ask them here and
+I can say okay how long does it take to
+ship my order then it says if you create
+an order before 3 it will be shipped
+from our warehouse within two business
+days and this is actually generated by
+chatbase so we can also do something
+else how can I get warranty on my
+products and says to get warranty on
+your products please send an email to
+info at e-commerce Bas which your order
+number and a picture of the broken item
+Does this answer your question then I
+say no I need help and it says no
+problem one of your agents will contact
+you as soon as possible to help you and
+then if we go back to many chat and then
+go to the live chat then if you go to
+the conversations that are assigned to
+you then will see here that this
+conversation has been assigned to me and
+it says okay no I need help and here you
+can see the complete conversation
+someone has with your telegram boot so
+here when you start typing so when you
+send them a message and I say hey Jordan
+here then the automation will be passed
+automatically and then you can just have
+a back and forward conversation with
+your customer and once you have solve
+the problem then you can just click on
+this cross here which will enable the
+chatbot again and then click on Mark as
+closed and then everything is fixed but
+that's it that's how you can create your
+own AI telegram chatbot in 2024 and if
+you want to get started quickly you can
+just download the template with the link
+in the description if you want to get
+more experience with manad I actually
+have an Instagram and a WhatsApp
+beginner course for manad on my website
+so I highly recommend checking that out
+as well if you enjoyed the video please
+like it and subscribe to my channel and
+as always if you have any questions on
+using make using chat base or using
+minat please leave a comment below and I
+will reply as soon as possible

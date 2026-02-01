@@ -1,0 +1,400 @@
+# Connect ChatGPT Instagram Facebook Whatsapp Step by Step Manychat
+# Video: https://www.youtube.com/watch?v=SpT3Uo9en9M
+# Category: omnichannel
+
+hi everyone in this step-by-step
+tutorial video I show you how I connect
+chat GPT to Instagram Facebook and
+WhatsApp I'll be using a tool called man
+chat and you can follow along step by
+step and build this together with me so
+let's Jump Right In all right here we
+are on manychat.com and we are going to
+make a new account for this demo I'm
+going to assume that you already have a
+Facebook and an Instagram account if not
+you can easily create them for free on
+facebook.com and on the Instagram
+smartphone app and for WhatsApp you
+don't even need an account because we
+will generate a new number inside the
+app so what we'll be starting with is
+just creating a man chat account to do
+that we can just go here and click on
+get started and now because we will
+generate a certain type of messenger
+first like let's say an Instagram chat
+gbt integration it makes sense for us to
+also log in with that particular account
+so it's already the right one and we can
+just click here on Instagram and connect
+it automatically and in my case it now
+forwarded me directly through the login
+to my account page because I did that
+before you might need to do a few
+authentication steps but the process
+will guide you through step by step and
+in the end you'll also come to this site
+all right once we are here we'll need to
+connect to our chosen social media
+channel and we're just going to start
+with Instagram and do Facebook and
+WhatsApp afterwards to do that we need
+to go here on the left side in the
+settings and here we can choose
+Instagram and potentially if you chose
+Instagram as your login option is
+already connected but if not you can
+select connect here and
+connect
+and as you see as easily as that it was
+connected and now if I go to the
+settings and select Instagram again
+you'll see my account is connected and
+available to be used here the next thing
+that we do is we go here to the
+automations Tab and we'll start by
+creating a new
+automation you see we have quite a lot
+of templates here but what we are going
+to do here is just start with a new
+blank page from scratch all right and as
+you see here the first thing we should
+do is add a new trigger and for
+Instagram we have quite a few here for
+example user clicks an Instagram ad or
+user clicks a referral link but the one
+that I choose here is this one user
+sends a direct message with a keyword
+because this is very easy to control and
+to test so let's select this and as as a
+keyword we can for example say Instagram
+chat GPT and we can of course use more
+realistic keywords if we actually deploy
+that but for testing purposes this is
+good enough and we create the trigger
+and here we are and the first thing we
+want to do here is to test if that
+actually works and to do that we'll here
+create a new flow and create an
+Instagram message and we can just type
+something like Hello World
+to test this at
+first and so at this point we can set it
+live and now let's jump over to
+Instagram to see if that actually works
+all right so here we are on Instagram
+chatting with the account where we just
+uploaded this Automation and one thing
+you need to make sure is that you are
+not chatting with that account from
+itself because you can actually do that
+on Instagram but you need to log into a
+secondary account or use a friend's
+account to actually check if that
+automation works and so what we can now
+do is just type that text that we
+specified like Instagram chat GPT and
+send it and once we do that we'll
+receive the answer that we specified in
+the chat bot as easily as that and with
+that done let's jump back to man chat
+and now add some AI magic to that whole
+thing all right here we are back in mini
+chat and before we get into build
+building the chat gbt integration we
+need to do three things the first one is
+to activate our free trial because
+integrating chat gbt actually requires
+the pro version which in theory costs
+$15 per month but luckily we can use it
+14 days totally for free so just
+activate that and try it out and make
+sure to cancel the subscription before
+the 15 days so you will never get
+charged then the second thing thing we
+need to do is that we need to generate
+some Fields or variables where we can
+store the input and output for chat gbt
+and for that we go here in the settings
+and we scroll down and here under
+automation we have
+fields and for that we can create new
+user field I already have ai input and
+AI output here but I'll show you how to
+make new ones for example in this case I
+could name it GPT input and this we can
+all leave empty it's a user field and
+click create and that's as fast as it is
+and then also we do the same process
+once more and this time just use GPT
+output and create it and this step is
+also done and now the third step that we
+also need to do as a preparation is we
+need to go down here to extension
+and choose
+Integrations and here we'll need to
+connect to the chat gbt account and to
+do that we'll need the open AI API key
+and we get that from the website called
+platform.
+open.com ai- keys and I usually just
+find that by Googling openai API key
+whenever I need one again and then once
+we are in this menu you can just create
+a new one and call it man
+chat and then the scripting number that
+you get after you click here create
+secret key is what you can copy and then
+over here back in man chat you can just
+paste it in and save it and of course
+don't share it with anyone all right and
+once that is also done we are now all
+ready to integrate chat GPT into
+Instagram for that let's go back to
+automation and create a new automation
+again we are starting from scratch and
+we'll choose the same trigger as before
+so here let's use the keyword magic just
+to have something
+different all right then the first thing
+that we are going to do is we are going
+to clear the input and output Fields
+because we need these variables and we
+don't want some all random values
+floating around there and to do that
+we'll choose actions here and we'll add
+an action and we need this here clear
+user field and is here for me because I
+just used that but you can also find it
+here under contact data and then select
+it here clear user field and what we are
+actually going to clear is the gbt input
+and we're also going to do exactly the
+same thing again and do that also for
+the gbt output and so now we can start
+with a blank slate then the next thing
+is we need to actually ask the user to
+type a question because remember they
+will get in here by typing magic and
+expect some kind of response it's not
+that they just type magic and the
+question together or magic and then a
+separate message with a question but
+they would want to get a prompt and then
+answer to that and so for that purpose
+we are now going to add a Instagram
+message we are going to use the user
+input field here and remove this uh text
+field and we are just going to ask them
+to prompt a
+question and the response that they are
+giving us we can save it here in this
+field and we'll type GPT input because
+that's exactly what this should be and
+next we'll use this input and hand it
+over to chap gbt to actually give us an
+answer and for that we select actions
+here and add a new action and we already
+have it here make request but if it's
+not here for you you can go in the left
+menu here and choose chbt and here there
+is only one option which is the one that
+we choose then I'm going to select 3.5
+turbo so we can just get a cheap
+response and for better ones you can of
+course select four but it's more
+expensive
+and here in the system prompt we'll go
+to these curly brackets on the bottom
+right and then we can just use the
+custom user field GPT input which is
+what the user is just typing in before
+and we want to then have it processed
+and in the end we store it in the field
+GPT
+output and we save and that should
+already work now we want to make sure we
+actually have an answer and if there is
+no answer we want to apologize to the
+user and make sure there is still a
+message getting to him and to make sure
+we can differentiate if we have an
+answer or not we are going to add a
+condition and that condition is the
+custom user field GPT output and we are
+going to check if it is
+unknown and if it is actually unknown
+that means we didn't get an answer from
+here and in that case we can write a
+message and say something like sorry I
+can't answer your question and then we
+can even repeat the question once more
+so the user feels more understood in the
+sense that the question is repeated and
+then we can still ask would you like to
+ask another
+question and we can offer the option
+yes and we can offer for the
+option
+no and in the other case if chat gbt
+output is not unknown that means we were
+successfully getting an answer and so in
+that case we'll also show a message but
+in this case we want to show the actual
+answer which we find here in the
+variable GPT output and then we can also
+ask if the user would like to ask
+another question
+and we also offer the options
+yes and the option
+no and then if the user actually wants
+to ask another question we can route
+back here to the uh first action where
+we clear the input and output so we
+start again with a clean slate and we do
+the same thing up here where we also ask
+that same
+question and if the answer is no then we
+can just send a goodbye message to the
+user and make sure that he is greeted
+again in the end so for example thanks
+see you next time for
+example and we also connect this
+here and once we're done we need to
+press update here on the top right and
+now we are ready to test this whole
+thing again but in this case we are not
+going to the web app because actually
+the Instagram web chat doesn't know how
+to deal with these buttons yes or no so
+we need to do this in the app so let's
+jump over there here is our Instagram
+chat so let's type in the word magic
+that we specified earlier and start this
+automation right now we can ask a
+question for example what is the capital
+of Swit ser
+land and
+send and a second later we get the
+answer with the option to ask more
+questions or not let's try that as well
+let's say
+yes and let's also ask what is the
+coolest city of
+Sweetland
+and a short moment later we get that
+it's often considered to be Zurich and
+so on and so forth which I probably
+agree with but anyways that's not the
+point here you see it works and if we
+end the chat by pressing on no then
+we'll get the greeting to say goodbye
+and that was how we can integrate chat
+gbt in Instagram with many chat next
+let's see how we can do the same easily
+with Facebook and WhatsApp and we don't
+even need to stop start from scratch but
+we can just copy our work that we
+already did here for Instagram and to do
+that we first need to connect man chat
+with Facebook and also with WhatsApp and
+we can do that again here in the
+settings and in the settings we go here
+to messenger and you just click the
+connect button here and you will be
+guided through everything if you want to
+connect it to WhatsApp as well you go
+here and you'll get the option to
+connect it with your own number or to
+purchase a new number for example I got
+a new Us number here which costs 66
+cents a month and you'll also be guided
+through everything right here on this
+page it's really easy and
+straightforward so I'm not going to redo
+it here but if you get stuck with this
+feel free to ask a question in the
+comments down below and I'll try my best
+to help you great now once we've set up
+messenger and WhatsApp in many chat we
+can go back to our Instagram automation
+that that we just
+created which is here under Automation
+and here we hover over this automation
+so these three dots become visible we
+click on them and then we can select
+convert
+channels and we select our channel here
+like for example
+Facebook we duplicate and
+convert and you see it's slightly messed
+up but we can just move this over here
+and then it looks fairly okay and then
+the only thing that we still need to do
+here is to choose a new trigger so for
+example the same that we used in
+Instagram before is a direct message
+with a keyword so we can also choose
+that here and again I'm just going to
+choose the keyword magic here that we
+had before I'm going to create it and
+then lastly we also need to set life
+here and already now we have the
+automation also ready on Facebook let's
+go to that Facebook page and try it out
+here I am on the page that I just made
+and I'm going to click message here and
+I'm just going to type magic and as you
+see we have exactly the same interaction
+that we had on Instagram before so what
+is the capital of
+Austria and in this case the buttons
+actually work in the browser chat so no
+need to use the smartphone to test this
+and we can also select no and that was
+it and lastly let's do the same also for
+WhatsApp to do that we once again go
+back to man chat we go to the automation
+here and we can select either the
+Facebook chat we just opened or the
+Instagram chat from before we also click
+on these three dots here convert
+channels and this time we just select
+WhatsApp and we duplicate and convert
+same as last time we need to to fix the
+trigger here so let's click at plus new
+trigger and in WhatsApp as well we can
+just start the interaction with a
+keyword and let's also use magic and
+create it and then once more we just
+need to set it live such as here and
+then go to our WhatsApp and in WhatsApp
+I can just type our keyword magic again
+and you'll see the exact same
+interaction start
+what is the capital of
+Germany and here we also get the answer
+that is Berlin we can ask another
+question what is the coolest city of
+Germany and here we get a more vake
+answer but we get Berlin Hamburg Munich
+and cologne which are all the big cities
+who are the Diplomat IC answer but
+anyways not the topic here so you see it
+basically works exactly the same on
+Instagram Facebook Messenger WhatsApp
+and you can also do it on Telegram and
+other services that are supported by
+many chat great and now you know how you
+can connect chat gbt with Instagram
+Facebook messenger and WhatsApp if you
+try implementing this and come across
+any problems or uncertainties feel free
+to leave a comment down below and I'll
+try to help you and otherwise let me
+know if you have any other topic that
+you think I should cover I'd really
+appreciate that as well thanks for
+watching and I'll see you in the next
+one bye

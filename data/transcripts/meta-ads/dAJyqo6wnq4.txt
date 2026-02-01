@@ -1,0 +1,2278 @@
+# The BEST Facebook Ads Tutorial For Beginners in 2026
+# Video: https://www.youtube.com/watch?v=dAJyqo6wnq4
+# Category: meta-ads
+
+I've spent more than $200 million on
+Facebook ads over the past 12 years,
+working with more than 3,000 clients in
+just about every industry you can think
+of. And in this video, I'm going to walk
+you through the entire process of
+creating a Facebook ad campaign and an
+Instagram ad campaign from [music]
+scratch. So, if you've never created a
+Facebook ad before, or if you have, but
+you're not 100% sure that you set up
+everything correctly, this is the exact
+video you need because I'm going to show
+you every single step and setting you
+need to get right. So before we dive
+into the fun stuff and start putting our
+ad campaign together, we first need to
+get our account structure sorted. And
+what I mean by that is creating a meta
+business manager account because your
+business manager account is what holds
+all your meta ad assets. So things like
+your ad account, your Facebook page,
+your Instagram profile. To do that, you
+want to come through to this page, which
+is business.fas.com.
+Now, in order to set one of these up,
+you will need to be logged into your
+Facebook profile on the browser that
+you're using. Uh the process is really
+straightforward. Unfortunately, I can't
+demonstrate it because we already have
+tons of accounts. But if you just come
+through to this page, make sure you're
+logged into your Facebook profile, go
+through the process. Meta is just going
+to ask for a few simple bits of
+information about your business. Just
+very simple, very straightforward to go
+through. Once you've done that, you'll
+be taken through to your Meta business
+suite. And this is what it looks like.
+Although yours might look different if
+you haven't got, you know, the things
+like your Facebook page and your
+Instagram profile added as I have here.
+The meta business suite is a really
+useful tool, something to know about for
+later on. You've got things like inbox
+where [clears throat] you can manage
+comments on your Facebook and Instagram
+ads. You can respond or delete them,
+etc. You've got lead center where you
+can manage the leads you generate uh via
+instant forms. More about that later on.
+You've got creator marketplace where you
+can find creators and influencers to
+help promote your products and services.
+Lots of useful stuff in here. But what
+we want to do is go ahead and click on
+settings because we need to finish
+setting up that structure that I talked
+about earlier. And it's this settings
+page where we can add in those meta ad
+assets that I referred to earlier. So,
+make sure we get the your Facebook page
+in your business manager account. Same
+with Instagram account, etc., etc.,
+right? And by the way, yours might look
+a little bit different because you're
+not probably going to have more than 100
+people added to your business manager
+account and more than a thousand ad
+accounts. We literally have more than a
+thousand ad accounts in our business
+manager. Um, but that's absolutely fine.
+You'll still be able to follow along
+with the process. So, let's start with
+the Facebook page. I'm going to go here
+and go over to pages and I'm going to
+click on this ad down here. So, we've
+got a few different options, right?
+We've got add an existing Facebook page.
+So, if you already have a Facebook page,
+something you're definitely going to
+want and need to run ads um on Facebook,
+right? Then what you want to do is move
+that page over into this business
+manager account, you can request access
+to request shared access to a Facebook
+page. So, if it's linked with another
+business manager account for some
+reason, maybe you've had an agency
+working on some stuff for you, but you
+also want to get it out in here, then
+you can go with app or you can just go
+ahead and create a new Facebook page if
+you haven't got one and need to do so. I
+think most of you are going to be adding
+an existing Facebook page. So, let's
+demonstrate that. So, if I go ahead and
+click on that, it's very, very simple.
+You just go ahead and add in the
+Facebook page name or the URL. So, you
+just want to go ahead and paste the URL
+to your Facebook page in here, as I've
+done just there. Once I select this,
+it's going to say it page is already in
+your business portfolio, so I can't go
+through the rest of the process, but
+it's very straightforward. You just go
+ahead and click next. Um, don't worry
+about review people. We'll cover that in
+a minute. And then you just request
+approval. So, you're basically sending
+an approval to whoever the admins are of
+that Facebook page already. That's
+probably you. That's probably your
+Facebook profile. You probably get a
+notification and an email. You could
+just go ahead and approve and then that
+page will be moved into this business
+manager and you've taken care of that.
+Okay. So, let's go ahead and do
+Instagram accounts next. Same process.
+We go ahead and click on add. Oh, a
+quick warning about adding an Instagram
+account in here. Only Instagram
+professional accounts can be added to a
+business portfolio. If you add a
+personal account, it will be switched to
+professional. You want a professional
+Instagram account for your business
+anyway. If you're going to be running
+ads and operating as a business, that's
+fine. So once you add it in, it'll be
+switched. No problem. You've got to
+agree to the terms and then you go ahead
+and click on add Instagram account. And
+then this process is really
+straightforward, right? So you just need
+to log into your Instagram account.
+Again, if I try and do this, it's going
+to say it's already added in there. And
+then you just provide access by logging
+in. You don't even then need to approve
+um via a notification on the other end.
+So really straightforward just to go
+through that. Let's go ahead and cancel.
+Okay. Next, let's do your ad account. So
+we've come into ad accounts. If we go
+ahead and click on add. Again, we've got
+a number of different options. So you
+can create a new ad account. If you've
+never run an ad before, you've never
+boosted a post, uh, then you probably
+don't have an ad account. You can go
+ahead and create one. You just want to
+go ahead and click on create an ad
+account and then enter in the
+information that Meta asks for. Ad
+account names. Just put your business
+name in there. Select your right time
+zone. Select your right currency. Make
+sure you get these right. If you don't,
+uh, very difficult to change them uh,
+later on. So, just make sure, you know,
+this is defaulted to US dollars, but I'm
+in the UK, so most likely I'm going to
+want to change that to GBP to pounds.
+But just go through the process. So, I'm
+not going to go through it. Like I
+explained for previously, we've already
+got plenty plenty of ad accounts, but go
+through the process. Um, very
+straightforward. And then your ad
+account will be created. If you already
+have one, like I said, if you've ever
+boosted a post, you ever run an ad, you
+do have an ad account. And what you want
+to do is add an existing ad account. So,
+you click click on this and you just add
+in your ad account ID. You paste that in
+there. Click confirm. Again, a
+notification will be sent to whoever
+currently owns that ad account, and you
+need to then approve that. Very similar
+process to the Facebook page. I will
+show you in a minute once we get into
+the ad account itself and start creating
+the campaign where to find find your ad
+account ID in case you're unfamiliar
+with that process. So those are the
+three that you really need to get added
+in. You need your Instagram account,
+your Facebook page and your ad account.
+There are other stuff you can look to
+add in WhatsApp accounts and other
+business assets, data sources, all
+sorts. But that's really what you need
+to get started. And you'll you'll see as
+we go through this process. I really
+want to make getting your first Facebook
+and Instagram ad campaigns up and
+running as easy as possible. We're not
+going to mess with all the various
+advanced settings and features that
+complicates the process and becomes a
+barrier entry. So, let's keep it simple.
+We can add complexity later on. The
+other thing quick thing I want to
+mention is around people. Um, this might
+not be important for you right now if
+you're only the one who's going to be
+managing your uh Facebook and Instagram
+ads, the only one involved in that
+process, but at some point you might
+want other people to be involved. So,
+let me just quickly show you how this
+works. If I go ahead and click on invite
+people, you then just need the email
+address that's associated with their uh
+Facebook profile. You can add that in
+there and then send them the invite.
+Again, they'll receive a notification
+they need to accept it. And then you can
+assign access. I won't go through that
+process because I can demonstrate it um
+elsewhere. And then once you've got
+someone added like I've got here, you
+can go ahead and click assign assets.
+And you can say, look, I want them to
+have access, for example, to this
+Facebook page and I want them to be able
+to run ads or or deal with content or
+have full control over absolutely
+everything. Um, so you can give people
+different levels of access so they can
+work on the things they need to be able
+to work on without having to give them
+access to um everything. So, it's quite
+a quite a neat solution to be able to do
+this. You want to do that process with
+yourself, with your own profile. Make
+sure you get yourself added and give
+yourself the various assets um that
+you've added in here. Facebook page,
+Instagram account, um ad account. Okay,
+so hopefully that wasn't too
+complicated. That's our structure set
+up. What we now need to do is go ahead
+and dive in and actually create our ad
+campaign. So, you can create ad
+campaigns from within the Meta Business
+Suite, but I'd recommend you do so from
+within Ads Manager. So, if you go ahead
+and click on these three little lines,
+all tools, you will see ads manager
+here. And then if I click on this, you
+got a few different options. I want you
+to come through to the campaigns tab.
+Um, if you go through to account
+overview and think, hang on, this looks
+very different to everything Ben
+demonstrates, not just um in this video,
+but potentially in my other videos, just
+cuz I'm basically always in the
+campaigns tab within Ads Manager. So,
+now we get to the really interesting
+part where we can start creating our
+Facebook and Instagram ad campaign. Oh,
+just quickly I mentioned around grabbing
+your ad account ID earlier to be able to
+move a an ad account an existing ad
+account into your business manager
+account and you can just grab that up
+here right at the top. Um you'll see
+that so you can come in and uh and paste
+that in and get it moved over. So the
+first thing to know about meta ad
+campaigns about Facebook and Instagram
+ad campaigns is that there are three
+levels to a campaign. You've got the
+campaign level and then within that
+you've got adsets and then within adets
+you've got ads. And each one of those
+stages is responsible for different
+things. um around what people see but
+also who sees it, various settings,
+budgets, etc., etc. We're going to go
+through all of it, but that's the first
+thing to understand that you can have,
+for example, multiple adsets within one
+campaign, multiple ads within one adset.
+So, it's very much um that sort of
+structure. So, we want to start by
+creating a new campaign. So, make sure
+you've got campaigns out of those three
+selected and then go ahead and click on
+this plus green create button. And there
+are a couple of settings that we need to
+choose right at the beginning because
+whatever we select here will impact the
+options available to us later on as we
+go through the campaign creation
+process. Don't worry about collaborative
+ads. More of an advanced thing. We're
+going to ignore that. Uh not for today.
+Something I talk about in other videos
+and you can move on to later on if
+that's something that you want to do.
+But two things we do need to talk about
+are the buying types and the campaign
+objective. So we've got two different
+buying types. We've got auction and
+we've got reservation. Auction is just
+the cost of your Facebook and Instagram
+ads is going to be determined by simple
+market forces. Demand and supply. More
+demand, higher cost, less demand, lower
+cost. And that's demand from
+advertisers, by the way. How many
+advertisers there are, how much they're
+willing to spend. Uh reservation, you
+can actually guarantee a certain price,
+often a lower price. And and the cost of
+Facebook advertising is normally
+measured in CPMs. So cost per thousand
+impressions. So it's cheaper to use
+reservation, but that's not the option
+I'd recommend you use, which might sound
+bizarre. Here's why. In order for Meta
+to be able to guarantee that lower cost,
+they are going to put your ads in front
+of lower quality prospects or lower
+quality ad placements. The better
+quality ad impressions are usually seen
+through auction and that's a big deal.
+So, I'd recommend you go with auction.
+Let's move on to campaign objective. So,
+we've got six different options here and
+they do different things. And your
+campaign objective is really, really
+important because it's going to inform
+how Meta optimizes your campaign. So,
+you're basically saying to Meta, "This
+is what I want." And Meta's really
+powerful machine learning and AI based
+systems are going to optimize your ads,
+work out who to advertise to, what time
+a day, how often, all those things to
+get you more of what you want. That's
+why it's so important to get your
+campaign objective set up correctly. So,
+we've got awareness. Awareness is where
+Meta will put your ads in front of
+people that are most likely to remember
+them. Put your ads in front of as many
+people as possible. not an option I
+typically recommend for beginners or for
+businesses operating with a relatively
+small Facebook and income ad budget
+because it can be quite an easy way in
+those scenarios to spend a bunch of
+money and not really see anything back
+for it. What we see with awareness is it
+can work really well for larger
+businesses with big budgets because
+awareness takes time and it takes a lot
+of ad impressions across a lot of people
+over an extended period. Bigger
+businesses have those budgets. Smaller
+ones and beginners to to meta ads
+typically don't. There is an exception
+and that's if you sell a high ticket or
+expertise-based service then you might
+want to use my omnipresent content
+strategy which typically does use
+awareness. I'm not going to cover that
+in this video. Just wanted to quickly
+mention it and you'll be able to find a
+video about my omnipresent content
+strategy in on my channel. So if you
+meet that criteria maybe go ahead and uh
+and check that out. But otherwise for
+most of you watching this I would say
+leave awareness alone for now. Then
+we've got traffic. traffic is designed
+to optimize for as many link clicks as
+possible or as many landing pages as
+possible to get as many people from
+Facebook and Instagram to your website.
+Now, a lot of beginner Facebook and
+Instagram advertisers use traffic. They
+think, great, I'll send a load of
+traffic to my website. I want as many
+people as possible. I'll then generate
+my leads, sales, etc. from those people.
+It's not typically the best way to go,
+though. If you do really want purchases
+or you do really want leads that can go
+on to use your services, there are
+better options that we'll get to um in a
+minute because Meta's optimization
+system is very literal. So, if you say
+to Meta, I want as many link clicks as
+possible, Meta is very good at finding
+people that are likely to click, but
+those people don't necessarily go on to
+convert. other campaign objectives and
+options might be better at yes
+generating a few less clicks to your
+website but the people that do arrive
+are far more likely to go ahead and take
+the next action. Sometimes we are forced
+to use the traffic objective if you
+cannot optimize you cannot track a
+purchase on your website or you cannot
+track who becomes a lead. Let's say for
+example you're sending traffic through
+to a third party site where you can't
+track the actions that people take once
+they get there. Well then you may be
+forced to use traffic. Engagement is
+what it sounds like. A campaign
+objective is going to optimize for
+likes, comments, and video views.
+Basically, just getting people to engage
+with the ads themselves. There are use
+cases for engagement, but I'm not going
+to go into them here. Not something I
+typically recommend most beginners use.
+The vast majority of Facebook
+advertising beginners want to use either
+leads or sales. And I'll explain I'll
+talk about both of those together. Um,
+that's what we really want from a meta
+ad campaign, particularly if we're
+operating with a small budget,
+particularly if we're getting started,
+because you want to generate those
+leads, generate those sales in the short
+run to provide the profitability to be
+able to reinvest and scale your
+campaigns and your business. And that's
+the whole point where we're running ads
+in the first place, right? So, leads and
+sales are much more direct response
+marketing. Um, and if you select leads,
+then Meta will optimize your campaign
+for people who are likely to go on to
+become a lead. If you select sales, Meta
+will do likewise.
+The decision between which one of these
+two to use is what does your salesunnel
+structure look like? If someone comes
+through directly to your website and
+makes a purchase, go with sales. Meta
+can track that. You could set up so Meta
+can track that quite accurately and then
+you're good to go. If however people
+book in a call with you or they sign up
+for a free quote or something along
+those lines, they don't actually check
+out with you online, then go with leads
+and you can optimize for that step. um
+knowing that obviously then need to
+convert those people whether it's via
+phone call or email whatever whatever
+your salesunnel structure um looks like.
+Right? And then you've got app
+promotion. If you've got an app
+obviously the option to use if you don't
+don't use it. You can use app promotion
+not just for getting more people to
+install your app but also for trying to
+sell inapp events whether it's like an
+inapp purchase for example as well. For
+demonstration purposes in this video I'm
+going to go ahead and select leads. But
+what I'm about to talk about very much
+applies to sales, which I think 90 plus
+percent of you what going through this
+video should be using either leads or
+sales. So very much what we go through
+from now on um is salespace. But the
+example campaign that I'm going to use
+is leads based. So we're going to use
+that for demonstration purposes. If I go
+ahead and click continue, there are a
+few more things that we need to set at
+the campaign level. Okay. So the very
+first thing at the top is campaign name.
+Um you just want to call this something
+that is going to make sense to you when
+you're reviewing the campaigns. we've
+just got the one campaign. It's pretty
+obvious. Once you've had an ad account
+running for a few years and you've got
+lots of different campaigns, you run
+lots of different offers and promotions,
+you want to label it up something that
+uh that makes sense. I'm just going to
+leave that as new leads campaign, but I
+just wanted to to quickly note that.
+Okay, so in these campaign details,
+we've already talked about buying type.
+We've already talked about campaign
+objective. I'm not going to bother with
+the show more options. Then we get into
+budget. Okay, so we've got budget
+strategy. The default selected here is
+campaign budget, but we can select ads
+set budget if we want. And to explain
+the differences between the two, with
+campaign budget, the budget is set at
+the campaign level. Meaning that if you
+have multiple adsets, budget will be
+distributed to those adsets according to
+performance. So if you've got adset A
+that's performing much better than adset
+B, adset A will get more of the budget.
+However, what you can do instead is
+select adset budget and say, "No, no, I
+want to have manual control over how
+much each adset gets from a budget
+perspective." Then you can go ahead and
+do that. In this instance, the campaign
+I'm going to demonstrate is only going
+to have one campaign and one adset. And
+in that scenario, it doesn't make any
+difference whether you set the budget at
+the campaign level or the adset level.
+So, I'm just going to leave that as a
+default, but just wanted to explain the
+options. If you've got multiple adsets,
+um there might be something that you
+want to change. You might be happy just
+leaving it at a campaign budget,
+allowing Meta to allocate budget
+according to performance because if Meta
+spends more of our budget on the best
+performing elements, we get better
+results, right? Then we've got this
+budget option down here. The default is
+daily budget. You can change to lifetime
+budgets. I prefer daily budgets. With a
+lifetime budget, you end up with a fixed
+length campaign. So, let's say you want
+to run a campaign for 7 days or 14 days.
+You can go ahead and select lifetime
+budget and then Meta is going to spend
+your money to try and get you as many of
+your result that you want, what you've
+uh selected as your objective as
+possible. But they're going to do that
+over that time period. So, your spend
+might be quite lumpy. You might spend
+very little at the beginning, quite a
+lot in the middle, very little at the
+end, or it could be a different
+combination. Whatever meta thinks will
+produce the best results. Daily budgets
+are a lot more flexible and a lot more
+consistent. And if you want to run a
+campaign longer, you don't want to after
+the 7-day lifetime campaign, have to
+create a new one and meta go back
+through the learning phase and
+everything like that. We'll talk about
+more about that later on. Um, daily
+budgets allows you to do that. You also
+have more scalability. you can change
+the budget with a daily budget campaign
+more easily without running um into
+issues. Okay. So, in terms of what to
+start with, how much should you spend,
+I've got some uh some guidelines around
+that. What I recommend particularly
+beginners do is they set a budget that
+they could afford to lose. So, you you
+wouldn't be in financial difficulties
+either you or your business if you ran
+the ad campaign, you spent this much
+money on it, and it didn't work out.
+Because it's a marketing campaign, there
+are no guarantees. You may well need to
+try a few different offers in your ads
+in order to find one that lands. You may
+need to test a few different ads to find
+one that lands, right? So, there's no
+guarantee it's going to work out uh
+really well from day one. Obviously,
+going through this video is really going
+to help you and increase your your
+chances of success there, but no
+guarantees. So, let's be smart about
+this. But on the other hand, you don't
+want to spend a budget amount that is so
+small that you don't care about it at
+all. You don't want to be one of these
+things where you set it up and just
+think, "Ah, whatever. It's going to take
+long in the background." You want to be
+involved and engaged in the process. And
+I find that there's often a sweet spot
+where you could afford to lose that
+money and it wouldn't be disastrous, but
+it would sting a little. That's normally
+a sweet spot where you're really
+actively in there, but you've given
+yourself time to be able to test and
+experiment and work out um what can work
+right there. So, I'm just going to leave
+this as the default, but just that
+that's going to vary massively depending
+on the business. There's no right
+amount, which is a question I get asked
+a lot. For some businesses, that's going
+to be $10 a day. For others, it's going
+to be $5,000 a day. Like varying sizes
+of businesses, massively different
+budgets. What matters and what they can
+afford to lose, very, very different.
+Right? Then we've got campaign bid
+strategy. Now, this is really important.
+If I go ahead and click on this, you can
+see this is says how will bid in ad
+auctions. Highest volume is the default.
+That's exactly what I want to go with
+here because that will determine how
+Meta optimizes the campaign. Basically,
+we set this up as a leads campaign and
+we want the highest volume of leads as
+possible, right? There are other
+options. We could add in a cost per
+result goal or a bid cap to say I'm only
+willing to pay a certain amount. Um, not
+something I would recommend you mess
+with as a beginner. So, I'm not going to
+worry about the more settings or the AB
+testing. Those are more advanced things
+you may want to look into later on. I
+have videos covering them all. But for
+now, we want to make it as simple as
+possible to get set up and and get
+started to gain momentum. Then you can
+look to make things more complicated. We
+do need to talk about special ad
+categories, though. So, special ad
+categories, if your ads fall into any of
+these categories, right? they're related
+to financial products and services,
+employment, housing, social social
+issues, election or politics, then you
+have to select that that's the case.
+When you do that, it is going to impact
+some of the options you have later on
+through the campaign creation process.
+So, for example, for a lot of these,
+you're going to have limited targeting
+options and have to rely more on meta to
+be able to work out who to put your ads
+in front of. It's a way of sort of
+protecting user privacy and things along
+those lines. Um, if you do fall within
+one of these categories or you think you
+might fall in one of these categories,
+definitely select it. If you don't and
+then you go ahead and run ads anyway, a
+good chance not only your ads will be
+rejected, but your whole ad account can
+get disapproved, which can then be quite
+difficult to overturn or you have to
+create a new ad account. Not something
+that you want to deal with. Most of you
+won't have any of these as a as an
+option for, you know, that you'll need
+to select given what it is you're
+advertising. But for those that do, make
+sure you go ahead and select them. I'm
+not going to there. I'm going to go
+ahead and click next. Okay, so that's
+the campaign level done. Now we move on
+to the adset level where we've got a
+bunch of other settings that we need to
+decide and set things up. So the first
+we need to choose here is the conversion
+location. Where do we want these leads
+to occur? Where do we want them to take
+place? We've set this up as a a leads
+campaign. Again, very similar process
+for a sales campaign. Now the default
+here is website and instant forms. So
+website is pretty straightforward. It's
+I want to generate leads via my website.
+So send people from Facebook, from
+Instagram to my website where they can
+then uh book a call or fill out a
+contact form. A few different types of
+leads obviously where they can go ahead
+and become a lead. Instant form is a
+little bit different. That's where you
+can click on an ad, say within Facebook
+or Instagram, instead of going through
+to your website, you are instead
+presented with an instant form. A form
+where people can provide their contact
+information that then allows you as the
+business to reach out to them and
+hopefully progress that lead into a full
+customer. And with this conversion
+location selected, you can generate
+leads either via your website or via
+instant forms. And meta will test both,
+see which performs best and then
+allocate budget accordingly. They may
+also predict for an individual user, is
+this person more like to become a lead
+via website or is this person more like
+to become a lead via an instant form? So
+different people might see different ads
+or or different conversion locations go
+through the process. For the purposes of
+this video though and sort of getting
+started with your Facebook and Instagram
+ads and keeping things as simple as
+possible, we talked about that being
+important. get some results, gain
+momentum, and then you can look to add
+in more complicated things. I'm just
+going to go ahead and select website
+because having instant forms there as
+well means you need to create an instant
+form. That's a whole extra element as
+part of the the campaign creation
+process, but you probably already have a
+website. You probably already have a
+landing page uh that you can send people
+to that may well want to be improved.
+But like I said, let's let's make it as
+easy as possible to get started and
+reduce that barrier to entry. And also,
+if you are running through this,
+following along with this tutorial,
+creating a sales campaign, you're an
+e-commerce business, for example, well,
+you're not going to have the instant
+form option, and you're going to want to
+be sending people through to your
+website. So, we can all sort of follow
+along. If I select website, and I think
+that's a good option for a lot of
+beginners. Now, if you don't have a
+website and you want to get started
+quickly and easily generating leads via
+Facebook and Instagram, then you can
+just go ahead and select instant forms
+and just have that as an option and and
+not need a website. Um but yeah, but I
+think for most people they will already
+have one most watching this video and
+that's a good way to go. But you can
+also see there are lots of different
+ways to generate leads, right? You can
+generate leads via messenger, uh via
+Instagram, via WhatsApp calls, so people
+can call your business. So depending on
+your business where you are in the
+world, for example, WhatsApp's a lot
+more prevalent in certain parts of the
+world than others. That might be a
+really good way to go where you can
+start a chat on WhatsApp and look to
+generate leads that way. Um you might
+want to have a play around with this and
+think about for your market, for your
+business, what what makes the most
+sense. And you can always test multiple
+options. Nothing wrong with that. In
+fact, I actively encourage that sort of
+thing as you can often find ways of
+improving things when you do so. So once
+we select our conversion location, this
+case website, that is going to change
+what options we have down here. The the
+most important of which being
+performance goal. So I talked earlier at
+the campaign creation stage about how
+important the campaign objective is in
+getting that right. you can still mess
+up a good campaign objective selection
+with a bad performance goal because what
+the campaign objective selection really
+does is it determines which options you
+have later on. The performance goal is
+how Meta is going to optimize your
+campaign. So let me click in here and we
+can take a look at the options. Right?
+So the default is maximize number of
+conversions. But underneath leads goals
+we also have maximize value of
+conversions. Now, maximized number of
+conversions is absolutely fine if you're
+advertising the one service and when
+someone becomes a lead, they look just
+as valuable as anyone else who becomes a
+lead. But if you're advertising multiple
+services, then it might be that one
+service, if someone goes on to convert,
+they're worth $200 to your business.
+Whereas with another service, if they go
+on to convert, they're worth $5,000 to
+your business. There's a massive
+difference in the value of those two
+leads depending on what they've said
+they're interested in. If you go with
+maximize value of conversions, then Meta
+is going to not just try and get as many
+conversions as possible, but optimize
+and weight it in favor of the more
+valuable conversions. In other words,
+you might end up paying more in terms of
+cost per lead, but that's a trade-off
+you'd be happy to make if you got more
+leads for the $5,000 service as opposed
+to the the $200 service, right? So, this
+really depends on your business which
+one you go with. If you're just
+advertising the one service within this
+campaign, absolutely fine to go with
+maximize number of conversions. But if
+you've got differing services uh with
+differing values, definitely go with
+maximize value of conversions. Now, in
+order to track that, you're going to
+need to make sure that you've got all
+the tracking set up properly. So, you're
+going to need to have the meta pixel
+installed and the values of each lead
+being sent back to Meta. I've got a
+video about Pixel Instation. You're
+going to need that if you're sending
+people to your website. Uh no matter
+what, you're going to need to have the
+pixel installed properly. Um and I've
+also got videos on conversions API,
+which is something else that's
+recommended from a tracking standpoint.
+So, you can check those out. um cuz
+that's an important part of the the
+setup of a campaign creation process of
+getting started with Facebook and
+Instagram ads if you are sending people
+through to your website. Uh check out
+those videos. But yeah, that's the
+difference between those two. If you're
+running a sales campaign, you have
+basically the same options, but the
+wording might be slightly different. And
+in that scenario, let's say you're
+e-commerce business, I would absolutely
+recommend you go with the value option,
+with the option that maximizes return on
+ad spend or maximizes value because you
+can always track differing values
+because they go straight through your
+website and purchase there and then. And
+some people will spend a little bit when
+they check out. Some people will spend a
+lot when they check out. And it's really
+important you get better to optimize for
+the people that are more likely to spend
+more when they come through to your to
+your website. So definitely go the
+wording might be slightly different in
+terms of what these are called but
+you'll see the same options right
+between just get me as many sales as
+possible versus get me the most value
+overall as possible. So uh act in favor
+of the higher value purchases the higher
+value checkouts. Right in this instance
+I'm just advertising the one service
+with the leads being equally valuable
+when they become a lead within this
+campaign. So I'm going to go with
+maximize number of conversions but just
+wanted to talk through that option. Now,
+what's really really important, this is
+what I said a second ago around if you
+get your performance goal wrong, you can
+mess up your campaign um even if you've
+selected the right campaign objective is
+do not select one of these other goals.
+So, don't say maximize number of landing
+page views or link clicks. If you do
+that, it's going to run just like a
+traffic campaign and you get lots of
+clicks, lots of landing page views,
+probably not many leads, not many sales.
+Don't go with daily unique reach. That's
+going to run just like an awareness
+campaign uh or maximize number of
+impressions very similarly, right? So
+you can sort of you can mess things up
+by selecting one of these other goals.
+Go with the leads goals or the sales
+goals and you should be all good. Uh
+data set. I already talked about the
+pixel, but just double check to make
+sure that yep, the pixel's installed.
+This is an example ad accounts. We've
+got example ad accounts pixel. Like I
+said, has other videos you can check out
+on those. And then we need to choose the
+specific conversion event that we want
+to optimize for. So we're saying to
+Meta, look, get me as many conversions
+of this conversion as possible. For
+that, you're going to have to have the
+pixel set up properly, but yes, we want
+as many leads as possible. We could
+change that to schedule or one of the
+other options that um that we might want
+to optimize for as part of our leads
+campaign. You'll see a similar process
+for a sales campaign where you can
+optimize for purchases or you can
+optimize for add to carts. My preference
+would be to go for purchases provided
+you're generating enough purchase for
+meta to be able to learn. We know that
+that process is important. If not, you
+might need to go for a step that's
+higher up um the salesunnel. Okay.
+Anyway, moving on. Don't worry about
+cost per result goal. Not something to
+mess with. Don't worry about value rule
+sets. We've got a value rule set preview
+here, but this is very much, you know,
+because I demonstrated this as an
+example ad account in previous videos. I
+have videos on value rules if you want
+to check those out. Not something that
+um beginners need to mess with. Neither
+the show more options or the dynamic
+creative. We get next down into the
+budget and schedule. Now, we've already
+talked about the budget being set at the
+campaign level. We've talked through the
+logic of how much you want to spend and
+you want to go with daily budgets and
+all that. Here we really just have now
+the power to set a start and end date.
+You might want to set an end date if it
+just provides some sort of like mental
+security that okay, this campaign is not
+just going to run indefinitely and I'm
+going to forget about end up spending
+far more than I want. You can go and set
+an end date. We're going to be in our
+campaigns plenty enough where we just
+don't need to worry about that. We're
+managing them all the time and that sort
+of thing. And again, I'm not going to
+mess with show more settings here
+either. Lots of advanced stuff that
+we're scooting over, but I think that's
+helpful when you're getting started.
+Okay. Then we get down into the audience
+section. And the audience section is all
+about targeting. And targeting is
+probably a thing that made well
+originally it was just Facebook ads
+famous. Uh but even as Instagram was
+added, that's a thing that got marketers
+and advertisers excited about the
+platform is the ability to be able to
+target. And there's been a lot of
+changes to the targeting process and
+we're in a very different place than
+what we were say five six years ago. Um
+Meta's targeting is still very powerful,
+but the setup is different. I I'll go
+through it and explain. So within this
+audience section, we have two main
+categories. We've got controls and we've
+got suggest and audience. The difference
+between these two sections is that
+anything set within the control section
+is a hard constraint, a hard boundary.
+So you can see for example the location,
+which I'll talk about in a second, the
+default here is United Kingdom. Meta is
+going to basically follow that
+instruction. Right? We're only going to
+put ads in front of people in the United
+Kingdom. Whereas anything added in the
+suggestion audience section is a
+suggestion. You're basically giving
+Meta's targeting algorithms an
+indication of who you think should see
+your ads, who your ad should be put in
+front of. But at the end of the day,
+it's up to Meta to either go with people
+within that targeting criteria or find
+other people that it thinks will are
+likely to get you more of what we talked
+about up here, which is maximize the
+number of conversions, lead conversions.
+Basically, who's likely to become a lead
+might be outside your targeting
+criteria, and Meta can go beyond that
+with the suggest an audience section.
+So, let's run through this. So the first
+thing we need to decide is location.
+This is defaulted to the whole of the
+United Kingdom because that's where I'm
+based, but that may or may not be right
+for your business, right? So what should
+we do here from a targeting standpoint?
+It's very simple. Advertise where your
+customers are. That might be one
+country. That might be the whole of the
+UK. That might be international. So for
+example, we could advertise the whole of
+UK. We could advertise the whole US. So
+for example, our major markets as an
+agency are going to be UK, US,
+Australia, Canada. I mean, we actually
+have clients literally in 50 plus
+countries. Um, Western Europe and
+Singapore and UAE and all sorts, right?
+Um, but our major major markets are
+going to be, you know, UK, US, Canada,
+etc. So, we could, for example, look to
+advertise to multiple countries. Or if
+you're a local business, you could get a
+lot more specific. So, let's say for
+example, you're a local business based
+in Bath, which is a place in the UK.
+Uh, so Bath in Somerset. And if I delete
+out the United States, we can see in the
+map where we're targeting. So, we've got
+Bath plus 25 miles as a default. You
+might go, "Oh, no. You know, that's too
+far. People either aren't willing to
+travel to us if you're a local business
+from that sense, or we're not willing to
+travel that far." Because local business
+could be either way, right? You could be
+a plumber traveling to customers or you
+could be a cafe with people coming to
+you. Um, so you go, "No, no, no. We're
+going to go with 15 miles around. I
+think that's more appropriate."
+Obviously, you can you can decide this.
+Now, I don't want you to overthink this.
+I don't want you to think, well, I'm a
+local business, but um I have to
+advertise nationally because Meta likes
+nice big audiences. Like, no, no, no,
+just where your audience are. I also
+don't want you to artificially constrain
+the location targeting just because you
+think that's where the people are who
+are most likely to be interested in in
+your products or services. So, for
+example, if you sell products nationally
+in the UK, don't go, "Oh, I'm only going
+to advertise in London because people in
+London are wealthier and they're more
+likely to buy my products and services."
+Like, Meta will work that out. And if
+your uh best prospects are in a certain
+location, more of your ad spend will be
+spent there. But you don't want to
+artificially constrain it because Meta
+might think might find some people that
+are in not in that location that are
+also great prospects even if the density
+of those people in those other locations
+is lower. Right? So basically where your
+customers are is good to good to select.
+One thing to quickly mention about local
+businesses is you now have this option
+which is reach more people likely to
+respond to your ads and deselect it. So
+it says here we'll also show ads to
+people interested in your selected
+cities and regions in those countries.
+So for example, do we want people do we
+want to advertise to people that are
+interested in the city of Bath or not? A
+lot of local businesses find that
+they'll generate leads from people that
+have traveled to that location. But if
+you're a roofer, that's not overly
+helpful because you're not going to be
+able to serve those people that live
+halfway across the country. So, a lot of
+local businesses want to deselect this
+even if Meta pops up a warning saying
+you're likely to see worse results. 6.7%
+lower cost per result if you select it.
+Yeah, but what's the point having a
+lower cost per lead if you can't service
+those leads in this scenario? So, most
+local business want to deselect this.
+For demonstration purposes though, I am
+going to go with uh for the rest of this
+video, United Kingdom and just leave it
+at that. Okay. Right. Moving on. We've
+got show more controls. So, in show more
+controls, we've got a minimum age. So,
+you can select anything from 18 up to
+25. This is typically recommended if
+you're advertising something in a
+particular location. And there are legal
+restrictions on who can and can't buy
+it. For example, in some places, you
+need to be 21 to buy certain things,
+right? So, you want to select 21 as your
+minimum. Otherwise, often best to leave
+it open. It only goes up to 25. This is
+not like strict age targeting criteria.
+This is just uh for the purposes that I
+described. Custom audiences. I'll
+explain in a second. And then we've also
+got languages, right? So, it could be
+that you can only serve people that
+speak a certain language within a
+certain location. If you operate within
+a country with multiple languages, and
+you think, are we only able to serve
+this uh market? Then you can go ahead
+and add in specific languages um if
+that's appropriate for your business.
+Most of the time, it's not going to be.
+You can go with all languages. I'm going
+to leave that as the default. Then we
+get down and that's all you have control
+over from a hard boundary standpoint
+like do not go beyond these targeting
+constraints to please Meta. Okay. So
+then we've got the suggest an audience
+section. So like I said these are
+suggestions. This is designed to give
+Meta direction. Particularly helpful
+when you've got a new Meta ad account
+when Meta doesn't know who's likely to
+become a lead. They don't know that
+people interested in cats who are 43 and
+live in this certain location are most
+likely to buy your products and
+services. Right? As an example. Um, so
+[snorts] here we can give medicine
+direction. So we the first thing we've
+got is include these custom audiences.
+And I said I'd talk about custom
+audiences a second ago. Custom audiences
+are warm audiences. People that have
+interacted with your business before.
+Lots of different types of custom
+audiences. People who visited your
+website. People on your email list.
+People who have engaged with your
+Facebook page or Instagram profile,
+watched videos of yours, become leads,
+all sorts. I've got whole tutorials
+about targeting and setting up custom
+audiences and definitely something you
+want to do later on. For now, don't
+worry about it. Firstly, you probably
+don't have much in the way of custom
+audiences yet if you're just getting
+started with your advertising. Secondly,
+they can always be created and added in
+later on. Okay. Then beneath that, we've
+got age. Now remember, this is a
+suggestion. So often you want to say to
+Meta, these are my this is the age range
+of my ideal prospects, my ideal
+customers. But again, Meta can choose to
+go outside that if they think there are
+people that like to convert. So what we
+typically do here is not get too
+restrictive, but just think about like
+your core demographic, your core target
+market. So for a business like ours,
+that's probably going to be something
+like 30 to 55 in terms of we're looking
+to reach business owners and marketing
+professionals and marketing managers.
+Yes, there going to be some people
+younger, some people older, of course,
+but that might be our core. Then you've
+got genders. If you skew one way or the
+other heavily, like 90% men, 90% women,
+then go ahead and make a selection.
+Otherwise, it's fine to leave it all.
+Remember, Meta is going to work a lot of
+this out for us in terms of um who's
+likely to take the action we want to
+take. And then we've got detailed
+targeting. So here we can add in
+demographics, interest, behaviors. You
+can browse the various categories and
+look for this. But often what I
+recommend to get started is just enter
+in some obvious options that sound about
+right for your target audience. So for
+example, we might have something like
+social media marketing. If I add that in
+as an option, right? So people
+interested in social media marketing as
+some as as a group of people we might be
+wanting to target. Uh we could have
+something like business page admins. So,
+anyone that's an admin of a of a
+business page um on Meta, then great, we
+can go ahead and target those people.
+Couple of simple options. You can add in
+none here. You can add in one. You can
+add in four. There's no right amount.
+These are all suggestions. This is just
+giving meta direction. Don't spend a ton
+of time on this. It doesn't matter. Seen
+a lot of people get really hung up on
+this and like to test too much. That's
+what we used to do number of years ago.
+Not what we do anymore. You can click on
+further limit the reach of your ads and
+then get really specific with the
+targeting and basically say to Meta,
+"No, I only want to target these
+people." Not something I'd recommend for
+most beginners. It overcomplicates it
+and typically we see better results now
+by giving Meta direction and letting
+Meta's machine learning algorithm work
+it out as opposed to us advertisers
+trying to have too much specific
+control. Then beneath that, we've got
+placements. So placements refers to the
+locations where your ads can be shown.
+So if we click in here, we can have a
+look, right? So if I click into more
+settings and we've got placement
+controls uh included is 24. So we can
+see actually if I go above that we've
+got platforms. So we've got the the five
+platforms currently Facebook, Instagram,
+audience network, messenger or threads,
+the places where ads can be shown. And
+we can say no no I don't want any of my
+ads to be shown on threads. Not sure why
+you do that, but you can if you want. Um
+audience network is typically considered
+the lower quality placement option.
+Audience network's going to refer to
+things you you you'll have interacted
+with these before where you sort of
+click through on something on meta and
+you come through to like an article or
+an app or something along those lines.
+That's going to be audience network. So
+sometimes advertisers will look to to
+deselect those. I'll explain that in a
+second. And then if we click into
+placements, we can see all the various
+options, right? So we can break it down
+by all the different feeds and say no, I
+don't want to advertise on feeds or I
+only want to advertise on stories and
+reels or or etc etc. Right? So what
+would my recommendation be here for
+setting this up? If you are using a
+leads campaign or a sales campaign, just
+leave it as is. Basically, let Meta run
+ads on all placements because they're
+only going to put your ads on those
+placements that Meta thinks are going to
+get you the result that you've asked for
+for a lead for a sale. So, absolutely
+fine. If however you are forced to run a
+different campaign objective like
+traffic because you cannot track the
+leads or sales that you generate then I
+do think you want to become more
+specific and the obvious option is just
+to get rid of the audience network
+because what you don't want is for Meta
+to put your ads on the placement options
+that are lower quality, less likely to
+lead to a conversion. But that's exactly
+what Meta will do if you're not
+optimizing for a conversion because
+those placements are cheaper. Other
+advertisers aren't as interested in
+those. Therefore, the cost is lower.
+Remember, the price is set by simple
+demand and supply and um and and yeah,
+so you might want to come in and
+deselect audience network if you aren't
+able to track conversions. Most of you
+will be. You'll have the pixel setup and
+you're all good. Then you can go ahead
+with just the default, which is uh
+everywhere, all 24 placement options and
+all five platforms. Run AB tests. Great
+thing to do later on. Not something I'm
+going to worry about right now. um all
+this stuff here of brand suitability and
+inventory filters and all that sort of
+stuff that is beyond the scope of what
+most beginner advertisers want to get
+into. You can get really lost in this is
+basically you as an advertising more
+control around what your ads are put
+alongside the context around them all
+those sorts of things. A thing that a
+lot of big brands care about quite a lot
+because they really care about their
+brand image. I personally don't feel
+like, you know, what your ad is around
+when a user is seeing your ad in context
+of other um stuff that they see on
+Facebook and Instagram is that
+important. I think it kind of operates
+as an isolated thing. Anyway, it's sort
+of used now to scrolling through reels
+or stories and you see very different
+things, right? Different context.
+They're not necessarily one is
+associated with the other straight
+after. I don't feel like it's a big
+deal, but bigger brands uh find this
+sort of stuff quite important and often
+mess around with it significantly. Most
+of the time it hurts results, but not
+something you need to worry about as
+beginners. And that is the ad set taken
+care of. So now let's go ahead and jump
+over to the ad level. Okay, so now it's
+time for the ad level, the most
+interesting part, the level that
+determines what people actually see when
+they're presented with your Facebook,
+Instagram ads. First thing at the top
+here to quickly mention is partnership
+ads. Love partnership ads. allow you to
+run ads um with creators and influencers
+to help promote your products and
+services. These are awesome. Not
+something for beginners. You want to get
+started with simpler campaigns first,
+but definitely look to add this in later
+on. I have content all about them. Then
+you've got identity. So, make sure that
+the Facebook page, Instagram account,
+and threads profile that your ads are
+going to come from on those various
+platforms are all correct. Obviously,
+people make errors here. And by the way,
+those are my accounts. If you want more
+information on Facebook and Instagram
+advertising, go ahead and give me a
+follow on whichever you typically use.
+Branding is more an advanced thing.
+Don't need to worry about that. Then we
+get into ad setup. So we've got create
+ad, which is the default. You could also
+use existing post. So if you already
+have a post, say on your Instagram
+profile that's done well and you think,
+oh, I want to run that as an ad, you can
+go ahead and select existing post,
+choose it, and go for it. U most of you
+are going to want to be creating ads.
+And that's typically what I'd recommend.
+when you use existing posts, some of the
+functionality is a bit limited because
+it already exists as a post as opposed
+to having full flexibility of an ad. And
+also in terms of what you put out there
+as say organic posts on on Facebook and
+Instagram versus what you use as ads,
+there's normally differences in the
+content that's used. So when you use
+when you're running ads, you're normally
+going to have a stronger call to action
+and things like that, right? So
+typically you're going to be creating
+ad. So we're going to go ahead and use
+manual upload. Advantage plus catalog
+ads. Again, slightly more of an advanced
+thing, not something I'm going to cover
+here, but just to know that if you are
+an e-commerce business and you want to
+run uh you have a catalog, you want to
+run ads uh using a catalog, this is a
+great way to go, particularly for
+retargeting warm audiences, people who
+have maybe checked out a product but
+haven't yet converted. So, definitely
+something to look to add in later on.
+I've got content on that you can find on
+my channel. But for now, we're going to
+go with manual upload. Next, choose the
+format. Do we want a single image or
+video? That's what I'm going to go with
+here. I'm going to use an image. Like I
+said, I want the campaign creation set
+up for you guys to be as easy as
+possible to get started. But you can run
+carousels. Carousels are like um cards
+of different So, you've got an image
+with some like a headline, another image
+with a headline, another image,
+headline, some pricing information,
+sometimes extra info. You've probably
+seen carousels before. Uh
+multi-advertiser ads. Honestly, we've
+tested this and we don't really see any
+difference whether we have this selected
+or deselected. So, I'm happy to leave it
+on. Multi-advertiser ad says your ad can
+appear with others in the same ad unit
+to help promote discoverability. Doesn't
+seem to make much difference either way.
+So happy to uh to leave that on. And
+then we get on to destination. Now your
+destination is where people are going to
+be sent after they click on your ads. So
+because we selected website as the
+conversion location at the adset level,
+we need to enter in a website URL. So
+this could be a product page if you're
+advertising a product. Uh could be a
+specific landing page for a service.
+Could be even maybe the homepage of your
+website. Wherever it is that you want to
+send people directly. So, I'm going to
+go ahead and paste a link in here just
+to quickly explain um what we're going
+to be using as the example because I've
+got an example campaign. I'm going to
+quickly put together an example ad I'm
+going to put together uh to help you
+understand the process. So, we have a
+thing called my meta ads mentorship
+program. And just to quickly explain
+what that is included in it, we've got
+unlimited one-to-one support. People can
+ask us any questions they've got about
+their meta ads. It's designed to provide
+them all the support they need to get
+the best possible results um from
+Facebook and Instagram ads. We do daily
+live calls and Q&A with me and my expert
+team members. We've got exclusive
+educational material, that sort of
+thing, right? That that's the offer that
+we're going to be advertising. By the
+way, if you are interested in that,
+there's a link in the um video
+description, but that's what we're going
+to be using as the offer. Um so, just
+give you a bit of context around that
+before we move on. So, I've gone and
+entered in the URL to the landing page
+for people to come through and book a
+call. And when we run ads for our Meta
+Ads membership program, which we do all
+the time, um that's exactly where people
+are sent straight through to this page
+where they can go ahead and book a call.
+Once you enter in the URL, you'll start
+to see the preview over here, which is
+really useful. You can't see much yet,
+but as we add in things like add
+creative and add copy, we'll be able to
+see what it looks like um for the user
+that's actually going to see it over
+here in the preview, which is helpful.
+So, we have this first option called
+display link. Um so, you can see here
+we've got admasters 365.com, which is
+the link that I've added in up here. We
+could change that using display link if
+you want to. I don't want to here. Just
+wanted to quickly highlight that it's an
+option. Then, we've got these browser
+add-ons. The default is none. And that's
+what I'd recommend you go with for now.
+I think that some of this stuff gets a
+little bit too complicated, a little bit
+too advanced for beginners. Um, you can
+add, for example, a call button to your
+website, an Instagram direct button on
+your website, people to be able to
+message you via Instagram, WhatsApp,
+etc. Something you might want to mess
+around with later on. In general, we
+don't tend to use these because we want
+people to take a very specific path, as
+in they come through to a website or a
+landing page and they take the one
+action we're sort of leading them to
+take as opposed to confusing them with
+various different actions. But your
+business might be like, "No, I'd love a
+phone call or very happy to chat with
+people via WhatsApp." Then you can go
+ahead and set those up. Instant
+experience. Again, not something we're
+going to worry about. It's part of this
+tutorial. And the same with Facebook
+event. If you are advertising a Facebook
+event, you're going to have to go
+through that. But the vast majority
+watching this are not going to fall into
+that category. Then we get into the ad
+creative section. Right? So, we've got
+setup creative and then we can choose
+between image ad and video ad. Like I
+said previously, video ads can perform
+really, really well. Image ads are much
+simpler for people to to create and I'd
+often recommend that advertisers get
+started there. You can always look to
+produce uh more sophisticated ad
+creative things like video later on.
+I've got video tutorials showing you how
+to do that you can find on my channel.
+But we're going to start nice and
+simple, reduce that barrier to entry and
+go with image ad. And once you select
+image ad, the first thing that's going
+to happen is Meta is going to try and
+add in these various extensions. So, uh,
+we've got some branding information
+here, stuff that Meta is going to use to
+try and work out when they produce AI
+generated assets. You'll see what that
+looks like in a second. And they're
+going to use this information that we
+add in here. And then we've got site
+links, right? So, Meta is going to add
+in extra links to other pages on our
+website um, where people can go directly
+instead of the main one that we're
+looking to send people through. So, in
+our case, site links could be things
+like sending people through to a case
+studies page or to a how it works page
+or something like that, right? Um, I
+think for beginners to get started, we
+want to make this straightforward. Don't
+worry about adding in any of the
+branding stuff. We're not going to rely
+too heavily on the AI generated assets
+for now anyway. And I'd also probably
+turn off site links. It might be really
+appropriate for your business. You might
+think, "No, great. I'm coming maybe from
+a Google Ads world where you're used to
+site links." But if you don't have
+experience with that, it's just it's
+added complication at this stage. It's
+another thing to worry about. And again,
+I don't really want when I'm running my
+ads people to come through to other
+pages on my site. I want them to come
+through to the one place I want to come
+through, which is a landing page where
+they can go in and book a call. So, I'm
+going to ignore this stuff for now. I'd
+recommend you do the same to get started
+with. Okay. And then we get to media.
+So, a few different places where you can
+grab the imagery or videos that you're
+going to use. You can get them from your
+Instagram account. You can get them from
+your Facebook page. You can get them
+from your ad account if you've uploaded
+previously. We've obviously got a bunch
+of options here because this is an
+example ad account. So, I upload stuff
+to be able to to demonstrate. Um, but
+just wanted to highlight that if you've
+already got stuff or you can just go
+ahead and click upload over here and
+select um any files that you've got from
+your computer and get those uploaded.
+Very straightforward. I've actually
+already uploaded the files that I'm
+going to use for demonstration purposes.
+Like I said, we run ads for my meta ads
+mentorship program already. So, we have
+image ads that I can literally
+demonstrate. So, I'm going to go ahead
+and select this option and click next.
+And you can see that when you add in
+your ad creative, Meta is going to show
+you what it looks like in the three main
+formats. So, three main aspect ratios,
+right? You've got square, you've got
+vertical, and you've got horizontal.
+Now, horizontal is by far the least
+important because as a proportion of
+your um ad impressions, horizontal is
+going to be the fewest by far. Most of
+your ad impressions are going to be from
+a square um ad format or a vertical ad
+format. Square is typically going to be
+used for things like the feeds, um,
+Facebook, Instagram feeds, lots of feed
+options. Vertical is going to be things
+like stories, reels across both
+platforms. Now, what you can see is that
+because I've uploaded a square image, it
+works brilliantly for the square format.
+But in the vertical and the horizontal,
+not so great. So, in an ideal world,
+what you would do is you would either
+crop if possible. So, let's say we turn
+that to 916, try and make it that just
+doesn't work, right? Cuts off all the
+text. It just it just won't work at all.
+as an ad. So, we can't do that. Ideally,
+you'd either crop and and change the the
+dimensions, or you would replace it with
+a different image that is specifically
+designed and formatted for that aspect
+ratio, which is exactly what I'm going
+to do. So, I'm going to click replace
+there. And we've got a vertical one
+that's been selected. Go ahead and put
+back. You see that looks much better in
+that format. Right? You don't need to do
+this. This is kind of an optional extra.
+Meta is really smart nowadays. So, they
+would have taken this image and probably
+made something fairly similar looking to
+this using um like image expansion and
+they'll fill in the top and bottom for
+vertical locations and they'll do
+something with this to make it look
+good. But just wanted to highlight that
+if you have the capacity to spend a
+little bit more time and effort on the
+creative and make sure it looks good in
+the various placement options then doing
+so could be a good way to go. Um right,
+just to quickly highlight the image as
+well. So, this is obviously really
+simple um what we've got here. here. So,
+it's a picture of me. Mostly when we're
+advertising our mentorship program, it's
+to warm audiences. People have already
+exposed to my business. People are
+unlikely to sign up for a mentorship
+program if they don't know who the
+person is that's going to be mentoring
+them, right? So, so because of the
+nature of this offer, it's warm audience
+specific. So, we definitely want a photo
+of me in there that's going to help grab
+attention. Very simple text on the
+image. Want me to mentor you? Very clear
+what this offer is all about. And then
+it's kind of small. Hopefully, you can
+see it. But we've basically just got
+three testimonials highlighted. you
+know, almost an 8x rat in 3 weeks from
+someone made $29,000
+with a 7.3x rat in 30 days. Um, from $30
+a day ad spend to 100k month in sales in
+just 3 months. So, differing degrees of
+spend and success, but just a few quick
+snippets that people can look and be
+like, "Wow, I'd love a result like that
+or results like that for my business."
+So, you could it's relatively easy to
+replicate something like this even if
+you don't have much in the way of
+graphic design skills uh and things like
+that, right? Anyway, moving on. So,
+let's go ahead and click next. Now, we
+get into the text into the ad copy
+section. So, the first part is primary
+text. Now, in different placement
+options, the copy and the text appears
+in different locations. But if you think
+about like a traditional Facebook feed
+on mobile, you're going to have the
+primary text above the image, then
+you're going to have the image, then
+you're going to have the headline
+underneath it, and then beneath that,
+you're going to have the description and
+uh and the call to action button off to
+the side. Okay? So, that's typically how
+it's going to work. So, let me grab a
+primary text that I've got that we've
+used to advertise my meta ads mention
+program. And all the stuff I'm adding in
+here is stuff that has worked well and
+it's good to learn from real life
+examples that have performed well. So,
+let's do that. Okay. So, I've just
+pasted in the primary text and if I just
+quickly read this so that you understand
+the sort of thing I'd recommend you go
+with and what we're looking to do here.
+So, we've got tired of wasting money on
+Facebook ads that don't deliver. We'll
+mentor you daily to explode your
+revenue. Limited spots available. Apply
+now and transform your ad game. And then
+we've got the link. Now, that is a very
+short, simple piece of ad copy, but it
+actually ticks a lot of boxes. And
+that's what I try recommend you try and
+replicate. We don't want to be writing
+essays. People just aren't going to be
+bothered to read it. But we're doing a
+number of things here. So, we're
+highlighting [snorts] the problem and
+calling out the target audience with the
+first sentence. Tired of wasting money
+on Facebook ads that don't deliver. So,
+anyone that is suffering from that
+problem is likely to pay attention to
+the rest of the ad. Um, it also is sort
+of agitating that problem. We're
+emphasizing like, ah, are you really
+annoyed that you keep trying? It's just
+not working. Then we got, we'll mentor
+you daily to explode your revenue. So,
+we've got a feature. What's involved in
+this? Oh, it's a daily mentorship.
+Gotcha. Um, to explode your revenue.
+Great. That's exactly what I do. I
+really want exploded revenue. So,
+there's a benefit associated. Limited
+spots available. Introducing scarcity.
+Um, apply now and transform your ad
+game. And there's a call to action. So,
+you can see in just a couple of
+sentences, we've ticked like a load of
+boxes, right? We've called out the
+audience. We've agitated the problem. We
+have uh described the main feature, the
+main benefit associated with it. We've
+introduced scarcity and we've got a call
+to action all in, you know, take six
+different things there. Six, seven
+different things within uh very within
+just a couple of sentences. So something
+like that obviously tailored to your um
+offer, your business is likely to do
+well. Right? Then what we've got here is
+Meta is going to use AI to generate text
+alternatives and they're going to do
+that. You can see here tailor variations
+to personas. So they've come up with
+three different personas that they think
+like basically avatars, target custom
+avatars. We've got ambitious
+entrepreneurs, digital marketers, and
+small business owners. So Meta is like,
+look, if we think that someone in your
+target audience is an ambitious
+entrepreneur, we're going to put this
+primary text in front of them. Now they
+may use other options as well but um but
+we can take a look through these and
+decide which we do and don't want to use
+right so my recommendation with
+everything AI generated copy imagery is
+absolutely use it but you need to be the
+filter as the advertiser cuz sometimes
+it's going to be great you can just use
+it other times some of the suggestions
+are not going to work at all you can't
+use them sometimes it's going to be of a
+hybrid where you go well that's kind of
+good but does need a little bit of this
+changing and that changing to make it
+work so we just quickly read this first
+option we've got tired of throwing money
+at Facebook ads don't deliver unlock
+explosive revenue goes through with
+daily mentorship limited spots
+available. Apply now transform your ad
+game. So I mean that's very very similar
+to what we've got already like happy
+just to include that. Uh stop wasting ad
+spend on underperforming Facebook ads.
+Get daily mentorship to scale revenue
+and transform your ad game. Limit what's
+available. Level up your expertise and
+maximize ROI proven strategies. Yeah,
+all good. So you might find that there
+are options that you're like no I don't
+want to use but you can look to add
+these in. And if I just scroll back up
+as well you'll see that primary text
+we've got here one of five. So you can
+have up to five different options. um
+absolutely fine just to go with the one
+if you just want to get started. You can
+always add other ones in later on, but a
+good idea to test multiple options
+because it just increases the chance
+that a you'll find an option that works
+really well and b it gives meta more
+flexibility. Look, like they've said, we
+might put this ad copy in front of this
+type of persona and this type of ad
+copy. So basically, they're working out
+different people within your target
+audience and what they are most likely
+to respond to. Much more of a tailored
+ad deliver experience which can help
+improve performance. Okay. Right? Then
+we move on to the headline and then this
+is a headline that worked well for us
+which is just very simply daily Facebook
+ads mentorship. Right. We can add add
+headline options again. So you can see
+it's one of five. The same principle
+applies. You can have five headlines and
+I would recommend it. And Meta is going
+to AI generate some options for you.
+Just quickly run through. So we got
+explode your ad revenue. Now yeah that's
+fine. Unlock ad mastery in 5 minutes
+daily. That's not really how the
+mentorship program is designed to work.
+It's not 5 minutes daily. We have like
+live calls Q&A that last longer. We have
+training that last longer. You could do
+5 minutes a day. you could do longer.
+So, I don't like that option. It's not
+good for our offer. Not going to go
+through every single one here, but you
+can just see the sort of process I'm
+going through and the logic I'm going
+through there over deciding what to
+choose and what not to choose. Daily
+membership for ad success sounds good. I
+have other videos more detailed on ad
+copy, by the way, in case you want to uh
+to go through these. Right? Then we've
+got description. So, this isn't going to
+appear on every placement options, but
+like I said, in the classic sort of
+mobile Facebook feed, it's going to be
+just under the headline. So we might go
+with something like limited spots
+available in order to um emphasize the
+scarcity that and there are limited
+spots available. We only have so many
+coaches and so many slots available on
+on the live calls and Q&As and things.
+So yeah, uh absolutely fine to to put
+that in there. Yours might be a a
+scarcity thing or it might be urgency
+based like we're running a current sale
+but that ends at a certain time. There
+are ways to incentivize that action. And
+then we've got call to action button
+here. Right? So what you see here will
+depend on what type of campaign you're
+running. So, if you're running a sales
+campaign, you might see some slightly
+different options. Um, although we can
+still see things like shop now, for
+example, even with the leads campaign,
+learn more is the default. What I'd
+recommend here is you just go with the
+option that best describes what it is
+you want people to do, like what's the
+next step with a menship style offer,
+something that people aren't necessarily
+super familiar with. It's not as obvious
+as other things that people are used to
+buying all the time. Then we might have
+something different. We might go with
+contact us or we might go with schedule
+a call or something like that. But I
+think learn more is the appropriate next
+option. In other time, other businesses,
+service businesses, it might be get
+quote is the next thing. It might be
+shop now. Uh lots of different options
+depending on what it is that you are
+looking to do. Don't overthink it. Just
+go with the option that best describes
+um the next step. Right? Then we go with
+next. Now what Meta is going to do is
+they're going to take the image that
+you've that you've added in and they're
+going to use AI to generate other
+versions. So this is a tool that is
+improving all the time. uh and it's very
+interesting that it's doing so and and
+uh by the time you watch this you might
+see that the options have improved again
+substantially. So if we look at what
+Meta is looking to do here they've
+basically most of these are just
+changing background colors for example
+or changing the location. So that room
+behind me actually looks like one of our
+one of our office one of our meeting
+rooms in our office. Um which might be
+coincidence or they may have found it
+elsewhere but like that's basically the
+same image as what we've got but it's a
+different color scheme. like, "Yeah,
+sure. Happy to use that." Uh, again,
+same with that one. Although maybe the
+text isn't as good to read, but there
+are options that we absolutely can't
+lose. So, it's, for example, want me to
+mentor you, and they've sort of AI
+generated a woman there. Like, it has to
+be me in these ads, right? In order for
+this process to work, want me to mentor
+you without me in the thing. That's just
+not going to work. This is mostly
+advertised to warm audiences. Um, that
+version of me is like, I guess it's kind
+of me, but not really. kind of looks a
+little bit like someone else or you know
+that get we can't use that, right? It
+has to actually actually be me in there.
+These options down the bottom obviously
+wouldn't work. So you could be the
+filter. You might find some work really
+well. What what you see here um will
+absolutely depend on what you upload.
+And for some businesses, you're going to
+see better options than others. So if
+you're uploading an image, for example,
+of a product, the AI generated image
+options can work really well because
+Meta is going to use different
+backgrounds or put them into different
+scenes. Whereas when you're using people
+in your ads, particularly if you that
+needs that person needs to be the same
+person involved like it is here, less
+so. But when I did this video a year
+ago, it didn't come up with any versions
+of me at all. So we just couldn't use
+this use any of the AI generated images.
+Now we can. You can see this is
+improving um all the time. So just add
+in the ones you're happy with. The meta
+is basically going to test different
+variations, see which works best, right?
+Fairly straightforward. Okay, let me go
+ahead and click next. And then we've got
+enhancements. So, these are things that
+Meta is going to do to try and improve
+the quality of our ad creative in order
+for us to get better results or at least
+test it, right? So, we can see we've got
+three for review. So, Meta has decided,
+you know, we don't think that having
+these on makes a lot of sense. Let's
+have these um turned off and then
+they've put turned on seven that we
+could also review. So, for example, they
+they said we don't think it's best to
+have enhanced media text. So, we'll
+replace the text in your media, not in
+the ad copy, in your media with AI
+generated text. Yeah, I don't want that.
+We want the message to be clear and
+consistent. That could go wrong. And
+then we've got translate text turned
+off. Yeah, we don't want the text to be
+translated into other languages because
+we can only provide the menship program
+in English. You know, me and my expert
+team members that that run the program,
+we speak English and we we operate in
+English, right? So, so we can't we we
+want to translate to other languages
+because we can't then fulfill in those
+other languages. And then Meta have also
+turned off um enhanced CTA which I'm
+absolutely happy with. Let's have a
+quick look at the other active
+enhancements. These are things that Meta
+has turned on and saying, "Look, we
+think these are going to help improve
+performance." So, we've got ad overlays,
+right? So, they can add um text overlays
+over the top of the image to highlight
+certain things, grab things from the
+landing page or the ad copy. You know,
+with an image like this, I probably
+would actually turn that off because
+look, it's already really textheavy. If
+it was less text heavy, I'm happy to
+leave it on because the overlays can
+often improve performance. So, I'm going
+to turn that off. Then, we've got visual
+touchups. Okay, so we'll automatically
+crop, expand your chosen media to fit
+more placements. Well, we've kind of
+done that to some extent with the three
+main formats. Normally, I'm happy for
+that to stay, though. Uh, Meta is pretty
+good at making that make sense to add in
+add music. They basically turn your uh
+image into like a short video, add some
+music overlay. Um, I'm happy to leave
+that on. I totally get some businesses
+aren't. They want to be much more
+specific of like, no, I couldn't
+possibly have that that audio. You can
+customize this. So, you can leave this
+on. What have they got for us for now?
+just a little like corporate jingle
+basically like that's fine. I'm happy to
+do that. You can customize and then say
+no I want specifically to play this
+music not that music or you can just go
+ahead and turn that off. Uh text
+improvements. So any text you provide
+may appear as primary text headline
+description. So you know we wrote in the
+various locations that is saying we
+might choose to move this around right
+so you know one of those headline
+options we might just stick that in the
+primary text or we might change
+description. I'm normally quite happy to
+leave that on. Sometimes that will mean
+the ad doesn't make sense depending on
+how you've constructed your copy, in
+which case you want to turn that off.
+Um, in our case, for example, that
+primary text can't be used as a headline
+because it's too long. Um, so that will
+just won't happen. Uh, but again, you
+can customize that or turn that off
+depending on what you want to do. I
+normally have to leave it on because if
+meta, for example, wanted to switch my
+description, my headline, which is how
+it would work in reality given the copy
+we set up, like no biggie. Um, adapt.
+Here we go. Adapt multi-image format.
+So, we'll show ads with multiple images
+as a video or slideshow or a video
+collection. Now, we haven't got multiple
+images in there. It's already on. They
+might use the v different variations
+that we had to try and create something.
+Again, I'm kind of happy for Meta to
+play with this and do what it can. If
+Meta creates anything or adds variations
+and additions based on the ad creative
+that we've uploaded that kind of doesn't
+work and doesn't make sense, well, as
+soon as they put it in front of users,
+they won't take action because it
+doesn't make sense. and they'll very
+quickly learn and stop doing that and
+test other options. So, I don't think
+this adds much or really makes any
+difference to this particular ad. If you
+were running like um a carousel or um
+had an ad campaign with lots of
+different images, then this could be
+really quite valuable. So, I'd recommend
+normally leaving that on. We've got ad
+animation. So, Meta can basically turn
+this image into something that can move.
+They can animate text, various elements.
+Again, happy to leave that on. And then
+we've got flex media. So show media you
+chose for a specific aspect ratio across
+all placements when it's likely to
+improve performance. So you know how we
+had the square versus the vertical. What
+meta is basically saying here is like
+look we might go ahead and use the
+square um in the vertical placement or
+we might go ahead and use the vertical
+uh format that you gave us in say the
+feeds where it actually take up
+basically your whole screen as you're
+scrolling through a feed if we think it
+improve performance. Again quite happy
+for meta to work that out. So this is
+very much go through decide the ones you
+want to use decide the ones you don't
+want to use. I would on the side of
+trusting Meta with this. Highly
+incentivized to improve stuff to help us
+get better performance. But I know a lot
+of advertisers are nervous about that.
+They want to turn these off and be like,
+"No, no, no. Just put the ad as is in
+front of people." That's, you know, I
+totally get that. That's fine, too.
+These typically don't make a huge amount
+of difference um whether you have them
+on or off either way. Um okay. So now we
+can start to see the preview come
+together, right? We've got, so for
+example, this option here, this is like
+a Facebook feed. We've got um the text,
+the primary text. We've got the image.
+We've got the headline. We can't see the
+description here. I guess it's not going
+to play show on all placements. We've
+got the learn more call to action
+button. Uh we've got the image. We've
+got the other image variations that Meta
+has come up with. And then we can see,
+you know, via there's lots of things you
+can go through in the preview. So you
+can see via um different locations. So
+we've got Facebook feed there. Uh it's
+taking a second to load. We can have a
+look at what it look like on the
+Instagram feed. So like the primary text
+at the top. You just go through the
+various placement options and just make
+sure it all makes sense. Um if you set
+it up how I how I have, you're
+basically'll be fine. got a warning to
+add product or site links, but no, I'm
+all good for what that is. And we went
+through that window. You can adjust it
+from within here as well. So, if you're
+like, ah, okay, started with the brawn
+primary text, but I want to add in some
+other primary text, you can go ahead and
+do so and get those added in here.
+Same's going to apply to headlines. And
+then we've obviously got this other
+stuff, description, optimize text by
+person. You can leave that as enabled.
+That was based on the creative enhance
+we talked about. And then we've got call
+to action, learn more, absolutely fine.
+Run AB test to see the results. Not yet.
+Definitely something to do later down
+the line once you've got a little bit
+more experience with your uh meta ads,
+but right now happy to leave that off.
+And we can also go back in and edit
+these creative enhancements. So we ended
+up with six out of 10 on um going
+through that process. Um but you can
+change that should you wish to creative
+testing. So we can set up different
+tests between different ads. So let's
+say we had one image and we wanted to
+test that not just like different
+variations like we've got here, but
+against totally other images. You can
+absolutely do that within the one ad
+unit. Not something I want you to mess
+with for now. Um, but yeah, just know
+it's an option. Same's going to apply to
+languages. Uh, for the vast majority of
+you, you're just going to go go with the
+the one language. Then we get into
+tracking here. Basically, you just want
+to make sure that um you can see the
+pixel and you need to have, like we
+talked about before, if you're
+generating leads, generating sales by
+your website, you need to have the pixel
+installed. Ideally, you would also have
+the conversions API installed and you
+would have all that tracking set up. I
+have other videos that cover that, but
+here's where you just basically come
+down and just check that the pixel is
+actually here and that that's the right
+pixel. You can check the ID based on
+what you set up. Um, I've seen issues go
+down. And what's basically saying is
+that Meta is going to track these ads.
+We can add in other things if that's
+appropriate for a business like URL
+parameters to track. If you're um that
+way inclined and you do a lot of
+tracking, say via Google Analytics or
+another another um platform and you want
+to to cross reference things and really
+understand your data, you can go ahead
+add those in. But I think most beginners
+that is probably overkill and then that
+is our campaign setup. We can go ahead
+and click publish. Meta is normally
+going to take a bit of time to review
+the ad, make sure it complies with
+advertiser policies. Normally takes
+about 30 minutes, but particularly with
+your first ads could take um a while
+more. And then you should start to see
+your ads being delivered and you can
+quickly have a look at the uh data
+generated. So if I just close down the
+campaign, we won't have any here, but
+you'll be able to see things like your
+cost per result. You'll be able to see
+impressions, how many um times have our
+ads seen, how many people has it
+reached, all the various data points.
+There's lots of other things. I've got
+other videos on um analytics and
+analyzing data and what to look for and
+how to optimize campaigns and things
+like that. But that is the process of
+getting your first or a proper Facebook
+ad campaign set up. If you've already
+created them but weren't 100% sure that
+you set up everything correctly, that is
+how you do it. Now, I quickly want to
+touch on campaign structure. So, what I
+demonstrated here is one campaign, one
+ad set, one ad. Although, there are a
+few variations of things like primary
+text headlines and the images themselves
+within that ad. Um, and that is
+absolutely fine to get started with.
+I've talked about throughout this video
+keeping it simple, making
+straightforward as possible. You can
+make things really complicated should
+you wish to um later on, but let's keep
+it simple to start with, easy to
+understand, easy to set up. As you go
+on, you're going to want to add other
+things, probably other campaigns for
+things like different services,
+different product ranges, certainly
+different ads to be able to test
+different creators. I've got a video on
+campaign structure you can find on my
+channel and you can go through that in a
+lot more detail, but fine to get started
+with this current structure. And then in
+terms of what to watch next, I recently
+recorded a video talking about exactly
+what I would do if I was starting
+Facebook ads all over again today. And I
+think that would be a really good thing
+for you to watch next. You can check it
+out here. I go through what you need to
+focus on, what you don't need to focus
+on. You now know how to create a
+Facebook ad campaign from scratch. But
+there's more to it than that. There's
+other considerations that I cover in
+this video

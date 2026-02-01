@@ -1,0 +1,533 @@
+# Build an AI Appointment Setter for GHL with Retell AI & n8n
+# Video: https://www.youtube.com/watch?v=XFZ7X11eNio
+# Category: ghl-chatbot
+
+In this video, I'll show you how you can
+never miss another lead again using AI
+voice agents. I'll show you my exact
+systems that I use, including my AI
+voice agent on Retail AI, appointment
+booking workflow on NAN over here, and
+the go highle workflow, and how you can
+set it all up. By the end of this video,
+you'll be ready to never miss another
+follow-up again and fill your calendar
+with appointments with pre-qualified
+leads, making the most of your lead
+genen efforts. I'll provide the N
+template in my free school community,
+the AI Avengers, down below. So, please
+join. we'd love to have you in. And if
+you want a custom system like this built
+out for you, book a call down below. So,
+let's get right into it. So, first I'll
+start with going over the n workflow for
+scheduling appointments directly into
+your go highle calendar. So, first we're
+going to start with the web hook here.
+So, um we're going to go to a production
+URL. So, you want to copy uh this and
+paste it into your retail here. So,
+functions book check availability. This
+is where you copy and paste it. And then
+um after that we go on to um checking
+the intents. And the next one here is
+the nodes. So this is to check whether
+um the caller wants to book an
+appointment or to check uh availability.
+So I put both of the functions into uh
+one workflow here just for um
+convenience. I just like to put
+everything into uh one workflow. So um
+JSON body intent. This is where we can
+determine the caller's intent. So retail
+is going to push a JSON input into this
+N workflow and intent will be under the
+body. We just have to check if it's
+equal to book appointment or check
+availability. It will be one or the
+other. So that's how I set it up. So um
+yeah, this is just uh the check and then
+we're going to determine if it's going
+to be book appointment and if it is then
+we're going to make an HTTP request. So
+I did HTTP request because I found this
+to be much more reliable than the native
+GoHigh level integrations on N8N. So, um
+yeah, I just I put all of these here for
+you. If you join my school community and
+you download the template, it's going to
+be all here for you. So, the only thing
+that you need to change is really um the
+authorization here. So, you just have to
+enter your own private integration key.
+And where you can find that is um go to
+your uh go high level sub account, go
+under settings, go to private
+integrations, and what you want to do
+here is create new integration. So,
+let's just do demo and uh demo
+And then here you want to select the
+scope. So if you want to be able to um
+book appointments, you have to select
+view and edit calendar, view calendar
+events, uh calendar groups, resources,
+and then um yeah, you can select
+whichever one that you need. So like
+conversation, uh messages, uh view and
+edit contact. So that's what we need.
+And then um yeah, you just basically uh
+choose what you want uh what whatever
+that you want to do on N. So um yeah,
+let's just yeah, select custom fields as
+well. View and edit
+tags. Okay. And um yeah, view and edit
+opportunities. So these are the ones
+that I always select. So um yeah, just
+going over this while we're at it. And
+um yep. So yep, that's basically it. So
+once you do that, click create. And then
+you want to copy this and you want to
+save it somewhere. So like on your
+password manager or something like that.
+So copy this and paste it somewhere.
+Keep it safe because once you close
+this, you won't be able to see it again.
+So um anyways, just copy this and then
+uh paste it into here. So now with this
+key, you can make HTTP requests to go
+high level cuz if you don't put uh a key
+here, then you won't be able to make any
+requests. So anyways, uh let's continue.
+So calendar ID. So you will need to
+change uh all of these as well. And the
+way to find them is um by going onto um
+your sub account. So um I'll actually
+show you. So location, location. So this
+is basically your sub account ID. So
+this is your location and as you can see
+here, location. So I'm under my sub
+account, Nebula AI. And then um yeah,
+and then for calendars, what you want to
+do is you want to go to settings. um go
+to calendars and then um you'll find
+your calendar ID here. So yeah,
+discovery call. Yeah, this is your um
+calendar ID. So just copy this and then
+um yeah, paste it into here and then uh
+contact ID. This is the unique contact
+ID provided by go high level. So when
+you make an API request to retail AI to
+uh trigger a call to a given number,
+you're going to send the contact ID and
+go retail is going to send the go
+contact ID to N to make an appointment
+and then um start time so booking times.
+So that's going to be collected by
+retail AI and sent to the NAN workflow.
+And the thing is it has to be in ISO
+8601 format. So I'll show you an example
+of what that is. So, uh it has to be in
+this exact format and you can just tell
+retail to uh collect the desired
+appointment time in this format. So,
+this is uh 20 24 uh November 13th uh
+6:30 a.m. uh Sydney time. So,
+um yep. And yeah, you just have to
+insert these variables. I already did
+that for you. So, all you need to do is
+really just uh change these. And um and
+the strange thing about go high level is
+that they make bookings by the uh
+contact ID, not by their first name,
+last name, email. So um yep, that's it
+for the HTTP request. And then um if
+they decide to book an appointment, but
+it's unavailable, then we're going to
+loop it back to check availability. And
+I found GoHigh Level's um native
+integration here with N to be reliable.
+So, yep. Check availability, get free
+slots, and again, put your calendar ID
+in here and start dates. So, go highle
+API docs is very weird. So, for the
+start date and end date, you have to
+enter both. And it has to be in the Unix
+milliseconds format. So, it's like the
+number of milliseconds that has passed
+since January 1st, 1970. It's weird. And
+I don't know why Gohigh Level did it,
+but you just have to do it like this.
+Yeah, I just put it here for you. Um,
+yeah, new date. Okay, I'm not going to
+read it, but anyways. Um, end date. So,
+I what I did here is uh I checked the
+availability within the next 3 days
+because um you want to book an
+appointment as soon as you can with a
+lead. You don't want to uh book them in
+for like like 3 weeks later or like a
+month later. So, yeah. Anyways, you can
+change this if you like. If you want to
+check within the next 7 days, just
+change this three to a seven. But I'll
+just keep it three for now. So, if the
+appointment was successful, it's going
+to send a web hook response. So, um, I
+did this all for you, but anyways,
+response. Congratulations, your
+appointment has been booked and I'm
+going to check availability. And what
+this is going to do, it's going to
+return like a long list of um available
+times by like the 30 minute or like by
+the 1 hour thing depending on how long
+your calendar is. So, it's going to be
+like 9 9:30 10:30. And thing is, we're
+not going to read out all the times to
+to the caller, right? So, what we're
+going to do next is an open AI node. So,
+I prompted it all here for you. So, uh
+it's ready to go. But anyways, what it's
+going to do is you're just prompting it.
+So, you're you're a transcriber. You
+just found availability for booking in
+the next 3 days. Now is the current
+time. And here's here are the available
+times. You just want to provide like two
+time ranges. So, like uh Monday morning
+or like Tuesday afternoon. Yeah, I did
+all the prompts for you, but anyways,
+I'm just going over it to make you
+understand. And then you want to send a
+web hook um back with the um available
+times. So this will be the output of the
+open AI node that I just showed you. So
+that was it for this very simple and it
+end workflow. So if you want to practice
+and build it yourself, then you can just
+play this part of the video. And here so
+this is u my uh appointment setter. Uh
+this is just a demo. So um yeah, you you
+just want to follow the perfect prompt
+formula. So, uh, role. So, you want to
+describe who this person is and, uh,
+describe the skills, personality, like
+you're creating your own RPG character.
+And then you want to go to context, uh,
+current time. So, I'm just going to go
+over it very briefly because I've went
+over it too many times now. And then,
+um, yeah, just briefly talk about your
+business, what services you offer, your
+contact information, and you want to put
+this in as well. So, lead information.
+This is a must when it comes to outbound
+calls. So, the AI agent has context of
+who it's calling. So yeah, first name,
+last name, phone number, email address.
+So this will all be provided by GoHigh
+levels HTTP request. So we'll go to that
+soon. And then task. So here you want to
+provide step-by-step task of what the AI
+agent should do. So basically the
+script. So like um hey John, it's Sarah.
+How how's your day going? And then like
+yeah, ask if now is a good time to chat.
+And if they're hesitant, just you kindly
+assure them. And yeah, just get a time
+to call back if they really cannot call
+now. and yeah ask the qualifying
+questions. So yeah, you want to you want
+to customize this to your specific
+business and industry. So your industry,
+your revenue, uh budget and then uh if
+they are qualified, then go ahead to
+make the appointment. So uh yeah, these
+are your steps and then the notes. So
+like disqualification criteria and ways
+to handle objections. I only have two
+here. I could put like three more, but
+if you want to put a lot more objection
+handling methods, then yeah, just add it
+to your knowledge base here. And then um
+the flow of the conversation. So yeah,
+just general rules like just like stick
+to the script, be funny and witty, uh
+speak at a consistent tone, and then
+yeah, just ways to answer questions like
+yeah, don't read like uh you're reading
+from a list or like a blog post and
+rules that you should never break. So
+anyways, that was it for the boring
+part, which was the prompt. I've been
+over it too many times. So anyways, what
+you want to do is you want to add a
+function. So book check availability. So
+that's the name of the function. So
+yeah, you just want to like give it a
+name booking check availability. And um
+yeah, describe what it's used for. And
+um like I showed you earlier, this uh
+production URL, you want to put this um
+in here. And then um yeah, so and then
+parameter. So you want to u put in this
+parameter over here. So it's basically
+just uh defining the JSON schema that
+it's going to be sending to the NAN
+workflow. So you're basically just
+sending the guideline of what N is going
+to receive from retail. So yeah, you're
+just describing each variable. So like
+booking time, I'm describing what it is.
+It's a string and it has to be an
+Australia Sydney time zone in ISO format
+and email last name point and then um
+where was it? Intent. This is a required
+variable. And yeah, I just described it
+just like um all the other ones. So I'll
+provide all this resources um down below
+in my school community. So uh you can
+check that out. But anyways um intent.
+So enum. So this basically means it can
+only take in these two uh values nothing
+else. And then required intent and ID
+which is the goal high level um unique
+user ID. So anyways um that's it. And
+then
+um and then yeah you want to um go down
+to um yeah post call analysis. So uh
+these are all the uh variables and
+information that you want to extract and
+analyze from the call. So um yeah like
+first name, last name, industry budget,
+revenue. So like like the qualifying
+questions and um a boolean here uh
+appointment booked to determine if they
+had booked an appointment or not and if
+they're qualified and if they decide to
+if they want you to call back at another
+time. Um here as well. So So yeah, enter
+the ideal call back time. So it could be
+in like the ISO format if you want
+retail to like call back um the leads at
+a specific time or you could say like
+tomorrow morning and then you can take
+the call yourself. And then um yeah
+agent level web hook. So this is where
+the end of uh call report is going to
+go. So I'll show you the go highle
+workflow finally. So now the this
+workflow is going to start when um an
+either a uh form is submitted or a uh
+Facebook lead form is submitted. So you
+just want to uh you go on here and then
+select the form. So whenever somebody
+fills out this form, they they'll be
+entered into this workflow over here. So
+I've already selected my form and then
+go to um yeah Facebook lead form if you
+use it and then um yeah I selected my
+form here as well and then yeah you want
+to uh tag um the user tag the lead uh
+follow-up start and then yeah you want
+to add them into um your uh pipeline. So
+here, so you want to add them to this uh
+pipeline here just um as an example. And
+then
+um yeah, in pipeline lead submitted
+form, opportunity name, opportunity
+source. Yeah, you can uh put whatever
+you like here, but I just put contact
+name just uh as a demo. And then um what
+what I would normally do is like uh when
+they opt into my funnel, I would give
+them about 30 minutes to watch the VSSL
+and decide whether to book an
+appointment on or not. But if they
+haven't booked an appointment by 30
+minutes, then either they've uh dropped
+off or they've been distracted or
+something like that. We don't know what
+happened. But anyways, that's when we
+should uh reach out to the lead. Uh we
+should reach out to them as soon as they
+can because uh speed to lead is key.
+Like if somebody doesn't book in like 30
+minutes, then we need to follow up. If
+you wait for like 3 days, then they've
+probably forgotten about you. So
+anyways, for this normally I will put 30
+minutes but I just put 1 minute just for
+um a demo which I'll be showing you
+later. So uh stick around and then here
+we are determining if they had booked an
+appointment within the next uh 1 minute
+or uh 30 minutes in my actual case. So
+uh wait 30 minutes determine if they
+have booked an appointment or not. So
+anyways to continue this will trigger
+the first call. So what you want to do
+here is go on to custom posts and then
+copy and paste this URL. So this you can
+find all of this in the retail AI API
+docs. Just refer to that and then yeah
+authorization. You want to select beer
+token and then yeah enter your own API
+key here from retail AI which you can
+find by um going to your retail
+dashboard. go to API keys and then yeah
+just uh copy your API key here and then
+uh paste it into here. So anyways um
+yeah this is just template and then uh
+what you want to do is you want to yeah
+go down to the raw body and um yeah just
+copy and paste this basically. So uh
+from number so this is your AI agent
+phone number from like uh Twilio or like
+Tix whatever. So it has to be on E164
+format. So example it has to be like
+plus one two three four five. So it has
+to have the country code. So plus one
+for US, Canada, plus 61 for Australia,
+plus 44 for UK, etc. So this will
+autofill automatically. But yeah, make
+sure that it's an E164 format because if
+it's not, it won't work. And then yeah,
+we're going to um wait 5 minutes until
+like uh we decide whether to follow up
+or not. So um yeah, normally I'll put
+this as 1 hour, but for the purpose of
+this video, I just put 5 minutes. and
+and then after 5 minutes we determined
+if uh the call was answered or not. So
+basically copied and pasted uh this um
+into here and then um if they did answer
+the call then yeah we get them off the
+workflow meaning that we never call them
+again and then um yeah you just want to
+repeat this as many times as you like
+for follow-up. So yeah, for example here
+um wait one day. If they don't answer
+you just wait one day and then determine
+if they um if they answered the call. If
+not, um, call again. Wait 3 days, uh,
+call again, wait 7 days, call again,
+wait 10 days, and call again. And if
+they still haven't called, um, after the
+last, uh, six, I don't know why it's
+nine, but anyways. Um, yeah, if you
+still want to keep following up, then
+yeah, you can, uh, repeat this workflow.
+You can do a repeat workflow and then go
+back all the way um, here. So basically,
+it's going to repeat this entire
+process. Like it's just going to like
+call the lead endlessly until the person
+finally books an appointment or just
+tells you to go away. So anyways, uh if
+you don't want to like follow up that
+much, if you don't want to be that much
+of a nuisance, then um yeah, just remove
+this. But anyways, it's it looks very
+daunting, but it's actually very simple.
+It's just basically like a repeated
+workflow. So um go high level. It might
+look complicated, but it's actually very
+simple when you um try it out. So
+anyways, this is um the overview of the
+workflow. So now I'll demonstrate it in
+action. So I'll go on to my funnel here.
+So I'll just like fill out my details
+here. So now I just submitted the form.
+Now I am on my VSSL page. So I should um
+ideally have 30 minutes to uh watch this
+VSSL and uh to book a call. And if they
+don't, well the AI voice agent is going
+to reach out to me. And now as you can
+see here on the execution log. So um I
+have uh been uh entered into this
+workflow. So as you can see I just got a
+call. So I'll just answer it.
+Hey John, it's Sarah from Nebula AI.
+How's your day going? Awesome.
+Wait. Uh it's good. Thanks. Uh how are
+you?
+Awesome. I see that you recently
+expressed interested in AI solutions on
+our website but haven't yet booked an
+appointment. Do you have a few minutes
+to chat about that? Uh yeah, sure.
+Great. Before we move forward, let's
+quickly go through a few questions to
+see if we'd be a good fit for you. What
+industry are you in? Uh so I um own a
+solar company.
+Gotcha. And if you don't mind me asking,
+what's your current monthly revenue? Uh
+my monthly revenue is 100K a month.
+Amazing. What is your current budget for
+AI solutions? Um, looking at um maximum
+uh $15,000.
+It sounds like we could really help you
+out. Would you be open to booking a
+quick strategy call with one of our
+specialists? Um, yeah, sure. What times
+do you have available?
+By the way, are you the main decision
+maker for this? Um, yeah, absolutely. Do
+you have a specific date and time in
+mind? Um, let's see. Could you do maybe
+like um maybe on like Tuesday?
+I'll check that for you just a second.
+Do you have a time in mind for Tuesday?
+Could you please um book me in uh for
+Tuesday at 11 a.m.?
+I'll check that for you. Just a second.
+Okay, awesome. Just to confirm, this
+number I am calling to right now is the
+correct number. Uh yeah, that's right.
+Okay, thank you. And just to confirm, is
+your email is
+jngmail.com? Uh yeah, that's right.
+Perfect. I have booked you in for
+Tuesday at 11:00 a.m. Do you have any
+further questions? Um, no. That was it.
+Thank you.
+Perfect. Thank you so much for your
+time, John. Have a pleasant day and
+we'll speak soon. All right. Thank you.
+So, now imagine this AI agent reaching
+out to your leads uh the moment that
+they express interest and to qualify and
+nurture them and to uh get them booked
+on a appointment with you. So, think of
+all the times that you missed follow-ups
+or you uh saw that leads have dropped
+off, but you've never had the chance to
+follow up with them or even speak to
+them. That's going to be a thing of the
+past with these AI agents. So, with this
+AI agent, you will never have to worry
+about leads ever again, and you can uh
+book them straight into your calendar.
+So, you'll not only wake up to a
+calendar full of booked leads, but also
+leads that are really qualified and
+ready to go. So you don't ever have to
+worry about dealing with time wasters
+again or worry about missed follow-up or
+a missed lead. So that was it for this
+video. I hope you found it valuable. If
+you have any questions, leave a comment
+down below. I have this NAN template in
+my free school community down below and
+the go highle workflow in my SAS Jarvis.
+So join the AI vendors down below. If
+you want a bespoke AI ecosystem built
+for your business or want a personalized
+one-on-one AI consulting session with me
+to learn more about how you can leverage
+AI in your business, book a call down
+below. Please subscribe and I'll see you
+in the next

@@ -1,0 +1,556 @@
+# Write Personalized Email Sequences for Every Lead Using AI
+# Video: https://www.youtube.com/watch?v=kE6dQKhMZGQ
+# Category: followup
+
+just imagine being able to send every
+single one of your leads and Prospects a
+unique email followup sequence that
+speaks directly to their interests needs
+and desires this is where we're going to
+set up today and just think about how
+much more deals and sales you can
+generate when you can create this type
+of personalization AI is the technology
+that allows us to create these
+personalizations at scale and if you're
+a business owner you need to be
+utilizing this technology
+to generate more sales instead of
+sending a bland cookie cutter email
+template that's the same that goes out
+to every single person on your list now
+you can send unique emails based on what
+you know about that Prospect or lead
+you're going to generate so much more
+sales when you have a system like this
+in place if you're new to my channel hi
+my name is Helena and we talk about
+everything Ai and automations here so
+please make sure you like And subscribe
+I would really appreciate that also
+we're going to be using a tool called go
+high level to set everything up there is
+going to be a link below where you can
+get a free trial to ghl and additionally
+I have a free Ai and automations course
+and the link is in the descriptions
+below as well if you want to dive more
+into this topic and learn more about it
+please take my free course with that
+being said let's dive in okay so the
+first thing that we need to do is
+compile all of the information that we
+know about our customers or leads this
+could be through a opt-in form that you
+have on your website surveys that you
+send out to your mailing list or
+existing information that you already
+have about your leads that stored in
+your CRM system and once you have
+compiled all of this information you
+want to put it all into one place so
+right now I have all of my information
+here stored in this demo Google sheet
+and as you can see I have the name email
+website and Linkedin and for security
+purposes I can only show you my
+information but you can imagine this
+sheet being hundreds if not thousands of
+rows along and once we have all of the
+information we have about our leads or
+prospects then we're ready to do the
+next step which is the personalization
+now before we move on I just want to say
+that these fields are not the only
+fields that you can create
+personalizations on for example if you
+are running an e-commerce store these
+columns could be the products that your
+customers have purchased in the past if
+you're a personal trainer these columns
+could be the starting weight the desired
+weight and the reason for wanting to
+lose weight in our example here let's
+just suppose that we only have the
+website and Linkedin of this Prospect
+and we're trying to sell this Prospect
+AI services and we're going to create a
+unique email sequence for every single
+person that is on this spreadsheet so
+once we have our data the Second Step
+would be to create these automated
+emotes that's personalized to every
+single prospect that is on your sheet
+and we're going to use a tool to called
+make.com to do this is an automation
+tool that allows us to create these AI
+personalizations at scale you can get
+started for absolutely free and the link
+is also in the description below so once
+you have signed up for an account you
+want to go up here and click on create
+new scenario this is going to take you
+to a blank canvas make.com is a
+completely no code automation tool that
+can tell you what the steps of your
+automation is in a very visual way so
+the first thing is we need to select our
+trigger and our trigger in this case
+will be Google Sheets depending on how
+you want to set up this automation this
+trigger could also be the optin form
+that you set up on your website so as
+soon as someone opts in these customized
+emails will be created and the sequence
+will be sent out to them at the time
+frame that you want it to be sent out
+and uh for our example here I'm going to
+select watch new row on my Google sheet
+and I'm going to select the spreadsheet
+that we have just created here okay once
+I have selected the spreadsheet that we
+have just created I'm going to select
+the sheet which is just one sheet on
+that whole spreadsheet and I'm going to
+change the limit to one and I'm going to
+press okay now that I have all of the
+information from that row pulled from
+Google sheet now I need to write the
+customized emails and in our example
+let's suppose that we want to send out a
+threep part email sequence now we need
+to use AI to start writing email 1 email
+2 then email 3 you can use any large
+language model to create this so you can
+use perplexity you can use clod you can
+use open Ai and in our example here
+we're going to use open AI so I'm going
+to search for the open aai module from
+the list and I'm going to select open
+aai and then I'm going to select create
+a completion if this is your first time
+connecting your open aai account to
+make.com you will need to get your API
+key in order to get your API key go to
+platform. open.com / api-key and you
+will be prompted to enter in your credit
+card information before you are able to
+generate an API key open AI will charge
+you for usage and the price depends on
+how much you use currently if you use a
+latest model which is GPT 40 it is $5
+for 1 million tokens of input or $15
+for1 million tokens of output and one
+token equals roughly four to five
+characters and once you get your open AI
+API key from the website you would just
+press add here put in your key and you
+are all good to go I have already done
+so now once you have your key entered
+you're ready for the next step in the
+model I'm going to select the latest
+model which is GPT 40 and you want to
+use GPT 40 especially if you are
+personalizing based on a link such as
+website or LinkedIn URL because GPT 40
+currently is the only model that allows
+you to access the web in real time after
+I selected my model I'm going to now
+select my message for the role I'm going
+to select user and for the message
+content this is where I put in my prompt
+okay I have finished writing my prompt
+here and as you can see I told AI that
+you are a worldclass emot copywriter and
+you're reaching out to different
+business owners to see if they are
+interested in implementing Ai and
+automations in their business then I
+told it to write a personalized email to
+that business owner based on the
+specifics of their business as well as
+the industry and background that they
+have then I gave AI the information
+about their website and Linkedin and I
+told it to not write more than three
+sentences and end with a call to action
+to book a call and you can get this
+exact prompt in my school Community the
+link is also in the description below as
+well okay so after I have written this
+email I actually went and tested it just
+to make sure it's working and this is
+the output right over here you can see
+hey Helena I've been following product
+Camp's impressive journey and believe Ai
+and automation can amplify your
+operations and customer experience could
+we schedule a quick call to explore how
+our services can align with your goals
+best wishes Helena so this email is
+turning out pretty good I'm pretty happy
+with it now I'm ready to move on to step
+number two before I do so I'm just going
+to rename this email one so that I can
+track of which module is which and it
+will just make it easier for me to
+organize my work as I'm building this
+automation so step number two is we now
+going to send a follow-up email to this
+Prospect if they don't reply and I can
+do so by opening up another open AI
+module here repeat the same process by
+selecting GPT 40 as our model in the
+messages I'm going to select user as our
+row and here I'm going to put in my
+prompt okay so I have put in my prompt
+for the second email here I told AI to
+reference the first email as well as
+take a look at the prospects website and
+Linkedin to write this follow-up email
+and of course to keep the email no more
+than three sentences and have a call to
+action at the end of course you can get
+this exact prompt in my school Community
+below I'm just going to rename this
+email to and let's run it and see what
+the result is once we do so it's been
+about a minute and our automation
+finished running so let's take a look at
+what email 2 looks like here and as we
+can see here the email says I understand
+challenges in product management
+especially given your impressive
+background in scaling Tech Solutions AI
+automations can enhance product camps by
+reducing manual task and improving
+decision-making accuracy empowering your
+team to focus on strategy can we please
+book a call to discuss further to
+improve the results of these emails you
+could also get more and more specific
+with your prompt you can even give it
+specific examples of what you want these
+emails to look like so that AI can write
+in your tone of voice as well now that
+we finish email 2 two let's now repeat
+the process and do email 3 okay so I
+have repeated the same process that we
+used for email 1 and two I selected GPT
+40 as a system I selected user as a row
+and then I put in my prompt here and I
+just told AI this is the final email so
+add some urgency to this final email now
+and I I told it what I wrote for email 1
+and two then I gave it some additional
+parameters to keep in mind again you can
+get this prompt in my school Community
+below I give it the maximum token of
+1,000 I'm just going to press okay after
+I do so I'm going to save and run it to
+see what all three of these emails look
+like okay now that we have all of our
+customized emails ready we're now ready
+to move on to step number three where we
+need to get all of these emails into go
+high level so that they can be sent out
+in an email sequence so to do so the
+first thing that we need to do is to
+connect to our go highle account we're
+going to search for highle lead connect
+ctor as our module inside of make and
+the next thing is we need to figure out
+whether the contact that we are sending
+this email to already exist in our CRM
+or customer relationship management
+system or not so we're going to look for
+the search contact module here and we're
+going to put in the email address of
+this person to see if they already exist
+in our go high Lev account so we're
+going to input in the email address that
+we got from the Google sheet in this
+case and again just to reiterate we can
+use any kind of optin form as the
+trigger here CRM or Google sheet as the
+trigger here this whole system is
+totally customizable to suit the funnel
+that you want to run whether it's a
+webinar funnel a book a call funnel a
+product funnel this will work for you
+okay so once we have our email here I'm
+going to limit this to just one result
+because I shouldn't have the same email
+more than once in my CR M system oh and
+if this is your first time connecting to
+go high level then click add up here and
+you can select the connection type you
+want to select o off
+2.0 and click save then it's going to
+prompt you to sign into your go highle
+account and if you don't have one then
+simply use the link below to get your
+free trial when you use the link below
+you will also get a free AI chatbot as
+well that you won't get if you use any
+other link to get the go High Lev
+account now you want to select allow
+access to all of your sub accounts and
+enable future installations then press
+proceed I have already done so so my
+account is already connected here and
+I'm going to put in the email here again
+and put the limit to one now that high
+level is searching whether this contact
+already exists in my CRM or not the next
+thing I want to do is create a router
+what the router is going to do is is
+basically a creates an IFL statement if
+this contact exists then it's going to
+take this route if the contact doesn't
+exist then it's going to take the
+following route so I'm going to actually
+click on the gear icon here on the
+branch which allows me to actually set
+up my condition and set up this filter
+I'm going to label this contact exist
+because this will allow me to quickly
+see what this filter is for this is just
+a label for yourself basically and what
+I want to say here is whether or not the
+email address that was returned from the
+search contacts module exist or not so
+the condition is if the email address
+that we just searched for exists this
+means that this contact exists okay and
+if this contact exists then what we want
+to do is we want to update this contact
+with the information that we just
+generated to personalize their
+experience is if the contact doesn't
+exist then we need to create a new
+contact and put in all of the
+personalization emails that we have just
+created now one thing we need to do
+before we can do so is actually to log
+into your go high level account and it
+will look like this you'll get your
+dashboard and you want to go down to
+settings then scroll down until you see
+custom fields and this is where we need
+to create three custom fields for email
+1 email 2 and email 3 to to do so click
+on ADD field here at the top and we want
+to select multi-line and press next then
+I'm going to call this field email one
+and you need to select the group that it
+belongs to you can organize your ghl
+account however you want to so you can
+create as many groups as you want to you
+can even create a group just for
+personalized emails just to keep all of
+these custom fields in organized fashion
+I'm going to put it under the additional
+information folder in my ghl account and
+I'm going to call this field contact one
+then I'm going to do the same for email
+2 and email 3 okay as you can see here I
+have created three Fields one called
+email 1 one called email 2 and one
+called email 3 now I can go back into
+make and send the information that's
+supposed to be in email 1 2 and three
+back into ghl and attach it to the
+appropriate contact so back in make I'm
+going to select the highlevel n here and
+because this Branch here is for when
+contact exists then inside of the highle
+module I'm going to select update a
+contact and from here I am going to fill
+in all of the information about this
+contact here because this contact exists
+I can get their contact ID from the
+search module that we were just in and
+all of their name email then in this
+case doesn't need to be updated you
+could feel free to uh enter it again
+again but it will give the same result
+what's important here is you scroll down
+to the bottom and find the three the
+three custom fields that you just
+created one for email 1 one for email 2
+one for email 3 and by the way even if
+you want to customize uh this flow to
+just be one custom email or just one
+line a custom email you can do so you
+can even use this to create 10 different
+customized emails so this whole system
+is totally flexible so just use the
+principles that you learn through this
+tutorial to customize it for your
+business to suit your funnel okay so
+instead of email one we need to input
+the outputs that was from chat GPT so
+I'm going to select eno1 module from
+open aai I'm going to expand on choices
+then expand on message and input the
+content of email one right inside of the
+email one field and I'm going to do the
+same for emot to I'm going to expand on
+choices I'm going to expand message and
+put the content of email 2 inside of the
+email 2 field then I'm going to do the
+same for email three and this will allow
+me to now have customized emails sent
+out to all of my Lee I hope you're
+seeing where I'm going with this because
+this contact already exists this means
+that the inside of my ghl account I
+already know this person's name email
+Etc but it's up to you you could enter
+it again it shouldn't make a difference
+here so once I'm done I'm just going to
+press okay and if the contact does not
+exist now we're going to create the
+filter for that and we can set up this
+filter and we can to call it contact
+does not exist and the condition here
+would be when we use the search module
+from ghl the email address that we
+search for does not exist okay and then
+we're going to press okay and if the
+contact doesn't exist where we're going
+to to do is select the highle lead
+connector module and we're going to
+create a new contact we're going to
+select create a new contact and now we
+had to fill in all of the information
+about this lead so we're going to input
+their email which we got from the Google
+spreadsheet in this case again you can
+use any opt-in form from your website as
+well phone number if you have that and
+you can fill in their name gender
+address website and company name if they
+have given to you we have the website
+information and what's important is you
+want to go down you go down to your
+custom fields and fill in what you want
+email one to say email two to say email
+3 to say okay so again I'm going to go
+to the open AI module expand on choices
+expand on message and enter in the
+content that's supposed to be in email
+one I'm going to do the same thing for
+email 2 here expand on choices expand on
+message put in the content of email 2
+and then finally do the same for email 3
+expand on choices message and content
+and now I'm all ready to go now that the
+information is sent back to ghl we need
+to create our email automation inside of
+go high level so what we need to do is
+go into go high level and select on
+automations Tab and from here we can
+select a brand new automation so click
+create workflow and start from scratch
+and now we can create our whole
+automation here okay once we have
+started a new workflow instead of go
+high level we'll be taken to a blank
+canvas that looks like this and as you
+can see it looks somewhat similar to
+make.com and all of these automation
+tools once you know the basics of it
+even if they change the UI you'll still
+be able to find your way around it so
+the first thing we need to do is set up
+our trigger just like in make.com and
+then we have to set up the steps of our
+automation our trigger here will be when
+the email one field of the contact has
+been populated so we're going to search
+for contact change as our work trigger
+here and what's going to change is the
+new custom field that we have just
+created inside of the filters here I'm
+going to search for email one and I'm
+going to set the operator to has changed
+I'm going to save this trigger so
+essentially whenever that field gets
+populated that tells ghl that AI has
+finished writing the customized
+personalized email for that contact and
+to start this whole automation here so
+once we have our trigger it's time to
+now figure out the next actions to do
+and we wanted to actually send out that
+email so inside of the actions we're
+going to select send email and this is
+where we can actually put in the
+customized email that we had just
+written all you need to do is click on
+the custom values here search for email
+1 which is the field that we just named
+and we going to click on email one and
+now this contact is going to be send the
+personalized email that you have just
+written okay after you done this make
+sure you save the action at the bottom
+and press the plus button here again and
+you want to space these three emails out
+you can choose how you want to space it
+out just look for the wait module here
+and you can select whether you want to
+wait by a certain number of hours or a
+certain number of days if we want to
+wait for two days in between the three
+emails I'm going to select two days here
+save the action and now repeat the same
+process for email 2 and email 3 I'm
+going to search for send email as the
+action here again and in the custom
+values now I'm going to search for email
+too and now this particular lead will
+get a specific email that's written just
+for them based on their website and
+their LinkedIn profile and again you can
+change these fields to be whatever you
+want to customize and personalized on
+and this whole thing's on Automation and
+this lead is going to think you spent
+hours drafting a personalized message
+just for them you can literally use this
+whole system for anything you want from
+job hunting to looking for clients to
+following up with clients this system is
+so robust and I really encourage you to
+try this out after I have saved email 2
+I'm going to press the plus button again
+look for weight and again let's say this
+time I want to wait for 20 hours I'm
+going to put 20 here select hours and
+click save and now I'm ready to send out
+my third email I'm going to search for
+send email again put in the content from
+email 3 here and I'm going to search for
+the custom field that we just created
+for Emil 3 again save this action and
+once everything is done save turn it on
+to publish turn this whole automation on
+to publish and you are done now you have
+a robust
+customizable email automated follow-up
+system that will send unique emails to
+every single one of your leads and
+Prospects I guarantee you once you
+implement this whole system it will make
+you a lot of money if you want me or my
+team to help you out with this there is
+also a link to book a call below
+Additionally you can sign up for my free
+Ai and automations course and grab a
+free trial of ghl the link is all in the
+descriptions below thank you so much for
+joining me for today's tutorial love you
+all and I'll see you next time

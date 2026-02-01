@@ -1,0 +1,621 @@
+# How I Built a Fully Automated Lead Gen System n8n Tutorial
+# Video: https://www.youtube.com/watch?v=XPK7D1qd2XY
+# Category: n8n-automation
+
+In this video, I'm going to show you
+exactly how I built a full lead
+generation workflow inside of NSN, which
+allows me to be able to add what company
+I want to target. Then we use API to
+script thousands of leads from Google
+Maps. Then we use animal finder to find
+the emails of the decision makers in the
+companies. Then we scrape their website,
+which then goes to AI to be able to make
+an icebreaker or email campaign before
+adding it to our Google Sheet database.
+And in case it's your first time here,
+my name is Mikuel and just over the past
+12 months, we've personally helped over
+40 businesses implement AI and
+automations and taught over 20,000
+people in the process. With that being
+said, let's dive in. So, I'm going to
+run the whole thing from scratch and
+then show you step by step how I built
+it. Uh, if I go to my Google map
+scraper, this is where we have the
+dashboard and there's two different
+sheets. The first sheet is roles where
+we get to add exactly what company we
+want to target, where the company's
+from, so location and how many numbers,
+which is the output results of the
+actual scraper. And then emails will be
+the list of emails with the full name,
+email company name, type and icebreaker
+as well which we can use for the email
+campaigns that we can send to the
+clients later on. So in this case I can
+put meta location you can put New York
+United States the number we can put 400
+I think that's fine and then status will
+be run now in this case whenever the
+status column changes this sends a
+request to any saying hey something
+changed here execute the workflow start
+the workflow. So in this case, if I
+press execute workflow, what this will
+now do is it should send the item
+through of the one with a status column
+is equal to run. Then we send the
+request to this software called API,
+which is a software that allows us to be
+able to go to Google Maps and scrape the
+actual uh results, right? And we get the
+place name, score, the street, bayside,
+so the city, the website, the category,
+the URL, and a ton more stuff that we
+can use to be able for us to uh go to
+the next steps. In this case, the output
+was only 200 before sending it to the
+next steps, which is using any finder,
+which is basically looking at the
+decision makers emails from that company
+before scraping the website of that
+company and using AI to be able to
+generate an icebreaker email. Now, bear
+in mind that we had 190 items go through
+here, but only 36 ended up here because
+we do have a filtering sort of criteria
+to make sure that all the leads that we
+get in our database are all qualified.
+Well, not qualified, but they're all
+valid that we can actually reach out to
+before sending everything to our Google
+sheet database, which is the one right
+here. So, here we have the roles and the
+status is turned to done. So, we also
+have a status update and the emails here
+will be the full name, email, company
+name, type, and we have the icebreaker
+as well, right? And it's a whole list of
+emails. And the good thing about this is
+that they're all valid and they're
+verified, right? This isn't just random
+emails that we get. These are all good
+emails that we can use for the email
+campaigns, maybe to send it on instantly
+or send it on smart lead to be able to
+take these ice breakers, which are
+things that we use to send emails to to
+customers um and get business. Say,
+"Hey, Kiki, love that Flushing Medical
+Spa offers the first ever permanent
+laser acne treatment with Avicar. Also a
+fan of your holistic approach tailoring
+beauty goals. Wanted to run something by
+you. I hope you forgive me but I creeped
+you your side quite a bit and I know
+that cutting edge FDA approved tech is
+important to you guys or at least I'm
+assuming this giving the focus of
+multidity given the focus of XYZ and it
+gives them a whole email that's very
+much personalized to their business
+because again this is different we have
+a framework that we use but based on the
+information that we get and the website
+scrape this changes all right so the
+actual workflow is divided into three
+different steps the first one is
+scraping Google maps the second one is
+finding the emails using a software
+called any mail finder And then the
+third one is adding all the details of
+the person and and the company to our
+Google sheet database right here. So
+there's a few different ways that you
+can actually build this uh or have the
+input. The input is just like what
+starts the automation the trigger. Um I
+thought of having a Google sheet
+database where in the first sheet you
+would have the information and then you
+would have a status and a status you can
+either put run or done so that when it
+runs it triggers the automation and then
+at the end of the actual automation it
+then goes to this way to update the
+status. Why is because the way that any
+time works is that the automations are
+linear and they have a hierarchy. Which
+means that now if I start the
+automation, it will go here first and
+then it will go here. But if I put it
+below, it will run this whole thing
+first and then it will give me a status
+update. So I know that if this right
+here is turned to done, then this whole
+thing ran successfully. That's just a
+quick hack that I use whenever I build
+systems. So once we actually added the
+information here, which is company type,
+location, and number of results, then we
+can turn the status. This will trigger
+the automation. It will send a signal
+saying hey N10 start the actual thing.
+We filter by the status. So right here
+the data that we get is company type,
+location, number and status. We filter
+by is the status run cuz if it is then
+we can use it. If not then obviously we
+can't go forward. So if this is run then
+we send it to a server called Apifi.
+Apiy is the Amazon for scrapers. So, we
+use this server and I've used it in a
+ton of my videos where I go here and I
+connect it to my automations in any to
+be able to scrape something. So, today
+we're using the actual Google map
+scraper. You can press in here, make an
+account, and then you will get to this
+console that looks like this. And by the
+way, you will have $5 of free credits
+for your account. I almost used them.
+Never mind. I actually used all of them.
+But the way that this works is that we
+pay per event. So, it's $4 for a,000
+credits. So, it's about five for $5 you
+can probably get like 1,200. And the way
+that this scripper actually works is
+that we have two different ways of
+running it. We can either run it on the
+actual platform itself or we can add
+fields like metspah the location the
+number of places or we can use JSON
+which is the programming language. Very
+very easy. Don't get overwhelmed. It's
+just a way for us to be able to add it
+to an automation to call the actual uh
+scraper saying hey here's a location
+here's a keyword here's a number of
+results. Go out there and scrape. And so
+for us to be able to connect API to N10
+right here we have to use the run an
+actor and get data set node. So inside
+the first step you have to do is go here
+and create a new credential and you have
+to connect your account and you will log
+in directly. You don't need an API key
+for this. Once this is done you'll do
+actor run an actor and get data set. You
+can do recently used actors and then the
+actor itself will be Google maps scraper
+and you know this because the name of
+the Google map scraper is crawler Google
+places compass compass crawler Google
+scraper. You can also put expression and
+you can find the ID here up here in the
+URL. Once you have this I can turn it
+back to list and choose Google map
+scraper. Here will be the actual JSON
+and the JSON is something that we have
+here right the JSON. So you just copy
+this, you paste it here. You can go here
+and you will start replacing the fields
+that you need to replace which is the
+location, the number of places and the
+actual keyword that it will use to go to
+Google maps and scrape. In this case the
+location query will be location here. So
+we add it as a variable. The where is
+it? Number so max crawl places per
+search it will be here. And then the
+show company type you'll put it here.
+Right? So now you have three different
+variables that are dynamic. That's the
+beautiful thing about this is that if we
+change the variables here, it will
+change the way that we scrape the
+automations in um API. And so here it
+will scrape the number of items. Now I
+said to scrape 400. The reason why it
+didn't scrape 400 is because I used all
+my credits that I had. But assuming that
+you have all the credits available to
+you, you'll be able to see 400 here if
+you're looking for 400 results. And here
+you get the title of the place, the
+category, the address, the neighborhood,
+the street, the city, postcode, state,
+country code, the website, which is
+something that we care about, the phone,
+and a bunch more other things that we
+don't really use. We could use them to
+even add more personalization to the
+actual email. And once this is done, we
+only want to send through the companies
+that actually have a website, which is
+why here we say if the website, which is
+something you find here, website exists,
+right, is not empty, then we can go to
+the next steps. Why? Well, it's because
+if there's no website, then there's no
+email that we can use. Once we have this
+here, we can use a loop over items. But
+let's say we had a th00and results
+coming in. What it will do is that it
+will send 200 through this whole flow
+and then it will go back here and do
+another 200 until the,000 results that
+came through before are run through. And
+so, let's say we have a,000 results
+here. What it will do is that it will
+send 200 first and then 200 again until
+the,000 results are finished. We do this
+because we want to minimize the error
+rate of the actual automation. So we're
+able to send x amount of items at the
+same time especially because right here
+we're using AI and if you send too many
+results to AI it will overload it could
+break which is something that we don't
+want for a system that we can use for
+the long term. All right so the next
+steps here is finding emails using any
+mail finder and any mail finder is a
+software a sort of server that we use to
+be able to give the domain of the
+company and tell it hey I'm looking for
+CEOs and then it gives them the email if
+it finds it and it also validates them
+which is great. Now I can go to an
+emailinder.com
+and you'll get on this page right here.
+So they find real emails verified in
+real time. Now I've tried hundreds of
+softwares when it comes to finding
+emails uh cuz I used to use clay.com a
+lot which is a software that he uses a
+ton of these softwares and any finder is
+one of the best. Right now if I go to
+the pricing section here I can see that
+on a monthly basis [snorts] we get 450
+credits per month we pay €11. Obviously
+now it's Black Friday so it would be 14.
+Um, but for 400 credits, we would pay
+€26 or €20 in this case. So 400 credits,
+what that means is it's a uh valid
+email. Let's say you send a,000 requests
+and it only finds 20 emails that are
+valid. You only pay 20 credits. You
+don't pay 1,000, which is much more cost
+effective than a lot of the software
+that I work with as well. So once you
+have this, you can get a free trial.
+You'll be able to see somewhere here on
+the page to get a free trial for 3 days.
+And you can choose whatever plan you
+have. And you will get 20 credits of
+free trials just to test it out. I
+recommend that you get the 400 credits
+per month, which is 20 bucks a month.
+Now, obviously, it depends on how many
+emails you need, right? You also have
+the 10,000 credits, which is 100 bucks a
+month, which is going to be more than
+enough. And now, once we have this, we
+can go to the API. So, we want to read
+the API documentation, which is a uh
+some sort of document that allows us to
+see exactly what we can automate and how
+do we set up the automations within an
+email finder. If I go here, I get
+introduced to this page. On the left
+hand side, you can see that we have
+different actions. Find emails involved,
+geo leadfinder, other uh find email.
+Right? In this case, we have to pick the
+one that we want to do. Let's say I
+wanted to find a person's email. I can
+go to this action right here. And in the
+middle, it tells me exactly a summary of
+what this does. The endpoint, which is a
+URL that we'll use in our automation.
+And below it's the curl, which is the
+thing that we use to set up the uh the
+request in 10. But most importantly, it
+tells me, hey, here are the fields that
+we need to send to uh an email finder in
+order for it to actually uh get the
+email. So, in this case, you can also
+see here that we need the domain of the
+company. So, in this case, Microsoft.com
+and the full name as well. Now, the full
+name is something that we don't have.
+So, I can't use this request in itself.
+What I can use is find a decision
+maker's email because the only thing
+that it asks me here is the domain of
+the company and the decision maker
+category. which means that I'm looking
+for CEOs in this company, which is
+great. So, all we have to do here is
+copy the curl. You can go back to Nitn
+right here. And then you can actually
+add a HTTP request and import curl,
+paste this, and import it. So now you
+have everything set up and the only
+thing that you need is an API key. If I
+go here, I can get my API key on the top
+right. And you can copy this and bring
+it back to an end and paste it here
+instead of your API key. And now you
+have this here. So I already made this
+actual request. So I'm going to delete
+this but just to show you exactly what
+we have to do. If I go here I can see
+that this is my API key. What I need is
+the domain of the actual company. Now
+you could also have a field for the
+category in case you want to find other
+people in the company. But in this case
+I just care about the actual founder
+CEO. So that's fine. And now we have to
+ask ourselves how do we get the domain
+of the actual company. So right here um
+yeah I can see that we don't actually
+get the domain but we get the website.
+All right. So I just added the website
+here in Tamiro and the website here is
+consisted of https or www is the first
+part. Then we have the actual domain
+which is this right here.
+Boom. And then we have everything after
+the slash
+which is just information extra
+information that we don't need. And so
+for us in the automation and my drawing
+is complete horrible uh but we need this
+we need the the actual domain itself
+which is why the next step from the API
+is using an edit fields node which is
+why here we use a formula. Now don't get
+overwhelmed. I can just copy this u this
+URL and I can actually show you exactly
+why we're doing it the way we're doing
+it. Can paste it here. So this is what
+it is. So the first thing we have to do
+is replace anytime that we see this
+replace it with a space so we don't see
+it anymore. Now sometimes we actually
+have this HTTP with a DS which is why we
+also have to replace this with a space
+and sometimes we also get this which
+means that we have to replace this as
+well with a space and most times or
+sometimes we also get this right here
+which means we want to split the actual
+website by the presence of a slash and
+only get this part right here. Now it
+might be a bit overwhelming at the start
+because you never used it before uh or
+to this extent but it actually is very
+very simple when you go through it. So
+this is the website. The first step is
+dot replace all. So we have we have to
+replace every single instance that we
+see of a HTTP slash. We replace it with
+a space. Not a space just with with
+nothing with a space. Here we use the
+exact same thing when we see HTTPS. So
+here it will be HTTPS
+um like this. So now we deleted this.
+But sometimes we also get the three W's.
+So again dot this and we have to delete
+this part and just put www dot and then
+we have there's an extra dot here that's
+fine. So now we have the domain and then
+we have slash. So now what we have to do
+is we have to split this by the presence
+of a presence of a space or slash. There
+we go. And now we get the first part and
+we get the second part. and we want to
+put dot first to be able to get the
+domain. That's how you take a full
+website that's unstructured and turn it
+in a way where it actually makes sense.
+So that's the logic here. And the next
+step here is actually using the email
+finder like I mentioned and pulling in
+the domain from here. So it's all
+structured every single time that it
+comes through. We basically checked all
+the different use cases of any kind of
+website that comes through and we format
+it in a way where it makes sense. Now
+once this is done then any finder will
+give us this output right here. It will
+give us the domain again. It will give
+us the person full name, the email if it
+finds it, and the email status. If I go
+to table and I make this like this,
+sometimes I can see here that the email
+status is not found for most of them.
+But when it does find it, it's valid,
+valid, risky, valid, valid, valid,
+right? So even the ones that it does
+find, if it's risky, that means it might
+not be verified, right? Or it's not
+verified at all. And so what we do here
+is we set a filter saying hey if the
+email status is valid and the full name
+exists then we send it through that we
+make sure that we only have the valid
+emails left then we can use because the
+thing about email campaigns is that you
+can run email campaigns to a ton of
+emails but if the emails themselves are
+not verified emails then you're at risk
+with your email campaign then you will
+be at risk with your domain. So you want
+to make sure that every single email
+that you use is verified. It's cleaned
+up. It's all good. Once we have this
+here, then we can go and scrape the
+website. Now, the reason why we scrape
+the website, which is a third part of
+the actual sort of workflow, is because
+we want more information about the
+company. And so, here we use a simple
+HTTP request to be able to get the
+domain right here, add a HTTPS col
+so that we get an output. Show data.
+There we go. Uh, an output that looks
+like this. So, data. We have a bunch of
+HTML, right? HTML by the way is just if
+I go here for example I go to inspect
+this is the HTML it's basically all the
+text all the colors and so on. Now the
+problem with this is that we can't feed
+the HTML to AI because it's super super
+super super super long right what we can
+do though is using a next step called
+the extract HTML content so with this
+node what we can do is get the data
+really really long data and I call the
+website scrape and we get the body of
+this because it is the actual data and
+basically what we do is we extract the
+text. So, as you can see here, this is
+much shorter, right? It just goes until
+here, rather than having something so
+long that looks like this. Uh, which is
+why we're able to then use this, the
+website scrape, which is in text, and
+feed it into the AI step. Right now, the
+AI step is something that we use to be
+able to make the icebreaker. Now, the
+first thing you have to do is go here,
+create a new credential, and you can
+simply go to platform.openia.com,
+opener.com and you can go to dashboard
+to be able to get the API key, create a
+key here and then bring it back to inn
+and you can paste it here to connect
+your account. Text message model is
+fine. Uh 4.1 mini. Then we have to put
+text because that is the thing that
+we're using. The action that we're
+taking is messaging a model. The model
+itself will be 4.1 mini because it's a
+mixture of quality and speed. And then
+here will be the actual system prompt
+which is describing what it needs to do
+but also giving it the icebreaker. So
+the icebreaker is a thing that we use in
+our email campaigns. And so we start
+using variables like hey name
+interesting fact uh other fact other
+fact here fourth fact some implied
+belief if they have and a bunch more
+other things that we can use the AI will
+know that it needs to replace those with
+each company's information and then we
+give it some rules as to like what tone
+and what things it should say and not
+say and by the way I'll show you exactly
+how you can get the whole system for
+free so don't worry but once we have the
+system prompt then the user prompt will
+be the actual profile information this
+will be the profile which we get from
+any mail finder we get the person full
+name you can't see it here because this
+will be the first result uh and it
+couldn't find it but as you can see here
+we have animal finder Kily Lee which is
+the owner who is the there girl owner
+company name will be something that we
+get from the Google maps we can't see it
+now just because we need to unpin the
+animal finder it's just a rule that
+anything has uh but it will be here
+title and then the website scrape will
+be something that we get here website
+scrape so with these three pieces of
+information about the company we then
+dropped a high converting personalized
+icebreaker that we can use for our email
+campaigns, right? Which is great. And
+then we add it all back to our database
+which looks like this where we have
+again one sheet is ROS, one sheet is
+emails and you make a Google sheet that
+looks like this with full name, email,
+company name, type and icebreaker. You
+connect it to any through here. You can
+go here. You can sign in with Google.
+And then you'll choose the sheet within
+document. Append a row here will be
+Google map scraper because that is the
+name of the Google sheet. And then make
+sure you're using the right uh sheet
+which will be emails. And now what we do
+is we pull fields animal finder. Oh,
+there you go. Person, full name. Bring
+it back here. Email, company name, type,
+and icebreaker as well, which we get
+from here. Icebreaker. So, the good
+thing about this workflow here is that
+we're passing information dynamically
+throughout the whole thing. And we're
+using softwares after softwares to patch
+them all together to be able to make a
+real concrete system that allows us to
+be able to get from this to this, which
+is insane, right? And now, again, one
+more step that you could do here is you
+can connect instantly's API. Uh,
+instantly is just a let me go here.
+Instantly.ai.
+Instantly.AI is a platform where we can
+do email campaigns and we can send the
+icebreaker there to be able to then make
+the emails and make a campaign to start
+reaching out to clients directly. And as
+always, if you want the full system for
+free, so you can import it into your own
+account. Then you can go to the school
+community. You can go to the classroom
+section. You can go to the templates
+vault and you'll be able to see the
+latest video which is lead generation
+system Google maps here. And you can
+download the blueprint here. And if you
+apply and you get in, you also get
+access to the AI automations 101 course,
+which is a very comprehensive course
+that takes a real beginner in AI
+automation to someone who's actually
+able to build automations for themselves
+or for other businesses. Most of the
+content that we put out here is not
+available on YouTube, which is why we
+keep it exclusive to the community right
+here. Disclaimer here is that not
+everybody gets in, so please put some
+thoughts into your answers and I'll see
+you on the inside. And if you are a 9
+to-5 working professional and you're
+making at least 5K a month and you want
+to start your AI agency to get to 10K
+and even 40K a month or more, then check
+out the first thing down below. And if
+you like this video, then you're going
+to love this video up here where I show
+you exactly how you can make viral
+content using Poppy and Nen. With that
+being said, I hope you found value from
+this video and I'll see you in the next

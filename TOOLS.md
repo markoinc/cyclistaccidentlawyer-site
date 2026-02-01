@@ -100,6 +100,15 @@ This keeps history while surfacing only current/relevant docs.
 - Usage: `curl -H "Authorization: Basic $BASE64" https://api.dataforseo.com/v3/...`
 - Endpoints: SERP, Keywords, Backlinks, On-Page, Domain Analytics
 
+## Webshare Rotating Residential Proxies
+- **Proxy list:** `~/.config/webshare/proxies.txt`
+- **Format:** `host:port:username:password`
+- **Host:** p.webshare.io:80
+- **Username pattern:** dtwmetwu-[1-215084]
+- **Password:** ww846x37mmd9
+- **Usage:** `curl --proxy "http://dtwmetwu-1:ww846x37mmd9@p.webshare.io:80" [url]`
+- **Python:** `proxies = {"http": "http://user:pass@p.webshare.io:80", "https": "..."}`
+
 ## What Goes Here
 
 Things like:

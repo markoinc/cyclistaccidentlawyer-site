@@ -1,0 +1,778 @@
+# How To Build an AI Appointment Booking Bot In GoHighLevel Tutorial
+# Video: https://www.youtube.com/watch?v=HQKJ3kLLwEw
+# Category: ghl-chatbot
+
+What's up, lead gen beast? Matty eyes
+here, leads for locals. In this video,
+I'm going to walk you through step by
+step how to create an AI appointment
+booking bot inside of Highle using the
+conversation AI feature. It is really,
+really powerful. But you do want to make
+sure you do it correct, guys. It's all
+about the prompt. If you don't get the
+prompt right, it's not going to do what
+you need it to do. So, in this video,
+basically what I want to do is share
+with you what is working for me that I
+that has literally taken me weeks of
+testing to work out all the different
+bugs to make sure that the AI agent does
+what I want it to do. So, I I'm going to
+share with you the exact prompt that is
+working for me right now. Uh so, so that
+it saves you guys a ton of time and a
+ton of headache because it was kind of a
+pain. Um so, just take my word for it.
+All right. Um, but I'm also going to
+show you how to connect it to your other
+uh automations and workflows inside of
+High Level because as uh as of right
+now, at the time of this recording,
+these AI agents are inbound only. Okay,
+so basically what that means is we need
+prospects to respond to one of our
+automated text messages in order to
+trigger the AI agents. All right, which
+not a big deal because you should have
+those automatic text messages going out
+anyways. All right, but we're going to
+restructure those text messages. Uh, and
+I'm going to show you some very specific
+examples so that it uh when people do
+respond, it actually triggers the AI
+agent. It takes over, it pre-qualifies,
+and it books the appointment. All right,
+so make sure you stick to the end, guys.
+I'm going to show you step by step how
+to put all of this in place. All right,
+with that said, before we get started
+real quick, if you find the video
+helpful, guys, please hit that like
+button. It really does help. Consider
+subscribing because I come out with
+these videos all the time. And if you
+want to support the channel, if you
+don't have HighLevel already, I will
+have a 30-day free trial in the
+description. It comes with a free Highle
+boot camp as well. I really appreciate
+the support, guys. All right, let's get
+into it. Okay, so before we we create
+the actual AI agents, you guys do want
+to make sure that you have your
+knowledge base uh created. All right,
+and I did a separate video on this. I
+will link it down below. Goes into a
+little bit more detail. I'll do a quick
+recap on it um very briefly uh because
+it doesn't it doesn't take a ton of time
+uh but basically the knowledge base is
+what your AI agent will use to respond
+basically to any questions or statements
+that uh leads and prospects make. All
+right. And it just it basically trains
+your AI agent on your product and
+service. All right. So, let me show you
+an example here. All right. So, I'm
+going to go to my annuity one here.
+Actually, you know what? Let's do uh
+let's do final expense because that's my
+most recent one here. Final expense life
+insurance. All right. And I have an FAQ
+here where I basically copied and pasted
+a bunch of question and answers. It's
+like the most commonly asked questions
+about final expense life insurance. I
+had chat GPT put that together for me
+and I just copied and pasted it into
+high level. So if I scroll up to the
+top, I just said, "Hey, provide a list
+of the 20 most commonly qu asked
+questions about final expense life
+insurance." That's it. And then I copy
+and pasted this into uh high level. If
+you go to uh add source right here, FAQ,
+you can copy and paste the question and
+then the answer save. All right. So uh
+and then from there I had uh chat GPT
+put together a final expense guide right
+here. Comprehensive guide that educates
+people about final expense or bail
+insurance, burial insurance, how it
+works, etc., etc. And I copy and paste
+all of this into a Google doc. Okay. And
+then I take that Google doc. I share it.
+Copy link. All right. And then we're
+going to go to add source again. We're
+going to do webcrawler.
+And you paste in the URL. Extract data.
+Good to go. All right. So that trains
+your AI agent. That is very important.
+You want to make sure your AI agent is
+very familiar with your product and
+service. All right. All right. Once you
+have your knowledge base done, uh
+because we're going to connect that
+knowledge base to the AI agent here, uh
+we're going to go back to conversation
+AI up here at the top right. We're just
+going to keep things simple and use
+create promptbased bot. Uh I might do a
+separate video on guided form setup.
+It's a newer newer variation of creating
+a conversation AI agent. One's not
+necessarily better than another in my
+experience. So, we're just going to use
+the one that I'm familiar with right
+now. We could do appointment booking. I
+usually just start from scratch. All
+right. Uh again, one's not better than
+another. I just prefer to create from
+scratch. All right. Bot settings. Uh
+first things first, uh let's go ahead
+and select autopilot. We want to make
+sure that the bot automatically responds
+when people uh respond to our text
+messages, which I will show you here in
+a minute. All right. The bot name is
+going to be whatever you want. So, I'm
+just going to do test Sarah. Okay. And
+then uh right now what I'm doing for the
+communication channels is just SMS and
+Facebook. Uh SMS is going to be the
+primary one. I leave Facebook on because
+uh in my business we run a lot of
+Facebook ads for clients. Uh especially
+in life insurance, annuities, final
+expense, etc. And uh we set it up so
+that when people submit the form for the
+Facebook ad, it also triggers a
+conversation in Messenger. So people can
+respond in uh Facebook Messenger as
+well. So we want to have that option.
+All right. And then uh let's scroll
+down. All right. Uh business name. Just
+go ahead and put your business name. I'm
+going to put Millennial Wealth Creator
+because that's my other YouTube channel
+about building wealth. You guys want to
+check it out. I'll link that down below
+as well. All right. Autopilot mode. Wait
+time before responding. I usually do 10
+seconds. We don't want it too soon. We
+don't want it too late. I like 10
+seconds. You can do whatever you want.
+Maximum messages. I would definitely
+recommend 25. You're probably the AI
+agent's probably never going to send
+this many, but you want to have as many
+as a high level will let us, which is 25
+right now. Sendbot to sleep. Uh, when I
+send a message manually or through a
+workflow, I would recommend having this
+on. We don't need two hours. I would
+probably just do 10 minutes.
+um just in case. And that's it. All
+right, we're going to click save. Next,
+we're going to go on to the training,
+which is going to be simple because you
+already have your knowledge base set up.
+And if you don't get that set up really
+quick, it doesn't take super long.
+Should shouldn't take more than 30
+minutes, if that. I'm going to select
+the final expense knowledge base that I
+have here already. It's going to bring
+in the FAQs, the webcwler. Again, the
+webcwler is just the the comprehensive
+guide that I put together that trains
+the AI agents on pretty much everything
+like at least the main things that it
+needs to know about the product and
+service that we are advertising for. All
+right. Uh we're going to save that.
+Next, bot goals. Okay. This is where it
+gets really fun, guys. Uh so, I'm going
+to pull up my my uh Word doc here. I'll
+probably link this down in the
+description below unless you guys just
+want to read off the page here really
+quick. I'll I'll just I'll link a
+document below for you guys to get this.
+All right, because here's the thing is
+this applies to just about any industry.
+Of course, customize it to your own
+specific business and whatever industry
+that you're in, but the format itself
+can work for just about any industry in
+my experience so far. I've done it for
+annuities, life insurance, final
+expense, business loans. It works really
+good. Okay, you just you just need to
+customize it to whatever business you're
+in, but the format works really good.
+Okay. All right. The personality field.
+Here we go. You are a bot for um I put
+this custom value in. Uh high level
+should automatically pull your company
+name with this. But to be safe, I would
+just replace this with your company
+name. Okay. So, you're a bot for XYZ
+company. You're tasked with gathering
+information from prospects to see, in
+this case, if an annuity would be a good
+fit for their retirement by asking
+questions provided in the additional
+information section. Again, uh we're
+being very specific here. You're going
+to see how specific we are with certain
+things as we continue throughout this
+prompt, guys. It's very important that
+you are as specific as possible. Okay.
+Your primary goal, build trust. Ask
+qualifying questions provided. Make sure
+to use the provided knowledge base.
+Okay, that is very very important. All
+right, so uh I would just copy and paste
+this into the bot uh or the personality
+part of the bot. Anyways,
+okay. Uh from there, uh next is intent.
+All right, so we're going to go to
+Whoops, there we go. Intent field. Your
+goal is and again in this case we are
+focused on annuities. I know we were
+talking about final expense earlier, so
+I'm kind of jumping all over the place,
+but that is just to prove the point that
+this can work for any industry. Okay.
+Goal is to uh pre-qualify prospects who
+are interested in getting a free custom
+annuity income plan. Just insert
+whatever your particular offer is. All
+right. Uh by asking the questions in the
+additional information section. All
+right. So, we are going to copy that.
+Oh, whoops. I guess I didn't do that. I
+guess I didn't copy it.
+Okay, there we go.
+All right. And then from there,
+additional information is definitely
+going to be the more important one. This
+is where we're going to ask the
+questions and give it very specific
+instructions about how to respond to the
+initial message that people provide. So,
+this man th this is probably what took
+me a couple of weeks to get correct,
+guys. This this was the real pain in the
+rear end because so when you when you
+have the AI agents, you're going to have
+two different primarily two different
+types of people that reach out to your
+company. One, it's going to be people
+that you're advertising to. Okay? So in
+this case, we're running Facebook ads
+for annuities. Uh we're offering a free
+annuity guide and then we're offering
+that free custom annuity income plan. Uh
+so people are directly responding to
+advertising that we are putting out
+there. All right? But not everybody who
+reaches out to your company uh or your
+business page or whatever is going to
+respond to advertising. They're going to
+come from different sources. All right?
+So as an example, we don't want people
+like we don't want our bot to say this.
+Okay? So the first message when someone
+says why start a quote. Okay, this is me
+telling it that this is somebody that's
+coming from an advertising campaign.
+Okay, and I I'm very clear about that.
+They are uh responding to a message from
+the company to request this particular
+product, this particular offer. Okay?
+And then I tell it to start the
+conversation with something like this.
+Thanks for reaching out and requesting
+this custom plan to make sure it's a
+good fit for you. I just need to ask a
+few basic questions, then ask the first
+question. Okay, but not everybody is
+going to respond with why start or
+quote. Some people will ask a question
+right off the bat or make a statement
+come from a completely different
+marketing channel. Okay, so if somebody
+asks, "Hey, do you guys um also help
+with life insurance?" Right? We don't
+want the bot to say, "Hey, thanks for
+reaching out and requesting a free
+custom annuity income plan." That
+wouldn't make sense, right? That
+wouldn't be congruent. That'd be pretty
+bad. Okay? Very bad first impression.
+So, the next part of the prompt is if
+someone starts a conversation in any
+other way and then give it an example,
+guys, with a question or a full
+statement, then answer their question.
+Address the statement using the
+knowledge base and information about the
+business provided. do your best to try
+and get them to request whatever it is
+your offer is. Then ask the first
+question. Okay. When I added this part
+of the prompt, that was a game changer
+for me. Okay, that made all the
+difference in the world. All right. Um,
+this stuff right here is uh the template
+from high level. I believe that's uh
+what's already in here. So, we can just
+we can keep that. It's it's pretty good
+stuff. We don't need to worry about it
+too much. All right. So, that's fine. Uh
+but then after that I also have it asked
+the uh the following questions. Ask one
+question at a time. Wait for a response
+before asking the next question. Here
+are the questions. Obvious like there's
+nothing special about these questions,
+guys. It's basically the top three
+questions you would normally ask
+somebody when you would get somebody on
+the phone. Like what what's the the most
+important the the top three most
+important pre-qualifying questions with
+what you do? That's what we're going to
+do here. and it's only three um at the
+moment. That's just what Highle limits
+us to. It's different if you were to do
+the other version of creating the bot,
+but again, I just I like creating it
+from scratch using the original. Um I
+think asking three questions is plenty
+uh to get started. Anyways, all right.
+So, you're going to ask the the top
+three primary questions regarding your
+product and service. Just the the basic
+information that you would need. All
+right. This is what the the the bot will
+uh finish up with. Okay. After they
+answer the final question, thanks for
+answering those questions. Your next
+step, choose a day and time. Uh can I
+send you a few options? They'll say yes.
+Uh this is really important, guys,
+because this part of the prompt right
+here because if you don't add this, then
+the bot sends a million freaking
+options, okay? It sends the basically
+the entire availability of the calendar,
+which is not good. that's going to
+overwhelm the person. It it's not
+professional. So, uh, when I added this
+again, it it made a huge difference. So,
+I told it when you provide calendar
+options, make sure to provide two
+different dates with an AM and a PM
+option for both. Ask me why I'm so
+specific about that because it was the
+only way to get it to do what I needed
+it to do, guys. All right, so u let's
+head back. I want to um I'm actually
+gonna uh let's see. No, I'm not going to
+cancel it because we do need to do some
+other things here. Um, but that um that
+right there is the prompt. Okay, I'm I'm
+I'm going to test this here in a second
+so you can see exactly how it works and
+then I'll show you how to connect it to
+uh the various different workflows. Oop,
+sorry. Hang on one second. Did not mean
+to do that. That was a YouTube video.
+All right. Now, down here at the bottom,
+uh we're going to click on appointment
+booking. And we want to obviously select
+the calendar. This part's pretty easy.
+We're going to do annuity consultation.
+You're just going to select the calendar
+that you want the AI agent to book the
+appointment on. All right. Uh don't send
+uh I don't think I check any of these.
+Um don't don't book appointment. Only
+send a booking link. I'm not a big fan
+of that. I'd rather the AI agent
+actually book the appointment within the
+text message. I don't like sending links
+in text messages um if I can avoid it.
+All right. Uh allow the bot to cancel.
+I'm okay with that. Allow the bot to
+reschedule. I'm okay with that as well.
+Uh let's see. Transfer employee. We
+don't need that. Uh I mean this is going
+to be customizable of course uh
+according to your business. Um but I
+don't typically turn any of these on. Um
+I guess you could pause the bot after
+booking. I don't think that's a huge
+deal though. Okay. Uh but anyways, the
+most important thing is I I mean I
+usually turn these two on and then just
+make sure you select the correct
+calendar. All right. So we're going to
+save that.
+Now, uh, and this is why, uh, I'm I'm a
+big fan of the traditional bot setup
+because we have a lot of different
+options here. Um, you could trigger, uh,
+different workflows, uh, which I think
+is really, really powerful. Uh, but add
+contact info, that's going to be really
+important because we are asking custom
+questions here, right? So, if we scroll
+back up, uh, let's, um, let's make this
+a little bit more visible.
+Let's see. Let's scroll this down. There
+we go. Okay. Now, if we scroll, where's
+uh where's our questions? Did I not copy
+paste it? I don't think I did. Let's do
+that really quick. Let's do additional
+info. All right. Because when we are
+asking those custom questions
+like right here, okay, we want to have
+the bot update custom fields with the
+prospect's answers to these questions,
+right? That's really good information to
+have for the appointment. All right. So,
+what we need to do is create a custom
+field for each one of these questions.
+This is why I like to have two tabs of
+highle open. It's going to make our jobs
+a lot easier when setting this up. So, I
+have another tab of highle open here.
+We're going to go to custom fields.
+All that information was fake, guys. So,
+don't even try to send me an email or
+contact me. uh at least with that
+information. Of course, you can send an
+email u with what I provide on the
+channel, Facebook group, etc. But
+anyways, all right, we're going to go to
+custom fields and we need to create a
+custom field for each of the uh three
+questions. All right, so we're going to
+add field. We're going to do single
+line. Click next. Okay, and our first
+question, all right, was in about how
+many years are you looking to retire?
+Now, I already have these created, okay?
+But you would um usually like the way
+I've been doing it anyways is I've been
+putting AI
+annuity dash
+um years until retirement. Whatever is
+going to This is really uh whatever's
+going to help you guys stay organized.
+Okay. And then group is going to be
+additional info. This is the section
+that you would go to under the contact
+profiles. You would click the additional
+info tab when you're in the contact
+profile to see the answer to this
+question. Okay? And then you would save.
+And then we're going to uh I'm not going
+to save it now because I already have
+it, but we're going to add another
+field, a single line, and you're going
+to repeat the process for each one of
+these questions. All right? You're just
+going to create a custom field for each
+question. Okay?
+Now, once you do that, then we're going
+to click on add contact info. And this
+is where we're going to have the AI bot
+update that custom field inside of the
+contact profile. So you have that
+information when the person um answers
+them, answer the questions, and then you
+have it for when you uh call for the
+appointment. All right. So action name.
+Again, we want to stay organized here.
+So in this example,
+we'll put years until retirement.
+And then the field to be updated is
+going to be the one that you just
+created. I already have them here. All
+right. Uh I think I named it uh yeah,
+annuity retirement time frame. Okay.
+What to update? All right. It's going to
+be uh how
+we'll just put years until the prospect
+wants to retire or is looking to retire,
+whatever. Okay. Uh output example. We do
+want to provide a couple of examples.
+All right. Uh, just to make sure that
+the AI agent knows what to put in the
+contact field. So, what here's the
+thing. Come up with think about three
+different ways that somebody might
+answer this question. Okay. So, if I
+were to ask somebody, how many year uh
+what was my question again? It was
+uh how many years are you looking to
+retire? Okay. So, somebody might say 10
+years.
+Okay. Okay, let's click add another
+uh they might say already retired.
+Okay, maybe they're not sure. Maybe
+maybe add an extra one. And we put five
+to 10 years. Okay, just give it a few
+examples. All right, then we're going to
+click save. All right, and from there
+we're going to add new field. And you're
+going to repeat the same exact process
+for the other questions. All right, give
+it a name. Select the contact field.
+What what's like what is the AI agent
+going to put in that field and then give
+it a couple examples. That's all you're
+going to do, guys. Okay.
+All right. Once you do that, then your
+AI bot is actually ready. So, click
+save. And what do you say we test this
+thing? All right. Uh let me make sure
+everything is in place as as I need it
+and then we'll go ahead and test it.
+Give me one second.
+All right, guys. We're good to go. Okay.
+So over here on the right hand side, we
+are actually able to test our bot, which
+is pretty sweet. So we can get an idea
+if this thing is working or not. So
+let's do the let's do the perfect case
+scenario where somebody replies exactly
+how we want them to reply. All right, so
+let's click why uh because we're going
+to put that in our uh automatic text
+messages later on um once we put our
+workflows together. All right, so
+somebody replies with Y, start, quote,
+whatever. All right. Um, and it's going
+to it's going to give us the exact
+response that we told it to give. So,
+when we uh go back to additional info
+right here, if someone responds with why
+start a quote, what do we what did we
+tell it to say? Thank you for reaching
+out and then ask the first question.
+That's exactly what it did. All right.
+So, so far so good. First, in about how
+many years are you looking to retire?
+Let's do 10 years.
+It should go to the next question. Very
+good. Great. Thanks for sharing that.
+Next, how much guaranteed monthly income
+are you looking to create? Let's do
+5,000.
+Thank you. About how much of your
+portfolio would you be able to allocate
+to an annuity to create that amount of
+income? And again, these are all
+questions. These are the exact questions
+that I gave it in the additional
+information part of the prompt, guys.
+Okay. About how much of your portfolio?
+Um, let's do let's do a 100,000. Okay.
+And let's see what it does next.
+Okay. Thanks for answering those
+questions. And the next part of the
+prompt is uh is basically getting
+permission to send a few options to book
+the appointment. Okay. For uh to talk to
+a state licensed professional, provide
+your custom plan once it's complete,
+etc. All right. So, we're going to click
+yes.
+Okay. Ah, this is awesome. It's such a
+beautiful thing. Uh, because guys,
+before I, like I said, before I put this
+part of the prompt in, it would send me
+like 20 different options to choose
+from. It was ridiculous. All right, so
+I'm telling you, when if it if you're
+trying to set up an appointment booking
+bot, this part of the prompt is really
+important. All right, here are a few
+options for your appointment. all in
+Pacific time zone. Thursday the 3rd at
+5:30 or 6:00 p.m. Friday 4th of July 20
+8 a.m. or 5:30 p.m. So it's giving an aa
+uh an AM option and a PM option. Which
+of those works best for you? Okay. And
+then I would give it an option. Uh and
+then it would it would book the
+appointment on the calendar. It is
+freaking awesome. This this prompt it
+works guys. Okay. Now, the next thing I
+want to show you is I mean this this
+part is it's not too complicated. Like
+you guys should probably you probably
+already have this part in place, but how
+do we get somebody to actually engage
+with the bot? Because again, the these
+are inbound AI agents. So, we need
+people to respond to this. So, we need
+to make sure that we have automatic text
+messages going out on a regular basis
+prompting people to respond in this way.
+All right. All right. So, let me show
+you guys how I have that set up. It's
+pretty it's pretty basic. I don't think
+it's anything special. It's basically
+whenever somebody opts in for whatever
+my lead magnet is at the time, we're
+going to send text messages
+um you know, thanking them and say,
+"Hey, check your email for XYZ lead
+magnets, but you know, reply to this
+message with Y to see if you qualify for
+an annuity or whatever." All right. So,
+let's go to
+uh let's see. Annuity guide opt-in.
+I'm pretty sure that's the one I have
+here
+or the one I have it set up then. Uh
+let's see. Let's go to the text message.
+Yes, there we go. Okay. So, one of the
+ad campaigns that I run in my one of my
+marketing systems, uh, which if you guys
+want a pre-made marketing and lead
+generation system for annuities, final
+expense, life insurance, whether you're
+a licensed agent or you're marketer in
+that uh, industry and you want a
+pre-made marketing lead generation
+system with the pre-made Facebook ad
+campaigns, highle system, funnels,
+automations, all that, drop a comment
+down below and I'll send it to you.
+Anyways, when somebody opts in for our
+lead magnets, okay, we're going to get
+name, email, and phone number. And then
+the first text that we're going to send
+is basically thanking them for
+requesting our free lead magnets. It
+should be in your email shortly. Check
+your spam folder just in case. Also,
+make sure to request your free plan
+uh as well to get a personalized road
+map for using annuities. You can either
+complete the questionnaire in the email
+or right here, reply to this message
+with the letter Y to use our automated
+system. So, we're giving them two
+options. Um, a lot of people actually
+just uh complete the questionnaire, but
+we want to give them an option to uh
+interact with our AI agent as well, so
+that our AI agent will pre-qualify, ask
+questions, book the appointment, good to
+go. All right. So, I basically what I
+did, guys, was I just I adjusted the
+text messages that were that I was
+already sending to people and I just
+added this last part right here. I just
+adjusted this really. Um, all of this
+kind of stayed the same. This is what I
+changed at the end. You can either
+complete the questionnaire, which is
+what I was doing anyways, but now that
+AI is available, I'm giving them a
+second option to reply to this message
+and I'm giving very specific
+instructions on how to use the automated
+system. That's it, guys. And when you
+add this when somebody replies with why,
+start, quote, whatever it is that you
+want to do or use to trigger the AI
+agent. That's it. All right. Now, I do
+like to cover my bases, though. I'm
+going to show you one more workflow that
+I put together. Um, you shouldn't need
+this, but like I said, I like to have a
+fail safe in place just in case things
+don't work. You know, it's not perfect.
+Um, I think this is it right here. my AI
+um qualification trigger uh bot trigger.
+Yes, it's um I like to have a workflow
+in place that will trigger the bot when
+somebody replies to a workflow. Okay, so
+let me show you an example. All right,
+so I'll create a workflow and the
+trigger will be u customer replied. All
+right, and I just give it the name and
+it's going to be a reply channel of SMS.
+The workflow is going to be annuity
+guide opt-in because that's where the
+leads are coming in from and being sent
+to. I should say that when a lead is
+generated, they're automatically put
+into this workflow. Okay? And then that
+workflow, which I was just showing you,
+it has the text messages that go out.
+Okay?
+People will respond to that text with
+why, start, quote, whatever you decide
+to use. All right? So, these are my
+three filters. There's the reply channel
+replied workflow and then contains
+phrase why right here. All right. And
+then my action is update conversation AI
+bot and status. And then I choose my
+annuity bot and change it to active.
+Okay. Like I said, you probably don't
+need this. I just like to have it in
+place just in case because you never
+know. All right. And I want to make sure
+that my AI bot works when somebody
+actually responds to one of my text
+messages. Okay, with that said, guys, I
+think I'll go ahead and wrap up there.
+That is just about it. Um, let's see.
+Let me just double check. Um, let's go
+back to the AI bot. I want to make sure
+I did not miss anything for you guys.
+All right. Um, you can go to the
+dashboard to see basically the
+engagement it's having with all of your
+prospects. U, that's a separate video.
+Don't really don't really need to go
+through that. Anyways, uh, bot training
+is very simple. bot settings. Very
+simple. Bot goals. This is where the
+magic really happens. You want to make
+sure that you get the prompt right. I
+will link to this particular prompt uh
+in the description or I might just paste
+it in the description. Uh that's
+probably easier for you guys. You guys
+can just copy and paste it from this
+video. All right. Uh from there, you
+just want to make sure that you're
+you're connecting your custom fields for
+the questions that you're asking. Make
+sure you uh connect your calendar. And
+that's it, guys. You are good to go.
+That's what uh took me weeks of testing
+to figure out. So hopefully that helps
+you out a little bit. Uh if you guys
+have any questions or get stuck on
+anything, have any feedback, uh any
+requests for uh specific videos, drop a
+comment down below. Would love to engage
+with you guys. As always, uh I hope you
+guys are crushing it and I will talk to
+you in the next one. To your success,
+Matty Ice is out.

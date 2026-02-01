@@ -1,0 +1,3890 @@
+# Vapi Phone Agents Full Course 2024 2 Hours
+# Video: https://www.youtube.com/watch?v=jDPXWMUVUPE
+# Category: vapi-voice
+
+AI voice callers are a rapidly growing
+technology that can handle inbound and
+outbound calling fully autonomously for
+your business this system uses
+artificial intelligence to generate a
+response to a caller's question and then
+uses AI to generate a realistic sounding
+voice that then repeats the response
+back to the caller I know it sounds
+crazy but I encourage you to watch this
+video to get a true understanding on how
+this works rather than waiting months
+for sales teams to call lead lists AI
+callers can do this in minutes rather
+than making leads wait for our calls we
+can call and qualify them with this in
+minutes if you are a business that is
+making calls every single day then this
+is something you need to pay attention
+to here is a quick demo of how it sounds
+hey welcome to inflate what can I help
+you with my name is Brendon I'd like to
+book a call on Monday for 2 p.m. on a
+sec your call on Monday at 2 p.m. has
+been booked businesses today are
+spending thousands to tens of thousands
+to hundreds of thousands of dollars on
+tele marketing tele marketing is simply
+the direct marketing of goods or
+services true potential customers over
+the phone not only is it expensive to
+hire teams of people to make these calls
+it also takes a lot of time to dial all
+these numbers one by one now imagine if
+we could fully automate these calls with
+realistic sounding quick to respond AI
+voice callers that are indistinguishable
+from real people my name is Brendan and
+I run inflate AI where my team and I
+help businesses integrate the latest AI
+Solutions I'm from Melbourne Australia
+and dived into the AI space with the
+release of chat GPT identifying the
+significant imp impact that it would
+have on businesses this video is backed
+up not only by me but my partners at
+inflate Ai and our clients who have
+experienced genuine results from these
+systems that I will go through in this
+video I'm going to go in depth into the
+world of AI voice callers and break down
+everything you need to know taking you
+from a complete beginner with no
+experience to being an expert in AI
+voice callers if you feel pressured
+because you don't understand how these
+systems work and I'm not sure how it
+could help your business this video is
+for you to get a real understanding of
+how this is being used used today to get
+you up to speed with everybody else I'm
+first going to cover the opportunity at
+large there are many different use cases
+and industries for AI callers that I've
+had come through my own agency so
+hopefully these use cases and clear
+advantages provided for businesses will
+help you think about how this could be
+used in your own business I'm then going
+to cover key Concepts these key Concepts
+will quickly get you up to speed with
+all of the jargon software AI Basics
+essentially everything you need to know
+to start building your first caller I'll
+then go in depth into the two main
+platforms that we use within my agency
+to develop these systems vapy and
+make.com I'll go through exactly what
+these platforms are during the key
+Concepts I'll then move on to prompt
+engineering which is one of the most
+critical processes in building and
+instructing these systems to work as
+best as possible you'll once again learn
+exactly what prompting and prompt
+engineering is in the key Concepts I'll
+then go through a practical task
+building out an outbound C calling
+system this will take a list of leads
+and start calling them and collecting
+data back such as if the believe was
+interested in purchasing our services or
+not I'll also go through how to build an
+inbound lead qualification caller step
+by step you'll also have completely free
+access to everything in this video
+including all the templates and prompts
+within my free resource Hub Link in the
+description this also includes 20 other
+chatbot and automation related templates
+as well this may seem like a lot to take
+in but I've designed this tutorial to be
+super easy to follow along with
+especially for beginners so I'm going to
+start off by going over the opportunity
+so to get started I'm just going to take
+a little bit of a step back back and go
+through a bit about what the use case
+here is for these systems so very simply
+businesses send and receive phone calls
+every single day and most commonly these
+are sales calls so a sales call is a
+conversation between a salesperson and a
+prospect about the purchase of a product
+or service now the purpose of this call
+is to understand if that person is
+actually interested in the product or
+service the business offers and to then
+qualify them for the next steps in their
+sales process so this could be booking
+them into an appointment or just having
+someone else call them at another time
+this is really just any step that will
+help the lead make a more informed
+purchase so what does this involve well
+option one could be an in-house
+salesperson so an in-house salesperson
+is someone that's being paid a salary I
+just quickly Googled and the average
+base salary for a salesperson is around
+55,000 USD and that's not including
+performance fees so performance fees are
+sort of an incentive to continue to sell
+so if they make a sale they get a
+percentage of that sell and that's their
+performance fee so the salesperson would
+actually require training as well on the
+business and the exact products and
+services so they can actually handle any
+customer objections and actually provide
+value to the customers so this is just
+going to cost more time and money this
+team will also then need access to some
+sort of CRM so customer relationship
+management software to actually track
+which leads were interested and which
+were not and then this is just going to
+consume more of the Sal seams time which
+is taking time away from calling and
+therefore reducing efficiency now
+alternatively businesses may decide to
+hire an external sales team also known
+as Outsourcing so this could be sort of
+a company that provides sales services
+that essentially just lends you their
+existing team or you go ahead and just
+hire some sort of freelance salesperson
+who operates remotely now currently
+hiring some sort of Outsource sales team
+from the US can be pretty expensive 5 to
+six figures per month plus performance
+fees depending on obviously the supplier
+of that team whereas hiring a team from
+countries like the Philippines where
+labor is actually cheaper it's quite
+common for outsourcing callers and sales
+teams now this can be significantly
+cheaper at around four figures per month
+and depending on the agreement you may
+not have to pay performance fees or at
+least it will be significantly less than
+the performance fees of the US team now
+these sales team will typically do two
+types of calls and they are the inbound
+calls and outbound calls so inbound is
+when a lead submits a form on a website
+with their phone number they'll then
+receive a call from a salesperson and
+this is an inbound lead call so they're
+inbound because they've contacted into
+the business and then they're getting a
+call few minutes later or maybe a few
+hours later depending on you know what
+their structure is and so this is done
+to sort of handle any objections so
+especially for higher ticket items being
+able to offer insights into the products
+and services will increase the chances
+of actually selling rather than losing
+them when they see the price PR on the
+website and this is a very common sales
+strategy so typically if you go on a
+website and they don't have the prices
+directly on that product specifically
+and it just says to contact them or call
+them this is exactly why they want to
+handle any objections and make sure they
+can actually close that sale because
+it's worth it to them to make that call
+now for outbound when the business finds
+a sort of lead list online or just has a
+lead list and then it goes ahead and
+calls them and really just markets their
+products and services this is cold
+outbound calling so the lead knows
+nothing about their services and this is
+just a very common way for businesses to
+obtain new clients and ideally the
+business has a good data set of leads
+that are sort of relatively qualified so
+they are actually interested in those
+Services uh and we'll call them so let's
+just quickly compare those different
+methods so we've got the in-house sales
+team some of the benefits are that they
+are motivated to sell because they're in
+the business there's that good sort of
+corporate culture because they're within
+the business they're alongside other
+people and they're motivated to work
+with them there's likely going to be a
+higher direct performance earning so the
+more sales they make the more money they
+make and therefore there's motivation
+there they're easier to monor if they're
+in house
+it's very easy to monitor if they're
+sitting right next to you or they're
+just in the office they're also going to
+be properly trained within the business
+so obviously if they're working
+alongside other people in the same
+business and they've been directly
+trained by the managers or something
+similar they're obviously going to have
+much more experience than something like
+an external team there's also going to
+be a much better experience for the
+leads because of their language their
+accent their knowledge so obviously
+they're not you know coming from
+overseas if they're in house they're
+from the US they've got the language
+they can speak fluently if you're
+calling with your native accent it's a
+bit more relatable to the caller they've
+obviously got more knowledge on the
+products and services because they've
+been properly trained and then the leads
+are going to have a better experience
+because they can get more help and they
+can get a better understanding of what
+they're buying so the downside of the
+in-house sales team is that it is
+expensive so the wages involved like I
+said with that sort of average 55,000
+base salary not including performance
+fees it's very expensive to get someone
+in house uh working full-time to do
+those sales it's going to be time
+consuming to actually onboard them into
+the business so they're going to have to
+train them on everything the services
+and whatnot and get them up to speed
+it's going to be time Jing to actually
+run the sort of campaigns so it's going
+to take weeks to months to them to
+obviously call people especially if
+there's only one of them that's going to
+be a very big cost cuz you're going to
+need more expensive stuff if you
+actually want to scale that system
+there's also the chance for human error
+so if they miss a lead that comes
+through or calls them back uh especially
+if you're getting hundreds to thousands
+of leads per day uh there's just going
+to be lost opportunity there some of the
+benefits of the Outsource sales team is
+that it's cheap if it's overseas you're
+accessing that cheaper Labor uh it's
+going to be a better decision to make
+and it's going to be relatively easy to
+on board so these teams that you hire
+that are outsourced they're probably
+going to have processes in place to set
+up as quickly as possible so for you
+it's probably going to be quite easy but
+obviously in contrast to that they're
+going to be quite hard to monitor if
+they're overseas and they're not exactly
+the most fluent in English it's going to
+be quite hard to communicate with and
+ensure that you're getting exactly what
+you need across they're not really going
+to be motivated to sell cuz you have no
+control over that incentive it's
+possible that they're giving them an
+incentive it's likely not going to be as
+much as your us-based sales team they're
+likely to be poorly trained obviously
+because it's hard to monitor it's really
+hard to tell if these people have been
+given all of the required documents and
+sort of knowledge and have actually put
+in the time to learn about the business
+so it's going to be pretty hard to
+actually know if they're going to be
+well trained it's also probably going to
+be a much worse experience for the leads
+especially if they don't have that sort
+of native accent to the country they're
+meant to be calling from the language
+they're not going to be fluent in
+English or whatever language you want
+them to be speaking from uh and
+obviously the knowledge if they're
+poorly trained if they're not as
+motivated to actually understand
+everything their knowledge is not going
+to be that great and they might not be
+able to answer all of your leads
+questions now comparing this to AI phone
+callers a phone callers are cheap so
+they're probably similar in price to the
+Outsource overseas team definitely much
+cheaper than the in-house us team it's
+easy to monitor this system because you
+got access to all of the data at all
+times you'll have access to everything
+that's going on with all of the calls
+that being made the transcripts the call
+recordings everything you can get access
+to these phone callers are going to be
+motivated to sell they're not going to
+change from when we set them up so we
+can just set them up to motivated and
+they're going to stay like that they're
+going to be highly trained as well so
+we're going to give it all the knowledge
+about the business and it can pull any
+bit of information that it needs and
+it's probably going to be more informed
+than you on the business I've noted that
+it's going to be a decent experience for
+leads so I'm not saying it's going to be
+the best experience ever I'm also not
+saying that it's going to be a bad
+experience I'm just saying that the
+experience compared to something like
+the international Outsource team that
+probably has a different accent it's
+definitely going to be better than that
+but I can't guarantee that it's going to
+be as good as an in-house us team
+salesperson just because of the nature
+of the fact that it is still AI whilst
+it does sound super realistic obviously
+sometimes the responses do sound a bit
+robotic and that's because it well it is
+a robot so that's just the case but for
+the most part we should still meet our
+sort of call objectives whether that's
+qualifying them for our services or
+booking appointments we should be able
+to meet that sort of call objective
+through this caller we can also have
+data immediately sent into the CRM
+system so we can just have all of the
+call information and call outcomes
+directly sent into the CRM system
+without any need to manually type in
+anything this system is also very quick
+so we can actually send thousands of
+calls within minutes now we probably
+wouldn't send thousands of calls in
+minutes we do this in more of a sort of
+batch approach so we actually analyze
+the results from the first set of leads
+then we actually measure the results and
+make the appropriate adjustments and
+then once we've actually ran an
+extensive testing period and we're
+actually confident in how it performs
+then we'll move into sort of a more bulk
+process I will cover testing and data
+analysis later in the video so I've gone
+ahead and created a table with the three
+different methods here just to really
+visualize the benefits of each so we can
+see here obviously see the AI callers
+are coming in and pretty much crushing
+in all of the areas except for the lead
+experience where I've said it's decent
+it's definitely not as bad as the
+outsourc team uh but it's probably not
+as good as the in-house team but then
+obviously we need to weigh up all the
+other elements one being cost obviously
+is cheap in-house is very expensive and
+the time it's quick to do the a calls uh
+it's very slow to do the inhouse team so
+when we weigh up all these factors the
+lead experience ultimately at being
+decent is something that is probably
+justifiable so hopefully that sounds
+good I'm now going to go through how
+Industries are actually using this so
+one very specific use case is real
+estate so we've had quite a few real
+estate agents come through our agency
+and on through this Channel and so real
+estate agents have sort of a list of
+leads that could be homeowners and they
+will usually call them to see if there's
+actually a potential that they may want
+to actually sell their property and so
+if so they'll actually follow up with
+them with further information and then
+hopefully make a commission on actually
+selling their home now the solution to
+this could be an outbound caller that
+would then call all of these leads
+automatically
+just ask a few qualifying questions
+capture that data and then send that
+into a CRM system and then that will be
+done within minutes another industry is
+e-commerce so around 70% of online
+customers actually abandon their carts
+and this just means they've added a
+product to the cart that then left the
+website and they haven't purchased now
+currently stores will actually send text
+messages and emails to get them to
+purchase again and if this is not
+successful we can then Implement uh an
+AI caller to follow up with them and
+provide a 24-hour discount code or just
+some other benefit and this would just
+help to reduce the 70% of lost sales so
+this could be simply a call that just
+says hey we saw you were interested in
+this product here's a 24-hour discount
+code another industry is car dealerships
+so they receive thousands of calls per
+month uh and an inbound phone number
+that provides car recommendations and
+information based off of the car
+inventory would help to close more sales
+and just save a lot of time and money
+compared to the existing team home
+services so pool Ms pressure washing
+lawn mwing Etc all of these service
+based business businesses get hundreds
+of calls per day and are spending large
+amounts of money to actually capture
+these leads and convert them into sales
+so by implementing a properly built AI
+voice system we can then immediately
+reduce the current cost of taking those
+calls we will then start to see an
+immediate impact on the time it actually
+takes to respond to these leads and this
+will just mean more leads converting and
+sales increasing very quickly so
+hopefully you can now recognize the
+significant advantage that AI phone
+callers have over existing sales
+processes I'm now going to go through
+some of the key fundamental concepts so
+four key Concepts that I'm going to go
+through are large language models
+prompting functions and software so
+don't get overwhelmed by this it's
+really quite simple and I'm going to go
+through each of these step by step so a
+large language model is a computational
+model notable for its ability to achieve
+general purpose language generation so
+very simply the large language model is
+just a smart brain that has been trained
+on lots of data and is able to generate
+answers to questions now there are many
+different LMS created by different
+companies so the creator of chat gbt is
+open Ai and they created the GPT models
+for example GB3 and A2 or gbd4 So Meta
+or Facebook created a model called llama
+and Google created a model called Gemini
+so there are many large language models
+out there but for the purpose of this
+video I'll be using the GPT models uh so
+these are just the most popular and
+capable models for this purpose as of
+today prompting so an AI prompt is any
+form of text question information or
+coding that communicates to AI what
+response you're looking for so this is
+how we actually communicate to the large
+language model so this llm being the
+brain of our voice assistant so our
+voice assistant will actually act
+according to our prompt prompt
+engineering so prompt engineering is the
+process of actually structuring an
+instruction that can then be interpreted
+and understood by a generative AI model
+so there is a structure and process that
+must be followed to ensure you're
+effectively communicating with the AI so
+instance we've got sort of good prompts
+and bad prompts now good prompts are
+sort of clear prompts that concise they
+give relevant context they're driven by
+purpose so it's well structured it's
+very clear exactly what we're looking
+for and then move up the bad prompts and
+these bad prompts are ambiguous they
+lack crucial details they use unclear
+language and they're probably going to
+be misleading now I will dive deeper
+into prompt engineering specifically for
+AI phone callers later in the video but
+this is what will make or break your
+voice assistant so this is what we're
+actually going to be testing and
+improving so heavily during our analysis
+for our clients now for function calls
+when answering any sort of questions the
+model can choose to delicate certain
+data processing tasks very simply we can
+actually set up functions that
+essentially trigger what automations in
+the background of our calls so for
+example if we wanted to save a lead's
+name and address into our CRM system we
+could create a function that then just
+looks for their name and address during
+the call once it's found those values it
+just sends them into our CRM using an
+API call which I'll just cover in the
+second the way this function works is
+that it's actually prompted to
+understand what it's looking for for
+example we could say please run this
+function when you have captured the name
+and address now I will cover this
+further during the live build where I
+set up multiple functions for different
+purposes API requests so API request
+stands for application program interface
+and an API call or API request is just a
+message that's sent to a server asking
+an API to provide a service or
+information so for example the weather
+bureau's software system contains daily
+weather data the weather app on your
+phone would then talk to this system via
+an API and that's how it shows you that
+daily weather update on your phone so
+when we want to send our data from the
+voice caller to our CRM system we will
+then use an API request to send this
+data fundamentally there are two main
+API request types a post request and a
+get request simply put a post request
+posts data off to another application to
+be used and a get request asks to
+receive certain data back from an
+application now I will set up both of
+these API requests with the functions
+during my live builds onto software so
+vy. this is the platform that we use to
+build AI phone callers so it enables us
+to actually change the llm models prompt
+the assistants and then change the voice
+sound Etc now we'll extensively cover
+this platform later in the video uh and
+ultimately this is the Key software that
+we're going to be using for the creation
+of this system so make.com this is an
+automations platform that we will use
+with our functions if you are familiar
+with zpr this platform is pretty similar
+so we're able to make an API quest to
+make with some data from the phone call
+and then have it easily sent into any
+CRM system or database of our choice so
+you can kind of think of it as a central
+hub for connecting thousands of
+different applications to easily talk to
+each other 11 Labs so this is a platform
+that we will use to get realistic
+sounding voices bappy enables us to
+actually connect different voice
+platforms 11 Labs is one of them so 11
+Labs is also known for being one of the
+best in realistic sounding voices it
+also has quite a large public voice
+Library as well as the ability to
+actually clone your own voice so
+hopefully you now understand the
+significant benefit these systems can
+actually provide for businesses and you
+should also have an understanding of the
+fundamental pieces that these systems
+are built on all right so jumping
+straight into it I'm going to go through
+VAP and I'm going to go through make.com
+as like I said these are going to be the
+two main platforms that we use within
+our agency and that we pretty much
+recommend to use to build these systems
+so this is the vapy platform vapy like I
+said is used to build our voice systems
+so vapy like I said is used to build our
+main voice systems so this is going to
+allow us to prompt uh to provide prompts
+and then to instruct our assistants to
+connect our voice platforms essentially
+everything is going to be connected to
+this system um and then everything can
+be also managed within this as well so
+this page that you'll land on once
+signing up for an account it is
+completely free to sign up for an
+account you just have to pay for the
+cost per minute so when we run these
+systems there is a cost per minute if
+you haven't yet signed up for vapy I'd
+greatly appreciate it if you'd go ahead
+and sign up using my affiliate Link in
+the description so the page that we're
+on right now is sort of our assistance
+uh menu so we've got a whole host of
+assistants here it is blocked out just
+cuz I have a few client Builds on here
+but this is essentially just going to be
+a list of the assistants that we've
+created on vapy now each assistant is a
+different call so each assistant is
+given one prompt and that prompt forms
+who that caller is how it talks what it
+talks about how it responds all of that
+is contained within a single assistant
+so before I dive into all of these sort
+of features uh contained within the
+assistance functions I'll just go down
+to phone numbers so so in vapy we're
+able to import from twio or Vonage I'm
+using twilio specifically for this uh so
+I'll show you how to generate a twilio
+number so on twilio it's actually really
+easy to create a phone number just sign
+up for a twilio account and you will
+actually automatically get given a Us
+phone number to use so if you just want
+to use the US phone number for now for
+testing you can go ahead sign up for an
+account you're going to land on a sort
+of main menu page like this and then
+you're going to see at the bottom left
+your account Sid authentication token
+it's also going to view you the phone
+number uh that's registered to your
+account going back to vapy we can just
+hit import and then it's just going to
+ask us for that information just give it
+your twio phone number that it provided
+you with twio account Sid T
+authentication token and then we can
+just give it a label so this is just
+anything we're just naming what it's
+called um and we can just fill in those
+bits of data click import and then from
+that you're going to be able to import
+your too number now if you're not
+located within the us or you want to buy
+a separate number or a different number
+you can also go ahead and buy numbers uh
+through twio or you can buy a number
+through vapy itself now unfortunately
+vapy only provides US and Canada forone
+numbers at the moment but obviously if
+you are in the US and Canada this is a
+pretty easy choice to make just use this
+and you can just pay $2
+uh and you'll be a to get your phone
+number directly from VY without having
+to deal with tulo once you've gone ahead
+and imported your phone number there's
+going to be two options here called
+inbound and outbound now inbound and
+outbound is just simply how we want to
+send our calls so we can set up this
+phone number to be the inbound assistant
+uh for a particular assistant so I can
+click through my list of assistants and
+just choose any of the ones that we
+created previously on the page I was
+just looking at and we can assign that
+to a phone number so if I wanted to
+assign this phone number to particular
+assistant anytime anybody calls that
+phone number that assistant is going to
+pick up uh from that call now for the
+outbound section here what we can do is
+essentially just set a phone number that
+we want to send a call to we can select
+the assistant that we want to be sending
+off uh and that's all going to be with
+under the phone number that we're on so
+this phone numbers tab is everything to
+do with sending and receiving calls uh
+and dealing with all that number
+information just below phone numbers is
+a documents tab so this documents tab is
+for uploading any knowledge based docum
+now I will come back to this in just a
+minute cuz this is related more to the
+assistance uh than more of a main
+function but ultimately we upload
+documents to be able to assign them to
+assistants and this gives our assistants
+more knowledge so we can upload a PDF
+file of information on the business we
+can assign that to an assistant that is
+meant to help people understand the
+business uh and then obviously without
+adding everything into the assistant so
+this tab is to centrally store all of
+our documents maybe we want to use one
+document on multiple assistants and so
+if we have a documents folder here we
+can essentially assign any document to
+any assistant by uploading them right
+here now below this we have the voice
+library and the voice library is a a
+huge list of all of the voices uh that
+are assigned to a particular voice
+provider so in this case I've got 11
+Labs selected as a voice provider and
+it's gone ahead and listed all of the 11
+Labs voices that I've got on my account
+or some of these sort of main 11 Labs
+voices that are provided so it says here
+total 56 voices so the 's a lot of
+flexibility around the different types
+of voices that we may want to choose now
+I'm from Australia so I wouldn't
+necessarily want a US accent for my
+Australian clients so I can go ahead and
+I just select Australian for the accent
+and now I've got a list of Australians
+that I can use to make a bit more of a
+realistic sounding system for the
+Australian clients now additionally like
+I mentioned previously 11 Labs allows us
+to clone our own voices and so if we
+connect our 11 Labs account we can now
+get access to our own voice clones so
+this right here is my voice clone within
+vapy that I can simply assign to any
+assistant I'd like and it can start to
+speak just like me so I can just quickly
+test how that actually sounds so you can
+see if it sounds any good I allow my
+intuition to lead my path so this is a
+pretty cool feature if we want to clone
+any of our clients voices to make it
+that little bit extra realistic or you
+want to trick your friends clone your
+voice you can just send them a call with
+your voice now in order to actually
+connect your 11 labs to vapy we do just
+have to come down to provider apis down
+here and this is where it proves
+provides us with all of the different
+platforms that can connect to vapy so
+there are a lot of platforms that we can
+connect to vapy and this is one of the
+things that I really like about vapy is
+that it is completely open there's no
+restrictions as to what you can use and
+what you can't they've added in a heap
+of options that we can come through and
+add in our API keys for and it will just
+connect directly to that and we can
+start using it from vapy so in this
+instance I've gone ahead and connected
+11 Labs so all I've done is gone to 11
+Labs they've even got a button here to
+take you there go to your 11 Labs find
+the API key through the settings or for
+whatever platform you want to use they
+should have a pretty easy way to get an
+API key you just copy that key paste it
+in here uh and then it's automatically
+connected and then if I go back to my
+voice Library it's going to autop
+populate all of the 11 lab Dev voices
+from my library into vapy I've also done
+the same for open AI so when we actually
+generating the responses for our voice
+assistance I've gone ahead and uploaded
+my own API key to pay for that through
+open AI however if you prefer you can go
+ahead and actually not upload any Keys
+yourself uh and you can just have it
+build directly through vappy through
+that cost per minute it'll just build
+through vappy so going back up to call
+logs this is where all of the calls are
+actually stored and saved so every call
+we make whether it's inbound or outbound
+all get stored within this one page and
+this is really convenient because now we
+can get access to the entire call
+recording call summaries call logs call
+transcripts a lot of data on what's
+going on through these calls so if we
+want to start sending out a whole host
+of calls uh everything is is tracked
+through here jumping down to
+organization this is some sort of
+backend details you won't necessarily
+need this but we have here are API keys
+and so I actually use this later in the
+video when I'm building out some of the
+assistants but these API Keys allow us
+to talk to vapy Via apis so we can
+actually essentially send calls uh in an
+automated fashion so when I build the
+call calling machine uh what we're able
+to do is send a request to the vapy API
+and then what we're doing is triggering
+a call for every new lead in our lead
+list and so that's one of the call
+calling systems that we're going to need
+these keys for so I'll show you how to
+use this later in the video but this is
+where you'll find it jumping down to
+billing this is all of the sort of cost
+per minute uh costs so every time we
+make a call it does cost money to
+actually run that call especially if it
+goes for a long time as there is a cost
+per minute associated with every call so
+what it will do is it will track
+essentially all of the calls that occur
+it's going to rack up those costs and
+then you'll essentially just be build
+directly to the payment method that you
+added to vappy and you can set up a
+monthly usage limit so if you want to
+strictly limit your system to not hit
+over a budget if you set that monthly
+usage limit uh and then it reaches that
+limit essentially The Voice Assistant
+will just stop calling they just won't
+work and you won't be build from there
+so that is pretty much it for the leth
+hand side of the vapy menu options if we
+go up to the top right here we have an
+Ask AI for help and this is a really
+cool uh function that allows us to sort
+of ask like a chatbot anything about
+vapy so if we wanted a question about
+how much does it cost uh we can actually
+send this off to a pretty cool AI uh
+that's going to go through a bunch of
+different short FAQ stuff so if you're
+ever confused about something you need
+help with something uh we can just talk
+directly to this um and then we're going
+to be able to get some support through
+their documents or we can actually ask
+their AI chat directly so I've just
+asked the vapy AI how much does it
+actually cost uh and you can see here
+the cost depends on several different
+factors calls duration providers Etc so
+that's pretty accurate um VAP itself
+charges a flat rate of 5 cents so that's
+a good thing to knowe uh so instead of
+Vy obviously charging us a monthly
+subscription or something like that all
+they do is charge 5 cents per minute for
+calls and so with all of the providers
+as well if we go back to our provider
+apis when we upload this it doesn't
+upsell or upch charge on any of this so
+we upload our API Keys it directly
+charges to those accounts at the sort of
+wholesale cost uh if you will we're
+paying the direct cost to those
+platforms and that's another really good
+benefit of vapy is that it's
+significantly cheaper because of that
+all right so now I'm going to jump into
+the actual specific of the assistant
+settings on vapy so this initial page
+here just this bit here is our all of
+the assistant settings required to build
+our assistant one good thing about vapy
+is we can actually test it within the
+browser so if we hit talk with in this
+case John's Pizza this is a very example
+system that I built we can just talk
+with it over the web uh it will just
+turn on our mic we can talk back and
+forth with it and test if it works
+through this but the main area of this
+that you're going to be using is this
+bottom section here which contains the
+model transcriber voice functions and
+advanced settings so now I'm going to go
+through all of the model settings and
+this is everything to do with prompting
+and our large language model so to get
+started we've got a first message now
+the first message is pretty much exactly
+what it says it's the first thing that
+it says when you call the assistant so
+in this case I've said hey welcome to
+John's Pizza what can I get you today so
+if we were calling up a pizza place this
+would be the first message that it reads
+out and we can set that to be sort of a
+static value this won't change it'll
+just read this word for word then below
+this we've got the system prompt and the
+system prompt is our main prompt the set
+of instructions that we're going to give
+to the AI to read through and then build
+it sort of personality from now I will
+go through prompting and everything you
+need to know about prompting later in
+the video but just so you know this is
+exactly where the prompt is going to go
+and all it is is you naturally typing
+into this box here to talk to it to tell
+it how it works or how it should respond
+to certain questions that's all typed
+naturally in here and the AI is able to
+read this it is able to follow that and
+and then craft its sort of Personality
+uh and structure from so off to the
+right here we've got our large language
+model settings firstly we have the
+provider so in this case I'm using open
+AI so open AI was the creator of chat
+GPT it's one of the biggest uh you know
+models out there it's one of the most
+used models out there and it's one of
+the best performing models so I'm using
+open AI there is a whole host of other
+models that you can choose as well but
+for this instance just going to be
+choosing open AI for now just below this
+we've got our model now the model I've
+chosen GB3 and A2 turbo but for the open
+AI we've got two sort of different model
+choices one being gbd3 and A2 one being
+gbd4 now there are two different use
+cases for these two different models
+gbd3 and A2 is a much quicker uh much
+faster responding system however its
+responses aren't as sophisticated as
+something like gbd4 gb4 is quite a bit
+slower in responding gbt 4 is much
+slower in responding but it thinks
+through its answers a bit more and can
+respond more accurately and follow the
+prompt a bit better so if we have a Sal
+script gbd4 will'll be able to interpret
+that a bit better and follow through
+with the answers that you're probably
+more looking for but obviously with a
+voice assistant where you want sort of
+quick responses something like GB3 and a
+half will provide that sort of extra
+level of realism in this case I'm just
+going to choose GB3 and A2 but in some
+cases if you've got a really long
+complex prompt once again going to go
+through this further in the video but
+I'm just going to choose GB3 and a half
+for now and just below this we've got
+our knowledge base so our knowledge base
+once again is where we upload files to
+and then we can assign certain files to
+particular assistants so in this case we
+can now just select any of the documents
+that we've uploaded in the document
+section to a particular assistant so if
+we wanted to upload in this case the
+menu to our pizza restaurant we could do
+that here simply upload the file attach
+the file and then we can just prompt the
+assistant to then reference that
+information so we could say I answer
+this using the knowledge based
+information and then it's going to start
+to pull info from the knowledge base now
+just below this we've got temperature
+now temperature is the randomness of the
+output so where we're able to control
+how random we want the outputs to be so
+if we want it to be really strict and
+follow our prompt precisely uh we can
+bring this temperature all the way down
+to something like 0.1 where its response
+must follow the prompt exactly and
+output exactly what we're looking for
+now if we wanted a bit more of a
+creative response we could bump this
+temperature all the way up to something
+like two but there are sort of benefits
+and disadvantages of both ends now below
+this we've got Max tokens this is
+essentially the maximum amount that the
+AI can sort of respond with at once so
+depending on the type of assistant that
+you're building if you wanted to Output
+a lot of information at once you can
+bump this Max tokens up to a much higher
+figure and then it can output more words
+at once so essentially I like to keep
+this very low CU I don't like the bot to
+sort of go on a huge conversation saying
+lots of things CU people on the phone
+aren't going to really like that I like
+to keep it nice short concise so the way
+if we bump this number down to a very
+short amount maybe put this at 100 the
+responses are just going to be shorter
+respons is they're going to be more
+concise and I typically find for voice
+assistant specifically a lower token
+amount is better just because we don't
+want it to obviously generate an entire
+paragraph or an entire book of
+information and then you're on the phone
+with it and it's reading it for about 10
+minutes you obviously don't want that to
+happen so just making sure that if we
+reduce the tokens we're essentially
+forcing it to be concise and sure in its
+answers now below this we've got a
+function that says detect speech emotion
+and this is actually able to detect the
+emotion of the person talking to the
+assistant so if some guy starts yelling
+at the assistant ideally that this will
+actually pick it up and it's able to uh
+add that into the prompt here so
+obviously if they start yelling at it uh
+we can pick that up and go on like sorry
+if they start yelling at you can say
+sorry and continue on or do something
+different we can actually prompt it to
+to handle that situation I don't
+typically necessarily use this feature a
+whole here I haven't tested it enough to
+see what the accuracy is um but that's
+definitely something that you could use
+uh if you wanted to create a much more
+sort of humanlike system where obviously
+someone's yelling at it it's not just
+going to continue on uh like like
+nothing has happened so that is it for
+the model settings I'll now jump into
+transcriber so the reason that this is
+actually important is that obviously the
+way that the information is interpreted
+determines what it's going to go ahead
+and understand and output so if we say
+something and it obviously transcribes
+it wrong as being something different
+the model is going to then generate an
+answer that's completely different to
+the question we had asked it now vapy
+does have two different providers for
+the transcriptions you should probably
+test this depending on the sort of
+accent I think is probably going to be
+the most important thing in terms of the
+providers for transcription so if
+somebody isn't necessarily fluent at
+speaking a particular language uh the
+provider and the transcriber uh is going
+to be pretty critical in that process so
+really playing around with this and
+making sure that it's consistent in
+transcribing the text that your users or
+your target audience in your country in
+your accent uh is going to be able to
+perform better because obviously we
+don't want it to trans transcribe
+something that we've said to be
+something completely different cuz
+that's going to mess up the entire sort
+of flow cuz obviously this is
+transcribing a voice putting it into
+text and then sending it to the AI model
+now jumping into the voice settings this
+is one of the most important parts of
+building our assistance this is where we
+control how the assistant actually
+sounds so the first settings that we get
+at the top here is the provider so once
+again there are multiple different
+providers for generating the sound so in
+this case what happens is we obviously
+send a question by asking it it's then
+transcri cribed the AI model receives
+that transcription of text that text is
+then sent to this provider that we've
+chosen so in this case I've set 11 Labs
+11 Labs would receive that text it would
+then obviously turn it into an AI voice
+uh response send it back to vapy and
+then repeat it to the user over the
+phone now we use 11 labs for all of our
+builds but there are a multitude of
+different options uh for different types
+of voices some might sound better for
+different use cases for different
+scripts that needs to read or different
+accents uh that you want to get but I
+mostly use 11 Labs there's also
+different costs associated with
+different providers I believe that the
+provider for a voice is one of the most
+expensive parts of these systems so if
+you look at the bar at the top here
+these are all the different costs
+associated with the per minute cost of
+running the assistant and this yellow
+bit is 11 Labs so taking up quite a bit
+of the entire cost here is 11 Labs we
+can reduce this by obviously choosing
+different models if we choose something
+like lmnt it's going to go down to 3
+cents choose 11 Labs it's now up to 4
+cents uh so obviously different voices
+uh and different providers are going to
+cost different amounts scrolling down
+further we've got our additional
+configurations one that I really like is
+the background sound so we can actually
+choose to add a background sound to our
+callers so at the moment they've got
+either an office sound or just nothing I
+believe they are adding functionality to
+upload Custom Sounds alth they're just
+going to add a bunch of different sort
+of default sounds in here as well this
+one again adds to the realism if you're
+being called by a call center it's
+probably going to sound like an office
+uh in the background so you can just
+toggle that on if it's relevant to your
+assistant obviously so just below this
+we've got punctuation as well now this
+is a really important function that
+allows us to create sort of silences and
+breaks during our conversation so we
+want to essentially enable the different
+types of characters and these characters
+correspond with different sort of
+responses to the AI now I will cover
+this further in the prompt engineering
+part of this video but ultimately
+characters like the sort of dashes or
+the commas or the pauses these different
+types of characters make the response
+generate a bit differently so if we
+wanted to say something pause for a
+little bit and then continue on we want
+to actually enable these characters to
+be able to be read by vapy and then to
+actually create those pauses in the
+conversation once again I'll go through
+this more in the prompt engineering part
+of this video but ultimately just enable
+the ones you want to use and then
+include them in your prompt and then
+it'll obviously pick them up through
+vapy and then create those pauses for
+you now just below the punctuation we
+have filler injection so I've just asked
+the AI to give a bit of a better
+response for what fillers are so in this
+case fillers refer to words or sounds
+that people often use in natural speech
+to pause thought to hesitate or to
+signify that they are still speaking
+while they organize their thoughts so
+it's given us some examples here um are
+like stuff like this when people are
+thinking organizing their thoughts we're
+able to obviously input these types of
+things to make it a bit more natural uh
+and less robotic like it says so by
+enabling this it's just going to be a
+little bit more realistic it's going to
+be pausing on its thoughts um and
+collecting its thoughts and it's going
+to sound a little less robotic so just
+below this we've got back channeling now
+back channeling is similar but different
+to the fillers so in this case whilst
+the bot is listening to what your the
+the user is saying it's just going to be
+like M or confirm what they're saying as
+well so it's going to be making it sound
+a bit more natural as well so ultimately
+the fillers are for when the bot is
+actually talking itself and it's trying
+to generate its thoughts it might just
+start to pause a little bit make it
+sound a bit more realistic and that it's
+not consistently outputting information
+all the time and this is for when it's
+not speaking and it's actually listening
+it's going to make these sort of sounds
+and just below this we've got model now
+this is for 11 Labs specifically but
+what we would choose is right here it
+says use 11 lab as multilingual if
+you're using a non-english transcriber
+otherwise use 11 Labs turbo so just
+going to be using a Lev Labs turbo I'm
+not using the multilingual function but
+if you were you can go go ahead and use
+this one uh if you're not using English
+and you want to use it for a different
+language so now just below this we've
+got four different sort of
+configurations for the model one being
+stability Clarity plus similarity style
+exaggeration and then optimizing the
+streaming latency so for stability this
+is how sort of expressive and emotional
+we want the responses to be so if I
+hover over this increasing variability
+can make speech more expressive with
+output variation between regenerations
+it can also lead to instabilities so if
+I go ahead and drag this all the way
+down we're going to get a much more sort
+of vibrant more emotional uh more sort
+of realistic sounding system because
+it's obviously more expressive sounds a
+bit more realistic and reacts to the
+sort of emotions a bit better however
+this does cause instabilities but if we
+go down to the N for stability
+increasing stability will make the voice
+more consistent between regenerations
+but I can also make it sound a bit
+monotone so on longer text fragments we
+can recommend lowering this value so
+we've got two sort of options here we
+can either go really low variable output
+and this is going to be very expressive
+very emotional but the chances are it's
+probably going to mess up and cause some
+artifacts that are going to make it
+sound really unrealistic so I like to
+keep it sort of in the middle at 0. five
+potentially 6 uh and it really depends
+on the Voice provider or The Voice
+Assistant that you're using as well in
+terms of stability making it monotone
+can work really well for some voices but
+some voices might not sound really good
+if it's very monotone and it depends on
+the purpose of the assistant as well
+obviously if we're using sort of a call
+center replacement system it's probably
+fine if they're not you know jumping
+around all the time but if we're
+building a salesperson for Real Estate
+or something maybe we want it to be a
+bit more expressive we want to lower
+this value to get a bit more emotion out
+of them now below this we've got Clarity
+plus similarity so putting this on high
+enhances the overall voice Clarity and
+Target speaker similarity so very high
+values could also cause artifacts so
+really adjusting the setting to find the
+optimal value is encouraged that's what
+it says so increasing this uh can really
+help to make it sound very similar so in
+some cases depending on the assistant
+once again this really requires a lot of
+testing um you really got to just
+configure this play around with it and
+get it to be really good but ultimately
+if we drag this all the way up here it's
+going to sound very similar and be very
+consistent but the downside is that it
+could cause sort of artifacts cuz it's
+trying to meet that same sort of similar
+sound every time it's it's working a
+little bit harder to do that so I like
+to keep this at about 6 uh once again
+sort of in the middle area 7 Maybe
+but if we go all the way too low we can
+get a bit better consistency less likely
+to break however obviously it's going to
+be a little less uh emotional it's going
+to be a little less consistent so the
+outputs might sound a little bit
+different so it's not going to be 100%
+super realistic um but once again put it
+in the middle I think that's a safe bet
+and that's what I've been using once
+again it really depends on the voice
+sound that you're using um and it could
+really brange depending on whatever that
+is now style exaggeration very similar
+to stability I say exaggeration is
+really exaggerating the audio and the in
+the speech so if we want it to be a lot
+more emotional and we want it to have
+that level of realism and not so
+monotone saying the same sort of level
+of voice at the same time we can
+increase this up to exaggerated I do
+keep it at zero it does say here that
+sending it to zero will greatly increase
+the generation speed so if you want it
+to be quicker as well increasing this to
+be quicker uh but obviously I like this
+because it's just more consistent it's
+more stable to keep it at this
+and I find that generation at this it's
+still pretty quick and sounds pretty
+good but maybe keeping this at about.
+2.3 uh might be good as well now below
+this we've got streaming latency if we
+want to increase the latency on how long
+it takes to respond we can do that if
+we'd like as well the default value is
+set to one so I like to just keep it
+there and then finally for the voice
+settings we've got our used speaker
+boost this boosts the similarity of the
+speech and the voice at the cost of some
+generation speed so you can simply just
+to with that on if you'd like to use it
+and it supposed going to just keep it
+consistent in how it says so one
+sentence should sound very similar to
+the next sentence um and you can just
+enable that by toggling it once again
+you really just need to test all the
+different settings put them in
+completely different configurations call
+it a few times and really just test is
+it actually working is it generating
+consistent accurate and realistic sounds
+if not make some changes and all these
+settings should assist you in getting a
+really realistic sounding system all
+from this voice settings I'm now going
+to jump into the function settings so
+functions are the like I said earlier
+functions are the sort of custom
+automations that we're going to run in
+the background or after our assistant
+has called somebody so for this
+particular example for this sort of
+pizza store I've created a function
+called order so in this case we're
+actually capturing an order if we want
+to talk to the user capture their order
+details about what they want to buy
+where they live what their name is we
+want to capture this data and send that
+data off to obviously maybe some sort of
+ordering system so in this case we've
+created a function and this function uh
+by simply just click create a new
+function we have given it a name called
+order because we're creating an order
+we've given a description called This is
+where the details of the order will be
+stored only run this once uh once all
+properties are complete so this is our
+sort of prompt uh to give it the context
+as to when to actually run this function
+and then within our functions we can
+have properties and properties are the
+specific data points that we want to
+capture for our function obviously if
+we're capturing an order what are the
+bits of information that we want to
+capture within that order well in this
+case I've created a property by clicking
+on properties creating a new property
+I've created one called name and name is
+the name of the custom of course and
+then this is set to a string so that is
+just text uh and then pretty simple just
+create property add in the description
+as to what you want to capture and this
+will automatically capture that name
+information so this will essentially run
+in the background this will be
+constantly looking for the name of the
+customer and then it will constantly
+look for our other properties as well so
+I've got items this is a list of all the
+items ordered by the customer this
+should include the exact food name and
+exact food size I've got this set to an
+array so an array is essentially just
+like a list so obviously if somebody
+orders two pizzas or they order two
+different types of pizzas we want to
+list that out in what's called an array
+and we can do that by selecting that
+option going down to address we want to
+store the customer's full address
+because we want to know where to send
+the order to uh in this case I've
+selected string again also they've got a
+Boolean which is sort of like a true or
+false um so if we wanted to essentially
+do the League qualification system we
+could say are they qualified yes or no
+or true or false that's the Boolean uh
+value we can do number so if we wanted
+to actually get the order value order
+total or number specifically we can use
+the number so hopefully that's pretty
+straightforward ultimately we're just
+capturing a set of values to then send
+off to a particular endpoint now for
+this endpoint I've got a URL here and
+this URL is a make.com web hook now when
+I cover make.com you're going to get a
+much better understanding of exactly
+where this has come from how this works
+and what exactly this URL is used for
+But ultimately all this is doing is
+sending data off to make.com if you
+remember that is our automations
+platform that going to process this data
+and then do something with it whether
+it's just storing the data or it's
+actually then sending that off to in
+this case maybe the kitchen however that
+would happen we can do that through
+me.com scrolling down a bit they
+actually have some predefined functions
+as well so in this case we've got an
+enable end call function and this will
+allow the assistant to end the call from
+its side so if we want the assistant to
+end the call and not them we can
+actually just toggle this on and go down
+scroll down all the way to the bottom
+and type in an end call phrase so this
+enle phrase is just something that the
+assistant would say uh and then it would
+trigger the bot to simply just end the
+call so if we wanted to prompt it to
+Output uh thanks for the call uh we'll
+speak to you later goodbye and we could
+essentially take that phrase put that
+into this part of the prompt right here
+and then every time
+anytime it ESS says that it will just
+end the call itself and so that way
+you're not just stuck on a call this can
+help with cost efficiency as well
+obviously you don't want them to be
+stuck on the call using up valuable
+minutes uh it'll just end it right away
+uh so that's a good function to enable
+another one of the predefine functions
+is dialing the keypad so we're can
+actually get the assist to actually dial
+the keypad I've also asked the AI here
+to give you a bit of a better
+explanation but we can see here this
+feature is part of additional
+capabilities given to vapy assistants
+allowing them to perform actions Beyond
+simple conversation such as transferring
+calls ending calls and in this case
+interacting with keypads during calls so
+we can interact with the keypad with
+that function and just below this we've
+also got the folding phone number
+function now the folding phone number
+function uh essentially folds the phone
+number depending on a set of conditions
+so we can enter in our phone number
+right here and then in our prompt we can
+say if something happens or if this
+specific thing happens or this specific
+thing is said forward the phone number
+so that sort of forward the phone pH
+number is already automatically prompted
+into this predefined function uh and it
+will automatically start to fold the
+phone number to this phone number uh and
+so you can set that to your own phone
+number and if something bad happens
+it'll automatically start to call you
+and then you can take over and handle
+the call from there so that is it for
+the functions section once again I'm
+going to go through a bit more into the
+specific building out of the functions
+uh through the mac.com walkthrough now
+jumping into the advanced section these
+settings you don't necessarily need to
+use I don't particularly use them that
+often but it is good to know what
+settings are available to you through
+the advanced settings so the first
+setting that we have here is the Hipp
+compliance setting now the Hipp
+compliance setting is specifically for
+medical uh use cases so if you're using
+this in the sort of medical area uh
+obviously being able to be Hipp
+compliant is probably going to be
+required for that particular assistant
+and you can do that through vapy simply
+just enable it and one of the things
+that you'll notice it's just done is
+actually disabled recordings so
+obviously for Hipp compliance uh you
+can't record the calls especially if
+it's going to be handled sensitive
+information so one good feature there
+enabling Hipp compliance but obviously
+if you don't need Hipp compliance you
+can turn that off and then you actually
+allow to Now record the calls enable
+that we can actually record the
+conversation with the assistant and so
+these recordings are stored in the call
+logs like I showed you earlier so just
+enable that and then go to call logs and
+you can just play any of the recordings
+that you'd like now just below this
+we've got pipeline configuration and
+these are just another host of settings
+that we can use to configure some of the
+delays interruptions um for our
+particular voice system so so the first
+one is the silence timeout so this is
+just how long it waits for the person to
+respond back so at the moment it's set
+to 30 seconds uh I'd like to keep that a
+bit lower maybe 10 seconds obviously you
+don't want to be sitting there for 30
+seconds waiting for them to respond
+chances are they didn't hear you they
+didn't hear what you said uh and so you
+want to keep that really low
+particularly from what I've seen maybe
+you want to increase that depending on
+the system's use case uh but keeping
+that low makes it a little bit more
+natural for my experience then we've got
+the response delay this is how delayed
+it is in responding to the user's
+question that it sent us uh I like to
+keep this at other zero or 0.1 obviously
+I want the least amount of delay
+possible um but depending on the use
+case you can increase that if required
+large language model request DeLay So
+This is how delayed it is in actually
+generating its answers once again sort
+of similar to the response delay really
+just got to play around with this uh and
+see whether or not it suits your
+particular assistant once again I like
+to keep this on the low side of things
+to keep the delay as minimal as possible
+so next option here is the number of
+words to actually interrupt the
+assistant so when we're talking to the
+bot we can actually say something while
+it's talking and it's going to stop and
+it's going to obviously wait for what we
+have to say and then continue on again
+so it's actually recognizing that we're
+saying stuff um and it's making it a bit
+more natural in that sense so one of the
+configurations we can change is the
+amount of words to actually detect when
+to interrupt the assistant so if we set
+that to one word it will pick up if you
+said one word it'll stop the assistant
+now you do have to be a bit careful with
+this one if we set it to one word word
+and then the person on the phone coughs
+or something happens they make a noise
+it might pick it up as a word and
+interrupt the assistant and it's going
+to be a bit awkward if it's just stuck
+there waiting for how long your silence
+time out is that's why I like to keep it
+about two or 3 words just to really
+confirm they have started talking about
+something and that we do need to stop
+talking then finally we've got the
+maximum duration and this is the max
+amount of time that we want the call to
+go for so we can set limits as to how
+long the calls are going to be this is
+going to be helpful for managing cost
+once again so obviously if we're sending
+out thousands of calls we do want to
+make sure that obviously these calls
+aren't going for an hour each because
+then obviously that's going to use up a
+lot of our cost per minute so we can
+just reduce this to a set of minutes
+that we want to keep it to so if the
+call should only take 5 minutes at Max
+just set it to 5 minutes and then
+obviously if it's hit past 5 minutes um
+then it's probably just going to have to
+just going to have to take that loss uh
+if you're trying to talk to a lead or
+something obviously if it's going on for
+5 minutes it should probably end anyway
+um but it should that really comes down
+to your prompting once again making sure
+that the assistant is efficient what
+it's saying it doesn't go off on
+tangents and talk to them about random
+stuff it just goes down the script
+follows exactly what it needs to say and
+gets the call done as quickly as
+possible to save on costs uh but we can
+once again really help reduce that by
+putting in a maximum call duration now
+further scrolling down we've got more
+sort of advanced settings here that are
+really used for some of the custom
+coding side of things on vapi in this
+case we can put in a URL um to actually
+send all the information that's
+occurring through the assistant so
+function calls uh Ender call reports
+anything that's happening it can be sent
+off to a particular URL uh so we can set
+that up using mac.com if you'd like once
+again not necessarily required for
+building out your first assistant but
+something to look into if you want to
+actually control um sort of whatever is
+happening to the assistant and get all
+of that data back this is where you
+would do that by putting in your server
+URL the same goes with the client
+messages these are messages that are
+going to be sent off to a different
+endpoint we can choose all different
+data that we're sending off so very
+similar to the server Your Role
+configure all of the data and how that's
+managed through those settings server
+messages once again very similar uh so
+if we want to choose what's being sent
+off here we can just say we want the end
+call report function calls updates we
+can have that all sent off live during
+the call then below this a feature that
+is actually pretty useful is the
+voicemail message so if the assistant
+goes to VOA it's forwarded to voicemail
+we can actually have it say something um
+just right here so we can say you've
+reached our voicemail please leave a
+message after the beep and we'll get
+back to as soon as possible so that's a
+default text that they've put in there
+it'll just say this um to the assistant
+uh if it gets sent and forwarded to
+voicemail then all the way at the bottom
+here we've got an end of call message so
+if the assistant identifies that it
+needs end the call through our prompt
+it'll just red out out this message so
+you can say thank you for contacting us
+have a great day uh so it just ends off
+the call on a on a more natural note so
+that is it for our vapy walkthrough
+hopefully now you're much more up to
+speed as to exactly what vapy is what
+the functions do what the capabilities
+of V are and you should now be more than
+prepared to be a to actually start
+building these systems for both the
+inbound and outbound callers now jumping
+into make.com the automations platform
+that we're going to use to mostly build
+our functions and connect to vapy to run
+automations in the background so this
+right here is make.com this is
+essentially a noode automations platform
+you can see here this is essentially
+what it looks like so we're able to
+process automations and communicate
+information between different
+applications uh through this sort of
+step-by-step workflow so this is a no
+code workflow automations platform and
+one of the really big benefits of
+make.com is that it is connected to
+thousands and thousands of different
+applications as you can see here we can
+essentially just load a whole heap of
+different applications that we can
+communicate to for different purposes so
+one of the automations that I'm going to
+Showcase later in the video is going to
+be a webflow form submission for our
+inbound call system that's going to look
+for a new webflow form submission it's
+then going to use vapy to make an API
+call so making an API call through make
+to vapy to then call the person who had
+submitted a lead form so this right here
+is make.com and these are some of the
+automations that I'm actually using
+within my business I've got a few
+automations for taking New Leads through
+cendy and putting that into a notion CRM
+I've got uh some automations for my
+resource Hub where we can get access to
+all the automation templates uh that I'm
+going to be using throughout this video
+in my resource Hub this essentially just
+takes a form submission and then sends
+that user an email I've got meeting
+qualified I've got YouTube video
+transcriptions my blogs so this is just
+an example of a series of automations
+that I've got built for my own business
+uh here and automatically running on
+make.com so the main thing that you're
+going to be using on make.com are
+scenarios and these are essentially the
+automations so each scenario is a new
+automation or new workflow where you're
+going to build something new in so in
+this instance each of these is a new
+scenario if I go ahead and click into a
+particular scenario each scenario is
+built with a series of modules and these
+modules all connect to each other so
+this automation will look for all my new
+YouTube videos take that YouTube video
+and then turns it into a blog post and
+sends it to webflow where it uploads it
+to my website so each of these are
+called modules and like I said it's just
+a step-by-step process you take a module
+it moves to the next one then the next
+one and continues on until it reaches
+the objective that you're looking for
+we're able to add new modules by
+clicking on the plus button here and
+then it gives us access to all of the
+applications that make has tons and tons
+of applications and then when we click
+on on a particular application here if I
+go ahead and click on the Google
+Calendar one we can see that when you
+click on the application you get a host
+of different events or actions to occur
+particularly within that application so
+in this case if we want to get a
+calendar create a calendar update a
+calendar delete a calendar it's got all
+these sort of preset uh actions that can
+occur for that API and it has that for
+all of these applications so if you want
+to do LinkedIn we've got all of these
+different applications here as well if
+we want to do Facebook Messenger more
+actions so ton of different actions to
+very easily do what we want through an
+automation step by step uh using these
+modules on Mech the way that make
+charges is through operations so you can
+see here I'm using the core plan $10 a
+month it gives me$ 10,000 operations per
+month and that's enough to run the
+automations for my particular business
+but in this case obviously you can
+choose however many operations you need
+uh and in some cases depending on the
+volume of calls that you're going to be
+doing I'm going to show you how to set
+up the calling automation for call
+calling as well as inbound calls and
+you'll see exactly how many operations
+that's actually going to go ahead and
+use but in some cases you might need the
+team's plan uh or you just you can buy
+additional operations so you can really
+do as many calls as you need if you are
+familiar with zapia this is a lot
+cheaper than zapia these operations and
+their monthly costs are much cheaper
+it's much more efficient than zapia so
+if you're familiar with it this is a
+much better option so now I'm going to
+go through one of these scenarios that
+will enable us to actually send data
+from vapy into our make automation and
+this is going to be used for our
+function calls so like I showcased
+previously with this sort of pizza
+example running a function call to save
+a pizza order what I went ahead and set
+up was a series of properties to capture
+the name items and address and then I
+added in This Server URL now this server
+URL came directly from ma.com so the URL
+comes from what is called a web hook and
+so in this instance of make.com the
+first block here is a web hook and so
+the first block in each make scenario is
+where it starts from and what we've got
+set set up is this web hook and this web
+Hook is set to run immediately so we can
+essentially send a request to a web hook
+and this automation will run
+automatically it's not going to wait for
+anything it's just going to run right
+away so by just clicking on this web
+hook here once you create a web hook
+it's going to go ahead and just give you
+a URL very simply we can just click on
+this create a web hook it'll
+automatically generate a URL for us
+click copy address to clipboard go back
+to vapy and paste it in your server URL
+and now when you're making calls it's
+going to start to send and connect
+Direct with make.com and then what we
+have to do after this is add in whatever
+application we want to send the data
+into so in this case what it's going to
+do is send essentially a list of
+information that says name item address
+and within those properties are going to
+be the obviously data assigned with
+those values and we're going to see that
+on mac.com and by using maybe something
+like Google Sheets we can then save that
+data uh into Google Sheets so hopefully
+you can see how simple mac.com is and
+how easy it is to actually connect
+directly to vapy to run a whole host of
+automations where we just need a web
+hook to send the data into and then we
+can get connected to the thousands of
+applications that make provides us with
+and we can send that data off to
+wherever we want and do whatever we want
+with it now additionally if we wanted to
+send data back into the bot we can do
+that as well and all we need to use is a
+web hook response and in this case we
+can send the web hook to any type of
+application manipulate that data change
+that data send a request to get
+information back and then send it back
+to vapy now the purpose of of doing this
+is maybe we want to search up the price
+of Bitcoin if we wanted to get any type
+of live data we need to obviously make a
+request somewhere because it's obviously
+not going to be stored within our prompt
+or anything we need to get that live
+data back and we can do a webook
+response very simply once this process
+here has occurred it's just going to
+land on the web hook response we can
+just add in whatever bit of data we want
+to from here and then this will get sent
+directly back to vapy vapy Will
+automatically process this data so we
+can just send send it back whatever we
+want and then if it finds it relevant to
+talk about it will just use that
+information because it's being sent into
+the prompt um and it's trying to use
+that information as best as it can uh to
+really help make a really fluent
+conversation so hopefully you now have a
+really good understanding of how
+make.com can directly connect to vappy
+for function calls and automations I'm
+now going to go into prompt engineering
+for AI voice callers to get you ready to
+actually start building inbound and
+outbound callers right into it prompt
+engineering how to properly build AI
+phone calls well just going back a
+little bit I'll go through what actual
+prompts are so an AI prompt is really
+any form of text question information or
+coding that communicates to AI what
+response you're looking for so by using
+natural language we can actually
+communicate with the AI so in this case
+we are building sort of a set of
+instructions for the AI to follow to
+assist us for specific needs so what
+does this actually look like well AI
+phone caller developer platforms such as
+vapy allows for the input of prompts to
+control our assistance so I've got a
+screenshot of the platform vapy on the
+right here I'm going to go through what
+vapy is in just a second but essentially
+what we're able to do is provide a set
+of instructions using natural language
+so we're essentially just talking to it
+like we're talking to a human and we're
+just telling it how to act so we use
+vapy for all our voice projects so vapy
+enables us to build pretty Advanced
+callers that sound quite realistic they
+respond quickly and can interpret our
+prompts accurately there are a host of
+features that VAP provides which you
+will learn throughout this video as well
+now back to the prompts the AI model can
+actually interpret this prompt and
+follow the instructions which then
+guides its responses so it's actually
+reading this prompt and it's using this
+prompt to guide its responses and act
+the way we told it to the AI will also
+have memory so it's going to actually
+understand any previous questions and
+answers we've given it and that's going
+to get fed back into the prompt so it
+has that sort of context just very
+briefly I'm going to go over what a
+large language model is a large language
+model are very large deep learning
+models that are pre-trained on vast
+amounts of data so just think of this as
+the brain of the AI assistant this brain
+is trained on lots of information and
+it's able to contextualize the prompt
+and instructions we've given it and turn
+that into something that is more natural
+sounding so this graph here gives you a
+better idea of how the actual sort of
+memory works so what happens is that we
+prompt the assistant and then this gets
+sent to the AI it's then outputed to the
+user but then that output goes into what
+is called a context window and the
+context window is just giving the AI
+more information to work with and in
+this case we're giving it the previous
+questions in that context window to add
+context to the conversation that's
+happening so what actually is prompt
+engineering well prompt engineering is
+just the process of actually structuring
+and instruction that can be interpreted
+and understood by a generative AI model
+so this is the process of actually
+creating our prompts now prompt
+engineering has become quite an in
+demand role for businesses due to the
+expanding need for generative AI in
+businesses so as you can see on the
+right there AI prompt Engineers earn
+$300,000 salaries this clearly shows
+that businesses can see the value in AI
+prompt engineering and that there's
+definitely a future for being able to
+learn this exact skill so why is this
+actually important why are prompts
+important and why is prompt engineering
+something that's so valuable while
+prompts are really the most integral
+part of building these AI agents so
+without really clear instructions for
+our intended outputs from these systems
+can actually start to Output what we
+call hallucinations so hallucinations
+are incorrect or misleading results that
+AI models generate so when an AI is not
+instructed clearly the output from the
+AI will change from what was intended
+now this really highlights the
+importance of prompting and testing one
+of the solutions to hallucinations is
+guard rails so for specific AI agents
+you may not want the AI to actually
+deviate from its intend and purpose so
+for example a sales agent should stay on
+script and not Converse about random
+relevant topics that the user inquires
+about it should just stick to that sales
+script that we've given it to follow
+with that to then obviously meet the
+call objective so if that call objective
+was to set an appointment we would put
+in place a set of guard rails to ensure
+that that we get to that call outcome
+and that if somebody says something it
+doesn't go down a tangent or go down
+some random irrelevant topics and start
+talking about those things and never end
+up booking the appointment now on to
+knowledge bases AI power knowledge bases
+are comprehensive repositories of
+information made up of several different
+kinds of content so we can store large
+amounts of information outside of our
+prompt and then retrieve that relevant
+information from the knowledge base
+without needing to include everything in
+the prompt so when a user asks a
+question before asking the AI before
+sort of prompting uh the AI to then
+generate a response we're can actually
+search the knowledge base for anything
+that seems relevant or similar to the
+information or the question that they
+just asked and it's doing that by using
+its semantic meaning so then if this
+question correlates to any of the
+information within our knowledge base
+we're going to then go ahead and pull
+that information pull that chunk of
+information from our knowledge base and
+then put it into the prompt so then the
+AI has the context like that context
+window I talked about it's putting that
+information from the knowledge base in
+the context window to refer to when
+answering the question now the reason
+that we actually use a knowledge base is
+something called prompt efficiency so
+we're doing this to save on costs now it
+is possible to store large amounts of
+information directly into our prompt
+however the more we input into the
+prompt the greater the generation cost
+will actually be now this does depend on
+the project requirements and the actual
+voice system that you're building so it
+may be better to store certain
+information into the prompt or it might
+be better to upload all of the
+information into a knowledge base it
+just comes out to testing the outputs on
+to testing creating a prompt is not as
+simple as just getting it right the
+first time you'll probably notice that
+to actually create the assistant is
+pretty quick you can get an assistant
+built in probably 10 minutes if you just
+give it a very straightforward prompt
+that is only one or two sentences you
+can get it to act different and you can
+get it to act the way you want in about
+two sentences however this is not going
+to be consistent it's not going to be
+reliable uh and you're going to need to
+a lot more than that to get it working
+well and so like I put here even if the
+conversation seems normal initially and
+it does do what you want and it gets
+that call
+variations of conversation can cause
+hallucinations so one answer different
+to the what the script says it's going
+to cause a hallucination if somebody
+responds with a word that it wasn't
+expecting it could cause a hallucination
+and it could breach those guard rils
+were built so there's a lot that needs
+to be done in testing to make sure this
+works properly so that's why I think
+that testing is the most important phase
+in actually creating your prompt so
+something that we do at our agency we
+actually analyze the transcripts of the
+conversations and use this data to
+continuously improve the prompt to
+ensure reliability so this is once again
+something that we extensively value
+within our agency because getting an
+assistant running is pretty quick but
+getting an assistant to reliably and
+consistently meet the call objectives
+that takes a lot of time to perfect I
+will come back to testing and data later
+when I cover more of the key Concepts so
+this here is the prompt life cycle and
+the reason I put this in here is to
+really reiterate the importance of
+testing so you can see here the first
+two stages are design so that's sort of
+creating our prompt thinking of what our
+prompt is going to be implementation
+which is then when our prompt is ready
+to go and we can now use it and test it
+and start meeting those call objectives
+evaluation is when we can actually start
+running these tests and getting data
+back refinement is then taking that data
+and then improving Upon Our script
+iteration is then testing different
+prompts to meet those call objectives
+maybe we found that the refinement
+wasn't enough and we needed to iterate
+over different methods to finally get to
+something good validation is then
+testing these different iterations to
+make sure it's actually working properly
+and then finally we're deploying it to
+their end users and testing with real
+people and then we're doing maintenance
+to actually ensure that it is working
+and we're consistently checking to see
+if this thing is actually doing what
+it's meant to so of these eight steps of
+the life cycle of a prompt only two were
+for actually getting it set up
+everything else was to do with testing
+and deploying through the evaluation
+iteration validation this is all to do
+with testing and only step one and two
+was actually building it so hopefully
+that gives you a better idea as to the
+importance and value of testing prompts
+which is something that we deeply value
+uh within our agency so how we actually
+structure our prompts there is no really
+one siiz fits-all structure depending on
+the complexity of this system it may
+require a couple of twixs or it may
+require thousands of users to actually
+test and then the data needs to be
+analyzed and adjustments made it really
+depends on how easy it is to meet those
+call objectives how many questions we're
+asking the user and what these specific
+actions we're looking to do are so
+jumping into the prompt structure the
+first thing that we will go through is
+the role so who they actually are and
+who they are is the assistants we're
+talking to the assist assistant here the
+role of the assistant directly aims to
+communicate to the AI who they are for
+example A salesperson or a lead
+qualifier an appointment setter or
+technical support we would tell the AI
+who they are so the purpose of this is
+to ensure that the AI aligns its output
+with who they are so obviously a
+salesperson should sell an appointment
+setter should set appointments now this
+will also impact the personality of the
+responses so prompting it to be a
+salesperson can cause it to be a bit
+more descriptive because they're trying
+to convince them to make a sale and then
+prompting it to assist users as maybe a
+technical support person can make its
+answers more structured and step by step
+as it's trying to break down problems
+and make it easy to understand so
+jumping into vy. here I'm going to do
+the walkthrough of actually building out
+an assistant which is going to be an
+inbound sales assistant for Apple so in
+this case to build our role this is what
+our role would look like so who they are
+you are an experienced salesperson for
+the technology company Apple Your Role
+is to help customers purchase our
+products so very simply uh you can
+expand upon this obviously but very
+fundamentally the role is just telling
+it who they are moving on to the next
+part of our prompt we're then going to
+cover what they actually do and this is
+going to be the task so this is a more
+specific goal for the assistant to
+actually align its responses with for
+example we could say that your task is
+to qualify leads or your task is to set
+appointments your task is to convince
+customers to buy our products so jumping
+back into vapy in this case for our
+inbound sales assistant for Apple we
+could say that their task is to converse
+with the customer find their needs solve
+their pay points and sell them our
+products the third part of our prompt
+are the specifics so how they actually
+do it this is how they actually should
+achieve the task that we just set out
+for them so for example follow a sales
+script so if we wanted to build a A
+salesperson and we told them that the
+point is to sell them products we might
+tell them to follow a sales script more
+specifically to make that happen or
+collect a name and email to book an
+appointment so if it's an appointment
+set up we then want to more specifically
+tell it we're actually going to be
+collecting the name and email to book
+the appointment so for our inbound sales
+caller at Apple we will then say for our
+specifics you are a highly intelligent
+salesperson you will converse with the
+customer about the specifications of our
+products you must closely follow the
+scripts provided these specifics are
+very important to my career please
+follow these your ability to closely
+follow the scripts is integral to the
+business's bottom line now you'll notice
+that I said you must closely follow the
+scripts provided now I haven't provided
+the scripts in this section I'll come
+back to that in just a second now I
+haven't provided the scripts in this
+section I'll actually come back to that
+in just a second but just make sure that
+if we are following a cell script that
+it needs to be in the specifics cuz
+that's what it's going to be closely
+following to achieve the objective of
+the task and for this last line here
+this is something called emotional
+prompting and I will come back to this
+as well now the fourth step in our
+prompt is the context so this will
+ensure that the AI has actually got
+complete knowledge on why they're
+actually doing what they're doing and
+this just gives the AI a sense of
+purpose uh which is actually proven to
+increase output results so obviously the
+more that we remind of the key
+objectives if it's a cell sales person
+the more that we remind it that it is a
+salesperson the more that it's going to
+align its output with that so iny for
+the context this is how that would look
+we would just put context so we put the
+business we are Apple Inc and we provide
+technology products to the world for
+example the iPhone and iPad obviously if
+you were actually building this for
+Apple you would have it a bit more
+extensive and a bit more accurate but
+obviously I'm just trying to demonstrate
+the purpose of these contact points and
+how that is me to help out in the entire
+script below this we've got the what we
+do so this is we help people connect
+digitally with worldclass devices once
+again this is quite a broad example with
+such a large company but if you had a
+very specific company maybe it's a real
+estate agency and you wanted to clearly
+outline what we do it's going to help
+the AI just get a better understanding
+on exactly what its purpose is to align
+its outputs with exactly what it should
+be doing just quickly I wanted to cover
+markdown formatting which is something
+that you can use to more contextually
+communicate the different parts of your
+prompt to the AI so in the case of
+prompting the context to the AI we can
+actually have different sections and
+subsections of the context and we can
+separate this using markdown formatting
+so markdown formatting is really just a
+way of separating elements of our prompt
+and markdown formatting is something
+that open AI actually used to train
+their AI models so just by splitting up
+the headings of our different sections
+of the prompt for example we can see
+here we've got the context and it's got
+a hashtag in front of it so that's what
+markdown formatting is it's essentially
+just putting in these hashtags to
+separate the different headings and that
+is essentially just marking those as
+different headings communicating to the
+AI giving it a bit more structure
+as to what is relevant to what so in the
+case of context we've got context with
+the one hashtag and we've got the
+business so now it knows that the
+business is related to context so it's
+actually looking for the context of the
+business so you can see how the AI might
+get confused there of what it's actually
+talking about but by using this markdown
+formatting we're now able to more easily
+communicate the different structures of
+our prompt it's going to be much more
+able to find what it's looking for and
+output much more accurate answers so
+like I just said open a trained their
+models knowledge using markdown
+formatting so this format will ensure an
+increase in the accuracy when actually
+ranking elements of the prompt in
+specific outputs some parts of the
+prompt won't be required and some parts
+will be required so sort of just clearly
+identifying that with headings ensure
+that it's just less work for the AI to
+try and figure out what the answer is
+now number five examples this is going
+to be the most powerful aspect of our
+prompt engineering so this is where we
+directly State example inputs and
+corresponding outputs so like I just
+mentioned earlier where we referenced
+the cell script this is where we then
+put in the Sal script cuz this is the
+example that we wanted to follow in this
+case I've got a script here very basic
+but we would position this towards the
+AI so we're saying you which is the AI
+hello how can I help you today so
+ideally that's what it will start off
+the conversation with then if I said I'm
+doing good I'm looking to book an
+appointment we can then structure this
+script to then have a response back for
+that so now it's going to say sure what
+day would you like to book and then if I
+said does Monday work we can continue on
+this script you know on and on and we
+can create different script variations
+as well so we're not just going to have
+this as the one script we can create a
+script for if they're not interested we
+create a script for if they are
+interested we can create script
+variations and we just requires more
+prompt engineering to obviously go down
+the right path the right script for the
+right person for the examples this is
+how that would look we would just put
+examples as a heading we can then put
+the different scripts as different sort
+of subheadings so #h sales department
+script so maybe they want to talk with
+the sales department we can just put in
+our script so hi is this Brendan yes
+looks like you're interested in iPad
+something like this uh is just obviously
+a very basic sales script we can go a
+lot bigger than this putting that all
+into the prompt so these examples really
+just helps to ensure consistency in its
+responses and make the AI do a lot less
+work that being said following a script
+requires quite significant testing so
+especially to ensure a really natural
+sounding conversation without really
+properly conditioning it the AI will
+sort of continue its script without
+acknowledging the users real response so
+obviously we don't want them to say
+something that wasn't along the lines of
+our script and then for the AI to
+completely ignore what they just said
+and just say something that's not even
+relevant to what they just said because
+it's going to be an immediate switch
+that they're talking to an AI and then
+they're going to lose that lead so
+number six notes this is where we can
+actually add our conditions and fixes so
+if the conversation goes off script we
+can actually tell it to bring it back to
+the script whilst maintaining a seamless
+conversation or we could say if a
+customer asks a question deviating from
+the script answer that question
+accurately then flow back into the
+script so once again this is just adding
+in some notes this might work this might
+not work you might have to add a lot
+more than this to actually get it to
+work properly depending on how big your
+cell script is but obviously we need to
+add in these notes to make it sure that
+it actually understands not just to
+strictly follow the script but to
+accurately answer the question flow back
+into the script and then meet the call
+objective for our notes this is how that
+would look we would just put notes as a
+heading and then we can say please
+ensure you follow the script closely so
+just reiterating that this is an
+important factor and saying if a
+customer asks a question deviating from
+the script answer the question
+accurately then flow back into the
+script so just conditioning it to Ure
+sure that it's going to be outputting a
+seamless conversation now in a lot of
+the builds that we've done in our agency
+this note section gets filled up quite a
+lot so you're likely to get a lot more
+than two notes in this part of the
+prompt you might have 20 or 30 notes in
+this prompt really covering and really
+strictly prompting it to Output exactly
+what you're looking for so when you're
+testing and adjusting the note section
+is one of the places that you can add
+these adjustments to now on to function
+calls so function calls isn't
+necessarily a part of the prompt
+structure but it is something that you
+will likely need to include throughout
+your prompt at different parts of the
+prompt to make sure that we are running
+functions so one of the reasons that we
+use vapy within our agency is that it
+enables us to actually pull external
+data into the conversation live so for
+example if we wanted to get customer
+data from a CRM system or book an
+appointment live we can do this via
+something called a function call so this
+is a screenshot from vapy and this is
+what the function looks like so what
+we're able to do is assign a name of a
+function describe its purpose and then
+add a set of properties so these
+functions contain properties which are
+just different bits of information that
+that we actually want to send within our
+function call so for example if we want
+to book an appointment we would need to
+actually store that person's name
+booking day booking time Etc so we can
+do that using properties so we would
+create a property called booking time we
+will create a a property called booking
+day and then we would create a property
+called name and so we can store all of
+that information uh into the function
+call that will occur so we use a
+platform called ma.com to actually run
+the automation from vapy to the
+application we want to send or retrieve
+data from so if we wanted to send
+information to a CRM system we would
+make the request to me.com that would
+then send the information to our CRM
+system so if you are familiar with zapia
+at all make is just a very simple
+platform it enables us to communicate
+data between different applications
+quite easily let me know if you would
+like to see a more extensive maybe 1
+hour plus voice caller build video in
+the comments below so these functions do
+require further prompting elements so if
+we want to send an SMS to the actual
+caller we need to actually prompt this
+action based on the function name set in
+vapy for example if we created a
+function for sending smss and we call it
+the SMS function uh we could essentially
+just say run this SMS function when the
+user requests to receive our quote so if
+we're building some sort of quote
+assistant we could create a function
+that sends somebody a quote based on the
+compensation they just had and that
+happens through a function called SMS so
+the functions within vapy are quite
+smart and they can automatically detect
+which information is required to
+actually run the function so in this
+case it could look through the
+conversation that just occurred find
+some elements that's required to put
+together a quote and send it to them via
+an SMS assuming that we've got all of
+the properties set up to capture all
+that data we can send all of that data
+off do something like twio on make.com
+twio is just like an SMS platform and
+then we can have an SMS sent to a user
+live during our phone caller
+conversation so jumping into some of the
+voice configurations emotion prompting
+is where we sort of highlight the
+importance of certain prompt elements so
+like I mentioned in the specific part of
+my prompt I said this is very important
+to my career now the reason we put that
+in there is to once again just highlight
+more importance to what we said so for
+the specifics I said that I wanted to
+follow a sales script and in this case
+that is one of the most critical parts
+of the sort of sales system we're
+building so that's why I said this part
+specifically is very important to my
+career and it's obvious just train to
+know that something that's important to
+your career it's probably something that
+it should stick to and make sure it does
+properly and so that's just how the AI
+is trained and by putting it in there it
+is actually proven to Output better
+results as you can see with the article
+on the right here emotionally word
+prompts can actually get generative AI
+to generate better answers another
+example of this could be are you sure
+that that's your final answer it might
+be worth taking another look so once
+again it's just a very strict prompt
+that's saying make sure you're doing it
+properly this is important because of
+this and then these bits of sentences
+stacked up uh to Target maybe following
+a cell script it's something that can
+actually really work to get it to Output
+consistently another key part of the
+voice configuration is 11 Labs so 11
+Labs is a realistic voice provider
+platform so we will connect with 11 labs
+to get access access to sort of
+realistic sounding voices to speak our
+AI generated responses 11 Labs also has
+a public voice library with many
+different accents and personalities 11
+Labs also allows you to clone your own
+voice something that I've done and you
+can also integrate this directly into
+your VAP system as well if you'd like
+they've also got documentation on sort
+of different text elements that affect
+how the output sounds so this is
+something that we need to include into
+our voice caller prompts for example
+adding in sort of two dashes at a time
+will create brief pauses and you can
+also do sort of singular dashes so it
+Dash is Dash getting late so you can
+really break up sentences using the
+dashes in 11 Labs or you can use an
+ellipsis like I dot dot dot yeah I guess
+so so you can just break up sentences
+using different characters so you can
+just break up sentences using different
+characters based on the processing that
+11 Labs does now for the voice realism
+usually people will sort of stutter
+words and have pauses such as um so impr
+prompting we can actually use a variety
+of combinations to get this effect it
+could be spelled like uhm um AR om or r
+so we can actually get all these
+different ranges of sort of breaks and
+silences or pauses during the
+conversation through this and so 11 Labs
+can actually process these and output
+some pretty natural sounds now once
+again these 11 Labs configurations need
+to be prompted to be outputed in our
+notee section we could say please output
+a series of dashes when you believe a
+pause is required now the way that vapy
+and 11 lab sort of talk to each other is
+that vapy does all of the AI generation
+in all of the text and the actual
+response that it's going to say and then
+it sends that off to 11 labs to process
+and turn into a voice that is sent back
+to vappy and then communicated to the
+caller now the key thing there is that
+vappy does the text processing and sends
+it to 11 Labs so if you tell the prompt
+to include the dashes it's likely that
+vapy might not actually generate these
+dashes so then when the response comes
+back from 11 Labs we might not do the
+pauses or say stuff exactly how we
+wanted it to because 11 Labs actually
+changed it when we got the information
+back so this is once again another
+reason as to why testing is really
+important and we just need to
+continuously add conditions to ensure
+that we can actually consistently and
+reliably output the pauses and breaks
+throughout the conversation to make it
+seem really seamless so in terms of what
+actually defines a sort of successful
+prompt or successful Voice Assistant we
+tell our clients that the outcome of
+these voice systems really ranges from
+60 to 95% now this means that the
+probability of consistently following a
+script or outputting similar dialogue
+depending on how extensive our testing
+and adjusting is Will range from either
+60% similar or 95% similar now we do aim
+to reach that 90% % Mark for all of our
+clients however we do offer extensive
+testing and measuring periods to
+actually verifiably say that the system
+meets those expectations so I hope that
+was a helpful video in understanding how
+to prompt AI voice callers and that you
+now have a better understanding of the
+different elements that are required to
+build a sophisticated AI Voice Assistant
+if you are a business owner and you're
+interested in an AI voice system go
+ahead and book a call with my team below
+and we can discuss the project that you
+have in mind we've also got an
+alternative consultation call where we
+actually find out how this a voicey
+system can be implemented into your
+business if you did want to get access
+to 20 plus chatbot and automation
+templates as well as an invite to our
+school Community just sign up for our
+free resource Hub in the description I'd
+greatly appreciate it if you'd like the
+video and subscribe to the channel as
+I've got a lot more content around AI
+voice callers lined
+up so the first part of my prompt here
+is a role and a role defines who they
+are so this is for the bot who the bot
+is so as I said you are an experienced
+travel assistant salesperson Your Role
+is to ask customers if they want to
+purch just lifetime travel insurance so
+I've just made up a random thing
+lifetime travel insurance um obviously
+this could really sell anything you want
+but this is just insurance it's selling
+the insurance um and that's its goal
+that's who it is the key thing here is
+that the bot should now know that this
+is its job it is an experienced travel
+insurance sales person and it needs to
+strictly follow the script that's
+provided the reason that we do this is
+that the bot now knows exactly what it
+is it knows that it's an experienced
+travel insurance salesperson and that it
+shouldn't go off on a tangent talking
+about some random things because it
+knows that its goal is to be a
+salesperson and to ask customers if they
+want to purchase our services the next
+heading I've got here in my prompt is
+what they do or the task so your task is
+to converse with the customer using the
+provided script and determine if they
+would be interested in purching our
+services so once again it's really just
+being strict on what your job is as an
+assistant so by saying your task is
+converse with a customer and ask them if
+they're interested in our services it
+knows it has one task and that task is
+to ask them if they're interested and
+capture that question this way once
+again it's not just going to go off on a
+tangent and start asking them questions
+about insurance that it's not relevant
+cuz we simply want to know whether or
+not they're interested or they're not
+interested to qualify that lead the next
+section I have here is specifics and
+specifics are how it actually achieves
+that task so I've gone ahead and said
+you are a high converting salesperson
+who must closely follow the provided
+script you are capable of answering any
+question the customer provides however
+you are an expert at Flowing the
+conversation back into the script and
+asking the qualifying questions within
+the sales script so this is really just
+going into more detail as to how you're
+going to go ahead and Achieve that task
+which is ensuring that if a question
+comes through that's not relevant to the
+script still try and answer that
+question so that it doesn't seem like
+you're a robot but then flow back into
+the script so if they ask a completely
+random question answer that question as
+best as you can and then go back into
+the script which is then asking them
+whether or not they're interested in our
+services the next part says these
+specifics are very important to my
+career please follow these your ability
+to accurately follow each part of the
+script whilst ensuring that each of the
+customers questions are answered is
+greatly appreciated so if you've
+followed prompt engineering at all
+you'll know that sort of hyping up the
+chatbot and really appreciating the chat
+bot's answers and putting that in your
+prompt is actually a really good way to
+get accurate results out as well as
+studying the importance of what they're
+doing by saying this is very important
+to my career really just emphasizes more
+importance on this element and this
+section of the prompt so that it focuses
+in on what you've actually said and
+tries to follow this as best as it
+possibly can the next part that I've
+included is context and this is sort of
+context around the business now you'll
+notice that I've got this sort of
+hashtag here and then two hashtags here
+and so this is called markdown
+formatting now markdown formatting is
+just a way that we can structure our
+sort of promp here to better help the AI
+understand which is part of which so
+I've got context and I've got context
+within the business and then we've got
+context in what we do so I've structured
+these with two hashtags and I've
+structure this with one hashtag and so
+this markdown formatting is something
+that open AI the creator of chat gbt
+actually endorses being used within
+prompts uh as that's what is actually
+trained with so once you've got this
+sort of structure here I've said our
+company travel saver provides customers
+with access to a one-time cost for
+Lifetime travel insurance so once again
+this is really just reiterating to the
+AI that this is our services we are a
+business that sells services and you
+should stay in line with this and that
+you shouldn't go off on a tangent and
+start talking about random stuff when we
+have one goal in mind and that is to
+qualify customers for our one time
+travel insurance next to this I've got
+what we do which is we call hundreds of
+people per day and your role is to talk
+with these leads and accurately qualify
+the ones who are interested in our
+services so now it really knows exactly
+what the business is exactly what they
+do and knows exactly what its role is
+now below this I've got examples and
+these examples is essentially just the
+scripts that I want the bot to follow
+with so I would say this is probably the
+most important part of the script cuz
+this is exactly what it's going to be
+following and what I'm sort of set up to
+actually start following throughout all
+of these other bits of the prompt I'm
+saying follow the script follow the
+script and so this is the script that I
+wanted to strictly stick by to ask
+certain amount of questions to then get
+this information back for the business
+to use so in this case I've got two
+scripts I've got an interested example
+script and I've also got a not
+interested example script and so the two
+scripts are if they're not interested
+we're going to say something different
+to whether or not they actually say that
+they're interested so the way that I've
+structured this script is by saying you
+and so you is the actual assistant that
+we're talking with and we're just
+telling it what to say so you should say
+hi is this Brendan and then Brendan if
+he says yes you should then go say hi my
+name is John I'm from a company called
+travel ser and then we've got this
+prompt to just say sorry for the random
+call how often did you travel per year
+and we just capturing some data back and
+that's how we're structuring it so one
+thing you might notice is that I've got
+sorry for um and then it repeats the
+sentence sorry for um sorry for the
+super random call and the reason I've
+done this is to make it sound a little
+bit more natural sounding that the
+person isn't just speaking perfectly all
+the time and they're not stuffing up on
+anything that they're saying we've
+actually just put that in there to make
+it a bit more human-like and it's
+something that I recommend to put in as
+sort of like a sentence break and to
+really pause and to make it sound a
+little bit more realistic during the
+conversation you'll also notice here
+that when I ask this question how often
+do you travel per year and then somebody
+responds I travel to Tokyo twice a year
+for a holiday we're then running a
+function so the purpose of this question
+is to capture how many times the
+potential client travels per year and
+this is going to gauge which clients and
+which leads are most qualified for us
+services so if somebody travels 50 times
+a year they're going to be a lot more
+qualified for our services which is
+selling travel insurance compared to
+somebody that doesn't travel at all so
+right after this I've got a function
+that says now run the travel frequency
+function with the result so I'm going to
+go back to functions now and we're going
+to have a look at the travel frequency
+function so what I did on vapy is I went
+and created a new function and this
+function I simply just named travel
+frequency and I just typed in the
+description this is how frequent the
+user travels then below this I've got
+our property and the property is the
+exact bit of data that we're going to be
+sending into our sort of lead software
+or Google Sheets or whatever we're using
+to store all this data we then going to
+be capturing that exact amount of times
+they travel per year in a number and
+then we're sending that off to make.com
+so I've just said here per year cuz we
+want to capture how many times they
+travel per year and I've just said this
+is how frequently they travel per year
+and I've gone ahead and select a number
+cuz it's going to be a number that we're
+capturing then once we've run that
+function we'll continue on by saying
+that's awesome we've got a new service
+uh that provides travel insurance for
+onetime fee is this something that would
+be interested in how much is it we go
+down into asking them if they want to be
+on our weit list for it and then we've
+got another function that just says
+interest level and interest level is
+just another function we've set up to
+capture whether or not they're
+interested and this is either yes or no
+they're either interested or they're not
+and so we just captured in here this
+function will store if the user is
+interested in our services we've got a
+property that says yes or no either yes
+or no if the user is interested in our
+services and I've selected a Boolean and
+so this is a true or false that's what
+that means
+um and so this is capturing either true
+or false from the user and then we're
+going to go ahead and then send that
+data obviously back into our lead
+software and then once that's complete
+the script is completely done and we've
+captured all the data that we're looking
+for and the call is now finished and
+then conversely if they were not
+interested and we ask them how often
+they travel maybe we can capture that
+data but if we don't um then it won't
+capture anything obviously but if we
+continue on we can ask them if they're
+interested at all and if they say no it
+will just say no worries have a nice day
+uh and then obviously it's then going to
+record the function result as being uh
+not interested and just lastly for the
+prompting we've got notes and notes are
+just sort of conditions that we want to
+throw in uh just to fix little errors
+here and there so just saying please
+ensure you follow the script closely so
+making sure that it actually follows the
+script um exactly that's what we want
+then if a customer asks a question
+deviating from the script uh still
+answer that question accurately don't
+just continue the script uh like a like
+a robot then I've got some critical
+notes which are bit stricter than the
+other notes and I'm just saying you must
+keep the arm within the script this is
+used for creating realistic pauses and
+assists in your ability to to convince
+people to purchase out services so just
+adding in this extra conditioning to
+make sure it actually says uh or keeps
+the arm during the prompt as I found
+sometimes it would just leave it out so
+it's really quite a lot of trial and
+error and this is what's required to
+actually get that really perfect prompt
+is that you've just got to continuously
+test this uh and call it a million times
+and then just change this prompt over
+and over again uh to really just hone in
+on really getting an accurate and
+realistic sounding Voice Assistant if
+you did want to get access to this
+entire prompt I'm going to have it
+within my free res Hub Link in the
+description which has also got 20 other
+trap and automation templates that you
+can get as well so moving on to make.com
+make is an automations platform that
+allows us to send data from different
+applications uh and in this case send
+data from vapy on our caller and send
+some data directly into Google Sheets
+and so in this instance we've gone ahead
+and created a mac.com scenario that uses
+a web hook a web Hook is sort of this
+sort of public URL that we can send
+information to and we can use it to
+detect that we've got a request here on
+make so if I go back to VY we've got our
+interest level and what it allows us to
+do is put in a server URL which is a web
+hook URL if I go into my web hook here
+on me.com if we create a web hook we can
+just create this sort of URL here click
+copy address to clipboard go back to
+vapy and just paste it in here and now
+when we make a request uh with this
+interest level when the prompt finds
+that it needs to run this it will then
+trigger this automation sending the data
+through mach.com and then recording the
+data in Google Sheets so this is what my
+Google sheet looks like it essentially
+has a number for the phone number of the
+user we're calling it's got a name it's
+got an interest level that's been
+recorded through VY travel frequency
+which has been recorded through vapy as
+well as the assistant ID so the number
+and name is information that you've got
+to go ahead and upload yourself into the
+system as this is then going to
+obviously call all of the leads that you
+upload uh into this Google sheet here so
+obviously you don't have to use Google
+Sheets you can use air table you can use
+go high level you can use any CRM system
+that you have but obviously just for
+this demo I have configured it in Google
+Sheets But ultimately you would just
+Swap this out for being ever provider
+you have it's quite simple to set up
+it's a drag and drop no code platform
+where essentially you can just click on
+ADD find any platform that you have drag
+it in here and then simply just add some
+data into a Google sheet row select your
+exact uh spreadsheet take the data from
+vapy place it in there and you're good
+to go so more specifically what this
+does is that this first Google Sheets
+block searches rows and the reason it
+searching for Rose is it's trying to
+find the number that has just been
+called and the information of where to
+actually put it so we've got here number
+so it's looking at the number column
+within our spreadsheet it's going ahead
+and looking through the numbers
+obviously I've only got just me in here
+at the moment but if you went ahead and
+had thousands of leads in here it would
+then find the number that you were
+looking for so number if it's equal to
+the number has just called us or send
+the data from vapy grab that row and
+then go ahead and send data into that
+row so this next block is update a row
+and then what we're doing is just
+grabbing the row number that we've found
+to be relevant to the caller and and
+then all we're doing is inputting the
+interest level travel frequency and
+assistant ID that comes from VY so if
+we've made the call and it's gone ahead
+and had an interest level it's had a
+travel frequency we're going to see
+these functions come through from vapy
+so when we go to functions interest
+level we can see here I've got my
+property that says yes no and if I just
+go back to make.com we can see here yes
+no that is the parameter that the bit of
+data is going to be stored in and if I
+go back to vapi and have a look at the
+travel frequency per year that's the per
+year is what's being stored um with the
+amount of times they travel per year and
+if I go back here per year so this is
+information that comes through the web
+Hook from vapy and we can send directly
+into our Google sheet and add the
+corresponding values for each lead in
+Google Sheets now the next make
+automation here is going to be the most
+important part of this entire system
+which goes ahead and looks through all
+of our leads that are going to be in our
+Google sheet whatever platform CRM that
+we're using it's going to go ahead and
+look through all of these leads and then
+it's going to go and iterate at through
+each of them and it's going to call each
+of them using two different assistants
+now the reason that I'm randomly calling
+on two different assistants is that I'm
+actually going to be tracking which
+assistant is making which call using the
+assistant ID and the reason that I'm
+doing this is to set two different Sal
+scripts per assistant and we're going to
+run this randomly sort of 50/50 split
+test between the two different assistant
+Sal scripts and this data is going to be
+recorded in our spreadsheet and we're
+going to be able to understand which
+cell script is more effective and
+converting each of these leads into
+sales for the business the first module
+that I'm using here is the Google Sheets
+search rows and it does exactly what it
+says it just searches through all of the
+rows within a Google sheet and it pulls
+back the data at the moment I've got it
+set to a 100 at Max but we could
+increase this uh as many as we like but
+ultimately it will just pull through a
+certain amount of leads from our lead
+list and then it's going to go ahead and
+then pull through and run each row at a
+time the next module I have here is an
+array aggregator now the purpose of an
+array aggregator is to essentially help
+in iterating through each row so rather
+than pulling back all of these rows in
+one big chunk we want to take that big
+chunk and then turn it into one run at a
+time so we can actually run each call
+separately and individually to each lead
+so all we need to do is add this array
+aggregator just select the values that
+we want so we want the row number number
+name interest level uh and that's all
+the values that we want clicking okay
+and then adding in an iterator function
+on Mac now the purpose of this iterator
+is that then to iterate through one by
+one everything in this array so by just
+putting in an iterator module and then
+clicking on the array right here array
+we have over it we can see that it's an
+array putting that in here it's then
+going to iterate through each row of our
+spreadsheet into our vapy calls moving
+on to the next module we've got a router
+and a router routes down two different
+paths depending on some set of
+conditions so I've just added in another
+module here but I'll get back to that in
+just a second so right after our router
+the purpose of this router is to go down
+a different path based on a set
+condition and so in this little sort of
+line here and we click on this we can
+actually set a condition and if this
+condition is met it will go down this
+path so in this case I've said if this
+random number that I've generated in the
+tool but I'll just come back to that is
+less than 0.5 it should run and in this
+case I've said if this random number is
+greater than 0.5 it should run and so
+the purpose of this tools function is to
+create a variable called random number
+and assign random which is a variable
+that is stored within mac.com so if we
+just click on the text here and type in
+random we can get this variable called
+random which is a floating point which
+is a random number between 0 and 1 so
+this is just going to be a random number
+that could be between 0 all the way up
+into one and so what I've gone ahead and
+said is if it's between 0 and .5 or it's
+between .5 and 1 they are the two
+different areas that we're going to run
+down this way we can split our voice
+assistants into 50/50 by essentially
+randomly setting a variable and then
+going down a different condition based
+on the variable that has been set so
+depending on which whichever one it
+actually goes ahead and runs it's then
+going to run a HTTP request and so what
+this module is doing is making the vapy
+phone call through an apri request we
+can actually request to vappy to make a
+call to a particular phone number using
+all the prompts and using all the
+functions that we have set up on vapy we
+can make a call through mac.com to
+actually initiate uh a call to a
+particular phone number that we choose
+so if you did want to go ahead and copy
+this make automation as well as my other
+make Automation and the prompt as well
+you can go ahead and sign off my free
+res Hub Link in the description where
+you can get access to all of this for
+completely free so to make this request
+I've gone ahead and put in the vapy
+phone call URL which is https api. vy.
+/all /phone so this is something that
+you can find within the VY API
+documentation you can find a whole heap
+on how to make requests to rappy But
+ultimately you can go ahead and actually
+just copy this from my resource Hub uh
+and then just use that from here but
+essentially how this works is that we
+make the request through rappy we're
+doing a post request cuz we're going to
+sending data off to vapy to make our
+call for us we're just posting that data
+off using a post so just below this
+we've got our authorization and this
+authorization is just an API key to
+authenticate that we're allowed to be
+making these calls so just going back to
+VY we can get this key by going down to
+our account and then just clicking on
+API key and just hitting the copy button
+taking that back typing beer and then
+just hitting space and then pasting our
+key in here and then we should be
+authenticated to make these requests
+then below this we've got our content
+type application SL Json so just typing
+that in as a header and that in as the
+value then below this we've got our
+actual Json request so we're actually
+going ahead and typing in all of the
+values similar to how it looked on the
+VAP user interface but we're just going
+ahead and typing this manually uh using
+some Json so it's just doing all the
+same stuff with our function here we've
+got our function with the yes no
+property description it's if the user is
+in Services type Boolean so this is just
+structured and I've copy and pasted this
+from the VAP documentation so you can go
+ahead and just copy this as well and
+paste it and configure it to be exactly
+how you want it to be but scrolling down
+further we've got our content as well
+which is this content is our
+instructions and I've gone ahead and
+just copy pasted my entire prompt uh
+into this and it's going to go ahead and
+just use this exactly how it has on the
+user interface but we're just making
+this request uh through ma.com obviously
+now one thing that we can do now as well
+is obviously use the dynamic names from
+our lead list here to actually say hey
+is this Brendan or hey is this John
+whoever the actual lead is we've gone
+ahead and put first message hey is this
+name and this name has come from uh this
+iterator which has ultimately come from
+Google Sheets so it now knows that this
+particular call by just going to the
+iterator here and just selecting name
+which the value here in this test was
+Brendan it knows the exact name of the
+user that we're calling and it's just
+going to say what their name is and it's
+going to actually know a bit about that
+person so scrolling down a bit further
+we've got the customer information which
+is a name and number which allows us to
+put in just putting in the name from the
+Excel sheet as well as the number cuz
+obviously it needs to know which number
+uh to actually go ahead and call so once
+again you can go ahead and just copy
+this entire Json script from my free
+resource Hub and just configure it to
+however you'd like and just putting in
+all those values simply just read some
+of the headings that are here and just
+fill in the blanks with everything you
+need you can see here I've got my
+function with the server URL which is
+the uh mate.com web hook to my
+spreadsheet data so it's all very
+similar to how it was done on the vapy
+interface so what I've gone ahead and
+done on the vapy interface here is I've
+gone and clicked this button to D
+duplicate my voice assistant and now
+I've got a second voice caller here I'm
+going to take the assistant ID here and
+just update this one up here and so now
+this assistant here is going to be a
+different assistant that makes these
+calls so that when we track this data in
+the spreadsheet we're actually going to
+get two completely different assistant
+IDs so we can track which caller is
+making which calls and what the
+conversion rates of each caller are so
+I've just gone ahead and added in some
+fake data here to demonstrate exactly
+what this would look like if we were to
+actually scale this system into a bunch
+of phone numbers and then just call up a
+bunch of people and then get some data
+back from these people so in this
+instance we've captured the travel
+frequency as well as the assistant ID as
+well as the interest level of that
+particular lead so in this case for
+travel insurance what they're looking
+for are people that are actually
+interested in their services of course
+but also looking at the travel frequency
+and finding who has the highest amount
+of travel frequency and then going ahead
+and actually selling the services to
+those people CU they are the most
+qualified for their services and so
+obviously being able to capture that
+data at scale to thousands and thousands
+of people quite quick quickly and
+capturing all of this data really gives
+great insights to that travel insurance
+place because now they know that they've
+got a certain amount of leads that
+travel and incredible amount of time and
+they can sell their services to them
+quite easily so something that we can
+now do with this data is actually graph
+this data so we can actually visually
+see which assistant performed better
+than the other and then choose that
+assistant to be the one that we actually
+want to run and scale on from here so
+I've just gone ahead and filtered all of
+the interest levels to find all of the
+ones that were true so I'm just going to
+select this column here go to insert
+chart and then what I can get is a pie
+chart right here so this graph shows
+that of all the people that converted on
+our calls 52% came from this caller and
+only 47% came from this caller so by
+understanding this information we're
+able to now pinpoint the exact sales
+script that is best working for our
+outbound caller so in this case we would
+go ahead and choose the blue one which
+is the F6 assistant so if we made to
+vapy I can see here that this one is the
+F6 assistant and so you would obviously
+just go ahead and choose this one as
+being the C script that works the best
+for our leads so this whole optimization
+service here is an incredibly valuable
+service that you could offer to
+businesses to go ahead and actually
+optimize with not just two sales scripts
+but you could do five or 10 different
+Sal scripts that you craft and really
+pinpoint the exact Sal scripts and areas
+of the script that need to be improved
+to create the best sales caller that
+gets the most conversions possible for
+the business once again if you want to
+get access to all of the make templates
+and prompts used in this video you can
+go ahead and sign up for my free
+resource Hub Link in the description
+I've also got 20 other chatbot and
+automation templates in included in my
+resource Hub you can go ahead and
+download for completely
+free so to get started I'm going to work
+on the inbound diversion system so once
+again the purpose of this assistant is
+to divert the caller to the right
+department so if I had a particular
+problem with a product that I just
+bought and I called up this number and
+said that the product was broken it
+might divert me to the technical team to
+go ahead and fix the product but if I
+went ahead and called them and asked
+that I would like to purchase one of
+their products it may go ahead and
+divert me to the s department so to give
+you an even better idea I'm just going
+to show you the demo of the system
+working hi thank you for calling Apple
+please let me know what you are looking
+for and I will forward this call to the
+corresponding
+Department hey I'm looking to buy the
+iPad
+5 great we'd be more than happy to
+assist you with your purchase can I
+please have your name
+John thank you John I am now forwarding
+your call to our sales team who will
+assist you further with purchasing the
+iPad
+5 hi is this John yeah this is
+John hi John it looks like you were
+interested in an iPad 5 is that correct
+yeah that's right so as you can see
+there we were able to call up this
+assistant give it our particular problem
+it identified that we're were looking
+for a sales department and then it went
+ahead and called us from the sales
+department we can pick up and then start
+talking with the sales guys so in this
+case I'm forwarding the calls to a
+another AI so we have a sort of multi-
+aai agent system going on but obviously
+you can also just forward the call to an
+actual number if you don't want that
+sort of secondary AI step but jumping
+right into it I'm just going to briefly
+go over vapy which vapy is the AI caller
+platform that allows us to build most of
+this system so right here on vapy we
+have a set of instructions that teaches
+the AI on how to respond then we've got
+a voice tab which I've got selected at
+11 Labs so if you're familiar with any
+of the AI voice stuff 11 Labs is one of
+the most advanced platforms that allows
+us to create really realistic sounding
+voices but obviously you can choose
+whichever platform you'd like but I've
+gone ahead and selected a love labs and
+added a custom voice and next to this we
+have functions and functions are what
+are going to allow us to make these
+transferring calls I'll come back to
+these functions in just a minute and now
+I'm just going to explain to you how
+I've engineered The Prompt for this
+particular assistant so here on vapy we
+get two sort of boxes in our sort of
+instruction settings one is a first
+message and the first message is simply
+the first thing that the assistant says
+when you call it so in this case I've
+said hi Thank you for calling Apple
+please let me know what you're looking
+for and I'll fold this call to the
+corresponding department so for this
+particular example I've just chosen
+Apple but obviously you can choose
+whatever you'd like or integrate it into
+your own business then below this first
+message we have a system prompt and a
+system prompt is more of the heavy
+instructions that actually teaches the
+assistant how to respond how to act and
+really let it know who it is so the
+first thing in my system prompt I'm
+stating the role and the role is who the
+assistant is so who they are and in this
+case I've said you are an experienced
+help desk assistant for the technology
+company Apple Your Role is to divert
+calls to the relevant departments
+depending on the customer's query so by
+just going ahead and stating directly to
+the assistant who they are and exactly
+what their role is it's going to Now
+understand how to tackle all the
+questions that come its way scrolling
+down a bit more I have a specific task
+so the task is what they actually have
+to do so what does the assistant
+actually have to do to achieve their
+role which is ultimately diverting calls
+to the relevant departments and in this
+case the task is to converse with the
+customer need to find out which of these
+departments best suits their needs and
+in this case I've set a technical
+department sales department or disputes
+Department if you are looking for a
+custom system just like this you can go
+ahead and book a call with my team using
+the calendar Link in the description
+we've helped several businesses
+integrate the solutions that you've seen
+here on the channel and we'd be more
+than happy to help you out and then I
+have specifics so this is actually how
+they do it so how do they actually
+achieve this task that we've set out and
+this is just saying you are a highly
+intelligent classifier you'll be able to
+tell if a particular customer needs the
+technical team for product support the
+Sals team to purchase a product or the
+dispute team to return the item receive
+a refund Etc you must closely follow the
+scripts provided for each department and
+these specifics are very important to my
+career please follow these your ability
+to accurately classify the right
+Department deeply helps the business
+make a profit so you're probably
+wondering why I added this in here and
+the only reason I've added this in here
+is to do with something called emotional
+prompting and emotional prompting really
+just helps emphasize the importance of
+this part of the prompt by saying that
+it's very important to my career and
+that it's critical for the business's
+profit the prompting and the agent will
+just look at this and give it a bit of a
+high ranking in terms of its importance
+and then really try to focus in on and
+really work with what you've said now
+just beneath this I've got context and
+context is actually just giving the AI a
+bit more context as to who they actually
+are and so in this case I've given
+context to the business and what we
+actually do now you'll notice that I've
+got this sort of hashtag here and this
+double hashtag here as well and the
+reason I've done this is this is called
+markdown formatting and markdown
+formatting is really just communicating
+to the AI different sections and
+importance levels during the prompt and
+this is something that open AI
+themselves actually trained their models
+on so this is just a really good thing
+to get into where we're adding in these
+subsections which really just
+communicates to the AI what is part of
+what and really just helps give it even
+more context as to the prompt we've
+given it so in this case we've got
+context which is the main hitting and
+then we've got the business which is the
+sort of subheading and within this we've
+got we are Apple Inc and we provide
+technology products to the world for
+example the iPhone and iPad now
+obviously for your actual business you
+might need to provide a little bit more
+detail but in this case I'm sort of just
+betting on the fact that knows what
+apple is through its basic training data
+then below this we've got what we do and
+so this is once again double hashtagged
+and we're just saying we help people
+connect digitally with worldclass
+devices I've just made that up but
+obviously you can add whatever you want
+uh for your particular business and this
+is really just going to help it get an
+understanding of who they are what their
+purpose is and why they're doing what
+they're doing and really emphasizing the
+importance on what they're doing as well
+then below this we have one of the most
+important parts of the actual prompt
+which is examples and so we need to
+provide examples to the bot so it
+actually understands what it needs to do
+and it doesn't just ramble on some
+random thing that isn't right relevant
+to what we're trying to do so once again
+I've got our main heading of examples
+and I've got the subheading that says
+sales department script and so I've got
+several different scripts for each of
+the different versions or variants of
+conversations that could occur so in
+this case I've got a sales department
+script below this I've got a sales
+department script version two so if
+something different happens I've just
+gone ahead and given it some sort of a
+sort of instructions and a pathway to
+take uh if something else happens below
+this I've got a technical department
+script as well as a dispute Department
+script as well so the way that I've
+structured the sales department script
+I've just said you and so you is the
+assistant cuz we're talking to the
+assistant here I've saying you should
+say hi thank you for calling Apple uh so
+this is really just the first message so
+we're just emphasizing uh the first
+message that it just said so it stays on
+track and then we're saying if the
+customer says hi I'm interested in
+purchasing an iPhone 15 we should then
+say great we'd be more than happy to
+assist you in this can I please have
+your name and then I will fold this call
+to our sales team so for this particular
+assistant I'm looking for two different
+values I'm looking for the product that
+they're interested in purchasing so the
+iPhone 15 and I'm also looking for their
+name and so you'll notice just below
+this I've got a function call and the
+function call it says once the customer
+name and product name is collected run
+the sales function so now I'm going to
+go back to functions if I just click on
+functions and then we've got our sales
+function when something specific occurs
+during the conversation we can have a
+particular action run and in this case
+I've gone ahead and said when the call
+needs to be forwarded to the sales team
+run the sales function so the prompt we
+gave it will understand this and during
+the call automatically start to run this
+function uh because it's now met that
+criteria now below this we have two two
+different properties one is name and one
+is product and so like we said during
+that prompt we've got the name so that's
+the name of the customer and we've also
+got the name of the product so once it's
+got these required values it's going to
+go ahead and send a request to make.com
+so this right here is make.com make.com
+is an automations platform that allows
+us to communicate information from one
+platform to the other and so in this
+case we're able to take vapy and send a
+request to a sort of URL this URL is
+then able to send a bit of information
+over to a request block and then this
+request block can then send some more
+information off to vapy which is another
+phone call which is going to call our
+customer or our person on the phone and
+that is going to be the sales department
+now talking to them so very simply all
+I've done is created a new make scenario
+I've added in this web hook block and
+this web hook block has given me a URL
+I've gone ahead and copied this URL
+added it to our server URL function and
+then all this does is it then runs off
+to a HTTP request and so this request
+block simply makes a phone call from
+your vapy account and goes ahead and
+just calls the number uh that came
+through on the web hook and so if I just
+scroll down a bit in this request block
+we've got a bit of Json here which just
+is structuring the exact assistant that
+we're going to be calling with so this
+Json here you can get from the vapy
+documentation which I will have Linked
+In the description but I'm also going to
+have this template within my free
+resource Hub Linked In the description
+my resource Hub also has 20 other
+chatbot and automation templates which
+you can use and play around with for
+completely free so very similar to what
+we had just before we've got the role
+and we've got who they are and we've got
+the specifics and it's really just the
+exact same script and then we've also
+gone ahead and added in some dnam
+Dynamic variables that came in from the
+web hook so what we're able to do is by
+making this call Via a request we're
+able to import their name as well as the
+product that they were interested in and
+actually communicate this back to them
+so if in the first call they said that
+their name was Brendan and they were
+interested in the iPhone 15 that call
+that gets then sent to them is going to
+say hey are you Brendan and are you
+interested in the iPhone 15 so all we
+need to do is then send a request to
+make.com to get these variables
+populated in make and then we can simply
+find these variables in here and you can
+see here parameters name and product so
+this has come directly from vapy in
+those parameters and it just says name
+so we just click on name in this case an
+example that I sent through was named
+John so we can just put Hi and then in
+the actual call it will say hi John are
+you interested in the iPhone 15 the vapy
+request will also give us the phone
+number and this is all information
+coming from the web hook so make sure to
+just run this once to get all that
+information through and then you can
+just populate all these fields with the
+corresponding values I've also created
+another variation of the sales
+department script which if they just go
+ahead and say interested in buying
+something we need then offer uh some of
+the products we offer so I've just said
+great are you looking for an iPhone iPad
+or laptop and if they say they're
+looking for an iPad then great we've
+captured that information uh but if they
+haven't said that name we'll just ask
+them for their name and then we'll
+forward that call and then make this
+request with the function call sending
+all this data off to make to then send
+them that new call with the sales call
+populated with all their new values now
+just below this we've also got the
+technical department script as well as
+the dispute Department script which are
+once again very similar just being
+relevant to the their actual departments
+so in this case it's saying hi thank you
+for calling Apple uh like that first one
+hi my iPad has stopped charging recently
+I'm not sure what to do it will just say
+we're sorry to hear about that could I
+get your name and then we'll forward
+your call and then once again the
+dispute Department my Apple watch was
+meant to be delivered it's not here uh
+sorry to hear that we'll then forward
+your call to our support department to
+get this ordered so obviously these
+scripts are very short scripts very
+simple to get set up uh but just making
+sure they're relevant to the particular
+department and then going ahead and
+running the relevant function uh and it
+will work quite easily so just for this
+video I've only set up the sales
+department here but obviously the
+technical department and dispute
+department will be exactly the same just
+setting up the function adding in the
+make.com UR Ro and then just setting up
+the automation to send a call send a
+caller assistant that is actually
+relevant to them now if I just scroll
+down a bit you'll see a forwarding phone
+number option and so vapy actually has
+an integrated forwarding phone number
+system and so simply put all this allows
+us to do is just entering our phone
+number and then in the prompt say fold
+the phone number uh if this occurs and
+so obviously this is great and really
+simple to use rather than setting up our
+own make function but we can only
+obviously set one of these at a time uh
+so if we want to have multiple
+forwarding phone numbers we do just need
+to set up a couple of make automations
+to make that happen uh but if you are
+looking for a little bit of an easier
+way to just do one forwarding phone
+number you can just type in that number
+this is probably a better use case for
+more of a human handoff system where if
+somebody says that they' like to speak
+with a human or it identifies that the
+customer seems a bit angry we can go
+ahead and then trigger the folding call
+uh to a particular number and in this
+case have the human now start that
+conversation just quickly if you want to
+see more AI voice caller videos just
+like this let me know what you want to
+see in the comments below so now jumping
+into the second inbound phone caller
+system we've got a contact form where a
+customer or a lead can come through type
+in their name email address phone number
+as well as a message and they're going
+to get called in 5 minutes from an AI
+phone caller and it's going to help
+qualify them as a lead or even book an
+appointment if you want to so this is
+going to be a super intelligent
+assistant that not only knows what its
+name is but it's actually going to
+understand the message and the context
+of that message so if I take the Apple
+sales caller for example if they typed
+they wanted an iPhone 15 in the message
+box when they get CAU up it's going to
+know obviously that they wanted to buy
+an iPhone 15 and really tailor that
+conversation to that so for this
+particular example I'm using webflow for
+my form submission but you could use any
+website provider or form provider that
+you use and then all you got to do is
+swap out the make block that I'm using
+I'm just using a webflow block that
+watches for any form submissions you
+would simply just swap that out for
+whatever provider you have have and then
+continue on the automation which would
+be exactly the same so if you are
+following along with webflow all you
+need to do is just Chuck in a form block
+add in some values for a name email
+address phone number and message and
+then we're going to use these values
+when a make request is made so jumping
+into make.com right here I've got a
+webflow watch events and this just
+watches for any form submissions that
+occur on the website so in the case of
+my website this form is called voice
+call and so all I want to do is just
+ensure that we're getting the calls from
+the right form so what I have is a
+filter on my mag Auto that just checks
+if the form is coming from the right one
+I'm just saying if the name of the form
+is equal to voice call which is my form
+name then continue the automation so
+once this automation has gone through
+we've now populated all of the values
+from webflow and we're now moving on to
+a sleep tool so in make.com we're able
+to actually put in a slip tool that
+simply just Waits and delays the
+automation before continuing on to other
+steps in this case I've got it set to 15
+seconds just for testing but we could
+put this all the way up to 300 seconds
+which is 5 minutes and that is going to
+give us enough time to make it sound a
+bit more realistic uh that the business
+has called them 5 minutes after they've
+gone ahead and submitted that contact
+form so once the automation has waited
+for the Sleep block we're just moving on
+to another request block which is
+exactly the same as the one before where
+we're making the API call to vappy to
+make a phone call and then send that
+phone call to the number that came
+through from the webflow request so all
+I've done is run the webflow request and
+this has allowed me to populate a bunch
+of fields here and so what I've done is
+populated the name and the message
+within this prompt and so just within
+the specific spot of my prompt you can
+see specifics I've added in another
+thing that says please refer to the
+customer's message when starting the
+conversation and then I've done message
+column and then I've got the message
+that came directly from webflow and so
+by doing this we're able to give it a
+little bit more context as to what the
+conversation should be about if it's
+going to be a sales score what are we
+actually selling and if we already have
+that information like the iPhone 15
+obviously we want that information to be
+there in the conversation to give it a
+little bit more context about what we're
+doing and so once that is set up we're
+simply able to go ahead and just fill
+out this contact form hit the the submit
+button and have them make automation run
+sending a call to the particular phone
+number that was inputed in the form
+calling us and then qualifying us
+whatever we like if you are looking for
+a custom system just like this you can
+go ahead and book a call with my team
+using the calendar Link in the
+description we've helped several
+businesses integrate the solutions that
+you've seen here on the channel and we'd
+be more than happy to help you out if
+you found the video helpful I'd greatly
+appreciate if you'd go ahead and like
+And subscribe to the channel as well as
+comment below on anything else you'd
+like to see

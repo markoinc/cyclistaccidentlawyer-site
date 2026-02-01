@@ -1,0 +1,335 @@
+# Build an AI Appointment-Booking Voice Agent in 10 Minutes GHL VAPI
+# Video: https://www.youtube.com/watch?v=for9mjbTJSc
+# Category: vapi-voice
+
+[Music]
+Unknown caller.
+>> Hi, am I reaching Charlie?
+>> Yeah, this is Charlie. Can I book an
+appointment, please?
+>> Sure, Charlie. To get started, can you
+please confirm uh your email address?
+This will help me check if we have your
+contact information on file.
+>> Yeah, my email is charlie@systemkit.io.
+>> Could you please provide your full name?
+>> Yeah, Charlie Barber.
+>> Thank you, Charlie. Uh, your contact
+information has been created uh
+successfully. Could you please let me
+know your preferred date and time uh for
+the appointment?
+>> Yeah. What times do you have available
+tomorrow?
+>> We have the following time slots
+available for tomorrow. October 31st,
+9:30 a.m. 10:00 a.m. 10:30 a.m. 11:00
+a.m. 11:30 a.m.
+>> Okay, let's do 11 a.m., please.
+>> Your appointment has been successfully
+booked for tomorrow at 11:00 a.m. You
+should receive a confirmation email
+shortly. Is there anything else I can
+help you with today, Charlie? No, that's
+it. Thank you very much and have a great
+day. Okay, so let's quickly refresh the
+page to see if it's managed to send us
+an appointment and you're going to see
+how easy it is to actually build this
+Vappy and GHL um thing. So, you can see
+right there, 11:00 a.m. Perfect on the
+calendar. So, there's no messing about.
+The absolute first thing I'm going to do
+is put a timer on the screen and show
+you how easy it is to build this in
+under 10 minutes. And if I don't manage
+to build this in under 10 minutes, I
+will stop posting YouTube videos
+forever. And that's how confident I am
+because if you don't know, Vappy have
+added GHL as an integration on their
+platform, which means we don't need
+nat.io anymore. We don't need make.com.
+We can do it all inside Vappy and it
+takes a literal few minutes. So once you
+have headed onto Vappy.ai, you are going
+to create a free account by clicking
+sign up. But I've already got an
+account. So I'm going to click on open
+dashboard. And as soon as you click on
+open dashboard, you want to go down to
+where it says assistance. So let's give
+it a second. You can see we clicked on
+assistance at the uh you know left and
+we're going to create an assistant. We
+are going to call this uh let's do demo
+for YouTube. So demo demo for YouTube.
+You can call this whatever you want. So,
+if you're building like a yoga, you
+know, AI voice agent or a med spa,
+dentist, chiropractor one, you would
+just put the assistant name as that. It
+doesn't really matter. Just click on
+blank template and click create an
+assistant. Once you've done that, we are
+going to then head over to tools. Now,
+if you aren't aware, we can actually
+create tools. And this works for both
+Google calendar and the GHL calendar.
+So, if you don't have GHL, you can still
+use this for Google Calendar. And it's
+the exact same kind of principle and
+setup. So, you're going to click on
+create tool. And you can see that you
+get all of these different options. And
+you can see that we're going to create
+um four tools. So, we want to get a
+contact. So, when you know it picks up
+the phone, we want to essentially see if
+they're in our database. And you don't
+really need to um click on anything
+besides use customer phone number. Um,
+and this will just make sure when it's
+calling the actual customer, it can use
+their number without um, kind of the AI
+voice agent having to ask them for their
+number if that makes sense. But you
+don't really need to understand this.
+You just need to click on create tool
+and just put these four tools. The next
+one is uh, create a contact and once
+again just click on use customer phone
+number. It's really this easy. Click on
+create tool again and just do that for
+check availability. So, we wanted to
+check the availability um on our
+calendar. And once again, you can use
+this for Google calendar or GHL or any
+other calendar for that fact. It's the
+exact same thing. And all we need to do
+is actually add our calendar ID. So, if
+you have a GHL sub account, you can find
+this calendar ID by going down at the
+bottom left in your GHL sub account. Um
+and then going down to where it says
+calendars here on the left. And
+obviously we give out GHL in our
+community, but you can just get your own
+GHL if you want. And it's really this
+simple to the point where you just want
+to copy this ID and go back into Vappy
+and just paste in the ID right here. And
+for the time zone, just put the time
+zone you want. We're going to keep it in
+America, New York time zone. And once
+again, you can leave all of this blank.
+Just click save and you're good to go.
+And the final one is just a actual uh
+event. So it's going to create the
+actual booking. And once again, just
+copy and paste the calendar um ID. And I
+just didn't mention this, but if you
+don't have a calendar, you can just
+click on new calendar, choose any of
+them. It doesn't matter. Let's do
+personal booking. Name your calendar,
+select a team member, the you know slug
+or the custom URL, the meeting duration,
+and then you'll get a calendar ID right
+here. It is really simple to create a
+calendar in JHL. takes like 30 seconds.
+Um, so then once you've done that, we
+have successfully created the four tools
+and we're going to be connecting these
+tools to our assistant in a minute. But
+the next thing you need to do is head
+over down to where it says more and
+click on integrations. And we actually
+need to connect GHL to Vappy. And we do
+that by scrolling all the way down. You
+can see how um easy this is. We've
+scaled a bit too far down. Um, it should
+be here somewhere. So you can see that
+there are two options to connect GHL to
+Vappy. We have this one and then we also
+have this one. I recommend you you only
+really need to do this one, but I've
+done this one just in case. And you can
+find your API key by going into your sub
+account and clicking on business
+profile. And then you can basically
+either generate a um a new API key by
+clicking on uh this one or you can just
+copy it if you already have one. and you
+would just paste it in um right here.
+So, it's really that simple. Um and I'm
+going to actually disconnect this and do
+it as if I were doing it from scratch.
+So, this is the most important part. You
+need to actually click on connect. And
+once you click on connect, it's going to
+give you um if you click on next, it's
+going to give you the option to actually
+um select an account. Now, you do not
+select the agency account. You want to
+select the sub account you want to use
+this AI agent and booking agent for
+basically. So in this case you can see
+our sub account is called YouTube
+demonstration. So what we going to do is
+go back here and click on YouTube
+demonstration and you'll be able to see
+that we can find it right here. And once
+we found it right there, it's going to
+connect automatically. So we've got GHL
+connected to Vappy. Everything's good to
+go. All we need to do now is go to the
+assistant we created. So if you remember
+I created the assistant at the start
+called demo for YouTube. Um obviously
+you can play around with the voice. You
+probably have a lot more time than I do.
+Um you also have the first message. So
+this could be like hello am I reaching
+let's say Charlie. So that is the
+dynamic variable if you want to use
+that. And then the easiest part for this
+is actually just connecting the tools.
+And you do that by selecting the ones
+we've just created. So boom, we've
+selected the yeah four that we just
+made. If you even remember, we just did
+that. Um, we aren't going to publish it
+yet because what we want to do is
+actually add a system prompt. And the
+beautiful thing about this is Vappy has
+made it so like insanely simple to the
+point where they have a documentation
+for this. So if you go to this URL,
+which you can see, so docs.vapy.ai,
+we've got a few minutes left tools/glum
+or go high level. You can actually
+scroll down and you'll be able to find a
+system prompt. So, they've got all the
+instructions here that I'm just going
+through. Like, it's really simple. Um,
+but what we can do is just copy this and
+then paste this in right here. So, let's
+paste this in right here. And you can
+see that this is perfect. Um, you can
+obviously add a a knowledge base of your
+company just by uploading like a file
+like a PDF. So, you can create a Google
+document, download it with all your
+information. You can obviously change
+the voice. So, play around with the
+voice. You know, obviously I recommend
+using 11 Labs. They've got the best AI
+voices um in my opinion in the market.
+And yeah, now you just click publish. I
+recommend testing or sorry, yeah,
+testing it by clicking talk to
+assistant. And you'd be able to do that.
+Um but in this case, what we want to do
+is actually run like an outbound
+campaign. So, how you would do that in
+literally a minute is by clicking on
+this more button and then going down to
+where it says outbound. And what you can
+do is click on create a campaign and you
+can literally call this like BTOC.
+Let's do like B2C um let's just call it
+B2C campaign. So you want to select the
+phone number. You obviously do need a
+phone number which I didn't mention but
+obviously you can get that inside Vappy.
+Super simple. It's like a dollar or I
+think it's free even if if you're in the
+US. If you're outside the US and you
+want to get a phone number into Vapy,
+use Twilio. It's really simple. Um and I
+can even make a video on that in the
+future. Just comment if you want that.
+Um, so yeah, UK number is the one we're
+going to be using. And then all you want
+to do is select the assistant. So, uh,
+this is the one we've just created. And
+we have, um, the CSV. So, for the CSV,
+all you want to do, we've got like 2
+minutes left. I'm confident we can do
+this. Um, go down to where it says
+Google Sheets, and you just want to
+follow the same kind of template that
+they give you. And I, let's click
+download. So this template looks like
+this. So file, import. Let's just um
+Yeah. So we want to make sure that it is
+like the same format if that makes
+sense. Otherwise, it won't work. But you
+can literally just have like hundreds of
+numbers and you're just going to uh
+launch this campaign in a second and
+it's going to be amazing. So yeah,
+number. So let's uh yeah, delete this.
+Let's replace this one with Charlie. And
+I apologize if I'm going fast, but I
+want to make this um yeah, easy for you
+guys. So, I'm just going to put my one
+of my numbers here. Hopefully, this is
+right. If it's not right, then I'm
+screwed. Uh 97158
+55660. Yeah. So, that should be correct.
+Download this. So, file, download. Um go
+back here. We're just going to import
+this. So, I believe it's this one.
+Hopefully.
+Yeah. So, it should be this one. You can
+see that's perfect. Let's just launch
+campaign. So, it's on send now and
+within a second we are going to get a
+phone call. I've got a team member
+texting me for some reason. Um, but this
+should work. If it doesn't, then I'm
+sorry, guys. But there we go. We've got
+a number. Let's uh answer this.
+>> Hello. Am I reaching Charlie?
+>> Yes, this is Charlie. Can I book an
+appointment, please? I've got 30
+seconds.
+>> Charlie, may I have your email address?
+Yeah, my my my my my my email is
+charlie@gmail.com.
+>> Thank you, Charlie. I found your contact
+information. Could you please let me
+know your preferred date and time?
+>> Yeah, let's do let's do tomorrow 9:00
+a.m. Can you book it now, please?
+>> Charlie, unfortunately, the 9 a.m. spot
+isn't available for tomorrow. The
+closest available for tomorrow is at
+1:30 p.m. Would you like to book that
+time instead?
+>> Yeah, let's do 1:30 p.m.
+>> Okay, byebye.
+>> Okay, so I'm not going to lie, guys. It
+was 10 seconds over 10 minutes. However,
+I didn't say that we we did I didn't say
+we had to test it in that like 10
+minutes, if that makes sense, because I
+had a fully functioning AI agent that
+you can see books an appointment for
+9:30. Um, and I did that in under 10
+minutes. So, yeah, drop a like guys,
+subscribe, and um, whatever else you
+want on this channel, just let me know
+in the comments. And if you want JHL,
+you want unlimited sub accounts, hop in
+my community. It's like super cheap
+right now. You get one-on- ones with me
+personally. You get free leads. You get
+a four-week um yeah, it's a new
+four-week program I basically created
+that will help you get clients and build
+an AI company and grow. So, take it
+easy, guys. I'll catch you in the next
+video. Take care.

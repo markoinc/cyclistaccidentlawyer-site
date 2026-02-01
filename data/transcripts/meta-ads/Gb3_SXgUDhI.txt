@@ -1,0 +1,384 @@
+# The NEW Way to Run Facebook Ads in 2026 (Sam Piliero)
+# Video: https://www.youtube.com/watch?v=Gb3_SXgUDhI
+# Category: meta-ads
+
+In this video, I'm breaking down the new
+way that we're running Facebook ads in
+2026 that is absolutely crushing it. Me
+and my agency are working with nearly
+100 brands ranging from six, seven, and
+even 8 figures a month. And in the last
+few months, we've all seen Meta
+completely change their algorithm. So,
+by the end of this video, you'll know
+exactly what's changed, the exact
+systems that we're using, the features,
+the settings that have changed so that
+you can copy and paste this into your ad
+accounts and your businesses to actually
+scale profitably in 2026. So, starting
+at the very top here, the most important
+thing we need to understand when we're
+starting an account or if we're building
+on a very large account already is the
+core of the account we want to happen in
+a single prospecting CBO campaign.
+Prospecting CBO when we go inside the
+campaign settings is focused on a
+campaign budget and typically has a
+highest volume or value campaign bid
+strategy. There are some cases where
+we're running cost per results or bid
+caps, but for the most part, highest
+volume or value is where we're focused.
+We also want to make sure audience
+segment reporting are fully set up. This
+is something that was introduced two
+years ago and I'm still seeing accounts
+that don't have this done properly. Now,
+inside this prospecting CBO, you'll
+notice on my screen here that I have a
+whole lot of adsets. We have 68
+different packs of adsets, some of which
+are paused, some of which are active,
+that have run over just this month
+alone. The big takeaway that I want
+everyone to have here is that every time
+we launch new creatives, we launch them
+in a new pack. And you can see I
+literally name this broad pack 68, new
+creatives. I date the exact date that
+the creatives were launched. And then we
+also add in whether they're videos,
+statics, if there's anything special
+going on. This is all the way down the
+board for every single pack that we
+create all year. This creates a hyperco
+competitive environment in our ad
+account. It forces the ads to compete
+against one another so that they fight
+for our budget so the best ads rise to
+the top, get the most amount of spend,
+and get you the most conversions. Now,
+here's where the trickery begins. This
+is the new versus the old. A brand new
+feature that came out in the middle of
+2025 that was nowhere near ready to come
+out was value rules. And now I'm really
+bullish on value rules because they've
+gotten better and better in just the
+last couple months. Value rules
+essentially are a new feature that allow
+us to create rule sets for different
+optimization systems based on outcomes
+that Facebook can't see like lifetime
+value. What we have to do to create
+these is click create a new rule set and
+then we could actually define by
+different criteria. And just to give
+everyone a very simple example of this,
+let's say you know on your back end that
+when men buy your product, they're 50%
+more likely to come back and buy a
+second time versus women who, let's say,
+are less likely to come back. So, what
+you can do is click on gender here.
+Select your gender. In this case, we'll
+go men. And we will increase our bid by
+that specific criteria to either bid
+higher or lower. A fantastic example of
+where I'm seeing this work really well
+right now is locations, specifically
+full countries. This is allowing us to
+group together more and more countries
+in the exact same campaign and downgrade
+the bid. I'll give an example here. If
+you're bidding in the United States and
+a bunch of other countries, and the
+United States being one of the biggest
+consumer markets is eating up a lot of
+that spend and low on your return on ad
+spend, then you could just go ahead and
+decrease the bid here by something like
+10%. You don't need to listen to my
+exact recommendation for 10%, 50%, 90%,
+whatever. Just do this in small
+increments and see how it impacts your
+spend. We have seen this be tremendously
+helpful in balancing out our return on
+ad spends. This is one of the most
+granular rules that goes completely
+against the ethos of full automation.
+This is great for us advertisers. Now,
+the second part of the adset settings
+that is fully changed and is completely
+changing in both my strategy and
+functionality is first Facebook
+introduced percentage value. What this
+allows you to do is set a as percentage
+value maximum or minimum ad set budget.
+This is so perfect for CBOS where one
+adset is hogging up all the spend cuz
+now what we can do is we can change the
+daily average maximum or minimum to a
+certain percentage. This means that as
+we scale, we don't need to worry about
+this being a hard number. It'll just be
+10% or 30% or 40%. On the contrary,
+because this is now available, a lot of
+our accounts are having maximums and
+minimums. So, we're kind of creating
+these little CBOs within the CBO. Now,
+the way that we're using this is we're
+setting average daily minimums in dollar
+values equal to one time the target CPA.
+So, if my target CPA is $50, I'm
+literally entering $50 in here. We're
+only doing this for ranges of seven
+maximum 10 days. And then after that,
+we're removing this. So, we'll just
+literally unselect it like so. And then
+allow the campaign to run freely. This
+really just ensures that all creative
+has a fair chance. I think this is very
+helpful. and it's been around for a
+while, but now with the introduction of
+the percentage on the other side, we
+have more toggles to play with, which I
+think is very helpful. Perhaps the
+biggest addition, which is the single
+addition that I am most happy about in
+basically all of 2025 heading into 2026.
+In April of 2025, Facebook introduces
+incremental return on ad spend. Now, any
+new adset on the highest volume
+strategy, specifically running a
+performance goal of maximize number of
+conversions, can go down to their
+attribution model and click standard or
+incremental. If you select incremental,
+you'll now see your attribution setting
+is incremental. What incremental means
+is that it's only focused on conversions
+that happened because of Facebook. This
+means that it doesn't care about sliding
+in at the last second and showing an ad
+to someone who is going to purchase
+anyway. This is truly a model defined
+for acquiring net new customers for the
+business. The coolest part is even if
+you don't use this strategy like in the
+account or campaign that I'm showing
+right now, which is using traditional
+7-day click one day view, what you can
+do instead is go to your columns, go to
+compare attribution settings, click
+incremental attribution, and click
+apply. And once you do this, you're
+going to see your drop off in total
+number of purchases, which we can see
+here is 1,474 to,300,
+which is the incremental purchases. This
+is a really good ratio that I have in
+front of me from nearly 1500 to 1300.
+It's a very small drop off from 7-day
+click to incremental. Some brands are
+going to see a huge huge drop off. And
+if you do, that might be one of your
+signs to actually run more incremental
+conversions on its own as the primary
+objective for Facebook. Now, as we move
+to the ad level, the big question comes
+up. What about Andromeda? Andromeda was
+probably the biggest shift in the
+algorithm that we've seen in probably
+the last 5 years plus. And it makes a
+staple point for us to make sure that
+we're changing our creative strategy.
+And that's exactly why every big brand
+in the world is increasing their
+creative volume, their total output. You
+can see Gap here at the beginning of the
+year was running 135 or 145 ads. By the
+end of the year, right now, active in
+their account, they're running 6,546
+active ads. If we go to a brand like
+Gruns that was actually known for
+running a ton of creative at the
+beginning of the year, where they
+started the year with,00
+active ads, they ended this year at
+7,580
+active ads. And the craziest part is you
+could go down the list and put in any
+successful brand and you won't see one
+single brand decelerating in creative.
+Take Nike for example, was starting the
+year at 1,200 ads. They ended the year
+at a whopping 23,000
+ads. Or Maidwell, who actually just
+started the year with somewhere around
+6050 ads. At their lowest, they only had
+a total of 21 ads active. They ended the
+year with 653
+active ads. The list literally goes on
+and on. You cannot find a single
+successful brand that decelerated their
+ad volume. And that's because the
+algorithm changed. How it used to work
+is you would set your audience and you
+would select a bunch of creatives that
+you want to be delivered to that
+audience. You'd usually group that in an
+adset or a campaign and then you'd go on
+your merry way and know that these
+creatives are being attacked or hit on
+this audience. But what changed so
+drastically with Andromeda is that it
+now works in a concept driven way where
+you have a single concept which acts as
+the targeting mechanism to find the
+audience. So instead of having a bunch
+of audiences with groups of creatives
+like so what you now have is a variety
+of different concepts and these concepts
+all go out to serve to different
+audiences. So what naturally happens is
+one concept might be capable of getting
+you a 3x return on ad spend at $50,000.
+But concept two might be able to get you
+a six return on ad spend but only spend
+$3,000. And then concept three might
+only be able to spend $100, but might
+get you a 9x return on ad spend. Now,
+old school Facebook would have said, "I
+should try to spend more money here. I
+should try to spend more money here."
+New Andromeda says, "All of these are
+valuable. Keep this one active. Keep
+this one active. And keep this one
+active." As long as your baseline is
+over a 3x, allow them all to spend. This
+is not a bidding war like it used to be.
+So, what are you supposed to do
+potentially as a small business owner or
+even a medium-sized brand that's trying
+to scale rapidly? How could you possibly
+compete with something like Maidwell who
+went from 50 active ads to 600 or Nike
+that went from 1,200 to 23,000? Sounds
+absurd. It's actually not too
+complicated. It's just a repeated system
+that scales in time. Let me show you
+exactly how it works. So, the first
+thing we need to understand is what is a
+concept. What I have on my screen here
+is a few examples from Yeti. This is
+going to differ from brand to brand, but
+I'm hoping I can get that point across
+really quickly for you. You can see each
+of these three concepts have slightly
+varying themes. They might carry the
+same fonts, the same offers, but they're
+different. They feel different. Think
+about it like this. You know for a fact
+that there's one of these three that you
+individually react better to. I could
+tell you very simply concept number two
+I would react the best to it where I
+don't really react well to UGC and very
+boring statics I also don't react too
+well to however some people are
+different some people actually only buy
+by seeing UGC which we have down here
+and some people only buy by seeing
+products on flats like very boring
+backgrounds while each of these vary in
+iterations because we have different
+iterations the concept is generally the
+same and who reacts to A over here
+versus B versus C is all going to be
+pretty much similar in audience. So our
+new job on Facebook is not to constantly
+create new concepts which everyone is
+saying to do that does not actually
+work. Our new job is to find a concept
+and when that concept works run it until
+the wheels fall off. A concept just like
+I'm showing in AB and C here can be
+reproduced over and over and over and
+over and over and over again. The point
+of all of these concepts is that you can
+create iterations of these concepts.
+They don't need to be massively
+different every single time. Anyone
+that's telling you they need to be
+massively different every single time, I
+want to give a really honest warning.
+They're probably trying to sell you
+creative services. You don't need
+different concepts every time. Here's
+just straight proof of that. Take the
+example we were just using earlier, Made
+Well. Do these look like they're
+similar? Of course they do. There's
+three ads, four ads, five ads, six. The
+list goes on and on. They're all
+iterations. Every major brand, there's
+Nike right here with four right in front
+of me, another two, three, these are all
+just iterations. And it's not only
+acceptable, but it's actually optimal.
+This is what I recommend for the
+accounts that we run. So, don't think
+you need to reinvent the wheel every
+single week. Now, what you do need to do
+every single week to grow your account
+every single week is again not that
+complicated. You start with launching
+creatives every single week. You wait 7
+to 14 days. You just give those
+creatives some time. You analyze those
+creatives based on incremental
+attribution, which we went through
+earlier. You brief the winners, meaning
+you try to figure out what are the core
+components of my winning ads. How can I
+create more of them? Just like the
+examples I showed you. And then through
+an outside source like Magic Brief or
+Facebook Ads Library, which are both
+completely free for doing this, you
+source your competitor concepts. You
+steal from your competitors. You think,
+"How can I make that for myself?" You
+take that template. You take that
+concept and you go ahead and you create
+a bunch of ads. And then guess what? You
+launch that creative and you do that
+every single week over and over and over
+and over again. That's how you compete
+with the biggest brands. Now, if what
+I've just shared is opening up your mind
+to what's about to happen in 2026, then
+I want to advise you on two very
+important things. First, the exact
+system that I shared with you is what we
+do all day every day at the
+Moonlighters. So, if you are a fit to
+work with us and you actually want to
+scale your brand, click down below to
+apply. It takes a minute. Worst case,
+you take a 15-minute call and we're not
+a fit to work together. best case,
+you're one of the 100 plus brands that
+we've worked with in just the last year
+alone, scaling profitably. And two, if
+you're not quite at that size where you
+need agency level services, I've just
+reopened the doors to the Facebook ads
+blueprint, which is my paid ads
+community in school. This is where you
+get access to me, my team, basically all
+my friends and resources. You can click
+the link down below.

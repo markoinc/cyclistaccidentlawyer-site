@@ -1,0 +1,617 @@
+# How to Build an Ai Chatbot & Appointment Setter with GoHighLevel 2024
+# Video: https://www.youtube.com/watch?v=00XNr2XV9R0
+# Category: ghl-chatbot
+
+if you haven't heard of go high level it
+means you live under a rock and it's
+time to open up your eyes if you're
+looking to have a customer service
+chatbot or an AI appointment setter you
+have to watch this video I'm going to
+show you exactly how to set it up and
+how to program and train it to have it
+do whatever it is that you need it to do
+within your business I'm going to be
+using a software called go high level
+that I just mentioned which is $97 a
+month ignore this price down here that's
+for a higher tier which you don't need
+to get it has all this stuff including
+you know marketing email marketing SMS
+marketing making phone calls voicemail
+drops building websites building forms a
+whole bunch of other stuff and if you
+end up liking what you see here and you
+want to build your own bot which
+literally takes about 10 minutes or less
+and is so easy to do you can use my link
+down in the description to get it and
+I'm going to give you all of these
+bonuses which you can see right here all
+these scripts all these Sops hiring
+virtual assistants for only $5 an hour
+access to all nine of my courses access
+to my school Group which is $37 a month
+you'll get it for free and in that
+Community you get access to my weekly
+calls that I do on a weekly basis where
+I can help you set up your chatbot look
+at your sales calls look at your
+websites look at your automations and
+help you build stuff out if you use my
+link I'm even willing to get on a call
+with you privately and set up these chat
+Bots with you you'll get my ebook and
+audiobook all my automations and stuff
+that'll help you overall Advance your
+business with the use of automations
+advertising delegating your tasks and a
+bunch of other stuff some quick
+credibility I've helped a lot of people
+make a lot of money as you can see right
+here I've been featured on Yahoo finance
+investors Observer market watch and
+Morning Star this video is actually
+going to be a clip from one of my
+coaching calls that I do on a weekly
+basis and by the way if you don't use my
+go high level link if you already have
+go high level you can upgrade using my
+link or if you want to stick to what you
+have you could still join my school
+Group by going to school.com ghr and
+just join for $37 a month while it's
+still that price before it goes up to
+197 a month also towards the end of the
+coaching call I talk about how to
+generate AI images whether for
+thumbnails like this thumbnail that you
+saw Here on YouTube or if you want to
+use them for advertising you're
+definitely going to love that part of
+the video so stick around to the end to
+see that so like I said this is from one
+of my coaching calls and unfortunately
+the audio is a little bit weird for
+about 3 or 4 minutes so I was
+considering not uploading this but I
+said some really really good stuff and
+showed some things that I feel like I'm
+going to forget if I make another
+YouTube video about this so please bear
+with me watch through it you're going to
+get so much value comment down below
+asking any questions that you have and
+comment thank you for making this video
+and if you want more content about go
+high level about building websites
+automations hiring virtual assistants
+make sure you subscribe and if you end
+up liking this video definitely like it
+let's jump into the video now so we're
+going to be talking about the
+conversational AI bot this is actually
+just recently launched about three weeks
+ago brand new I've been playing around
+with it um I'm fairly new to it
+myself but I've been planing that I
+think is pretty cool so there's two
+different types of AI Bots with Co high
+level hey
+danella there's two different Bots okay
+you got your conversational Bots which
+could basic basically just be like
+customer service okay and then you also
+have the booking Bots which can actually
+book people on to your calendar okay so
+let me just drop a quick link into the
+school chat too so everybody has the
+link it is going to be fun this is one
+of my favorite features so far I think
+this is going to take off this is
+probably going to put a lot of
+appointment Setters uh out of jobs once
+it starts to get really really Advanced
+so this is where you go you if you're in
+your go high level settings go to
+conversation AI okay and then go to bot
+settings you can do trial which is
+pretty cool where you can actually
+practice and spend time with your Bots
+and see how they handle conversations
+and then you also have bot training
+where you could take FAQs from your
+website you could take body else's
+website let's say you have clients that
+you're actually building a spot for take
+those websites and upload it if let's
+say you know Bri you guys are offering
+virtual assistants you could take a
+whole bunch of um articles that talk
+about what virtual assistants can do
+Filipino vas and stuff like that take a
+bunch of links upload it here and then
+click get data okay and then it's
+actually going to start to grab all that
+data from these websites to train the
+bot so that it could start doing
+customer service okay and then you can
+also configure the intent and say you
+know whether or not you wanted to
+actually do appointment booking okay and
+as far as the bot setting goes you can
+either do suggestive or autopilot right
+we got Joshua joining what's up
+Joshua doing good we got the
+conversation AI so if you want to set
+this up on your go high level this is
+how you do it you go to your settings
+you go to you go to conversation AI uh
+you'll be able to set this up right here
+so I was actually just mentioning that
+you can actually do a trial and actually
+chat with your chatbot and test out how
+it would handle conversations this could
+do both customer service and do bookings
+you could do training where you actually
+upload FAQs and upload various websites
+that you have maybe even articles about
+some of the services that you provide to
+train up the bot and then you can also
+configure the intents right and have it
+do appointment book appointment booking
+from here as well and you can actually
+have it book you could choose whether or
+not you wanted to actually send a
+booking link right if you wanted to send
+a booking link rather than just booking
+directly into your calendar it could
+just send a booking link and let the
+customer or Prospect book themselves you
+can also pause the bot after booking
+some people like to do this because they
+have automations after somebody
+books right most people have automations
+after they book so you might want to use
+this feature here and then you can also
+yeah you could pause it for a certain
+amount of days and then after those
+certain amount of days it could
+reactivate and then you could trigger
+trigger another workflow after booking
+and select the workflow that you want to
+trigger after booking which is pretty
+cool now as far as editing the prompt
+right support and general uh uh question
+and answer this would be basically be
+like a customer service bot so I can
+edit the prompt and enter in everything
+that I want them to do right so I could
+say you know answer questions about
+virtual assistance typically we offer
+four to5 doll an hour virtual assistance
+and we go and we typically find them in
+the Philippines and da da your goal is
+to just chat with them see if they have
+any further questions questions and ask
+if they're looking to book a call you
+know Point them in the direction of
+Joseph they're going to be chatting with
+Joseph and d right so this is one way to
+do it and it's very very simple you turn
+it off and it starts messaging just like
+you saw Joshua you were texting me and
+for like an entire day I had no clue
+that my bot was just texting you and
+you're were like oh this is confusing
+what are you talking about that was just
+my bot just taking over I didn't realize
+I activated it and it was just having a
+full-on conversation with you which is
+hilarious um so you also have advanced
+settings right so you can actually put
+your business name here as far as
+autopilot mode goes you can choose how
+quickly you want it to respond so you
+can make it to where it's instant which
+I wouldn't recommend i' typically
+recommend about about two minutes to
+make it as natural as possible okay so
+two minutes I'd say you could do three
+or four if you want maximum messages a
+bot could send to a contact the absolute
+Max that you could do is
+25 okay so I recommend just doing 25 it
+shouldn't time you shouldn't prefer that
+it times out sooner because sometimes
+people have a whole lot of questions
+before they book with you so you don't
+want it to time out too early so 25 is
+the max so I choose 25 you'll notice
+here that you can't do any more than 25
+you could send bot to sleep when I send
+a message so basically Whenever I send a
+message the bot will be put to sleep and
+let me continue the conversation so I
+could set this to be four hours I can
+make it wait one day or a couple minutes
+so I could do 24 hours if I want so
+that's what I would turn on because last
+thing that I want like Joshua when you
+and I were having a conversation I think
+the AI bot still chimed in um actually I
+think it didn't because it turned off
+when I sent this message I had this two
+hours on so you don't want to start
+chiming in and saying you know a bunch
+of different things while we're still
+having our conversation that would be
+stupid now typically it's about two
+cents per response which is really cool
+okay very very affordable um it's
+basically like an AI assistant I mean if
+we do the math on this even if we're
+sending let's say you know 2,000
+messages per month that's going to come
+out to 40 bucks okay you're guaranteed
+going to be paying an assistant
+significantly more than that even if
+it's sending 10,000
+messages that's going to end up
+being I mean this is easy math but yeah
+200 bucks got to make sure 200 bucks so
+50 bucks a week okay so you can either
+have a real person the great thing is
+you can also set this to turn off at
+certain times so I could say during
+business hours and I'm going to show you
+how to do that in a minute here you're
+not you're not able do it from these
+settings it looks like but I'll show you
+how to actually set specific times that
+could work so we got
+charil what's up
+charil we're talking about
+conversational uh AI here you came a
+little bit late so I'll send you the the
+recording afterwards by the way whenever
+we have these calls all the recordings
+are always placed in the coaching call
+recordings within the courses okay so
+the next way that you could do this you
+go to your
+automations okay so let's go to
+automations let's go to create workflow
+start from
+scratch and let's say the trigger is
+going to be when a customer
+replies okay so we'll do customer
+reply and you can also add filters and
+it could be like people that only have
+like a specific tag or something if
+that's what you want so I could say has
+tag you know let's say they come from
+Facebook right so it'll be Facebook lead
+this is just an
+example and then you would come here and
+you would look up booking right the
+appointment booking conversation AI bot
+Eliza AI appointment bot this one's kind
+of outdated don't use this one this one
+doesn't really perform perform well and
+is also more expensive I think it's like
+six cents per
+message the appointment book and
+conversation bot this is the one that
+you're going to be using so you'll
+actually choose the calendar that you
+want them to book on to so in my case it
+would be this
+you're going to create the personality
+so you could say like you're really
+funny you make jokes every other message
+or like you like to crack jokes a lot
+and keep the conversation going um if
+they end up not messaging you you you
+crack jokes in terms of like hey where'd
+you go is everything all right you want
+me to order an ambulance or something
+call an ambulance for you you know you
+can give all different types of
+personality traits and things that they
+could say and maybe some of the
+additional stuff that I was mentioning
+you can also add into the additional
+instructions so personality I mean you
+could literally use chat gbt to create
+like a really good customer service
+personality to say hey I'm I'm creating
+an appointment seter bot can you lay out
+some sort of uh standard personality
+type of someone would who would be
+really humorous but would book me a
+whole bunch of appointments and is
+really eager to get an appointment okay
+and then for additional instructions I
+could literally just brain dump into my
+additional instructions so I'm going to
+start just like literally typing
+everything about my service is what we
+do what the goal is who they're going to
+be talking to you know don't don't say
+the price via text let them know that
+they're going to have to get on a call
+if they want to figure out the price
+because we have different packages it's
+not one siiz fits-all okay literally
+everything you could possibly think
+about your service maybe even services
+that you won't be selling on the call
+like if they have questions about maybe
+mini courses that you have or other
+products that hey if you don't want to
+book an appointment why don't you just
+take a look at our our course that we
+have here we have a course for five
+bucks I can give instructions like that
+as well okay I could even put the link
+in here I could put the link in here for
+them to be able to uh go and buy that
+course I think that option is a little
+bit buggy but it's something that you
+could play around with okay and test out
+so same thing is here right maximum
+limit 25 okay limit is five to 25 as you
+could see here as far as timeout value
+if so this is the time for which the bot
+waits for a reply okay so it's going to
+wait and if if I understand correctly
+and from what I've seen so far this
+means that it's it's going to send
+another message if they don't answer
+okay so you could set this to 24 hours
+you could set it to three hours two
+hours six hours I would recommend
+probably three to four right if they
+don't message back in three to four
+hours I want them to uh to to message
+again now I haven't tested this one too
+much I'm going to come back to this on
+our next call and we'll chat about this
+I I need to make sure that timeout means
+that it's going to send another message
+versus it just times out and stops
+talking because I don't want that to
+happen but I'm pretty sure this is the
+case and I'm not sure whether I don't
+have more information here okay so same
+thing units uh minutes days so just
+based on the fact that they allow you to
+do minutes I'm assuming that it's going
+to send another message now as far as
+channel the coolest thing about this is
+that you can connect your Facebook
+Messenger you can connect your Instagram
+DMS and you can also have it do it for
+SMS so if you wanted to connect your
+your Instagram DMs
+and start running Instagram DM ads and
+have an appointment set or talking to
+everybody that comes through immediately
+when they come through through Instagram
+you can have an appointment set are
+booking appointments for you through
+your Instagram DMS with this AI okay so
+you can create three separate automation
+workflows one for SMS one for Facebook
+one for Instagram all with different
+settings okay maybe you want the the
+timeout to be a little bit less for
+Instagram because people are quick to
+just jump to the next thing when it
+comes to Instagram versus being able to
+text them okay maybe uh if we go up here
+maybe you want it to time out after uh
+you know 20 messages 15 messages if it's
+Facebook who knows right so I recommend
+doing different
+workflows for each uh platform okay so
+let's say in this case it's just SMS now
+if you if you want the automations that
+you have set in place for if someone
+books an appointment with you to kick in
+and that the AI doesn't continue to have
+a conversation after they book then
+you'll click this check box here because
+you don't want it to say hey we just
+booked your appointment because you have
+an automation that does that and then
+also the AI Bots also saying okay cool
+your appointment's confirmed and then
+they get two confirmation uh things so
+this wouldn't replace the old igdm
+strategy because that's cold DM this is
+not cold DM this is uh this is for
+someone messages you first yeah so as
+far as timeout goes uh this is still
+more stuff that I have to play around
+with
+okay so I haven't really touched this
+too much looks like it's actually uh
+grayed out but this is more stuff that
+I'll touch on and continue to create
+more videos I'm also making videos that
+I post on YouTube as well so you can go
+there I'll also be posting a whole bunch
+of course content within the community
+so now at this point I'd just like to
+open up the floor for any
+questions awesome
+Bri uh yeah so um right now I've got uh
+Christine calling people um and
+sometimes they'll like send a message
+back something like hey can you just
+text
+me and can I have like a bot take over
+at that point so she can just keep call
+okay yep so yeah if customer replies and
+it meets the criteria that you have said
+in the workflow so if they have a
+specific tag or something or you have it
+complet you can have it completely open
+I don't recommend that because sometimes
+you'll get random like spam Bots calling
+you and texting you you don't want
+everybody you know getting the bot
+because then you're just wasting money
+so make sure that whoever's you know
+going to be texting you that you want
+the AI bot to kick in for matches with
+that tag so use only tags that you
+actually use within the workflow so you
+could definitely do that that'd be a
+great option and then she can continue
+to call and then AI will take over
+that's a really great way to pair your
+appointment seter along with this AI bot
+that'd be really
+awesome okay
+you can also add more workflows here so
+I could say you know if they timeout I
+can have it add a timeout tag and I can
+make it do something else I can make if
+they time out so okay here we
+go okay this kind of answers my question
+remember we were talking about the
+timeout value here so this is what you
+can you can make something happen here
+if they time out so for instance I can
+add a tag that says time out and then I
+can create another
+workflow where if they get hit with the
+tag
+timeout it starts to bot all over again
+and does another followup right so I I
+can create a whole entire other workflow
+where if they get hit with the timeout
+tag the AI bot starts again and sends
+them another message which would be
+pretty cool Joshua you had a
+question yes does this um to get this is
+it only in your version of go high level
+no any any go high level could do this
+so I've been using chat GPT aggressively
+for my YouTube thumbnails okay for my
+YouTube thumbnails and you'll notice
+here we can create some really really
+cool images right so this is a guy
+staring at a camera I mean this would
+definitely get somebody's attention
+right this would definitely 100% get
+somebody's
+attention is this the paid version of
+chat gbt yes it is if you don't have the
+paid version I think you're able to
+generate like one photo and then that's
+it if you go to meta and let me actually
+show you a couple other cool photos that
+created because you can also it's 20
+bucks I think it's 20 bucks it's like 22
+or something like that you can also
+create like cartoonish images clation I
+say I say Pixar themed a lot and I
+always like to do like shocked faces
+same thing with advertisements if you
+guys are going to start doing
+advertisements and you want people to
+actually click on the photos and
+actually opt in always tell uh Chad GPT
+to either create like really crazy faces
+or really shocked faces I like to have
+cash flying all over the place all the
+time lights and clouds and smoke and
+stuff uh I always like a nice view in
+the background if we're in a in a room
+right let's see some other images I've
+created let's see this is crazy right
+tell me this wouldn't be captivating
+only issue here is that it created a
+baby for some reason I didn't ask it to
+create a baby so sometimes it gets kind
+of weird uh with stuff like that but as
+long as you keep on tweaking it over and
+over again like you'll come up you'll
+come up with some really cool images I
+mean I could do this all day long it's
+so fun let me see what else I came up
+with there's one other photo here yeah
+these are a couple later ones so let's
+look at metad doai there's a couple cool
+things that we um came across last time
+that we looked at this let me actually
+take this prompt and put it in here all
+right so let's see whenever you're
+generating a an AI image the coolest
+thing about
+meta is that you can turn these images
+into
+photos right so let's look at this this
+is a guy yeah this is that is this is
+actually really good look at
+this WOW kind of Super HD so now let's
+let's click on animate watch
+this and if you take this yeah it's
+going to be about that's crazy if you
+take this this is about maybe three or 4
+seconds if you take this download it put
+it in cap cut and make it repeat over
+and over again for 15 seconds instead of
+you know 4 seconds because you don't
+want an ad that's four 4 seconds long
+because then it's going to just play for
+four seconds and it's going to
+immediately pull a button up you want it
+to kind of play out a bit so they could
+read stuff and see what's going on and
+then decide if they want to click the
+button so I could take an image like
+this I could download it put it on cap
+cut make it repeat itself three or four
+times to create a 15c to 20 second
+advertisement and then add some words on
+it so I could say you know this is how I
+scaled my business whatever it wouldn't
+actually say that but come up with
+something that's better of course let's
+look at some of the other ones and see
+what else we can
+animate uh let's go back
+here let's take a look at this one
+animate this see just how crazy this
+gets it's also interesting to see what
+meta would do
+versus Dolly on chat gbt yeah this is
+kind of crazy wouldn't his eyes look
+really really
+weird I probably wouldn't use this
+one is hilarious but yeah so far you
+guys liking this pretty crazy stuff if
+you ended up liking that video and you
+want to get your own AI chatbot make
+sure you sign up for go high level using
+my link down below so you get all those
+free bonuses that I mentioned right here
+feel free to pause if you want to read
+through it and if you already have go
+high level or don't want to sign up for
+go high level but you still want access
+to my courses in community I have nine
+courses I do weekly calls go to
+school.com HR to learn a little bit more
+about what's offered in there I know for
+a fact you're going to love it and it's
+such a crazy crazy cheap price cuz I
+used to sell these courses for multi
+thousands of dollars a pop so join in
+now definitely get go high level I'll
+see you on the other side

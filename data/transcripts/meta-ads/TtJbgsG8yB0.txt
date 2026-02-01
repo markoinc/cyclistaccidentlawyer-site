@@ -1,0 +1,1524 @@
+# Ultimate Facebook Ads Guide for 2025 Beginner Walkthrough
+# Video: https://www.youtube.com/watch?v=TtJbgsG8yB0
+# Category: meta-ads
+
+I've spent millions of dollars over the
+last couple years on Facebook ads alone
+and if you're completely new to Facebook
+advertising you stumbled across the
+Right video by the end of this video
+your account is going to be fully set up
+and you're going to have an
+advertisement ready to launch make sure
+you're following along while you're
+watching this video and setting it up
+step by step that way your account is
+set up properly and trust me when I say
+this it's 2025 and Facebook ad campaigns
+are easier to set up than ever all right
+with that being said let's get right
+into it the very first thing that we
+have to do and it's kind of boring but
+it is super super important to set this
+up properly what you need to set up is
+your Facebook business manager account
+so if you don't have one of these
+already then just follow these super
+easy steps you're going to go on
+facebook.com for business you're going
+to log in with your personal account now
+a lot of people ask me you know if I'm
+using my personal Facebook that's linked
+to my Instagram do people see this that
+follow me and the answer to that is no
+your personal Facebook and your personal
+Instagram account even if they're link
+to your business account people cannot
+see what you're doing on the business
+side of things you don't have to worry
+about any of your followers seeing what
+you're doing on the business side of
+Facebook so once you're on the business
+for Facebook page all you're going to do
+is sign up log in with your Facebook
+account and then you're going to be good
+to go now once you log into that you're
+going to get on the business manager
+side of Facebook so this is where you're
+going to link all of your pages your
+Instagram accounts for your business as
+well as setting up your ad account here
+before we can actually move into the fun
+stuff which is just setting up the
+campaigns so on the left side here
+you're going to see your pages your
+people your partners your ad accounts
+basically everything that is able to be
+managed on Facebook business and the
+structure that they have on Facebook is
+technically your personal account and
+then your business manager accounts and
+then underneath those are your ad
+accounts your pages that are linked to
+that specific ad account as well as your
+Instagram account so that's kind of how
+the structure is laid out you really
+only need one business manager account
+right now if you are just starting off
+but what's really really important is
+when you get into this page and your
+business manager is set up is that you
+need to have your Facebook page and your
+Instagram account linked to that ad
+manager account so under the account
+section here if you look at pages and
+you don't have one up yet which I'm
+assuming you don't if you're brand new
+to Facebook advertising all you have to
+do here to set it up for your business
+is go on to the right side and click on
+ADD and then here you can add an
+existing Facebook page request a shared
+access to a Facebook page if you're
+managing the account for someone else or
+if you're completely brand new you'll
+just create a new Facebook page when you
+create a new one for your business all
+you have to do is enter your page name
+the category the bio confirm the page
+and you are done you can set up
+everything later you can add all the
+images the details that is all up to you
+you treat that Facebook business page
+like an Instagram business account once
+you have that Facebook page set up the
+next thing that you want to do is set up
+your Instagram accounts so if you go
+under the section here that says
+Instagram accounts if you don't have one
+for your business you have to add one
+you technically can run Facebook ads
+just off of a Facebook page but if
+you're selling products online whether
+they're digital or physical products
+you're going to want an Instagram
+account as well it's better to have an
+Instagram presence and while you're
+running your advertisements your
+Instagram account is naturally going to
+grow just from people seeing your paid
+traffic now we need to do the exact same
+thing that we did with the Facebook page
+we're going to click on ADD at the top
+right if you already have an existing
+Instagram account you you can link it
+here if you want to create a new one
+you're going to go through that exact
+same process just set it up with the
+same business name that you use for
+Facebook agree to the terms set up that
+account and of course later on down the
+road you can start posting on there as
+well add the link and bio all of that
+stuff but for right now to set up our ad
+account in general we just need to have
+these Pages linked onto our ad account
+once you've got that set up you're going
+to want to move over to ad accounts so
+under your account section go into ad
+accounts on your Facebook business
+manager you're most likely not going to
+have any accounts here so what we're
+going to do again is ADD you're going to
+create a new ad account and then you
+would add the ad account name so you can
+have the account name as test Shopify if
+you're using Shopify hit next this ad
+account is going to be used for my
+business unless you're doing this as an
+agency then it would be another business
+or client go ahead and hit next it's
+going to say hey this is your Shopify
+business manager the BM account and
+underneath that account which I was
+talking about earlier will be your ad
+account so this one you can see here is
+under it and it's called test Shopify
+I'm going to agree and click create the
+account now here it's going to ask ask
+you if you want to add payment info onto
+your account so they charge credit cards
+or PayPal to run your advertisements now
+you don't have to do this right now you
+can if you want to I would recommend
+just getting it out of the way by adding
+a credit card or your PayPal once you
+finish that up you're just going to go
+ahead and hit done and now you've got
+your test Shopify account that we just
+assigned here so our connected assets we
+don't have any connected assets yet now
+what we need to do is connect that
+Instagram account that we created and
+your Facebook account to this ad account
+to be able to manage it inside the ads
+manager we're actually going to be
+connecting the Facebook page and the
+Instagram account during the setup
+process in the ad manager under our
+campaign so we're actually going to be
+coming back to that and the next thing
+that you want to do is have a pixel
+assigned to your account as well for
+those of you that don't know a pixel is
+a line of code essentially that is
+collecting data from your website and
+sending it back onto Facebook ad manager
+this is how they record purchases clicks
+add to carts basically all the
+information that you need to know when
+you're running your ad campaigns you can
+either set up your pixel on the back end
+of your business manager right here or
+you can set it up during the campaign
+process as well so to do this on the
+back end we're going to go down to data
+sets then we're going to click on ADD
+and then we're going to create a new
+data set so it's going to be test
+Shopify if we're using our Shopify store
+uh we don't need to request a demo of
+the conversion API Gateway we're just
+going to go ahead and hit create now
+you're going to see your new pixel here
+it's going to say test Shopify so what
+we need to do now is connect our assets
+so we're going to click on connect
+assets again at the top middle right
+here click on other business assets then
+we're going to sign it to the ad account
+that we just created so this is the test
+Shopify one hit add and now our pixel is
+linked to that ad account but if you are
+running a store on Shopify you do need
+to log into your Shopify account and add
+the Facebook sales app when you install
+that app on Shopify you're going to log
+in with the exact same Facebook login
+information that you did here and then
+you're going to choose that business
+manager that you just created your ad
+account that you just created in the
+pages and that pixel will actually
+populate on Shopify as well you'll check
+that box and it'll be installed onto
+your Shopify Shopify store if that's
+what you're using if you're using a
+different third party platform besides
+Shopify you essentially would do it the
+exact same way and if they don't have an
+app on their platform for whatever
+reason you can manually add the line of
+code for that pixel onto the header of
+your website in the HTML file and I know
+that's a lot and most people are using
+Shopify I wouldn't worry about that too
+much but if you are using a third party
+I'd probably switch over to Shopify and
+if you don't want to do that then you
+can manually do it that way so now we've
+got our pixel set up our ad accounts our
+pages and Instagram account now we're
+pretty much good to go to start running
+ads and creating our first campaign so
+from the business manager we're going to
+click on ads manager and now the ads
+manager is going to bring you here so
+this is where you're going to manage all
+of your advertisements check on all of
+the metrics set your budget your
+strategies everything is pretty much
+hous in here this is where you're going
+to live if you're running paid ads I'll
+cover the metrics and what each one kind
+of means and what you should be looking
+for when you're running your campaigns
+to see if they're performing well or not
+later on in this video so make sure to
+stay around for that because it is super
+simp super important to be able to read
+your analytics and your metrics
+correctly so Facebook ad campaigns are
+set up in a three- tier type of system
+so there's the campaign level there's
+the ad set level and then there's the ad
+creative level the campaign level is
+just the overarching objective of the
+campaign there's not too many settings
+there it's basically do you want to run
+a sales campaign to try to get people to
+purchase from your website or do you
+want to run an engagement campaign where
+you're just going to get a bunch of
+views on a video the adset level is
+where you do all of your targeting so
+the age demographics the location the
+placements of the ad essentially who you
+want to Market to and then the ad
+creative level is where you upload your
+image or video that you're going to be
+running you're also going to edit the
+captions of the video or the
+advertisement in the link to where they
+should go after they click so like I
+said earlier it's 2025 and Facebook ads
+have really mastered making this as easy
+as possible there's no crazy strategies
+anymore everything is super simplified
+and pretty much done for you and it's
+kind of just plug andplay so let's set
+up our first campaign now so what we're
+going to do is click on create at the
+top left it's going to bring us to the
+campaign objective now the buying type
+we're always going to leave at auction
+you want to have Facebook auction off
+their ad space this is how you get the
+lowest cost per purchase and the lowest
+bids on Advertising now to choose our
+campaign objective there's awareness
+traffic engagement leads at promotion in
+sales awareness will just show your ad
+to as many people as possible but it's
+not optimizing for sales and if you
+choose awareness do not expect to get
+any sales on your website it's just
+going to be probably a bunch of Click
+Farms to be honest with you or even if
+they are real people there are people
+that are most likely not going to
+convert on your website and you're kind
+of just wasting your ad spend that same
+goes with traffic do you want people to
+click onto your website and not do
+anything then go for traffic engagement
+campaigns can be useful if you're
+running leads or top of funnel messages
+if you're selling a digital product or
+something like that engagement and leads
+are pretty similar to be honest with you
+app promotion is essentially just
+getting people to install your apps so
+people that are most likely to install
+apps from an ad they see but where 99%
+of us are going to sit and live is going
+to be in our sales campaigns if you're
+running an Ecom store or you're selling
+anything at all you're going to want to
+run a sales campaign what it's doing is
+telling Facebook to run the
+advertisements to people that are more
+likely to purchase people that have
+history from clicking on ads and
+purchasing on Facebook I recommend
+always doing this unless you have some
+reason to do another campaign objective
+which I don't think if you're watching
+this video you probably need any of
+these so we're going to click on sales
+and we're going to click on continue now
+there's two options for our campaign
+setup we could do Advantage Plus
+shopping camp campaign or a manual sales
+campaign a vantage plus shopping
+campaign has very limited options to
+choose from all of the options are
+pretty much chosen for you it's really
+quick to do but I personally like to go
+to the manual sales campaign because I
+like a little bit more control and
+optionality when I'm running my
+campaigns so with that being said I
+recommend doing a manual sales campaign
+in the beginning and now it's going to
+take us into our campaign editor so
+we've got our campaign level right here
+is the first step that we need to fill
+out and remember what I was talking
+about earlier there are three different
+levels to the camp campaigns here we've
+got The Campaign level we've got the
+adet level and we've got the ad creative
+level now keep in mind you can run
+multiple ads sets under one campaign so
+for example if you wanted to duplicate
+this you could add it you could
+duplicate it right here and then there
+would be two ad sets with two add
+creative levels underneath each one you
+could use this to AB test maybe one of
+them you want to test uh people that are
+18 to 25 and one that is 25 to 35 you
+can create as many ad sets as you want
+but what I recommend doing if this is
+your first time running Facebook ads is
+is to stick with one campaign one adset
+level and then multiple creatives
+underneath that to see which one
+performs the best so with that being
+said let's name our campaign so it's
+going to be our test Shopify campaign
+you can name this whatever you want I
+recommend naming them something that has
+to do with your targeting in your ads
+within this campaign so for example for
+this campaign if I'm doing 18 plus and
+us-based people only I could label it
+right there that way you don't have to
+dig deep and see what you were targeting
+at the time to see if it was performing
+well or not it just makes it a little
+bit easier when you start running a
+bunch of different campaigns now the
+next section is special ads category
+this is for if you want to declare a
+category like employment housing social
+issues politics Financial products uh
+most of the time if we're selling a
+physical product you don't need to
+declare anything so 100% the time for me
+I skip over this but if you fall into
+that category then this is where you
+want to um identify that now moving
+below that is the campaign details we
+don't need to change anything here cuz
+we already selected these options we've
+got the auction and the sales campaign
+below that is the Advantage Plus Catal
+ads so if you have your Shopify store
+linked and you have catalogs on your
+Shopify store you can run specific
+Advantage Plus catalog ads only so it'll
+pull products from that Shopify catalog
+and place them into the creatives for
+you if this is your first time I don't
+recommend testing this out we don't want
+to run a catalog ad you're most likely
+just running an advertisement to a
+specific product so we're going to leave
+this one off and the next option is
+Advanced campaign budget which used to
+be called a CBO AKA campaign budget
+optimization and so what this means if
+you turn this on and there's a budget
+here if you have $20 daily budget what
+this Advanced campaign budget means is
+it's going to take this $20 and let's
+say you have five ad sets here and and
+five creatives under each of them it's
+going to take this daily budget of $20
+and distribute it throughout those adets
+and AD creatives how it sees fit
+Facebook is going to work to identify
+which one it thinks is performing the
+best and then it's going to spend more
+of that money in that one and then Less
+on the other ones now Advanced campaign
+budget can be really really powerful if
+you have multiple winning ad creatives
+already established you can pop in all
+of your winning ad creatives under
+different ad sets and move them into an
+advanced campaign budget so wherever
+Facebook decides to spend that allotted
+amount you're most likely going to get
+some really good cost per purchases
+because you know there's five winning ad
+creatives in there already but of course
+if you're just starting off and you're
+running just one or two ad creatives
+underneath the ad set you don't need to
+have this on now AB testing option does
+exactly that so AB test for you but
+we're going to kind of manually be doing
+that with our ad creatives if you're new
+to advertising or you're advertising a
+new product the first thing that I
+always want to do and recommend everyone
+do is to test ad creatives against each
+other first if you only create one ad
+creative you're just spending all of
+your money on one creative and you're
+hoping that it works and it resonates
+with the audience if you've got five ad
+creatives then there's five options for
+the audience to choose which one they
+like the best so what I personally like
+to do if I'm testing a brand new product
+is I'll have five different ad creatives
+with five different marketing angles in
+each of those ad creatives so if I'm
+selling a jade roller for for your skin
+for example the five creatives that I'd
+come up with with five different
+marketing angles could be one that is
+emphasizing how it reduces skin redness
+the other one is maybe reducing fine
+lines and wrinkles and so on and so on
+so all have five different kind of hooks
+and also angles on that advertisement
+and those are going to be testing
+against each other and then whichever
+one is winning or has the most sales
+that'll indicate to me that that's what
+the audience in the market wants they
+want to reduce fine lines and wrinkles
+they don't care about skin redness and
+then from there I'll go into optimizing
+the landing page for the fine lines in
+wrinkles angle and then I'll start
+cranking out a bunch of other new
+creatives with that same angle but with
+different styles and then I'll test
+those against each other but that's a
+little bit later on down the road for
+right now we're just going to be setting
+up this campaign here so those are the
+only options that we need to do on the
+campaign level so we filled everything
+out we really didn't change anything
+we're going to go ahead and hit next now
+this brings us to the adet level so the
+adset level again is where you're going
+to be doing your targeting so for this
+example it's 18 plus is what we're going
+to be advertising to and we're going to
+be doing it uh in the US only so same
+thing with titling your campaign you
+want to make sure that your adset is
+titled in a way that you're going to
+remember it and you know exactly what
+you're targeting now scrolling down to
+the conversion section there's website
+and Shop there's website app website and
+app message calls website and calls so
+most of the time you're going to be
+wanting to do either website or website
+and shop now the difference between the
+two of these options here is website and
+Shop will also allow the customer to
+shop directly on Instagram or Facebook
+if you have your Facebook shop and your
+Instagram shop set up and to set that up
+and if you want to do that you do have
+to apply on your Instagram account and
+they have to verify your products and
+verify your account and make sure that
+it's all legit and make sense and then
+they will grant you access to Instagram
+shop where then you can run ads to it
+shopping on Facebook and Instagram can
+be really profitable sometimes because a
+lot of people don't like leaving the app
+they want to just you know make a quick
+purchase but there's also times where
+your product makes more sense to
+actually send them to the website if
+it's a higher ticket product or you need
+to really emphasize the marketing angle
+that you're running you might want to
+send them to your Landing page that way
+they can learn more about your brand
+your product and why they need that
+product I personally like to send them
+to the landing page so we're going to be
+using website as the conversion metric
+here now scrolling down to our
+performance goal we want to maximize the
+number of conversions we don't want to
+maximize the number of landing page
+views we want people to come onto our
+website and purchase from us that way we
+can be profitable now for the data set
+section this is where we add the pixel
+that we just created this one I did not
+have a pixel so I'll do it again I
+thought I already added it but maybe not
+now for the data set sections this is
+where we're going to select the pixel
+that we just created the one that we
+linked onto our Shopify store or
+whatever third party website you're
+using this is where it's going to show
+up mine says inactive cuz it's test
+pixel if you already have your website
+up uh just click it a couple times make
+sure it's linked correctly and it'll say
+it's active once it starts tracking some
+data make sure you click on the right
+pixel if you've got multiple you don't
+want to mess that up now for our
+conversion event this is what we want to
+mainly track and there's a bunch of
+different options but what we care about
+the most in e-commerce and selling
+products is obviously purchases we want
+to make sure that that is set we want to
+receive the metrics and optimization for
+purchases what that means is when you
+start running advertisements on Facebook
+the more purchases that come through and
+get collected by your pixel the more
+robust your pixel becomes it starts
+learning from those purchases
+identifying those customers and it
+starts optimizing and getting better and
+better because it learns about the
+people that are purchasing and it starts
+showing your ads to people that look
+like the people that have purchased
+that's super super important and always
+know that in the beginning Facebook
+might take a little bit of time before
+it start starts optimizing before you
+get your first purchase and before your
+pixel just gets better and better as it
+builds that data now if you have this
+error like me because it's a new pixel
+you can set up your conversions here if
+you haven't done so already when you set
+up your pixel but you're going to track
+your conversions with standard events
+your event code we're going to leave at
+e-commerce and retail for the most part
+so it's going to track all of these
+things we'll just hit done and now our
+pixel is set up and you should test it
+just in case is not firing correctly or
+you didn't install it correctly once
+that is linked the cost per result goal
+is the next option we have no idea what
+the average cost per purchase is going
+to be if you have a brand new account
+but if you're curious what this means is
+if you are trying to get a cost per
+purchase of $15 you can type in $15 here
+and then Facebook is going to try to get
+that for you but don't think that you
+can just put a dollar and Facebook is
+going to go after a ton of people and
+you're going to get dollar cost per
+purchase that is not how that works at
+all actually most of the time whenever I
+set a cost per purchase goal it actually
+never works and hardly spends any money
+at all you really want Facebook to run
+free and make the best decisions that
+they can without narrowing down your
+audience to people that they think will
+hopefully purchase for just a dollar and
+AD spend it's very unrealistic and most
+of the time it just doesn't actually
+work or spend money the next option that
+we have here is the dynamic creative
+where Facebook will automatically create
+combinations of your media and texts
+that your audience is likely to respond
+to I don't really like doing Dynamic
+creative too much and plus also it's
+going away soon so I would just leave it
+off for now you just want to do some of
+this stuff a little bit more manually
+now going down to the budget and
+schedule section this is how much you're
+going to spend daily or you can have the
+option to do a lifetime budget let's say
+you had a campaign you're willing to
+spend $500 that's your maximum you could
+set this to$ 500 and after it hits that
+spend it will automatically turn off I
+don't like doing lifetime budgets I just
+like monitoring them daily so what I
+would recommend doing is starting off
+with just your daily budget and remember
+what I was talking about earlier this is
+an adet budget we have $20 on it right
+now so anything that's under this
+specific adset will have $20 allocated
+to it so if you have three creatives
+that we're testing under this ad set
+it's going to take $20 and spend it
+however it sees fit on these creatives
+one could get $10 another one could get
+five and the other one could get five
+it's going to try to figure out which ad
+is performing the best and the audience
+likes the most and so you're going to
+see one do better than the others it's
+very similar to The Campaign budget
+optimization but just at one more level
+down now a lot of people ask me how much
+money should I spend on Facebook ads per
+day this is totally up to you and your
+budget and what you're willing to spend
+in test now I do recommend having a
+minimum of $25 it collects your data a
+little bit quicker I personally test
+with like $200 to $250 but uh a lot of
+people don't have that budget or want to
+spend it but really the only difference
+between a $20 a day budget and 200 is
+that you're spending 10 times more per
+day but you're also collecting your data
+to make an educated decision on your ads
+10 times faster so I like getting my
+data quickly to make a decision but it
+can be a scary budget if you don't get
+any sales then you just blew all that
+money but you did buy one thing at least
+which is the data so I personally
+recommend going with 25 to start off in
+the beginning and also a lot of people
+ask me how much money should I spend
+before deeming an ad creative or a set
+uh you know a failure a really good rule
+of thumb is to spend at least three to
+five times your aov which is your
+average order value so if you're selling
+your product for $100 I would recommend
+spending $300 to $500 on Facebook before
+making any decisions at all it's going
+to give Facebook enough time to collect
+the data and then you can make a
+decision of how it's looking after that
+you might get two sales the first day
+and zero the next day or zero sales the
+first day and five the next day the more
+money that you spend on Facebook the
+better the pixel optimizes and the
+higher chances of you actually becoming
+profitable now another good rule of
+thumb is to let your ads run for at
+least a week and the reason behind that
+is for example if we're running a golf
+product and for some reason everyone
+buys golf products right after they go
+to the golf course and most people will
+golf on Saturday and Sunday on the
+weekend so maybe my highest converting
+days are on Saturday and Sunday but if I
+only ran my ads Monday to Thursday I
+might have missed out on the weekend
+sales and it actually could have been a
+winning advertisement but I just never
+gave it a chance to run through that
+entire week cuz people spend their money
+differently depending on on the product
+and what day they would buy things
+another example if you're selling
+alcohol it's probably higher likelihood
+to sell it on Friday and Saturday than
+it is on Tuesday so the same kind of
+philosophy in like a brick and mortar
+store kind of applies to online business
+as well if you guys are learning and
+enjoying this walkthrough so far make
+sure to subscribe leave a comment if you
+have a question it really helps me out
+it pushes this out to the algorithm more
+so I would appreciate that and also if
+you're brand new to online business and
+you want to get your first custom store
+made for you on Shopify for free I'll
+have that down below in the description
+as well you get a free mentorship with
+it in a free 35-minute course there's no
+catches there Shopify pays me to train
+you guys now moving on after our budget
+we've got the schedule so we have our
+start date and our start time you can
+also add an end date in end time if you
+only want to run the campaign for
+Father's Day you're going to end it
+after Father's day but most of the time
+unless it's a special holiday you're
+going to want to let it run forever
+until you turn it off so I don't really
+ever set too many end dates to be honest
+with you now the next option is budget
+scheduling so what this tool does is you
+can say between Mondays and Tuesdays
+from 8:00 a.m. to 12:00 p.m. spend the
+most money or only run our ads during
+that time now this can be a really
+really powerful tool later on down the
+road because like we were saying about
+the golf products if Monday through
+Thursday they're unprofitable but you've
+noticed that Friday Saturday Sunday you
+have a great return on your ad spend
+once you collect that information and
+make those educated decisions you can
+come back in here and say hey only run
+it on Friday or Sunday and just spend a
+ton of money and then maybe you only
+sell on Friday through Sunday that's a
+great example of why collecting your
+data is so so important in actually
+reading the metrics correctly but for
+now if this is your first time running a
+campaign we're going to leave this off
+cuz we don't have that information yet
+now scrolling down to audience controls
+this is where we can change the location
+of the targeting the minimum age
+excluding certain custom audiences all
+this is done right here so if you want
+to you know advertise to the United
+States as well as Canada you just type
+it in here and you can advertise to any
+country that you want I personally do
+usually the top five for me are Canada
+United States United Kingdom Australia
+and New Zealand those typically see the
+best conversion rates you just have to
+make sure that you're able to obviously
+ship your product out to those countries
+this is totally product dependent you
+know if people don't purchase your
+product in Germany for some reason it's
+only in the United States just choose
+United States here you can dive down
+even further I could say Scottsdale
+Arizona if I wanted to advertise only in
+Scottsdale if I'm a brick and mortar
+store or I'm selling a Scottsdale based
+t-shirt product or something like that
+you can advertise just to Scottsdale
+most of the time in Ecom we want to sell
+products kind of throughout the world or
+at least the United States so we're
+going to leave that as United States
+only the minimum age here you can change
+if you have a product that you know only
+resonates with people that are 60 plus
+you can change that here now down to the
+minimum age so this is where you can
+change the minimum age up into 25 you
+can't go past that in this section and
+this is usually for like you know if
+you're I guess doing a rental car
+business and you have to be 25 to rent a
+car you can click the minimum age is 25
+here but most of the time we're just
+going to leave it at 18 now excluding
+custom audiences if you're running a
+specific campaign your store has been
+going for a while and maybe you're
+running running a campaign and it only
+would make sense to show it to people
+that haven't purchased yet with that
+pixel data that you've collected you can
+put together a group that says everyone
+that's purchased in the last 365 days
+and then you could throw that in here if
+you want to advertise to everyone that
+hasn't purchased from you in the
+beginning you don't want to do this uh
+it's great for like retargeting
+campaigns and things like that but right
+now we don't need to mess with this
+languages up to you uh depends on you
+know the language that you are running
+uh your product to and also the
+countries a great example actually is if
+you're running a product um let's say an
+Italy but you don't have Italian
+advertisements then you can choose the
+language as English and it'll show it to
+people that have their Instagram and
+Facebook accounts set in English this
+actually can be a pretty nice tool if
+you're uh advertising internationally
+now we have Advantage Plus audience as
+the next step so they're automatically
+going to show ads to people that are
+most likely to respond Facebook's
+algorithm is very very powerful and
+they're really really good at
+identifying people that are most likely
+going to purchase I recommend running
+broad targeting if you're not familiar
+after iOS 14.5 update Apple basically
+lets Facebook collect less data the
+pixels got pretty bad and then Facebook
+had to essentially build all of their
+data back up again and it's really
+really good right now so pretty much
+every social media platform I recommend
+running broad audience targeting but if
+you want to you can do a suggestion and
+you can say you know specific age groups
+specific gender if that makes sense for
+your product and then detail targeting
+if you're selling a coffee machine you
+can plug in Starbucks here people that
+have an interest in Starbucks but again
+I don't recommend doing this as
+counterintuitive as that sounds it's
+just better right now to run broad just
+just trust me on this one now now going
+down to placements this is where you can
+choose where to run your advertisements
+right now it's on Advantage Plus but you
+can do manual so manual you could say
+only on Facebook and only on Facebook
+video or Instagram but only on Instagram
+stories you can choose these options
+here I just leave them wide open
+Facebook knows where to send it they're
+just really good at that but for some
+specific reason if you want to only run
+it on Instagram that's how you're going
+to do that so we're going to leave this
+one on Advantage Plus and a lot of
+people also ask me about the estimated
+daily results on the right side here
+they're like oh it said I'm going to get
+43 conversions for $25 that's awesome
+and then they get zero don't listen to
+this like at all really it's just made
+up stuff by Facebook to make you want to
+spend more money I guess the only thing
+that matters is when you start running
+your campaign in the metrics that you
+get back so now we're done on the ad set
+level we're going to be moving on to the
+ad creative level so the same thing with
+the previous two we need to name our ad
+set so if we were doing three different
+marketing angles like the example I had
+earlier with the Jade roller you could
+do one for skin redness and then the
+other two we can set up later and
+duplicate and below that is the
+partnership ad option so if you don't
+know what it is it's a partnership with
+a a Creator or another business and
+basically you can run your
+advertisements from their account so
+you've probably seen ones like Kevin
+Hart where he is running an
+advertisement from his account because
+he's paid to do it but it converts at a
+better rate because he's a celebrity and
+people trust him that's how those
+partnership ads work you're probably not
+going to do them in the beginning unless
+you've got a Rolodex of influencers
+ready to promote your product but we're
+going to leave this off for now now
+under identity is we're going to sign it
+to the Facebook page and the Instagram
+account if these didn't show up here
+then you're going to have to reconnect
+them again just essentially by logging
+in and assigning the accounts to this
+specific ad account if you did it
+correctly in the beginning you're
+probably going to see your Facebook
+account that you just created and your
+Instagram account as well so these are
+actually really important to set up and
+make sure they're linked properly
+because if you're running an ad from
+your Instagram account if they click on
+your profile when they see your ad it's
+going to take them to your Instagram
+profile where then you can show them
+that you're a real brand and you can
+also hopefully get them as a follower
+that's how you're going to kind of semi
+organically grow your following and
+actually works really well the fastest
+I've grown in Instagram just through
+paid advertising was in one year I went
+from zero followers on the brand account
+to over 55,000 followers on Instagram
+and that was all just running paid
+traffic on Instagram I didn't do
+anything else so it's really really
+important that you do that now scrolling
+down below that we've got our ad set up
+so we want to create our ad a manual
+upload because we're not doing the
+catalog now we have our format for our
+ads we've got flexible single image or
+video Carousel or collection flexible I
+don't like doing they usually kind of
+screw it up single image or video is the
+best or Carousel I really really like
+Carousel ads right now especially for
+image ads if you don't know carousels
+are the ones where you can swipe
+multiple times and there's multiple
+images of different products or the same
+product in different use cases running
+Carousel ads as images performs really
+really well for me if you want to just
+do a single image or video that's also
+fine this is totally up to you but a fun
+fact is that image ads are three times
+cheaper on average than video and
+they're a lot easier to make but what's
+interesting to me is that these
+platforms are so based on videos
+nowadays Tik Tok Instagram reals
+Facebook videos a lot of people don't
+post that many images so images almost
+are the scroll stopping things now they
+kind of stand out more it's totally up
+to you what you want to do but I like
+cranking out image ads really quickly a
+little tip here is the software that I
+use to create like 10 image ads an hour
+is creative OS on here there's a massive
+massive library of AD templates from the
+biggest brands in the Ecom space so if
+you like this viori ad you can just
+click copy into canva or figma and then
+you'll get that exact template that
+they're using and it'll look like this
+then you have a template that's fully
+editable with your own copy an image and
+you're just copying the exact same
+layout they have on their winning ad I
+absolutely love using it and they also
+have email templates as well as landing
+page templates which is super super cool
+and helpful if you're bad at design I
+check that out if you want to use them
+for any of the templates but going back
+to the setup we're going to run a single
+imager video you can leave multi-
+Advertiser ads checked on or off that is
+up to you it's your ads are going to
+appear alongside other advertisers so
+you might see your ad alongside just a
+different business it can be a good
+thing it can be a bad thing take that
+with the greatest salt you're going to
+get cheaper metrics in terms of reach
+and things like that if you do multi-
+Advertiser ads but sometimes it can hurt
+you if maybe it's with a competitor so
+this one is kind of up to you I'm just
+going to leave it on for the sake of
+this example now scrolling down below
+that is where you're going to put the
+website so whatever place that you want
+them to land on after they click your ad
+you need to put here if you're brand new
+to advertising don't put your homepage
+you want to put the landing page to the
+product you're advertising you don't
+want them to go on your homepage and
+have to go find the product that they're
+looking for that they saw in the ad you
+you want to make it as seamless as
+possible so we'll just drop it in here
+we're going to shop Lululemon just make
+sure that your link is correct uh do a
+preview URL to make sure it's uh
+transferring properly display link you
+can actually change what the link says
+on your advertisement if your link is
+really ugly or really long or something
+like that then you can change that here
+now going down to browser add-ons uh we
+don't need to do any of these unless you
+want them to if you want them to have a
+called action button to give you a phone
+call go for it but I think you're
+probably doing Ecom so we're going to
+leave that at none now moving down to
+the ad creative this is where you upload
+your image or your video so let's upload
+an image ad it'll take you into this
+creative setup where you can choose the
+primary text the headline and
+description this is what's going to show
+in the text and copy locations of your
+advertisement so on Facebook or
+Instagram you know Square feeds you can
+see some writing underneath it and above
+it this is where you're going to change
+all of that I'm super lazy and not
+creative so I just go on drop out I plug
+in my product emphasis then I grab some
+marketing angles skimmable header maybe
+a short skimmable message stack generate
+some ideas and they'll generate it for
+me and I'll just kind of copy and past
+them in here they'll put that in the
+primary text headline uh play with retro
+style it's pretty good and then maybe a
+description here I'll grab this one as
+well and pop that right in there and
+then you can obviously you know massage
+these to however you want and what kind
+of marketing angle you're running but
+just keep them on the shorter side and
+easier to read and really emphasize why
+they should be clicking on your
+advertisement now our call to action
+we've got a bunch of different options I
+personally always do shop now I'm trying
+to sell a product I don't want it to say
+learn more like why would I learn more
+about Lululemon shorts most of the time
+people are clicking out to the shop and
+they sometimes can feel duped if you say
+like apply now which just kind of
+misleading so I always recommend doing
+shop now especially if you're running
+Ecom products so once you fill those out
+we'll hit next and now we got to grab
+our images or our video that we wanted
+to use so you probably are not going to
+have any on your account so what you do
+at the top right is upload your ad
+creative you just click on upload and
+then grab the file drop it in here and
+it'll pop up right here I'm just going
+to choose this one and hit next I'm
+going to leave enable flexible media on
+just to make sure it works correctly and
+then you can see the format so when it's
+a square you want to leave it as like
+original if it's it's a vertical one if
+you do 9 x 16 it's going to be zoomed in
+so make sure that nothing is cropped off
+or you can just leave it as a square
+which is totally fine to do by the way
+and then horizontal same thing it's
+going to be cropped in or original you
+can optimize your images uh to make them
+fit each one respectively but most of
+the time it's going to be square or
+vertical that you're going to want to
+optimize for once you've got that
+uploaded we're just going to hit next
+now there's a bunch of enhancements that
+they try to add onto it so you can add
+overlays catalog items visual touchups
+text improvements uh image animation all
+these things here I don't really like
+them like I don't want my image to be
+like animated necessarily you know you
+can let them do it for you I just think
+the creative is so important to your
+advertisement in general that I like to
+have full control of it personally
+totally up to you though if uh you're
+confident in their enhancements but for
+me I'm going to leave these off and hit
+done so now you're going to see on the
+ad preview on the right side we've got
+our copy we've got our image that we're
+running and these are what the ads are
+going to look like in the respective
+categories so this is desktop this is
+the square format and then this is the
+vertical like Instagram stories this is
+what it's going to look like so always
+make sure you take a look at these ad
+pre previews to make sure that your
+advertisement looks nice now scrolling
+down we've got all of our primary text
+already filled out same with our
+headline and our call to action under
+the info labels you can add things like
+a number of page likes to highlight if
+you've got a really big page that you're
+advertising from or free shipping you
+can also highlight promotions that you
+might be having if you have a promo code
+going on down to the Advantage Plus
+creative section uh it's going to want
+you to add those enhancements that we
+just talked about when we uploaded the
+image which is like those moving pieces
+and uh the filters and things like that
+you can apply this again if you want to
+uh I'm not going to event details if you
+are running an event uh this would show
+up here languages it'll automatically
+translate your ad for them which is kind
+of nice but also can translate super
+weird so it's kind of risky to use it
+then we're going to go down to tracking
+so this is going to be pre-checked off
+for our website events our pixel should
+be here mine's not active this is an
+example and then below that is offline
+events uh we don't need to do that as
+well but something that is really
+important that I love adding is URL
+parameters so what these parameters do
+is they add strings of text onto the end
+of the link for you when you build it
+out it's actually pretty easy to do so
+the campaign Source you can choose the
+site Source name campaign medium which
+you can choose as placement your
+campaign name campaign content is going
+to be your ad name I'd select those off
+and hit apply and so what it does it
+adds the line of text at the end of your
+link it's really really nice to use to
+dive even deeper into your analytics so
+what happens is if someone sees and
+clicks on your ad on Instagram stories
+it's going to add the extra lines of
+text on the back end it's going to tell
+you that it came from Facebook it's
+going to say that it came from the
+medium of story click which is the
+placement and then it's going to tell
+you which campaign name it came from and
+the content aka the ad name so to break
+this down even further if someone
+clicked on a story ad here and they made
+a purchase I would know that it came
+from Facebook Stories and I also would
+know that it came from the ad skin
+redness now this is really really
+helpful because on your Shopify store
+for example you can go into your reports
+and you can look at these URL parameters
+so even when you see on Facebook you
+have five sales and then on Shopify you
+might have seven and then you're
+thinking well they didn't track two of
+them so I don't really know where it
+came from you can go on Shopify and you
+can see these URL parameters and then
+manually attribute them yourself and
+that's really important because Facebook
+does not track sales 100% of the time
+like I was saying if Facebook is showing
+five sales and Shopify is showing seven
+and on Facebook it's showing two on one
+creative two on another and one on the
+last one but when you check on your
+Shopify reports you can see that
+actually two more sales came in for the
+last one making it three sales and that
+can really make or break your decision
+making because you might have thought
+that that one was the one that's
+underperforming but actually you got the
+most sales so that is super important to
+always add onto your ad creatives now
+that's the last option here and it's
+pretty much set up but if I was going to
+run in which I recommend doing three
+different marketing angles for the same
+product we want to do skin redness and a
+couple other ones all this is already
+filled out so we're going to actually
+just duplicate it and then we're going
+to leave it in the original campaign and
+now I've got skin redness copy so I'd go
+back up to the top here and I'd say uh
+fine line and wrinkles that's the angle
+we're going to be running I would change
+the creative to one that represents fine
+line and wrinkles and how our product
+solves it and then I'll would also
+change the primary text to you know
+emphasize that it fixes fine lines and
+wrinkles more you can just duplicate it
+again and add your next marketing angle
+and in theory the more marketing angles
+that you have and the more creative that
+you're testing the better which is why I
+love using image ads cuz it's so fast to
+create these ads and you can just crank
+them out so quickly and they're also way
+cheaper to run than video if you're just
+testing a product so we could put this
+one as acne for the last example but if
+you have like 10 of these and they're
+all completely different marketing
+angles for the same product I guarantee
+you that one of them is probably going
+to be working better than the others and
+that's going to give you a good
+indication of who your core audience is
+that loves your product the most now
+once all of those are uploaded you are
+ready to go we filled out everything
+that we possibly needed to on this
+campaign here and it's ready to launch
+so if you're confident everything is set
+up your Shopify store or whatever
+platform you're using is ready to go
+what you're going to do now is just hit
+publish it's going to go into a review
+process which can take either 10 minutes
+or 48 Hours it'll come back either
+rejected or approved if you're selling
+something that is not allowed on
+Facebook it'll come back rejected and
+tell you why but most of the time it's
+going to get approved ads are going to
+start running now congratulations your
+first ad is set up and you are running
+it now you're waiting for the metrics to
+come in you're waiting for the spend to
+start kicking in but once it does you
+have to learn how to read these metrics
+now I'm going to cover some of the most
+important metrics that you should be
+looking into don't skip this part
+because this is super super important
+how you understand your metrics you'll
+see your campaign here that you just set
+up delivery is going to be on and it's
+going to start spending some money you
+can look at your metrics in the same way
+that you set up your ad campaign so
+there's metrics on the campaign level
+there's metrics on the adet level as
+well as the ad creative level if you set
+up your campaign exactly the same way I
+did just now you're going to want to be
+looking at the metrics on the ad
+creative level to see which angle or
+creative that you're using is performing
+the best and you can obviously view this
+by week uh month day year whatever you
+really want to on the filter section
+here so this is the most common setup
+we've got our delivery we've got our
+adset name bid strategy budget all that
+stuff now the most important things are
+the results reach Impressions cost per
+result the quality rankings are also
+really important you can change the
+column layout however you want and you
+can add metrics in here you can do a
+custom column I like to do and the most
+common is just kind of performance and
+clicks where you can see link clicks
+your cpms and all these things so let me
+break down the most important metrics to
+look for the number one important metric
+no matter what it costs to advertise and
+show your product to a thousand people
+the only thing that truly matters is
+your cost per result in theory you could
+have a $5 cost per click and have a $5
+cost per result $5 cost per click seems
+high but you have 100% conversion rate
+so that's great who cares that's the
+number one thing that you should care
+about especially in the beginning but
+it's also going to give you some good
+metrics on how many people it's reached
+the frequency is also super important so
+if you don't know what the frequency is
+it's how many times your ad has been
+shown to the same person twice or more
+on average so if your ad has been seen
+by a thousand people and they've only
+seen your ad once your frequency is
+going to be one if it showed your ad to
+a th000 people and on average everyone's
+Senor ad twice you're going to have a
+frequency of two historically for me
+over the last 6 years of running Ecom
+Brands once my frequency starts passing
+above two I see a lower conversion rate
+so less people purchasing and the cost
+going up because so many people have
+already seen that ad so many times and
+they're not clicking on it anymore and
+that's where the term ad fatigue comes
+into play so if your frequency is really
+high your ads kind of get worn out your
+conversion rate drops your cost goes up
+and that's when you need to refresh your
+creatives you need a new spin on it a
+new image a new video whatever it may be
+so in the future if you're making a ton
+of money and all of a sudden your ads
+start performing really poorly check out
+the frequency and also refresh your ad
+creatives now some other important
+metrics to be looking at are the
+rankings the quality rankings the
+engagement and the conversion rate after
+a couple days Facebook will give you
+some ratings and they're actually really
+really important and pretty overlooked I
+would say so quality ranking is just
+that it's your ad relevance what's the
+quality look like of your ad Facebook
+measures all this and gives you a rating
+if it's below not good if it's above
+average great if it's average it's okay
+your engagement ranking is the way that
+people interact with your ad does it get
+a ton of likes a ton of comments a bunch
+of shares or does no one like comment or
+share on it it's going to compile that
+data and the feedback and then give you
+a rating here as well below average or
+above obviously your goal is to be above
+average in all these categories next is
+your conversion rate ranking so how
+often people are converting from your ad
+is it above the industry standard or
+below that's going to show up here as
+well and why these are so important is
+because I see a lot of people saying you
+know my cpms or my cost per thousand
+Impressions which I'll talk about in a
+second are super super high my link
+clicks are really high as well what's
+going on there's a huge market for this
+the first thing I say is look at your
+rankings if you have a below average
+below average and below average Facebook
+actually penalizes you and it actually
+costs you more to advertise if it's
+above above above then you're going to
+get cheaper cost per purchase higher
+quality audience and it's going to be
+cheaper to advertise in general having
+these above average is really really
+helpful and if you can nail that that's
+awesome if they're all below I would
+definitely just stop that ad and start
+working on a new creative that is not
+maybe scammy or poor quality and has
+zero engagement so one of the first
+things that you should do when you're
+looking at your metrics after a few days
+is check out these rankings now moving
+on to Impressions this is the number of
+times that you're add was shown on a
+screen pretty straightforward now your
+cpms is your cost per thousand
+Impressions this is pretty much a vanity
+metric a lot of people ask about it why
+are my CPM so high it cost me $100 to
+show my ad 1,000 times that's pretty
+expensive it is but it's also pretty
+much dependent on the niche and how
+large your audience size is and your
+rankings for example if you're selling a
+product like a fly fishing rod and
+there's only 20,000 people in America
+that go fly fishing your cpms are going
+to be higher there's not that much ad
+space they have to be online on Facebook
+on Instagram and they have to be able to
+be shown if you have a product that
+everyone uses like water then your cpms
+should probably in theory be lower cpms
+can represent the niche and how large
+the audience is but they also can be
+impacted by your quality rankings if
+they're all below average your cpms
+might be higher than they should be keep
+that in mind it's kind of like an
+indicator that something might be wrong
+if they're really really high for your
+Market but don't really pay too much
+attention to it if you are making sales
+and it's converting well and your cpms
+are high you can always try to improve
+it by getting better rankings later on
+then we've got our link clicks so how
+many times people have clicked on the ad
+our cost per the link click and our link
+click through rate the cost per link
+click is kind of similar to your cpms
+what do the cost cost to get one click
+on your website you want this to be
+lower but you also want it to be
+converting you don't want 100 clicks at
+$10 a click and no one's purchasing that
+just doesn't matter then you're just
+getting a bunch of traffic and not
+converting things like CPM and your
+click through rate which is the
+percentage of Impressions that received
+a link click those you're going to have
+to kind of learn over time and you can
+always just try to improve them later on
+with new ad creatives an example is if
+your ad is performing well and you're
+profitable but your link click seems a
+little high let's try to get that down
+let's try to get a stronger call to
+action let's make people want to click
+on the app and just optimizing your
+creatives later on down the road for
+that and that should naturally drop the
+better creatives that you put out there
+those are kind of the most important
+ones to be looking at once you start
+getting your data coming back in keep in
+mind that the metrics are kind of just
+Clues they're all just pieces of a
+puzzle that are indicating that
+something might be wrong with your
+website maybe it's your ad creative
+maybe people just hate the product in
+general but what it's doing is giving
+you a right direction to look at least
+and solve this problem and if you can
+read and understand these metrics
+correctly you are going to be able to
+modify them and kind of massage all the
+pieces together create new ad creatives
+until everything fits and you turn
+profitable now let's say you go through
+this whole process and you are
+profitable and you want to spend more
+money and scale it up what you can just
+do is duplicate that same campaign or
+your same ad set create a second line
+item essentially doubling your budget or
+if you want to increase it even further
+because it's performing really well you
+would just duplicate and then change the
+budget on that duplication so instead of
+25 let's say it was crushing it at 25
+let's try 250 now you're going to be
+spending 250 plus the 25 original daily
+so that's the step step-by-step process
+on how you're going to set up your first
+campaign I hope that this video was
+thorough and it walked you guys through
+everything that you could possibly want
+to know about setting up your first
+campaign if you guys enjoyed this video
+please remember to leave a comment like
+And subscribe I post videos like this
+all the time and also don't forget to
+get that free custom Shopify store in
+mentorship if you want to learn further
+and I do have a full eight hour guide
+specifically on Shopify Drop Shipping if
+that's what you want to start doing that
+is on my channel it's 8 hours long it
+covers everything you know in super
+detail thank you guys so much for
+watching and as always have a great rest
+of your day

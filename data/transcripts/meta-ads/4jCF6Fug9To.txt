@@ -1,0 +1,413 @@
+# Copy This NEW Meta Ads Strategy (Post-Andromeda)
+# Video: https://www.youtube.com/watch?v=4jCF6Fug9To
+# Category: meta-ads
+
+Between my brands, clients, and
+students, I'm helping people spend well
+over a million dollars a week on meta
+ads. And right now, the most
+misunderstood and underused ad format on
+the entire platform is the 322 flexible
+ad. At its base level, a flexible ad is
+simple. You're giving Meta multiple
+creative inputs, and you're letting the
+system decide how to combine and present
+them for each impression. We're going to
+start by opening up the account and
+building one together step by step. If
+you've been working harder and harder
+every month just to maintain the same
+results, this is going to make a lot of
+things click. All right, let's get into
+it. So, let's actually build one of
+these together. I'm inside of the ads
+manager now and I'm going to create a
+new ad so you can see exactly where this
+lives and how it works. At the ad level,
+instead of choosing a standard ad
+format, we're going to choose flexible
+ad. This is the format that replaced
+dynamic creatives, and it's where the
+entire 322 system lives. That means
+three creatives, two headlines, and two
+primary texts. Nothing more than that.
+First, we'll add three creatives. These
+should be three videos or three images,
+not a mix.
+We want the system comparing like for
+like. We're not asking Meta to decide
+between formats and messages at the same
+time. That's not a good test. If you
+want to test images versus video, do
+that in separate flexible ads, not
+inside the same one. Then we add two
+primary texts, different angles,
+different hooks, different reasons to
+care.
+Next, we add two headlines. These should
+be meaningfully different, not small
+wording tweaks, but two distinct ways of
+framing the value, not rewritten
+versions of the same idea. And that's
+it. Three creatives, two headlines, two
+primary texts. Three, two, two. that
+gives meta 12 possible combinations to
+work with and this part is very
+important. We are not trying to give
+everything a fair chance. Now, I hope
+you're enjoying watching this video as
+much as I enjoyed making it. And I want
+to take a moment and just say thank you
+for watching it. Go ahead and smash the
+like button, subscribe to the channel if
+you haven't already, ring the bell so
+you don't miss any future videos, and
+take a moment to join the Disruptor
+Academy where you can get for free all
+the assistance that you need, all the
+things that we talk about in this video.
+There's a link right there. All right,
+with that being said, let's get back to
+it. Spend is a meritocracy. The system
+is going to put more spend behind the
+combinations that create the best
+experience and the best outcome based on
+early data. And that's exactly what we
+want. There's no placement customization
+here. No aspect ratio micromanagement.
+No guessing which version goes where.
+Now that you've seen exactly how simple
+this is to build, the real question
+becomes, why does this work so much
+better than launching separate post IDs?
+And that is what we're going to break
+down next. Separate buckets versus
+shared learning. There's one really
+important thing to understand about how
+Meta learns. When you run ads one by
+one, every single ad learns on its own.
+Each post ID has its own data, its own
+learning, and its own history and social
+proof. Think of it like this. Every ad
+is filing its results into a separate
+bucket. And those buckets don't talk to
+each other. So, if you launch five
+separate ads, you don't get five ads
+learning together. You get five ads
+competing. One ad might get the
+conversion, another gets the click, and
+another looks great for a day or two,
+but none of that information is shared.
+And when one ad starts to look better,
+Meta will shift spend towards it. That
+spend has to come from somewhere, and
+most of the time, unless you're
+increasing the budget, it comes from
+your other ads, even the ones that were
+already working. And that's why older
+ads suddenly look worse when you launch
+a bunch of new tests because those new
+tests launch at the bottom of the funnel
+and steal all of the data. People
+usually call this ad fatigue, but most
+of the time it's not fatigue, it's
+fragmented learning and spamming the
+bottom of the funnel. A 322 flexible ad
+works very differently. Instead of
+separate buckets, all of the data flows
+into one place. The creatives don't
+learn alone. The headlines don't learn
+alone. The primary texts don't learn
+alone. They learn together.
+So when something starts to work, that
+information doesn't get trapped inside
+of one ad. It can be leveraged across
+all ads inside of the 322. And it
+carries that forward. That's the shift.
+Instead of the system constantly
+resetting itself, it starts building on
+what it already knows. Instead of having
+dozens of low data sources with low
+confidence, it is all consolidated into
+one place. Next, I want to show you why
+this matters so much over time and how
+keeping this structure simple is what
+makes success easier than ever. Why
+three creatives and only two of each
+copy? This is where the 322 structure
+really matters. We all know one thing
+for sure. Creative moves the needle more
+than anything else. So our job isn't to
+overwhelm the machine with options. Now
+in Google, you are trying to overwhelm
+with options because you want every
+single possible thing that somebody
+could have typed in to be represented.
+But on Meta, we're not trying to account
+for everyone. We want the best users. We
+want the machine to be able to make the
+best choices. Our job is to give Meta
+and Andromeda the best chance to find
+the best creative as fast as possible
+for the right person in the right order.
+That's why we only give it three
+creatives. With three, Meta can make a
+real decision quickly. One creative will
+usually separate itself pretty fast.
+Spend will then concentrate. Signals get
+clear. And remember, one creative is
+four types of ads because those two
+primary text and two headlines. But if
+you load five or 10 creatives into one
+flexible ad, the learning slows down and
+often whatever gets lucky early is the
+only thing that gets spend out of the
+entire ad. Not because meta is bad, but
+because you've given it too many
+questions to answer at once, so it goes
+off of any win it can find. Three
+creatives is enough variety to learn
+without creating noise. Now, if you want
+to test more than three creatives, you
+don't put them all in one ad. You create
+multiple 322 flexible ads. If you want
+to test six creatives, that's simply two
+322 ads. Now, something really important
+happens. Instead of one crowded bucket
+or dozens that are all completely
+isolated, you've created two clean
+places for all of your data to go. Each
+ad gets its own chance to earn spend.
+Each ad gets its own learning path and
+life cycle. And because both ads can be
+built around the same concept, you're
+not changing the strategy. You're just
+increasing opportunity. That gives the
+machine more room to work, not more
+confusion. This also lets you test copy
+in a much, much smarter way that I don't
+see anybody talking about. If both
+flexible ads use the same headlines and
+primary text, now you can watch what
+happens to spend. If the same copy
+dominates in both ads, that is a real
+signal, that copy is doing the work. And
+if performance differs, even when the
+copy is the same, you know that the copy
+isn't the reason the ad is winning or
+losing. You can really point to the
+creative with much higher confidence.
+And that is incredibly useful. It tells
+you whether a result is something you
+can trust or something that's just lucky
+or perhaps something that is driven by a
+specific creative that is real AB
+testing one variable at a time fast
+learning and clean signals. And instead
+of guessing which win matters and trying
+to infer something that is completely
+out of your control, the machine tells
+you. And that's the difference between
+chasing performance and building a
+system you can actually rely on with a
+feedback loop that allows you to get
+better and better over time. And once a
+322 flexible ad has been running for a
+bit, the most important signal to look
+at is still spend. Spend tells you what
+the machine believes. And when spend
+concentrates and the campaign is better
+because of it, that is a real winner.
+Whether that's around 1322 or one
+element within it. Now, here's something
+really, really important. There is no
+rush to pull post IDs. The worst thing
+anyone can do is interrupt something
+that's already working. Flexible ads are
+doing their job. They're learning,
+they're improving, and they're driving
+results. We don't stop that. What we can
+do is start harvesting from what is
+going well. Think of flexible ads as
+your proving ground, as your testing
+environment. And in your one campaign
+control ads set is where you put all of
+the proven assets. So when you see a
+flexible ad performing well, you don't
+shut it off. You don't stop good things.
+You don't turn off good money. You
+simply start pulling the best performing
+post IDs and introduce it into the
+control environment. That way, you're
+not replacing anything. You're just
+adding evidence and leverage. And this
+is where the system really, really
+starts to work. And one thing I want to
+call out here is I do not expect the
+single post ID that you pull to
+necessarily perform as well as the whole
+322. It is the all-star on the team, not
+the whole team. And when you put it
+inside of an adset of other allstars,
+now it's a contributor to a team that is
+much greater than the team it came from.
+Right? An allstar team is built of
+everybody who's good, right? It's a
+collection of unicorns. We can't expect
+them all to dominate in the same way
+when it was one unicorn with a whole
+bunch of scrubs. That's just not the way
+it works. So, don't be alarmed when
+performance doesn't look the exact same,
+especially right away. So, let's talk
+about how to get the post ID. How to
+grab the post ID inside of your business
+manager. I want you to go to your inbox.
+Look for the ads getting the most
+comments and engagement. When you have a
+real winner, a real unicorn from a 322,
+it won't be subtle. When you have a
+great white shark in the backyard pool,
+you notice it. You'll see people
+reacting, commenting, and engaging.
+Simply click the timestamp on that post
+and it will take you directly to that
+ad. The URL will contain the post ID or
+the video ID. All you have to do now is
+copy that and then head back inside of
+the ads manager and you can create a new
+ad inside your one campaign control ad
+set. And from there, you choose use
+existing post and you paste that ID,
+whether it's the post ID or the video
+ID. That's it. Now, you've isolated the
+unicorn, the great white shark in the
+backyard pool, and you've added it to
+your all-star team. And now you can
+watch how that same asset performs along
+with your other proven ads in a stable,
+controlled environment while still
+letting the thing that's winning
+continue to win. And if it holds up,
+you've found something you can trust.
+And if it doesn't, nothing breaks. If it
+just doesn't work, isolate it. That's
+okay. Maybe the reason it worked is
+because the flexible ad was great, but
+on its own, it's just not enough. And
+because the flexible ad is still
+running, still learning, and still
+winning, the system continues to get
+better. And that's the beauty of this
+system. You're never betting the account
+on a guess. You're letting flexible ads
+find strength and letting the control
+environment confirm it and ultimately
+just level up the floor. So, you're
+constantly just getting better. If the
+baseline continues to improve, it's hard
+for you to not continue to make more
+money. Before we move on, I want to zoom
+out for a second and try to tie
+everything together. Because once you
+see this as a system, everything gets
+simpler. So, step number one is flexible
+ads. This is where you test, not by
+guessing, not by launching dozens of
+post IDs where you hope you got the
+right copy of the right creative and it
+hits the right person. in the right way
+with all the other ads running, but by
+giving the machine a clean 322 structure
+so that learning stays shared and the
+signals stay clear. Flexible ads are
+your proven ground. This is where you
+test. Step two is you harvest. When
+something starts to dominate spend and
+the campaign is better because of it,
+you don't rush. You don't turn anything
+off. You simply observe and you scale
+your budgets, right? You take advantage
+of that leverage. And when you're ready
+to pull the best performing post ID from
+what's already winning, you go to your
+inbox, the comment section, and grab it.
+That's how you scale. Now, step three is
+control. That post ID goes into the one
+campaign control ad set. This is your
+stable environment. Proven ads, clean
+comparisons. You're not replacing
+winners. You're introducing contenders
+and letting them prove they belong
+amongst all of the other allstars,
+right? This is your unicorn squad,
+right? Step four is scale. If the asset
+holds up in the control and your
+campaign continues to look good, you can
+continue to increase the budget, not
+because your dashboard looks exciting,
+but because the system can support it
+and your bank account and business
+results have proven this is good for
+you. And if it doesn't hold up, nothing
+breaks. just turn off that single
+identified post ID because the flexible
+ad is still running. It's still
+learning. It's still feeding the system.
+And if it's still doing good enough, you
+don't turn it off. And that is the loop.
+You launch the flexible ad specifically
+to improve upon the weakest link of your
+control. You harvest the post ID. You
+introduce that into the control. And if
+the results continue to improve, you
+just add budget. No panic, no guesswork,
+no constant resets. just a system that
+gets stronger over time and makes the
+answer to the most important question
+which is can I spend more money yes more
+often than it is no. And if you can do
+that by even 5% three times a week, you
+can double your budget every single
+month. If there's one thing I really
+want you to take away from this, it's
+that you don't scale by working harder.
+You scale by building a better system
+that gives you more leverage. Flexible
+ads aren't a trick. They're
+infrastructure. They let learning stay
+shared. They let signals get clear. And
+they give you a way to test without
+constantly resetting your account. When
+you combine that with a clean process,
+flexible as the test, harvesting what's
+already winning, validating in the
+control environment and scaling only
+when all of that holds up, you stop
+guessing, you stop panicking, and you
+stop breaking things, and you start
+making a lot more money. The goal isn't
+perfect ads. The goal isn't to just win
+creative tests over and over again. The
+goal is to be able to answer one
+question with confidence. Can I spend
+more money tomorrow? If the answer is
+yes, you increase the budget. If the
+answer is no, you test deliberately
+until the answer is a yes. That's how
+the best advertisers grow. Not by
+chasing winners, but by building systems
+that win again and again. So, now that
+you know how 322 ads work, in this next
+video, I'm going to show you how to
+actually set up your creative test to
+scale your business. We're going to dive
+in deeper to the mechanics of everything
+so that you have the confidence and the
+decisions you're going to make. Don't
+forget to join Disruptor Academy down
+below so that you can understand how to
+build the one campaign method and do so
+much more. Plus, get my help in your ad
+account for free. All right, until next
+time, I'll see you on the internet. Bye.

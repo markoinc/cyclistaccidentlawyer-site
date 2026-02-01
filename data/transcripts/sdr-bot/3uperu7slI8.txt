@@ -1,0 +1,674 @@
+# Automate Meta Lead Forms to WhatsApp Build an AI Agent to Qualify Leads
+# Video: https://www.youtube.com/watch?v=3uperu7slI8
+# Category: n8n-automation
+
+So, in this video, I'm going to show you
+how you can build an entire N8N AI agent
+for your lead qualification. And I'm
+using the example of a real estate
+agency where we imagine we are running
+Facebook lead ads and we're collecting
+new leads through the form. Um, we're
+going to use that data and run it
+through our AI agent and we have
+conversations with our leads on
+WhatsApp. So, by the end of this video,
+you're going to be able to build your
+own custom AI agent to automate your
+WhatsApp conversations and qualify leads
+much better and much faster. So, what
+we're going to build is a two-part
+workflow, which is we want to capture
+all the leads from our Facebook ads and
+then send them a WhatsApp message. So,
+your leads would receive a message,
+something like that. So, I'm going to
+open my WhatsApp here. This would be
+your business account, of course. And so
+the idea is a a person seeing your ad on
+Facebook submits the form. In the form
+you're asking for the phone number and
+so then we can start the whole
+automation and start a conversation with
+them on WhatsApp. So here I'm sending a
+message and then we have the second part
+of our workflow which is to receive
+incoming messages and then have an AI
+agent process the information and reply.
+So let's look how we're going to set
+this up. So in NNN, we're going to
+create a workflow and we use the the
+first trigger which is WhatsApp uh sorry
+Facebook lead ads trigger. So that's
+basically already a pre-made note that
+every time you receive a form submission
+from your Facebook ad um you will get
+the data. So I'm just going to skip this
+part. What is important is of course you
+are probably already running campaigns
+on Facebook. I'm just launching this
+here uh to show and you have a form. So
+this all needs to be set up of course.
+Um, but I'm going to skip this part and
+just mock the data. So, and to keep it
+very simple, what we receive from
+Facebook is the name and the phone
+number. So, I save this. And now what we
+just need to do is we're using a node
+from a tool called WhatsAppable. So,
+that's a uh another third party tool
+that I'm using to handle all my
+automation for WhatsApp. Um, it's just
+it has a lot of features that help me to
+be more productive and organize those
+chats. We're going to see more details
+um very soon. So back to my N8N setup
+here. What I need to select is the send
+WhatsApp message note. So you need to
+create a new credential in N8N. And
+actually all you need to do is once you
+created an account for their notifier
+system. So that's the name of the tool
+by what'sable. You go to API key. You
+copy your API key. I'm going back to the
+setup of N8N. I paste it here. I save it
+and good to go. Let's just call it demo
+so I can organize this better. Okay,
+cool. So setup. Now we that's all we
+need actually for the first part of the
+solution. We need the trigger and we
+need to send a message and um so you can
+see now let's go through the setup here.
+This is my account. We sent messages. So
+that's already uh correct. We send a
+WhatsApp message. That's correct. And
+now the product. So this is a product
+from what's aable is either send a
+template via the notifier system or send
+a non- template and this is a detail but
+because I am starting the conversation
+with the person meta doesn't allow me or
+WhatsApp doesn't allow me to send any
+kind of message. So I need to create a
+template in order to do that. So the
+cool thing is in what'sable I have my
+templates organized here. You can create
+new templates and you can uh view them.
+So you can see I have my demo form
+submission template here and if you
+preview this you will see that's the
+type of message they will receive and by
+the way this is a dynamic value. So I we
+need to get the data from my Facebook
+form to add the name there in order to
+personalize the message. So back to my
+setup here. So we send a template via
+notifier. The recipient is the phone
+number. So this is data that I need to
+get from my Facebook ad form. The
+template is this one here. Let's make it
+fixed. Sorry. Template. And my variable
+is the name is the first name. So that's
+hopefully also something I can get from
+my Facebook ad. And here we are. So
+that's it. That's the first part. Now if
+we
+execute this, sorry, if we execute this
+whole workflow, then that's it actually.
+Someone submits the form, it gets
+triggered, we send the WhatsApp message
+via this tool. So you can see I just
+received this message and um and and
+that's already the first part of the
+solution and for some in fact for some
+it might already be good enough to say I
+want to have a conversation on WhatsApp.
+It's the number one communication tool
+and then from there I can take over and
+handle the conversations manually. Now I
+do want to add a bonus tip here how you
+can schedule follow-up messages if your
+leads haven't responded in a certain
+time frame yet. And the nice part is we
+have this already preconfigured by
+what'sable. So, I'm going to show you
+how you can do that. We have our module
+to send our template message to our new
+Facebook leads. Now, what if they don't
+respond in let's say one day or 24
+hours? That's pretty easy. So, what's
+really nice is I can take my
+WhatsAppable note and there's this
+option called schedule a WhatsApp
+message. So, we will add this here. I
+have my WhatsApp account. We send the
+message. Schedule a message. Schedule a
+WhatsApp message. Exactly. And then what
+we're going to do now is we send another
+template message via the notifier
+system. So that is just in case the
+person you know you reached out to that
+person, the person hasn't responded to
+your message and you just want to
+increase the chances. So you want to
+send a follow-up message since we
+haven't started the or since the person
+hasn't responded yet, we have to send
+another template message. So what I
+would do is I would go to notifier
+systems and I would create another
+template which I would call follow-up
+message. I would, you know, write my
+text, use the placeholder again for the
+name, and maybe there's other
+information I want to include in the
+message. And then in my workflow, I
+would use that template. And uh let's
+just do this real quick. So again, I
+would use the phone number. We have to
+use the phone number here from our
+Facebook ad. And um the template I'm
+going to use the same template now just
+as it's a demo. And um don't forget to
+use the data from your Facebook uh form.
+And so now here comes the part. So how
+you do this is you are going to schedule
+a message to send again after some time,
+right? And so since when we create this
+this needs to be dynamic, meaning that
+the date will always change, we need to
+add an expression here. And how you can
+do that is so you open the curly
+brackets and then you can see that
+second option here which is called now.
+So you can and what is nice in N8N is
+you can always see the result as of
+right now. So you can see the current
+date and timestamp in my uh drop-own
+window here. Now what we need to add is
+just click the the dot button and we
+want to add plus. So we want to add
+something to now. So now we have plus
+and here we can see just like in an
+Excel formula you would write we can see
+a few options. So what we can do for
+instance is um we add one day to this um
+to this expression. Sorry that was the
+wrong formatting. Um great. So now again
+now you can see that it added one day to
+my current time. So basically 24 hours
+later this message would be sent. And so
+that's how you can do that with the
+expressions. Um you can also you can see
+there are other examples. You can also
+do hours for instance and then do 28
+hours. So that would be sent tomorrow at
+4 11 p.m. And now here comes the part
+what what's able already solves for me
+is that I don't need to write complex
+conditions. Now what if the person has
+already responded then I don't want to
+send this template message. And so we
+need to go down here to that enable
+conditions toggle. And here in the field
+option, we have a few settings already
+coming from what'sable. So that's really
+handy. And what I like is this one. If
+the person did not send any message in
+the last 24 hours. So we just reached
+out and then one day later for instance,
+we want to send another message. So
+let's just make sure the person did not
+send us any message. And what you need
+to set as the operator is that this
+value exists. So that's this option here
+and we're good to go.
+We want to add a bit of intelligence
+here to our system and that's why we
+have the second part of our uh setup in
+N8N which is our AI agent. So before we
+do that what we need is to set up a
+trigger from WhatsAppable
+that's in the trigger section and we add
+this. So on incoming messages we receive
+um the the event here. So again you will
+need to create a new credential. You can
+choose this one here for our purpose. So
+notify system incoming message. You need
+to get back to notify system. You go in
+the API key section and again you copy
+and paste your API key in um n and this
+is for testing purposes more. So
+actually let's skip this for now. You
+won't really need this.
+And we're saving connection tested
+successfully. So great. Now what's able
+um is connected with our trigger our NAT
+end system and so we can actually be
+informed whenever we receive a message.
+So the rest is fine. That makes sense to
+me. Let's just organize this better. So
+that's our first sorry that's the second
+part of our system. No. So the first one
+is first touch point and then we want to
+have conversations with an agent. So
+what we need is we need to go to the AI
+agent node and set up our AI agent and
+we need to do that in a few steps. So
+first of all for the prompt we're
+defining it by ourselves below in this
+free text field and I will write
+something like reply to the users last
+message and then here we will add the
+message as soon as we have the data from
+what's aable. So let's go ahead with
+this AI agent first before we connect it
+with what's able. So very important you
+need to connect a chat model or a large
+language model with it. You can have you
+know when you go here you you have a
+list of uh very you know common options.
+And in my example I want to use
+anthropic. I want to use the claude
+sonnet 4.5 model. Um what you need to do
+is you need to create a new credential
+for anthropic. So just Google it's super
+simple. Yeah, you just Google something
+like anthropic API key and you will go
+to the developer console and here you
+can you create your account and then you
+can create an API key and you you might
+have to add a bit of credit there a
+couple of euros if you're testing this
+out and so then we're using CL to um
+generate those messages. I'm not going
+to do this now. So I close this because
+I already have my anthropic account. Um
+so that looks fine to me. Now we have
+everything we need. So now we should be
+able to execute this workflow. So now
+it's listening for incoming events. Um I
+can go into my WhatsApp chat and send a
+message and it should now receive the
+message via WhatsAppable.
+Um and yeah, okay, sorry. One thing
+missing is here in our web URL. This is
+very important. You need to add your uh
+web hook URLs from NN um in the
+what'sable system. So I'm going now back
+to notify your systems. When you click
+here, you go open the developer console.
+You can add an endpoint and then all you
+need to do is just paste that uh web
+hook URL. So this was my testing uh web
+hook URL. When you are done with this NN
+workflow, you also need to add your
+production URL. So this is just for
+what's able to know um hey there's a new
+message here. I want to ping you and
+send you the data. So now let's go back
+to N8N. We added this. So now we should
+actually if we execute this workflow and
+we send a message. Hey oh sorry this is
+coming from another um workflow that I
+still have active but let's turn this
+off. So now cool that worked. Enthropic
+was used. The AI agent executed. We can
+see this with a green um circles. So now
+our AI agent has the connection to our
+LLM. What we need to do is it doesn't
+have a lot of information right now. So
+by the way, let's uh do that again here.
+Just execute this. Okay. So back in our
+AI agent, since we executed the previous
+node, which is our what's able trigger,
+we can now uh fill a bit fill in a bit
+of data here. So in my first prompt to
+anthropic, I'm saying reply to this
+user's last message. And the last
+message from the user is this value
+here. Last message of user. We paste it
+here. Um, is that that makes sense? And
+um, and there we go. That's that's good
+enough for now. Um, now what is
+important is this is an AI agent. We're
+using CL, but we don't have a lot of uh
+context that we're giving to this agent.
+And this is what we're doing here. This
+is the system prompt where we actually
+say who are you? What's your task? What
+kind of questions are you going to ask?
+What style? This is a WhatsApp
+conversation and so on. So just in order
+to save some time, I'm going to copy
+this from my other agent.
+Okay. So in my other in my uh final
+workflow, you can see I have this long
+text here which is my system prompt and
+you can check on N8N's official YouTube
+channel. They have a video about
+prompting best practices. So you want to
+give it a role. You want to have
+instructions. For instance, I say uh
+start by greeting the user and asking
+for their name. gather two essential
+details which is the minimum number of
+bedrooms and their budget. I want to
+keep it simple just as an example and
+then there are some other tasks that we
+can talk about later. Um so let's copy
+this and go back to our agent that we're
+currently building and we paste this
+here. You can open this in this nice
+preview and great. So that is my system
+prompt.
+I can save this and now let's close it
+with the outgoing message. So we want to
+send a message back to the user with the
+help of our AI agent. So we use our
+account, we send a message, we send a
+WhatsApp message and we send a
+non-mplate via notifier message. So
+important because now we already
+received an answer from the user. So we
+are free to send any type of message.
+That's just what this means. So what we
+need to do then is from our what'sable
+trigger we take the phone number we drop
+drag and drop it here we want to send a
+text message and then for the message
+content we take what we get from the AI
+agent that hasn't run yet. So let's run
+the AI agent and then we can tell our
+what's able note what to do with this
+data. So the agent ran now we can see we
+have this output object here. We can
+place it and we're good to go. So if we
+run this, we should be able to already
+get some answers from our AI agent.
+So we send a message.
+The agent works. It's using Enthropic
+and sending me back the message. We can
+see hello Christian, welcome and thank
+you. To get started, could you please
+tell me the minimum number of bedrooms
+you're looking for? So that is coming
+from the system prompt. Right now, in my
+AI agent setup, I want to add something
+else to my user message, which is how I
+prompt the AI, which is I don't want to
+just send the last message of the user.
+I also want to send the whole
+conversation history between the bot and
+the user, which is data that is already
+nicely stored by what'sable. So, we have
+this conversation paragraph here, which
+we can drop here. Now we just want to
+say um here is the
+conversation
+history
+between you and the user.
+All right. So now our AI agent has like
+a system prompt and has instructions and
+every time we uh prompt it, we actually
+send the conversation history so it has
+enough context about the the chat
+and yeah I think for our second part of
+the workflow that is already it. So we
+have remember again we have our Facebook
+leads that every time we have a new
+submission we send a first message from
+a template and then when the person
+responds on WhatsApp we have our AI
+agent qualify that lead. So that alone
+is already great because it's handling
+all the conversations for me and it's
+figuring out which person is more
+relevant and which not. And now what is
+nice is in what'sable we going back to
+their interface there is this chat
+feature where you can see all your
+conversations with users. So see that
+this is the last message that I received
+on WhatsApp. This is uh coming from
+here. Now what I can do is I can and
+this is a really nice feature by
+WhatsAppable. I can always decide if I
+want to have an AI assistant handle the
+conversation or if I want to take over
+the conversation and write messages. So
+in other words, what this means is my N
+workflow is active right now. But if I
+want to stop doing that, then I click
+here and now even though I receive
+messages from the person, nothing will
+happen. I will see this as an unread
+message and I can come here and reply.
+Hey there. So let's do this real quick.
+Now what I want to show you as well is
+how much flexibility we have and how we
+can add even smarter skills to our AI
+agent. And what I want to do now is
+let's imagine we are let me switch the
+view here. Let's imagine we are having a
+spreadsheet a Google sheet with all
+information about our available
+properties. Yeah, we have some columns
+here which is the title, the location
+and then even an image of uh our real
+estate properties. But now what I want
+to do is in N8N I want the AI agent to
+answer all the questions which in my
+case is just how many bedrooms and
+what's your budget and as soon as I have
+that information I want to start
+proposing some properties that could be
+matching to the user's needs. And so how
+we're going to do that is the following.
+We go and add a tool note here and we
+are looking for Google Sheets tool. You
+need to connect with your Google
+account. I already did that and now the
+operation is to get all rows because I
+just want to have the agent decide okay
+I want to open this Google sheet and I
+will look look at all the rows and then
+find something that is interesting for
+the person. So then in the document I
+use my spreadsheet called houses demo
+example and the sheet is this one here.
+So this is actually data coming from my
+Google sheet and that's it. That's
+that's already the the tool. Now what we
+haven't looked at yet is that in my
+system prompts at some point I'm giving
+specific tasks. So here number four once
+you have the users requirements access
+the Google sheet named get properties.
+So I just need to make sure that this is
+called correctly to make it even better
+to find all entries. Identify and select
+properties that match the user's needs
+for bathrooms and budget. Always just
+present one property. So again it's a
+bit simple but I want to show you how
+this works.
+So our tool let's rename this into get
+properties. So our tool is now
+connected. And what else I want to do
+now is and here it gets a little more
+technical but I want to show you the
+power of such AI agents here is I want
+to send a an image with the message when
+our agent has decided that we have all
+information and now we can make a we can
+make a suggestion basically. And the way
+we're going to do that is the following.
+So let's disconnect this real quick.
+What I need to add is another what's
+able
+um note which is again to send a message
+and you can see resource me message send
+a WhatsApp message that makes sense but
+in the non-mplate uh via notifier option
+you have the message type which is you
+can see audio messages documents images
+and so on. So in that case I want to
+send an image message. I want to send an
+image message to the person and I want
+to send it with an image URL. So that is
+the the technical part here. Now in
+order to do that we need to change a few
+things in our AI agent and what it is is
+you open back the configuration. Now you
+have this toggle here which is called
+required specific output format which is
+a feature from LLMs where you say
+instead of just having a raw text coming
+out I want a specific structure as an
+output. When you click that output
+parser button here it already presents
+you with a solution. Now you go here to
+this structured output parser. See how I
+just clicked it. It added it
+automatically to the right place in my
+agent. And now what I'm going to do here
+is just quickly write a JSON example of
+the data that I want as an output from
+the LLM.
+Okay. So what we have here now is
+instead of having this text, this is
+what I want from uh my AI agent as an
+output. So we have the first property
+called message here an example, hey
+there. So this is basically going to be
+the WhatsApp text message. But then
+there's another field called image URL.
+So this is hopefully going to be the
+image URL from my Google sheet and
+[snorts] the budget. So how much does
+the person like what's the number the
+person gave me? So we can also do some
+do something with that.
+And now in order to use that new
+structured data we need to run the agent
+again
+just for us in order to have the new
+structured output that we can then reuse
+in our what'sable nodes. So the agent
+ran you see the output parser was used.
+So if we connect this now to this is our
+standard reply. If we connect this now
+to our reply for instance we can see
+that now the AI agent as our previous
+note has a new has new sub values from
+our output which is a message image URL
+and budget. So those are empty but we
+have the message. So what we need now is
+to change this from the generic output
+to our message field. So that is always
+going to be the message that we're
+sending to the user. And the cool part
+now is we also want to add an image
+message. So we call this send property.
+We use our account here to the phone
+number. The phone number is coming from
+our trigger again. So we take the phone
+number. The message type is an image and
+the URL will be in this field. So no
+magic here. Yeah, I just said please
+give me this type of data and the AI
+agent will decide when is the moment to
+send the image URL which is probably
+going to be the moment it's um it's
+proposing a property for me. And in the
+caption, so the caption is the text
+below the image. We're going to write
+the message
+and we save this. So last detail, we
+don't want to send both messages at the
+same time. That doesn't make sense. So
+what we need to add is a condition here.
+This is called the if note where we say
+when. We only want to send the image
+when our agent is actually proposing the
+property. And how do we define that? We
+define that by saying you are sending an
+image URL along. So when this value
+image URL
+it's a string is empty so there is no
+image then we want to send a standard
+message. So if that is true that's
+already correct we send the reply to the
+user. If that is false we want to do
+this and remove that connection. If that
+is false so it's not empty then we want
+to send the property.
+And here we here we go. That's it.
+There's this button here to tidy up.
+Great. So that's our entire system. We
+have our lead capturing and then first
+outreach message to then capturing all
+messages and having the AI agent qualify
+the lead and proposing a property. So I
+think it's time to test this now.
+So I'm going to trigger this on. Turn
+this on. Hey there. It's just a bit of a
+special scenario of course because
+normally we wouldn't have these
+conversations back and forth already. Um
+but I want to show you how this works.
+So now the AI agent is working and it's
+sending the reply the standard reply to
+the user. And so if we open WhatsApp app
+again, you can see, hey Christian,
+welcome and thank you for reaching out
+to get started. What is the minimum
+number of bedrooms you need and what is
+your budget once? No, no, no. So let's
+do this. Take a shortcut here. So, hey,
+hey, our budget
+is 300k
+and we need three bad rooms minimum.
+Sorry, and I forgot to do this again.
+So, this is when you're building the
+workflow, you you're testing this. So,
+you always need to activate the the
+workflow
+again. So, now my agent is working. I
+received a message via what'sable and uh
+it's working. It used my Google sheet
+now. Great. So it went to my Google
+sheet. It read all the properties, all
+the data. It structured the output and
+it sent a property. So it's using the
+other note to not send a standard
+message but to actually send an image
+with the proposal text. So let's look.
+Yes, it worked. So here we have our
+photo that is uh a column in our
+spreadsheet. And then we have the
+message. Perfect. Thank you for
+providing that information. Um so that
+is all data that is coming from the
+Google sheet. This is again so just to
+recap this is an example but what it
+means is that we can use internal
+systems we can use whatever data source
+we have to actually already give some
+helpful information to the users and we
+instruct the AI agent to only do that at
+a specific point. So yeah, that's the
+whole system. That's an AI agent to
+qualify leads and as an input. It could
+be Facebook, it could be another form
+tool, it could be whatever you can think
+of. So yeah, that's it. Thanks a lot for
+watching this video. I hope it could
+give you some inspiration how you could
+build your own WhatsApp chatbot using AI
+and N8N. And if you do have any
+technical questions, if you have uh
+problems, feel free to reach out to me.
+Other than that, thanks for watching and
+see you in the next video.

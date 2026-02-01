@@ -1,0 +1,681 @@
+# How To Build An AI Customer Service Voice Agent Advanced VAPI Tutorial
+# Video: https://www.youtube.com/watch?v=u_4Jw7itFtk
+# Category: vapi-voice
+
+Hey everybody, welcome back to the
+channel. Today I'm going to show you how
+to build an advanced inbound customer
+service agent inside of Vappy. Let's do
+it. All right, so I've built a couple
+different Vappy voice agents on my
+channel before. They're more beginner to
+intermediate level. Uh in this video
+today, we're going to take a step up in
+complexity and we're going to be using
+Vappy workflows to build a pretty
+complex uh inbound customer service
+voice agent um that can route callers
+down different paths based off what they
+say. Uh that can send emails to them
+dynamically based off the the track that
+they take. Um that can transfer them to
+a live sales rep, for example, um if
+they want more details. Um and that can
+take them down a bunch of different
+flows uh conditionally based off what
+they say. So, uh, the voice agent we're
+going to build in this video isn't going
+to be this complex. Uh, but by the end
+of this video, you'll be able to build
+something like this pretty easily, uh,
+with the fundamental lessons that I
+teach you in this video. All right, so
+without further ado, let's get into it.
+Okay, so we're going to come into Vappy
+here and we're going to go to workflows
+and we're just going to create a new
+workflow. Uh, and we're going to start
+from scratch. Okay, so we're just going
+to launch in here
+and it's going to bring us to our
+canvas. Okay, if you've ever used a tool
+like Bot Press or something like that,
+uh, where you're brought to these
+canvases, it's pretty intuitive.
+Essentially, you get these nodes where
+you can like prompt your agent to say
+things, um, and then you can, you know,
+essentially drag this line and create
+different branches of logic based off
+what they say. Okay, so in this video,
+we're going to be pretending to be a
+movie theater, your favorite local movie
+theater. And we're going to be
+pretending that right now we have a live
+full-time employee answering uh our
+phone uh whenever a caller has questions
+about our movie theater. All right. And
+we don't want to pay that person
+anymore. We'd rather just have an AI
+voice agent uh you know answer all of
+our uh customers queries uh
+automatically. All right. It's much
+cheaper. It's much more efficient. So uh
+what we're going to do in this video is
+we're going to have three different
+paths. Um the first path is essentially
+just going to be somebody calling our
+movie movie theater and um wanting to
+know more about Showtimes. Uh in that
+case, we're just going to build a very
+simple flow uh that's going to direct
+them to our website and then we'll hang
+up. Uh the second path is going to be
+somebody who wants uh to book like a
+birthday party at our movie theater. Uh
+at which case we're going to take down
+their name and their email address. And
+then we're actually going to send them
+an automated email uh built off of our
+flow here in make.com. Uh basically
+letting them know details about our
+birthday package. All right. And then
+the last flow is going to be somebody
+who calls um and they're interested in
+opening a new movie theater or something
+and they want to talk to our corporate
+team. um and we're going to actually
+transfer them live to our corporate
+sales rep uh in this flow. And so that's
+what we're going to do. So let's start
+with our first node here. So this is our
+introduction node. Uh and so this is
+going to be our first message. Okay. And
+how this works in Vappy uh is
+essentially we have these different node
+types. So conversation nodes, API
+request, transfer call, end call, and
+then this tool node. We're going to be
+using the first four today. Okay. So
+this conversation node is essentially um
+you know giving Vappy what you actually
+want the voice agent to say. What is the
+conversation actually going to be? All
+right. And so our first message is going
+to be something like hello,
+my name is Paige
+and I am your uh ABC movie theater
+customer assistant.
+Your customer service assistant.
+If I could type.
+How can I help you today? Okay. And then
+we're going to give it a prompt. We're
+basically going to tell it how to act.
+Okay. So, we're going to say something
+like, you know, you're a polite,
+professional AI assistant handling
+inbound calls. Be upbeat and positive
+sounding uh who is happy to help them.
+Greet the caller, ask how you can help
+and listen carefully. Respond concisely
+uh and wait for the caller's input
+before continuing. Okay, so we're
+basically just, you know, giving it its
+personality, telling it how to behave.
+Okay, so that is that. Now, what we want
+to do now is build our first path.
+Remember, our first path is going to be
+somebody calling in from movie times.
+Um, and we're just going to direct them
+to our website. Okay. So, just a simple
+flow just to get the hang of using this
+canvas. So, I'm going to I'm going to
+add a new node. It's going to be another
+conversation node. All right. And I'm
+just going to drop this in over here and
+connect these nodes together. Okay. And
+you can see here that immediately you
+get this like little conditional tag
+here. Okay.
+And so I want to update this to
+basically be like you know user
+mentions any of the following. Okay.
+And now we can give it like conditional
+logic uh to analyze and then based off
+what the the user asks help with uh we
+can send them down different flows based
+off their their answer. So if they
+mention anything about you know movie
+times or uh today's showings or um
+specific movie titles
+or uh you know the rating of a movie you
+know anything about movies today.
+All right we're going to send them down
+this first flow. Okay so we have just
+updated the logic there. All right and
+so now we're going to come to the
+conversation node and we're going to
+basically give it its first message.
+Now, let's pretend that um you know, we
+have two different URLs on our site. One
+of rated R movies and one of PG-13
+movies. Okay. And so, in this example,
+we'll say, "Okay, sounds good. I can
+help with that.
+What um what rating
+movie do you want to watch?" Okay. And
+this is not a great example, but I'll
+just do this to show you how we can keep
+going conditionally and make as many
+branches as we want. Okay.
+All right. And again, I'm just going to
+say, you know, be friendly and wait for
+a response before proceeding.
+Okay. All right. Good. All right. And
+then we're going to do two nodes off of
+this. Okay. So, if it's, you know, let's
+say if it's um if it's G or PG, we're
+going to come down this path. All right.
+And we're going to send them to a PG or
+G URL.
+All right. And if they say they want
+PG-13 or R, then we're going to come
+down the more um you know the more
+vulgar path, the more explicit path. And
+so we're going to come here and we'll
+lead them down this path here. Okay. So
+again, I just want to show you here that
+we can kind of make these as granular as
+we need. So user says G-rated movie or
+PG-rated movie or anything that is
+kidfriendly.
+Okay. So, we'll go with that. And then
+the second one will be, you know, user
+says
+PG13
+or R rated movies
+uh something not kid-friendly.
+Okay. All right. Cool. So, not a great
+example, but uh you know, you get the
+point. Okay. And then we'll say this. Um
+Okay. Sounds good.
+You can find our kid-friendly movies
+uh at this URL
+and then we'll say, you know,
+abc.com/kids.
+All right,
+you know, uh please go to our website
+and find a time that works best for you.
+And then that'll be it for this flow in
+this example. All right. So we will add
+a node uh that'll be end call. All
+right. And we'll just connect that here.
+And our message will be something like
+um we'll just say true. Okay. [music] So
+true. That means that we'll always come
+through, right? We'll always come down
+this path no matter what the user says.
+Then we'll just say thank you for
+contacting ABC movies or movie theater.
+We'll see you here soon.
+Okay. And then same thing here. If they
+want a more um you know vulgar or
+explicit movie, we'll we'll say, you
+know, sounds good. You want to have a uh
+fun time tonight.
+Please go to our website at
+www.abcmov.coms
+for our showtimes.
+be friendly and
+wait for a response
+before proceeding.
+Okay. And then again we're going to add
+[music] a end call node just like that.
+We're going to say true.
+Okay. And then same thing you know uh
+thank you for calling
+ABC movies.
+We'll see you here soon.
+Okay, so there's that. I'm going to save
+this so we don't lose anything. And
+we'll zoom out here and just look at how
+this is looking so far. Okay, so we have
+our first path
+and it looks like this. And [music] I'm
+just going to move everything over a
+little bit. Okay, so that's our first
+path. So again, we're going to call if
+they mention anything about today's
+movie times, we're then going to ask
+them uh if they want a kid movie or an
+adult movie. Uh and then if they based
+off what they say, we're going to route
+them to different URLs uh on our
+website. Okay? And then we're going to
+hang up the call. Okay? So that's all
+we've done so far. Very, very simple,
+very easy. All right? And now we're
+going to take a step up. Okay? Now, what
+we're going to do is we're going to
+actually [music]
+um ask them a question about a birthday
+party or they're going to be interested
+in in having a birthday party at our
+movie theater. And um if they are
+interested in that, that's what they're
+calling for. Then we're going to route
+them down a path and we're going to say
+something like, "Okay, sounds good.
+Let's take your details down. We will
+send you an email that has all of our
+birthday information." Uh and [music]
+then we will automatically send them an
+email uh by firing a web hook out of
+vappy into make.com. And I'll show you
+how to set all that up, too. All right.
+So, I'm going to start with a
+conversation node. Okay. And I'm going
+to connect this here. And I'm going to
+start by saying, you know, give it the
+condition to route it down this path.
+So, user says that they want to book a
+birthday party
+or an event at our movie theater.
+Okay. All right. So, I'll say something
+like, "Sounds great.
+We love hosting birthday parties
+at our theater.
+We'd love to send you some information
+via email [music]
+right now uh giving you more details on
+how it works.
+Okay. And then we'll say um can you
+please give me your
+first name. Okay. And then the prompt
+we're going to say um you are extracting
+the first name of the caller
+so that we can send an email to this
+person after the call.
+Extract. And then I'm going to give it a
+variable first name
+from the caller
+and log it for me. Okay.
+All right.
+Uh and then I'll say something like you
+know make sure you get the first name
+uh before proceeding to the next before
+proceeding to the next node.
+If you miss the name
+clarify with the caller.
+Okay. So what we're doing here is we are
+actually going to start storing
+information from our caller into
+variables. All right. And so we're going
+to mention in our prompt here, we're
+going to give the node a goal so it
+knows what it's doing. But what we're
+also going to do is we're actually going
+to scroll down here to extract
+variables,
+right? And we're actually going to tell
+the system explicitly
+uh that we're actually extracting a a
+variable from this node. Okay. Okay. So,
+we're going to prompt it and we're also
+[music] um going to like explicitly tell
+it that we need a first name.
+Okay. And let me make sure that's saved
+there. And it didn't. So, I got to go
+hit save. So, you're just going to come
+down to extract variables. You're going
+to type in here the name. In this case,
+it's a string. And we're going to hit
+save. Okay. And then, if you zoom in on
+this node here, oops. If you zoom in on
+this node, you can see that we're now
+extracting first name. Okay. And at that
+point once it extracts extracts it our
+voice agent will store that first name
+as a variable and then we can send that
+variable out to make in subsequent
+steps. Okay, which I'll show you here in
+just a second.
+All right, cool. And now we need to get
+email. So we need to get an email for um
+where we're going to send this to. Okay,
+so I'm going to duplicate this node just
+like that. I'm going to drag it
+underneath
+and connect.
+All right. Again, we're just going to
+say um uh and then this time we're going
+to say something like um you know, first
+name
+uh
+is not empty. Okay, perfect.
+All right. All right. And then we could
+have another flow here where it's like,
+hey, if it is empty, if somehow we
+missed the first name, we basically wrap
+back around and ask it again. We don't
+need to do that here in this example,
+but you, you know, you can start doing
+stuff like that. Okay, so now we're
+going to ask for email.
+So I'm going to say something like,
+okay, thank you for that. Can you now
+please give me
+your email so I can send you details
+me your email so that I can send you
+details
+on our events.
+Okay. And this time I'm going to say
+you're extracting the email of the
+caller so that we can send an email.
+Okay. Extract.
+And this time we'll just do email.
+Make sure you get the email before
+proceeding.
+If you miss the email, clarify with the
+caller.
+Okay. And we're going to scroll down.
+We're going to come down to variables.
+And this time we want uh not first name,
+but we want email. Okay. Again, we're
+just explicitly telling the agent what
+we want here. We're going to hit save.
+Okay. Perfect.
+All right. So, that is that. Now, we're
+going to have first name. We're going to
+have email.
+And now, what we're going to say is um I
+don't know, something like, okay, we are
+emailing that to you right now. Um,
+we look forward to having you at the
+movie theater or something like that.
+Okay. So, just something polite. So,
+we'll add another conversation node and
+we'll just say, um, okay, thank you.
+Thank you so much. We are emailing you
+details right now.
+See you at the theater.
+Okay. Something like that. All right.
+We're just going to say be friendly and
+then move on to next node.
+Okay.
+All right. Now, how are we going to send
+this data out to make.com? Okay. So, as
+I change this to true, start thinking
+about what that uh what you think that's
+going to look like.
+Okay. So, what we're going to do is
+we're going to add another node. And
+this time, we're going to make an API
+request. And this is where we're
+actually going to send all of this data.
+So, this email and this first name data
+out to make.com. Okay. So, what we
+really need here is we need a web hook
+URL uh to send all that data to. Okay.
+So, we're going to come to make and we
+have just set up like a little web hook
+here. All right. And so we're just going
+to grab our web hook URL here. And let
+me make sure I grab all of it. Okay. So,
+grab this. Copy it. And then we're just
+going to come and drop that in right
+here. Like that. All right. We're going
+to give it a name. So, it's going to be,
+I don't know, send email, whatever.
+Doesn't matter. All right. And then your
+request method is going to be post. Um,
+your headers, we're just going to add
+one and it's going to be content-
+type
+and then application s /json. Okay,
+request body. We're going to explicitly
+tell this node um what data we want to
+pass out. Okay, and so we need first
+name and it has to be required. It's
+going to be a string.
+All right. And then also email.
+Remember, this is what we're uh this is
+what we're capturing up above. Both of
+them are strings. And we need our web
+hook to include both of those, right?
+And that's it. Okay. So, we're going to
+hit save
+and we are good to go. So, I'm going to
+hit um or I'm going to connect this like
+this. Again, I'm going to set um this to
+just true so it always happens. And then
+last but not least on this flow, we are
+going to end the call. Okay. So, I'm
+going to drop in one more note here. End
+call.
+and it's going to say something like, I
+don't know, we look forward to seeing
+you at the theater or something like
+that. Okay.
+All right.
+So, that is our second flow. All right,
+guys. Just want to slide in here real
+quick and let you know that, you know,
+if you're trying to build a voice agent
+like this for your company and it's just
+too complex, you don't know how to do
+it. Um, you're running into roadblocks
+or you're trying to build a voice agent
+like this for one of your clients, uh,
+and you need a little help, just get
+down below in the comments. I will have
+a link to our website where you can get
+in touch with us. Uh, we would love to
+partner with you, help you build your
+voice agent for again your company or
+your clients. Anyways, let's get back to
+the video. And now we're going to set up
+our third flow. Um, which is going to be
+anybody who wants um, you know, any kind
+of like corporate sales uh, you know,
+conversation. You know, they want to
+open up their own own movie theater or
+they want a partner or something. We're
+going to we're going to transfer them
+live uh, to a live sales rep. Okay. So,
+I'm going to drop in another node. Uh,
+and this is going to be a conversation
+node. All right. And we're just going to
+attach it here. And this is going to be
+um, let's see, let's set up our
+conditions here. So user
+mentions wanting to franchise
+um
+another movie theater branch
+or corporate sales. [music]
+Okay, something like that. I don't know.
+Okay, so that'll be that. And then we'll
+say something like awesome. Uh we'd love
+to uh go into business with you.
+Uh do you mind if we transfer you to a
+live sales rep uh to better field your
+query?
+Okay. I'm going to say be friendly and
+nice and wait for a response before
+uh moving on.
+Okay, perfect. And then we'll do two
+little flows here. So, one will be um if
+they say yes,
+then we are going to transfer their
+call.
+Okay. Um and we're going to add a
+destination. It's going to be a phone
+number. Okay. And I'm just going to do a
+dummy phone number here.
+Okay. But you obviously want to put in,
+you know, the phone number that you want
+to transfer to. Okay.
+Sounds good. And that's that. Okay. And
+we'll connect this here.
+And we'll say if user says yes.
+Okay. And then if they say no, then
+we'll say, you know, okay, sounds good.
+Okay. No problem. Please go to our
+website
+for further information.
+Be friendly and nice. Okay. And then at
+the end of that one, we're going to end
+the call. Okay. So, we'll end the call
+right after that.
+Have a great day.
+All right.
+And we're just going to connect all of
+this now.
+So, we'll say if user said no.
+Good.
+And uh this will just be true. Okay.
+Okay. So, we're going to save this down.
+Okay. So now what we're going to do is
+we're going to test this live. So what
+we're going to do is we're just going to
+come up here and hit call. And I'm going
+to hope that you guys can hear this.
+Audio might be a little weird, so bear
+with me. Um but we're going to be
+playing audio off my laptop into the
+mic. Uh but this should work. So let's
+test this all out. We might need to make
+some tweaks. Um I really want to make
+sure that we're pulling in the data to
+our web hook here that we need. Um so we
+can set up that email flow. Uh but we're
+going to do a couple test calls now and
+make sure this works.
+Hi, thanks for calling ABC movie
+theater. How can I help you today?
+>> Hey there. I'm looking for uh Showtimes
+today.
+>> Okay, sounds good. I can help with that.
+What rating movie do you want to watch?
+>> Uh I'm looking for a kids movie.
+>> Okay, sounds good. You can find our kid
+friendly at this URL, abc.com kids.
+Please go to our website and find a time
+that works best for you.
+>> Awesome. Thank you.
+Thank you for contacting ABC movie
+theater. We'll see you here soon.
+>> Okay, beautiful. So, that worked. Okay.
+Okay. So, now we're going to test our
+second flow here, which is our birthday
+party/events flow. Okay.
+And uh what I'm really interested in
+seeing here is if we're able to send our
+first name and our email here to our web
+hook and make because then we can attach
+like an email node and send out an email
+to people. Okay. Uh, so what I'm going
+to do is I'm going to start this call
+and I'm going to run that web hook and
+see if we're getting that data in.
+>> Hi, thanks for calling ABC movie
+theater. How can I help you today?
+>> Hey, I'm looking to book a birthday
+party at the movie theater.
+>> Okay, great. We love having birthday
+parties at our theater. I am going to
+ask you some contact details now so that
+I can send you an email with information
+on how to schedule an event at our
+theater. What is your first name?
+>> Alex.
+Okay, great. And what is the best email
+to send this information to?
+>> Uh, alexyahoo.com.
+>> Okay, thank you so much. We are sending
+you an email right now uh with
+information on how to book an event at
+our theater. We can't wait to see you
+here.
+>> Awesome. Thank you.
+>> You're very welcome, Alex. If you have
+any more questions or need help with
+your booking, just let us know.
+Fantastic birthday celebration.
+>> Thank you.
+>> We look forward to seeing you at the
+theater.
+>> Okay, so a little choppy there at the
+end. We can clean that up. Um, but
+really what we want to see is if we got
+this web hook, and it looks like we did.
+Okay, so we can see in make here, uh,
+we've got email, we've got first name.
+So that is coming through live. And so
+again then what we can do is very easily
+trigger you know a Gmail module um where
+we then you know pass that information
+in and send like a templatized email
+about our birthday parties. Okay. So
+that is looking really really good. All
+right. Now the last flow we need to test
+here is our third flow um where we're
+going to actually be transferring uh the
+call to a live rep. Now because we're
+just kind of building this demo here in
+this canvas, it's not actually going to
+call uh or transfer the call. Um, but
+you know, we'll just test it out and
+make sure up to that point it works. Uh,
+the second we turn this thing like live
+and attach a phone number to it, it'll
+actually be able to to call that number.
+Okay, so let's just test this out
+quickly and see if it works.
+>> Hi, uh, thanks for calling ABC Movie
+Theater. How can I help you today?
+>> Hey, I'm looking to open up a franchise
+somewhere in town.
+>> Awesome. We'd love to go into business
+with you. Do you mind if we um transfer
+you to a live sales rep uh to better
+field your query?
+>> Yes, please.
+Okay, so that transfer worked. Again,
+that call is not actually going to come
+through here uh because we're just
+testing out uh but this thing is
+working. You know, in a live scenario,
+when you attach a phone number uh to
+this uh assistant to this workflow, uh
+you're going to get a live live call
+there. Okay, so that is it guys. That is
+how you can build a very advanced uh
+custom conditional customer service
+inbound agent inside of Vappy uh all in
+the span of probably 20 minutes. Okay,
+obviously you can get more complex than
+this. You can kind of build these flows
+out uh as as uh advanced as you need.
+You can add as many as you want. Um like
+I showed you at the beginning of the
+video, these these things get very
+complex. Uh you can charge up to $10,000
+uh for voice agents like this. Um, so a
+lot of money to be made uh and a lot of
+time to be saved uh for you and your
+company as well. So anyways guys, thank
+you so so much for being here. If you
+like this video, go down and smash that
+like button for me. I'd really
+appreciate it. If you want to see more
+videos like this in the future, consider
+subscribing. That'd be awesome. If you
+have any questions, comments, or
+concerns, get down in the comments and
+let me know as soon as possible, and
+I'll get back to you uh with any
+information I can. Thank you guys so so
+much for being here, for being along for
+the ride, and I'll see you all in the
+next video. Peace.

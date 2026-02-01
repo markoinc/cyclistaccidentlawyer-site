@@ -1,0 +1,348 @@
+# AI Voice Calling Appointment Setter In GoHighLevel In 10 Mins
+# Video: https://www.youtube.com/watch?v=fCPRlxDbgq0
+# Category: ghl-chatbot
+
+all right two things yes I really do
+have a BMW with the tag AI pays and the
+second thing is I hate wasting time so
+I'm going to give you these time stamps
+here uh for you to go through the video
+to find what you're interested in in
+deploying wh labeled AI voice into go
+high level uh this was something I sent
+out to our users for an update for a new
+voice engine that allows for inbound
+calling outbound calling as well as web
+calling uh through iframes on your
+funnel so there's a no obligation way
+for for them to call and collect
+information it's a great prospecting
+Tool uh but enough talking again I don't
+like to waste time let's just get right
+into it all right AI voice calling
+assistance update this is the perfect
+add-on to the chat assistants that
+operate in SMS gmbb IG Facebook WhatsApp
+all the native channels in high level
+now we can Encompass voice with that too
+so with this update comes a few uh new
+features in here a new assistant type
+and even a new deployment type to be
+able to get that assistant out into the
+wild to to call your leads and uh even
+use iframes as lead magnets so let's
+just get started here uh we'll start in
+phone numberers so this is a new tab
+where you able to buy a phone number
+directly through twilio uh through us
+you put in your area code we'll purchase
+the number for you and then assign that
+to your account if you are outside of
+the US and Canada you can import a
+number if you already have a twilio
+number yourself or you go get a twilio
+number and import it through us um if
+you're outside of the US and Canada if
+you are inside the US and Canada you can
+just buy a number here once you buy a
+number uh you could buy as many as you
+want there's no limits on it you'll have
+this number in your account you can
+assign it to a voice assistant once you
+have it created we'll come back here uh
+just know that we have phone numbers and
+you need a phone number for a uh
+assistant to be able to call so now
+under assistance we have a new assistant
+type uh we have chat and we have voice
+so we walk into new assistants and then
+we see now multi Channel voice here when
+we click on that we get a new voice
+assistant um walking into that I'll go
+to the one I already have built out so
+we're able to really really really
+granularly manage these voice assistants
+to be as robust as possible rather than
+just a llm chatting back and forth with
+leads and uh not really actionably doing
+anything and and not being super
+customizable so uh we start in the
+configure tab here where we can give it
+a name uh we can select a voice from The
+Suite of voices and this will expand and
+then we can select any of these
+languages here that we operate in for
+ICP um our ideal customer profile and
+then we'll have um an outbound number
+which will be the phone number we have
+here so this is if we're calling to the
+assistant to make an outbound call what
+number are they going to use we assign
+it there and then transfer number this
+is pulled automatically from your
+sublocation once you create a voice
+assistant but we're able to change that
+down here we just edit and then you can
+choose your country code put in the
+transfer number and save there okay um
+and then once you have a phone number if
+this is the one that you want uh you
+know to be assigned to that phone number
+four outbound uh you assign the number
+here save it and you're good to go next
+we go to Advanced if you in the medical
+space or Hippa uh Hippa compliance is
+something that is a concern for you and
+your clients we do have Hippa compliance
+with these voice assistants so what this
+will what this will do is when this is
+enabled no logs no recordings no
+transcripts will be stored all of that
+data will just be uh summarized for you
+in a call log and just saying that there
+was a call made to this number from this
+number um just with an analysis over it
+um we have recording enabled and of
+course you know when hip is on that
+cannot be off um silence timeout so what
+this is going to be is how many seconds
+of Silence does the assistant wait
+before ending the call on its own in a
+situation where someone may be playing
+with your AI uh you may be getting
+ghosted someone who's not interested
+after uh however many determined seconds
+the assistant will just automatically
+end the call response delay is the same
+thing uh response uh delay as far as the
+voice engine response delay as far as
+the llm you're able to customize that a
+little bit more obviously latency is
+going to be most important for people so
+we're just going to keep that low so the
+number of words to interrupt the
+assistant so we're able to granular
+manage how many words it takes for the
+assistant to realize that there's been
+an interruption and for it to stop
+talking now caveat to that words like
+stop actually know anything that shows
+negative intent will automatically stop
+the assistant from speaking but you're
+able to adjust it for just plain
+conversation uh you know from one word
+to as many as you'd like and then
+maximum duration uh if you don't want
+you know people who who may be um um may
+be malicious with your AI you know
+running the call too long or your
+assistant's just taking a long time with
+you know lead client whatever it is we
+can limit that time to a specific
+duration after that duration the
+assistant will say thank you have a nice
+day and then hang up so we're not eating
+into our minutes here and then we have a
+voicemail message if it goes to
+voicemail this is what it'll say and
+then in call message so the message that
+the assistant will say if it needs to
+end the call next we go to Voice um so
+along with the voice that we selected in
+the configure tab we can also add
+background music or not so it's not just
+an assistant in the void whether we're
+calling inbound outbound on the phone or
+it's a web deployment via iframe we can
+add some background sound here to uh you
+know make it seem a little bit more
+realistic like a like a human talking to
+someone it's actually very fun uh when I
+when I test and when I talk to this and
+you asking a question uh and the
+assistant's like what's your email and
+then you give it the email and then you
+just hear ambient typing noises it makes
+it seem very humanlike it's very great
+um voice model if you are um working in
+a language that is non-english choose
+the multilingual if not uh choose turbo
+for this and then we're able to add
+ility Clarity and similarity style
+exaggeration and then we can optimize
+for latency all here for the voice
+granularly managing that we run into
+prompt we have a greeting message this
+is the opening message The Prompt that
+goes along with this the temperature max
+tokens and models this model will be
+cheaper this model will be better this
+kind of limits how much the assistant is
+going to talk when it's its turn in the
+conversation and then temperature
+controls the randomness so the higher
+the temperature the more random the
+lower the temperature the more
+deterministic it is going to be so
+that's prompting pretty easy we hand you
+all this stuff as soon as you create
+your voice assistant you'll see
+something very very similar to this you
+just fill in the blanks and you're good
+to go lastly is the log so you'll see
+all the calls that come through how much
+they cost and the average talk time for
+all of it as well as a recording you can
+download the recording or read the full
+transcript um so able to granularly um
+you know manage your log see everything
+that's going on and any actions taken
+and summaries that'll be uh that'll come
+off of these calls as well so up top we
+just see a breakdown of cost for web and
+phone it's actually significantly
+cheaper than that but it's just an
+estimate just in case latency or you
+know llm costs are high at that point
+but um that's the assistant uh The Voice
+Assistant type now how do we get this
+thing out into the while so um we've
+seen outbound number here so we'll get
+to that in a minute but if we want that
+assistant to take an inbound call to
+this number that we have purchased here
+we go to the number and then we can add
+our voice assistant here update the
+information and then whenever this
+number is called this assistant will
+pick up as the inbound assistant for
+this number um the reason that it is
+divvied out from inbound and outbound
+just adds a little bit more granular uh
+granular management of client
+acquisition and the grander scheme of
+actually deploying these things so we
+may have one assistant calling out and
+then when someone calls back to that
+number maybe it was a voicemail they get
+another assistant that is is relevant
+for inbound calls rather than outbound
+um so you're able to dynamically kind of
+play with how these assistants walk and
+talk uh things like that so this is
+inbound all you have to do is just link
+the assistant to the number here when
+this number's called that assistant will
+answer all right after inbound we have
+outbound so when we go to the assistant
+type we can select our outbound number
+from our list of numbers this is the
+number that the when this is called to
+Via the rest API or the workflow action
+this is the number that this assistant
+will use when it's making an outbound
+call so right now until the workflow
+actions get approved we're running with
+ar rest API in which we have the
+snapshot for it's going to be included
+in the description and in the admin
+portal um inside of resources so we'll
+go ahead and Link this number up here
+there's one thing we need to do we need
+to go to our admin portal here we need
+to go to our settings Integrations and
+then let's go ahead and generate an
+agent Centric secret key so this is
+going to be a API key through agent
+Centric to call to our rest API to make
+outbound calls not only from high level
+right but from any platform that we're
+operating in um to be able to make these
+calls via our assistant inside of high
+level so this will be our key and of
+course I'm going to delete this key
+right after but uh don't share this key
+with anybody this acts as your API
+secret key all right um it's just a web
+hook uh a post request to the make call
+endpoint the authorization is your API
+key that we generated here in the admin
+portal and then we need the assistants
+ID which is right here we'll just copy
+that and then you just throw that in
+here and then we'll just Link contact
+number to to contact number raw cuz it
+needs to have the uh you know like
+instead of 770 it'll be plus 1770 and
+then location ID is location ID and then
+contact name is contact name super super
+simple we have the snapshot in the
+description for you uh for this actual
+web hook so you really don't have to do
+anything just run a lead through your uh
+through your outbound call after you've
+assigned all the numbers there so that's
+how you make an outbound call so now all
+you have to do is once you have this
+workflow set up you just run your
+context to this workflow it will ceue up
+uh calling these these um these contacts
+based on all the information we were
+given and then you'll see the logs after
+the conversations have been completed
+and the uh the actions or um outcome of
+those calls in your logs here for that
+assistant so that is inbound that is
+outbound last is iframes so this is web
+calling so uh we have a new deployment
+type so rather than deploying inside of
+the CRM here will deploy inside of a
+widget for this initial release we have
+the the voice orb so you click on this
+let's go ahead and choose Haley our
+assistant let's assign Haley to this
+assistant great um now I have an
+embedded iframe code I copy this code
+and then I can put this inside of my
+website you see it has my wh label
+domain here um so if you're worried
+about a white label client saying oh is
+Agent Centric domain going to be in
+there no as long as you have your wh
+labeled uh domain set up in the admin
+portal your iframe code here will have
+your stuff in it and point all to the
+right place and it'll look exactly like
+this right here so you just copy the
+code all right and then we'll go into
+high level all it is is a custom HTML
+JavaScript open the code editor throw
+that in there and then you can see what
+it looks like here this is what it looks
+like and then this is what it looks like
+on our website so you can see two
+different perspectives from a dark
+background and a light background so uh
+these are really really great because
+these are almost no obligation lead
+magnets in a way um you know especially
+for the agency or maybe even a um you
+know the local businesses that you're
+serving for someone to call in and talk
+to the assistant here live inside of the
+browser while it's collecting
+information really great lead magnet
+here really great like I said you can
+put it anywhere not not only for yours
+for prospecting and and lead generation
+but for your clients as well to be able
+to collect uh you know more actionable
+uh leads off of the website without them
+having to um at least explicitly give
+out contact information so hope that's
+helpful super exciting we're just
+getting started here so much cool stuff
+coming up thanks so
+[Music]
+much
+[Music]

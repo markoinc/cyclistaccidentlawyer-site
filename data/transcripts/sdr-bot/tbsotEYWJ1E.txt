@@ -1,0 +1,460 @@
+# I Built an AI Agent That Instantly Researches and Qualifies Leads n8n
+# Video: https://www.youtube.com/watch?v=tbsotEYWJ1E
+# Category: n8n-automation
+
+In this video, I'm going to show you
+exactly how I built a lead research and
+qualifying AI agent inside of Nen that
+starts with a form that the lead would
+fill out with their name, email, and
+company website. Then we use an AI agent
+to do extensive research. Then we score
+the lead. Then we add them to our CRM
+before sending an email to our team
+based on the type of lead that we get.
+And in case it's your first time here,
+my name is Mikuel and over the past 12
+months, I've helped over 40 businesses
+implement AI and automations and taught
+over 20,000 people in the [music]
+process. All starting with zero
+technical knowledge. So I'm going to
+show you everything step by step and if
+you stick around until the end, I'll
+even show you how you can get the whole
+system for free. With that being said,
+let's dive in. All right. So this right
+here is a full workflow and it has four
+different steps with two different AI
+agents. I'm going to press execute
+workflow to start the actual process.
+I'm going to put my full name, Mikuel
+Torti. [music]
+Company domain. Let's put my website.
+Yep. All good. And then my LinkedIn
+profile. So LinkedIn. And I can go to my
+profile and I can get the URL right
+here. and I can paste it here. And now I
+can press start research. When I press
+start research, what it does is that it
+goes to the first AI agent which is a
+lead and company research agent. So this
+is the thing that we use to actually do
+in-depth research which means that it
+goes inside the website, inside the
+LinkedIn, it looks at the [music] name
+and if pretty much finds any information
+out there in the internet about this
+company and person and gives you a full
+detailed report. And as you can see
+here, we're using two perplexity tools.
+One for the actual research mainly on
+the website and the other one using the
+LinkedIn. And the reason why we're
+actually looping around and around is
+because of the fact that we're doing
+multiple pieces of research. So, as you
+can see here, we have about five. And
+it's because we're not only doing
+research on one aspect of the actual
+company, but multiple aspects of the
+company. Once this is done, it sends it
+to the next AI agent, which scores the
+lead out of 70. And then finally, it
+adds it to our CRM. And then we get an
+email at the end. And the CRM looks like
+this. And as we can see here, we have
+the date, the email, the name of the
+company, whether the person is a
+decision maker or not. It's true. in
+this case company name revenue which in
+this case is not publicly disclosed but
+it estimates that it's about 1 to 10
+employees then we have the interest
+summary which is again what do they
+actually do based on the website then we
+have potential company solutions which
+is based on what I do in my company how
+can I help well obviously my company so
+because we work in the AI sector and we
+help companies implement AI then
+obviously tells us to integrate AI
+powered lead qualification or outreach
+system which is pretty ironic
+considering that's what we're doing
+today um but CRM project management lead
+generation content creation and email
+automation. And of course, if you want
+to change this to what you guys do, then
+obviously we'll look at the prompt that
+we give the AI agent. You can [music]
+simply just switch out what you do. And
+then finally, we have a score. Now, the
+score again is out of 100 that we use.
+And in this case, because it's a lead
+that has a score of 65, we get an email
+saying that it's a warm lead. So, warm
+lead, score 65. And we get all the
+information, which is company, lead
+name, monthly revenue, AI, interest, and
+recommended solutions. Now the format of
+this is not perfect and we also have to
+delete the N10 attribution. That's what
+this is called which is where N10 just
+puts themselves into your email. Of
+course the format of this is not
+perfect. So we're going to tweak that in
+the actual workflow. So there there is
+exactly how it works. Let's go to the
+first step which is the N10 form. So
+this is where a potential lead will fill
+out the form. And the form itself as you
+can see here when I press execute step
+it will ask us for our name, our company
+domain and LinkedIn profile URL. Now, in
+this case, I should have put required
+for all three, but it's only required
+for the company domain as of right now.
+And it's going to ask us for a full
+name, company domain, and LinkedIn
+profile URL, which when I submit, it
+goes here, right? And we have this set
+up using the form title, form
+description. And then we start adding
+the form elements, which are the
+questions that we ask the person to fill
+out uh when using the form. And in this
+case, the field name will be full name.
+The element will be text area. We can
+change [music] this to text because text
+area is when you want to put some sort
+of paragraph, not a very small sentence.
+In this case, because it's just a full
+name, it's going to be a small sentence.
+Uh I mean one sentence, I can put this
+as required because we need this company
+domain and placeholder as well is
+something that they see before they fill
+it out. Right? So if I see that I have
+to fill out a company domain and on the
+actual answer I see as an example
+example.com, then it gives me an idea as
+to what to fill out. And then we have
+LinkedIn profile URL which again is a
+text field and the placeholder will be
+LinkedIn profile URL which is optional.
+Now it's optional because not everyone
+has LinkedIn. So the lead can decide
+whether to add it or not. Now once this
+is done, we can see here that we have
+the output which is full name, company
+domain, profile URL and the date of
+submission. We can go to the next step
+which is the lead and company research
+agent. So we can see here that this is
+connected to two different tools which
+are done for research using perplexity.
+And as we can see here we have the user
+prompt which is giving it the company
+domain, the full name and the LinkedIn
+profile URL which is something that
+changes with every single lead form
+submission. And then we have the system
+message. So, if I go here, you can see
+that this is a pretty in-depth prompt,
+very detailed. And the way it actually
+works is if I go up here, we have the
+overview. So, you're saying, "Hey,
+you're an expert lead intelligence
+analyst specializing in AI agency sales
+and implementation readiness because
+that's what we do." So, obviously, if
+your company's different, then you would
+substitute this. And then we start
+giving it instructions. So, research
+tools and mandatory usage, internal data
+sources to use, [music] core analytics
+tasks, and a bunch more other stuff that
+he uses for the actual research. And so
+at the end I'm going to show you exactly
+how you can get the whole system for
+free. So you [music] can take this whole
+prompt and use it for yourself. Um and
+you can have it right here. And so with
+this prompt we are able to then do the
+research which gives us the output which
+is date, email, lead name, JM solutions
+which is the company name which I didn't
+give it right u monthly revenue which in
+this case it can't find and align
+interest which is JM solutions shows
+strong AI interest focus on workflow
+automations. And what this is is
+basically a way for us to understand
+whether the company itself is interested
+in what we do. And then finally we have
+potential company solutions. And the
+potential company solutions is what can
+we provide the company with? How can we
+help them? And it gives us a few ideas
+here. And then we have decision maker
+true or false. If it's true that means
+this person right here who filled out
+the form is the decision maker of the
+company. If not then it's going to be
+false. And this right here of course is
+connected to its brain which is the LLM
+which is open AAI which you can connect
+up here. Create a new credential. So you
+can go to platform.openai.com.
+You can go to the dashboard. You can go
+to API keys and right here you can
+create a new one and then copy and then
+paste it here and you'll be good to go.
+And then we have two different tools.
+The first one is perplexity research
+tool. And this right here is a tool
+that's used when we are researching the
+company. And in this case we're
+researching the company website by
+giving it the company domain. And so to
+actually connect your perplexity you
+have to go to create a new credential.
+And this tool is used to be able to
+research the actual company uh website,
+right? Not the actual LinkedIn, just the
+company website. And so the first step
+here is actually connecting your
+account. So you can go to create a new
+credential. You can go to perplexity.ai.
+And if it's your first time hearing
+about Perplexity, Perplexity is sort of
+like Chad GBT, but it's well known for
+research, right? And so you want to go
+down to account, go to APIs, go to API
+and billing down here. And you're going
+to have to add credits first. So add
+money because it's not free of course
+but it only realistically takes about
+0.001 cents and then if you go to API
+keys you can create a new secret key. So
+accept put a name. So I can put test and
+then you will have the key right here
+that you [music] can copy. Once it's
+copied you can go back here and you can
+paste it here and you'll be able to
+connect your account. Once this is done
+this will be set manually. The
+description will be message and model in
+perplexity. Just leave it as a default.
+uh the operation which is what is the
+action that we're taking is messaging a
+model. The model that we're using is
+called sonar. Sonar is a pretty good
+model. It doesn't take too long but also
+is very good at research. And then here
+we give it two different types of
+prompts. One is a system prompt which is
+what is the identity and in this case
+we're just toggling this on which means
+that we're telling AI hey you decide the
+system prompt and the other one is a
+text prompt. Now the text prompt in this
+case will be just the company domain. So
+it knows using the system prompt what it
+needs to do. And now the user prompt
+like before is just the variable that it
+needs to use to be able to do those
+certain things that we tell it in the
+system prompt. Once this is done, then
+we can see here that we have the
+citations and we have the results. So we
+have the snippet and a bunch of other
+stuff that it uses to be able to then do
+research on the next part of the person
+which is the LinkedIn research. So same
+exact concept. Everything else is the
+same. The only difference is that here I
+should have put LinkedIn URL. We give it
+the LinkedIn URL. And this is more so on
+a personal level. Right. So, you can see
+here it started scraping my LinkedIn. My
+Gumroad, I don't know how I got to here,
+but my Gumroad is where I store a ton of
+my automations. You can see here
+make.com and N10. If you have not
+checked it out, the link is up here. And
+a bunch more other stuff like this. And
+so this right here does more of the
+personal research and this more of the
+company research to then be able to
+structure the output like this to get
+the date, email, lead name, company
+name, monthly revenue, AI interest and
+potential company solutions and then
+decision maker as well. And this is
+basically us asking the AI to gather all
+the information and then structure it in
+a way where it looks like this. And we
+use JSON because JSON is the language
+that we use behind all the automations.
+If you don't know what JSON is, check
+out this video up here. I always have a
+video for something. So there you go.
+Um, okay. Now once this is done, we can
+see that the output here is the date,
+email, lead name, company name, monthly
+revenue, AI interest, potential company
+solutions, and decision maker. So we can
+go to the next step, which is a lead
+scoring agent. Now, this right here is
+hooked up to the actual brain, which is
+the LLM, and it's hooked up to the
+output structure. And the only thing
+that we really want out of the output is
+a score. Now, if I go here to the actual
+prompt, uh we give it the I shouldn't
+give it the additional context because
+it's not an actual field, but we give it
+the output, we give it the uh company
+domain, the AI interest, potential
+company solutions, and monthly revenue.
+And so based on all these fields, we're
+going to score it out of 100 and we give
+it a scoring criteria. So revenue
+requirement 0 to 30 points, must be
+generating at least 50k per month. And
+this will give us um one point, right?
+And so by doing that in specific, you
+give it a few scoring criterias, some
+sort of rules that it uses when giving
+you a score out of 100 right here. And
+so we say, "You're a lead qualification
+specialist for an AI agency. Score this
+lead based on their fit for an AI
+implementation service." And so right
+here, you can see that the output is 65,
+which is the score of the actual lead.
+Now, once this is done, then we can use
+Google Sheets, which is a CRM that we
+have right here, to be able to add the
+lead details in this row. And all we did
+here is just connected a Google sheet
+account like this. Sign in with Google
+and you have that there. Then we have
+resource which is sheet within the
+document operation which is what is the
+action that we're taking which is
+appending a row which means adding a
+row. Then the document will be the
+Google sheet which is the lead research
+analyst and then it will be sheet one
+and then all these fields are the ones
+that we map from here. You can see date,
+email, lead name, decision maker you can
+find right here. Company name, company
+name, revenue, revenue. There we go. uh
+infra summary which is infra summary
+here potential company solutions right
+here and then finally we have the score
+which you can get up here and so by
+putting everything in one place our team
+has a record of all the different leads
+that have submitted the form all the
+different sort of revenue summaries and
+company names and so on and also the
+score of each lead so when we want to go
+back to the CRM for whatever reason we
+can see all the leads that we've had in
+the past all categorized by the actual
+score now what we do here at the end is
+we actually notify our team but we don't
+want to notify our team every single
+time with this same exact email. We want
+to notify our team differently based on
+the type of leads. And so what we do
+here is we use the root so the split and
+we say hey if the output so if the score
+which you can find right here put so if
+the score right here is greater than or
+equal to 70 then we call it a hot lead.
+If it's greater than or equal to 40 then
+a warm lead and then [music] if it's
+less than 40 it will be a cold lead. And
+so that's how the automation works to
+then be able to send three different
+emails based on the different type of
+scoring that we get. In this case, the
+hot lead would just be an email here,
+which is very similar. All we have to do
+here is just connect our account, sign
+in with Google. Same exact concept as
+before. And the actual email will be
+sent to $100 million peanuts@gmail.com.
+If you know, you know. And here we have
+the hot lead alerts score is the actual
+score of the lead. And then for the
+email type, we can see here that we send
+over the company name, the lead name,
+the email, monthly revenue, AI interest,
+and recommended solutions. And one thing
+I'm going to do, I'm going to turn this
+back to text. So it's formatted in the
+right way, I think. And then, as you can
+see here, this is the one that it
+actually used. Same exact emails. The
+only difference is that we give the warm
+lead instead of hot lead. So we know
+just by the subject line if this lead is
+warm or hot. And we can also tag them.
+It's also one additional step that we
+can do is we can tag the email maybe by
+having something here. We can say warm
+leads
+and we can have all the warm leads be
+tagged here. All the hot leads being
+tagged in the other place and so on. And
+so same exact concept here. We do the
+exact same thing and we get an email
+that looks like this. Warm lead score
+65. And we have the full description of
+the actual company. And finally, we have
+the cold lead, which is the cold lead
+right here. And we send the exact same
+thing. I'm going to turn this to text.
+All right. And if you want the full
+system for free so you can import it
+into your own nitan account, then check
+the second link down below which will
+take you to my free school community.
+You can go to the classroom section. You
+can go to the templates vault and you'll
+be able to see the new video which is
+lead research and qualification AI agent
+and you can press downloadain automation
+blueprint. And if you apply and you get
+in, you get access to an awesome
+community of over 4,000 people inside.
+And we have two weekly calls every
+single week. One is a weekly huddle, the
+other one is a VIP coding session. Plus,
+we have more courses on the AI
+automations 101. We have the N10 full
+masterass, the start your AI agency
+templates vaults, all the resources that
+we've done so far, plus all the weekly
+recordings and over $20,000 in discounts
+for softwares. [music] Bear in mind that
+not everyone gets in. So, please put
+some thoughts into your answers and I'll
+see you on the inside. And if you're a
+nineto-five working professional and you
+are making at least 5K a month and you
+want to be able to start your own AI
+agency, then check the first thing down
+below and check out this video up here
+if you want to learn exactly how to
+deliver automation projects to clients
+step by step. With that being said, I
+hope you found value from this video and
+I'll see you in the next

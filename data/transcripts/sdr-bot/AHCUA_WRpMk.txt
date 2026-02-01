@@ -1,0 +1,122 @@
+# Create An Automated SMS Follow Up Sequence
+# Video: https://www.youtube.com/watch?v=AHCUA_WRpMk
+# Category: followup
+
+hey what's up y'all this is Clayton from
+Roseanne and in this video I'm going to
+be showing you how you can make a very
+simple automated SMS text messaging
+follow-up sequence so you can get your
+clients or customers to respond book a
+call um you know buy next product have a
+conversation whatever you want to do you
+can this all automated inside rosan so
+let me show you how it works all right
+so if you're in Rosanne and you come
+over to your automations and you can
+create an automation so this is a way to
+create kind of like an autoresponder of
+sorts so when give it a name um I'm
+going to select uh just single entry
+meaning like people can only go through
+this uh sequence once and then a cool
+feature that we have is this uh stop on
+contact response so often in an
+autoresponder you have a series of
+questions trying to follow up with
+people trying to get them to respond and
+what this will do is if they respond it
+will just take them out of the sequence
+so they don't keep getting the hey what
+about this uh and then when they respond
+you can just pick up the conversation in
+the conversations tab um over here and
+uh you can have your SDR or salesperson
+or yourself you can uh actually do the
+the one-on-one chatting there so this is
+just a follow-up sequence so you could
+go ahead and create that automation I
+actually have one already set up so I'll
+just show you kind of what that looks
+like so I have this follow-up sequence
+here and so you can come in here and
+you'll see uh I have a whole sequence of
+follow-up messages um to go so I'll just
+show you a couple of these the first
+thing is you have a trigger so in this
+case uh you know the trigger is when a
+tag is added so this is very common you
+you can trigger off multiple different
+things when you receive a message when a
+contact tag is added or removed when
+they're subscribed to a list they click
+a link so you can get contacts in here
+and start this sequence um lots of
+different ways um so what the first
+thing that happens is when they enter
+the sequence they get uh first message
+that says hey first name this is Clayton
+from Roseanne I saw you opted in our
+into our website uh are you looking to
+get started with text message marketing
+or are you already using it so in the
+first message often what I recommend is
+just trying to get a response you don't
+necessarily need them to tell you their
+live story or ask them a really hard
+question just try to say like hey even
+even a good question is like uh hey is
+this the right number for first name
+right just trying to get a response um
+so that goes out right when they opt in
+then I have a wait step here um it's
+going to wait a day then it's going to
+follow up and say something again it's
+going to uh ask uh it's Clayton from
+Roseanne we've been helping Business
+Like Yours boost the results by simply
+plugging in automated SMS marketing can
+we schedule a quick call to show you how
+it could work for you just follows up
+again and then it just continues to do
+that for a few days and remember again
+because I had that option selected um
+you know if if they do respond it's
+going to stop following up with them and
+then I can pick up that conversation uh
+over in the conversations tabs and go
+back for back and forth oneone and so
+yeah you can just customize this however
+You' like um I actually have a whole
+sequence template that you can use I'm
+going to link it down in the description
+and um that that's a simple sequence
+that you know demonstrates the value you
+provide it shows social proof it handles
+objections all that kind of stuff you
+can swipe that um but yeah this is just
+a very simple sequence um you can do a
+lot more stuff with automations as well
+you can even do conditionals so you come
+in here and do an if else Branch uh if
+you want to get fancy and check to see
+if maybe they booked a call or did they
+buy a product and then split off the
+different automations um for either one
+of those so lots of different stuff you
+can do in here but if you want an easy
+way to start engaging your contacts
+getting more people to that opt in to
+actually respond to you engage and you
+know hopefully Ascend to your um to your
+other products book a call whatever you
+want them to do this is a very simple
+way you can completely automate it and
+just have it running all the time just
+engaging your contacts so uh if you need
+any help getting this set up let me know
+and if you like a rosean account want to
+do text message marketing you can uh
+sign up for a free account on our
+website all right um hope you enjoyed
+this video and see you on the next one

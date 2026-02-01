@@ -1,0 +1,814 @@
+# Build This Lead Qualification AI Agent from Scratch in N8N
+# Video: https://www.youtube.com/watch?v=hBD_1rl9hzc
+# Category: n8n-automation
+
+What is up guys? Welcome back to another
+video. In this video, I'm going to show
+you how to create a sales lead qualifier
+agent by creating a simple workflow in
+any gen. Let's get started. In any I
+have created a workflow that I've
+renamed to sales lead qualifier agent
+agent. Yeah, we're going to start by
+adding a trigger. I'm going to choose an
+onform submission trigger over here.
+Then I'll proceed to add the title,
+description, and elements to form. I've
+gone ahead and added the title,
+description, and elements to our form.
+So the form title is on the lines of
+automation strategy intake form. The
+description is on the lines of this
+short form helps us understand your
+business, your goals and what you want
+to improve. The form elements first
+field name is on the lines of what's
+your full name. Element type of choosing
+text and this field will be required.
+The other field name is on the lines of
+what's your email address element type
+of choosing email and this field will
+also be required. The other field name
+is on the lens of what's your company
+name element type using text and this
+field will be required.
+The other film is on the lines of what
+best describes your business element
+drop down and then we're adding these
+options right here. So we adding agency,
+commerce, coaching and consulting local
+business as the options and this field
+will also be required. The other field
+name is on the lines of what problem are
+you trying to solve right now. Element
+type choosing text and this field will
+be required. The other field name is on
+the lines of what are you looking to
+automate or improve? Element type
+choosing text and this field will be
+required. The other film is on the lines
+of how agent is solving this for you.
+Element choosing a drop down and adding
+these options from here. So the options
+are immediately in 30 days, one to 3
+months or just exploring this field will
+also be required. The other field name
+is on the lines of what's your
+approximate monthly budget for this
+project. Element using a drop down and
+adding these options over here. So the
+options are under $500, 500 to,500,500
+to 5,000 5,000 plus. I'm not sure yet
+this field will be required. The other
+field name is on the lines of who will
+be involved in making the final decision
+and I end up choosing a drop down and
+adding these options over here. So the
+decision maker can be prospect himself,
+the team or could be researching. So
+here I'll click on execute to fill out
+our form.
+This is our form. Here's the title of
+the form and the description over here
+with the elements to form over here. So
+So we're going to fill out our form as a
+lead. So we're going to start adding our
+full name, email address, company name.
+Can say we are running a coaching and
+consulting business. The problem that
+we're trying to solve is our team is
+around repetitive task. So we like to
+automate and onboarding, internal
+reporting and proposal generation. Can
+see immediately
+here we have the budget
+and uh I'll be the final decision maker.
+So you click on submit submit our form.
+You can see our form was submitted
+successfully. We captured the data that
+we just submitted via our form. So we
+capture the full name, email address,
+company name, the kind of business that
+we're running, problem that we're trying
+to solve, areas that we're looking to
+automate, the agency budget, and the
+decision maker. So here I'll pin this
+data and use this data to set up our
+workflow.
+The next thing we're going to do here is
+we can we can wait a few seconds. So I
+search for the waiting order here. Here
+we can wait let's say 5 seconds. I
+rename this node to wait 5 seconds
+and click on rename. Then here I'll
+execute this node right here.
+Can see that our node was executed
+successfully. The next thing that we're
+going to do here is we're going to set
+the fields for the submission data.
+So to do that I'll start with the set
+fields not here and click on it.
+Here we can set the fields for the data
+that we submit perform. Let's start with
+the full number here. Next, we can set
+the field for the email address. The
+next field I'm going to set is a company
+name,
+business description. This a business
+type.
+I'll can set the field for the problem.
+I don't like to automate.
+can rename this to timeline
+the month budget and lastly decision
+maker here and then I click on execute
+set to set the fields over here can see
+we successfully did that so I renamed
+this note to set form submission fields
+then here click on
+the next thing that we're going to do
+here is we're going to add a condition
+to sure that we have the problems that
+they're trying to solve and the area
+they would like to automate fill in the
+other the form. So to do that I'll
+search for the if node to set the
+conditions
+and here can add the first condition
+that the problem has to exist
+and we can also add another condition
+say that the areas they like to automate
+have to also exist then I'll click on
+execute right here see our output was in
+the true branch but if it was in the
+first branch and they hadn't filled in
+the data
+I'm going to do nothing they do nothing
+here just to now proceed with our
+buffalo. But since they filled in the
+information, we're going to proceed with
+our buffalo. So here can wait a few
+seconds. So I'll search for the W here.
+Can wait, let's say 3 seconds.
+And then here, rename this to wait 3
+seconds.
+And then I click on rename here. I'll
+execute this node.
+Can see our node was executed
+successfully. Now the next thing that
+we're going to do here is we since we
+have their data that they've submitted
+via our form we're going to try and
+qualify these leads. To do that we're
+going to use an AI agent. So in AI I'll
+click on AI agent. I'm going to choose
+to define below to add our prompt and
+our system message over here. The prompt
+for our AI agent is on the lines of
+you're a lead scoring and qualification
+agent message is on the lines of your
+job is to analyze an inbound lead based
+on the information provided in the form
+submission. You must call the lead,
+classify it, and return the results
+strictly in a valid JSON with no extra
+text.
+And here we adding couple of
+instructions that we like the agent to
+follow. So we're telling the agent you
+must score the lead from 1 to 100 using
+the scoring criteria below. Determine
+the lead's fit level either high,
+medium, or low. And then apply the lead
+qualification logic to categorize the
+lead as either qualified, natural or
+disqualified. Then provide a short
+explanation one to two sentences for the
+score and never output anything outside
+the JSON
+structure for the scoring criteria.
+We're telling the agent to score the
+lead based on budget, agency and
+timeline, clarity of the problem they
+want to solve, intent level, authority,
+business type, tools, business size, and
+maturity. Then for the lead
+qualification logic, we're telling the
+agent to apply this exact logic. So if
+the score is above 70, they are
+qualified. If the score is between 40 to
+69 they they need nurturing and if the
+score is below 40 this lead is
+disqualified for the fit level 80 to 100
+is high 50 to 79 is medium 149 is low
+and here when we like to output our
+results in this JSON so we like to out
+the score feed status and the reason why
+we either qualified or disqualify this
+lip and here we are mapping the data
+that we set over here. So we add in the
+leads name, email address, company name,
+business type, problem that they're
+looking to solve, areas they like to
+automate, timeline, monthly budget, and
+the decision maker over here. So here I
+request specific output format. Then
+I'll click on the output per here. I'll
+click on the structured output per to
+add our JSON example over here.
+So this is the JSON example of our
+output. And then here I'll drag this
+node at the top over here. The next
+thing that we're going to add is the
+memory. I'm going to choose a simple
+memory over here. I'm going to choose to
+define below to add our key for the key
+can choose to add any key over here to
+add today's date as a key. Then I'll
+drag this node at the top row here and
+the last we're going to add is a chat
+model and choose open chat model. You
+don't need to create a new credential to
+actually come to any so from your open
+API. Add the API key right here and
+click on save to create your credential.
+Then close the window here and choose a
+model and choose any of these models
+over here. my mistake with GP GP 4.1
+mini and drag this node at the top right
+here. Since we filled in our form over
+here, we can try and qualify this lead.
+So I'll open our agent and then here
+I'll click on execute step right here to
+qualify our lead. You can see our node
+was executed successfully. So here we
+got the score feed status and the reason
+why we score the lead. So the score was
+85 feed high status is this lead was
+qualified because the lead has a
+substantial monthly budget. agent,
+immediate timeline and clear automation
+needs across multiple processes and is
+the decision maker. The business type
+fits well with automation services
+making this lead high fit and highly
+qualified. Our agent works perfectly. I
+rename this agent to sales lead
+qualifier agent and click on rename.
+The next thing we're going to do here is
+we're going to set the fields for the
+results. So I search for the area fields
+not over here to set the fields for the
+score
+the fit
+status
+and the reason over here
+then here I click on execute step right
+here to set the fields you can see our
+node was executed successfully. So here
+I rename this note to
+set lead score fields and click on
+rename right here. Yeah. The next thing
+we're going to do here is we're going to
+switch between the leads classification
+using a switch node. So I'll search for
+switch right here and click on it. Here
+you can see if the status is qualified.
+We're going to proceed with the
+qualified route. can also add another
+route over here and say that if the
+status
+is natural.
+I want to proceed with the natural root.
+Lastly, if the status is unqualified,
+would like to proceed in the unqualified
+route. I click on execute step right
+here. Can see our output is in the
+qualified route
+over here. So now we can proceed and set
+up our qualified route. So the first
+thing that we're going to do here is we
+can wait a few seconds. So I'll search
+for the original here. Click on wait.
+Can wait let's say 2 seconds
+and then I'll click on execute several
+here.
+And then the next thing that we're going
+to do here is we can send our lead in
+notification email telling them that
+they qualify to work with us. So to do
+that here, search for Gmail
+here and click on send a message note
+over here. Yeah, you'll need to create
+your credential to connect to account
+2010. To do that, just click on sign in
+with Google over here. Then on the new
+window that pops up, choose the account
+that you'd like to connect to and your
+connection will be created. Since I
+already done that, I'm going to close
+this window over here to our email
+subject line and message our email. I've
+gone ahead and mapped the lead email
+address that they fill in our form over
+here. Then the subject line of this
+email is on the lines of you're all set.
+Let's build your automation strategy.
+Email type and choose text. The message
+of our email is on the lines of hi name.
+Thanks for completing the automation
+strategy in tech form. After reviewing
+your responses, you're a strong fit for
+the automation solution we provide.
+Here's what happens next. We'll create a
+personalized automation plan based on
+the processes you you want to improve
+and the systems you currently use.
+You'll meet with a one of our
+specialists to map out the fastest wins
+and highest impacts automation for your
+business. We'll then outline timelines,
+cost, and exact workflow improvements
+you can expect. Please choose a time
+that works best for you using the link
+below here. We're going to add our
+booking link. Looking forward to helping
+you streamline your operations and scale
+faster. Best John.
+And the last thing that we're going to
+do here is I'll click on add options and
+click on append attribution. I'm going
+to turn this to off. You can see I
+renamed this now to qualified lead
+message. So I'll click on execute
+several here to send the lead the email
+telling them that they're they're
+qualified to work with us. We can also
+send our team an email telling them that
+we have a qualified lead. So we're going
+to notify our team via Slack or email.
+In our case, we're going to choose
+email. So I'll search for Gmail here and
+click on Gmail. Yeah, I'll click on send
+a message not here. Now I've gone ahead
+and added the email line of this email
+is on the lines of new qualified lead
+email type by choosing text. The message
+of email is on the lines of a new lead
+has been scored and qualified and
+requires immediate followup. And here we
+add in the name, email company and the
+score of the lead. And here we adding
+key notes of the lead. They are high
+intent lead. They have a clear problem
+statement, strong budget and a good fit
+for automation. Reach out right away and
+schedule a discovery call with this
+lead. they have a higher chance of
+closing. And here I'll click on add
+options and click on appending
+attribution and turn this to off. Then
+I'll click on exec over here to send our
+team this notification email here name
+to qualify sales rep notification. Then
+the last thing that we're going to do
+here is we're going to add the lead that
+is qualified
+into a database in a table. So in a
+table I've created a database that I've
+named to sales ops commander center.
+This B I've created three tables. So one
+for the qualified leads, the other one
+for the natural leads, the other one for
+the unqualified leads. So for each table
+we're going to add the leads name,
+company name, email, business type,
+problem that they're looking to solve,
+areas I would like to automate, the
+timeline, monthly budget,
+the decision maker, score feed, status,
+and the reason why this lead is either
+qualified
+needs to be nurtured or unqualified. So
+now to add our list to our base over
+here
+in our workflow, I'll search for air
+table
+and click on your table here and here
+and click on create a record node over
+here. You'll need to create your
+credential to connect your account to
+anyone. So from your table, add your
+access token over here. To get your
+access token, click on your profile.
+Then click on build a hub over here.
+Click on create a token. Then give it a
+name here. add all these scopes and then
+choose a database that you like to
+access the N10 over here and click on
+create a token then on the new window
+that pops up copy the token
+come and paste it right here and click
+on save to create your connection since
+I already done that I'm going to close
+it here and choose our base over here
+this is our base our table is going to
+be the qualified leads table and here
+we're going to map values to our columns
+in our spreadsheet with the data from
+our workflow so we're going to start by
+adding the lead name. So here we're
+going to map their full name,
+company name,
+email address,
+business type,
+problem that they're looking to solve,
+areas they would like to automate,
+timeline,
+monthly budget,
+decision maker. also going to map the
+also going to map the score
+fit
+status and the reason why this lead is
+qualified over here. Then I'll click on
+exec here to add our leads to our
+database
+in the qualified leads table can see we
+added a new lead over here. So here's
+their name, company name, the email
+address, business type, problems that
+they're looking to solve, areas they
+would like to automate, timeline,
+the monthly budget, decision maker,
+their score fee, status, and the reason
+why these leads are qualified over here.
+So we qualify this lead and added their
+their data to our base over here using
+this workload that we created here in
+any. So here I rename is now to create a
+qualified lead record and then here I'll
+click on rename. Then the last thing
+that we're going to do here is we're
+going to complete our workflow. So I'll
+search for the do nothing here and click
+on it.
+Can drag this at the top at the bottom
+over here. So now we can duplicate these
+nodes over here
+twice. One for the natural root and then
+and the other for the unqualified route.
+So I'll duplicate these nodes over here.
+We can duplicate this node again. This
+one's for the unqualified root. So this
+will be for the natural root. Then this
+will be for the unqualified root over
+here. So now
+I'll go ahead and update these nodes
+with the right data. I've gone ahead and
+updated the nodes for the natural root
+and then qualified route. So here we're
+waiting for seconds.
+Then we are sending the lead an actual
+email notification. Here we're mapping
+their email address that they filled in
+our form. And the subject line of this
+email is on the lines of quick update on
+your automation assessment. Message
+email type using text and the message
+bar is on the lines of hi name. Thanks
+for taking the time to complete the
+automation strategy in tech form. Basing
+your answer. You're a potential fit but
+it looks like you may need a bit more
+clarity on your processes, priorities or
+timeline before we jump into all
+automation work. Here's what I
+recommend. We'll share personalized
+recommendations
+report with the key automations that
+will benefit your business. Once you're
+ready, we can move into the full
+strategy session and build everything
+out for you. If you'd like to discuss or
+get guidance before committing to a full
+project, you can still book an advisory
+call over here. You're going to map the
+booking link. No rush. We're here to
+help whenever the time makes sense for
+you
+as John Peterson.
+Then here, click on the attribution.
+Turn this to off. So that is a natural
+lead message that we're going to send
+our lead. Then we're also going to send
+notification to our sales rep with a sub
+line which is on the lines of new
+natural lead email using text and the
+message board is on the lines of a new
+lead has been scored as ner. They show
+potential but are not ready for direct
+sales yet. Mapping the name, email
+company and the score. This including
+some keos for the sales rep. We're
+telling the sales rep that this lead
+intent is medium. They need more clarity
+and priorities or timing. We have
+possible future project. Add this lead
+to the natural pipeline and monitor
+engagement. Follow up gently with
+educational content and light checkins.
+Yeah. Click on add options and click on
+append attribution. We're going to turn
+this to off
+here. And lastly, we're adding the lead
+to
+your table. So, we're adding them to the
+natural leads table. We adding the data
+that that they submitted via form and
+the score feed stats and the reason why
+we qualify them as natural. Same with
+the unqualified roots here. Here we're
+starting by waiting a second. Then we
+sending an unqualified lead message to
+the lead. So here we're mapping the
+email address of the field of form and
+sub over here which is on the lines of
+thank you for your submission. Email
+type are choosing text. The message body
+is on the lines of hi name. Thank you
+for completing the automation strategy
+in tech form at the moment. Based on
+your responses, it looks like our
+automation solutions may not be the best
+fit for where your business is at right
+now. This doesn't mean automation won't
+be useful for you in the future that the
+timing, budget, or current structure may
+not support a high ROI automation
+project at this stage. Here are two
+options moving forward. You can revisit
+us once once your system team size or
+budget grows and send you a free
+resource to help you prepare your
+business for automation in the future.
+If you like those resources, just reply,
+send me the guide and I'll for them
+immediately. Wishing you all the best on
+your growth journey. Best John Peterson
+here. Click on add options and click on
+append attribution. Turn this to off.
+This note also sending a sales rep
+notification about the unqualified lead.
+Here we're going to add the email to a
+team. Subject line of the email is on
+the lines of new disqualified lead.
+Email type using text. the email and the
+message bodies on the lines of a new
+lead has been reviewed and marked as
+disqualified based on current scoring.
+And here we adding the name, email,
+company and the score. We're also
+including some key notes to the team.
+We're telling the team that the intent
+is low or unclear needs, insufficient
+budget or timing is not aligned. Not a
+fee for current information services.
+The action we're telling the team
+immediate sales action needed. Keep on
+record for future reassessment. If they
+re-engage or show growth signals, then
+here add options and click on abandon
+attribution. Then I turn these two off.
+And lastly, we're going to add the lead
+to the unqualified lead table in your
+table.
+So here we're going to add them to the
+unqualified leads table and uh add their
+data over here. So we're going to add
+the form submission data, the score,
+feed status, and the reason why they are
+unqualified their table. Then we're
+going to complete our workflow over
+here.
+So our workflow works perfectly. So here
+we are triggering our workflow after a
+list submits our form with your data.
+Then we're waiting a few seconds then we
+are setting the form submission data
+using this not here. If they submitted
+their problem and the would like to
+automate then proceeding and qualifying
+this lead using this AI agent over here
+and then
+we're setting the lead cause over here
+using this node. Then you're switching
+between qualified natural and
+unqualified categories.
+right here. So if the lead is qualified
+by proceeding and sending them a
+qualified lead message and we're also
+sending a sales rep a notification about
+the qualified lead then we adding the
+lead in your table. If the lead has been
+classified as not we're sending them a
+not lead message using this node. We're
+also sending a sales rep notification
+about the lead and then we're proceeding
+toward the lead to to your table. Then
+the lead is unqualified. We're waiting a
+few seconds then sending the lead
+an unqualified lead message. We're also
+sending our team a notification
+notifying them of the lead and we adding
+the lead in your table using this node
+over here. So we can go ahead and try
+and test our workflow to see how it
+works. Now since I had already tested
+the qualified route and we added a lead
+on the qualified leads table in your
+table you can try testing the not and
+the unqualified route to test our
+workflow here. Alan pin this data and
+click on execute workflow to fill out
+our form.
+We're going to start by filling in
+our full name and the email address. So
+going to fill in the company name
+for here can say we're running an agency
+problem I would like to solve is that
+the leads are slipping through the crocs
+because we do not have an organized
+follow-up system. So we like to automate
+late followup client communication and
+scheduling process here can say we like
+to solve these in the next one 3 months
+budget you can see under 500
+shape you can see it's me and here click
+on submit you can see for submitted over
+You can see that our workflow was
+executed successfully. So we trigger
+this node
+after we filled in our form with this
+data over here. So here we capture the
+full name, email address, company name,
+business type, problem that we're
+looking to solve, areas we like to
+automate, timeline, budget, and the
+decision maker. Then then here we set
+the fields for the form submission data.
+And you can see here they met our
+condition. Then we proceeded to qualify
+the lead using this AI agent over here.
+So now when I open this order, you can
+see we get them a score of 55. The feed
+can say media, it's medium. The status
+is natural because the lead shows clear
+intent and has a specific problem with a
+1 to 3 months timeline which is
+positive. However, the monthly budget is
+under 500 which limits potential
+engagement and the lead is a single
+decision maker with a small agency
+giving a media feed overall. So because
+they got a score of 55 they were
+classified as not where we proceeded to
+send them the lead na message. We also
+sent our sales rep a notification
+notifying them of the lead. Then we then
+we added the lead to natural leads table
+in a table. Then we completed our
+workflow over here.
+Now when I open our base and click on
+the natural leads table
+create a new record right here. So we
+added the list name, company name, the
+email address, business type, problems
+they're looking to solve, areas we like
+to automate, the timeline,
+the timeline, monthly budget, decision
+maker, score, fees, status, and the
+reason why they were qualified
+as nacho over here. When they open our
+inbox, here is the email that we're
+sending to telling them hi name. Thanks
+for taking the time to complete this
+form. bas on your answers, your
+potential,
+there are potential fee, but it looks
+like you may need a bit more clarity on
+your processes, priorities, and timing.
+And here we're giving them some
+recommendations
+over here.
+And then we're going to help them
+whenever the timing makes sense over
+here. So, we're sending them this
+notification email over here. They're
+also sending our team this email
+notification. We were telling the team,
+a new lead has been scored as nacho.
+They're potential, but I'm not ready for
+direct sales yet. Here's the
+information. And here's the key notes
+over here. Return them follow up gently
+with educational content and light shins
+over here. So here we
+classify the leader field in our form
+over here using this AI agent and send
+them these email notification
+and added them to to the natural leads
+table in our base using this workflow
+that we created here in any we can try
+testing the unqualified route. To test
+it, I'll click on execute workflow right
+here. Form, we're going to start by
+filling in our full name, mail address,
+and the company name
+can say local business problem. You can
+say I want to learn automation.
+We're looking to automate not yet. Just
+exploring agency. You can say we just
+exploring options. Monthly budget can
+say not sure yet. The decision maker is
+just me. I click on submit. Submit form.
+can see our farm was submitted
+successfully.
+Here we can see that our workflow was
+executed successfully. So to get our
+workflow
+after we submitted our data over here
+the form. So we capture the full name,
+mail address, company name, business
+type, problem they're looking to solve,
+areas they're looking to automate,
+timeline, budget and the decision maker.
+Then we set the phone fields over here
+using this node. Then here you can see
+the meta condition. Then we proceeded to
+qualify this lead using this AI agent.
+Can see here
+we give them a score of 25. Feed is low
+such as they were disqualified because
+this lead is in the early explor
+exploration stage without defined
+business processes, budget or urgency
+indicating low readiness and feed for
+automation services.
+Then here we switch them to the
+unqualified
+rout where we send them the unqualified
+lead message. We also notify the team of
+the unqualified lead. Then we proceeded
+to add the lead in the unqualified leads
+table in your table. Then we completed
+our workflow over here in our base. When
+I when I open the unqualified leads
+table, we added a new leads record here.
+So we added the lead name, company name,
+the email address, business type,
+problem they're looking to solve, areas
+we like to automate, timeline, monthly
+budget,
+decision maker, the score, feed, status,
+and the reason why they were
+disqualified.
+over here. We also sent them these email
+notification right here. Here's the
+subject line of the email and the body
+of the email over here. So, we're
+telling them at the moment based on your
+response, looks like our automation
+solutions may not be the best fit for
+where your business is at right now. And
+then here we're giving them two options
+moving forward over here to send them a
+guide using this email over here. We
+also notify the name of the disqualified
+lead lead using this email over here
+with the subject line and this email
+body. where we including the lead data
+and some key nodes over here. We
+disqualify this lead sent this email
+notification right here using this
+workflow that we created right here in
+any gen. So our workflow works
+perfectly. Thank you for watching. Now
+if you'd like me to create this workflow
+for you or a workflow similar to this
+one, just click the first link in the
+description to schedule a call with me.
+On the call, we'll discuss into details
+about the workflow that you'd like me to
+create for you and then I'll proceed to
+create the workflow for you. But if you
+enjoy this video and you have an AI
+agent or a workflow in mind that you'd
+like me to create using any 10, just
+comment it down below in the comment
+section. I read all the comments and if
+I land on your comment and I find it
+intriguing, I'll come back on a future
+video showing you how to create the
+entire workflow or AI agent from scratch
+using an agent. But for now, thank you
+for watching and I'll see you in the
+next video. Goodbye.

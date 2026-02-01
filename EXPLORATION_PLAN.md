@@ -7,23 +7,28 @@
 ## Phase 1: Local File Deep Dive (2-3 hours)
 
 ### 1.1 Business Strategy & Docs
-- [ ] `/home/ec2-user/data/kurios-finish/business/` - Full strategy docs
-- [ ] `/home/ec2-user/data/kurios-finish/business/Sales/` - Sales bootcamp, scripts, objections
+- [x] `/home/ec2-user/data/kurios-finish/business/` - Full strategy docs ✅ Overview explored
+- [x] `/home/ec2-user/data/kurios-finish/business/Sales/` - Sales bootcamp, scripts, objections ✅ (55KB bootcamp, Dagmawi call summary)
 - [ ] `/home/ec2-user/data/kurios-finish/business/strategy/` - Customer avatars, growth plans
-- [ ] `/home/ec2-user/data/kurios-finish/business/offers/` - Pricing, guarantees
+- [x] `/home/ec2-user/data/kurios-finish/business/offers/` - Pricing, guarantees ✅ (15-case guarantee, $50K upfront, $3K/case)
 - [ ] `/home/ec2-user/data/Kurios Automation Projects/business/` - Duplicate/different version?
 
 ### 1.2 Automation & Scripts
-- [ ] `/home/ec2-user/data/kurios-finish/automation/` - All automation systems
+- [x] `/home/ec2-user/data/kurios-finish/automation/` - All automation systems ✅ MAJOR FIND!
 - [ ] `/home/ec2-user/clawd/scripts/` - Active scripts
-- [ ] `/home/ec2-user/clawd/projects/pi-vendors/` - PI vendor intelligence
-- [ ] Customer avatar agent - how it works, what it outputs
+- [x] `/home/ec2-user/clawd/projects/pi-vendors/` - PI vendor intelligence ✅ (48 raw items, 3 vendors, 3 buyers, SCOUT bot operational)
+- [x] Customer avatar agent - how it works, what it outputs ✅ (11 avatars, auto-processes voice notes)
+
+**🚨 CRITICAL DISCOVERY:** Full AI Intake Agent system at `/home/ec2-user/data/kurios-finish/automation/clawd-agents/`
+- Built and tested: intake-agent, avatar-detector, voice-transcription, context-loader
+- Just needs OpenAI API key in .env
+- Potential savings: $4,465-6,415/month vs hiring intake specialist
 
 ### 1.3 Sites & Lead Gen
-- [ ] `/home/ec2-user/data/kurios-finish/sites/texas-mva/` - Main lead gen site
-- [ ] Satellite sites (corridor data, crash stats)
-- [ ] GHL webhook integrations
-- [ ] Form types and lead flows
+- [x] `/home/ec2-user/data/kurios-finish/sites/texas-mva/` - Main lead gen site ✅ (CaseAssessmentForm, 4-step qualification)
+- [x] Satellite sites (corridor data, crash stats) ✅ (network-stats-1, network-corridor-stats, mva-engine mapped)
+- [x] GHL webhook integrations ✅ (services.leadconnectorhq.com webhook documented)
+- [x] Form types and lead flows ✅ (mva-funnel-analysis.json created)
 
 ### 1.4 Data Assets
 - [ ] All CSVs, JSONs, contact lists
@@ -44,7 +49,7 @@
 - [ ] **Slack** - Channels, integrations
 
 ### 2.2 Partially Connected
-- [ ] **GoHighLevel** - What's the current state? Any API access?
+- [x] **GoHighLevel** - Webhook integration documented ✅ (highlevel_webhook_field_mapping.md - 4 form types, lead scoring, automation workflows)
 - [ ] **Cloudflare** - Wrangler status, deployed sites
 
 ### 2.3 Potential Integrations
@@ -174,6 +179,33 @@ What's hard right now? What takes too much time?
 - ✅ Notion pages updated (100+ buyer insights, 58+ commenting opportunities)
 - ✅ Moltbook karma: 36 (from 1), 8 posts, top post has 14 upvotes
 - 🔄 Dashboard stable, running overnight builds complete
+
+---
+
+### 2026-02-01 01:55 UTC
+- ✅ Deep dive into texas-mva site - understood full lead capture flow
+- ✅ Documented CaseAssessmentForm.tsx - 4-step qualification with auto-scoring
+- ✅ Discovered GHL webhook: services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/...
+- ✅ Mapped satellite site network:
+  - network-stats-1: Statistics site (Astro, 6 pages MVP)
+  - network-corridor-stats: Highway corridors (Astro, 6 pages MVP)
+  - mva-engine: Location template (Next.js, multi-service)
+- ✅ Created comprehensive mva-funnel-analysis.json with full pipeline
+- ✅ Identified optimization opportunities (Meta Ads API, SDR bot, AI caller)
+
+### 2026-02-01 02:15 UTC
+- ✅ PI Vendor Intelligence deep dive - SCOUT bot operational, SQLite DB with 48 items
+- ✅ GHL webhook field mapping documented (4 form types, lead scoring, follow-up sequences)
+- ✅ **MAJOR DISCOVERY:** Full AI Intake Agent system found at clawd-agents/
+  - Intake Agent + Avatar Detector + Voice Transcription + Context Loader
+  - 11 customer avatars defined
+  - ~$5K/month savings potential vs hiring
+  - 90% complete - just needs OpenAI API key
+- ✅ Sales bootcamp & call transcripts explored (Dagmawi Getachew example)
+- ✅ 2026 Offers documented: "15 Cases in 90 Days Guaranteed"
+  - Pricing: $50K upfront, $3K/case average
+  - Unit economics: $250 lead → 15% conv → $1.7-2K cost → $3K sale → $1K+ margin
+  - 5 Meta ad creatives ready with Nano Banana prompts
 
 ---
 

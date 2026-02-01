@@ -1,0 +1,306 @@
+# Build an Omnichannel AI Agent for WhatsApp Instagram Facebook No Code
+# Video: https://www.youtube.com/watch?v=XOrYCzaN_r4
+# Category: omnichannel
+
+want to be your own AI agent that chat
+with customer from anywhere from
+WhatsApp to Facebook and Instagram. So
+in this video I will walk you through
+how to be a fully functional omni
+channel AI agent using Kai AI agent
+beta. For those who don't know Kai, Kai
+is our our AI agent from Cleanto Cloud
+which is designed to automate the entire
+customer conversation across any
+internet. Do you want to try it out guy
+AI agent? visit the link below and sign
+it up for free. Okay, in order to create
+a AI agent, go to the AI agent and then
+create a new AI agent and then give a
+name. So in this example, I'm going to
+create a knowledgeb for escape
+bar and then you can set add inactivity
+time out. The default is 10 minutes. So
+which mean after the 10 minute uh the AI
+session will complete and close the
+conversation. For now, I'm I'm going to
+click create and then click
+studio. All right. So, in here, all you
+have to do is add agent. So, so before
+we add a agent, we uh we're going to
+need to create a knowledge base. Okay.
+In order to create a knowledge b, uh go
+to the add knowledge b here and then
+click create a new knowledge b. In this
+uh in this knowledge b, we support three
+types of knowledge b. You can write your
+own articate uh to train your AI agent
+or you can upload your PDF document and
+then you can sync way uh and your
+website address. So in this example I'm
+going to show you way sync with the
+website URL. So click website URL. I'm
+going to crawl the data from the website
+URL. Here is the escape bar. So which is
+a bar from uh Bangkok. So I'm going to
+copy this URL and then paste it. So here
+we have two option. So you can uh you
+can specify what specific website URL to
+crawl a single web page or you can crawl
+all the set web pages uh behind uh
+behind this the the main domain. So in
+this example I'm going to use way crawl
+web page from the URL and then I'm going
+to click sync. So now the now that our
+AI is crawling the data from the uh from
+this the website URL and then training
+the data. So it would take a few minutes
+or a few second depends of your size of
+your website and the website and the
+data
+source. All
+right. All right. So now my the
+knowledge b training is completed. So
+okay let me show you how to set it up
+the knowledgeb agent. So now I'm going
+to open the studio of the escape
+bar and then I'm going to create a new
+agent. So we have a survey agent here
+for in this example. Uh I'm going to
+show you um two option. So the first
+option is general inquiry agent. So
+especially to take the reservation for
+the escape bar. So I will say like uh
+reservation
+agent. So I will say like I want to
+create reservation agent for
+escaper. Uh we open every day
+uh every day
+from 5:00 p.m. to 100
+a.m. And our happy hour time
+is start
+from 6:00 p.m. to 8:00
+p.m. So,
+okay. Okay. So this is how I created um
+uh reservation agent. Uh if okay I will
+write another prompt if customer as
+about
+menus, drinks,
+wine and other information
+uh transfer
+to knowledge base
+agent. Okay. And then I'm going to
+generate a
+instruction. So this instruction is
+customizable on your own. So depends for
+your workflow. So here you have the
+agent reservation state from escape bar
+which operate daily from 5:00 p.m. to
+100 p.m. Your role is to help customer
+make reservation efficiently. Follow
+this step. Confirm the customer desire
+reservation. As for the number get happy
+hour, user reservation to the
+book.
+Okay.
+Okay. Okay. Sounds
+great. Okay. All right. So, and then I'm
+going to save uh this
+agent. Okay. After save uh I'm going to
+you we can test inside this emulator.
+So, I'm going to test in the
+imulator. Okay, here. Hello. I'll be
+happy with your reservation. Let's
+give Okay.
+Uh, can I book a table
+for next
+Friday? Okay. 700
+p.m. Okay. D the number. Good. Also,
+yeah. So, the AI know about me, my name
+and my email because uh he the AI know
+because I'm logging way this account.
+So, the AI in in this emulator uh the AI
+already know who is about me. So if you
+run uh this AI agent on your messaging
+channel like WhatsApp and on Instagram,
+so they will also note about you. So who
+you are, what's your name? So yeah,
+basically the AI going to know
+everything about you. All right. So I'm
+going to give some phone
+number. Okay. So thank you for let me
+number guess. Okay. to
+guess please know that okay go ahead yes
+go
+ahead yeah now uh it successfully uh
+book a t for me for the next Friday so
+and we can also connect way a calendar
+of um calendar or the geshi or any
+reservation system via by using our
+action API. So I will leave it uh this
+part for now. So I will is part of the
+advanced feature. Then I will show you
+in in the next video. All right. So I'm
+going to ask a little bit of another
+question like okay do you have any
+special
+wine? Okay. So it say no more no to
+route. So which mean um uh because we
+didn't set it up the transition. So, so
+here I'm going to explain about how to
+set up the transition. Okay. So, all you
+have to do is click
+transition. Okay. The transition me.
+Okay. You can write a uh condition here.
+For example, like if
+customer ask about
+uh menu, drinks, wine
+[Music]
+collection, got this or any other
+additional
+information. So you can write a
+condition like this. So if this
+condition are met, the AI will route to
+a different agent. So let's say transfer
+to knowledgebased
+agent. Okay. Uh now if this condition
+are meet it will transfer to the
+knowledge v agent then okay. Oh sorry
+again I I I can add a knowledge b agent
+here. So it's same like uh this flow um
+okay you can say an instruction on here
+like create a knowledge base agent for
+escape bar to answer any question
+related
+to use trains
+why and any
+other
+information related to
+uh escape bar and then I'm going to
+generate
+uh instruction. So the AI will generate
+the instruction and then you you have to
+choose the knowledge source. So in this
+so we we already train the data from the
+escape part website. So all you have to
+do is uh this knowledge source and then
+click save. Okay. Then then and then you
+have to connect way like this.
+Okay. So if this condition on me and
+then you will transfer to the to the
+knowledge B agent. Okay. So let me test
+again. Okay. Do you have any special
+wine? Let me ask the same question. Oh,
+okay. We need to restart the uh the
+session. So, so I will restart the chat
+and then I'm going to initiate a new
+conversation and let's see how it work.
+Okay. Okay. I will ask the same
+question. Do you
+have any
+special? Okay. So now I ask about the
+menu. So, so the AI transfer to the
+knowledge agent and then it extracted
+the data and after that it went
+successfully respond back to the uh uh
+the data which is from the knowledge
+bay. So here ex offer a variety of
+special code the color
+different okay a refreshing melo quality
+delegated okay that's amazing so and
+also it's also linked back to their to
+their website so here okay now is link
+back to the escape bar menu okay so I'm
+going to go back to the
+agent okay I'm going to test
+in okay so here this is a suggestion
+it's automatically popular but I will
+write manually so do you have any
+special
+wine so now it is extra data from the
+knowledge B and then responding back to
+the wine collection escaper off of
+isolation of special wine is a comp
+option And so yeah, so this is how we uh
+set it up the AI agent. Okay. So after
+we set it up everything, all you have to
+do is publish the uh your AI agent and
+give a name. So in this example, I will
+say like version one. So you can change
+by this template any time. So it's very
+easy to to modify yourself. You don't
+need any technical knowledge. Okay. So
+now everything is set up. So after set
+it up the next step you have to do a
+connect your messaging channel here. So
+go to the setting connect your messenger
+channel. So we support all these channel
+name from the website live chat Facebook
+messenger Instagram live WhatsApp. So
+you can connect one of these channel or
+you can even connect all of these
+channel. So for the WhatsApp you can
+easily connect with your existing uh
+WhatsApp phone number by simply scanning
+the QR code. You don't need any complex
+uh integration with the WhatsApp. So
+it's very straightforward. So so just
+follow the instruction and connect the
+channel. Okay. So by scanning it to a
+go. So same way the other channel. So
+you can follow the step-by-step
+instruction and connect with the
+channel. So after connected the channel,
+so what will happen is uh you will see
+and the connected channel like this.
+Okay. The next step you have to do is
+you need to create a new workflow. So,
+so, so to to use the AI agent. So, I'm
+going to create a new AI new workflow
+and then I will say like okay escape
+bar. Okay. ES
+escape AI
+agent. Okay. So, so all you have to do
+is you need to add a simple trigger. So,
+so the first trigger is when a terror
+room is open which mean trigger when a
+when a customer send their first message
+and then condition it choose the
+channel. So for example in this example
+uh you can choose one of the any
+available channel your Instagram channel
+or your your Facebook channel. So you
+can you can choose it. So in this
+example I'm going to choose one of the
+channel here.
+Okay, let me
+just Okay, I would choose uh this
+channel as
+examp agent. So which mean uh this
+condition are meet um you assign to AI
+agent and then assign to the escape AI
+agent and then you enable the channel
+and save it. So that's it. So this is
+how you set up the AI agent. All
+right. All right. So now I'm open by my
+messaging channel and I'm going to send
+it a few text message. So do you have
+any special wine
+collection? Okay. So now uh I just send
+a message now that our AI agent is uh
+extracting the data from the knowledge
+base and it will respond uh shortly. So
+depending on the data so it might take a
+few seconds uh to extract the data and
+it will send back shortly. So now the AI
+responding okay we have escape bar offer
+is special wine collection. Yeah. So
+blah blah. So so this is how we set it
+up the AI agent uh for all the omni
+channel platform. So thank you for
+watching this video. I hope you enjoy
+this video. If you want to uh set up
+your own AI agent or need any help, uh
+reach out to us or try for free uh below
+by signing up. So, thank you. Have a
+good day. Bye-bye.

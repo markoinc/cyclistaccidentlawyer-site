@@ -1,0 +1,213 @@
+# How To Setup Meta Ads In 2026
+# Video: https://www.youtube.com/watch?v=2AzazfGUums
+# Category: meta-ads
+
+All right. So, in this video, I'm going
+to be showing you guys how I'm going to
+be setting up and running my meta ads
+for 2026, which is now this year, which
+is actually crazy. I'm literally
+recording this on the 1st of January.
+So, maybe I'm the first person to
+release a video about meta ads, but I
+assume someone has probably already done
+it uh for 2026. So, with that being
+said, let's just go ahead and get
+straight into it. So, I was kind of
+using this strategy uh at the end of
+2025, kind of just like in December
+pretty much, and I think it's working
+pretty well. So, what I'm doing is I'm
+creating a campaign which is just
+testing and trying to find like a
+winning video. Um, I just have the
+highest volume here for the biz
+strategy. Kind of your basics. Uh,
+nothing special here. Um, but I'll show
+you guys what it looks like inside of
+this campaign. So, inside of the
+campaign, uh, I just create like an ad
+set that you guys just saw. And inside
+of that ad set, I have 10 different ads
+here that are all running. And I have a
+budget, like I said, of $75, I think,
+which is honestly probably too little
+for how many ads I actually have inside
+of this uh campaign here because it's
+hard to distribute $75 to 10 different
+ads. But, uh, this was kind of just like
+a test to see, I guess, like how it
+would work. And I guess it's probably
+helpful for you guys to know that you
+don't have to spend a whole bunch of
+money just to define a winning video.
+But just looking on this dashboard here,
+we don't have to go in and click on all
+these different videos cuz we can just
+see here that uh this one had zero
+website purchases. And if you click on
+the videos, it shows you more of a uh
+like a analytics page. I'll just go here
+for the charts on this one. This one
+tried getting some ad spend, but Meta
+just immediately saw that uh I mean it
+just had really bad uh stats, so Meta
+just turned it off and decided to spend
+the money elsewhere. So, let's go to
+like this Tik Tok ad 10. uh which I
+think is the best performing one. Yeah,
+54 website purchases. Uh 8.90 per
+purchase. Uh yesterday was like 3.91. So
+yeah, definitely a lot better than some
+of the other ones in this campaign. And
+this is actually going to be the one
+that I'm going to be taking from this
+campaign and creating a new campaign
+just for this ad. Um so yeah, let's just
+go back into that ad set really quick.
+There was one other ad in here that did
+decent which had six website purchases
+with a 2.18 rorowaz. So, not terrible.
+So, I could definitely take these two
+probably and then scale those up, but
+I'm just going to be focusing on this
+one right here. So, the next step is to
+obviously go ahead and create a new
+campaign for the ad. And I'm going to be
+creating a sales campaign because I'm
+selling something. Uh, let's go to
+continue. And we could just do like
+winning ad. Uh, obviously, you can name
+this to whatever. I'm going to keep
+pretty much everything here default as
+what meta suggests. I honestly don't
+change a lot. Uh, I feel like everything
+is just AI optimized nowadays. And I
+just find kind of the best results in
+that. I'm just going to be doing the
+campaign budget. And for the daily
+budget, you can honestly start at $20,
+probably the lowest 25. And I'm
+literally just going to keep it at that.
+Uh there's no need to be spending $100 a
+day. I mean, you can since you already
+kind of know that this is, I guess, a
+winning ad, but I still kind of like to
+just start it out low. uh probably $50
+uh for this since I'm kind of more
+confident in knowing that this ad is
+going to be performing better than maybe
+some other ones I'd be testing. So, I'm
+going to be doing $50 daily budget for
+this. Let's go ahead and hit next. I'm
+going to say this is a Tik Tok ad
+because basically another thing that I
+didn't mention is all those videos that
+I put in that campaign were all videos
+that got a decent amount of views on Tik
+Tok organically. So, it's kind of like a
+cheat code. you take like their organic
+videos that are doing well and then you
+export those into meta ads since you
+already know like these performed pretty
+well on Tik Tok just organically without
+pays. So hopefully they do the same when
+you add some money to it. But as you
+saw, not all of them did super well.
+You're going to get different results
+from organic views and paid ads. It's
+just kind of how it is. So let's go
+ahead and make sure everything here is
+good. I'll just make sure that you have
+your conversion event at purchase. I'm
+just going to have this start at 11:00
+a.m. today. So uh let's just go ahead
+and run that. As you can see, I mean,
+this is proof that I'm recording on
+January 1st, too. Um, but yeah, let's go
+ahead and look at the rest of the
+settings here. Like I said, I keep
+pretty much everything default for the
+most part, but I am going to change a
+few things later on. So, in the
+placements here, I'm just going to hit
+show more settings. And for platforms,
+I'm honestly just going to be doing
+Facebook and Instagram. Uh, let's go
+ahead and hit next. And for the ad
+setup, I'm going to do create ad manual
+upload. And we're just going to go ahead
+and create single image or video for the
+format. And then I'm going to toggle off
+this multi-advertiser
+ads. And then we just need to get our
+link for the website. Always make sure
+that this is on your landing page or for
+the most part you want to make sure it's
+on your landing page. Now let's go up to
+the setup creative and do video ad. I'm
+just going to go ahead and hit next. And
+then for the media, I can go ahead and
+select that ad that I had. All right. So
+I went ahead and selected that video
+that I had on that winning ad. Um, let's
+just go ahead and hit skip and continue.
+For the crop, I'm just going to leave
+this on original for all of those and
+then go ahead and go to next. And for
+the primary text, I'm just going to be
+using Shad GBT. I already have some
+primary text here that I'm going to be
+using. I'm just going to copy and paste
+those. Add another text option. And just
+copy another one of these that Chad GBT
+created. Go ahead and paste that in
+here. Let's go ahead and add another
+one. And then for the headline, I'm just
+going to be doing the same thing. I have
+a couple different chatbt options here
+that I'm going to be choosing. I'm
+honestly just going to have two
+different options here to choose from or
+for meta to choose from. Um, and then
+leave everything off. Let's go ahead and
+add a description as well. Copy and
+paste that. And then a call to action.
+Make sure that this is on shop now or at
+least if you are selling a product. Now,
+let's go ahead and hit next. Um, I'm
+just going to keep translate text on. I
+think that's helpful. And I'm not going
+to add video effects, video touch-ups,
+text improvements. No, I'm just going to
+leave honestly all that off. And then go
+ahead and hit done. All right. So, now
+you can see all of our primary text,
+headlines, and all of that good stuff is
+imported into here. I'm just going to
+make sure everything else looks good.
+Yeah, I think everything is honestly
+ready to go. Um, so from here, you just
+go ahead and hit publish and let Meta do
+its thing. All right, so that ad is now
+processing and going to start
+delivering, like I said, at 11:00 a.m.,
+so in literally nine more minutes. So,
+I'll definitely keep you guys updated.
+And if you want to see like an updated
+video maybe on just this ad and see how
+it does performance-wise or whatever,
+then I could definitely make an update
+video if you want to see that. But this
+is probably going to be my strategy
+going forward for 2026. If I have any
+other ideas, then I'll definitely post
+them on this channel or maybe on my Tik
+Tok or Instagram. Just some quick little
+updates on there if you want to go ahead
+and follow me over there. But yeah, if
+you want to see more videos like this in
+the future, then make sure to hit that
+like button, subscribe to my channel,
+and I'll see you guys on the next one.
+Peace out.

@@ -1,0 +1,423 @@
+# Build an Ai Appointment Setter on FB/IG/SMS in GoHighLevel 2024
+# Video: https://www.youtube.com/watch?v=ScIaMx2EcLY
+# Category: ghl-chatbot
+
+okay in this video I'm going to share
+with you how you can build an AI
+appointment booking bot in go high level
+so what this means is that you can have
+a 24/7 365 days a year let your employee
+like it's like having an employee in
+your agency or business um that can just
+Hammer DMS basically or messages or text
+messages and just book meetings or sell
+your service or product for you so
+appointment seters or virtual assistants
+are like out of date like one of the
+main problems I had when it came to vas
+and hiring virtual assistants to do like
+appointment setting for me was they are
+inconsistent they're lazy and they're
+also expensive um you can get cheaper
+ones for like $3 an hour but you get the
+point why would you have that when you
+can literally have a 24/7 like AI bot on
+your inbound social media channels to
+just handle all the lead flow for you or
+your clients so that is the best part
+about this video is that not only can
+not only am I going to show you how to
+build this for yourself I'm also going
+to show you how you can do this for your
+clients um because it's the same thing
+um I would obviously recommend you learn
+how to do this for yourself first and
+then your clients um but yeah it's going
+to be a very valuable video so I'm going
+to show you two variants that you can
+build in go high level today after this
+video um the first one is for beginners
+and it's way more simple to understand
+because we're going to be using the chat
+gbt inside Goa level so it's just a lot
+more simple basically um and the other
+one is more like Advanced it's one of
+the best ones in the market but it's a
+bit confusing to set up you need web
+hooks you need to use a third party
+software like zapia you need uh chat gbt
+um 4 ideally with the open AI key and
+then we link that to zapia so the second
+one gets a lot more complicated but the
+first one um is what I'm going to start
+with just so if you're a beginner and
+you're new to high level you're new to
+automation maybe you run an agency um I
+don't know but yeah this is what what
+it's going to consist of so yeah this is
+using go level chat gbt I'm now going to
+show you a live walk through of the
+workflow um and automation so if we go
+to this workflow now if you have high
+level then you would basically go to
+your automation part and you would
+basically click create
+workflow um and then start from scratch
+but if you already um have a workflow
+you can just basically name it whatever
+you want um this is just an example so
+first of all you need a trigger now if
+you're new to high level right a trigger
+is how we start the automation now if
+you're looking for like an outbound um
+AI booking you know software whatever
+then you can't really use this for that
+you would need Auto igdm or another one
+of these like um outbound softwares but
+this is mainly for inbound um if you run
+ads or if you are creating content which
+every one of you watching this should be
+creating content um attention is
+literally the most important thing in
+2024 but this is what you'd want to set
+up onto your Instagram your Facebook
+your SMS um all that stuff so what you
+want right is you want um the trigger to
+be customer replied now you can call
+this doesn't really matter um and the
+reply Channel you can select literally a
+bunch of different things Facebook
+Instagram SMS even WhatsApp um so
+wherever you're get wherever you're
+getting your like inquiries you can just
+put that as the trigger contains the
+phrase so you could put this as like um
+hi can I get more information or can I
+learn more about what you're doing or a
+certain keyword that you could put in
+your Facebook or Instagram bio um it
+doesn't really matter you get the point
+you can put whatever you want here and
+you can even add more so you can add a
+exact match phrase if you were to put
+like keyword um and yeah that's that
+basically and that will allow the
+trigger to to or so the automation to
+actually start and then carry out with
+all this good stuff so yeah you click
+save trigger make sure you constantly
+save your workflow as well um and then I
+like to have a wait of 1 minute now the
+reason I have this is to make it look a
+bit more natural because if the AI bot
+responds like automatically within a
+second you can tell or the prospect can
+tell it's a bot so I like to wait a
+minute or 2 minutes um ideally no longer
+than 2 minutes because the whole point
+of this is to have a um a dialed in
+appointment seter that is 24/7 the speed
+to lead is like very quick which means
+that um we can keep the actual Prospect
+in a conversation instead of them going
+elsewhere or going to another you know
+social media platform we want to keep
+them actually engaged so a minute is The
+Sweet Spot of what I found um and then
+you basically want to put your Instagram
+DM as just whatever you want um in the
+actual thing so if it's a free lead
+magnet in which you're getting people to
+DM you you so that's what i' would
+recommend you would create some type of
+free resource a free pdf a free training
+and then you would put that in your bio
+and you would say DM me the word I don't
+know grow or scale or meeting and I'll
+send you something that your Niche wants
+basically um and then you basically give
+that to them in this message here um and
+then what you would do is you would wait
+so you'd wait for contact reply meaning
+that we want them to reply to this um DM
+and you could also put in this DM like
+did you get it or is this what you were
+looking for just to provoke a response
+because once we get a response we then
+put a condition so a condition is
+basically an if or else now what this
+means is that if the lead responds it's
+going to do one thing and if the lead
+doesn't respond then it's going to do
+another thing so we must have a
+condition here because obviously you
+want to do certain things but if the
+lead responds in a set way so what I
+I've done is I've created two branches
+which is very simple um the first branch
+is lead replied equals true and once
+again you can um what's it called yeah
+actually implement this into your
+workflow as you're like watching this so
+I don't know maybe have another tab open
+and just like go through this workflow
+and build it um it's very simple stuff
+the second uh AI bought is going to be
+like way more advanced and like way
+better um that basically it can just
+respond like in a way more like a more
+human Mana basically um and by the way
+if you want like this just completely
+done for you then DM me on Instagram and
+I will also give you like the um the
+prompts as well to actually what to put
+into the um chat gbt which I'll talk
+about in a second so yeah anyway let's
+get back into this um yeah actually DM
+me like I don't know just say you want
+the thing I'll probably put a keyword in
+the bio um sorry in the description the
+first link and yeah yeah if you do that
+then I'll just DM you back uh how to get
+access to this built out for you
+basically for a lot cheaper than
+actually paying for high level which is
+probably what you want um but anyway so
+yeah essentially two branches this one
+so You' put contact replied equals true
+this one contact replied equals false
+You' put the thing as contact replied
+and then false pretty easy to understand
+then if they don't respond to the
+initial message it's going to wait 24
+hours and it's going to send an
+Instagram DM saying hey and you can even
+change this to first name if you put
+custom values contact first name now
+it's going to say hey James or whatever
+their name is did you get a chance to
+check out whatever you sell the free
+training or the the lead Magna I'm
+actually going to save that cuz that's
+what I want it to be but yeah and then
+once again it's going to wait and then
+it's going to do the same thing it's
+going to see if the lead responds if
+they did respond we've put a go-to
+action which um means that it's going to
+take them to this part if you know the
+lead did respond originally it's going
+to do what it would that uh do basically
+and if they didn't respond I probably
+should put another followup here but
+haven't done that but yeah if they um
+did respond to the initial free lead
+magnet then you basically want to put a
+prompt here so you are an appointment
+set on Instagram the lead has reached
+out um and you've given uh the free lead
+magnet your job is to have a friendly
+conversation and ask the simple
+questions that I'll give you below once
+the they respond to the free lead magnet
+you would say are you working towards
+any goals or whatever and for the
+temperature you'd want to put this as
+like
+0.2 um the reason for that is we want to
+make it more um focused and
+deterministic instead of more random so
+if we were to put like 0.8 basically the
+higher you go or the closer you get to
+one the more random the uh the actual
+chat gbt is going to respond so we want
+it to be as focused as possible so it's
+I want it to actually say what I've put
+here so you can do even No.1 basically
+that's what I would recommend or .2 um
+and then you would basically go to
+Instagram DM so how you would do this is
+um I don't know why I don't I don't
+really want to delete this but you would
+basically yeah click Send Instagram DM
+and then you would go to custom values
+you would click chat gbt and you would
+put the hasht one which links here send
+a prompt to uh chat gbt Ai and then it's
+basically going to do the response that
+you you gave the The Prompt basically
+and then it's going to wait 24 hours and
+then guess what we've got a condition
+just like what we've got here just like
+what we've got here um so an if or else
+condition this one says um nothing so
+far and this one says the lead hasn't
+responded so you're going to say hey did
+you get a chance to check out the free
+Bid or whatever you want there I just
+wanted to demonstrate how this works
+put the chat GPT fre response so it must
+link with the the same hashtag here make
+sure it does that and then this one
+should say chat gb2 uh chat gbt2
+response once again linking with the
+hashtag there so that is like the most
+simple chat gbt AI booking B that you
+can make basically um it's pretty easy
+to understand you have a trigger you
+have um you put the prompt in here like
+it's super easy you can basically click
+here go down here to um chat gbt put in
+your prompt then you would for this
+Instagram DM you would click here you
+would click uh send Instagram DM so here
+Instagram DM you would go here you would
+go here and then click this one super
+simple um and for the condition in case
+you don't know how to do this you would
+type if or else and then you've got your
+branch once you've done this so if lead
+responds true you would colle uh put
+contact replied equals true and then you
+would create another Branch um with the
+false basically option then contact
+replied equals false now let's get into
+the actual like a way better version of
+this but I wanted to include this in
+this video just in case you're
+completely new to this basically and you
+um haven't what's it called done this
+before and also if you get people stuck
+in this weight option you can basically
+just click here and move all the leads
+into the next step so now it's going to
+do follow-ups for you basically basally
+if they get jammed which sometimes
+happen but nonetheless now let's talk
+about the second booking B which is
+using chat gbt 4 zapia and Goa level so
+the reason we use this or the best use
+case for this is if we want a way more
+indepth and accurate but like a human so
+we want it to actually be like a way
+more advanced version that can have a
+more flow to the conversation um and
+it's just a lot more reliable and
+doesn't
+um yeah break or doesn't know what to
+say sometimes this one is like the best
+of the best basically but the problem is
+that it's quite difficult to set up if
+you're a beginner so that's why I'd
+recommend starting with this one and
+then transitioning into this one um but
+how you would do this is You' basically
+need to have or you would need to go
+into your open AI so you would create an
+open AI account you would um go to the
+API section um and you kind of want chat
+G4 for this and then you would want to
+go to assistant um and click create you
+would have your name instructions
+model um and then this stuff but for the
+instructions this is your prompt so
+instead of using high levels um chat gbt
+like you can see here what we're going
+to do is we're going to use a
+third-party software in this case it's
+going to be zapia to connect open AI so
+we're going to have to get the API key
+and we're going to have to connect that
+to zapia um and then then that will be
+the web hook to high level basically um
+lead connector so for this instructions
+what you would want to do is you would
+want to um get the uh I think it's
+essentially this one this is what I
+probably found to work best so yeah You'
+put in your details and You' basically
+just need to um fill in what you want
+but if you don't have any qualifying
+questions in your um appointment setting
+standard operating procedure then it's
+going to be a lot easier cuz you can
+just remove like the disqualifying
+criteria you can remove um yeah the like
+all this stuff and you can basically
+just like have it a lot simpler but you
+basically just copy and paste this into
+the assistant click save as you can see
+I've already done it here so it's pretty
+simple um and then You' essentially want
+to test it in playground so you could
+say like hi who is
+this okay okay I think I was meant to
+click run not enter but um it should
+just respond so hi there my name is
+Charlie from agency start are you
+interested in Booking an appointment
+with us so you can see how that works a
+lot more efficiently um and if I were to
+click right uh yeah sure I don't know if
+it's actually going to send this cuz I
+don't think I put in my calendar link
+but um I don't know maybe it will say
+something um awesome I'll be asking you
+some qualifying questions about our
+services to determine the best
+appointment for you this should take a
+few minutes and can be completed uh via
+text can we start if I have to put yes I
+I haven't actually given the prompt any
+um qualifying questions so I don't know
+what it's going to say um yeah just like
+your name but you can change this you
+can just give them a calendary link here
+so they can book in and then you can be
+selective with once they book you can
+then cancel calls that's your choice um
+but yeah you essentially want to test
+this make sure it's running well then
+you would want to go to your API Keys um
+and then create a new secret um key and
+then you basically want to copy that um
+send it over to zapia um I think you
+need the starter or the Premium zapia
+plan um otherwise I don't think it's
+going to work but once you do that um
+you would then want to have the um that
+link to high level basically um and then
+once it links to high level you should
+be good to go um but once again you
+would test it into zapo and you can
+always hardcode prompt it into zapo
+yourself um using the same prompt you
+use actually for the assistance
+basically in in here if that makes sense
+so um yeah that's why it is a lot more
+advanced um to actually like do that um
+but I don't know how on Earth I've got
+to this point where it's like
+um okay we're back but yeah basically
+what I was saying is if in case you just
+want this completely done for you you
+don't want to um build this yourself and
+you just want it in your own highle sub
+account um so you also get yeah this one
+so the Facebook one the Instagram one
+SMS one as well as the um the chat gbt
+one just DM me on Instagram um and I'll
+basically tell you how you can get
+access to it um but yeah besides that um
+hopefully this video helped um in your
+journey in high level or your agency if
+it did just leave a like And subscribe
+um that's all I ask for at the end of
+the day um I'm trying to get to 10K Subs
+um so hopefully you can help do that um
+if not no worries hit the Subscribe
+button I think I just mentioned that but
+I meant the comment section um and yeah
+I'll catch you in the next video take
+care and watch this video if you want
+more on my channel

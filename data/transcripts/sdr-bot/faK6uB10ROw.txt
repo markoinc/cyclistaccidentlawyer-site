@@ -1,0 +1,449 @@
+# How to train your Voice AI Agent on Company knowledge Vapi Tutorial
+# Video: https://www.youtube.com/watch?v=faK6uB10ROw
+# Category: vapi-voice
+
+How do you give a voice agent business
+specific knowledge inside of Vapi? Are
+you adding the knowledge base to the
+model or do you add it via tool call or
+do you directly put it inside of the
+prompt? With so many options, it's hard
+to choose which one is the right one.
+So, in this video, I'll show you how you
+can add company specific information to
+a Vapi voice assistant. I will also show
+you which methods to choose and which
+methods to avoid. So, to get started, I
+first show you all three methods so you
+understand what options you have and
+then we dive into which one is actually
+the good or the best one to use and
+which ones you probably want to avoid.
+So, I'm right here inside of my Buppy
+dashboard and I'm on an assistant called
+Riley, which I just set up as a very
+standard voice AI concour system for a
+fake hotel called Sunset Co Hotel. I
+literally just generated this with a
+Vapi AI assistant generator, which does
+its job for this video. And all it's
+supposed to do is just answer some basic
+things about the company and we also
+want to give it knowledge about the
+actual hotel, right? So, I have a
+knowledge base right here, which is just
+something that I basically prepared with
+Jet GPT. So nothing special, but simply
+imagine that this would be a knowledge
+base that you could just have from a
+client, so from an existing hotel. And
+what I'm going to do now in the first
+one is we basically use it within the
+prompt. So this would be number one. So
+in case you have a knowledge base that
+is not too big, like this one is okay,
+you could potentially just drop it
+inside of the prompt as a knowledge
+base. And the way I would do that is I
+would basically just go to the end of
+the prompt and I would just add a new
+section here with markdown. Let's let's
+call it maybe company information. And
+in the company information, I literally
+just drop in this whole knowledge base
+which now would be available inside of
+the assistant as just pure knowledge.
+Right? So if you use a model like 4.1,
+it's most likely going to work because
+it can understand context and it can
+understand when there's guidelines and
+style what it needs to follow and that
+this down here is basically just general
+information that it should use, you
+know, in case the customer asks. So
+while this works, there are a couple of
+reasons why I don't use it, which is
+mainly also because you it's very hard
+sometimes to control the quality of it
+if you don't maintain it yourself, but
+also because it often suggests things
+that you might not want, right?
+Especially if it comes to booking and
+they have a WhatsApp contact, it
+sometimes happens that it just tries to
+send the WhatsApp contact URL via phone
+calls, which doesn't make sense. So one
+of the reasons why I don't like it that
+much, but uh it does its job for smaller
+knowledge bases, which is great. Now, I
+just removed it right here. And the
+second thing we're going to look into is
+the actual knowledgebased integration
+that Vapy has, right? And oh, it seems
+like something didn't work with my
+assistant. There we go. Now, Vapy itself
+has a knowledgebased integration that
+allows you to basically without any kind
+of technical knowledge set up a vector
+storage. Basically, you just upload your
+file and it's there and you can then use
+it inside of voice assistance. But there
+are two different ways on how you can do
+that. Now, both of them are connected to
+the files right here, which is basically
+where you have all of your knowledge
+uploaded. Meaning that now instead of
+having it in the system prompt, we're
+going to use the file section right
+here. And as you can see, I already
+uploaded one, which is literally nothing
+else than this content saved in a text
+file that I just uploaded. So to upload
+it, all you do is you basically click on
+choose file. You simply drop in the file
+of the knowledge that you basically
+have. And I would definitely always
+recommend to validate those. And with
+validating, I mean you just clean the
+data. So in case you use stuff from the
+website or from any kind of other PDF,
+etc., you want to clean it up that it
+looks nice and neat and tidy like this
+one. You have amenities. It's properly
+structured. You potentially even have it
+in markdown format because it makes it
+just easier to retrieve. So that's
+something I I recommend you to do. And
+once you uploaded it, it will look
+something like this. And you have a file
+ID right here, which becomes important
+in a second. But first, I'm going to
+show you the first method on how you can
+actually use it because from here on
+it's they make it very very easy to use.
+Sometimes a bit too easy in my opinion.
+And I'll show you why as well. But let's
+say you uploaded the file and you want
+to connect it to your assistant. So all
+I do is I head back to my assistant
+right here and in the side window here
+you have the file section and in the
+file section you can simply select the
+file. Now this would automatically
+connect the file directly to the VP
+assistant and it is accessible right
+within the assistant whenever you call
+it. Now while this method works it's not
+the best for various reasons and one of
+them being that the call is going to be
+more expensive. It's going to be slower
+and you also have higher hallucinations.
+Why? Because whenever you have a file
+added right within here, what they do on
+the chat completions, so whenever you
+basically stop saying something on the
+call and it's being sent to the LLM,
+they inject information from the
+knowledge. So from whatever you have in
+the files into the system prompt. So you
+can imagine that you have a lot more
+tokens that's being sent to the chat
+completion which obviously blows the
+prompt. It adds more context that might
+not even be relevant because the
+customer might just ask a question about
+the hotel name like what's your hotel
+name? And the hotel name is already
+defined in the system prompt. So in that
+case we would not even need to have data
+retrieval right. So whatever it
+retrieves it's unnecessary and that
+actually makes even a bigger difference
+to pricing. So having it inside of the
+file section is a an approach that
+works. But the use cases for that to be
+fair we haven't seen them. That's why we
+don't use it at all at least in our case
+right now. But it's an option that's
+there. So this is the second option. And
+the third option which also involves the
+files but in that case we use what we
+recommend which is by the way also our
+favorite option it's using tools. So
+instead of having the files in the side
+section right here and basically
+injecting the information with every
+single message that is being sent from
+within the voice AI call to the LLM, we
+are using a tool which means that the AI
+system, so the agentic system itself can
+decide by itself when to actually
+retrieve the knowledge instead of
+relying on the non-stop static
+bombarding of knowledge inside of the
+assistant. And the way that works is by
+using these tools that you can see right
+up here and right up here. Inside of the
+voice assistant, you have the
+connection. So where you basically
+connect the tools and right here you can
+create the tools and I'm going to show
+you as well how that works. So all you
+would do is you basically go over here
+to the tool section. You probably won't
+have any. You click on create tool and
+you select the query tool right here.
+Now I've already done that. It's called
+knowledge tool. I've preconfigured it so
+you can see it and we're just going to
+go over this whole setup. I named it
+knowledge tool so it's easier for the AI
+to understand what this tool does. And I
+also have a description here that again
+makes it just easier for AI to
+understand when to use this tool. So we
+have additional context while the
+current given hotel used to enrich the
+answers with relevant information. So
+you can imagine if your system prompt is
+structured properly inside of the
+assistant, it will know to use the
+knowledge tool in case it doesn't know
+something which then basically allows us
+to retrieve information. Now until this
+point it is only a tool. It doesn't have
+information and the information is what
+you add here in the knowledge base
+section. So you have this nice button up
+here where you can add knowledge and you
+basically just click on it. It adds the
+knowledge base. I've already done that
+right here. You can see I just added a
+name hotel details FAQ. It's basically
+just the general information of whatever
+I have available right here. And then I
+also have a description that just
+defines or specifies a little bit more
+what's inside of this document. And
+lastly, I have a file ID right here,
+which is the file ID we got from the
+files. So that's what I mentioned
+earlier, right? If you go to the file
+section right here, you have the file ID
+up here. You simply copy that. You head
+over to the tools, you open your tool,
+and down here in the file ids, you just
+paste it. That's literally all you need
+to do. Now, you can also adjust the
+messages down here, which is just
+another thing that makes it easier for
+you or more optimized to have certain
+messages within the phone call. And in
+that case, it's English. So, if it's
+multilingual, there are a couple of
+different ways on how you can do it. But
+that's a thing for another day. By
+default, you won't have any messages
+set. But if you click here on messages,
+you can see you can add a message on
+completion, on failure. You can set a uh
+request response delay. So, in case it
+takes longer, you can have another
+follow-up message. Or what I have added
+right here is request start. And I just
+added that to showcase to you how that
+actually works because let's for example
+say the voice assistant or you someone
+is calling with the assistant and they
+ask about the pet policy of the hotel.
+In that case the voice AI would say
+please hold on because it now initiates
+a tool call and the tool call is to
+retrieve knowledge information from the
+knowledge base. So basically from the
+file that you've added return it and
+then say whatever it retrieved to the
+user inside of that call. So this please
+hold on is basically being said before
+the tool is called or while the tool is
+called. So you can define that here as
+well. And you can also say right here as
+you can see to basically wait until the
+message has been spoken to start the
+tool call which I don't recommend. So I
+would just leave that off. Now once you
+have that knowledge to ready you simply
+click on save up here and you head back
+over to your assistant. So we simply
+head to Riley. So you can see I removed
+everything. I removed the files right
+here. So there are no files connected. I
+head over to the tool section and in the
+tool section here I simply select the
+knowledge tool which is the one that I
+created specifically for the use case.
+Now if I click publish it now means that
+the assistant so basically the model has
+access to this tool that we have right
+here which by the way works really well
+with OpenAI and with 4.1 it's also
+pretty good for reasoning. So you can
+have the setup very very easily in place
+and now ask it questions and you can see
+right here there's basically nothing
+defined about knowledge but it can be
+used for knowledge pretty well and I
+cannot show you how it works by actually
+calling the AI. All right to call it
+what we're going to do is we click up
+here on to talk to assistant and we're
+going to ask it some questions. So let's
+just see what question would make sense.
+Yeah we have the pet policy. That would
+be one we could try. Smoking $200
+cleaning fee violation. Let's just try
+the pet policy uh cuz it has like a $50
+cleaning fee. Let's see if it can
+actually recognize that cuz it's not
+added in here. So, let's just give this
+a call.
+Hey, how can I help you? Hey, can you
+tell me more about your pet policies?
+Please. Hold
+on. Certainly. We welcome pets under 20
+pounds in designated rooms. Um, there's
+a $50 cleaning fee for pets. Awesome.
+Thank you. As you can see, it said
+please hold on because that was defined
+inside of the tools, inside of the
+knowledge tool right here. Please hold
+on is a static message we just asked to
+send. And it also told us the exact
+pricing that it didn't have available
+inside of the assistant files, but
+literally just via the tool. And that is
+a lot better because now you can have
+the conversation without the non-stop
+injecting of information from within the
+file section, which just increases
+quality. It reduces your costs and it
+also makes the assistant a lot better.
+So basically causing less
+hallucinations. Now there is another
+method that I haven't mentioned yet
+because it's a little bit more complex
+to set up, but I just want to guide you
+a little bit towards how you can make it
+work. So you have heard it at least and
+the way it works is also by using tools
+but now instead of using the knowledge
+tool we could use for example a function
+and the function basically then allows
+us to fetch information from an external
+service. So we can basically define a
+URL. I show you that as well. Inside the
+function tool we can basically define
+the name obviously and right here we can
+define the server URL which means that
+whenever this function or this tool is
+called inside of the voice assistant it
+makes a request to this URL and tries to
+retrieve something. Now this is what we
+usually would have called a normal tool
+call but this allows us to send stuff to
+an external service like make.com and in
+make.com we can connect it to a vector
+database like quadrant and basically
+just run through a whole custom setup of
+whatever we want to or however we want
+to structure this whole knowledge base
+to retrieve information. We've done that
+with custom knowledge bases or custom
+vector data stoages. We've also just
+done that by actual separate completions
+that we've outsourced into a tool call.
+So simply imagine that when this tool
+was called, we ask a separate chat
+completion that is built inside of make
+to retrieve information from a file that
+we added directly inside of a chat
+completion module of OpenAI to retrieve
+the information and send it back. So
+that is another option that you can look
+into which is a little bit more
+complicated and if you want I make a
+tutorial about that as well if it's
+relevant. But apart from that this is
+the options that you have available and
+now given all of those options which one
+do you think is the best? I mean I
+already shared a lot of information so
+I'm just going to guide you which ones
+is actually the one that we like the
+most which kind of like you can probably
+guess it it is already the query one
+with the tools right here. This is more
+than enough if you want to have simp
+simple assistance without any kind of
+external validation. Now, while this
+works well and it does great for a lot
+of use cases, it doesn't work for all of
+them that well and that comes down to
+metadata, right? So, we for example
+build a lot of real estate agents where
+we actually fetch property information
+from a custom vector storage and we want
+to make sure we also filter things by
+prices etc. So, we don't want to return
+everything but just literally specific
+values that have been filtered or
+pre-filtered. Now the knowledge tool is
+great for just retrieving text to
+getting standard information but it is
+not as good of filtering things on a
+more granular scale right and for those
+cases it still makes sense to use
+functions but generally for simplicity
+and the ease of use and getting the best
+out of it even for beginners the
+knowledge tool is the best thing you can
+use because it's very easy it's
+efficient and it does what it's supposed
+to. Now given that the worst thing you
+can potentially do is not even adding
+the prompt inside of here but it's
+adding the prompt inside of the file
+section right here. So literally just
+uploading the files here and adding it
+directly into the voice assistant. This
+is what we've seen the worst approach
+because it makes things more expensive.
+It makes hallucinations and one thing
+that I haven't mentioned it also
+lengthens the call duration which just
+sounds weird but simply imagine that
+because you push in more tokens you
+first have a little bit higher transfer
+in between of the chat completions and
+you also have a bit more latency because
+there are more tokens that need to be
+calculated in some of the cases. So
+overall, the file section right here is
+the worst one. We don't recommend using
+that at all. It's even better just
+dropping the whole knowledge base inside
+of the system prompt if that is
+necessary in your case. But like I say,
+the tools is probably the best option
+that you can take for making sure your
+assistant does well, answers properly,
+and hallucinates less. That's all I have
+for you today. If you want to learn more
+about voice AI, you definitely want to
+check out our community where we work on
+the future of voice AI together. I'll
+link it below in the description if you
+want to check it out, and it is totally
+free, of course. That's all I got for
+you today. Thank you very much for
+watching and see you in the next

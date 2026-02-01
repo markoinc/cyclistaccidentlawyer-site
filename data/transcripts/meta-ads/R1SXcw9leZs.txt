@@ -1,0 +1,1021 @@
+# Complete Facebook Ads Course for 2026 (Step-By-Step)
+# Video: https://www.youtube.com/watch?v=R1SXcw9leZs
+# Category: meta-ads
+
+Over the last 7 years, I managed more
+than $20 million in Facebook ad spend,
+working with over 5,000 students across
+pretty much every type of drop shipping
+store that you can think of. And in this
+video, I'm going to walk you through the
+entire process of creating a Facebook ad
+campaign completely from scratch. We're
+going to go step by step through every
+setting that actually matters, why it
+matters, and how to avoid the mistakes
+that waste money or kill your results
+before you even start. And by the end,
+you'll know exactly how to set up your
+campaigns, test your creatives, and make
+decisions based on real data. the combo
+that lets beginners start strong instead
+of fighting uphill from day one. Now,
+look, if you actually want results with
+your Facebook ads, this first step right
+here is not optional. Before we even
+touch ads, we need to set up [music] the
+backend the right way. So, I need you to
+log in right now because I'm literally
+going to do it with you guys click by
+click where all you have to do is just
+make sure that you're following along.
+All right, so the first thing that we're
+going to do is we're going to create the
+Facebook page that your ads are going to
+run from. So on Facebook, just go to the
+left side, scroll down, click pages, and
+then hit create new page. Now, this is a
+public page. So this is going to be the
+one that customers will see. So for the
+page name, just go ahead and use your
+store name. [music] Now, for the
+category, type shopping service or
+whatever matches best from what you're
+selling. Now, for this bio, do not
+overthink it. You can come in here, you
+can just write something simple that
+explains what your store sells. Or if
+you want it to sound cleaner, you can
+also have chatbt generate one and just
+go ahead and paste it in. So right here,
+just go ahead and hit create page. And
+then now we got the skeleton of our
+business page. Now after that, Facebook
+is going to let you add in your website,
+your email, your phone number, profile
+picture, and a cover photo. Now, just go
+ahead and toss something in this for now
+as we can always update it later on. All
+right, so next thing we need is the
+domain because that's what you're going
+to end up verifying inside of Meta. So
+inside Shopify, I'm clicking through the
+builder, hitting get domain, and then
+choosing the free option that they gave
+us for the first year. I type it in, I
+connect it, and that's it. It's pretty
+simple. Now, let's go and bounce back to
+the Facebook page real quick and go
+ahead and finish the setup. So, right
+here, go ahead and add the website that
+we just grabbed for your temporary.mmy
+Shopify domain if it's not already
+verified yet. Then, add in a profile
+picture, add a cover photo, and then hit
+done. Now, after doing all that, your
+business page is officially live. Now,
+this is the page that all your ads are
+going to be shown from. And you'll also
+use it for organic engagement, liking,
+posting your niche, commenting,
+following creators in your space, all of
+that. And I will explain why this is so
+important later in this video, but for
+now, we just needed the page created.
+Next up, we're going to build your
+business portfolio. This is Meta's
+version of your business manager. So,
+I'm heading back into the ads manager,
+and then at the top, you're going to see
+the option that says create a business
+portfolio. So, go ahead and click that
+and then type in your portfolio name.
+Now, it's going to go ahead and ask you
+for your name. And here, you want to go
+ahead and put your real first and your
+real last name exactly how it's shown on
+your ID because there might be a couple
+times where they ask you to verify that
+later on. And it does have to match for
+you to be able to make it through that
+security. So, now you have that set up,
+just go ahead and hit confirm. And then
+right here, you're going to see the
+Facebook page that we just created pop
+up. So, just go ahead and select it.
+Click next. And now your business
+portfolio is officially created. All
+right. All right. Now, the next step
+from here is we need to create an ad
+account. [music] So, right here on the
+left side, go ahead and click settings,
+then ad accounts, then create new ad
+account. Then, for the name, I mean, you
+can just go ahead and type in your store
+name again as nobody's actually going to
+see this. Now, you also want to make
+sure that your time zone is correct. So,
+I'm going to go ahead and choose central
+because I'm locally here in Dallas. Now,
+right here, you just want to go ahead
+and set the currency to USD or whatever
+currency you're in. Hit next, agree to
+the terms, and then create the account.
+Now, Facebook is now going to ask you to
+add a payment method. Now, you have the
+choice to do this now or do it later,
+but you have to add it before you start
+running ads. So, honestly, I suggest
+getting it over with right here. So,
+everything is ready to go once [music]
+we do actually start running the ads.
+All right. So, now that we have all of
+that finished, let's go ahead and set up
+the pixel. So, on the left menu, go
+ahead and scroll to data sources, click
+pixels, and then hit create pixel. Then,
+just name it something simple. I'm just
+going to go ahead and name it pixel 1.
+Now that you have that finished, we're
+then going to go ahead and assign it to
+your business portfolio and then hit
+create. Now, we need to connect this
+pixel to Shopify so we can actually
+track your visitors. So, I'm going to go
+and click into the events manager,
+select that same exact pixel, scroll
+down to partner integrations, and then
+hit Shopify. So, now go ahead and click
+connect account, continue with your
+Facebook login, choose your business
+portfolio, and then when it asks for
+permission level, always always choose
+maximum so it can track all the data
+that it needs. Shopify is now going to
+show you a list of pixels. So, what you
+want to do is just make sure that you
+match the last four digits of the Pixel
+ID to make sure that you are choosing
+the right one. Then once that's done, go
+and click connect, agree to the terms,
+and then [music] submit for review.
+You're then going to see it process for
+just a little bit, and then you're going
+to be good. So, now the pixel is
+connected, but it is not active yet. So,
+we do need to go ahead and get it set
+up. So, let's head back in here into
+Shopify. Go to online store,
+preferences, and then password. Then, we
+want to go and remove the password so
+the store is publicly viewable. Then
+you're going to want to go ahead and
+grab your store domain. Now, if your
+custom domain isn't ready yet, just go
+ahead and use a temporary Shopify domain
+and where you can go ahead and find it
+right here under settings and then
+domains. Now, go ahead and copy that URL
+and then paste it into the Facebook
+pixel test field. Now, this next step is
+important. You want to go ahead and open
+up the store and act like a customer.
+So, click around, open up a product, add
+it [music] to cart, click buy now, and
+even start the checkout. Now, you're not
+going to actually buy here. What you're
+doing is you're just firing the pixel
+event [music] so that Meta sees
+activity. Then after doing all that
+activity, you want to go back into the
+events manager and after a few seconds
+your pixel should go from red to green.
+Now if it doesn't, you do want to go
+back into the store. Go ahead and click
+around again as this is [music] also
+totally normal. Then once again, once it
+does turn green, go ahead and hit next
+and then finish. And before we move on,
+let me add something here because this
+is the exact moment where I wish someone
+had stopped me years ago. Back when one
+of my first products took off, my Pixel
+was active. My backend was set up. I
+mean, everything looked perfect, but I
+still wasn't ready. Orders started
+rolling in and my supplier completely
+collapsed under the pressure. I had
+delays, missing packages, I mean, angry
+customers, and chargebacks everywhere.
+So, yes, I did look profitable on paper,
+but I didn't see a single dollar of it.
+And it wasn't because my ads were bad.
+It was because my fulfillment wasn't
+ready for the momentum that I created.
+That's why I tell beginners to lock in
+with Team Drop right here [music] before
+traffic ever hits your store. because
+they act like an actual partner, not
+just a random supplier where you get
+real communication, real support,
+verification photos before every order
+goes out. Everything that I wish I had
+before things blew up on me. So, no, you
+don't need it later when things break.
+You actually need it right now when
+everything is still clean so that you're
+prepared when the ads start moving. So,
+now at this point, your Facebook page,
+your domain, your business portfolio,
+your ad account, pixel, and supplier are
+now all set up correctly. And that's
+your entire backend cleaned, synced, and
+now ready to run real ads with. But now
+that the backend is set up, [music] you
+are officially ready for the step that
+most beginners skip, which is warming up
+the account. And look, you can skip this
+part if you want. Nobody stopping you.
+But here's the truth. Almost every time
+that a beginner skips this part, they
+will end up paying for it later on. A
+brand new ad account with no activity,
+no engagement, and no pixel data, Meta
+sees that as a risk. And when Meta
+thinks that you're a risk, your ads will
+not deliver the way that they should,
+which makes them way more expensive,
+they barely even get reached to anyone,
+and the whole campaign fights against
+you from day one. And you want to know
+the solution? Well, this is this warm-up
+campaign because it prevents all of
+that. And it literally only takes 2
+minutes to set up. Let me go and show
+you how to get it done. All right, so
+inside the ads manager, what you want to
+do first is go ahead and hit create,
+click on engagement, and then manual
+engagement campaign. [music] Now, you
+want to make sure that the objective
+says engagement, and then keep
+everything else at the campaign level
+simple. Inside the adset, you want to
+name it something like warm-up, and then
+set the location to the tier one
+countries, age 21 plus, and your budget
+at $10 per day. Now, for the engagement
+type, go ahead and choose Facebook page.
+And since this is just warming things
+up, you don't need a perfect midnight
+launch. So, whatever point of the day
+that it is, just go ahead and launch it
+at that time because engagement
+campaigns, they don't require that level
+of precision, which you will see why
+once we start actually running our ads.
+But for now, let's go ahead and stick to
+warming up our account. Now, inside the
+ad itself, go ahead and upload one
+simple scroll stopping image, something
+positive and eye-catching. Then, pair
+that with a short, welcoming captions,
+like two lines max, something that makes
+your page feel real, [music] and then
+puts good energy behind your brand.
+Scrolling down, just make sure that your
+pixel is active and showing green under
+tracking. And then go ahead and hit
+publish. Met is now going to ask you to
+add a payment method if you haven't
+already added one yet. So, this is going
+to be the perfect place to go ahead and
+do that. And that's it. I mean, $10 a
+day. You just let this thing run and
+it's going to start getting your account
+warmed up. So, you're going to be in the
+best position to start running ads here
+in a second. And I do want to be real
+why this matters even more in [music]
+2026. Meta is stricter than it's ever
+been before. Brand new ad accounts are
+getting flagged, slowed down, and pushed
+to the back of the line before they ever
+even get a chance to perform. Most
+beginners never recover from that, and
+they're already fighting uphill before
+the ads even turn on. But you're not in
+that position anymore. You've already
+given Meta the early activity that it
+wants to see. Your page looks alive.
+Your pixel has movement and your account
+is treated like it's actually here to do
+business, not like some empty profile
+trying to sell overnight. So now you're
+starting from a place that most people
+never reach. And because of that, you're
+finally ready for the part that actually
+determines whether you lose money or
+make money, which is testing your ads.
+All right, so here's where things get
+interesting. Because the next step isn't
+guessing or throwing random ads at the
+wall. It's finding what's already
+working before you ever even spend a
+single dollar. And once you know where
+to look, the pattern jumps out fast. So
+the question is, well, where's the first
+place that I should go? And the answer
+is Tik Tok. So once you make it on Tik
+Tok right here, just go ahead and search
+your product name. And what you're
+looking for is user generated style or
+UGC videos with engagement that have
+solid views, comments, and likes. So I
+just went ahead and typed weight loss
+patches into Tik Tok. And look at this.
+Here's a video with a little over 20,000
+likes. Not views, likes. Which tells me
+right away that people are not just
+watching this. They are agreeing with
+it, saving it, tagging friends, and that
+is real demand and engagement. And when
+you watch it, it's the exact type of
+content that we want. A clear
+demonstration of the product, no
+watermark, no brand logo baked in, and
+no heavy editing. And you can tell that
+this isn't some polished brand ad. This
+is raw UGC. It's straight to the point,
+and that's why it connects, and the
+comments confirm it. People are asking
+[music] questions. They're sharing their
+experiences, debating whether it works.
+I mean all the stuff that you want to
+see. That's what makes a creative like
+this valuable. When a simple low lift
+video is pulling real engagement like
+this, it means the solution and the
+messaging behind the creative is doing
+the heavy lifting, not fancy editing and
+not a crazy [music] script. And that's
+exactly the type of creatives that you
+want to test. Because if it's already
+working organically, it has a real shot
+at performing inside [music] paid ads.
+So what I'm going to do is I'm going to
+go ahead and copy this link. I'm going
+to go ahead and drop it into the SSS
+tick or snap tick and download it
+without the Tik Tok watermark. And just
+like that, I've got a cleanbased
+creative that is now ready to test. Now,
+another tool that I love to find
+creatives [music] is also by utilizing
+the meta ad library where you're kind of
+doing the same thing. You're just
+searching for your product or niche. And
+then inside, you're going to see every
+ad competitor that is running on
+Facebook and Instagram. So, you'll see
+their videos, their images, their
+headlines, their offers. I mean, all of
+it. I mean, here's one example right
+here where you can see the angle that
+they're pushing, which is heat [music]
+up in 3 seconds paired with a clean UGC
+clip. And if you're seeing multiple
+brands across a niche using that same
+angle, well, that's a sign that it's
+definitely pulling conversions. And if
+you want to go ahead and download a
+competitor video from here, just use a
+browser extension like Video Downloader
+Plus. Then just save it, download it,
+and you're done. Now, I do want to be
+clear that we are not copying their text
+word for word. Instead, you want to take
+their best performing angle, paste it in
+chatbt, and then say something like,
+"This is my competitor's primary text
+for their [music] meta ad. Make me my
+own high converting version of this for
+my sales campaign." Then just ask for
+like two or three variations. One from
+the problem angle, one from the
+convenience angle, and one from the
+emotional benefit. Boom. Now, in only a
+couple seconds, you got multiple
+versions that are now ready to test. And
+at this point, I do want around five
+creatives [music] total. And you kind of
+want to do this mix of videos and images
+because you just never can assume. You
+really have to let the data tell you
+which one is going to perform the best.
+So once I have my videos, my images, and
+my different marketing angles, I'm now
+officially ready to set up the creative
+testing campaign. This is how you figure
+out which ad is actually going to stop
+the scroll, which angle people respond
+to, and which one has the potential to
+carry your [music] entire store. And in
+2026, this step is even more important
+because Meta's new Andromeda update that
+changed everything. and Jamba to put way
+more weight onto creative performance
+than it ever has before. It
+automatically pushes your budget towards
+the ad that's [music] getting the
+strongest reactions. So, when you're
+testing your creatives the right way,
+you're letting the algorithm do the
+heavy lifting [music] for you. And
+that's why this works so well now. Then,
+once you find that winning creative,
+every campaign after this just becomes
+so much easier, cheaper, and way more
+predictable. So, let me show you exactly
+how to set this thing up the right way.
+So, back when you make it to this main
+dashboard, just go ahead and hit create
+and then hit sales. Now, what you want
+to do is turn on CBO so Medic can put
+your budget wherever the strongest
+creative is. And right here, what we're
+going to do is go ahead and name the
+campaign. I'm going to go ahead and type
+in something like weight loss patches
+sales campaign. Then for budget, I would
+recommend starting at around $50 a day.
+And sure, yes, you can do 20 or $25, but
+I want you to understand lower budget
+equals slower data. Where at $50, you
+know exactly what works within a day or
+two. Now, once the budget is set inside
+the adset, you want to set the
+conversion location to website. [music]
+since we are going to be sending people
+to your Shopify product page, not your
+homepage, your product page. So, I do
+want to make that very clear. Now, for
+the performance goal, it should always
+be maximize number of conversions and
+the event should always be purchase.
+Next, we're going to go ahead and set
+the schedule to start at midnight. Now,
+this is important because if you turn
+your ads on at 3 p.m., Meta will try to
+spend that full daily budget in only a
+couple hours, which ultimately hurts
+your performance, [music] where midnight
+gives you clean delivery and clean data.
+Now, for targeting, you want to make
+this as simple as possible, which is by
+keeping it broad. Now that that's set,
+go and set your location to the main
+buying countries. The ones that
+consistently perform the best are going
+to be United States, Canada, the UK,
+Australia, and New Zealand. Now, for
+age, go ahead and make it 21 plus, and
+then set the language set at English.
+Again, the whole point here is that this
+is a creative test, so we definitely
+don't want to over complicate targeting.
+And here's the thing. When you do reach
+this stage, your biggest risk isn't
+losing money on ads. It's running your
+ads without any protection. Because when
+real orders start coming in, well, so do
+refunds, disputes, and chargebacks that
+you never saw coming. That's why before
+running any serious spin test, I always
+always make sure that my backend is
+completely bulletproof. And one tool
+that helped me keep it that way, the one
+that I recommended to all my students
+are complete beginners to drop shipping
+and running ads is chargeback.io. Now,
+this is a tool that is quietly running
+in the background, filtering out fraud
+and preventing chargebacks before they
+ever even hit your processor, keeping
+your dispute rate low and your account
+as healthy as possible because nothing
+is going to kill momentum faster than
+getting flagged just when your store is
+finally ready to start taking off. So,
+if you want to start with the same
+protection that I give all my beginners,
+go ahead and grab it in the description
+below. Now, let's go and jump back to
+setting up the rest of this campaign.
+All right, so inside the ad level, you
+want to make sure that your Facebook
+page and your Instagram account are
+connected. Then you want to go ahead and
+paste your exact product page URL inside
+of the website URL field. Again, [music]
+not the homepage because the fewer
+clicks that it takes to land on your
+product, the higher the conversions are
+going to be. Now, right here is where
+you're going to go ahead and upload all
+of your creatives. Now, let's go ahead
+and lock in the text. Now, this is the
+part that either pulls people in or
+loses them immediately, where your
+primary text is where you're going to
+sell the product, the benefits, the
+problem that it solves, and why it's
+even worth clicking. But the structure
+is what actually makes people read it.
+So, you want to space it out. Short
+lines, clear points, no walls of text
+because people will scroll right past
+those. And the very first line, that is
+everything. I mean, it's about 90% of
+your success. If that first line doesn't
+make someone stop, nothing else matters.
+And if someone taps the see more button,
+that's a clear signal telling Meta that
+people care about this. And Meta rewards
+that by pushing your ad to more people
+for cheaper. Now, with your headline,
+this should always highlight your main
+offer, like 50% off plus free shipping,
+buy two, get one free, or buy one and
+get the second one for 50% off. You want
+to always avoid bland headlines like
+hair growth spray, shop now. Nobody's
+going to click on those because they
+don't communicate value. They don't tell
+the customer what they're getting or why
+they should care. But after you get all
+of that inputed, you now have your first
+ad completed. And look, instead of
+rebuilding everything from scratch, all
+we now have to do is just duplicate your
+first ad. So if you have five creatives,
+you want five ads inside that same
+adset. And when duplicating, you always
+want to double check the basics, which
+is going to be your URL, your shop now,
+call to action, pixel, copy, and your
+correct creative selected. When you're
+duplicating, Meta sometimes does reset
+small things. So always just go in and
+confirm it. And now once all your
+creatives have their own individual ad,
+we are now ready to publish. All right,
+so at this point, your creative testing
+campaign is officially built. You've got
+multiple angles, multiple creatives,
+clean tracking, clean text, and clean
+structure. Everything's set up exactly
+the way that it should be. But I want
+you to remember, the whole reason that
+we set this up the way we did is so that
+the next step actually means something.
+Because once the ads start spinning, the
+entire game shifts. Now you're not
+building anymore. You're [music]
+reading. You're letting the numbers tell
+you which angle's strong, which one is
+weak, and which one actually has the
+potential to carry your entire store.
+[music] And if you don't know how to
+read that data, everything that you just
+did becomes guesswork. So, in this next
+section, I'm going to break down how to
+understand your numbers the right way.
+Your CPM, CTR, unique link clicks, add
+[music] to cardarts, purchases, rorowaz,
+all of it. Because the faster that you
+can read your data, [music] the faster
+that you can cut the losers, pushy
+winners, and scale with confidence.
+Look, before we get into any of this,
+let me just address the obvious. Seeing
+all these numbers for the first time, it
+can 100% feel overwhelming. Everybody
+feels that way. But what I'm going to do
+is I'm going to make this as simple as
+possible. [music] So, by the time that
+we are done with this section, you're
+going to know exactly what every metric
+means, why it matters, and how to use it
+to make the right call, [music] where
+you can turn an ad off, keep it running,
+or scale it with confidence. Because
+once you understand this part, running
+ads stops being guesswork. every
+decision becomes clear, fast, and
+profitable. So, let me go and pull up
+this KPI sheet because once you learn
+how to read it the right way, everything
+else in your ad account finally starts
+to make sense. So, the first number that
+you're going to see is CPM, or better
+known as cost per,000 impressions. What
+this is going to do is it's going to
+tell you how expensive your niche or
+audience is with what you're putting out
+there to them. So, there's only two
+things that can happen here. You can
+have a low CPM or a high CPM. A lower
+CPM means cheaper traffic. Higher CPM
+means even more expensive traffic. And
+if CPMs are super high, everything else
+will naturally be more expensive. So, if
+it's around like that $15 to $20 range,
+you're definitely doing good. But if you
+notice it around $30 to $40 plus, that's
+just telling you that your industry is
+more competitive and your ads are not
+competitive enough inside [music] of
+that industry. Now, next is going to be
+your CPC or better known as your cost
+per click. This just basically tells you
+how much you're paying for someone to
+click your ad. So, the lower the better.
+But again, CPC alone is not going to sit
+here and tell you the full story. Now,
+this is going to lead us into one of the
+leading decision metrics that matters a
+lot in creative testing, which is going
+to be your cost per unique link click.
+This is what the real cost is for you to
+get somebody to visit your website.
+Look, Facebook counts every click, even
+if the same person taps into your ad
+five times. So, unique link clicks are
+only going to be counting for the people
+who make it to your website, while your
+clicks are only going to count for the
+people who are clicking into your ad,
+which makes this number far more
+important than your cost per clicks.
+This is why the KPI sheet gives you a
+cut off for your unique link click cost.
+Now, for example, if your cutoff is $110
+for your cost per link click, and this
+ad that you're looking at has spent like
+$5 to $10 and you don't have a single
+link click into your website, just go
+ahead and turn it off. You don't even
+have to run all the way to the break
+even cost per purchase, which we will
+talk about in a little bit, because you
+know that your ad is already showing you
+early on that it's not working. Now,
+let's go ahead and jump into the next
+big metric that's important, which is
+going to be your CTR, or better known as
+your clickthrough rate. Now, your click
+rate is going to tell you one thing. Did
+your creatives actually make people stop
+and [music] click to watch them? Now,
+what I like to look for here is 2 and
+12% and up. That's the baseline that
+tells me that the thumbnail, the
+headline, and the ad copy text is doing
+well enough to get people to want to
+click into it. Now, the next metric that
+you always want to be aware of is going
+to be your average video watch time,
+which is just going to tell you on
+average how long people are watching
+your videos. And the more that they're
+watching, obviously, it's going to come
+down to the more that they're interested
+in the product. Now, that is all
+considered [music]
+front-end metrics. Now, why I call this
+front-end metrics is because this is all
+things that happen before they actually
+click into your website. Now, we are
+going to head into your back-end
+metrics, which is what it's going to
+cost for people to make actions when
+they do visit [music] your website.
+Starting off with add to cart. Now,
+these metrics are going to be your holy
+grail. These are the most important
+metrics when it comes to your creative
+testing campaign. This is the moment
+that tells you that your ad did its job.
+You know the right audience and you know
+the right person that you're targeting.
+And when they did make it to your
+website, you know exactly how much it
+costs for them to add the product to
+cart. So add to carts are a big deal in
+testing because they're the first sign
+that people are seriously considering
+buying. And this is why that cutoff
+number exists because even if you're
+driving traffic to your website, but
+they're not sitting there adding the
+product to the cart, you also don't want
+to spend way too much money on that
+either. So it kind of gives you that
+parameter that you can use to make the
+right type of decision-m when running
+ads. For example, if you have a cutoff
+now with $10 for an add to cart and you
+get an add toart at $8 and that break
+even purchase number tells you exactly
+how far you can let an ad spend while
+still giving it a chance to break even
+and get a purchase, which means that
+ultimately you're not losing money, but
+you're also not making money either. So,
+in our example, let's say your break
+even cost per purchase is $23.78.
+Then if you do get an add to cart by
+that $10 break even add to cart, then we
+will now let it run to $23.78
+to try to get that purchase. And if it
+hits that number and you don't get a
+purchase, you turn it off. But if you do
+before you reach it to that point, you
+then know that you made profit. And
+also, you can notice that it doesn't
+just stop after the first purchase, it
+continues to keep going from that point
+as well. So then you know that your next
+break even is going to be $47.56,
+which means that if you don't get that
+second purchase by that point, you still
+then just turn it off. Then you see your
+fourth point is $118.90
+and so on and so forth. This is where
+everything becomes mathbased. Once
+purchases come in, you move through the
+break even ladder where each step along
+the way tells you exactly how far to let
+the ad spend go before deciding if it
+stays or gets cut. And then when you're
+seeing these purchases consistently
+coming in under those thresholds, which
+you will because you're following the
+strategy, well, that's when you know
+you're ready to scale. Now, right here
+on the right hand side of the KPI sheet,
+you're going to see your break even
+rorowaz and your target cost per
+purchase. Now, your break even rorowaz
+or better known as your return on ad
+spin is just telling you something
+similar to [music] any type of business,
+which is ROI. Are you making money while
+running ads or are you losing money
+while running ads? So, if your break
+even rorowaz is 1.69 and your actual
+rorowaz is above that, then you're
+profitable. And anything below that
+means that you're not. Same exact thing
+applies when it comes to the target cost
+[music] per purchase. If you're below it
+consistently, you are 100% in a great
+place. So, here's a simple way to think
+about all of this. Clickthrough rate
+just tells you if your ad and your
+thumbnails are interesting. Your unique
+link clicks tell you if people care
+enough to click into your website. Your
+added cards tell you if the offer makes
+sense. Your purchase tells you if your
+funnel works. And your rorowaz tells you
+if you made money. And I know 10 minutes
+ago this all looked crazy confusing. But
+now you can read your data like someone
+who's been running ads for months. you
+know what's good, what's bad, when to
+turn things off, when to keep them
+running, and when it's time to scale.
+And most importantly, you're no longer
+guessing. I mean, the numbers tell you
+everything. And because you made it this
+far, I'm actually going to give you this
+exact KPI playbook that people spend
+thousands on for 100% free. So, when it
+is time to run your ads, you have a
+clear road map for what to cut, what to
+keep running, and what to scale. And you
+can click the link in the description
+right below to grab it so you can
+finally start understanding your own
+numbers. Okay, so now that the testing
+phase is handled and you understand what
+it means to read your data, let me go
+ahead and walk you through what comes
+next, which is what to do when you
+finally see a winning creative inside
+your ads manager. All right, so we ended
+up publishing seven different ads, and
+we actually ended up getting a few
+purchases from one of them here. So,
+let's go ahead and dive a little bit
+deeper into the metrics. So, as you can
+see on ad three, we ended up getting two
+purchases with a cost per result right
+around $10.24.
+So, there were a couple ads that were
+turned off because the spin was getting
+a little too high and we weren't really
+seeing that 2 and a half% clickthrough
+rate that we [music] wanted. Now, these
+ads weren't performing the way that we
+needed. So, ultimately what we needed to
+do was just go ahead and cut them. And
+the ones that were left on were the
+stronger performers where you can see
+right here with ad 7. I mean, it has a
+lot of engagement and a lot of clicks.
+But, we are seeing more ad cards coming
+specifically from ad 3. And that's when
+you got to start making those decisions.
+You can see ad 7 does look good on the
+front-end metrics, but ad three is the
+one that's actually pushing people
+deeper into the funnel. That's why we
+always look at both reach, clicks, click
+rate on one side, which again is your
+front end, and then your ad to cards,
+checkouts, and purchases on the other,
+which is your [music] back end before we
+ever decide which ad to move forward
+with. Now, overall, looks like ad 3 is a
+winning creative here with $42.20 spent.
+We had two purchases coming in from ad 3
+plus a couple of upsells attached to
+those orders. Now, ROAZ is positive at
+3.28, which is solid. And if we go
+briefly back here to the KPI calculator,
+you can see that our target profit
+rorowaz KPI is 1.74. And that was to
+make a 20% profit margin. So 1.74 is the
+goal. And we now have done 3.28 rorowaz,
+which means that we're sitting right
+around like a 40% profit margin with
+this. Now, looking back on our metrics,
+at this point, we know that ad 3 is the
+winning ad. Now, we're already getting a
+good return on our ad spend. So, if we
+just go ahead and increase a budget, we
+can expect cost per click to stay around
+that a dollar range, but ultimately make
+even more sales and profit. So, let's go
+ahead and click on add three, hit
+duplicate, and then choose to duplicate
+the original setup into a new campaign.
+Now, we can go ahead and finish setting
+this new campaign out. So, here, what
+we're going to do is just simply
+increase the budget. Somewhere around
+that $75 to $100 is definitely a good
+start, depending on how many ads that
+you're running. Now, the more that you
+increase the budget, the more people
+that you can touch with it, and
+ultimately the more chances that you
+give yourself to make even more money.
+This is exactly why we did the creative
+testing campaign first to make sure that
+we had good metrics and actual
+conversions before putting more money
+behind anything. So, with the rest of
+this campaign, I mean, honestly, we're
+just going to keep everything else
+relatively the same. The campaign name
+reflects that this is the winning setup.
+The adset is still sending traffic to
+the same website, and our performance
+goal is still maximize number of
+conversions. And then for the purchase
+event, we're still going to always
+optimize for purchase with Pixel 1. So,
+we're going to go ahead and have this
+scheduled again for midnight so that the
+budget spins cleanly over the next full
+day. And then on the audience side,
+again, we're still going to keep things
+the exact same as before. Now, when it
+comes to targeting, you have two
+decisions here. You can either keep one
+broad adset targeting a group of top
+countries, or you can start structuring
+things by duplicating the adset and
+focusing on one country per adset. For
+example, you can stick with the United
+States in one asset and then add
+additional adsets for other strong
+markets that you already seen activity
+from. Now, in this case, when we broke
+down the campaign data, we saw a lot of
+engagement coming from Canada and we
+even had a few purchases from Canada as
+well. We also saw activity from places
+like Portugal and the United Kingdom.
+So, one option is keep the original
+adset targeting the United States and
+then duplicate that asset and then swap
+the country to Canada, then duplicate
+that again and swap it to United Kingdom
+and then just so on and so forth where
+you're still utilizing that same winning
+ad and focusing on the same structure.
+You're just giving it more chances
+across different countries where you
+know that there's interest, where you're
+letting the advantage plus in the AI
+system help you build a stronger overall
+campaign score as you scale. Now, back
+at the ad level, we're going to keep
+working with the same winning ad, which
+is ad three. We already know that the
+base creative works. So instead of
+changing the whole video right away,
+we're going to create variety by just
+testing different types of thumbnails.
+So we're going to take that winning ad
+three and then now duplicate it multiple
+times. In this case, we're going to
+duplicate it four times. So we have a
+total of five different ads. All these
+different ads are using the same winning
+video, but again, each one will just
+have a different thumbnail where you'll
+see something like add three thumbnail
+one as original and then add three
+thumbnail two, add three thumbnail
+three, and then just so on and so forth.
+So, you just want to go and click into
+one of these duplicates, scroll down to
+the media section, and then hit edit
+media. Choose edit video, and then click
+on the thumbnail. Now, here you're going
+to see different frames from the video
+itself that you can then use as
+alternate thumbnails. So, for thumbnail
+3, for example, we're going to select
+one of these images, save [music] it,
+and now that still image will show
+before the video plays, giving us a
+slightly different hook on that same
+type of winning ad. Then we just want to
+repeat this for the rest of the
+duplicates. So we end up with multiple
+versions of ad three, each with
+different thumbnails. That way we're
+still pushing our best performing video,
+but with more variety and how it appears
+in the feed. And doing things like this
+is why understanding your data before
+this point is so important. Because once
+you get into this step of scaling, every
+decision has bigger consequences. And
+your numbers are the only thing that
+keeps you profitable. All right. Now, if
+you're still here, then you just got the
+full blueprint that most beginners never
+see. You now know how to set everything
+up the right way. You know how to test
+your creatives the right way. You know
+how to read your numbers without
+guessing. And that alone is going to put
+you light years ahead of everyone else
+that's still spinning their wheels. But
+let's be real for a second. Even with
+all of this, some of you are still going
+to be stuck on the most important step,
+finding the winning product that you can
+run through the system. And if you don't
+start with something that already has
+demand behind it, everything becomes 10
+times harder. the creatives, the
+engagement, the testing, the data, all
+of it becomes extremely difficult. So
+before you launch anything, you need
+products that are backed by real proof.
+That's why I just dropped a video where
+I break down and give you the top 10
+winning and trending products for this
+month, products that are already showing
+momentum, already pulling engagement and
+already backed by real data. So, if you
+want an easier start, if you want
+creatives that practically build
+themselves, then you want to go ahead
+and watch that video next and go ahead
+and let the algorithm do the heavy
+lifting from day one. So, I'll see you
+there at this next video. As always,
+thank you guys so much for watching. I
+appreciate every single one of you guys
+rocking out with me. This is AC with
+Supreme and I'm

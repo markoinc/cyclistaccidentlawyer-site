@@ -1,0 +1,3180 @@
+# VAPI AI Tutorial Build an AI Voice Sales Agent 2025
+# Video: https://www.youtube.com/watch?v=QIqiH02wn1E
+# Category: vapi-voice
+
+I've really outdone myself this video is
+absolutely leagues above any video I've
+made so far and it's for one single
+reason we're going to build the most
+advanced AI appointment setter from the
+ground up now I've made videos about
+appointment Setters in the past but
+those mostly started off with blueprints
+for you to edit and build on and that
+caused a lot of frustration with my
+viewers because they were building on
+something that they did not really
+understand if you follow along with this
+video step by step you will have a flaw
+AI appointment seter that can pick up
+calls add customers to an air table base
+book appointments through cal.com update
+that customers's conversation logs and
+save meeting IDs remember past
+conversations completely when people
+call back reschedule meetings using the
+saved meeting IDs save Advanced calls
+history in a calls table in air table
+give you a full custom dashboard in a
+table interfaces that will show you
+total cost total number of calls made
+reason call ended and the average cost
+per call I not seen a video as beginner
+friendly and advanced friendly as this
+one my purpose in this video is not to
+just give you a set of blueprints that
+you're going to plug and play and sell
+for thousands of dollars I also want to
+teach you how the system actually works
+and how you can tweak it and make it
+your own because let's be honest in this
+automation space the most important tool
+in your toolbox is not offensive
+blueprints it's not a copy and pastable
+air table base it's your knowledge and
+knowing how to tweak it how to edit it
+and also how to understand it having
+said that of course I'm going to give
+you everything you need to hit the
+ground running completely for free this
+video has the best set of blueprints and
+documentation of any video I've made so
+far so if you're watching this on your
+phone keep watching because this will
+give you a great Advantage when later
+you're going to be sitting behind your
+desk and actually building out this
+agent you will know what you're actually
+going to build what to tweak what to
+look out for it's going to give you a
+great Advantage for later but do make
+sure that you of course subscribe to
+this Channel and save this video so you
+can actually follow along now if you're
+already behind your desk and ready to
+start building I suggest that you follow
+along step by step to get the most out
+of this video so before we start you
+need to visit our member platform at
+members. f.com and make a free account
+you have over 1,00 members on that
+platform right now and it will give give
+you all of the tools that you need need
+in this video so if you go to members.
+flo.com this is what you're going to see
+once you've made your account and then
+of course if you get stuck at any point
+you can go to this page book 101 with me
+and I will help you go through that you
+can check out the partner portal there's
+a lot of people coming in every day
+people you can reach out to to build
+together but also you can make your own
+profile make it public and people can
+reach out to you and of course join our
+Discord community so if you want very
+specific answers to your questions
+there's over 500 people in this
+community about 53 are online you can
+ask your question there's a high
+possibility that someone will answer it
+very rapidly now if you want to give
+yourself a big Advantage for 2025 check
+out the 2025 AI Advantage kit it's the
+kit that we're selling with um fero it
+has everything you need from onni
+Channel functionality to a complete
+outbound caller all of the tools and
+blueprints are in this Advantage agent
+you can check that out and if you have
+any questions about it send me a message
+and will help you make the best decision
+for your use case but for now of course
+we're going to go to resources right
+here and there's a list of resources for
+every video that I make this is this
+part of the platform is completely free
+you can go through all of these boss
+videos and look at those resources the
+one for this specific video is going to
+be added later so don't click this one
+but click the newest one you will have
+everything you need in order to build
+and follow along with this video now
+since this one is a little different
+from my other videos you do get all of
+the blueprint that you can instantly
+plug in there and edit if you're already
+familiar with it but you will still have
+to follow along with the video to
+actually understand how does this
+blueprint work how can I change it how
+can I tweak it how does it work at the
+make.com level at the VAP level at the
+air table level so we'll get you
+familiar with that entire Tex stch so
+let's get into it so what we're going to
+do is call this agent we're going to
+call it and then it's going to book a
+meeting for us and then in the history
+so in that last conversation it's going
+to be able to remember what meeting we
+booked the second time that we called
+and then if we call back then it's going
+to be able to book a new meeting for an
+hour later for example and then delete
+the existing one and then book a new one
+so that's what we're going to do right
+now
+H hi um yeah could you book a
+meeting name uh my full name is Jasper
+Jasper's fine J what's your
+appoint fine basically I just want to
+have a quick want uh any date and time
+is okay really how about next
+week right let me you in how does Monday
+febrary 10 a. sound oh yeah sounds good
+appoint conf
+for up um no that's all right thank you
+thank you for cont have a great day
+right we do really have to change that
+voice there's like 3,000 voices that you
+can choose from I think this is a
+terrible voice but uh Hey it sounds uh
+sounds good enough so at the end of the
+call we get the call summary so the logs
+and as you can see all the details that
+we want are inside of here so let's call
+that agent back again and see if it can
+reschedule that meeting if look at the
+transcript it should say when it booked
+the meeting so February 5th at 10 a.m.
+let's call the back and see if we can
+schedule that meeting for an hour
+later hello this can I today um could
+you remind me when for which time slot
+do we book our meeting sure your book is
+for Monday February 5th at 10 a.m. ready
+to KCK off the week with resed that to
+an hour
+later you're all your appointment is now
+resed like Monday feary at 11 A.M
+anything else you need I WRA this up no
+that's it thank you thank you for cont
+Dent have a great day all right very
+quickly before we get started I wanted
+to thank you guys for all of the uh
+feedback and support and the enthusiasm
+around the channel and the memory
+Community I think that's uh great and
+it's incredibly motivating so let me
+know in the comments what you think of
+video videos like these the actual over
+the shoulder videos and if you have any
+questions you can find my LinkedIn right
+here I'm very active on LinkedIn
+actually some people have found me on
+Instagram so I decided to follow up on
+people who reach out to me there as well
+so um yeah thank you very much and let's
+get started all right so let's get
+started with building uh we're going to
+be building with of course VY make.com
+airable and twio and the first thing
+you're going to need to do is log into
+to vapy so you go to dashboard. vy. or
+vy. a going to make a free account uh I
+think you still get around $10 of free
+credits which are your calling credits
+you can call for $10 for free um but
+you'll quickly have to check that in any
+case if that's something that they stop
+doing you can add your billing details
+here so add your payment
+method by going here going to uh billing
+add your credit card there's two things
+you'll need them for uh first of all for
+your usage so if you do get a $10 you
+can of course use that um if you don't
+you're going to have to top up your
+balance and also for for um buying phone
+numbers now there's two ways of adding
+phone numbers most of you guys are
+already familiar with that you can
+either buy a phone number right here
+after adding your credit card details or
+you can import a phone number from twio
+which is something that I'm going to
+show you in a
+bit um now the first thing we're going
+to be doing in vapy is building an agent
+very quickly there's two types of Agents
+transient and persistent agent
+trans persistent agents are the ones
+inside of Vy they will always be the
+same and the only way to change them is
+by going into vapi logging in and
+changing those details right there
+transient agents are something outside
+of vapy that can edit dynamically so
+every call you can change certain
+elements of your agents without logging
+into vappy I'll show you what that means
+in a bit my last video I went more in
+depth on this how can you strategically
+Leverage the dashboard in vapi to
+quickly build your agent call that API
+and then turn that into a transient
+agent um I'm not going to go very in
+depth on that in this video but I am
+going to show you step by step how to
+actually do that so when you've logged
+into VY just follow along with my steps
+and then you will be able to build the
+same agent I've set up completely blank
+accounts so a new vapy account a new
+make.com organization a free account in
+air table and also a free account in
+twio and wherever you have to add your
+credit card details I will tell you but
+all the rest uh is just the same for you
+so if you just follow along you um will
+get the same results as I do all right
+so when you go into vapi um you're going
+to click platform here and then you're
+going to click create
+assistant and then you can call this
+anything you want um like
+And subscribe I like that one um for
+this case we're going to build an
+appointment setter create
+assistant and then this is the
+persistent agent that we've built uh
+that we get inside of appy now I'm
+quickly going to edit some small things
+there's some things that just make your
+agent uh sound and feel better I'm going
+to change the max tokens into 150 going
+to change this into GPT
+40 I'm going to go to the transcriber
+quickly check the settings there all
+right so I think Nova V2 um is the best
+model model here and with the voices I'm
+going to choose 11
+Labs all right and then choose
+Sarah That's The Voice or markers right
+here and then of course the newest best
+version is 11 Labs flash so make sure
+that you choose the flash model uh v2.5
+it sounds the best it has latency if you
+check here the latency is around 725
+milliseconds cost per minute is around
+12 cents and in some cases you can
+actually go beyond below that 12 cents
+now keep in mind this is only for the
+web version you also have twio and phage
+which will incase increase your latency
+but still it sounds really really good
+all right background sound I always like
+putting on uh office sounds we have some
+office sounds in the background like
+turning those
+on and then uh buct uation boundaries
+which is something that's going to be
+added to the orchestration model for
+making it sound better I always add
+commas and what is it actually called in
+English uh Point commas period commas
+not quite sure
+semicolons I'm I'm Dutch so these are
+some of the small things that I I run
+into um filler injection enabl this
+determines whether fillers are
+injected oh yes this is something I like
+to turn turn on back channeling of
+course that's sounds better make the B
+say words like H or yeah or some things
+that make it sound more natural not
+static like an actual robot I don't um
+um change any of these settings at least
+for
+now quickly publish that then we go to
+functions um enable end call function of
+course you want your agent to be able to
+um end the call now one thing that I've
+noticed and that's really important to
+remember when you want this is something
+that many people are running into with
+their agents and that
+is sometimes when you're calling with
+your agents and you're saying goodbye
+and the agent has said goodbye the agent
+still doesn't hang up the phone it just
+leaves on the phone and it doesn't hang
+up um and you can say goodbye or have a
+good day or speak to you soon like 100
+times but it will still not uh pick uh
+hang up the phone and the reason for
+that is it's supposed to call an actual
+function in order to end the
+conversation so the quickest way you
+could do that is by literally putting
+this exact sentence into the uh into the
+prompt which
+is end the call when
+the when it seems apprpriate or the
+caller has said
+goodbyes by using the
+and go function if you put something
+like this into the system prompt it's
+going to use that function way more
+reliably and it will actually be able to
+hang up the phone instead of having it
+leave uh stay on the phone for another
+10 minutes all right so that's something
+that we've now turned on D keypad is
+something I'm going to make a video on
+in the future audio recording we're
+going to turn that on Just for um
+reviewing our agent
+later um
+don't change any of these but I do like
+to turn on smart end pointing right here
+takes care of most of those uh settings
+um and then with client messages we're
+going to turn all of these off because
+client messages are actually only used
+when you're uh building your agent
+inside um of a web application but in
+this case of course we're going to be
+attaching it to our um phone number so
+we're not going to need any of these to
+be sent as messages so you can turn all
+of these off honestly I'm not sure I
+don't think it even matters if you turn
+them off was quickly have to refresh it
+or else we're not going to see the
+difference but not sure if it even uh
+matters if you turn them off but since
+we don't need them it's going to make it
+a
+lot this is a small problem with vapy
+that some of you guys might also be
+running into we updating your vapy it
+seems like it's not
+updating so vapy is is a developer first
+platform which means that it's not
+paying that much attention to actually
+people logging in they're more concerned
+with people using the apis like we're
+going to do right now um so we can
+actually do this later I'll show you how
+to do that all right so we've built our
+agent and now of course we need to turn
+that into a transient agent so what
+we're going to do is we're going to go
+here going to go to API Keys open that
+in new tab and then also click here and
+then go to a API documentation now your
+API key I've always said I've said this
+too many times is something you don't
+want to share with anyone but um because
+it's used to interact with any part of
+your
+system so I'm going to keep that off
+camera for
+now uh well in this case it doesn't
+really matter anyway because this is an
+uh
+separate
+um this is a separate environment
+organization of course so I'll just show
+you what that looks like and then I'll
+delete the uh Delete the API key later
+so again like And subscribe um allowed
+Origins uh any origin do we need to add
+an origin this token will be restricted
+to
+only these URLs okay we don't need to
+add that and we don't actually need to
+add an agent as well transient assistant
+yes yes perfect great private token all
+right so I can actually show you guys
+what those tokens look like all right so
+um you could just also um use this one
+if you go here and just copy ID this is
+the one that you're going to need or you
+can add a new ID you don't need the
+public one you need the uh private one
+just click copy ID right here go to um
+get
+assistant click play right
+here um oh that's the bar token add your
+bar token right here and then of course
+find your ID so this is your agent if
+you go to platform assistant assistant
+ID copy that ID go over here and put it
+in here do remove the ID that you see
+right here um you only need the actual
+ID not the ID like the two letters need
+to remove that and this is of course
+your bar token you can click done here
+click Send request there oh agent not
+found that's strange let's
+see assistant ID
+bar
+token let's see what went wrong
+here I might have been in a different
+organization or I did not save that par
+token well in that case you can see that
+if you uh just choose this private key
+copy that and then go to assistant and
+copy your assistant ID if you put those
+in then you get the correct request all
+right so we're going to have to Quick
+this is your agent so this is what
+transion agent is is now the agent is
+outside of V of course this agent unless
+it's on the server can't do anything but
+this is the configuration of your agent
+this is how your agent is saved in uh
+vapy is the configuration now of course
+this is not something we can actually
+work with yet we have to format it a
+little bit so what we go what we do is
+we do this and then
+assistance and then do this or actually
+do this
+and then put these in between
+quotes all right so I'll try to see if I
+can make that a little easier for you
+guys of course there's going to be
+blueprints in the member platform just
+to make it easier for you guys at first
+you're going to add curly brackets like
+this then you're going to type uh add
+quotes like this they you're going to
+type
+assistant and then put um
+put this right
+here and then if you so if you have this
+exactly right this like this don't worry
+about the errors yet so this is Json
+editor online.org there's also something
+that I add to the blueprints where I
+edit pretty much anything it will tell
+you about can help you format it it can
+tell you that the um Json is
+misconfigured but if you type exactly
+this so these Cy brackets and then
+between quotes and then
+I'm not even sure what that symbol is
+called um colons not sure but um yeah
+adding this
+symbol then you can go back to this page
+CL uh click copy to clipboard go in here
+and then add it right there and then if
+once you've added that you can click
+this middle symbol and it's going to
+make it look much more pretty and then
+the one to the left to make it all uh to
+the left you get this right here so this
+is now your agent configuration this is
+now a transient agent just have to
+remove some details so ID and or ID need
+to be
+removed
+um let's see the creation dates help me
+find it okay so this one has to be
+removed is serve URL Secrets plus the
+comma that you see right here also has
+to be removed and then the creation date
+has to be removed let's see where that
+is cre add and updated ads both have to
+be removed and now you have a value a
+valid assistant they can actually use
+with
+uh
+um with VY then remove all of the client
+messages and then remove the status
+update and hang but they keep the
+function call all right
+perfect so this is the agent we're going
+to use remove all the client messages
+remove the server messages and that
+created a dat in the org ID and the ID
+and the server secret all right so this
+is what it's supposed to look like and
+then of course you can edit the prompt
+and you can edit the first message is
+going to speak and you can edit this
+voice ID by either looking it up in the
+voice library with that or um redoing
+building this assistant basically right
+so this is going to be our transient
+agents that we're going to use to pick
+up calls and to execute calls so first
+of all we're going to build a server URL
+I always like to uh make one scenario
+called server URL and this is going to
+receive all of the messages from VAP so
+um the next part we're going to build is
+in make.com so you go to make.com make a
+free account again as you can see I made
+an organization with a free tier so that
+means that you can just use a free
+account for everything we're building in
+this video um you can go to scenarios
+create a new
+scenario click that module here and then
+either type in web hook or find web hook
+there and then create um add custom web
+hook and it should seem something like
+this you can just call this server URL
+it's going to look like this and then um
+yeah this is the place where all of the
+messages and information from vapi are
+going to be sent to All right so this is
+the web hook now let's see what are we
+going to build all right so first we're
+going to test if our transient agent
+actually works so we're not going to do
+anything exciting we're just going going
+to add a sleep module right here to give
+us some time to observe what is
+happening so just type in sleep and then
+make it 5 Seconds click web hook
+response so type in web hook response so
+not um custom web hook or anything like
+that just a web response and then reply
+with this so put the entire thing that
+we've built right here put that in the
+body and basically don't change anything
+else and then click save and then it's
+going to look um something like this so
+basically what is happening is we're
+going to um reply to vapi so vapi is
+going to send messages to our server and
+one of them is going to be an assistant
+request we're going to reply to that
+assistant request with the assistant um
+Json that we've built right here our
+transient assistant and that's the
+assistant that's going to pick up the
+phone all right so there's two ways uh
+one thing that we actually have to do is
+add our phone number of course now also
+one thing that you can basically do is
+not going to do it right uh now because
+perhaps in a future video we're going to
+we're going to use this one you can
+actually remove or delete this entire
+agent because we're not using that one
+anymore we're using the Json one so we
+only use this to build the agent but
+after that we can basically just delete
+it I just deleted it anyway and then uh
+and it doesn't really matter for the
+rest of the video all right so um phone
+numbers um there's two ways of buying
+phone numbers as I've said you can buy a
+phone number right here but I like to
+buy phone numbers in twio it gives you a
+lot more room and flexibility on um
+regions of phone numbers for example I'm
+in the Netherlands so I'm going to buy a
+Dutch phone number so what you're going
+to do is go to console. twilio.com or
+twilio.com make an account there you
+even get free credits with twio but I'm
+not quite sure if you can actually buy a
+phone number with free credits if you do
+have to add your credit card details
+there's no way around it you're going to
+have to uh add them and then buy a phone
+number this case I've bought a Dutch
+phone number and then you can find it
+under phone numbers and then active
+numbers and you can use this to find it
+so for example phone
+numbers buy a phone number and then if
+you want to find your phone number that
+you've just bought go to phone numbers
+and then active numbers and then find
+the phone number that you've bought and
+then this is what it's going to look
+like now this is the phone number that I
+actually want to add to vapi so I'm
+going to copy the entire phone number
+and it has to be formatted like this so
+there's also a difference formatting
+somewhere around here with like in
+between brackets that's not the one
+you're going to need you're going to
+want to add uh grab this one which is
+e164 formatted go in here go and import
+and then add it right there and then of
+course you need your um developer kind
+of password and um username in order to
+make that connection now of course this
+is not your actual username and password
+this is something that is generated for
+you once you build your account and you
+can find it at Account dashboard or just
+typing in console console. tdo.com and
+copying your first your account Sid
+right here putting that there and then
+your authentication token now this is of
+course something that I have to quickly
+do offscreen because that's um protected
+token that I can't show you guys but um
+yeah that's the one that you're going to
+add and then for the label you can do
+anything um YouTube video that's that's
+what I'm going to call it and then
+you're going to click import from
+twio and what um vapi actually does is
+it finds that phone number in twio so if
+we go back here or actually go
+here it finds the phone number and it
+changes this incoming web hook URL so
+what this means is when when someone
+calls that phone number twio is going to
+send a message to vapi and now we've set
+up vapy where um vapy sends a message to
+our make.com com
+server um okay what's the best way to
+explain this twio gets a call and twio
+asks vapi how am I supposed to pick up
+the phone and then vapi has the phone
+number but it says I'm not quite sure I
+don't have an agent right here but I do
+have a server attached which is our
+make.com scenario I'll ask the server
+how I'm supposed to pick up the phone
+and then the message the request comes
+in through here and then this is what we
+tell to pick up the phone with so that's
+what we're going to do right now and
+there's only one small tweak that we
+have to add is if we go here to our
+make.com workflow click copy address to
+flip clipboard go back in here go to
+settings and then
+this is something you have to change
+into your own uh webbook quickly I'm
+going to have to load this up all
+right all right so where you going to do
+is you're going to go to settings and
+then scroll down here to server URL and
+change this server URL into well your
+own server
+URL if we refresh the page it should be
+the make.com webbook that we have right
+here so let's see yes now it's the make
+the comb book 1j
+WSS let's see yes 1j WSS all right
+perfect so that means that if you have
+not attached an agent to this phone
+number so don't attach an agent to the
+phone number you just bought and
+imported this should be empty then it's
+going to say there's no assistant
+attached I'll ask the server how to pick
+up the phone and then reply with this so
+basically this means that we should
+already be able to actually make a call
+and it the um vapi should pick up the
+phone with our transient agents so uh
+yeah let's try that out right now all
+right so you guys already know this but
+I'm recording all of my videos with my
+camera uh or with my phone and my
+provider doesn't allow me to make calls
+to this kind of phone number so if
+there's any Dutch people watching we
+actually found a solution to calling
+with these um computer generated uh
+computer numbers here in the Netherlands
+so if you're uh interested in that send
+send me or send a team a message we can
+help you out with uh with setting that
+up we use platforms like did logic twio
+and telx telx is amazing platform for
+connecting to your voice agents through
+Sip and getting access to around I think
+it was 200 different countries of phone
+numbers so is the perfect platform to
+work with we have a great solution for
+that so if you're curious send us a
+message and um yeah we'll uh hop into a
+meeting but for now I'm going just for
+the purpose of this video uh us people
+and Canadian people are not going to
+have this problem so don't worry about
+it if you're uh in US and Canada and
+many other countries also don't have
+this problem but for now let's um
+actually make that call with my uh with
+my mobile phone and what should happen
+is that if we turn this on a request
+should be sent send to our make.com
+webbook and it's going to um pick up the
+call with that agent so first we're
+going to have to turn this on of course
+all right and then we're going to call
+that number so I got a keypad and
+then 970
+1024
+531 perfect
+hello couldn't get assistant either said
+the assistant I okay couldn't get
+assistant that's interesting so that
+means that something went wrong now
+let's see we did get an assisted given a
+a correct reply but something went wrong
+here so let's quickly see what happened
+so we did reply with an assistant it
+gave a 200 status which means that our
+Json was correct so we don't actually
+have to worry about our Json we just
+have to worry about what we replied with
+but a great thing is um vapi after
+you've sent the first reply vapi
+actually tells you what went wrong so in
+this case assistant request return no
+assistant so it runs two times as you
+just saw the first one is an assistant
+request so the type is assistant request
+and we apparently replied with a wrong
+uh phone number and then the second one
+is going to be the status update so the
+status update in this case is the call
+ended and it's going to tell us why the
+call ended let's
+see couldn't get assistant um request
+did not return one so we did return
+assistant but we're quickly going to
+have to look at the
+documentation I think in order to see
+what we
+wrong so we're going to go here that's a
+great way for you guys to also get
+familiar with okay um how does that
+actually work building agents transient
+agents and getting familiar with that um
+API
+so let's see if we go in
+here Pi
+documentation go to server
+URL server
+events and then go in here this is what
+we have to reply with so this is a
+transcent agent and apparently we did
+something wrong but the agent's not
+telling us so this payload is not
+correct so if we go here assistant
+perhaps it's because it's a capital a
+all right so the solution can be as
+simple as that this a has to be a
+lowercase a so this is something I
+actually should have known but it's a
+great uh case in point you are going to
+run into problems when you're building
+your own systems of course there a big
+help watching videos like this but
+actually being able to troubleshoot your
+agents or troubleshoot the things that
+you're building is going to be the most
+powerful element so that's why I keep uh
+bits and pieces like these in so they
+can actually see ah okay so this is one
+thing that um you might run into and how
+do you troubleshoot it in this case
+really quickly um we reped with your
+system request here then we got a reply
+from vappy of why did the agent not pick
+up the phone in this case it didn't tell
+us much it only said that um the server
+did not reply with an assistant and
+that's because we have to reply with an
+lowercase assistant like it's to
+completely different things because
+that's just how computers work you have
+to reply with a lowercase assistant and
+not um lize assistance all right so we
+changed that um we made that quick fix
+and so uh if you were to make another
+call the agent should probably pick up
+the phone let's try that
+out hello this um is Mary from Mary's
+Dental how can I assist you today hi
+Mary you sound like um you know what
+you're doing how are you
+oh you know just hanging around in the
+toothy business I'm all ears well
+figuratively speaking how can I help you
+today okay to be very honest that is not
+the best voice we could have picked I
+just grabbed a quick random voice
+there's a lot of voices that actually
+work well but um yeah so as you can see
+that worked quite uh quite well our
+agent picked up the phone so that's the
+easiest and quickest way to get a
+transient agent is by building one in
+vapi and then editing it in a Json
+editor removing those things so remove
+the org ID the ID the secret URL
+removing that comma above that secret
+URL as I showed you um the created ad
+dates and um of course adding a
+lowercase assistant so basically what
+that's going to look like is
+this let's
+see um right
+all right so you're going to have this
+build exactly this and then put the
+agent that I showed you right here
+inside of these brackets and then it
+should work with the lowercase a all
+right so we built our transient agent
+now one thing we're going to have to do
+is make sure that it only uh
+gets
+um assistant requests for now that's the
+only Parts we're going to work with so
+we're going to make another quick call
+and get that data so we're going to run
+this module make another quick
+call we're not even going to wait for it
+for to reply so we're just going to do
+this right here and then we're going to
+go here and then type is going to be
+equal to
+assistant
+request all right
+perfect so this is going to be the type
+and it's going to be assistant request
+which means that only assistant requests
+are going to be able to go through this
+link I remove the Sleep module because
+we don't need that right now and um yeah
+so this is the place where we're going
+to build all of the other functions I'm
+going to go uh switch back to my uh
+phone and see you guys in a bit all
+right so the next part we're going to
+build of course is the end of call
+report we're going to want to know after
+a call has ended what happened during
+that call we want to track all of those
+calls um what was the reason the call
+ended for example keeping track of all
+of those things we're going to build
+that in air table of course but first
+we're going to update our make.com web
+uh scenario so the first branch is going
+to be assistant request but another
+thing we're going to need is the router
+now don't worry about this uh you might
+have already seen it in the introduction
+or on the member platform I'm going to
+add and share a detail a blueprint with
+you guys that you guys can update and um
+um make entirely into your own all right
+so what we're going to do is copy this
+right here and remove that so this is
+how I built that if you want to keep the
+filter but put something in between
+add a module behind it and then uh clone
+it and then put it behind that and then
+we'll keep that uh filter uh right oh
+but this is actually not something we
+want to do because we want to filter
+that Branch right here so ignore what I
+just said it's true what I just said but
+not exactly what we're looking for right
+now all
+right message type equal to assistant
+request there we go this is the filter
+we're going to build assistant
+request all
+right and then remove it right here so I
+can remove all of
+this so this is going to be an assistant
+request this is the assistant that we're
+going to reply with and then this is the
+branch for the end of call reports we're
+actually going to go here and then type
+end of call report because that's what
+it's going to look like and of call
+report
+so what vapi does is at the end of every
+call is going to give a summary of that
+call and um what did it cost and how
+long did it take and who called and all
+of these things what is the recording
+URL all those things will be um given by
+uh vapy at the end of the call and the
+way we're going to use that is we're
+going to go to uh air table so again
+this is another part of the agent that
+we're going to build the text tag is uh
+vapy make.com twio and a table so you're
+going to go to airtable.com I've made a
+free account which means that also um
+everything I'm going to do in here is
+something you can do absolutely for free
+um and of course if you want to scale to
+like thousands of calls or hundreds of
+calls you might have to um invest in
+some parts of this teex stack but I
+think it's the cheap cheapest check the
+cheapest teex stack on the market right
+now especially for beginners who want to
+make this uh work and make an agent of
+their own so we we're going to go in
+here and then create and then um start
+from scratch and we're going to build an
+air table base so actually can I make
+this a little easier for you guys um
+yeah so you're in an air table this is
+your plan and you click create and then
+you have a base like this um and then
+you can actually remove all of these
+fields so that status one delete that
+one assign e delete this one delete this
+one we're going to build it complet
+completely enter our own and then double
+click this one and turn this
+into
+call uh ID so I like to give an ID to
+every call it allows me to identify them
+to search them to keep track of them and
+it's just basically good uh good
+policy so we can actually make this
+something attached call
+ID actually like to turn add this to it
+as well okay so this just use lowercase
+this is the easiest way to actually if
+you make your variables kind of a static
+format it's going to help you in
+development but it's more high level you
+don't have to worry about that right now
+just turn this into call ID type um
+formula right here you want to make this
+into this type of field and then type
+record ID it's already going to show
+show up right here do add another
+bracket or else it's not going to work
+and then you're going to get supposed to
+get an example right right there all
+right so this is what it's going to look
+like call ID formula record ID and then
+right here what do we want to keep track
+of
+um phone
+number type in phone number so this is
+the phone number of the person who
+called of course um next one is going to
+be
+call
+summary and then make this a long
+text what else do we need to track um
+ended ended reason it's a great thing
+with um vapy it always tells you what
+was the reason that the call ended and
+we can keep track of that so let's see I
+usually do single select for this so
+there's a quick trick that you can use
+in order to get all of those it's
+something I actually got from um tyon
+Miller who whom I also did um a video or
+an interview with is if you go to vapi
+docs vapy documentation we going to go
+in here of course all of these things
+are in the blueprints if we go to API
+reference if they're not there um make
+sure to send me a message through
+Instagram or through um the Discord from
+the community and then I'll update it
+with all the details so if we go in here
+and then go to server
+messages there should be a giant list or
+just type it in right here
+ended call ended reason there should
+somewhere be an entire list of reasons
+call ended okay let's just put this
+into
+um let's just put this into Chad
+jpt and see if Chad jpt can help us make
+this into one giant list I like to do
+that base that right
+here um all right
+just going to go in here and ask CH GPT
+just uh 01 Mini model put all of these
+oh let's actually just do the GPT 40
+model put all of these um and go reasons
+without
+description below each other in a bullet
+list
+all right perfect so these are all the
+reasons that the call ended and those
+are of course reasons that we're going
+to save in our uh platform I am curious
+because it does give
+us let's see ended call ended reason it
+gives us something like this which I
+find peculiar pipeline error with some
+asterisk right there I'm quickly going
+to check if that's
+correct oh yeah I guess it
+is various error
+codes all right just going to put it in
+there I haven't noticed any problems
+with that yet so this's a really neat
+trick that you can use and should
+probably remember in air table if we go
+to air table we're still trying to build
+this one we're going to first choose
+single line text as the type so this is
+the um where you're going to call this
+field and this is what type of field is
+it and we're going to choose single line
+text for now and then copy all of
+this let's see what it looks like in
+that HTML viewer
+first all right so this is
+okay you can just you can ignore what I
+just did and then paste all of them in
+here expand the table do make sure that
+it exp expands the table and then we
+have all of them here and then we can
+turn this into single select options so
+type single
+select and the great thing here is it's
+going to add it to the list of options
+in that single select so that's just a
+great way of getting all of those
+options and limiting those options to
+specific variables in this case the
+ended reason so everything we're going
+to collect after every call for now is
+the call ID phone number call summary
+and added reason there's a bunch of
+things you can add if you go in here and
+then see API reference and then um get
+call here's an example not everything
+everything is included but this is an
+example of all the things that you're
+going to get at the end of the call but
+we don't need that
+necessarily oh one thing that we might
+need is yeah this is something you're
+actually going to want to keep track of
+so I'll show you guys what what this is
+this is kind of a thing in the middle
+but it's incredibly powerful if you know
+how to uh how to use it and it's called
+metadata so basically what metadata is
+it does absolutely nothing but allows
+you to add some information to an agent
+that you can use later on so if we give
+this data this agent the following
+metadata um metad
+data um let's see this should
+work metadata and
+then
+assistant
+ID is going to
+be uh um well in this case we can just
+do a random
+ID let's
+see where was it oh there we are um just
+do 1 2 3 4 5 6 7 8 9 all right so this
+will allow us to keep track of this
+agent now every time I change something
+to my transient agent I like to make
+another call just to check if it still
+works so let's run another call just for
+now and then uh check if it still works
+all right so so grab my phone again and
+quickly going to call the agents just to
+see if everything we've changed is it
+going to work all right so calling the
+agent
+now hi Mary can you uh can you hear
+me loud and clear like a dentist's drill
+how can I help you today like a dentist
+drill okay that's great to here um thank
+you
+bye-bye all right so quickly hung up the
+phone so the agent still works that's
+great to hear and we should be getting
+an end of call report in a bit so this
+is status update and then in a bit we're
+going to get the end of call report so
+that we can actually check if that
+filter is working as well um let's see
+if we're getting the end of car or was
+this already the end of call
+report oh that's already the end of car
+report let's see I think it did go
+through the filter but of course there's
+nothing there there there's no reason
+for it to go through that filter going
+to go back in here here all right so
+here we are again um back um in the
+workflow the agent still works so that's
+great to hear and then of course we also
+get the metadata from the agents so what
+we're going to do is go back in here uh
+reason and then
+assistant add a field and then single
+line text and then assistant ID so these
+are all the fields we're going to
+populate at the end of the call so what
+we're going to do is add an aor table
+module go here click air table click um
+create a record and then we have to
+create a connection now the way that you
+can make connections in air table is by
+connecting it through an authentication
+token so in this case we're going to use
+an air table token or
+key right here we're going to call this
+um subscribe again all right
+perfect so here we are and then of
+course we're going to go back to our air
+table we're going to click here and then
+click um Builder Hub so you're going to
+click your account click Builder Hub
+this is going to show all of our
+accounts of course because it just made
+an organiz organization for this what
+you're going to do is on the tab for
+personal access tokens you're going to
+create a new personal access token
+create token right here uh and the name
+is going to be air table um
+YouTube video about building awesome
+agents
+in
+2025 perfect uh you can basically name
+this anything doesn't really matter you
+can add all of the Scopes um so Scopes
+basically what they are is they limit
+the ability of your um token so if
+you're bigger bigger organization or
+there's some sensitive content in your
+um bases or um you're working with
+Freelancers or people that shouldn't get
+access to all of your bases then well
+this is what you're going to uh want to
+do for now I'm just going to grab that
+one
+specific base that we built on title
+base create token and then this is going
+to be our token and then we can use that
+to access That Base so copy that token
+and then paste it in here personal
+access token and don't worry about this
+API keys will be deprecated by the end
+of January 2024 that's only for people
+who are still using API keys
+they're currently using personal access
+tokens you can even forget that I said
+that nothing changes for you if you just
+follow along step by step all right
+click save and it's going to make that
+connection is going to allow us to
+actually connect to our um air table
+base go in here click on our base and
+then which is the table that we're going
+to change oh let's actually rename that
+table just to make it look
+better so go to our air table base
+on tile
+base and then call this the calls
+history or just
+calls perfect go back in
+here um reload that those
+tables this is actually something you're
+going to have to do if you're importing
+the blueprint is um reloading all of
+these um um fields and tables because
+right now they're Mis referencing the ID
+all right so we're going to have to
+actually get that data as an example so
+these are all of the things that we have
+to populate but as you can see we still
+have information about the assistant
+request but there's many things that are
+going to go through this server URL and
+we actually have to get that one very
+specific end of call report so all of
+the things that we want from the call
+are not in here so what we're going to
+do is call the agent one more time and
+try to see if we can get that end of
+call report data all right so here we
+are again at the webcan and uh calling
+my agents now to see if we can get get
+that end of call
+report hello this arm is Mary from
+Mary's Dental how can I assist you today
+all right so I can immediately hang up
+the phone so that we can get the end of
+call report and it's going to load up
+right here and now we have the end of
+call report so we can actually work with
+that data so if I click our um air table
+module again and see here you're going
+to see type and of call report so that's
+great that's exactly what we want to
+work with now I'm going to give you one
+huge advantage in building agents this
+is something you really have to know
+because it gives you it makes building
+agents 100 times easier what we're going
+to do is click that web hook right here
+click on this little symbol right there
+and then click download in
+output um uh download output data or
+bundles and then what we're going to do
+is go to let's see if I can find it here
+Postman I'll add the link in the
+description or in the blueprints if you
+really want to know and I forgot to add
+it for some reason you can send me a
+message again and um I'll share this
+with you but basically you can go to
+web.
+postman. and then you grab all of this
+I'll quickly put it there for
+now um or rather you can go in here so
+web. postman. goco make a new API
+request so actually I'll show you what
+that looks like if you're here so web.
+postman. Co it's going to look like this
+new request turn this into post so we're
+going to make a post API
+request all of this you're going to
+copy and you're going to put it in the
+body right here so you're going to go
+buddy raw and then put everything in
+here and I think you should be able to
+remove that no just keep it exactly as
+is don't edit anything then go back to
+your
+make.com remove this copy
+that um this right here copy the Ser or
+the web hook go back to postman put that
+web hook right here and then every time
+you're sending data so I'll quickly show
+you what that looks like the phone
+number of course is something we're
+going to populate with the phone number
+that we just got so we go to the
+assistant uh no not the assistant the
+customer so theer customer's phone
+number you also have phone number right
+here don't be tricked by that because
+that's your own phone number you're
+going to want to get the phone number
+from your uh from the person who called
+the agent so that's the phone number of
+course um call
+summary let's see um a summary of the
+call you can find
+that here or rather one thing that we
+can do is let's just add the transcript
+here so no summary just a transcript
+messages transcript it's just right
+there and it reason is going to be this
+customer ended call and then assistant
+ID is of course going to be in your
+assistant and metadata so if you see
+this right here go to
+assistant go to metadata and then
+assistant ID perfect that way you can
+keep track of your uh assistance save
+that here and then I'm going to show you
+that if you were to run that information
+again but now through Postman so not
+even making a call we don't have to call
+the entire agent we can just do this
+then we're going to get the exact same
+information and as you can see we can
+just work with that as if we just made a
+call so that's one very important thing
+to keep in mind uh every time you want
+to test your agent this is what you're
+going to want to do in order to not have
+to actually make those calls just to
+test your workflows all right back with
+you guys in a bit all right so here we
+are again um back at building the uh the
+agent so now we have one branch
+assistant requests and one branch of end
+of call report we get all of that data
+so now we can make the and build the
+agent way more extensive than we
+currently have so right now it's going
+to save all of that data for our agent
+and in order to test of course we can
+make all of this empty and as I just
+showed you we don't even have to make
+the call all of that data that we got
+from uh the server URL we can just send
+through Postman right now
+so our scenario is turned on and we're
+going to simulate vapi sending us that
+data so we're going to click Send
+it's going to run through automation
+it's going to take the end of call
+report Branch it's going to populate all
+those fields in the air table records
+and this is what we get we get the
+assistant ID the call summary which is
+the transcript and then phone number and
+call ID there's a whole list of things
+you can you can add to that so for
+example if you just were to browse
+browse through here we can see exactly
+what we want to add so for example we go
+to message type and of carport we don't
+necessarily have to add that started at
+ended at that might be interesting to uh
+to include so let's do that if we go
+here end it
+at single for now I just prefer making
+this a single line of text you can
+always switch back into something else
+later um and of course duplicate
+field
+um
+started
+at Perfect
+let's switch these two just to make it
+look bit
+cleaner and then what the only thing
+you're going to have to do is go back to
+your um air table module click refresh
+and then it's going to find those fields
+that you can add data to and then you
+can populate them so if we go back here
+start it at end it at wait no end it
+at and then we can test it again if we
+go in here remove that and then send
+another request we should be getting
+another row so there we go got all of
+that data and you can do this well
+basically indefinitely all of the
+variables that you're going to want into
+in your air table you can just look at
+this um output right here and put it in
+so duration in milliseconds for example
+we can go in
+here uh
+duration
+milliseconds and then we can actually
+make that number so that's always a
+number this looks a bit better make that
+zero decimals so decimal place is zero
+because of course milliseconds will not
+have decimals create
+field and then this is another field
+that we can populate go back in here
+click
+refresh and then scroll down to the
+latest field and then
+add let's
+see duration in milliseconds right there
+now of course what else do we want to
+add we want to add the um cost so the
+total cost so let's see I think it's in
+artifact messages well just type in
+cost let's see cost total cost is about
+four half a cent so that's not a high
+cost but of course the call is very
+brief it's just a cost call for testing
+the agent so then we're going to go back
+in
+here type cost or rather total cost
+because there's a lot of things you can
+calculate with cost of course but total
+cost and then um make this into a
+currency and then let's see no don't do
+this um for now the uh we're going to
+use dollars two decimals or actually
+let's make this many more decimals like
+six decimals so you get very accurate
+costs because of course this is all data
+that we're going to use and then if we
+go and remove this one delete call send
+another request all of that data will be
+left loed in oh of course we haven't
+populated this yet so if we go back here
+refresh we have still have to add the
+data to the fields so if we go to total
+cost cost here we did add it here but we
+didn't save the scenario yet so if you
+click save and then save then remove
+this and test it
+again
+send it should run it again and all of
+those fields will be populated exactly
+like we needed to perfect and then of
+course if many calls were made then it
+sends in the same data and you get all
+of these calls so just for now we can
+actually make this into something we can
+work with to make the air table bit a
+bit more extensive so if we go in here
+we're going to change this call type and
+end of call type this one and just to
+give us some more interesting data and
+then turn this into into like seven and
+then this into
+five and this is a complete
+dollar and this was like
+$3 or $5 and this is a very short call
+so it's about 100th of a cent or
+something like
+that perfect and then these durations
+are like this and this so just this is
+just some dummy or template uh
+um data that we're going to use because
+the next thing I'm going to show you is
+how to build interfaces so if we click
+interface right here start building
+build an interface and then just some
+data like right
+here let's see um do you see a graph
+somewhere I think this is good enough
+next um let's see find dashboard click
+dashboard right here click next and then
+we build it on top of the calls and then
+if we go here so this is the calls or
+calls data count number of calls so an
+interface is what you build um on top of
+your air table in order to build um
+something that
+you it's an easy way to interact with
+your data and your database so a
+dashboard is going to give you all of
+the graphs and all of the um numbers of
+your data like number of calls total
+cost all of these things something like
+a form allows you to add data in a way
+that's more user friendly um there's a
+100 things you can add to an interface
+just to make it a little bit easier to
+understand for the purpose of this video
+um we're going to just add one single um
+dashboard a very quick very easy
+dashboard so um you already get some
+preconfigured um things added to your
+agents so in this case count and uh um
+reason call ended so customer ended call
+happened four times um customer busy
+Happened One Time pipeline error so
+these are already things you can uh play
+around with for now let's just add
+another account just to show you guys
+what this looks
+like and then we're going to call this
+um total cost so th this is the element
+that you're going to see in the air
+table interface uh this this is usually
+what you invite your clients to in order
+to see their agent but also if you're
+building an agent for yourself this is
+where you're going to get all of that
+data and build that dashboard for you
+for yourself so total cost we're going
+to add filter buy oh we're not
+necessarily filter anything we don't
+have to filter anything here we just
+have the summary and then total
+cost and then summary type is sum
+and then what this does is we called it
+total cost so that's just a label to see
+what is this about then uh we chose
+summary and then the field is of course
+total cost we want to calculate the
+total cost and the summary type is sum
+so if we were to change this into Min it
+would be the lowest number Max would be
+the highest number and average would be
+the average total cost um or the average
+cost and but in this case we're just
+going to get total cost of the agent so
+this is an uh all of the cost of all of
+the calls so total cost total total
+cost all of the costs for all of the
+calls in the database are going to be
+this exact figure and then if we go here
+and turn this into average for example
+we're going to see the average cost per
+call so if you were to calculate this
+and divide it by eight it's going to
+give exactly this if we publish it
+publish
+interface this is what you're going to
+see and if you click share and then
+invite by link or invite guest users or
+share publicly or invite by email you
+can invite your clients into this
+dashboard and they can see all of the
+data that you've built into graphs and
+they find important in order to build
+their uh to track their agents all right
+so we going to go back
+to uh editing view
+data all right so quickly to recap what
+have we built we've built a transient
+agent that can pick up the phone and
+we've built an end of call report that
+populates this air table table and then
+gives a userfriendly interface to your
+client or to yourself to keep track of
+all of that data and all of those calls
+but of course what is the purpose of a
+transient agent is if you're just going
+to pick up the phone with the exact same
+agent that just made the that just made
+the call or or that you just made in
+vapi so what we're going to do is give
+this agent some memory about the calls
+that are made and how are we going to do
+that of course we're going to have to
+keep track of our customers and we're
+going to do that with the end of call
+report so we're going to add another
+table and it's going to be called
+customers right so this is the second
+table that we're going to make just
+clicking add and then start from scratch
+calling a customer and then again we
+have to remove all of these we NE not
+necessarily all of yeah let's just
+remove all of these and then we can add
+our own tables later what what this
+customer table is for is we're going to
+keep track of everyone who's called our
+agent and of course we want to be able
+to identify them by phone number and
+then give our agent the history of those
+calls by their end of call reports all
+right so what we're going to do is we're
+going to um turn this into customer
+ID and then again go to this go choose
+formula type in record ID don't forget
+to add this so if you just type
+literally this it's going to to show you
+the ID of every field here and again
+just the same with this one call ID
+customer ID so the customer
+ID these are all of the fields of the
+customers and then of course this one is
+going to be phone number we're going to
+identify them by phone
+number right here and then um logs this
+the most easy thing that we're going to
+build just phone number and
+logs and then we can give our agents
+some history about these calls so what
+we're going to do is go to
+clone and then we're going to wait not
+that's not how we're going to build this
+how we're going to build this um so what
+we're going to do is with every end of
+call report we're currently keeping
+track of every call and putting them
+into the calls table but we also want
+the end of call report to put all data
+inside of the customer table so that's
+what we're going to do right now we're
+going to going to click add another
+module we're going to click um search
+records but if we're going to do that we
+first have to check does that customer
+already exist there's no reason to add
+um another customer if they're already
+in that database you might as well just
+update those logs and add those details
+instead of having duplicates of many
+customers with the same phone number so
+what we're going to do is add an module
+and then specifically the search record
+so a create record but a search records
+module click on it choose your base
+again in this case it's called entitle
+base you don't have to worry about
+changing it because if you click right
+here it doesn't find your base based on
+um um title it finds it based on ID so
+if I were to change this into for
+example F test YT sub oh YT sub for
+example just anything I want then it's
+not going to affect its connection
+because it's still connected through the
+same ID all right so test
+sub we're going to choose the customer
+table and then of course that's the
+table that we just made sort don't worry
+about that view don't worry about that
+either don't add any of these because if
+you don't select any of these you will
+get all of them as it says right here
+leave empty retrieve all fields
+limit should only be one and the formula
+should be exactly this so cly brackets
+and then go in here copy this phone
+number Lally what this is called go in
+here equals in quotes and then right
+here between those quotes we're going to
+get the phone number from the customer
+from the end of call report and
+basically what this does this formula
+looks at all of the records that have
+this specific phone number
+now if I were to type this in right now
+plus
+31 all right then it should give us
+total number of bundles zero so we can
+use that as a filter of course so that
+means if we add a router right here
+which is this module right here we can
+do two things so um no customers
+found or customer found those are the
+two options that we have customer found
+right here
+perfect so the first branch is this so
+total number of bundles the top one
+right here equal to zero because of
+course if it if it didn't find anything
+the total number of bundles total number
+of Records is zero so no customers found
+total number of bundles zero the uh
+bottom one is of course going to be
+total number of B bundles not equal to
+zero because if it's not equal to zero
+it must at least be um one and that
+means that a record was actually found
+so in the first version no customers
+found we're going to create a
+record we're going to add that customer
+to that
+base just like the cost table we're just
+going to populate all those fields in
+this case we're just going to only add
+the phone
+number you can add anything you want as
+I just showed you by just um looking at
+all these variables and adding a field
+but for now we're just going to add the
+phone number and logs
+all
+right and for now the only log we're
+going to use is the
+transcript call transcripts or actually
+just add the transcript right here
+perfect oh and to make it even easier
+for the agent we're actually going to do
+this right here
+so um
+transcript for call on and then format
+date
+now and then y y y y mm d d
+hhmm
+z and then
+UTC all right this looks way more
+complicated than you guys think is even
+necessary but the reason that I do this
+is with every log we also want so every
+time in the future with the agent that
+we're we're going to build the agent
+picks up the phone we're going to add
+these logs to its prompt one thing
+that's very important to keep in mind is
+that we do need to tell the agent when
+was this transcript when was this call
+executed and that's what we're doing
+right here so we use the now variable
+gives the current time but we want the
+current time in a certain format so we
+want y y y which is years months dates
+hour minutes and then Z means time zone
+so it has all of the information that
+needs in order to um to keep that log so
+in the first version we're creating a
+new agent a new customer so that means
+there's no logs we can just do it like
+this but with the second
+version we're just creating so air table
+get a
+record we're updating an existing
+customer what we're going to do is f go
+test YouTube
+sub click the customers table and then
+choose record ID so the ID that you see
+right here just ID
+save all
+right oh no not get a record sorry let's
+redo that that's not right um we have to
+update record that's
+right update a
+record
+baseo test sub table
+customers and then record ID is still
+going to be this ID right here so not
+this one do make sure it's not this one
+it's supposed to be this one because
+this is the customers and this is the
+calls this one of course is going to be
+the this one you don't even have to
+populate this because that case it will
+be the same it's just for your personal
+reference and then this one is going to
+be a little bit different so we do add
+the exact same thing as the other one so
+transcript call on so you can just go to
+this one click uh do CR a select all of
+them copy them and put them in here but
+if we do this then we remove all of the
+existing transcripts so what we're going
+to do to fix this is add this right
+here and
+then
+add the bundles that we got here so the
+logs that we got here below it so that
+means that with every new call the
+existing logs are that we found in this
+module are going to be added to the
+bottom of this one so it keeps track of
+all of those
+and one more thing that we have to do of
+course is the assistant request we have
+to add that information into the
+assistant request so what we're going to
+do
+is um let's see what's the smartest way
+to do this we're going to add a
+router and we're going to put this
+here and
+then is request we're going to add add
+an air table module right there search
+records so um this is the end of call
+report branch and this is the assistant
+request Branch if we go to the air table
+right here for test sub we're going to
+check with every assistant request if
+that customer is already in our database
+and if it is of course that means that
+we're going to uh um give our agent some
+information about them so going to go
+back here phone number do this exact
+same thing but then of course with
+customers now we have to get the
+assistant request information so going
+to do another call or actually I think
+it might be the exact same as the end of
+call report
+one let's see yeah I think it should be
+so if we turn this put this in here I
+think it should still work message
+customer number I think this is right we
+can remove this one all right so what
+happens now is you get the assistant
+request we're going to Surge for
+customers and then if that total number
+of bundles is equal to zero if we did
+not find a customer in that base so no
+customer found we don't have to add
+anything to The Prompt because there's
+nothing to add because we don't have any
+history about this person so we can just
+reply with the same um uh with the same
+agent but if we did find a customer so
+customer found
+then um not equal to zero or equal to
+one is also
+possible save then we're going to have
+to reply with something else so set
+variable or rather let's use a Json
+module for that
+Json and then transform to Json let's
+remove this one so that's the module
+that you're going to want you're going
+to type transform to Json so Json and
+then transform to Json and then we're
+going to go in
+here copy this entire
+thing put it in there and then also oh
+make.com is kind of acting up again
+seems all right so this is the prompt
+that we give to the agent and we're
+going to add something to the prompt and
+that's logs the
+person we have uh history with the
+person who is calling
+you here are the
+logs there we
+go here is their phone
+number and then we also add their phone
+number of course so phone number because
+then the agent will know the phone
+number and then we can also add it
+here this is the phone number of the
+color because of course the phone number
+is not something you have to keep track
+of the phone number is something we
+always have because how is our agent
+going to talk to someone if we don't
+know their phone number and then we can
+go here clone that one and then remove
+this entire thing so with this one we
+don't actually need it because it's
+already in that prompt that we just made
+and since it's an Json transform to Json
+module we can actually remove the quotes
+that you see right here which seems like
+it would be wrong but since this module
+already creates quotes around around our
+prompt we can just do it like this so
+now we've built an agent that can keep
+track of all of the calls can um show
+the calls data into a nice and neat
+interface but also give the agent some
+history about the caller every time it
+picks up the phone so let's make an uh
+make another call or two or three to
+this agent and uh see how it works all
+right so here we are again I'm going to
+make a few calls um the first one is
+going to go through this branch of
+course and make a new call then here is
+going to decide that that customer is
+not found yet so we're not in the
+customer's table yet so it's going to
+create a new record after that I'm going
+to make another call and it's going to
+find that customer and pick up with the
+ability to actually know um what we
+talked about in the last call and then
+after that call it's of course going to
+update those records and add to the logs
+so it has a more extensive logs and more
+extensive history the next time we call
+so I think this should uh work perfectly
+fine let's uh let's try it
+out hello this arm Miss Mary from Mary's
+Dental how can I assist you today hi I
+was wondering what do you guys
+do hey we provide a range of dental
+services to keep your smile sparkling
+from cleanings and fillings to advanced
+stuff like crowns and root canals what
+can we uh help you with um yeah I don't
+know quite for sure what you can help me
+with I'm very scared of going to the
+dentist but um is there any way that you
+guys could go to my
+home oh I totally am get the Jitters
+unfortunately we don't do house calls
+but you know what Dr Mary is actually I
+have to go I'll uh call you guys back
+later I'm really in a hurry I'll call
+you back later
+bye-bye thank you for in Mary's Dental
+have a great day so that's great there's
+one case in point where if you give it
+that prompt of end call function it will
+be able to predictably end that call so
+as you can see it first it went up to
+this branch and then it saw okay a new
+customer so I populated the customer
+field customer ID phone number and logs
+and those logs should be added to the
+next call so if I make another call it
+should remember what we um discussed
+just
+now hello this is is Mary from Mary's
+Dental how can I assist you today hi do
+you remember what we talk uh talked
+about oh hey yeah I remember you we
+chatted about your um Dental Jitters and
+home visits how can I help you this time
+ready to take the plunge or should I
+tell a joke to ease the dental nerves
+well um actually that's quite funny that
+you mentioned that um no what I wanted
+to know is um who's the attending doctor
+and um yeah does he have um good track
+record ah you've got me on a subject I
+love do Mary Smith she's The Mastermind
+here at Mary's Dental she totally Aces
+the gentle and friendly thing her
+patients leave with smiles and uh no
+regrets anything else I can uh do for
+you maybe a little knock knock
+joke um no no no not necessary uh thank
+you
+bye-bye thank you for contacting Mary's
+Dental have a great day
+perfect so now went to this one it got
+the memory of course and now it's not
+going to update the existing but it's
+going to uh not going to create a new
+one but it's going to update the
+existing transcript so if we do this one
+we're going to see it at a line here and
+it should have an extensive history of
+our call so if I were to call back our
+agent should know all of the history of
+all of our calls so let's try that
+out hello this is Mary from Mary's
+Dental how can I assist you today hi um
+yeah I was wondering we we've had a few
+calls today and could you remind me um
+with every call um what we talked about
+in the first and the second call and at
+which times we
+called oh for sure we've had a couple of
+heart-to- heart chats in the first call
+you are curious about our services and
+asked if we um do house visits
+unfortunately we don't but I mentioned
+how gentle Dr Mary Smith is she's like a
+tooth fairy in Disguise that chat was
+around 2: or 6 a.m. in the second call
+you uh were interested in Dr Smith's
+track record and I sang her Praises of
+course that was at 2:07 a.m. so what's
+next anything else I can uh help with or
+ready for a tooth Adventure tooth
+Adventure um well yeah I'm I think I'm
+excited about that I can't book anything
+right now but I'll call you back
+tomorrow thank you
+bye-bye thank you for contacting Mary's
+Dental have a great day
+all right perfect so that worked uh
+quite well it has extensive memory of
+all of our calls one one thing to
+actually keep in mind is um eventually
+this is going to really add up if
+there's people who call lots of times so
+might want to change this into a summary
+might want to add an openi module right
+here that is actually going to summarize
+the transcript instead of putting the
+entire transcript there or use the
+analysis report that is a feature of Vy
+so this a more advaned versions of your
+of your build this is how you can make
+advanced memory in your uh in your
+agents now one thing I also want to do
+is add a tool because of course we want
+to build an appointment setter that can
+actually book meetings and that's what
+we're going to do right now so we're
+going to add a branch right here and of
+course we're going to have to build a
+tool and give that to our agents so
+let's see what's the easiest way to do
+that we're going to go um in
+here create new tool so we're going to
+go back to vapi this is just the easiest
+way to quickly build something and then
+turn into something transient we going
+to click tool going to click um make
+just make.com and then make that the web
+hook of course going to go here this
+going to be the web
+hook yes and then click
+save and then click next and then proper
+so now come all of the data that we're
+going to send to our server now of
+course we're going to be um let's just
+take the example of booking Dental
+appointments we're going to have to get
+some information so some things that
+we're going to need are their phone
+number so phone
+number um this is the phone number of
+the caller in e.164
+format all
+right and then what else do we need
+we're going to need there
+uh
+name name of the actually it's better to
+call them user because that's we're
+working with the open AI mod model so
+we're going to call them of the
+user number of the user uh name of the
+user name uh full name let's just make
+this a full
+name full
+name full name of the user
+save that and then of course add
+properties and then add um
+email email of the user perfect save uh
+so phone number full name and email of
+the user I think this is all we need oh
+of course the date for um for the
+meeting or for the appointments
+appointment
+date all right uh ISO 8601
+formatted
+date and let's see um how are we going
+to format that I'll quickly see what
+it's going to look like y y z all
+right
+um
+formatted
+date in
+UTC perfect well this is this is is
+basically enough if you put in UTC then
+you can always um uh calculate it back
+or calculate any way that you like so
+phone number full name email and
+appointment
+date
+um for the
+appointment right perfect so this is the
+agent that we're going to use and uh
+what is your tool name let's call it
+book
+appointment use this tool to book
+appointments for
+[Music]
+Mary's dental clinic all right click
+next um let's just forget about these
+messages so you can add messages for
+start delay response success message
+error message um don't worry about those
+I think that the agent is actually
+pretty good at coming up with their own
+messages but if you want more control
+about what the agent says when it's
+going to execute a function you can uh
+edit and update those
+so yeah so let's actually turn this into
+something transient we're going to go
+back to vapi right here so the vapy docs
+docs. vy. a and we're going to go
+to create assistance get assistance now
+go to
+tools and then get a tool and then click
+play right here enter the bar token
+again of course let's see do we need to
+add a add it here no okay this one's
+already authenticated so let's just do
+this one um again just adding your bar
+token and you can uh make those calls
+you should already have that um or if
+you forgot how to do that if that's
+removed you can go back to the beginning
+of the video so get
+tool and then copy this ID right here of
+the tool we just made remove these two
+letters send
+request all right and this is going to
+be the tool
+right here so of course these for sure
+have to be removed and then type is make
+function is book appointments async is
+there anything else we need to remove
+here um or ID can be
+removed um server URL is okay timeout
+seconds 30 seconds that's okay async is
+false um yes so that means that we're
+going to send um reply right so if you
+do that if you remove the things that I
+just removed then this is what it's
+going to look look like and then of
+course we're going to add that to our
+agents so the way we're going to do that
+is we're going to go in
+here and blow
+model let's see where we supposed to add
+that I'll quickly have a
+look um create
+call create assistant let's look at that
+example so if we go here create
+assistant we can give it tool
+tools
+tools all
+right and where is that knowledge base
+model is exactly below model and then
+type transfer okay
+perfect all right so if we go in
+here
+model model is GPT 40 and the tool is
+going to be this one
+so tools
+and then this is going to be an array
+it's just something you have to know is
+it going to be an error or array or
+something
+different there if we go in here this
+should work but of course this is
+something that we have to test in order
+to make sure that actually does work
+right now it's just guessing work
+so yes tools
+array yes I think this should work so we
+go back in here of course this is
+something that's in your blueprint if it
+does work I'll show you guys um why it
+works in a bit so yeah let's make
+another
+call grabbing my
+phone hello this arm is Mary from Mary's
+Dental how can I assist you today all
+right perfect so um it picked up the
+call so that means that I correctly
+formatted the Json so if we go back in
+here and then go to the Json editor I'll
+show you guys what I did so you can
+actually understand how that works oh uh
+it seems I edit might have edited the
+wrong one or the upper one
+so we're going to have to redo that for
+this version going to go here it's
+saying false all right perfect let's go
+in here
+model
+perfect go in here let's go again and
+see if it actually does
+work go back
+here and that's make another
+call couldn't get assistance okay
+couldn't get assistance oh so that means
+something went wrong in adding those
+tools to our agents so let's see what
+happened
+here
+body assistant
+tools we're going to quickly check if
+this is uh even correct
+Json okay show me tools
+oh that's a funny mistake okay so this
+symbol right here is not supposed to be
+inside of the bracket should be outside
+of it so if we click this and then this
+this is what it's going to look like I
+can I think that this should already
+work so the model is the llm model
+that's um actually thinking about how am
+I supposed to respond so this is how
+vapy Works unless you're using something
+like the realtime API which is speaks to
+speech um it has a TTS model so text to
+speech model which is in this case deep
+gram which turns the words that the user
+or the calling is saying uh caller is
+saying into words then you have the llm
+like open AI CAD GPT of 40 which we're
+using right now which interprets that
+text and then formulates a reply and
+that for that reply is then turned into
+a voice which the we use the 11 Labs um
+API 4 now the model is the llm so the
+model is jet GPT or GPT
+4 and this one handles all of the
+function so what we did is as a part of
+that model we added the tool right here
+so and basically what that means is all
+of these objects so the email the full
+name the phone number and appointment
+date are going to be added to our um
+going to be sent to our agent so if we
+go in here and this is just Json
+something you have to get familiar with
+but this should
+work and then if we go back in here
+change this into this let's see if it
+works
+[Music]
+now couldn't get assistant okay so this
+is still not something that um V is
+expecting so let's actually see what
+we're currently responding with to see
+if our Json is still incorrect or we
+just not doing what VAP is expecting
+thing so if we go back in
+here this is still incorrect oh I didn't
+update it of course so you do have to
+click save if you're trying to update
+your uh agent let's see let's go in
+here then tools and this one has to be
+outside of the quotes of course click
+save click save let's see is this one
+still correct yes this one's still
+correct all right let's try that again
+hello this arm is Mary from Mary's
+Dental how can I assist you today all
+right perfect so that means I was
+actually able to make the call now the
+next thing we're going to do is actually
+build that tool so I'll uh be back with
+you guys in a bit all right so here we
+are again we got that information from
+uh um from vapi so the next part or the
+next thing we're going to do is actually
+build that tool um so we're going to go
+here and this is of course another
+branch in that router and what we're
+building the appointment setter so what
+we're going to use for um today's video
+is actually cal.com this is something
+many people actually want to get
+familiar with so I thought hey let's um
+actually use cal.com in this case um
+because it gives you it probably gives
+you the best appointment Setters and
+most flexible appointment Setters that
+you can use um and sell to agents so
+what you're going to do is go to cal.com
+or app.com you're going to click new
+right here can make a free accounts is
+completely free you can make an event
+right here that people can book meetings
+in so virtual meetings for example um so
+quick
+chat URL we're going to call this um
+Mary's
+Dental right here quick chat um marry
+appointment well this of course doesn't
+make sense why would you make a digital
+meeting appointment for Mar's Dental is
+just an example in this video because
+we're actually um the most interesting
+use case for people who are actually
+watching this is booking digital
+meetings so that's what we're going to
+do right now um in this case duration is
+going to be 15 minutes you can add all
+sorts of things of course descriptions
+for example and then this is what you
+get so you've made an account with
+gal.com you went to event types you
+create a new event and then this is what
+it's going to look like now for the
+purpose of this video I'm not going to
+change anything in here I'm going to
+just book it as is use it as is
+but what we are going to copy is this
+right here all right and we're going to
+go to the um gal Doom aal.com
+API
+reference we're going to go in here
+actually show you how to read this
+reference in order to actually be able
+to build and um um call.
+a call /ai yeah we're not building with
+that right now just scale.com all right
+resources and then go to
+API and then we have the API reference
+right
+here and then we're going to go here all
+right so we're going to build an um uh
+an automation we're going to
+automatically allow the agents to set
+appointments through cal.com and it's
+going to send a confirmation email and
+it's also going to actually book that
+meeting and allow us to jump into a
+video call so what we're going to do
+right here is get the colom
+API um so we add an HTTP modules so you
+click here and then click HTTP and of
+all of the modules you can choose you're
+going to click make a request so make
+request module you're going to see this
+right here and then the first thing
+we're going to have to add is a URL of
+course so if we go here we're going to
+have to find the right URL in order to
+make a call so these this is the API
+reference cal.com dos API reference V to
+introduction if we go here we're going
+to have to look at book meetings so
+create a
+booking and then copy this right here so
+you have
+this add it right there so this is going
+to be the same for everyone this exact
+thing and then we're going to click post
+so choose post method and then the
+headers are going to be Cal API
+version so copy this
+add an header call Cal API version so
+this is just the version that you're
+using for the API um cal.com wants you
+to know if you're sending a request to
+book a meeting to their server which
+version are you actually using so that
+we know what you're talking about in
+your in your request so that they know
+how to interpret that request so that's
+the reason why they're asking for it and
+of course we're going to have to add our
+authentication so let's see
+create a
+booking headers must be this body vent
+type ID
+start so this looks like we don't even
+actually need to add an authentication
+token which is
+strange data start length
+guests time
+zone all right option two option three
+let's see let's just copy all this for
+now all of this in here so in the what's
+in between the small quotes copy all of
+that and then put it inside of the B
+body right here so body type is going to
+be raw content type is going to be Json
+application request content is going to
+be this right here um
+start
+is let's see
+actually um we're going to have to see
+what is actually necessary in order to
+to book that meeting so attendee is
+required and name time zone is also
+required the rest is not so let's remove
+everything that's not required time zone
+is required um email oh wow it's not
+actually required we are going to add
+that email and then
+name so time zone email and name and
+then phone number and language are not
+required so why even add those or let's
+just remove the language because of
+course we do have the phone number so we
+can leave that for now um and then
+guests optional list of guests attending
+the event so apparently that's optional
+so that means we can remove all of this
+we don't need to add that meeting URL um
+if no meeting URL is
+said
+then if not provided then Cal video link
+will be generated and that's exactly
+what we want we want to use cal.com
+video links so we're going to remove
+this one location can also be removed
+let's
+see not sure if this is correct
+formatting body
+metadata I think this is supposed to be
+in Brackets like that open
+open oh no never mind I misread that
+okay perfect um start is that one
+required
+okay s it's
+601 U metadata we don't need any
+metadata for this call so we can remove
+that one metadata is not
+required if I remember correctly
+metadata is required but you don't have
+to add anything here so we can just turn
+it into this right
+here make this
+empty um booking field responses custom
+field custom value don't need that as
+well uh either all right all right so
+this should probably work let's see is
+there anything we haven't added that is
+necessary status required but that's in
+the response right yes that's a response
+meeting URL guest event type ID phone
+number language time zone all right
+perfect right and the length is going to
+be let's see 30
+minutes no we don't have to specify
+length because
+our um event type already has a length
+Okay so if we go back to c.com right
+here we're going to go to event types um
+you can find the event type ID in your
+url right here so this is just these
+seven digits that you see right here and
+you can already put them here right
+there click save all right so the next
+thing we're going to do is actually make
+that call to get that information from
+our agents so that we can actually book
+that meeting so um yeah let's do that
+right now let's make another call try to
+see if we can book a meeting and then uh
+have that set up back with you guys in a
+bit all right so we're calling our agent
+one more time and we're trying to see if
+we can get that information now just to
+make it a little bit easier for ourself
+we're already going to give this agent
+our
+um data so transcript for
+call
+um AI can assist you what is it okay
+user um my email is j. Bergen at
+f.com my phone number is
+plus1 all
+right my name is just for R
+Bergen my email that you can use
+for booking appointment
+okay perfect this is just to make it a
+little bit easier and quicker for
+ourselves and then we're going to call
+our agents and uh see if it books the
+meeting for
+us hello this is Mary from Mary's Dental
+how can I assist you today hi could you
+book a meeting or an appointment for
+me sure thing yeser what's the purpose
+of your
+appointment um I just want to
+to go by you guys and have a talk all
+right all right when would you like to
+schedule this chat what date and time
+works best for you anytime is okay
+actually all right cool gper I'll
+tentatively set it for tomorrow at 10:
+a.m. that work yes that will work thank
+you this will just um take a second all
+right perfect so we got the uh tool call
+so all of the information is here but of
+course course we haven't set up our
+automation yet so what we're going to do
+is go to this HTTP module that you see
+right here and add all of those datas
+that we just got from our agent so we're
+going to go here the start is going to
+so first we're going to look at these
+the type has to be tool calls and then
+if we go here and then function and then
+arguments the appointment date of course
+is going to be this vent type ID we
+don't have to edit that the name is
+Jasper the email is j. ryberg of this uh
+time zone is going to be let's see UTC
+let see if that works and then phone
+number of course is going to be plus
+31
+Etc and we can make the oh and of course
+we have to filter type is tool
+calls only
+tools perfect
+save right here we are we have two three
+branches assistant request and of cor
+report and only tools so that's how that
+works and then if we go here and copy
+all of this output again so output
+bundles copy all of this then we can do
+the exact same trick and just try and
+troubleshoot it 100 times without
+actually having to call that agent so if
+we click run once and then send that
+data we can check what does um what does
+it do with our uh request so unexpected
+string
+in Json okay so our we can see that our
+Json was not correct so if we go here
+and then open up Json editor it's going
+to say this is wrong and it's probably
+because we missed a comma there and this
+one has to have I
+think okay yeah there we are let's make
+it pretty make it look like this
+perfect so I have to remove a comma
+here um okay so if we remove or add a
+comma here and then remove this one it
+should work and then of course we want
+to pass the response so at least the
+Json is correct now but we don't know if
+we're sending what cal.com is expecting
+let's so let's actually run that again
+if we go back
+here send that data let's see ccom sends
+us another error attempting to book a
+meeting in the past all right so we made
+one uh mistake with the agent we have to
+give it the current time so here's their
+phone
+number here is the current date and time
+in
+UTC so this is something you actually
+have to give your agent or else it's not
+going to know when to book a meeting
+it's going to think that it's like 2023
+or something because that's how the GPT
+40 model is set so format
+date add the now variable click save
+let's just copy it from here so all of
+this
+so this entire format date we're going
+to copy that put it in
+here
+color and
+then the current date and time is and
+then that's the current date and time
+and then copy that we can add that to
+the second agent as well because if it's
+going to send is if it's going to want
+to book a meeting for tomorrow is going
+to have to know what the day is today so
+that I can calculate tomorrow so there
+something we're going to have to fix so
+let actually see if we can find that
+here and already fixed
+that all
+right so let's
+see
+dates strange it should be in
+there what's it called
+email appointment dates strange thing
+that I can't find
+it let's see go in
+here appointment date so let's see what
+it actually sent us 2025
+01110 Z okay yeah that's in the past
+exactly has to know what the current
+time is so let's turn this into let's
+see tomorrow and at
+29
+perfect and then put that right there
+just from just some testing
+data save run once let's see what the
+cal.com platform tells us now probably
+going to get another error oh no it
+actually booked the meeting data success
+data meeting URL perfect so we're
+actually going to be able to use that if
+we go add an Outlook module for
+example create and send a message create
+a connection I'll conect it to our uh
+Office 365 of course you can also
+replace this with an uh Gmail module
+Google module or any other email that
+you use we're going to send a
+confirmation email to our uh to our
+user subject uh booked the
+appointment body content I we
+successfully booked your
+appointments it is
+scheduled
+for let's
+see tool calls just something very quick
+just to make sure that it works
+appointment
+date good
+luck oh and add uh here is
+your meeting URL just something quick to
+make sure that it's actually sends it so
+if we go here to data meeting URL save
+oh of course we have to add recipient
+where we're going to send the email to
+in this case it's going to be this
+person and then full
+name all right
+save and then of course we're going to
+have to add a web hook response so the
+web hook response is used us to um the
+agent is currently calling sending that
+data to our server but it wants to know
+or get a message that everything went
+okay so once to get a response from the
+server I tried to book a meeting um did
+it actually go well so that's what we're
+doing right now so if we go to Tool
+calling right here if we go down here
+click copy put that in there tool call
+ID that's what's in here tool call ID so
+that's the ID that that vapy server uses
+to identify which tool is called so if
+you like if you have a million calls a
+minute just to give an exaggerated
+example um many tool call webbook
+responses are coming in all of the time
+and by ID is going to recognize okay
+which tool call was that and which uh
+call was that all right so result is
+going to be um
+successfully booked uh meeting so this
+is what we're going to tell our agents
+save click save all right so let's uh
+test that again and see if it works all
+right so let's do another entire run of
+our agent I'm going to delete all of the
+history right here and we're going to
+test the entire agent as we've built it
+right now so we're going to look at the
+interface we're going to look at the um
+call history we're not going to remove
+that because it going to look make it
+look a bit more
+fancy um all right and we're going to
+look at all of the results that we get
+in our uh make.com in our air table so
+um yeah what is supposed to happen is
+we're going to call the agent it's going
+to create a new user I'm going to get
+then call it back it's going to remember
+our past conversation and then I'm going
+to also book um a
+meeting of course I always have to add
+those um details in
+here let's see so let's actually add
+myself right here plus 31
+I can do that later let's
+see here we
+go all right let's um try this
+out so let's call the
+agent hello this is Mary from Mary's
+Dental how can I assist you today hi I
+was wondering what do you guys do at
+Mary's Dental
+oh close it's mer Dental not mer Dental
+but hey we don't mind a little Name
+remix we're all about like keeping those
+pearly whites shiny here in Anaheim Dr
+Mary Smith handles everything from
+cleanings fillings and crowns to just
+making your teeth Sparkle like they're
+on a to commercial anything Dental
+really what's up need an appointment or
+just curious um yeah let's book an okay
+so I just hung up while I was still on
+the phone let's see what it does with uh
+with that so what is going to do is
+going to try to find me and it can't
+find me so it's going to make a new
+customer and then if we call it back
+it's going to remember what we just
+talked
+about Hello this arm is Mary from Mary's
+Dental how can I assist you today hi
+what what did we just
+discuss oh hey there last time we talked
+a bit about what we like do here at
+Mary's Dental we handle cleanings
+fillings okay well um let's actually
+book a
+meeting awesome let's get that set up
+can I get your full name first um my
+name is Jasper rebeen it's not a very
+easy name so you can just call me Jasper
+and that's Jasper spelled with an E so
+not with an A but with an
+E great to uh meet you jper with an E
+what's the purpose of your
+appointment um yeah so I would like to
+just have a talk with you
+guys got it Jasper a good old Chad it is
+what's your preferred date and time for
+this chit
+chat um how about tomorrow anytime we'll
+do all right Jasper so appointment for
+tomorrow uh to like chat about your
+teeth just to confirm your phone number
+like is plus 31637
+37432 right yes uh you also need my
+email um that's Jasper
+Reen home.nl I'm going to quickly um
+spell it for you and I'll see if you can
+assemble it together and make it into a
+real um email so it's j e SB e r r i e t
+b e r g e n at
+home.nl all right got that down Jasper
+redgen home.nl now let me confirm name
+Jasper redber purpose a chat date
+tomorrow phone number plus
+31637
+37432 email jper home.nl sound good it
+sounds perfect
+yes give me a moment thank you for
+contacting Mary's Dental have a great
+day all right so something went uh went
+wrong here let's actually dive into it
+see what uh see what happened um booking
+error bet exception message user either
+already has a book looking at this time
+or is not available ah of course and
+that's what because we've already booked
+a meeting with this uh email so let's
+actually add that to the history what
+we're going to do is make this an even
+better um tool we're going to add a
+router right
+here all right copy all of these
+modules put them
+there um copy these
+modules that's strange
+should be able to copy them copy
+modules okay for some reason that's not
+working let's actually see if we can
+refresh make.com to make that work so
+what we're going to do is we're going to
+save the ID that is generated or made
+when
+and upon
+booking and then we're going to
+reschedule a booking or delete a booking
+so we're going to go in here that's
+really strange
+clone let's do it this way then go in
+here clone and clone
+perfect and then we can remove all of
+these go
+here and then we're going to add a
+module which is going to be an air table
+module search
+records move
+this remove this
+L go in here go in here
+here only tools only
+tools what we're going to do is we're
+going to build um we're going to track
+the ID of every call and then we're
+going to get that after every call and
+then uh reschedule an existing meeting
+or delete the existing meeting before we
+U um make a new meeting or new booking
+so go in
+here what we're going to do we're going
+to find that customer of course by his
+phone number uh customers
+formula uh let's see phone
+number
+equals um customer phone number right
+here limit is going to be one of course
+and then if we go in here there's
+something we're going to have to add and
+that is the um meeting
+ID
+perfect let's
+see field date um single line of text
+create field meeting ID perfect is that
+what we're going to want and for now
+we're going to do
+this just populate with something
+nonexistent like this plus 31 637 37432
+hit okay and then it's going to find
+this well it's not a real meeting ID of
+course but it's something that we can uh
+can
+use all right so um yeah let's build
+this out all right so we're back in the
+uh in the scenario and what we're going
+to do is build out this rescheduling uh
+workflow so that I can also identify is
+there already meeting and then
+reschedule it if that's the case so what
+we're going to do is go in here and then
+click meeting ID and if it equals zero
+or
+empty it
+starts a new meeting so the very first
+meeting and then a reschedule
+meeting reschedule meeting that's if
+meeting
+ID not equal to
+empty all right and what we're going to
+do is go in here and then delete meeting
+so bookings cancel a booking go in
+here http module clone this one we're
+going to make another API request to
+cal.com what we're going to do is delete
+that booking so meeting
+ID
+delete and we don't need any payload
+here we're just going to or do we
+booking
+uid okay this parameter headers is going
+to be this one this is probably the one
+that we already have yes all right and
+then data has to be empty so that means
+we can remove all of this for that
+one perfect and then method is going to
+be
+post all right so this is what we're
+going to do and then of course is there
+something we need to add API data
+response cancel a booking right we don't
+even need to authenticate ourselves in
+order to because this is more on the
+user side of course only the user will
+know what their appointment is and then
+if we go in here data meeting URL oh
+we're going to have to change that into
+the new variable so this will all be in
+your blueprint of course
+23 meeting URL
+23
+perfect then this is still the same this
+is also the same all
+right and then we have we automatically
+first delete the existing meeting and
+then if we clone this one and then this
+one and then this
+one and then add an error Handler so
+sometimes you the meeting you're trying
+to book a meeting that has already
+passed in that case you can just resume
+it so you can just resume that
+um so sometimes you're um trying to so
+it doesn't identify whether that meeting
+idea is something in the past so if it
+is in the past of of course you can just
+reschedule a meeting it's not in the
+future so in that case in the past you
+can um um you can just delete that that
+this is going to give an error so we're
+going to make it resume despite that
+error and still book that meeting
+because we already know what that error
+is going to be and then this one of
+course is going to be
+the module
+27 so if we go here module 27
+let's
+see add that here this should be the
+same exact version but then for module
+27 and the web hook ID and then of
+course there's one thing that we have to
+add we have to update the air table
+record so update
+record base real
+test sub
+table customers
+record ID going to be this one and the
+meeting ID of course is going to
+be right so I quickly had to update the
+time to tomorrow but if we try to book
+it right
+now and we go in
+here it scheduled the meeting and also
+we can make it update the meeting ID so
+we now have that variable for the
+meeting ID if we go in here and check it
+right here okay it still has to load up
+make com can be slow at times so if we
+go in here go in data and we can find
+the U ID and that is exactly what we
+need and then of course with this one it
+also has to populate the um the uid so
+let's see update a record create a
+record so if we go here the exact same
+module
+clone and then go in
+here record
+ID and then this one has to of course
+b23 update the meeting ID now I'll be
+able to keep track of whether it has or
+doesn't have a meeting ID so as you can
+see it gives an error because error 44
+not found if it's not found doesn't
+really matter that means that the
+meeting ID in air table is outdated and
+that we can just book the meeting
+without uh um without rush or a care so
+in that case let's uh actually try this
+again and uh book another meeting all
+right here we are it's the following day
+I had a few meetings and uh yeah had to
+sleep of course but the next day we're
+uh going back into the build and
+actually testing the entire system the
+entire agent so what we're going to do
+I've removed all of the history so as
+you can see no logs no meeting ID and
+we're going to check if the assistant
+that we've built together uh works now
+of course we haven't added a check
+availability um system yet so it's just
+going to guess if there's an
+availability now in . I've turned it uh
+turned looking for conflicts off so it
+will just schedule that meeting if even
+if there are conflicts what I would
+advise is um adding um HTTP module here
+to update those uh to check the
+availability so that the agent will know
+which time slots are or are not
+available so what we're going to do is
+call this agent we're going to call it
+and then it's going to uh book a meeting
+for us and then in the history so in
+that logs conversation is going to be
+able to remember what meeting we booked
+the second time that we called and then
+if we call back then it's going to be
+able to book a new meeting for an hour
+later for example and then delete the
+existing one and then uh book a new one
+so that's what we're going to do right
+now hello this like is Mary from Mary's
+Dental how can I assist like you today
+hi um yeah could you book a
+meeting of course let's get you set up
+what's your full name um my full name is
+Jasper Jasper is
+fine got it jper what's the purpose of
+your appointment cleaning filling or
+just want to chat with anything is fine
+basically I just want to uh have a quick
+chat cool cool when do you want to swing
+by got any date and time in mind uh any
+date and time is okay really how about
+next
+week all righty let me pencil you in how
+does um Monday February at 10 a.m. sound
+got that fresh Monday energy uh yeah
+sounds good you're all set appointment
+confirmed for Monday February 5th at 10
+a.m. anything else you need yeser if not
+I can wrap this up um no that's all
+right thank you thank you for contacting
+Mar's Dental have a great day all right
+perfect we do really have to change that
+voice there's like 3,000 voices that you
+can choose from I think this is a
+terrible voice but uh Hey it sounds uh
+sounds good enough so at the end of the
+call we get the call summary so the logs
+and as you can see all of the details
+that we want are inside of here so let's
+call that agent back again and see if it
+can reschedule that meeting now if we
+look at the transcript it should say
+when it booked the meeting so February
+5th at 10: a.m. let's call the agent
+back and see if it can schedule that
+meeting for an hour
+later hello this like is Mary from
+Mary's Dental how can I assist like you
+today um could you remind me when for
+which time slot did we book our
+meeting sure you're booked for Monday
+February 5th at 10 a.m. ready to kick
+off the week um with some awesome yeah
+could you uh reschedule that to an hour
+later give me a
+moment you're all set esper your
+appointment is now rescheduled like to
+Monday February 5th at 11:00 a.m.
+anything else you need if not I can wrap
+this up no that's it thank
+you thank you for contacting Mary's
+Dental have a great day all right so
+that's great but the voice is terrible
+but it does uh actually work so what
+it's able to do is Friday the server URL
+is going to um uh reply to that uh
+assistant request and pick up with an
+agent and then it can book a meeting and
+if there's an existing meeting delete
+the existing one and then book a new one
+and then at the end of call end of the
+call it gives an end of call report of
+course it's going to update this
+information with all the history from
+that call and then we get the entire
+transcript which is then given to the
+agent so in the next call it can
+remember what it talked about and if we
+refresh this we see all of the data that
+we want to see so the total cost of all
+of the calls is
+$765 now of course that's something that
+we edited ourselves
+um and the total cost uh total average
+cost is uh about 30 cents per call 25
+calls have been made during this testing
+and um these are the different reasons
+that the call ended assistant ended call
+pipeline error customer busy customer
+ended call silence timed out so this is
+how you can make this entire flow work
+you can grab your own uh server here in
+make.com you can use air table tables as
+a database and then you can use the
+interface function has a visual um login
+page for either you or your clients that
+they can keep track of their uh of their
+systems and their agents now just to
+confirm this is what we got in our um uh
+in our email so these are the
+confirmations that we
+got from our uh from our agent now of
+course this is double because we did
+some uh did some testing but as you can
+see it's first let's see what's the
+first one first book the meeting so
+that's the meeting and then it's um
+let's see that's the confirmation of the
+meeting and then that's a second meeting
+so a rebooking of that meeting and if we
+go here of
+course oh in our.com if you visit
+our.com you will be able to see that
+that list of booking meetings has been
+populated and can be added to your uh to
+your calendar so that's how to build an
+uh transient agent with tools and an
+appointment setter using the text tag of
+make.com air table both e table
+uh data and the interface and also um
+g.com and Outlook or office of course
+and of course you can also replace this
+with a Gmail um module right so thank
+you for watching this video on how to
+build your own appointment set I hope
+you've really learned something about
+how does this text stack work and as
+I've said at the beginning of this video
+the purpose of this video is to make you
+familiar with every part of that text
+stack and every element in the thing
+that you're going to be building so that
+you can actually tweak it edit it make
+it into your own and also replace um
+platforms like cal.com into canly for
+example or Google caner if you get
+familiar with those modules at make.com
+you can replace them and really turn it
+into your own as I've said at the
+beginning of the video If you go to
+members. f.com uh where you also
+download the resources be sure to join
+that Community if you have any questions
+reach out to those people in the
+community and they'll be likely to
+actually answer those questions for you
+um be sure to visit the partner port
+portal make your sa self available reach
+out to people on that partner portal to
+work with if you have a project and
+you're going to need any of their
+assistance these people will be um uh
+will be people that you can reach out to
+now of course if you have if you're run
+into any issues during this call I have
+my Consulting sessions that you can find
+right here book a 101 with Jasper I've
+got amazing reviews from my Consulting
+sessions you can also find it at
+f.com and um yeah I'll help you figure
+it out and make the most out of your
+automations now if you want to really
+upgrade yourself with 2025 we have our
+2025 AI Advantage agent if you look at
+flo.com you can actually see that this
+is the exact agent that we're selling to
+our own clients
+for around
+$5,000 per client per project so how
+this works is if you uh go to this page
+the AI Advantage agent you get a quick
+preview of once you've built out the
+agent what is it able to do it can reply
+through text it can reply through email
+it can reply through voice complete
+Advanced memory across all of those
+channels it will be able to book
+meetings across all channels and
+reschedule meetings leave notes make
+call backs um it has a complete cold
+calling scheduler which means that if
+you upload a complete lead list it will
+call around 200 leads a day five days a
+week for8 hours and well there's lots of
+stuff in this AI Advantage agent that
+you can look into now there's two ways
+that we um uh you can invest in this um
+the first one is save yourself countless
+hours I'm constantly updating this AI
+Advantage kit with our newest models
+features tweaks and uh improvements so
+you will get instant access to the AI
+Advantage agent if you buy this package
+right here keep in mind somewhere in the
+future we're actually planning to make
+this into a subscription model instead
+of a onetime fee so if you're seeing
+this way into the future it might have
+turned into an subscription model
+already but if you're early of course
+this is just a onetime fee and you will
+get permanent access to the entire
+Advantage agent and the first idea was
+to just give a bunch of blueprints and a
+bunch of tools that you can use and
+figure out for yourself I've been
+planning to actually make videos
+exclusive videos for this AI Advantage
+kit environment where other people of
+course these are not going to be put on
+YouTube these are very specific to the
+blueprints in the AI Advantage kit so
+they can actually know how do these work
+how can I get started with it now as you
+see right here the advantage kit is $450
+and then the Tex stack is monthly cost
+you're going to build this into your own
+environment so that's not something you
+pay us this is your own cost but once
+you've build out the agent um the entire
+tax stack so all of the platforms that
+you'll be using and the average cost per
+minute are going to be $35 and 14 cents
+per minutes on average so that's a great
+um advantage that you have compared to
+white labeling platforms or kits like
+this now do keep in mind you get all of
+the tools all of the blueprints but you
+will still have to figure it out for
+yourself so if you're running into any
+issues while building out your advantage
+agent or you want to tweak things make
+things into your own have specific use
+cases of course there's going to be
+content on how to do that but if you
+want some support you can go back to
+membersof flo.com book a oneon-one
+session with me and I will help you go
+through that Advantage agent and really
+make it into your own in the future I'm
+also going to add coaching sessions to
+this packages of sessions with me or
+someone from the flo team in order to
+figure out how to really use and get
+everything you want and need out of this
+agent so in any case uh thank you very
+much for watching looking forward to
+seeing you in future videos and in the
+community of course and be sure to
+subscribe to this Channel and also leave
+a comment uh saying what you thought of
+this video really like the comments
+beting on my uh videos and um yeah
+looking forward to the next one bye-bye

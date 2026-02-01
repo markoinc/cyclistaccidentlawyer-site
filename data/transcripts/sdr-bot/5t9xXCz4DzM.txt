@@ -1,0 +1,108 @@
+# How to Automate Sales Follow-up Emails with N8N and Fireflies
+# Video: https://www.youtube.com/watch?v=5t9xXCz4DzM
+# Category: followup
+
+Hi guys welcome to another AI Automation related video and in this video I'm going to show you guys
+how you can create an AI Automation which will help you a lot in sales. So if you are working
+in a tech company or any company where you are supposed to call your clients via google meet
+and have multiple sales meeting this automation will help you a lot because in this automation
+I'm going to teach you guys how you can add an AI tool which will take notes while you are in the
+meeting and automatically save follow-up messages in your google drive based on those meetings. So
+let's say you are having like 8 to 10 meetings a day and after a week you don't really remember
+if you needed to follow up for any of your client if you needed to send an email this AI automation
+will help you do that it is going to automatically add into your google meeting and it will prepare
+follow-up messages for you if you had taken previous interactions with the same person
+right so pretty simple automation free workflow available in the description as well and that is
+an intent workflow so as you can see it is going to trigger whenever you add a new appointment in
+your google calendar so that's the test data where you can see that it's adding all of the data when
+a new google meeting event is created now it is going to save the guest email so that's the
+guest email and then it will make an API call to Fireflies now Fireflies is a really nice tool
+which is used to take notes whenever you are doing meetings so it's just gonna capture everything
+in your meeting so you can simply add to your live meeting you can upload audio video start
+recording there's a lot of features in this tool available which you can use for free and i've been
+using that and it helped me a lot because it will save the transcript of the meeting so if i go to
+meetings you can see that's the simple meeting which i have saved if i click on that it has all
+of the records saved right we it also saved the recording and good thing about that they give you
+API access so if i go to settings and then if i go to developer settings you have this API key
+and what we will do in this Enerton workflow is that we will make an API call to Fireflies and
+fetch all of the meeting transcription data just like i have it here right and then we will skip
+it if it doesn't have any data meaning you might have a meeting where you didn't have any previous
+interaction with the customer it's just gonna skip it it's not going to make a call to open AI
+AI agent which is our next node but if you did have previous interaction with the same customer
+it's gonna pull all of the transcripts from the Fireflies and then give it to AI agent now if
+i open up AI agent you can see that it already have put together a message after reading all
+of the conversation so let's check out the prompt here you can see that based on strictly provided
+transcript write a sequence of 12 persuasive messages to be sent via email now you can change
+the prompt as per your requirement but here i have the transcript data given to my AI agent
+and now it will all read all of the text transcript data from that particular participant
+what i had the meeting with and create follow-up messages and save to my google drive
+now if i open up the file which it has created
+that's the latest file saved with the email of the guest and it's saying follow up on our call
+regarding the finish line campaign i wanted to check any video upload issue in the facebook ad
+so in that particular call we were having an issue uploading the video to facebook ad manager so that's
+the 12 different follow-up messages which it will pinpoint and create for us to send
+follow-up messages to that specific person for completing the sale right now let's start
+implementing that you will find the workflow in the description completely free no need to sign up
+for any school community or anything like that just click on the link in the description copy
+the workflow and that's it now once you add the workflow once you import the workflow i hope you
+know that so all you have to do is just click on plus sign click on this workflow
+and then simply click on these three small dots and then click on import from file so just
+click on this import from file and you will have a workflow like this right and once you add the
+workflow you will need to connect google calendar now i've already created a video on how you can
+create google credentials but let me give you a short demo on how you can do that so you will
+click on create new credentials and here you will need to generate client id and client secret
+for that go to console.cloud.google.com
+and make sure enable the api for google calendar so here click on these three bars
+go to apis and services click on enable api and services
+here we will click on enable api and services and search for google calendar now here i'm
+gonna simply search calendar and click on this google calendar api now i have already it enabled
+you might see it option to enable make sure to enable that once you enable that click on these
+three bars again and then click on credentials i'm also going to add link in the description
+where i have given a detailed video on how you can create google credentials
+but this one is a short demo so let's click on create credential and click on auth client id
+once you do that select web application add in your web client name
+and here authorize redirect uri click on add uri and copy this url here once you click on click
+to copy here paste the url here and then click on create it will give you this client id and
+client secret which you will simply click on copy and paste the client secret
+now once you do that click on save and your credentials will be connected you will have
+a pop-up showing up like this which means that it is connected right okay now what happens on
+this node is that once you create the credentials it will trigger every minute i mean it will keep
+listening every minute at the moment you create a new google calendar event it's gonna trigger
+and have all of the details now the workflow will start whenever you create a new meeting in google
+calendar so that's it for this node and this is for just saving the variables so it's basically
+saving the start time of appointment end time of appointment created by and the guest email
+time of appointment created by and the guest email which we will send to fireflies api in
+order to pull all of the old transcript data right and this is our graph ql node where everything
+is set up you don't need to do anything except adding the api key for the graph ql right and
+how you can do that you can simply click on this header auth credentials and click on create new
+credentials now here you will add authorization now let me pull up the fireflies documentation
+as well so i can give you some idea on what you need to do so if i pull up the fireflies
+documentation you can see that this is authorization here and the bearer so i'm simply
+gonna copy this part here save it in a new tab and here i will add my fireflies api so from
+settings developer settings you need to click on this api key right settings developer settings
+and then this copy icon to copy the fireflies api key once you click on copy make sure to
+have your api key pasted here so make sure you have it in the exact same format
+this is what we will add in our na 10 right so i'm simply gonna copy this part here i'm gonna ask
+my video editor to zoom into this part and now let's go back to na 10 and here we will add it
+in the value now for the name we will simply need to add in this authorization
+and once you copy that and paste it here click on save that's it you will get this pop-up again
+for the credential successfully created right now once you do that you will simply click on
+execute step and you will have all of the transcript data showing up now we will simply
+pass it on to our ai agent before we do that make sure we filter it based on if it has any data or
+not so we are checking on this node here that it's not empty meaning if you are having a meeting
+with a new person you don't have any previous fireflies data it is going to filter it out and
+not going to pass this to ai agent right so this is for that note now it will pass on this data to
+our ai agent i already shown you the prompt you don't have to change anything here except these
+prompt instructions if you have specific instructions for the follow-up messages meaning
+you want to add persona or you want to add tone of how you actually communicate with a client
+you can add in more details to this prompt now once done it will save the google drive
+you just need to select in the parent drive and then select the folder where you want to save the
+file now the file name is this email which we are pulling up from this edit field nodes here
+you can change the file name based on your requirement file content is this output which
+we are pulling up from this ai agent so that's it for this video guys i hope it was helpful
+i hope it was helpful it will help you automate your sales follow-up message and let me know in
+the comments below if you want me to create more free workflows for you guys let me know if you
+have any specific scenarios which you want to automate would love to create free workflows
+and videos for you guys in this channel and do not forget to give a thumbs up and subscribe
+to this channel to motivate us to create more helpful videos for you guys until next video
+have a great day

@@ -1,0 +1,218 @@
+# How to Connect Vapi AI Voice Agent with GoHighLevel to Book Appointments
+# Video: https://www.youtube.com/watch?v=Z0m_62T_L84
+# Category: vapi-voice
+
+Hey everyone, welcome back to the
+channel. In this video, we are going to
+connect an AI voice agent built in Voppy
+with a GoHigh level setup. If you're new
+to the channel, my name is Bogdan and
+I've been running an AI automation
+agency for the past 2 years. And on this
+channel, I share tutorials and insights
+from building my AI business. At our
+agency, we keep getting clients using
+GoHigh Level. And a few times already,
+we've had to brainstorm projects where
+we had to build an AI voice agent and
+plug it into their GHL setup. So, in
+this video, I decided to show you how to
+do it exactly step by step and hopefully
+save you some time. Let me show you a
+quick demo.
+>> Hey, welcome to Bosar Agency. What can I
+help you with?
+>> Hey, um I'd like to book an appointment.
+>> Sure. May I have your full name and
+phone number to proceed?
+Yes, my name is David and my phone
+number is + 457036514.
+Thank you, David. Your contact has been
+created successfully. Uh, when would you
+like your appointment? Please share your
+preferred date and time. Um, can we do
+it tomorrow at 3:30 p.m.?
+>> The available slots for tomorrow,
+September 3rd, include 3:30 p.m. Would
+you like to confirm this time?
+>> Yep. Yeah, sounds good.
+>> Your appointment is confirmed for
+tomorrow, September 3rd, at 3:30 p.m.
+Thanks.
+>> Thank you. Bye-bye. So, that was the
+demo. And now if I go to my sub account
+in gohi level and click on the calendar
+option you will see the tabs here um
+calendar view and appointment list view.
+So in appointment list view you can see
+the booked appointment and on the right
+side of every booked appointment I can
+click view details and see the details
+that were retrieved during the call.
+Okay, real quick what is gohigh level
+and why do so many businesses use it? In
+short, Gohle brings together a bunch of
+features that you'd normally need
+multiple tools for. It combines your
+CRM, email, SMS, funnels, appointment
+scheduling, even website and landing
+page builders. So instead of juggling
+six different subscriptions, everything
+lives under one roof. You can set up
+automated follow-ups, booking reminders
+through SMS, email or voicemail and you
+know lead nurturing sequences. This is
+what makes scalable outreach possible.
+It has calendars with availability
+settings and booking widgets that sync
+with your Google or Outlook. And what's
+really cool about it is the wide
+leveling option for agencies. You can
+brand the entire platform as your own
+and resell it to clients with custom
+funnels and workflows. I guess its
+biggest advantage is that it
+consolidates tools that most businesses
+need anyway, but they are all in one
+place. All right, so here's the highle
+flow of what we are doing today. First
+we create a calendar in highle sub
+account so that we can get the calendar
+ID. This ID we will paste into vap's
+builtin highle tools for integration.
+Next we will go into vap where we will
+set up our voice agent. Then inside vapy
+we set up the built-in highle tools and
+there are different tools such as get
+contact. It pulls lead information if it
+already exists in our go high level
+account. Create contact. It saves new
+leads instantly into goh level if they
+don't exist already. Then check
+availability. This one checks the
+calendar for open slots and create
+event. Obviously books the appointment
+right inside go high level. And then
+we'll just connect the VP assistant
+directly to our highle account. Okay. So
+step number one is to create a calendar
+in the gohigh level sub account. I
+already have one. Um you can see it
+here. Make sure to set the availability
+according to your schedule and you can
+also connect it with Google and Outlook
+etc. Super important it must be in the
+sub account not in the main account.
+Okay, because only sub account calendars
+are tied to the client's workflows
+pipelines and automations. If you create
+it in the main account you might break
+the integration and appointments won't
+trigger the right automations. So always
+use sub account calendars. All right.
+Step number two is to create an
+assistant in Vapim. So in Vapim once
+you're logged in the very first thing to
+do is create an assistant. Give it a
+name something like GHL voice agent.
+This assistant is where we attach the
+system prompt and connect all our tools.
+So this is basically the brain of our
+agent. I'm not going to do a tutorial on
+Vapi. There are some separate videos on
+my channel. So feel free to check them
+out. Here we can see the system message
+where we have to set the prompt. So,
+what I'm going to do is open the GHL
+integration section inside Vapis
+documentation. This documentation is
+fantastic. If you're serious about doing
+this, right, I highly recommend that you
+go through it carefully. It explains
+exactly how the system prompt and tools
+should work. So, right here you can see
+the system prompt that Vapy recommends.
+I'll just copy this one and paste it
+directly into my assistant system
+prompt. And this is honestly the best
+part because you don't have to sit and
+engineer a complex prompt yourself. Just
+use the one in the docs and everything
+will line up perfectly. Okay, step
+number three is to set up the tools. So
+now I move into the tools tab in Vapi.
+Create a tool and if we look below at
+the bottom is go high level. If we click
+on it, you can see the four tools that
+Vapi offers to directly connect with
+Gohigh level. Here you can see I already
+have the four GHL tools created. But
+let's quickly walk through them. Get
+contact tool. This checks if a lead
+already exists in GoHigh level before
+creating a duplicate. Let's open it. And
+when you're creating these tools, don't
+fill in the description. The system
+prompt you pasted already defines what
+each tool does. Just make sure the tool
+names match exactly with the ones
+mentioned in the prompt because that's
+what keeps everything aligned. On
+metadata, click yes to use customer's
+phone so that we can get the phone
+number and leave the remaining settings
+as default. The next one is create
+contact tool. So if the lead doesn't
+exist, this saves their details
+instantly. Again, follow the
+instructions for the name and leave the
+description blank. And also make sure to
+use customer phones so that we can get
+the phone number. The next one is check
+availability tool. This is where the AI
+can actually look for open slots for
+booking appointments. So open it and
+paste the calendar ID that you created
+in GoHigh level. Just copy it from your
+go high level account and paste it here
+in the ID section. Time zone is optional
+and set everything else as default. And
+the last tool is create event tool. This
+basically books the appointment on that
+exact calendar. So I'll open it and also
+paste the calendar ID here. All right.
+This method works really well because
+with Vapi builtin highle tools, you
+don't have to spend time wiring
+everything together like we used to do
+in n10 or mag.com where we had the
+integration separate. These tools do the
+heavy lifting automatically. All right.
+And the last step is connecting vap with
+go level. Now inside vapy I head into
+more and then integrations. Here you'll
+see two options under go level. the old
+API key method and the new marketplace
+connect method. So this is way easier
+and we are going to use this one. I
+click connect and it immediately takes
+me to the gole marketplace screen. Now
+here you can see vap is requesting from
+gohigh level access to write access to
+read etc. I just press next here and
+instantly my vap account is linked with
+gohigh level. That's it. No API keys, no
+manual configuration, just a simple
+click connection. Now everything is
+ready. You can test the agent live. It
+pulls contacts, checks availability, and
+books appointments directly inside the
+GHL calendar in real time. I hope you
+found this quick tutorial useful. Please
+let me know in the comments which kind
+of automation tutorial I should prepare
+for you next. Thank you very much for
+watching this video. Um, hit the like
+button, subscribe. I really appreciate
+it and I'll see you soon in the next
+one. Bye.

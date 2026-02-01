@@ -1,0 +1,504 @@
+# GoHighLevel AI Appointment Booking Bot Step-by-Step Guide
+# Video: https://www.youtube.com/watch?v=WTQxWc6a6n0
+# Category: ghl-chatbot
+
+AI is here in late 2023 go high level
+released an update integrating AI into
+many of their features including
+workflow I like to think there are three
+different levels to creating an AI
+appointment booking bot in go high level
+and I'm going to walk you through step
+by step how you can create a booking bot
+at level one two or three if you're new
+here my name is Connor Alder I'm a
+digital marketer and upcoming medical
+student at washu I've been using go high
+level for about the last 3 years and
+recently I decided to start my own
+agency selling Facebook ads to mental
+health clinics and I use go high Lev
+software to do that so first of all the
+three levels of AI appointment booking
+Bots level one is go high level simple
+this is going to be the fastest way to
+get your AI appointment booking bot up
+and running I'm going to walk you
+through that it's pretty quick pretty
+easy but not quite as customizable level
+two I call go highle workflows this is
+all things considered still pretty easy
+to set up but it is a little bit more
+Hands-On and if you want to really
+fine-tune how the bot is going to
+respond to specific messages this might
+be the level for you but it does take a
+little bit more time to build and then
+level three is going to be going to a
+thirdparty developer someone like zappy
+chat or close bot the pro of level three
+is that there is a lot of
+customizability and it's very user
+friendly the con being that it's a
+little bit more expensive and you have
+to pay for a subscription to get that
+software into go high level okay so for
+level one we're going to be building the
+simple go high Lev bot here we are in
+agency View and I'm going to come into
+settings and you want to go over to
+company and you want to scroll down here
+until you get to content Ai and uh
+workflow Ai and you want to make sure
+those are both toggled on we also have
+reviews Ai and conversation AI you
+should have all of those toggled on okay
+next step is to go into your sub account
+all right once we are in our sub account
+we're going to go into settings then
+we're going to hit conversation AI okay
+so once we're in conversation AI
+basically what we're going to do is come
+here into preferences and go to
+autopilot beta this is going to allow
+the bot to actually send messages we're
+going to choose our supported channel in
+this case I'm going to choose just SMS
+but you could enable this for Facebook
+or Instagram I'm going to scroll down
+into advanced settings here this isn't
+super necessary I'm going to say Alder
+media we got wait time before responding
+this is important so that it doesn't
+seem like it's just a bot I think about
+2 minutes is great maybe 1 minute
+maximum messages that a bot can send to
+a contact this you probably want to
+leave at 10 this just means that if they
+send 10 messages and they're still
+asking questions then it's not going to
+keep responding which is probably good
+if if they're asking that many questions
+and then you want to probably leave this
+enabled as well send bot to sleep when I
+send a message manually or through a
+workflow so that you're not getting
+double messages to the client okay so
+the next step is we're going to come
+over to bot training here and you can
+see it's just asking you to input a URL
+here so it's pretty simple you just have
+to put the URL for whatever website you
+are working with whatever company you're
+working with this will scrape their
+website for all relevant information to
+train the bot it's really that easy you
+do have two options where you can choose
+just the exact URL or all urls with this
+path or all urls in this domain the all
+urls in this domain is going to be the
+most inclusive and it's going to scrape
+all of the sub Pages within that website
+it will take a little longer but this is
+definitely the most accurate way to
+train your Bot so I would normally
+recommend doing all urls in this domain
+as this is going to get you the most
+information for your Bot in this example
+we're going to do just the exact URL
+because it does go a little faster here
+we are we found a random Clinic that
+offers ketamine therapy we're going to
+copy that URL paste it in here again
+it's the exact URL click get data wait
+for a second here and it's going to load
+okay now that we finished uploading that
+one link you can see it's here in this
+uploaded Links Page if you have multiple
+Pages then they're all going to show up
+here you can add quite a few to train
+the bot but again we're going to do just
+that main homepage and then the next
+step here is this FAQs you can add
+frequently asked questions here like how
+much does ketamine therapy cost and you
+can provide an answer and let's just say
+it's normally covered by
+insurance if
+not then it costs $400 something like
+this so as you can see this is an easy
+way to customize very common questions
+but if the information is actually on
+that web page then you don't really need
+to do these FAQs this is just for
+missing information save that we've
+added our FAQ awesome now we're going to
+come over to configure intents and you
+can see that this is automatically
+enabled and you can actually edit the
+prompt if you want to change some of
+those prompts for the bot I think the
+already added values here from go high
+level are pretty good and I don't think
+I'd recommend changing these as you can
+see it just basically says that you're a
+bot your primary goal is to build trust
+you have a goal to assist the customers
+with their queries there's some
+conversational guidelines as well being
+attentive don't use emojis then it gives
+some examples as well so these are
+pretty good rules that I probably would
+just leave as they are and then we have
+appointment booking and this is where it
+gets pretty cool so you're going to want
+to enable this here and the next thing
+you want to decide is whether or not you
+want to have the bot actually book the
+appointments conversationally or if you
+want the bot just to send a booking link
+then go ahead and check that box and it
+will only send a booking link you do
+also want to pick a calendar over here
+so I would choose the correct calendar
+if nothing pulls up here you just need
+to come into calendars and set up a
+simple calendar not too tricky check out
+another video on my explanation of that
+the pros of having this checked and only
+sending a booking link is that it does
+show if the lead is a little bit higher
+intent because they're actually going in
+they're clicking and they're scheduling
+an appointment the con is that you
+probably won't get as many appointments
+booked this way just because it's a
+little bit more friction and so it
+depends on your specific situation but I
+think leaving this unchecked is actually
+the best way to take advantage of the AI
+capabilities here so I'd hit save there
+and then you come over to bot trial and
+this is where you can actually test your
+Bot and see if it's working so as you
+can see we have it set to either general
+question or appointment booking we're
+going to do just general question first
+and we're going to start by saying hey
+and the the bot comes back with hey
+what's on your mind today which is a
+little bit vague we'd probably want to
+fix that later but then we can say how
+much does ketamine cost and then you can
+see here this is the response that I
+gave in that frequently Asked question
+but you can tell that they actually
+reworded it slightly so in those FAQs on
+the bot training they don't have to be
+perfectly written and the the bot can
+actually interpret that information and
+maybe rearrange it in a way that's more
+conversational so that's pretty cool you
+can see Kine therapy usually costs $400
+if it's not covered by Insurance an
+important part of this trial is to rate
+responses as good or bad and so this is
+a good response we're going to give that
+a thumbs up but let's say we don't love
+this first one we can do a thumbs down
+and we can say we can actually adjust
+this first part and
+say hi how can I help you
+and we could do train bot like that and
+so now the next time we did a trial it
+would actually adjust its answer that
+way so we can reset the conversation and
+we can try appointment booking next so
+we can say hello there when are you open
+for appointments and it says when would
+you like to book an appointment do you
+have any openings next week sure let me
+check do you have a specific day in mind
+for next week Wednesday or Thursday is
+good and you can see it's actually
+pulling out time slots from my actual
+ual calendar so it says here's some
+openings for the 26th of June 2024 8:00
+a.m. 8:30 9 9:30 10 Which slot works for
+you and I might actually say none of
+those actually how about
+afternoon and you can see how impressive
+this is that it actually adjusts and
+says okay let me look at the afternoon
+slots and it provides a few options so
+now if a lead was actually having this
+conversation with an AI bot they could
+simply just say 2 p.m sounds good and
+then the bot's going to ask one
+confirmation message here 2: p.m. on the
+26th yep and then there you go great you
+are booked for June 26th at 2 p.m. so
+you can see it's pretty powerful for how
+easy it is to set up it's a pretty
+powerful AI booking bot you don't need
+to know any coding you don't need to do
+anything specific besides throw in a
+link for the website that you want
+information from it is pretty easy guys
+so that's level one and I have to say if
+you're new in the agency space and you
+want to offer something to small
+businesses this is a pretty good thing
+to offer although I will say that you
+should really focus on the value you're
+adding and not just the shiny toy of the
+AI if you're going to talk to small
+businesses about selling them a chat bot
+they don't really care what they really
+want to know is how is this going to
+help them drive more revenue and so what
+you should really say is that this is
+actually going to help you book more
+appointments and that is something that
+small business owners love to hear okay
+we are moving on to level two and here
+in workflows is where we're going to
+build this AI appointment booking bot so
+I've gone ahead and built one already
+here called AI Automation and I'm going
+to walk you through all of the things
+here and this might look a little
+daunting right now but I'm going to
+simplify it don't worry so the first
+thing we're going to start with as
+normal with any workflow is a trigger
+you can choose whatever you'd like but
+if you're working with Facebook ads like
+I am then you're going to go ahead and
+hit form submitted the form is and
+you're going to choose one of your
+Facebook forms here I'm going to choose
+this simple form and the very first step
+is going to be adding a conversation AI
+here so you go in and Google or search
+for conversation AI click that that's
+what I've added right here and you can
+see that this is a question answer in
+general QA I've gone ahead and named
+this text or call because I want to know
+if the lead prefers a text message or a
+phone call from us you can see you've
+got this whole personality section this
+was mostly all already filled in by go
+high level but I did update this a
+little bit I added this custom value for
+the location name I would recommend
+doing that so that they know that
+they're for that account this will fill
+in Alder media here because that's the
+sub account I'm in we scroll down to
+additional instructions and you can see
+here that we've got a lot of different
+rules again these were already given by
+go high level and they're they're pretty
+great I didn't have to change any of
+these you can see that a lot of this is
+just helpful information to make sure
+the bot replies appropriately and then
+the question this is something that I
+filled in this is where you're going to
+fill in the very first question that you
+want the thing to ask and so I said
+something like hey there just saw you
+filled out our Facebook form would love
+to get you in the clinic soon just need
+some basic B info first would you prefer
+a phone call or text by the way this is
+blank from blank right so again the
+power of custom values is great we
+scroll down here I leave the timeout at
+about 3 hours that's how long that
+you'll your Bot will give the potential
+client this is how long your Bot will
+give the potential client to respond
+we've got our channel here we're going
+to do SMS skip if answered I'd leave
+that checked
+on then we've got two automatically
+filled out branches that you can't
+change which is if no condition is met
+or if the bot times out and I'll talk a
+little bit more about that in a second
+then I added these two branches which is
+number one if they prefer text and
+number two if they prefer call so the
+patient prefers texting patient prefers
+a phone call and guys the bot is pretty
+smart you don't have to really say much
+more than just this condition all right
+so I'm going to go ahead and save that
+action and I'm going to zoom out a
+little bit so you can see the branch
+here if they prefer a text then we're
+going to send them down this branch and
+I'm going to add another conversation AI
+element the cool thing is you can
+actually just go here and copy this and
+you can copy just the action or all
+actions from here which would be the
+entire tree we don't want to do that
+right now so you can just hit copy
+action and you can see there's all these
+places you can throw it in so that would
+be the easiest way to do that I'd
+recommend copying it hitting uh pasting
+it right here and then you're going to
+update the actual question so I have
+qualifying question number one all this
+other stuff is the same except question
+and the first qualifying question I want
+to know is how long have you been
+suffering from depression question and
+here I really just want to know if
+they're answering the question or not
+you really do have the option to make
+multiple branches here like if you
+wanted to have one branch being like Oh
+you know they have suffered for
+depression from for more than 3 months
+or less than 3 months you could divide
+that categories um but really for my
+purposes I just want to know if they're
+answering these questions because I'm
+going to have somebody go back and look
+at these answers anyway the bot is
+really just there to get the qualifying
+questions in the first place so we're
+going to save that action we're going to
+go ahead down to the answered branch and
+we're going to do the exact same thing
+we're just going to copy and paste this
+over but now we're going to make a new
+question and this time instead of how
+long have you been suffering from
+depression we might ask how many
+anti-depressants have you tried in the
+past same thing before we just want to
+know if they're answering this question
+cuz we're going to review it anyway and
+we're just going to do the same thing
+here for qualifying question number
+three as you can see I'm going to scroll
+through um same idea we might ask a
+different qualifying question so what
+insurance are you on save action you get
+the idea we're going to ask all these
+qualifying questions and by the very end
+once they have answered all of our
+qualifying questions this is where this
+level two changes a little bit from
+level one we're going to add just a
+manual SMS here and we're going to send
+them something like thank you so much
+for answering these questions we're
+going to reach out soon and get you set
+up for an appointment this part is a
+little bit actually limited from level
+one because you can't conversationally
+book right here and so that is one
+limitation but it I call it level two
+because you're able to be a lot more
+specific with how you want the
+conversation to go while still allowing
+AI to help you so I just said great
+click here to schedule an appointment
+and you can add a link to your booking
+calendar where they can then go in and
+book and again this is a little bit
+limited from the conversational booking
+that we looked at in level one but it's
+a little bit more specific in the way
+that you're able to ask qualifying
+questions as you go through and so then
+you just want to come up here hit save
+and go ahead and put this into publish
+and now I'm going to save it again and
+you should be good to go all right right
+guys so now on to level three and this
+is third party resources to build your
+AI chap up I think honestly one of the
+best is zappy chat but there are kind of
+some AI bot Wars going on right now with
+multiple people like cloth bot as you
+can see zappy chat is all about
+converting leads with quick kind and
+thorough AI they've got a whole thing
+here I'm going to walk you through kind
+of what zappy chat looks like and why
+it's helpful all right so in zappy chat
+what you can see is that there's quite a
+lot of customizable options they've got
+a full interface to change the the bot
+type The Prompt the bot description the
+temperature all of these different
+settings here to adjust what type of
+booking bot you want to do so you can
+tell that there really is a lot of
+options and then basically the way this
+works to integrate it into your sub
+account is they have some API access
+that you'll set up and then if you just
+go into your sub account page it's not
+too tricky you kind of just go in there
+and add some custom scripts that they'll
+be able to just copy and paste in and it
+will integrate into your sub account and
+so what zappy chat actually looks like
+is a little bit like this where you can
+see that you have a text flow and one of
+the cool things here is that you can
+actually have it schedule an appointment
+into calendly natively so it's kind of
+like that that uh texting flow that we
+were talking about earlier but this is
+pretty cool cuz it's just right within
+cly and you can do that through texting
+again another powerful integration and a
+reason why this level three option with
+zappy chat other third party sources can
+be pretty helpful so I'm just going to
+show you what this looks like here you
+can see they enter their name and email
+and then zappy chat is thinking and
+they've you know just like before they
+show these available times and this is
+all through calendly so same idea as the
+go high level calendar but now it's
+integrated through calendly which is
+helpful and so to show you the actual
+pricing for zapy chat it is a little bit
+hidden it's like all the way at the
+bottom so it's kind of hard to find that
+pricing but it is here at the bottom it
+says it starts at $19 7 a month so that
+is not exactly super cheap if you are
+brand new to go high level or something
+and you don't have a ton of clients but
+obviously that can work pretty well if
+you have multiple clients and you're
+scaling up a little bit okay guys that's
+all I've got today hopefully you
+understand a little bit more how to set
+up an AI appointment booking bot on go
+high level in three different ways level
+one two and three they all have their
+pros and cons uh if you like this video
+go ahead drop a like and if you have any
+questions go ahead and drop them in the
+comments I'll be sure to get back to you
+and if you want to try this out yourself
+then go go ahead and sign up for a free
+trial the link in my description and you
+can build your own AI appointment
+booking bot right away all right guys
+talk to you later

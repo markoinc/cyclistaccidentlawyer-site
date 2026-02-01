@@ -1,0 +1,378 @@
+# Facebook Ads NEW Rules for 2026
+# Video: https://www.youtube.com/watch?v=0cj09Aa3de8
+# Category: meta-ads
+
+I've put together the seven things that
+are changing the most in Facebook ads
+right now. These are essentially the new
+rules for what it's like to optimize and
+run Facebook ads accounts in 2026.
+Across our agency, we manage millions of
+dollars in direct to consumer ad spend
+every single month. And what I'm seeing
+right now in ad accounts is completely
+different than what I saw even just 6
+months ago. What I'm going to break down
+goes against what you've probably been
+taught. probably goes against what I
+have said on this very channel right
+here in the past, but they're working
+right now and my bet is that they're
+going to continue to work into the next
+year. So, basically what we're seeing is
+that the biggest brands in the world are
+all increasing their creative volume
+massively. We have literally seen every
+large brand increase up and to the
+right. And let me give you some examples
+of that. So, this is a look at the media
+mix from Athletic Greens. And as you can
+see, a year ago, they were running on
+average around 400 images and 300
+videos. Now, that sounds like a lot, but
+that's roughly speaking if we add the
+496 and 376, that's close to a,000
+active ads. Today, they're running over
+6,822
+ads. So, Athletic Greens, we'll write
+AG1 here, went from 1,000 ads to 6K.
+Let's take a look at another business
+called Talentless. This is a clothing
+brand. I really like to model some of
+these ads. I think they do a great job.
+Now, we can see back in January, they
+were running 64 images and 19 videos.
+Let's just call this one talent. And
+let's just give them 100, we'll say,
+even though it's less. They went from
+100 active ads to today they're running
+1,081 active ads. So, they 10xed their
+ad production. AG1 6xed their ad
+production. And by the way, every brand
+is doing this. You could just name any
+big brand that's actually scaling and
+you will see a chart that looks just
+like this. Let's take Gap here for
+example. that started back in January
+running 130 to 150 ads. Let's call it
+150. And today they are running 6,353
+ads. We're just going to say 6K plus. I
+don't even know what the multiple on
+that. It's a 60x multiple roughly
+speaking. 50x multiple. We have seen
+these three ginormous brands scale so
+significantly by having creative at
+scale. This is the trend. Anyone that
+tells you otherwise is too lazy to
+create creative, which leads me to my
+second point, the creative engine. Now,
+the creative engine is what allows
+businesses to scale their ads so
+quickly. It's what allows you to see so
+many different variations from the same
+company, seemingly making you not
+fatigue from looking at so many ads at
+the same time. And whether you're a
+brand that's literally running your
+first round of ads today after watching
+this video or if you're trying to
+actually aggressively scale, I'm going
+to break down how these engines work.
+They get more complex as you grow and
+grow, but generally these four steps are
+what need to be followed. So, every
+creative engine starts at the top with
+launching new ads. We're just going to
+call this launch. The next thing you do
+after launch is you have a grace period.
+This grace period is somewhere between 7
+and 14 days. This is when you're just
+hanging out, evaluating your ads,
+pausing down absolute duds and scaling
+winners. This is just allowing those ads
+to breathe and really give them a fair
+chance. After that 14-day period, you
+have to do analysis. Now, that analysis
+needs to have factored in incremental
+attribution. So, we're going to add a
+very important note here. This needs to
+be incremental analysis. And what I mean
+by this is you're looking not just at
+7-day click one day view, but you're
+actually looking at incremental
+attribution in your Facebook ads
+platform. And then after you analyze
+that, it's time to brief. And brief
+really means you're taking your best
+performing creatives from your ad
+account and you are, yes, briefing to
+actually see if you can create more
+variations of these top creatives, these
+concepts. Now, there's a wild card that
+can come in, and this is very important
+in this briefing process. You also need
+to be taking competitor ads, as I'm
+inserting out of left field, literally,
+and brief in on those as well. So the
+combination is you're taking your ads
+that are actually working the best
+already for you in your ad account and
+you're taking your competitor ads and
+you're briefing new concepts and
+iterations together and then you launch
+those new ads. This is a constant cycle
+and this is how you build a very basic
+but robust creative engine. The third
+rule is that oversimplistic campaign
+strategies are gone. And I'll call this
+no more one campaign method. Now the
+basis of this method falls into a very
+simple philosophy. Facebook is smarter
+than us, which it kind of is, and we
+could just throw all of our ads into one
+single campaign. I'm here to tell you
+that this breaks very quickly, and it
+breaks because of the lack of swim
+lanes. What we want to actually create
+in our account is new customers, engaged
+customers and existing customers. And
+why we want this, why this is so
+important, because typically Facebook
+overspends on existing customers. They
+spend just enough on engaged, which is
+fine, and they underspend on new
+customers. This is especially a problem
+when you start to get to larger portions
+of spend. And therefore, a lot of your
+budget as a not just percentage, but
+actual dollar amount is skewed into
+existing customers, which ultimately
+means you're not scaling new customer
+acquisition, which is what you want to
+do with Facebook ads, with Instagram
+ads, and so on. Which leads me to the
+opposite, but also extremely important
+rule that I think is going to dominate
+2026. At this point, before I even
+showcase this rule, I want to mention
+something that's really important. If
+you are a brand that is trying to scale
+in 2026, the average brand that we work
+with saw a 41% increase in profit in the
+first 90 days. So, if you want to work
+with us and actually scale your ads,
+take things seriously this year instead
+of being at the stalemate that many
+people's businesses are, then go to the
+moonlighters.com
+and apply to work with us. It takes 2
+minutes to apply and you get on a
+15minute call. If you don't like that
+15-minute call, you waste 15 minutes of
+your life. Best case scenario, you're
+one of those businesses that scales to
+41% on average. That's not our best.
+It's not our worst in the first 90 days.
+So, number four, is dead. What is
+absolutely dead, which we'll mark on the
+X over here, is any sort of
+functionality where you think you could
+take 20 to 30% of your budget and treat
+that in testing. That is a very easy
+way to lose 10, 20, 30% of your total
+performance in your ad account and
+create an actual cost center in your
+business. What is absolutely working
+here is the exact opposite. You create a
+prospecting CBO and within that
+prospecting CBO, you not only test here,
+but you scale here and this becomes the
+number one campaign. The beautiful part
+about the prospecting CBO is your test
+ads are actually not going to get any
+spend unless they are actually better
+than the rest of the ads. So you create
+a hyperco competitive environment in
+your own ad account. We always want our
+best ads to rise to the top and
+doesn't allow that because us as human
+beings are way slower than the
+algorithm. Number five, fastest horse is
+back in action. You probably don't
+actually know what this means, but I'll
+give it to you in simple verbiage.
+Advanced breakdowns are so back it's
+crazy. We went through this period where
+it was actually completely fine to just
+run a bunch of your ads into the same
+campaign or a couple campaigns, select
+automatic placements, select everything
+automatic, all genders, all locations,
+and just let it rip. That period has
+completely ended in 2025, and it is
+going to continue to be over in 2026.
+The way that we're treating what I call
+the fastest horse is you want to put
+your bets, meaning spend the most amount
+of money on the fastest horse. And how
+that generally functions are day of
+week, platform, landing page, gender,
+country, and the list goes on and on.
+What's important to recognize that in
+each of these breakdowns in your ad
+platform, they all have levers that you
+can pull that Facebook might not have
+the exact information on for you. For
+example, if you know on your Shopify
+store that Mondays and Tuesdays work
+better than Saturdays and Sundays, then
+you should spend more on the better
+performing days, but I would bet most
+people spend the same amount of money
+every single day. Why would you do that?
+Why would you do the same thing if
+Facebook works better than Instagram or
+vice versa? Why would you spend the same
+amount if one landing page works better
+than the other? This goes all the way
+down the board. Make sure that you're
+always putting your money where you're
+most likely to make money back. The
+sixth new rule of Facebook ads is profit
+over rorowaz. Rorowaz has become this
+holy grail number. It's something that
+everyone is just so obsessed about and
+it actually does mean a lot. Rorowaz is
+a very important efficiency metric. It
+is simply your return on ad spend to
+make sure that you're always profitable
+on every single purchase. But that's all
+and where it truly ends. What a lot of
+brands get caught up in is they want a
+very high return on ad spend. They want
+a 5x. They want a 10x. That's great. I
+want those numbers, too. Everyone does.
+But the real question to ask yourself
+is, how much profit are you leaving on
+the table by forcing your business into
+a very high return on ad spend? Think
+about it like this. Would you rather
+spend $1,000 at a 5x or $100,000 at a
+1.2x? Now, I understand I'm using very
+large numbers here to make a very easy
+point because in this case, you're
+getting $5,000 in return minus your
+$1,000 in ad spend, equaling to $4,000
+in profit. In this case, you're getting
+a total of 120k revenue minus the 100k
+ad spend, again, equaling to 20K in
+total revenue. And even if these numbers
+were way, way closer, even if they were
+the same profit, I would always prefer
+the bigger spend and the lower rorowaz.
+And the reason for that is actually
+simple. This allows you to build an army
+of loyal customers. This is so important
+for everyone to understand. The bigger
+your business is, the more people talk
+about your business. The more people
+talk about your business, the more
+residual sales you have over long
+periods of time. So in all cases, you
+want to take the lowest rorowaz you can
+possibly afford at the highest volume.
+And number seven, this is probably one
+of the biggest ones because there was
+new tools that came out by Facebook in
+2025 that took some time for us to adopt
+and get used to. And this is truly
+attribution has changed. Everyone got
+used to 7-day click or one-day view. And
+some people said, I don't want to use
+any one-day view and I'm just going to
+use 7-day click or even I'm going to use
+one day click. Right? This was also very
+common. Now what's shifted here is the
+introduction of incremental attribution.
+And what incremental attribution does is
+it allows us to see the purchases that
+happened because of Facebook. So what we
+now prefer to do is a hybrid approach.
+We now prefer to really look at the
+7-day click, 1-day view as the core
+attribution method for the brand, but
+focus on incremental attribution when
+we're talking about which creatives to
+scale because we know incrementally
+that's most important. And in many
+cases, we might actually shift
+everything to incremental attribution as
+long as it proves to be most successful
+in testing. Now, I know I said I had
+seven, but I'm going to hit you guys
+with some bonuses. Every single business
+needs to have a king goal. This is the
+goal above all goals. This is what you
+tell your media buyer, you tell your
+agency. This is the goal that matters
+the most. It could be an ROI goal, an ME
+goal, a rorowaz goal, a CPA goal. It
+could be a revenue goal. Just whatever
+is most important to you. What I mean by
+king goal is that you don't conflict
+this goal with other goals. As long as
+this goal is achieved, the business is
+happy and healthy. Number two, flexible
+ads are ripping right now. I don't want
+to say too much about this because to be
+honest, we don't have the full data to
+back this up quite yet. But early
+testing, flexible ads are crushing. So,
+give them a shot in your ad account.
+There's a very high chance that grouping
+together these iterations in flexible
+ads could lead to a significant increase
+in your performance. And a few other
+honorable mentions here. AI UGC is
+getting much much better. This is
+something I'm very bullish on over the
+next year. In addition to that, very
+similar, very connected, Meta Gen AI is
+getting even stronger as well. You've
+probably seen the AI enhancements show
+up more and more on your ads. They're
+working better and better. I'm really
+interested to see what's going to happen
+in 2026, and Little Birdie from Facebook
+has indicated that this is going to be a
+very big point. On a completely
+different note, catalog ads are still
+strong. This is pretty shocking to most
+people at this point when we have so
+many options, so many different ads. But
+sometimes just showing people something
+and not trying to trick them or coersse
+them into buying and just saying, "Hey,
+these are my products. Go buy them."
+Does a great job. And then finally,
+because you got this far, I want to give
+a reminder that I say all the time.
+Focus on the 20% of your products that
+drive 80% of your revenue. This single
+rule right here could be applied to
+every single part of the other seven
+rules that I gave you. Focus on the 20%
+that drives 80% of the output in every
+facet of your business and you will be
+significantly more effective and more
+efficient. Now, you know the rules, but
+rules do not make money. Strategy and
+execution makes money. If you want to
+see my full setup step by step so you
+can copy and paste it into your ad
+account, click this video right here
+where I go through everything A to Z.
+That's all for today's video. I hope you
+got a ton of value out of this. If you
+have questions, let me know in the
+comments below.

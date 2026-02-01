@@ -1,0 +1,22 @@
+# Next-Gen AI Voice Assistant VAPI x MAKE in 2024
+# Video: https://www.youtube.com/watch?v=d09rNjVE_Xo
+# Category: vapi-voice
+
+today mq automation will show you how
+you can create a voice AI boat using VAP
+and make.com hi there I'm John welcome
+to travel Square hey John I need a room
+great can you like please provide me
+like with your check in uh and um check
+out dates checkin is tomorrow 12: a.m.
+checkout is day after tomorrow 12:00
+a.m. all right I will proceed with
+booking your room just to um confirm one
+last time check in tomorrow at 12:00
+a.m. check out the day after tomorrow on
+at 12:00 a.m. guests one your booking at
+Travel square is well now confirmed you
+will receive a confirmation email
+shortly integration of make.com with v
+ass can streamline both aspects of
+professional and personal life

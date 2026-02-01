@@ -1,0 +1,1125 @@
+# How to EASILY Create a Lead Qualification AI Agent in N8N
+# Video: https://www.youtube.com/watch?v=MeDdqAe8Irc
+# Category: n8n-automation
+
+What is up guys? Welcome back to another
+video. In this video, I'm going to show
+you how to create a lead scoring AI
+agent by creating a simple workflow in
+any 10. Let's get started.
+In any 10, I've created a workflow that
+I've renamed to AI lead scoring agent.
+And here we're going to add a trigger.
+So here, our trigger is going to be an
+onform submission trigger. Over here,
+the title of our form could be on the
+lines of business growth assessment
+form. The description could be on the
+lines of fill out this quick form to
+help us understand your business
+challenges and goals. So here I've
+outlined different form elements. We're
+going to ask our prospects in order to
+qualify them and score them whether they
+are a hot lead, warm lead or a cold
+lead. Over here the first form element
+that are valid over here we are
+collecting their name. So here the field
+name is on the lines of what's your full
+name and type is text. We're going to
+fill out their full name. Now for the
+the other field then we asking for the
+email address where it's in the lines of
+what's your work email address. The
+element type will be email and you can
+add the placeholder over here. So both
+of these field will be required fields
+here. Field name is on the lines of
+what's your company name. Here we're
+collecting the company name. Element
+type will be text. Can also have this
+field also to be required. The other
+field name is on the lines of what
+industry do your company operate in.
+Element type will be text. Can also make
+this field as required. The other field
+name is on the line of approximately how
+many employees does your company have.
+The element type here will be number
+since we're collecting a numerical
+value. And then here this field will
+also be required. The other field name
+we're collecting their challenges or
+goals that motivated them to fill out
+this form. Element type we're choosing
+text. This field name will also be
+required. The other field name is on the
+line server. Which area are you most
+interested in improving? Yeah, the
+element type choosing a drop-own list
+and adding these options over here. So
+we're adding the sales process,
+marketing, automation, lead generation
+and other as the options of this field.
+The other field name with the lines of
+do you have a budget set aside for this
+project? Yeah, we're choosing the
+element type is a drop-own list and the
+option is yes or no over here. The other
+field name is on the lines of how soon
+are you looking to take action on this
+and then the element type we're choosing
+a drop-own list and then the different
+options over here. So the first option
+is immediately the other option is 1 to
+3 months. The other option is 3 to 6
+months or and the last one is just
+exploring here.
+field name is on the lines of how did
+you hear about us here we're adding
+various options like referral search
+could be a Google search
+LinkedIn event or and the last option is
+the other over here so here I'll execute
+step to fill out our form so we can
+collect a prospect's data so we can now
+proceed to qualify them and give them a
+score to do that I'll click on execute
+step right here now here's our form can
+see the title and the description of our
+form Here we're going to add our full
+name and our work email address right
+here. So
+we're also going to add our company
+name.
+The industry that we're in. How many
+employees? We can say 12. What
+challenges? You can say lead generation.
+What areas are you mostly interested in
+improving? Can say lead generation over
+here. Do you already have a budget? Can
+say yes. How soon are you looking to
+start? Can say immediately. How did you
+hear about us? You can see Google search
+and here click on submit. You can see
+that our form was submitted
+successfully. We can see that we
+captured our data that we filled in our
+form over here. So we captured the full
+name, working email address, company
+name, the industry that we're in, number
+of employees, challenges that we're
+facing, areas we're interested in
+improving, if you have a budget, how
+soon we're looking to start, how we
+heard about the company or the agency
+and the date and time submitted the
+form. So here I'll click on back to
+canvas and then we can pin this data and
+use this data that we just submitted
+right here to set up our workflow. So
+the next thing that we're going to do
+here is we can wait a few seconds. For
+example, we can wait let's say 3 seconds
+right here. Come back to canvas and can
+rename this not to wait 3 seconds.
+Then click on rename right here.
+And now we can proceed to add our laser
+data that we collected via our formula
+here to a database. The database we can
+use any CRM tool or a database tool. So
+we can use either Monday, ClickUp, Air
+Table or Google Sheets. Choose to use
+Google Sheets as our primary database.
+In Google Sheets, I've created a
+spreadsheet that I've released data
+spreadsheet. This is a spreadsheet that
+we're going to add our prospects
+information after they've submitted the
+information via our form. So here in
+this spreadsheet, I've created three
+sheets. One for the leads, the other one
+for the hot leads, warm leads, and the
+cold leads. Right here, we add in the
+prospect that we collect that fill out
+our form. And then after we've qualified
+them and given the MS score, we're going
+to add them to these three sheets over
+here. According to where they rank this
+sheet, we're going to add their full
+name, email, company name, industry,
+number of employees, challenges they're
+facing, if they have a budget, when they
+would like to start, and how they us
+over here. So to add these prospects
+information to this spreadsheet in our
+workflow, I'm going to search for Google
+Sheets. Then here I'm going to click on
+Google Sheets. Then I'll click on append
+drawing sheet. Yeah, we'll first of all
+need to execute this node over here. So
+we can have access to the information
+that is submitted right here. And then
+I'll open this node right here. And now
+you can see now we have the data over
+here. So now we can proceed to add the
+data spreadsheet. But first here you
+need to create a credential by clicking
+on create a new credential right here.
+Then here sign in with your Google
+account. The new window that pops up
+choose the account that you like to
+connect to anytime. And then your
+connection will be created. Since I had
+already done that, I'm going to close
+this right here. And then here I'm going
+to find our document. Our document is
+this document right here called le data
+spreadsheet. And then here we're going
+to find our sheet which is this list
+sheet right here. And then we're going
+to map columns in our spreadsheet with
+the data that the prospect fill in our
+form. So for the full name, we're going
+to map it right here.
+Going to map the email address column.
+industry number of employees
+challenges they facing if they have a
+budget when they would like to sort
+and how they heard about us over here.
+Now to add these prospects information
+to our spreadsheet I'll click on execute
+set right here can see our node has been
+executed and it was executed
+successfully. Now when I open our
+spreadsheet you can see we added our
+prospects information right here. We
+added their full name, email, company
+name, industry, number of employees,
+challenges, if they have a budget, when
+they like to start, and how they heard
+about us. Right here in our spreadsheet,
+we're going to rename this now to list
+data
+here. And then I'll click on account
+rename. The next thing we're going to do
+here is after we've captured their data
+and added them to our database, we're
+going to now qualify them and give these
+leads a score. To do that, we're going
+to use an AI agent. So in AI, I'm going
+to click on AI agent right here. Yeah,
+I'm going to choose to define below and
+add a prompt over here for the agent.
+The prompt could be in the lines of
+you're an expert B2B lead scoring
+analyst. Your job is to analyze a lead
+record and output only a valid JSON with
+the score and recommendations. Be strict
+and concise. Never return text outside
+of the JSON. I'll click on add option to
+add a system message here. And then I'll
+click on expression and expand here to
+add a system message. Here the system
+message could be on the lines of you'll
+receive a lead record below. So here we
+are outlining their name, email, company
+name, industry, number of employees,
+challenges they're facing, if they have
+a budget, when they would like to start
+and how they heard about about us. Yep.
+Your task using the think tool is to
+classify the lead into four categories
+based on fit, intent, engagement and
+overall potential. Instead of whole
+categories, we have only three
+categories. And then here we categories.
+The first category is a hot lead which
+is a perfect fit, high intent and strong
+engagement should be contacted
+immediately by sales. The other category
+is warm lead which is a good fit with
+some intent of engagement worth pursuing
+but not urgent. The last category is a
+cold lead where it's not a good fit, no
+budget, wrong role or industry or
+otherwise unsuitable. Only output a
+single JSON object. Use the lead details
+provided below to make the
+classification. Then here I'll click on
+back to canvas. Here we're going to add
+a chat model. For the chat model we're
+going to use open AI chat model right
+here. Here like we did with the Google
+sheet. You also need to create a
+credential to connect your OpenAI 2010
+by clicking on create a new credential
+and then here adding your API key right
+here from your OpenAI API and then click
+on save to create your credential. Since
+I had already done that, I'm going to
+close this right here and here come and
+choose our model. You can choose any of
+these models right here including GPD5
+which is the latest model that we're
+using currently. I'm going to choose GP
+4.1 mini quite fast. And then here on
+back to canvas can drag this to the top
+right here. Then the other thing that
+we're going to add is a memory. I'm
+going to choose a simple memory right
+here. Choose to define it below. Then an
+expression I'm going to add
+here. I'll add the submitted data here.
+Click on back to canvas. Now
+the next thing that we're going to add
+here is the think tool since we like to
+use the thing tool to classify our lids.
+Then here I'm going to click on back to
+canvas right here.
+Last
+thing that we're going to add here is a
+JSON output example
+and I open this node right here. Yeah, I
+require a specific output format. Then
+I'll click on output puzzle. And here
+I'm going to click on structured output
+puzzle. We're going to add a JSON
+example right here. And then here I'll
+paste our JSON. So here we like to
+output the lead ID classification if
+it's either a hot lead, a warm lead or a
+cold lead. And the reason why we are
+classifying them as such here. So here I
+click on back to converse. We can also
+add our structured output node at the
+top right here. Now I'll click on save.
+I'll open our AI agent. Then I'll
+execute step right here to classify our
+lead and give it a score using our AI
+agent. Can see one of it was executed
+successfully. We classify them as a hot
+lead right here. So yeah for the reason
+why we classify them as a as a hot lead
+is a perfect fit from from automation
+service industry with 12 employees has
+high intent to start immediately has a
+budget and showed strong engagement by
+finding us through Google search. The
+reason why we classify them as a hot
+lead this is awesome. So our agent works
+perfectly. Yeah I'll rename the agent to
+leading agent
+here. And the next thing now we can do
+here is we can wait a few seconds. For
+example, we can wait let's say it say 4
+seconds here
+can rename this node to wait 4 seconds
+here and then click on rename can
+execute the node here
+and now here since we're categorizing
+our lead into three categories we're
+going to use a switch node direct the
+leads appropriately So if it's a I'll
+search for the switch node here. Click
+on it
+here. If the classification value is a
+hot leader
+like for them to go through the hot lead
+path or roots and then here I'll add
+another root and then the classification
+value is the warm leader.
+We like for them to go through the warm
+lead route.
+And then lastly, if the classification
+of the lead is equal to
+cold leader,
+the output we like for the leads to go
+through the cold lead path. So here when
+I execute this step, you can see we're
+classifying our lead as hot lead. Now we
+can go ahead and set up our hot leader
+rout. So if the lead is a hot lead, the
+first thing that we're going to do here
+is we can wait a few seconds. For
+example, we can wait let's say 2 seconds
+to add this little spreadsheet.
+So here I rename this to wait to
+seconds.
+And since these are hot leads, we can
+proceed to add them to our hot lead
+sheet in our spreadsheet. So in Google
+sheet, I'll click on I'll search for
+Google Sheets and click on append sheet
+here. We can uh run this node so we can
+capture the data and come over here to
+add the data to our spreadsheet. So now
+here I'm going to choose our document.
+It's going to be the latest spreadsheet.
+And then now here we're going to choose
+the hot lead
+shape
+and here we're going to map values to
+columns in our spreadsheet with the data
+with our hot list data here. So to get
+the data we're going to grab the data
+from our form over here. So for the full
+name we're going to map it over here.
+Email address,
+company name,
+industry,
+number of employees, challenges,
+budgets,
+when they would like to start and how
+they have about us here. So to add the
+data to fresh, I'll I'll click on
+execute step here
+and see our mode was executed
+successfully. I open our hot leads
+sheet. You can see we added our hot lead
+over here to our spreadsheet to to our
+sheet using this node over here. So here
+I'll rename this node to hot lead data
+and then here I'll go rename. Now the
+next thing that we can do here since
+this is a hot lead we like to notify our
+team that we have a hot lead and this
+should reach out to them soon. So here
+you can you can contact your team
+depending on the platform that you're
+using as a communication platform with
+your team. So you can use Slug, email,
+Telegram, WhatsApp or any other tool I
+use to communicate with your team. Yeah,
+I'm going to choose Gmail as our tool.
+So I'll click on I'll search for Gmail
+and click on Gmail and then here I'll
+click on send a message node right here.
+I'll rename this node to team
+notification and then I'll open this
+node right here.
+You also need you'll need to create a
+credential like we did with other nodes
+over here by clicking on create a new
+credential. Then over here click on sign
+in with your Google account. Then on the
+new window that pops up choose the
+account that you like to connect to any.
+Then after creating your connection
+click on close over here. And then here
+you'll add the email address of your
+team members over here. And then the
+subject line of this email could be the
+lines of new hot lead a lot. Immediate
+action required. Email type. I'm going
+to choose text and then the message
+could be the lines of hi team. We've
+identified a new hot lead that fits a
+wide client profile and is ready to to
+move forward quickly. Here's their name
+and their company name here. So we add
+in the name of the prospect and their
+company name. These one should be
+contacted within the next 24 hours.
+Please prioritize outreach, tailor the
+conversation to their stated needs and
+guide them towards booking a call or a
+demo right away. Let's move forward and
+close this opportunity quick automation
+team. And here I click on back to
+canvas. And then the last thing that
+we're going to do here is I'll add an
+option and then I'll turn this abandon
+notification to off. And then here I'll
+click on back to canvas here. Then here
+I'll execute this note to notify our
+team of this hot lead. You can see our
+node was executed successfully. And now
+the last thing that we can do here is we
+can contact this specific lead by
+sending them a very personalized email
+telling them that they are qualified to
+work with us. This subitted the email
+address. So here we're going to message
+them via email. So here I'll search for
+Gmail again. Then in Gmail I'm going to
+click on send a message node over here.
+Now in this node I'm going to rename it
+to reach out email here. Then I'll open
+this note right here.
+Here we're going to add the email
+address that they submitted in a form
+right here. Subject line of the email
+could be the lines of let's explore how
+we can help you. Email type I'm going to
+choose sex. And then the message could
+be in the lines of hi name. After
+reviewing your information, I can
+confidently say that you are the exact
+type of partner we work with. We work
+best with the challenges and goals.
+You've outlined a strong feed for the
+solution we provide. And I believe we
+can create a real impact together. I'd
+love to walk you through how we can
+support your growth and answer any
+questions you may have. You can pick a
+time that works best for you. Right
+here, we're going to add our link for
+them to schedule for a call. Looking
+forward to our conversation. Best
+regards, live automation right here.
+Like we did with the previous node here,
+we also need to turn this
+uh any time notification to off. And
+here I'll click on back to Converse and
+execute this node right here to send the
+email to our prospect who filled out our
+form telling them that they are a
+perfect fit for us.
+So the hot lead route is pretty much set
+up. Let us try to set up the warm lead
+route. To do that, we'll need to fill
+out our form as a prospect and using our
+AI lead scoring agent right here.
+Classify the prospect as the warm lead
+over here. So we can set up the rule the
+warmly the warm leads root. So to do
+that here I'll unan pin this data here
+and then I click on execute workflow to
+fill out our form again. Here we're
+going to fill out our form again with a
+with a full name, email address, company
+name,
+automation, industry, you can say
+automation industry,
+automation service industry.
+How many employees can say one
+challenges
+can say legion
+like interested in improving can say
+other you have a budget no soon can say
+3 to 6 months as you hear about us can
+say an event then here I'll click on
+submit our form was submitted
+here you can see that our workflow was
+executed successfully here
+now on our on form submission node right
+here we capt have to prospect
+information that they filled out in our
+form here. Capture the full name, work,
+email, company name, industry,
+employees, challenges they're facing,
+areas they would like to improve, if
+they have the budget, when they would
+like to start and how they heard about
+us over here. And then we waited a few
+seconds. Then we added the information
+from spreadsheet over here. Then using
+our AI agent over here, we classify them
+as a warm lead because they're a good
+fit in the automation industry. They
+have a moderate intent with with 3 to 6
+months timeline. However, no current
+budget and small company size limit
+immediate opportunity was pursuing but
+not agent. So here after classifying
+them as a warm lead, we waited for a few
+seconds then using this node right here.
+We added them in the warm leads root
+here
+in our node right here. So here I'll pin
+this data so we can set up our warm
+leads root. The first thing that we're
+going to do here is we're going to wait
+a few seconds. For example, you can wait
+let's say 5 seconds. And here I rename
+this to wait 5 seconds.
+Then here I'll click on rename here. Now
+the next thing that we're going to do
+here is going to first execute this
+node. So we can grab the data here.
+Now with the data we can add the lead to
+our spreadsheet. So I'll search for
+Google sheets and click on append sheet.
+Now here we're going to choose our
+spreadsheet. Choose this sheet. Choose
+this spreadsheet. And our sheet this
+time around will be the warm lead sheet.
+And now we're going to map values to our
+columns in our spreadsheet prospect data
+that they filled in our form. So I'll
+open our form right here. So we can map
+the data here. Full name, the address,
+company name, industry,
+industry,
+number of employees,
+challenges they're facing,
+budget,
+when they would like to start, and
+lastly, how they heard about us right
+here. And then here, click on execute
+step to add this data to our
+spreadsheet.
+You can see our noodle was executed
+successfully. I open our warm leads
+sheet. You can see we added our
+prospects data here. So we added their
+full name, email address, company name,
+industry, number of employees,
+challenges they're facing, if they if
+they have a budget, when they would like
+to start and how they heard about us
+here in our sheet using the simple
+workflow that we created here in any so
+here I'll rename this to warmly data
+rename like we did with the hotly root.
+We can also notify our team and send a
+an email to the prospect. So here to do
+that I'll search for Gmail.
+So here I rename this node to warm leads
+team notification. Then click on rename
+right here. Then I'll open this node
+over here. Here we're going to add the
+email address of all team and send them
+this email with the subject client which
+is in the lines of new warm to email
+type. I'm going to choose sex and the
+message of the email command the lines
+of hi team. We've just identified a
+bunch of home leads that show genuine
+interest but aren't ready to book a call
+yet. These leads see value in what we do
+and with the right approach they could
+move into the hot territory soon. Here's
+a plan game. We'll n them with case
+studies, workflows, and success stories.
+The goal is to build trust and
+engagement, not push immediately for a
+call. If they respond positively, we'll
+shift them into the hot lead flow and
+schedule a meeting. I'll be sharing the
+resources and touch point we'll use so
+everyone is aligned. Let's focus on
+adding value and positioning ourselves
+as a trusted partner they can count on.
+Thanks for saying sharp on this touch
+here can turn into a strong win for us.
+Best Brandon and here I'll come back to
+Convos and here I'll add an option
+notification and turn this to off. And
+then I'll click on execute step to send
+our team this email here notification of
+the warm leads. Now we can also send the
+lead an email also. So here I'll search
+for Gmail. Click on Gmail. Then here
+I'll click on send a message note. And
+here I'll rename our node to lightage
+email. So here I'll open this node.
+We're going to add the email address
+that is submitted in our form right here
+and then send this email with the
+subject line. Let's let's explore how we
+can help you. Email type I'm going to
+choose text. Then here is the body of
+our email. So here we're going to say hi
+name.
+Thanks again for connecting. I really
+like the direction you're taking in the
+automation and operations space. Based
+on what you shared, I thought you find
+this helpful. And here we're going to
+add a case study, for example, on how we
+helped a real estate agency streamline
+their client on boarding and follow up,
+cutting manual work by 70% and creating
+more predictable results. I've also
+pulled together a few workflows examples
+that might give you ideas on what's
+possible in your role as a team leader.
+These are simple, practical setups that
+other teams have used to get quick wins.
+No pressure at all, but if you'd like, I
+can also send over a short demo of one
+of the workflows so you can see how it
+plays out step by step. Would that be
+helpful? best brand. So this could be a
+subtle light touch email that we sending
+the prospect here who's a warm lead hot
+lead. So here like we nodes here I'm
+going to turn this to off and then I'll
+click on execute step to send this lead
+this email. You can see our node was
+executed successfully here. So our hot
+lead and warm lead roots are pretty much
+set up. Let us try to set up the cold
+lead route like we did previously here.
+We'll also need we're going to unpin
+this data and fill out our form again.
+with the prospect's data so we can
+classify them as a cold lead. I'll click
+on execute several here and then here
+I'll fill out our form with our full
+name work email company name can say
+just give it a random input service you
+can say I don't know just want to
+disqualify this lead employees zero
+challenges you can say I don't know
+interested in improving can say other
+not have a budget just exploring can say
+other and here click on submit and see
+our form submitted Here
+you can see we captured our form
+submission. Here is our node. We're
+waiting few seconds to add the list of
+spreadsheets. Give them a score here and
+classify them.
+So here you can see that our workflow is
+executed successfully. Here we capture
+our form submission. Here we capture the
+name of the prospect, their email,
+company name, industry, employees,
+challenges they're facing, areas they
+would like to improve, they have a
+budget, when they would like to start
+and how they heard about us. From here
+then we waited a few seconds and added
+them to a spreadsheet. And then using
+our AI lead score agent, we classify
+them as a call lead because the lead has
+no budget and an unknown industry, zero
+employees and low intent indicating poor
+fit and low engagement. So here come
+back to comos and then here we waited a
+few seconds and you can see over here in
+our node we classify them in the call
+root. So now let us set up our root
+here. The first thing that we're going
+to do here is we're going to wait a few
+seconds. For example, we can wait let's
+say 6 seconds right here or let's say 6
+seconds right here and rename this to
+wait 6 seconds.
+Then here I'll click on rename. Now the
+next thing that we're going to do is
+we're going to add them to Google Sheets
+to Google Sheets. So I'll click on
+Google Sheets. Then here I'll click on
+append sheet. But first we need to
+execute this node right here to get the
+data. So we're going to map it to a
+spreadsheet.
+Then here I'll open this node. And then
+here we're going to choose our
+spreadsheet. Choose this spreadsheet
+right here. And then for the sheet I'm
+going to choose the call laser sheet.
+Then we're going to map it to the values
+of our prospect. So for the full name
+we're going to map it right here.
+Email address, company name,
+industry,
+number of employees,
+challenges that they're facing,
+if they have a budget,
+when we would like to start
+and how they heard about us here. So
+here I click on execute step to add the
+list of spreadsheet.
+Can see my not executed successfully.
+Now when I open or refresh it and click
+on the colleagues you can see we added
+our lead over here we added their full
+name email address company name industry
+number of employees challenges they're
+facing if they have a budget when they
+like to start and how they heard about
+us right here using this workflow over
+here yeah can rename this node to call
+laser data
+and then here click on rename like other
+roles we also notify our team and notify
+the prospects via email let us start by
+notifying our team so Here we're going
+to notify them via Gmail. So in Gmail,
+I'm going to click on send a message
+node. Yeah, I rename this node to call
+this team notification over here. Then
+I'll open this node over here.
+Here we're going to add
+the team's email address over here and
+send them this email with this line
+update lead move to email type will be
+text and then the message that we're
+sending to our team command line. So
+here the lead name. So we going to add
+the lead name here.
+So we're saying team this lead has been
+classified as call. This means they are
+currently not a feed due to timing,
+interest or engagement level. Next step
+will move them into our long-term ner
+flow so they can continue receiving
+occasional value based content. No
+direct outreach is needed right now just
+like the natural sequence of his job. If
+they re-engage down the road, we will
+revisit and requify them. This keeps
+them warm in the background while we
+focus attention on hot and warm leads.
+Thanks Brandon. Yeah, I could do the
+other the nose here. So we're going to
+turn this to off. Then execute save to
+send the email to our team right here.
+And now we can also notify the leader
+email also. So here I'll search for
+Gmail. Then I'll click on Gmail. Then
+I'll click on send a message not right
+here. Now here we're going to add our
+lead email address. They submit here in
+a form and send them this email with the
+subject line the lines of just sharing
+something useful with you. Email type is
+going to be text and here the message of
+the email and the lines of hi name. So
+the first name we're going to just add
+the name over here. I know timing might
+not be right for us to work together
+right now and that's totally fine. I
+wanted to stay in touch by sharing a
+quick resource that other industry
+leaders have found valuable. And you can
+add a link to a blog post work for
+example case study or an industry
+insight. No action needed other it might
+give you some ideas or inspiration
+whenever you're thinking about
+streamlining processes. We'll stay
+connected and when the timing makes
+sense I'll be happy to explore how we
+could help. Until then, I'll make sure
+to send over the occasional resource
+that could be useful to you. Wishing you
+a continuous success and then here I can
+come back to converse and execute step
+before we execute step here. We can turn
+this to off here like we did the nodes
+and execute steps to send our prospect
+email right here. Our node was executed
+successfully over here.
+So the email that we are sending to the
+prospect, I've renamed it to call leads
+email in the cold leads root. Now for
+the warm leads root, the email that
+we're sending to the prospect, I've
+renamed it to warm leads email. And for
+the the email that we're sending to the
+hot lead, I've renamed it to hot leads
+right here. Now our workflow is pretty
+much set up. Let us test the workflow so
+you can see how it works. So here I've
+pinned this data over
+called lead prospect. So here's the data
+that we capture them pre that we
+captured previously on the form. Here's
+the company name. They don't have they
+don't know the industry. They have no
+employees. They don't know their
+challenges. They don't have a budget.
+And they don't even know they would like
+to sort. So here we can execute this
+workflow to test it.
+So here you can see that our workflow
+has executed successfully. Here we
+capture this lead data over here. Then
+we added the lead to wait a few seconds
+and add the lead to a spreadsheet over
+here. So now when I open the leads sheet
+can see we added the leads data over
+here. We add the full name, email,
+company name, industry, number of
+employees challenges they're facing.
+They don't know if they have a budget
+when they like to start and how they
+heard about us over here with this agent
+right here. We classify the lead as call
+lead right here and the because the
+leader has no budget in an unknown
+industry
+with zero employees and low intent
+indicating profit and low engagement and
+then here we're waiting a few seconds
+and then classifying the leaders call
+lead right here and then classifying the
+lead in the call lead route here where
+we're waiting a few seconds then adding
+the lead in a call leads database over
+here. So I want to open our call
+database right here. You can see we
+added the list data right here. We add
+the full name, email, company name,
+industry, number of employees,
+challenges are facing, if they have a
+budget, when they like to start and how
+they
+sending a team notification of this,
+notifying the team of this lead.
+And we're also sending the lead a call
+leader email sharing some valuable
+resource that this lead
+may benefit from. Here
+you can see the email that we are
+sending over our team. Over here telling
+the team this lead has been classified
+as a call lead. That means they're
+currently not a fit due to timing,
+interest or engagement level. Then we
+learning the next step over here. Here
+you can see the email that we are
+sending to the lead over here. We're
+telling them I know the timing may not
+be right for us to work together right
+now. So fine. I wanted to share with you
+a quick resources that you may find
+valable. Then you'll be adding a link to
+a blog post workflow example case study
+or some or an industry insight. So this
+email that we're sending to the lead
+over here.
+So that is uh the call lead route. Let
+us try testing the warm lead route. Test
+the warm lead route here. We need to
+fill out our form again. So I'll print
+this. And then here I'll execute our
+workflow again. And then here we're
+going to fill out our form with with our
+with the prospects data. So we're going
+to add our full name work email company
+name locks
+per company name
+going to add the industry employee can
+say one
+challenge that we're facing can say
+generation
+areas you're most interested can say
+lead generation we don't have a budget
+how soon are we looking to take action
+on this can say 36 months in here can
+say length and here submit form. You can
+see our form was submitted here.
+here. You can see that our workloads
+executed successfully. Again, there's no
+order. We capture the lead information
+that they fill out in our form. So here
+we capture their full name, work email
+address, company name, industry they are
+in, the number of employees they have in
+their agency, challenges they're facing,
+what they interested in improving, if
+they have a budget, when they would like
+to start and how they heard about us
+right here. Then we're waiting a few
+seconds and adding the lead to
+spreadsheet over here. So now I click on
+lead. You can see we added a new record
+right here with the prospects full name,
+email address, company names, industry,
+number of employees, challenges they're
+facing, if they have a budget, when they
+would like to start and how they heard
+about us. And then after adding them to
+our database, we are classifying them
+and giving them a score
+using this note right here. We are
+classifying them as a warm lead because
+the industry is good but company size is
+very small. There's some intent due to
+lead generation challenge but no budget
+currently engagement from LinkedIn
+presence is moderate with a start
+timeline of 3 to 6 months. Overall a
+good fit with some intent and engagement
+but not judgment of high potential here.
+So here we're classifying them as a warm
+lead. Now waiting a few seconds and here
+we are rooting the lead to the warm
+laser root over root over here. We're
+waiting a few seconds and adding the
+lead to the warm laser database. So now
+when I click on the warm lead right here
+you can see we added a new record here
+with their full name, email address,
+company name, industry, number of
+employees, challenges they're facing, if
+they have a budget, when they like to
+start and how they and how they heard
+about us.
+Then we are proceeding to send our team
+a notification and sending the prospect
+a warm lead email. You can see the team
+notification emails that we're sending
+over a team here. We're telling them,
+hey team, we just identified a bunch of
+new warm leads. They show genuine
+interest but are not ready to book a
+call yet here. And then here we landing
+some next steps. Then here we're telling
+the team, I'll be sharing resources and
+touch point we'll use. So everyone is
+aligned. Let's focus on adding value and
+positioning ourselves as a true trusted
+partner they can count on.
+Okay. So this is the email that we're
+sending to our team. And this is the
+email that we're sending to the prospect
+right here. So with this subject line
+and this email body right here where
+we're telling we're sending them hi name
+thanks again for connecting I really
+like the direction you're taking in the
+automation and operation space based on
+what you shared I thought you'll find
+this helpful and then we're sharing a
+quick case study over here and you can
+also share some examples over here with
+a lead the point of these emails is not
+to push for a call but just to provide
+more value down the road if they're
+interested
+in converting they can be upgraded into
+the hot leads category. over here. So
+this is the email notification that we
+sending to the prospect over here. Let
+us test the hot leads
+route here and see how it works. So to
+do that here I'll execute the workflow
+again.
+And here we're going to fill out our
+form with our full name email address.
+We're also going to add our company name
+and the industry that we're in.
+Yeah. Approximately we have less than 15
+workers, 15 employees. Challenge
+challenge that we're facing is uh lead
+generation. We're interested in
+improving lead generation. Yes, we do
+have a budget. We're looking to start
+immediately and we heard about you guys.
+We're performing a Google search. So
+yeah, click on submit. Now for submitted
+Here
+we can see that our workflow was
+executed successfully and our on form
+submission. We capture the lead data
+that we that they submitted via our
+form. So yeah, capture their full name,
+work email, company name, industry,
+number of their employees, challenges
+they are facing, what they interested in
+improving, if they have a budget, how
+soon they're looking to start, and how
+they heard about our
+agency and then we're waiting a few
+seconds to add the lead data to our
+database.
+So now when I open our lead sheet, you
+can see we added a prospect right here.
+We their full name, email address,
+company name, industry, number of
+employees, challenges they're facing, if
+they have a budget, when they like to
+start and how they heard about us. And
+then using this AI lead scoring AI
+agent, we are classifying the lead as a
+hot lead because they're a perfect fit
+in the automation service industry.
+They're a small size company that aligns
+with a typical target and has a budget,
+immediate start timeline, and engage via
+Google search indicating high intent and
+strong engagement. So here I'll click on
+back to converse and then here then here
+we're waiting a few seconds and then
+rooting the lead in the hot lead route
+over here where we wait where we waiting
+a few seconds and then adding the hot
+lead to the hot lead database. So now
+when I open our hotly database right
+here, you can see we added a new
+prospect right here. Their full name,
+email address, company name, industry,
+number of employees, challenges they are
+facing, they have a budget, when they
+like to start, and how they hold about
+us here. And then we're also sending a
+hotly notification to our team and a hot
+lead email to the prospect. Can see the
+notification email, the team
+notification email that we send to our
+team where we're telling the team, hi
+team, we've identified a new hot lead
+for this that feeds our ideal client
+profile and is ready to move forward
+quickly. The name is this and then
+here's your company name. This one
+should be contacted within the next 24
+hours. Please prioritize outreach.
+Tailor the conversation to their stated
+needs and guide them towards booking a
+call or demo right away. Let's move for
+let's move fast and close this
+opportunity. You can see the email that
+we're sending to our hot lead.
+Here is the subject line of the email.
+Here's the body of the email. The email
+the email in the lead. Hi name. After
+reviewing information, I can confidently
+say that the exact you're the exact type
+of partner we work best with. The
+challenges and goals we've outlined are
+a strong fit for the solution we provide
+and believe we can create a real impact
+together. I'd love to walk you through
+how we can we can support you grow and
+answer any questions you may have.
+Here's a link for you to schedule for a
+call. So, this is the email notification
+that we're sending to our hot lead over
+here using the simple workflow here. So,
+our workflow works perfectly. Yeah, we
+are capturing the information. Then
+we're waiting a few seconds and adding
+the list or database. Then using this AI
+agent, we are scaring them and
+classifying them either as hot lead,
+warm lead or cold lead. Then here they
+switch depending on the classification.
+Here the lead is either being rooted in
+the hot lead route, warm lead route or
+the co-lead route where we adding them
+to the respective database and sending
+our team a notification about the lead
+and we're also sending the lead a hot
+lead email, warm lead email or a co-lead
+email right here. So our workflow works
+perfectly.
+Thank you for watching.
+Now, if you'd like me to create this
+workflow for you, just click the first
+link in the description to schedule a
+call with me on the call. We'll discuss
+into details the workflow that you'd
+like me to create for your business and
+then I'll proceed to create this
+workflow for you. But if you enjoy the
+video and you have a workflow or an AI
+agent in mind that you like me to
+create, just comment down below in the
+comment section. I read all the comments
+and if I land on your comment and I find
+it intriguing, I'll come back on a
+future video showing you how to create
+the entire workflow or AI agent from
+scratch using Inan. But for now, I thank
+you for watching and I'll see you in the
+next video. Goodbye.

@@ -1,0 +1,849 @@
+# Building An AI Appointment Booking Bot Using GoHighlevel Conversation AI
+# Video: https://www.youtube.com/watch?v=OSG8ge19lzs
+# Category: ghl-chatbot
+
+give you guys a walkthrough of an example 
+conversation of how this would actually  
+work um so one of the biggest ways that most 
+people want to utilize conversational AI is  
+as an appointment setter in their business 
+um obviously because this Cuts labor costs  
+a lot and if you can get if you can get a bot 
+to act sophisticated enough to almost be seen  
+as a human then it's very very efficient to use 
+this in your business because they'll contact  
+everybody that comes through into your system the 
+speed to lead is under 5 Seconds the bot continue  
+to follow up Etc so here's an example conversation 
+of how this would work somebody would sign up and  
+the example that we use here is for Fitness I 
+just feel like it's one of the best examples uh  
+because it's applicable to everybody so a lead 
+will come into the pipeline let's just say they  
+signed up through an ad and the bot would reach 
+out with a trigger message say hey Woody thanks  
+for signing up for a new fitness challenge 
+what's your main Fitness goal right now just  
+trying to lose a little weight the bot responds 
+instantly uh that's a solid goal losing weight  
+can feel like a journey but it's so rewarding 
+what are you currently doing for exercise and  
+then she says I can agree with that I Tred to 
+do cardio on the weekends aha the struggle is  
+real trying is the first step so you're on the 
+right track and then the conversation goes back  
+and forth until the bot sends an appointment 
+link and that person has the ability to book  
+their own appointment here now I'm going 
+to break down two different ways of how  
+you can actually go about this and set it up the 
+first way is going to be a more simple version  
+the second way is going to be slightly more 
+complex if I have enough time I'll go through
+both go ahead actually have a quick question here 
+I'm sure on everyone mind how does the bot know  
+when to send the appointment link now is it like 
+based on duration of conversation or you how does  
+the bot know when to send appointment link good 
+good question so we basically we program it in  
+a series of steps where it has to ask qualifying 
+questions so our qualifying questions in this case  
+were um let's see what are you currently doing for 
+exercise and qualifying question number two was if  
+they prefer group or personalized training and 
+then after the qualifying questions are answered  
+we move forward and book and we we tell the bot to 
+send the appointment link and book the appointment  
+wow that's amazing man is there is there a a place 
+where disqualify that say you only do groups and  
+if they answer like they want personal trainer 
+would that disqualify them or is that more like  
+the complex style thing uh not in this case 
+but you could you could set it up to where it  
+disqualifies People based on uh certain scenarios 
+100% wow that's amazing this is something new uh  
+all I can actually show you a yeah yeah I can 
+actually show you a pretty cool example of that  
+as well and how I buil it out so um I'm going to 
+go ahead and run to the autom and show you exactly  
+how this is set up well actually let's start in 
+the settings so if you go to settings and you go  
+to conversational AI you'll see back here you 
+have the conversational AI now this suggestive  
+conversational AI or the autopilot is not what you 
+want to use it is something completely different  
+to what we're using so you want to scroll down 
+and you would just want to look at these settings  
+down here the reply time and the maximum amount of 
+messages that I can send to a contact so I reply  
+time I usually utilize about 5 Seconds sometimes 
+people um if it's a longer message the bot  
+actually responds too quickly and people recognize 
+that it's AI just because the the message is  
+coming too fast so sometimes I'll I'll advise 
+people to to make this 15 seconds now if we go to
+automations the first one I'm going to go over is 
+the simple automation all right so here's how this  
+works let's say um you have your ad campaigns 
+connected to this right so let's just say for  
+example our trigger up here is like a Facebook 
+lead form being submitted so now a Facebook  
+someone is submitting a Facebook lead form and 
+instantaneously that person is getting a trigger  
+message so this is just a normal SMS action so 
+uh Facebook lead form is being submitted this  
+is just an example and then an SMS is being sent 
+that is our trigger message so hey contact first  
+name thanks for signing up for the fitness 
+challenge what is your main goal right now so  
+this is that initial message that we use now we 
+add a weit period in here and we're waiting for  
+contact reply we're waiting for a reply to that 
+SMS specifically and typically I would time this  
+out after about a day um but in this case I have 
+a set up uh shorter just for this example okay  
+now we have an if else condition so uh just to 
+walk through this again leapor being submitted  
+text messages being sent we're waiting for a 
+response and based on when they respond or if  
+they respond we have a condition contact replied 
+true and then the other one is going to be false  
+so nothing happened that means they didn't reply 
+now if they reply we have our conversational AI  
+tab here where we have our prompt our personality 
+or instructions or questions um now something cool  
+that we've done and actually um Vico this is one 
+of the reasons why I didn't put together a Google  
+doc is because we've actually pre programmed props 
+into this so that you guys can edit them just by  
+the click of a button so for example let's say 
+you're clicking anywhere to add a conversational  
+AI action that first it's going to pop up empty 
+this Advanced bot configurations if you click  
+the on button it pre-populates the prompts so 
+we basically we know that not everybody's a  
+prompt engineer so we push this button on and it 
+automatically repopulates those prts and it will  
+automatically um tell the bot that it's working 
+for the company name uh that's on the sub account  
+and it will pre-program those all you have to 
+add is the qualifying questions that you want  
+to include which is pretty cool um can I just 
+quickly ask is that my in in a snapshot how can  
+the prom be preloaded like that is that part 
+of the snapshot or like so it's not actually  
+part of the snapshot it's part of the actual 
+conversational AI so anybody that goes High  
+Lev snapshot or has go high level snapshot 
+or not they can just click here type in the  
+conversational AI action and it will pre-populate 
+for anybody that pulls it up so all you have to  
+do is turn this on and it loads by itself so 
+voco for example if you were to pull up your  
+own go high level and do this yourself it would 
+pull up oh so like it's it's like a default prom  
+that build in high level correct yes okay gotcha 
+all right so we have um so lead form submitted  
+text message we're waiting for the contact reply 
+we have the if else condition whether or not the  
+person replied and now we have our GPT action so 
+what we're doing is we're telling the bot who it  
+is so you are highly skilled Rockstar salesman 
+for Total Fitness this is just a name I made up  
+and your name is Alice and now uh this is just 
+all of this is pre-loaded in this prompt and  
+our first qualifying question is what are you 
+currently doing for exercise and and then you  
+have a a timeout option here which is basically 
+if the person does not reply for uh in this case  
+1 minute but again I would use one day and then 
+we have our conditions now our conditions down  
+here the way that it's set up is these are these 
+are programmed by or they're determined by AI so  
+they're not like your normal if else conditions 
+in go high level where you have to manually like  
+select reasons for why things have split decisions 
+if so for example this decision down or this uh  
+scenario down here says question is answered and 
+I'm saying question must be answered to move to  
+this step or to move to the next step so AI is 
+able to register whether or not they answered the  
+question and it will only move them to the next 
+step if they answer the question if they answer  
+any other question or they ask a question or the 
+question just isn't answered at all it will not  
+go into in this case right it won't not go to the 
+next step um so we have our prompt in here AI is  
+determining what our scenarios are and uh this 
+is actually where you could put for example um  
+disqualify right so let's say for example Vico we 
+were to put um person does not exercise right and  
+this is just an example we're not actually 
+we would never disqualify someone if they  
+don't exercise that that isn't a thing that 
+any gym would do but um you would say if the
+person says they do not
+exercise they are dute so we would save this 
+action and now it adds that action here person  
+does not exercise so they would answer you know 
+I'm not you know I don't currently do any exercise  
+at all we can just add them to a workflow whatever 
+disqualification workflow that you guys have so  
+some people um yeah so you could just remove 
+them from the workflow or whatever it might  
+be mark them at a tag mark them as dqd whatever it 
+might be um so you can just add on conditions that  
+easily um just quick question here Ashton like 
+from your experience how good is the actual bot  
+um actually being able to like you know separate 
+this person based on the condition that you have  
+like for example you you write the one here uh 
+they are theq does the Bob actually understand  
+what DQ mean yes yes it does yeah all right 100% 
+does a very good job yeah it's it's connected  
+directly to Chad GPT so um yeah if if it will be 
+able to recognize based on their response whether  
+or not they you know the person does or does not 
+exercise and it will know that it needs to move  
+them in here to disqualify and and just a followup 
+question on that um is that GPT 3.5 or four right  
+now it's 3.5 all right cool but we're working on 
+adding four uh so you can toggle between back and  
+forth all right so I'll go ahead and delete this 
+option for now and we'll keep this thing going  
+so in this case if the go ahe oh sorry we have 
+a question in one of the comment Melody R ask  
+can we train the bot on nich specific terminology 
+100% so in here if you're updating the like for  
+example in the additional instructions you could 
+add whatever you want so for example I have use  
+your Woody side and say things like LOL and haha 
+when necessary this makes it seem more personable  
+to to use that type of terminology so any specific 
+or nich specific terminology you would want it to  
+use you can just add it to the instructions um 
+so you could say you could even provide like a  
+list of um you know phrases or terms that you 
+would like the bot to frequently use and you  
+could just paste them in there and say um try 
+using these terms um frequently as it relates  
+to my Niche for example you just want to tell 
+the bot how to behave and prompt it accordingly  
+I see well that's amazing Sebastian here ask 
+uh are we able to use this B on WordPress via
+plin great question not at the moment but 
+we are currently working on adding it and  
+I think it's we're about three weeks away 
+so three to four weeks and we will actually  
+um have an option to start using this so 
+if you go if you look down here we have  
+the option to select between the channels of 
+where you would like to use the bot so right  
+now we have SMS Facebook and Instagram we're 
+going to be adding the chat widget very very  
+soon so you're going to be able to embed this on 
+websites oh I'm I I really want to see that on  
+email man we got a lot of email replies really 
+yeah this is uh that's another one we're going  
+to be adding to um that one takes a little bit 
+more work though because you have to structure  
+emails in a certain way uh and they have like 
+a specific type of format so it takes a little  
+bit more work but we're we're trying to make 
+it for as many channels as possible all right  
+all right so in this scenario so we have um the 
+bot here question is answered is our a scenario  
+so if that is the case so here we give it a 
+scenario if they answer the question it goes  
+to qualifying question number two and I actually 
+the the conversation that I showed you is using  
+this workflow so the the conversation that 
+I showed in the beginning is actually using  
+this workflow so qualifying question number 
+two at the bottom do you prefer group fitness  
+classes or more personalized experience right 
+so it's the exact same personality the exact  
+same instructions on every single one that we use 
+the only thing that we change is the qualifying
+question and then we have the conditions 
+breakdown again so now if they answer this  
+so question must be answered to move to the 
+next step if they answer qualifying question  
+number two we move it down to booking bot 
+and in the questions area we say send the  
+booking link tell them to let you know when 
+they have booked so that you can confirm it  
+again the personality is the same additional 
+instructions are the same in every single  
+one and then just in case they ask another 
+question instead of booking we create one more
+step same personality additional 
+instructions and then questions  
+are just any general question questions that 
+the bot feels necessary to ask based on that
+response okay so now to do the let's do one 
+more run through here on how this is working  
+Facebook lead form is submitted we send that 
+trigger message we wait for a response whether  
+or not they respond determines where they go 
+here if they reply we have our conversational  
+AI widget with the prompting if they answer 
+the question it goes to qualifying question  
+number two if they answer that it goes 
+to the booking bot just in case they  
+ask another additional question it goes one 
+more step and you can make as many steps as  
+here as possible so if you feel like the person 
+might continue to go back and forth and back and  
+forth you could just keep duplicating the step 
+and going down and down and down all right any
+questions um I might miss this but uh is there 
+is there any prevention let's say if someone  
+stop replying because that happen all the time 
+right when you text someone and then they just  
+stop replying it would they go into a another 
+follow-up sequence like that good question so so  
+in the simple buildout so I have another one I'm 
+going to go over as well in the simple buildout no  
+this is just the person responds the bot responds 
+if the bot if the person does not respond there  
+is no follow-up sequence in place the second one 
+that I go through includes a follow-up sequence  
+in M multiple different scenarios it's a little 
+bit more complex and it looks kind of scary so  
+I wanted to go over this one uh first I see I see 
+so I I think we go to let the audience aside guys  
+we're going to give you two option here number 
+one we're going to spend the remaining uh minutes  
+or you know we're going to spend the remaining 
+minute dive a little bit deeper to the simple  
+workflow which is the one we looking at right now 
+or option number two we're going to go into the  
+complex workflow which involving the followup 
+if the lead is not responding so I'm going to  
+let majority vote here if you want option number 
+one which is staying going into more detail about  
+the simple workflow drop a one uh if you want to 
+do two where we look into a complex workflow just  
+drop a two and we'll we'll just let you got decide 
+all right we'll go a lot two here Ashton all right  
+perfect looks like we're going to the the complex 
+workflow so this is going to initially it looks a  
+little bit scary but it's not as scary as it looks 
+okay slightly more complex here I know it's there  
+like webs going all over the place but uh once I 
+walk you through this I think it's going to make  
+a lot of sense okay so similar trigger right uh 
+at the top so let's say a Facebook lead form is
+submitted we have that trigger message that goes 
+out we're waiting for a response and now this is  
+a little bit different so the condition we have 
+here is if the person responds if the person does  
+not respond if the person does not respond we 
+have a another conversational AI action where  
+we specifically make a follow-up bot so we still 
+tell them who they are the only difference is that  
+they objective is you have not received a response 
+in your last message and your goal is to come up  
+with a unique follow-up message person has not 
+responded in one day never use the same response  
+twice every response should be entirely unique 
+and then the question is any relevant question  
+that they haven't asked in the past so AI will 
+just generate you know a new question to keep  
+them engaged or try to re-engage them into the 
+conversation so we create a section where if  
+the person doesn't reply now if they do reply 
+we still have our same uh basically the exact  
+same setup as the previous one okay so we have 
+the no condition met timeout which means they  
+didn't respond and if the question is answered 
+so what's happening here is for the timeout so  
+timeout means the person did not respond in this 
+scenario right so the one day goes by there's no  
+response we have a go-to action that routes 
+specifically to the follow-up AI now let's  
+say the the bot will send a follow-up message and 
+say hey I see that you uh weren't able to respond  
+to my last message um and if a conversation was 
+happening it will actually refer to something  
+that it said in the last conversation like I 
+see you're trying to lose weight just one to  
+reach out and see when's a good time to set up 
+an appointment something like that um it would  
+come up with a unique response every time 
+and then we have different conditions here  
+on this one so we have person responds with no 
+conversation history so if if it's their first  
+response and then we have the person responds 
+but they already have answered the qualified  
+question number one and we have it go to so if 
+the person with no conversation history answers  
+we send it to ask the first qualifying question 
+if the person person responds and they've already  
+answered qualifying question number one 
+we send them to qualifying question number
+two does this make sense so far yeah yeah it 
+it looks FX but I'm I'm staring to get it so  
+hopefully okay hopefully you guys do the same 
+oh we got the a little bit question here Goan  
+here asking like canand these be trigger from a 
+regular form like when a form is submitted I think  
+100% yeah and uh Eric here asked will we get the 
+world slow so we can modify that to our business  
+I think he referring to a snapshot like will 
+that will be will you be sharing the workflow I  
+think that's what he meant we will potentially be 
+giving away both snapshots so the snapshot the the  
+complex snap snapshot and the simple snapshot but 
+I've also I'll go over this a little bit after uh  
+I actually complete this I I've uh I've created a 
+way to make this very very very very simple um and  
+I'll get into that after after the I I finished 
+with this portion so now we have if it times  
+out we're setting it to the followup now if they 
+answer the question qualifying question then the  
+same kind of thing it goes to the booking bot if 
+they answer that question if it times out again we  
+send it to the follow-up bot so it's actually now 
+that I'm breaking it down it's probably seeming a  
+lot simpler than it looked in the beginning no 
+condition met I have a weight period here and I  
+send it back here so for example we're sending 
+it to the follow-up bot if it times out if the  
+question is answered then we send them to the 
+booking bot no condition met basically means  
+maybe they responded and they didn't answer the 
+qualifying question so qualifying question here  
+is or the qualified question number two would be 
+do you prefer group or personalized training maybe  
+they say something like just tell me how much it 
+costs for example right A lot of people like to  
+say that instead um that would fall into into 
+no condition met we have a weight period here  
+where I usually just put like a a few seconds on 
+the weight period and then I route this back to  
+question number two and it will basically um 
+address the question that they asked or what  
+they said but it will continue to try to get the 
+answer to that qualifying question now the reason  
+why I have a weight step here is to avoid uh loop 
+blcks are you familiar vco with Loop blcks have  
+you ever had that happen in a workflow uh yeah 
+so a a loop blocks meaning it's it's going to an  
+infinite loops and the high level system just try 
+to cut it out yeah on the right track yeah bingo  
+bingo yeah so if you if you were to remove this 
+weight period and it was just no condition met  
+go to back to qualifying question here um adding 
+a weight step actually gives you some leeway it  
+gives you some room to kind of make that error 
+or make that mistake without actually getting  
+flagged so uh the more weight steps you you have 
+before the go-to action the more you will actually  
+be able to avoid getting Loop locked what is 
+the interval like 30 minute like or like uh it  
+doesn't matter I just use a few seconds here oh so 
+0.1 minutes yeah the weight step in general just  
+helps avoid that all right and then we have uh so 
+qualified question number two so no condition met  
+we're routing it back to the same questions if it 
+time out or it times out we go to the follow-up AI  
+if the question is answered we send it back here 
+so this setup is basically the exact same as the  
+last one the only difference is that number 
+one we've created a follow-up bot right so we  
+have this and two creating a go-to action to that 
+follow-up bot every time the bot times out so if  
+the person does not respond we are now following 
+up with this person every single day until they  
+respond which means if AI is creating follow-up 
+messages you don't need your own nurture campaigns  
+you have a never-ending follow-up sequence here 
+so if someone enrolls himself or opts into your  
+ad and they don't respond like a lot of people do 
+um because leads aren't perfect you know a lot of  
+people just opt in and they don't respond for 
+whatever reason you have a follow-up system in  
+place to continue reaching out to that person and 
+AI will generate a new and unique message every  
+single time it's trying to follow up with that 
+person and re-engage them so it's it's pretty  
+awesome actually and then we run this down to 
+stage number two or well the booking bot and then  
+if they ask a question we have another booking bot 
+the only difference here is our conditions we have  
+the same conditions but we're just creating weight 
+periods and we're routing them back to the booking  
+bot so that a people continue to ask questions or 
+if they don't respond without booking whatever it  
+might be then we're routing it back so that the 
+bot continues to re-engage them continues to  
+answer questions and basically just be a general 
+support bot until that person finally books an
+appointment questions do you think will work with 
+e-commerce let's say um let's say someone have a  
+low ticket where you know you try them back to 
+buy a $70 uh ebook or something or or even an  
+abandoned card will this work with e-commerce 
+100% absolutely yes you could set this up uh so  
+the initial triggers would be different right 
+so um I'm not too familiar with the e-commerce  
+triggers but let's just see if there's a yeah so 
+abandoned checkout right duration 10 minutes so  
+let's say um they abandoned their checkout for 
+example you could create a specific workflow to  
+reach out and follow up with that person in the 
+exact same scenario the only difference would  
+be the prompting you would want to specify the 
+prompting for the scenario so you would let them  
+know in the additional instructions that um you 
+know the person visited the page added to their  
+cart but they did not buy and your job is to 
+follow up with the person ask them questions  
+and re-engage their interest something like that 
+wow yeah I I definitely use a coupon code yeah  
+for e-commerce but yeah man like I I would bet 
+all those e-commerce store would be willing to  
+pay a lot of money for for an AI bot like this 
+guys like if any one of you in the e-commerce  
+space this is a huge opportunity right um so 
+yeah I mean like is there is there more to it  
+or is there like Q&A time Ash um so there's one 
+last thing and then and then we'll go Q&A so save  
+this so that basically breaks down the gist of 
+How I build it um and exactly how we get it to  
+respond and follow up now what I have done is I 
+created a snapshot um and I if if you aren't go  
+high L users I actually have uh the entire you 
+know go high Lev sub account that we that we  
+give to you but we set it up in a way like this 
+you don't have to ever go into the workflows to  
+actually program the bot I have the workflow set 
+up and it's already deployed in the account all  
+you have to do is go to the custom values I 
+created a conversational AI folder and all  
+of the custom values are editable directly from 
+just from this folder so if you want to make any  
+changes to the bot to the um based on its company 
+information the company name the name of your AI  
+assistant qualifying questions all you have to 
+do is go back here edit the information and it  
+will automatically update the workflow because 
+we pasted these custom values in the prompt that  
+we have so no steps no building 100% just you 
+deploy this into your account and you can make  
+the updates just from the custom value no way 
+man that's crazy that would save me so much  
+hour because my my intention was to come to this 
+training learn it from you and spend the next two  
+to three day build it myself so you you're telling 
+me I don't have to build this on my own so is it  
+like a snapshot or what is that is it gonna be a 
+snapshot at the end of this right uh yeah so um  
+I I put this snapshot together uh recently just to 
+to make it more user friendly for everybody um and  
+then Vico whether or not we're going to we can 
+we can connect after this and kind of see what  
+the best way to go about it is um but yeah I I 
+would like to I would like people to have access  
+to this they didn't have to go through actually 
+setting everything up guys that that is like I  
+said my intention was to come here and learn and 
+spend the next three long days building it myself  
+but it looked like we're just going to shorten 
+that to three minute based on the custom value  
+that he showed us so thank you so much ashon 
+thank you so yeah no problem no problem you  
+any time guys uh thean here asked uh do you think 
+you can add WhatsApp as one of the medium in the
+future yes so that's um chat widgets WhatsApp and 
+email are three things that we're looking to add  
+in the future yeah and when you said we you mean 
+the high level team right not not not the uh your  
+company yes yes correct yeah high level is um so 
+one of the uh the director of automations who is  
+like in control of the research and development 
+um so we're working on implementing new channels  
+and that is our that's our next step so I know 
+um the chat wages we have coming in the next  
+few weeks and we're continuously making those 
+developments all right yeah let's go ahead and  
+uh yeah come come to the stage bro what's up hey 
+hey guys sorry um I didn't see how they're getting  
+kicked out of the workflow is it when they book 
+an appointment it automatically kicks them out of  
+the workflow I have one similar to that is that 
+how they get out of it great great question yeah  
+100% so um depending on the use case you would 
+want to we create like a stop bot campaign where  
+we can just remove them completely from that 
+workflow and um add a tag or something that  
+just make sure they don't get re-enrolled to that 
+workflow anytime an appointment is booked now this  
+would be specifically for an appointment booking 
+bot if you're using it for abandoned checkout or  
+if you're using it for maybe maybe just like a 
+general support bot uh you'd probably want to  
+use a different trigger but you can you can 
+cre workflows to make those to make the bot  
+stop replying hey what's up Daniel hey how you 
+doing bdy um yeah just curious I came kind of  
+late so I know that like I was testing out the 
+you know like the regular go high level bot or  
+whatever uh like on an Instagram and stuff like 
+that and it was just tripping up like crazy and  
+sending information that just was not correct so 
+is this bot like the regular go highight bot or is  
+this like something different and I apologize for 
+being late yeah yeah no problem so it's completely  
+different the regular go highle bot uh it well 
+if you want to call it that is the it's like  
+this autopilot and suggest suggestive version 
+so it's based off of FAQ and it's programmed  
+by links that you give it um so it's not as 
+sophisticated it's not very conversational  
+and if it doesn't knows the answer to a question 
+it will say things like sorry I don't have enough  
+information to answer that question in this case 
+we're prompting it which chat GPT and we're giving  
+it a specific direction to follow down so that it 
+can always it always has an answer to a question  
+and it doesn't trip up like the one that you're 
+talking about I know exactly what you uh what  
+you're referring to those Bots um the very first 
+bot that was programmed in the go high level was  
+not the best it made a lot of mistakes this one 
+is much more sophisticated okay cool yeah thanks  
+um I got a question myself which uh thanks to uh 
+Daniel for reminding uh remind me of this how is  
+this different from Eliza cuz go have 500 bucks 
+a month paid service for Eliza right even like HL  
+Pro 2 have something like zap chat right and even 
+uh extended themselves have something like extend  
+starting to build their own AI bot so like how is 
+conversation AI the one which just build different  
+from those bot that which like cost F above the 
+months right yeah so the plus side to Eliza is  
+that it's programmed to work directly with the 
+calendars of go high level right um the downside  
+is that it's not actually AI it it's programmed 
+by FAQs so when you're booking an appointment  
+with Eliza it's able to actually say um toes 7 
+o'clock work tomorrow someone says yes and it can  
+actually book that appointment onto the calendar 
+manually which is another thing that we're trying  
+to program into the chat GPT bot that I just went 
+over but the problem is that it's an FAQ bot so  
+it it's not conversational um if it doesn't have 
+the answer to a question or it's not in the FAQ  
+list that you give it it's not able to respond 
+and be conversational the plus side is that it  
+can just book onto uh actual calendars and in this 
+case it cannot book on accounts oh makes sense um  
+yeah this is another real quick so I was just a 
+little confused um by what Ashton said there so  
+the bot that I was using on Instagram even though 
+it was basically uh for lack of a better word junk  
+it still was able to book an appointment directly 
+on uh my calendar so it so is so is the bot that  
+you're talking about here not able to book an 
+appoint man or so here is uh an overview of how  
+the bot works so it's programmed by a series of 
+qualifying questions it's connected to chat GPT  
+so that I can remain conversational um and 
+we set it up in a way so that it has like a  
+direction to go in its ultimate goal in our use 
+case is to book an appointment but we do that by  
+sending an appointment links uh an appointment 
+link so it'll ask those qualifying questions  
+it will send that link um after their qualifying 
+questions are answered and the person can click on  
+the link and go to book an appointment now with 
+the Eliza booking bot it's not as sophisticated  
+not as conversational so if you look at these 
+conversations here uh even when it's referring  
+back to what the person said or like haha the 
+struggle is real trying this first step so you're  
+on the right track very conversational almost 
+comes off as a human there's no way you'd be able  
+to tell this is AI unless it was just responding 
+too quickly so that's the upside to this one the  
+only downside is that you have to send a link to 
+book an appointment but um you get better show up  
+rates 90% of the time if you send it a link and 
+you allow the person to book themselves so um  
+show rates actually decrease whenever you have the 
+Eliza booking bot book onto the calendar okay one  
+last followup question to that yep uh the links 
+that it's sending uh are we able to customize  
+those ourselves or or are they just being pulled 
+from the calendar 100% you can customize them  
+however you'd like whatever link you want to 
+use you can use a calendar link you could use  
+a HubSpot link use a schedule once link use a go 
+high level link any yeah just a quick note on that  
+I would personally redirect uh I'm going to go to 
+setting on high LEL and go to URL redirect and red  
+like redirect it to my domain so it's like it's 
+it's look more professional and then you get more  
+flick through with that I personally would do that 
+uh Daniel Harris have a question hey please go let  
+them Speak oh yeah just um just one quick one I 
+have a um a client who has an Aesthetics when so  
+it's all Botox injections and all of that kind of 
+stuff to do something like obviously they've got  
+a range of services that a offer would I need to 
+create a new flow um a new a flow for each service  
+so it would know how to respond or is there a way 
+of doing it for sort of Aesthetics generally great  
+great question so um when you are and I'll go over 
+this I'll share my screen to kind of give you a  
+breakdown for that question so in these The Prompt 
+is the same in each one right the only problem is  
+that it caps you on how many characters you can 
+enter so what I would do is create custom values  
+for each service that you would like to to be 
+familiar with um and I would paste the I would  
+say something like these are the services that 
+you offer or that um the company that you work  
+for offers something like that and then I would 
+paste the custom values below it and use it in  
+each prompt like every single prompt that you 
+see in here uh for just for the conversational  
+AI actions and then the bot will be able to 
+reference those Services any point that is  
+necessary in conversation so you could have one 
+bot understand all of the services okay yeah that  
+Mak sense yeah so that yeah cuz otherwise it's can 
+be for L work to do I I 100% agree with you yeah  
+I would say in the additional instructions just 
+let the bot know um these are the services that  
+you offer and just make sure it knows that you'll 
+be 100% fine perfect thank you yeah no problem  
+uh um just quickly I I have my own personal 
+question do you happen to have an example of  
+um um a followup bot right so basically if like if 
+you don't respond and you ignore them do you have  
+like any example that I that we can see of them 
+following up to you uh I could probably I I would  
+love to that man so I just enrolled myself into 
+the workflow see I received that trigger message  
+perfect and now I'm in the weight period and I'm 
+just going to push myself through to that next
+stage if you're ever testing workflows by the way 
+um as you're creating uh workflows or actions or  
+triggers and you don't want to wait for the 
+weight steps that you have in your workflows  
+you can always just come to the enrollment history 
+and just throw yourself into the next stage it's  
+actually really helpful Tim Tim rise asking uh 
+is this using uh using chat GPT API therefore  
+needing a fun chat GPT account um no no this is 
+actually yeah I'll yeah no I was goingon to say  
+yeah this is uh directly made in high level um 
+they charge you per action I think it's like one  
+to two cents per go like chat gbt response um but 
+it's included in high level and then here is an  
+example of followup message it will basically just 
+continue to follow up every single day depending  
+on how long you set up the timeout period it will 
+just follow up with that person every single day  
+until they get a response and then it will be 
+reenroll back into the conversation the bot will  
+start responding again and and when you said every 
+every single day like that's like infinite right  
+so it's just going to go on forever 100% yeah oh 
+wow um the cool thing about this is if you're if  
+you're consistently generating leads once you 
+set this up uh eventually you get to the point  
+where let's say a month goes by and you have new 
+leads coming in and you're continuously following  
+up with people every single day it's almost like 
+you're doing a reactivation campaign every day  
+like for example for for my B well it it's worth 
+it so with with follow-ups you start booking  
+appointments just from follow-ups alone like we're 
+we're sending probably like 20 thou, messages on a  
+daily basis here's another one so um yeah here's 
+a followup see if you had a chance to check out  
+our latest fitness challenge how can I assist you 
+further with your fitness goals um you'll start  
+sending up bulks of messages because people keep 
+following falling into that follow-up Pipeline and  
+then you'll see just appointments getting booked 
+just from follow-ups alone it's awesome this is  
+life changing this um uh just just quick question 
+here uh like so H have 97 297 and 497 plan this  
+will work in all here or is it just for the SAS 
+mode good question I believe I know it works for  
+the 297 plan I think it works for the lowest tier 
+as well but I'm not 100% positive all right yeah  
+okay cool just just give give us an idea here um 
+how many of you guys in the zoom chat is on the  
+497 plan right now just just the type of one if 
+you have 497 plan oh wow so we have a fair bit of  
+people that's good yes oh uh we got Claudia here 
+ask if the person doesn't want to receive a full  
+followup uh message could ason show us the part 
+of the workflow um if if the person doesn't want  
+to receive that I would just assume like they just 
+reply stop right it does so another another thing  
+you could do as well and this is uh we haven't 
+ran into many issues with this but sometimes when  
+you're doing cold campaigns you will obviously not 
+everybody wants to be contacted you'll get people  
+who um cuss you out or just don't want to be 
+contacted so what I would do in that that scenario  
+is let's say let's use the simple one I would add 
+a condition on here and you could just say person
+is unhappy or
+uninterested just copy that you would paste that 
+in the condition so the condition is where you're  
+naming it or the branch name you're just naming it 
+something but the condition is your actual prompt  
+to chat GPT so person is unhappy or uninterested 
+you could say something like any signs
+of
+disinterest send them here and that will create 
+another branch and then you could DND that contact
+so you don't continue to reach out to that person 
+so there's a solution to that problem okay there  
+is no question this guy can't answer so um yeah 
+uh man that's amazing um like just quick one  
+here can we integrate picture or or GI right GI 
+into this like let's say we want to lighten the  
+M like we send a picture or give is that is that 
+possible or not in this conversation not at not  
+at the moment uh unfortunately so uh Nan here say 
+that conversational AI work for all tier so that's  
+mean 97 plans still work I guess this makes sense 
+because that action out is a paid action guys so  
+they actually make money every time you trigger 
+it so I would assume they um have it for all plan  
+even the small plan right so yeah yeah one of 
+the um something that's actually really awesome  
+especially if if you're if you're running a 
+marketing agency but even if you're not they  
+have an unlimited plan $49 a month you can use 
+as many chat GPT actions as you want doesn't and  
+it has like it it doesn't matter if you're you 
+cold messaging 10,000 people a day whatever it  
+might be $49 a month doesn't matter how high you 
+go on that and and and and how can you buy that  
+you go to uh marketplace right or you go setting 
+and Marketplace and you buy the 49 how I I how  
+do you actually subscribe to that if you it does 
+make sense right once once you actually do it at  
+MTH volume yeah 100% so if you go to settings 
+you go to conversational AI you scroll down  
+to the bottom current plan upgrade to unlimited 
+boom boom there you go guys you're selling it to  
+your client and like you can actually charge your 
+client for this and then actually have yourself on  
+the unlimited plan I think yeah maybe you can 
+do that and then that would be really highly  
+profitable yeah % um thank you so much guy for 
+tuning in and I'll see you on the next one hey  
+guy if you enjoy watching the video make sure that 
+you also checking out this content right there

@@ -1,0 +1,235 @@
+# BEST Strategy to Scale Facebook Ads in 2026
+# Video: https://www.youtube.com/watch?v=cs23-HQp12s
+# Category: meta-ads
+
+In one of my previous videos, I talked
+about a specific strategy that is
+crashing right now thanks to the meta
+newest update gem at Andromeda. This
+strategy is basically built to perform
+specifically for this new update. We
+have tested the first with one clients
+and during October, November, we have
+rolled out this strategy also for all of
+our clients and we've seen amazing
+results as you can see right now on the
+screen. And so in this video, I
+basically want to show you exactly how
+the strategy works and what are the
+steps from A to Zed that we follow to
+actually create ads that meet this new
+strategy that we actually call
+sequencing creative strategy. Let me now
+jump on my screen so I can show you
+exactly what I'm talking about. So uh
+this is what we call the sequencing
+creative strategy that's delivering uh 3
+4x for our e-commerce clients. No one is
+talking about this yet. right now
+November 25th and uh guarantee that more
+people will actually start using this
+strategy because it's literally just
+printing for ads. Those are the results
+that we have generated for our clients
+between October to November. And I
+actually have specific examples of three
+different cases from 5 to 10k a month in
+ad spend from 40 to 80k a month in ad
+spend and from 100 to 300k a month in ad
+spend just to show you guys that this
+approach works on different brands uh
+whatever the actual spend is. So let me
+show you the example here. This brand is
+spending 5K a month specifically. And
+this month we got a 3.24 return on the
+ad spend here. The last 10 days we got a
+4x row with a 13k uh spent in around 10
+days. Here we're spending around 40 50k
+a month. And it is another big brand
+that we're spending much more. This is
+October. We spent 250 around 250k with a
+3.31 return on the ad spend. So, how
+does this sequencing creative strategy
+actually works? So, this strategy is
+based on the newest meta updates gem.
+And if you don't know yet, Meta
+algorithm now doesn't optimize the
+single ads as I also said in many of my
+other videos, but optimize the ad
+sequence. This is the article. You can
+also have a look at the article by
+yourself. If you find if you search on
+Google Metagam, you will see it and you
+will see this specific uh graph here.
+where they show you exactly how uh the
+delivery system now works. And so
+basically after these updates, we
+started to test a new setup that seem to
+deliver better results uh based on this
+sequence modeling and the Wukong system
+that GEM uses to deliver ads. So every
+batch of ads we create now is a
+sequence. So every time we launch a new
+set of ads, we follow this uh graph
+here. Basically for each persona that we
+have we create different angle and then
+for each angle we create different ads
+of different user awareness stages. So
+what we do basically we create at least
+one ad for each user awareness stage and
+deliver batches of five to 10 ads. So
+every time we launch new ads every week
+or every two weeks or every month
+depending on how much each brand is
+spending, we usually launch between five
+to 10 ads all together in one adset and
+these ads are basically spread across
+the user awareness stages. We never
+create five to 10 ads only for for
+instance for the solution aware or
+unaware audience but we make sure that
+the ads are actually spread across the
+different user awareness stages. And let
+me give you a more clear example. Uh and
+by the way the goal is to make sure that
+each ads connect to each other as a
+journey. So basically what this means is
+that the angle needs to be consistent
+but the message needs to be shaped for
+different user awareness stages. So let
+me actually give you an example for a
+drink supplement brands uh that let's
+say improves you uh helps you to improve
+uh sleep. Okay. So this is the actual
+process. Uh the step number one is pick
+your persona. Okay. Now for this brand
+specifically, this is just like an
+example. It's not like an existing
+client that we have for instance, but
+just to explain you guys how it works.
+So first identify your persona. Avatar
+in this case, let's say the tired um
+high achiever. Okay, a busy professional
+28 to 45, productivity driven, stressed,
+hates wasting time on complicated
+routines, wants a simple fix uh that
+works tonight. Okay. So this is
+basically the persona that we have
+picked for this brand. Okay. Uh now
+after you have picked the persona, you
+go to the next step which is the angle.
+Now you need to pick an angle for this
+persona. There might be different angles
+but you need to choose one specifically
+that you start testing. So you pick the
+angle and in this case let's say the
+angle is effortless nightly ritual big
+change in sleep. Okay. This is the angle
+that we actually want to push. Okay. Now
+what we need to do we need to define
+different messages and the messages that
+we define we need to make sure that
+these messages adapt to different user
+awareness stages. So here for instance
+they created 10 different examples of 10
+different messages just to give you
+really what it feels like when it comes
+to actually creating the ads like you
+cannot make any mistakes here guys like
+this is so um like so specific. Okay, so
+first unaware ads message imagine waking
+up actually rested not in a fork concept
+aspiring future self user awareness
+stage unaware this is an example then
+another unaware ads and then you put
+another message again for unaware
+audience then problem aware message if
+you uh if your mind won't shut off at
+night is not your fault so people know
+they have a problem they don't know the
+solution we show them the solution okay
+and then problem aware again and then
+what do we basically shape different
+messages. So as you can see for plumbing
+aware here we have two messages we have
+two messages for unaware we have two
+message for solution aware we have two
+message for product aware and we have
+two messages for most aware and as you
+can see we also use different concepts
+that I can best deliver the message.
+The thing is that a lot of people make
+mistakes now day because basically what
+they do they put a product in probably
+like a nice background put an headline
+and they change only the headline or the
+copy in the visual. But the thing is
+that if you keep the same background so
+the same visual the same concept for a
+different message there might be
+a mismatch between the message and the
+creative and the concept. So what you
+need to make sure your designer ideally
+but you need to make sure is that there
+is a there is a correlation between uh
+the ad concept so the visual and the
+message okay a lot of brands still put a
+product image headline on top the bullet
+points of the benefits and then and
+that's it okay it doesn't work like that
+okay so different concept for different
+user awareness stages and you have the
+different messages and then what you
+need to do you basically need to create
+the outs this is the fourth step you
+create all the ads, 10 ads in this case
+because we have 10 different messages.
+Okay? And then what we do, we just
+launch the ads. And when we launch the
+ads, we have two option here. If your
+current adset inside the campaign that
+you have is performing bad, you can
+simply just launch the ads inside the
+existing adset. If the ads is actually
+performing well, the adset already
+existing adset is actually performing
+well, you don't want to touch it. You
+don't want to you don't want to restore
+the learning of the of the specific
+adset. So what you want to do in that
+case you want to launch a new adset
+inside the existing campaign uh with
+these 10 ads inside. Okay is only an
+example you can do five you can do 10.
+The more you do the best ideally because
+you have more uh creatives to actually
+test. Uh what we see usually is that the
+more creatives that we have usually the
+best. Sometimes we even have 20 30 even
+50. uh in this case specifically here I
+said that we use uh five to 10 ads which
+is uh exactly what we're doing right now
+because it's actually helping us in
+terms of uh batches but then at the end
+of the day we might have because we keep
+adding creative inside an existing adset
+what we might have is basically one
+adset with different creative inside and
+every time we launch a new batch we have
+this batch of ads coming inside the
+existing adset and so we have an one
+adset with 30 40 50 ads Okay, they
+compete to each other but they don't
+just compete to each other, they also
+create different journey within the
+actual adset. Okay, and so this actually
+helps to improve their performance.
+Okay, and this is exactly what we have
+guys seen in this specific case here.
+Okay, this is exactly what we're doing
+uh now and this is working crazy well
+actually after the newest uh update gem
+and Andromeda. If you have any question
+as usual remember to leave a comment.
+I'll do my best to reply to everyone.
+Uh, that's it for this video.

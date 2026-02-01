@@ -1,0 +1,482 @@
+# Omnichannel AI Agent Automate WhatsApp Instagram Facebook SMS with AI
+# Video: https://www.youtube.com/watch?v=6yeFiMgelsA
+# Category: omnichannel
+
+hey guys so in today's video I'm going
+to be walking you through our Omni
+Channel text based agents so this is a
+segment of our AI agents ecosystem so
+it's this segment here which I'm going
+to be running you through in today's
+video so essentially the way this works
+is it all starts with connecting the CRM
+to our AI agents which work via open Ai
+and also um using make as well in order
+to connect go high level to open AI so
+yeah if you want all the free resources
+to to this system everything's down in
+the description below so you can
+literally just follow um follow that
+that link and and go ahead and download
+the make automation template um and I
+also give you some information regarding
+how to actually build out the assistant
+within go high level but I'll be
+covering um some of that in today's
+video as well so essentially the way it
+works um is within go high level this is
+kind of where everything starts right so
+um these are the automations we're
+currently running for one of our clients
+um and let's let's Dive Right into one
+of them so the first stage is the AI
+initiation initiation stage so when a
+new lead comes from you know SMS or from
+the live chat widget on the website or
+from WhatsApp messages they they're
+obviously going to send like an initial
+message so they'll come through this
+automation this automation will be
+triggered um and from here we take them
+down the necessary Branch to perform you
+know the relevant actions to actually
+respond to that message so let me just
+walk you through them one by one so on
+the left here we've got the disabled AI
+um Branch right so what we do is um if
+if the client if our client decides to
+disable AI for that specific lead um you
+know perhaps it's a friend or family or
+perhaps they see that the lead isn't
+really interested or you know for
+whatever reason they might decide to
+disable the AI so then what they can do
+is they can add the disabled AI tag and
+then for any future messages which come
+from that League
+um it goes down this branch and we don't
+use the AI assistant to actually respond
+to those
+messages then now through go high level
+we also set up a live chat widget right
+so the live chat widget is um featured
+on the client's website in the bottom
+right corner um and again whenever a
+lead lands on the website whenever
+there's you know traffic flowing to that
+website people might have questions they
+immediately W answered right so they'll
+go to that widget they'll ask a question
+and they'll get a response um very
+quickly so what we do here is we send it
+an an internal notification to the
+client so they are aware that someone's
+engaging with the live chat um we add a
+tag so we add the live chat AI tag which
+basically um allows us to tag that
+specific lead um and kind of note you
+know where they've come from then we
+trigger a web hook right so we trigger
+um the AI assistant web hook so this is
+a custom value which we set up within go
+high level um and this web Hook is for
+our make automation which I'll be
+walking you through later um but
+essentially that you know this this web
+hook triggers that
+automation then for the SMS Branch
+pretty much the same as the WhatsApp
+Branch so what we do here is we're
+tagging the SM with the SMS AI tag here
+we're tagging with the WhatsApp AI tag
+and then we remove from the AI follow-up
+workflow which is another workflow which
+essentially controls the process of
+following up with leads um and obviously
+if the person's actually engaging with
+the AI and sending messages we don't
+want to be following up so we come down
+here we remove them from that workflow
+to to ensure you know we don't actually
+follow up with them then this these two
+stages here we are creating a new
+opportunity in the sales pipeline so
+we're able to actually track the sales
+process um and these will just kind of
+Mark the lead as a hot lead which means
+they're obviously sending a message and
+that they're engaging um with the AI and
+then from here we are updating the
+contact field so we a lot of people
+right when they engage with the AI they
+send you know three to five messages
+maybe in one go but they're separate
+messages a lot of AI agents out there
+can't handle that scenario right they'll
+send a response for each individual
+message which is obviously you know it's
+not great because um you know there's a
+lot of overlap with what people are
+saying or you know people might kind of
+split sentences into different lines um
+so it's hard for the AI to interpret
+that right so what we do is we bulk all
+of those messages into one variable um
+to one custom field and we then comp
+compute that through the AI so if
+someone sends a bunch of you know
+messages say three messages they will
+all be bulked into one field you know
+labeled under message input and then we
+would compute message input in one um in
+one go to generate one response for all
+of those messages so that just comes
+across a bit you know a bit better um
+when responding to leads um and yeah
+just kind of means we're able to process
+and give better responses to questions
+um and ultimately Ensure you know better
+better user um experience and then
+finally we add them to the AI web hook
+workflow which essentially is a workflow
+where we are um processing the make
+automation so that's that that's the
+kind of triggering this make automation
+here um so let me let me kind of dive
+right into the second stage now so the
+second stage this is where we are
+processing the message right so what
+we're doing here is we're just waiting a
+minute just to um allow the user to send
+as many messages as they want so again
+if if they're sending three to five
+messages or or they send you know
+separate messages then they can send
+those you know one after another and
+that gives um us time to you know gather
+those messages under the the variable um
+and then actually compute them under the
+web hook right so once we've gathered
+all those messages we will process the
+web hook again um so this is the same as
+as kind of the live chat web hook that
+that we do um and then we update the
+message input field so we just clear
+that field um just to ensure you know
+for the kind of next batch of of
+messages or the next response that the
+the lead gives us then we're able to
+obviously compute that separately um to
+you know what they what they previously
+entered so that's the AI web hook and
+then from there um we so once we've we
+obviously call the make automation then
+what the make automation does is it will
+change this custom field right so the
+make automation will automatically
+change the AI assistant response custom
+field um and that will trigger this
+automation to to flow um and yeah so
+what we do here is we set an outbound
+message field as well but this isn't
+hugely necessary um in certain scenarios
+we just use this to kind of compute the
+previous message that we've sent out to
+to leads um so that's that's why we have
+that but in this specific um flow we
+don't actually need that but yeah for
+certain clients we do do use that now
+what we do here is we've got several
+branches so um again if if we have the
+disabled AI tag they'll come through
+here so we don't you know want to send a
+response um and if they interact with
+the live chat what we do is they come
+down here and we send the live chat
+message so we just shoot that message
+across and we remove the live chat AI
+tag just in case you know maybe they
+give us their contact details for
+example SMS or Whatsapp um and then that
+specific contact will um will start to
+communicate via WhatsApp then we want to
+be able to handle those scenario so we
+always remove the tag um down
+here then for SMS what we do is we
+actually wait for this kind of sending
+window um this comes across a bit you
+know a bit more human a bit better
+because we're not sending messages at
+crazy hours um where you know where
+where leads can get obviously a bit
+annoyed when when people are kind of
+messaging at at crazy hours um but yeah
+that that's kind of why we do that but
+yeah certain for certain clients we can
+um obviously turn off this feature and
+just respond straight away it really
+depends on you know what your
+preferences are um and then with what
+WhatApp we also do the same kind of
+thing so we're sending out the AI
+assistant response um but then at the
+end here so WhatsApp for this client is
+the main channel that we use hence why
+we have you know a bit extra going on
+here but yeah what we do here is if the
+client is not converted so if they're
+not tagged as converted within within
+the system um we would obviously want to
+follow up with them so we add them into
+the followup flow from
+there now just yeah just as a little
+side note what you can do is you can
+also add more branches for Instagram and
+Facebook that's also what we do for for
+our other clients um so yeah you
+literally just add another couple
+branches in here just for Instagram and
+Facebook you do the same for workflow
+number one um as well but that's how you
+can make it you know work across several
+different channels um and then let's
+cover the follow-up sequence
+here so for the fourth workflow what we
+do here is we because the leads are
+obviously automatically added to this to
+this sequence um there's no no trigger
+but what we do here is we um So within
+the make automation we compute a an
+appropriate follow-up date so when we're
+engaging with a lead via VIA message you
+can obviously you can sort of tell when
+a lead um wants to be followed up with
+right so some people from from a past
+experience some people say that you know
+I'm on holiday I want to can you follow
+up with me in in a week or so so what we
+do within the make automation is we use
+um a couple different llm steps to
+actually compute when the best time is
+to follow up with those leads and then
+we update that in go high level um and
+then in the CRM we once they're in this
+workflow we then constantly go round
+this sort of Loop and every day or so
+we'll check if it's the right day to
+follow up with them and then if it is
+they'll come down here and they'll go
+through three um kind of sequence
+follow-ups and obviously when they
+respond they they exit the follow-up
+sequence right so these WhatsApp
+messages are just kind of um set
+templates in order to follow up with
+leads um so yeah that that's pretty much
+how everything works on the go High
+Level side um so yeah let's let's let me
+show you exactly how it works in make so
+this is the make automation obviously we
+trigger trigger it via the web hook and
+then the end points are involve updating
+that contact within go high level so
+we're relaying all of that data across
+to to go high level um but what happens
+here is we have several filters so live
+chat AI SMS AI WhatsApp Ai and Instagram
+AI so when those different tags are are
+kind of enabled then they'll come you
+know down the relevant Branch
+right now what happens here if we let's
+just dive into the main one which is the
+WhatsApp AI
+step so what happens here is we've set
+up an an um an assistant with an open AI
+so I can actually show you that so the
+assistant we haven't set any system
+instructions because we used ADV the
+advanced settings within make so we
+configure all of that within make um we
+do attach the knowledge base here just
+so um you know we can obviously feed in
+relevant knowledge about the business um
+but yeah that's pretty much all that we
+do here on this side in terms of the
+configuration on the make side this is
+this is how it's set up right so we
+process the message input field which is
+obviously passed over from go high level
+we also have a a thread ID um custom
+field within go high level so with this
+custom field it's important to to add
+this in because we can remember parts of
+the previous conversation right so it
+essentially gives us um give out gives
+our agent the ability to have memory um
+of past conversation and then what we do
+is we create out the instructions right
+so with the instructions we generally
+assign a role tasks rules um we can also
+assign specifics and and kind of give it
+a context as well so those are a couple
+additional steps that we add um and then
+we also set a temperature and we keep
+the top P at one so the reason we change
+the temperature is because it allows the
+agent to follow the kind of the
+instructions and the knowledge base a
+lot more closely which is um ideal for
+this kind of scenario so usually we set
+it as 0.1 but with certain certain
+clients might want the agent to be very
+like very very specific in terms of the
+messages they send out so certain people
+will um we would have larger knowledge
+bases with a complete list of of loads
+of FAQs um and in those scenarios we
+would change this to 0.0 one or um just
+something under 0.1 and you test with
+different temperatures to see um what
+works best but in terms of the role um
+we give a name to the agent and
+obviously give it a bit more context on
+what the business is about um with the
+task we obviously allocate a specific
+task so for most businesses the the kind
+of role of this system is to pre-qualify
+leads and get them booked in for
+appointment or or booked in for you know
+some sort of offer right so what we do
+is we would um give the agent the task
+so the task would be the bunch of
+pre-qualifying questions and also
+um kind of how to how to go ahead and
+present those questions so um sometimes
+the agent might um so if you don't tell
+the agent exactly how to you know
+present those questions then they might
+um just ask all those questions in one
+go right so what we want to do is just
+say you know go through those questions
+sequentially ask one question at a time
+um you know answer the lead questions
+and and kind of build up Rapport and
+build out the conversation so a lot of
+that can be done just by um prompting it
+correctly and you see here we use
+markdown format so if you're not
+familiar with markdown I suggest looking
+into it um because it's a good way to to
+structure the instructions um for the
+for the
+agent then from here we obviously get
+the response from the agent we passed
+this through um a couple different
+reject steps so this step here will
+isolate the kind of source so when
+you're building out an agent within open
+ai's Assistant API um that agent might
+kind of reference um parts of the
+knowledge base right so the way that's
+usually structured is with these two
+kind of fancy fancy bracket things um
+and that's how it references the
+knowledge base but we we obviously want
+to get rid of that because the client on
+the front end doesn't want to you know
+we don't want to be showing them the you
+know where the the AI agent has
+extracted the information from so what
+we do is we just remove that um by using
+this reject step
+here and then we also remove Asis as as
+well so a lot of Agents will um they'll
+add kind of asteris and make bold text
+for for no reason so yeah we'll remove
+that here just to to be sure we we also
+kind of prompt it to to not include the
+asteris um but uh yeah we also use the
+reic steps just to be you know Ultra
+ultra careful and then we have follow-up
+steps so um so with this with this step
+this is where we we're calculating the
+follow-up status so what we want to do
+here is we want to calculate um we want
+to essentially create a summary of kind
+of the the intent of the lead and
+understand um how you know how busy they
+are with their schedule and then that
+will allow us to estimate you know an
+appropriate follow-up date so these are
+the couple L llm steps that we use to to
+estimate that so you can see we've added
+a system prompt and then we're
+processing the kind of user input here
+and then obviously the um llm will
+output a specific response and then we
+feed that response in here which is
+another step which computes the actual
+number of days to follow up you know
+after the current date um so yeah what
+happens here is we kind of it will
+choose a specific number of days from
+from this list so it's either going to
+Output you know to follow up after 30
+days output either to follow up after uh
+14 days or after 7 days or 3 days or or
+one day um and we've set a default
+option here to one day just in case you
+know it's not clear and then we feed in
+the user input so that would be from um
+from the previous step there so that
+would be from the follow-up status step
+and we feed that in and it will
+calculate the appropriate um number of
+days and then we use a reject step to
+extract the number of days and then we
+use this step here to calculate the
+appropriate date to actually um follow
+up with and this is then relayed back to
+high level so this final step here will
+relay all of that information across the
+high level so we relay the follow-up
+status we relay the date we relay the
+thread
+ID um and also the result which is
+output from this step here and that's
+pretty much the same same kind of stages
+that we follow here with the live chat
+we also format and remove new lines um
+but that's literally how everything
+works on the back end um with the make
+automation um so yeah that's that's
+pretty much everything that I've pretty
+much shared the entire um kind of text
+based agent system that that we build um
+there are obviously a lot of different
+configurations so this is kind of one
+sort of flow that you can build out um
+but we can apply this to you know a
+different CRM for example if we're not
+using go high level or we can choose a
+different automation tool for example
+na10
+um initially we we were using zapia as
+the main tool to build this out for our
+clients um but na10 will make kind of
+the best tools na10 is is definitely
+probably the best um and then obviously
+you can use different kind of um you
+know uh llms to actually configure this
+system um but majority of the time we
+use open AI um but yeah obviously there
+are different options out there so yeah
+that's pretty much our entire text based
+um AI agent system which works across
+WhatsApp SMS Instagram Facebook um also
+the live chat widget from go high level
+um so yeah if you have any questions
+feel free to comment them down below um
+and again if you want the free resources
+all in the description below um yeah
+thanks for watching thanks bye

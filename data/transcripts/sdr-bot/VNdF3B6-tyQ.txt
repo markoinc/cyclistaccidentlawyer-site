@@ -1,0 +1,611 @@
+# Build a Voice Agent in 15 Minutes Using VAPI Easiest Tutorial
+# Video: https://www.youtube.com/watch?v=VNdF3B6-tyQ
+# Category: vapi-voice
+
+If you're looking to build your own AI
+voice agent, this will be the easiest
+video you'll find on the entire
+internet. Today, I'm going to show you
+how to build one in less than 10 minutes
+using Vappy, which is the cheapest and
+one of the highest quality sounding ones
+in the market right now. So, I don't
+need to make this intro longer than it
+needs to be. Just stick with me for
+literally 10 minutes and you'll have a
+skill up your sleeve of building AI
+voice agents which you can sell for
+thousands of dollars. Let's jump
+straight into it. Without further ado,
+let's dive into it. We are going to be
+using Vappy. If you've never heard of
+Vapy, it is just a voice AI for
+developers. As you can see, it lets you
+build agents, test, and deploy them in
+minutes. Like, it's very, very easy. Um,
+however, I'm going to be showing you how
+to integrate it into make.com and go
+level. Um, so it would automatically
+call leads 24/7 whenever you want. Um,
+and move them through the pipeline. So,
+the first thing you're going to do is
+head over to vap.ai and you're going to
+sign up for free. And that is the best
+part about this. You literally get all
+of um yeah, all of this for free. You
+only pay per minute you use. Um and even
+then it's the cheapest in the market
+right now, I think. So um once you log
+in, you will see um four things at the
+top. You'll have an overview, you'll
+have platform, voice, logs, and then
+down here. If you click on your name,
+you'll find settings, your API keys, and
+things like that. So I'm just showing
+you the uh the UI and how how it looks.
+Now, I'm aware that new softwares when
+you use them, they always look way more
+confusing than they actually are. Like
+when you first log into High Level, it
+looks confusing, but once you get to
+know the platform, it's actually really
+easy. Same with make.com and any other
+softwares that you use. So, just to show
+you what you can do. Um, if you click on
+platform, you'll see that you have
+assistance, phone numbers, files, tools,
+blocks, squads. You don't really need to
+use all of these. You can then head over
+to phone numbers and you can either buy
+a phone number or you can import a phone
+number. So, as you can see, I've already
+got one right here with a Florida
+country code um being 561, I believe.
+And it's very easy. So, if you don't
+have a phone number in Twilio, you can
+just buy one right here. And the best
+part about this is you don't actually
+need to get it verified. It
+automatically does it, I think. So, it's
+super sick because if you're familiar
+with God level or any other Yeah. form
+of buying phone numbers online, you'll
+know that it usually takes days if not
+weeks to verify phone number. Whereas
+this is instant like I bought one
+yesterday and it's working. So um for
+the area code, obviously you can choose
+whatever state you want. Um I just chose
+Florida. I didn't even know the area
+code. I just went on to Google and
+searched for Florida area code and it g
+it gave me it. So that's how you can get
+your area code and then you just click
+buy. It's as simple as that. Um I
+believe right now it can do US and
+Canada. Um, but you can call leads from
+anywhere in the world, which I'll show
+you in a second. Um, so that's the first
+way, which is the easiest way. Just buy
+a phone number. If you already have a
+phone number verified in Twilio, then
+what you can do is click on import, and
+you can very easily just import it by
+putting in your Twilio phone number,
+your account SID, your Twilio off token,
+and then label, and then just import,
+and it'll do it automatically. So, those
+are the two ways you get phone numbers.
+I recommend just buying one if you
+haven't used Twilio before. It's super
+simple. Um, and it can be done in 30
+seconds. Create a new assistant. You can
+see that I've already got one right here
+with all the prompts. And I'll give you
+the prompts and a good knowledge base in
+a second. But to create a new assistant,
+this is what it'd be like for you. You
+would click on it. You would call the
+assistant whatever you want. So, you
+could just call it like, I don't know,
+real estate outbound caller or something
+like that. Doesn't really matter. Yeah,
+it can be adjusted after you create it
+anyway. and then just click create
+assistant. And once you click on that,
+you can see that it will look something
+like this. And as you can see, just in
+terms of the features, we've got the
+model. So this is kind of like the
+details that you want the AI agent to
+have. So it's as simple as I can explain
+it as I just did. Um, so it's got your
+prompt, it's got um the first message
+you want it to say when it calls the
+leads. Um, you've got the transcriber,
+you've got the voice. So, I'm actually
+going to show you how you can import
+your own voice into here. So, it's going
+to be super awesome. Um, you've got
+functions, which are the tools. You can
+see that I've already created some, but
+you don't need this as of now. Um,
+advanced. I think you've got the URL
+down here. So, server URL, but once
+again, you don't need to focus at this
+right now because we're just going to be
+building the the model. So if we go back
+to model which is here this is the first
+message you want to give the AI calling
+assistant to say right and just before
+we get into that let's put the model as
+mini cluster so for mini cluster that's
+going to save you a bit you can see it's
+gone to 9 cents per minute which is
+awesome um for the knowledge base I
+recommend uploading some information
+about your business you can very easily
+just put it onto a Google document and
+then download that as a PDF upload it to
+um here and it will do it basically. So
+that's really amazing. Um another thing
+you can do is you can actually just
+search for like if you search for like
+commi um sales calling script you can
+see that you could very easily just
+download his entire like script and then
+upload that as a knowledge base right
+here just by selecting a file. You can
+see that I've actually got it right
+here. Um or any other script you want it
+to follow. So, you can even go into the
+classroom in school and you can look at
+the cold calling script we have in there
+and the sales script and you can build
+your own. I recommend following Jeremy
+Miner's NEPQ. Um, it's just a way of
+selling basically where you get the
+prospect to answer a few questions
+first, build up a motion, and then book
+them in for an appointment. Um, but
+nonetheless, you can very easily just
+put your script that you want on a
+Google document and then upload it as a
+knowledge base. And that's one way to do
+it. And you can also I recommend doing
+your um your own knowledge base of your
+own company or offer, right? Because you
+need the AI to know what you're selling.
+So obviously the more input you give it,
+the better. For this system prompt, let
+me just show you what um my one looks
+like up here. You can see that um I say
+something like, "Hello, this is Charlie
+from agency start. How can I assist you
+today?" Um and then for the system
+prompt, you'd want something like this.
+You are a voice assistant for Charlie.
+You're going to be doing cold call to
+sell the program. Remember to use their
+name which is contact ID. This will make
+sense in a second. Um you are asked you
+so you are tasked with answering
+questions about the business, booking
+appointments. Um if they wish to book an
+appointment, your goal is to gather
+necessary information from callers in a
+friendly and efficient manner. So ask
+for their name, ask for the purpose of
+their appointment. Um request their
+preferred date. Um so you know we're
+just telling it things that we want. So
+we want it to act normal. We want it to
+say things like um and well to otherwise
+it's going to be too robotic, right? So
+you want to actually include this. Um so
+this is a good prompt. I've already put
+this below um the video so you can copy
+and paste this if you want. Um but yeah,
+very simple. Um hopefully that makes
+sense. But obviously you can change this
+for whatever you want it to say first
+and foremost. So you can say um hey is
+this the owner of company name? And you
+can actually have that as a variable. So
+it will say the company name that you
+do. Um, so that's really cool. For
+temperature, I recommend just keeping it
+at one. Max tokens 250 is fine. You can
+leave this the same. Just make sure you
+change the model to GPT40 mini cluster
+and you should be good to go. So
+hopefully this is making sense. This is
+just the script and where you change it.
+It's as simple as that. Um, for the
+voice, um, let me quickly show you how
+you can import your own voice. But to do
+this, all you're going to do, I believe,
+is connect your um 11 Labs account. So,
+this is optional. You can obviously have
+a voice like um Jesse or um if you were
+to choose like the ones inside um Vappy,
+that's totally fine. This is just if you
+want to clone your client's voice or
+your own voice, you would do this as I'm
+about to show you. So, I believe you go
+to here, go to settings. It was just in
+provider settings. So you would click on
+here and you go to provider credentials
+and then you basically just put in your
+11 Labs API. So that's as simple as I
+can explain it. And to get your 11 Labs
+um API, you would just simply go to 11
+Labs. And this is completely optional.
+This is just if you want your own voice
+as mentioned before. Um so yeah, you
+would click on my workspace, click on
+API keys, and you'll basically find it.
+And then you just put it in right here
+and then click save. And then once
+you've done that, um you can then go
+back to assistance, go to voice, and you
+should be able to select your own voice.
+Obviously, you'd need to get your voice
+in the actual um thing. So, I believe
+you go to voiceover studio and you yeah,
+create your own voice basically, but you
+can search on YouTube how to create your
+own voice on 11 Labs. Once you've done
+that though, you would just follow what
+I showed you. Um and then you can select
+your own voice here. The in voice
+library, you can actually see. So if we
+let this play, in the middle of every
+difficulty lies opportunity. So you can
+see that actually sounds like me. Um, so
+that is how you build an assistant and
+how you connect 11 Labs with your own
+voice to it. We're going to be talking
+with the assistant that we've built, eg
+myself because it's my own voice we're
+going to be talking to. Um, but then I'm
+going to show you how to actually do
+calls inside Vappy in case you wanted
+the easiest way just to start calling
+leads yourself. Um, and then in the next
+following videos, I'm going to show you
+how to integrate it into goal level
+throughmake.com. And that's also going
+to be really simple, but we're just
+gradually increasing the level of
+difficulty as we go. So, if we click on
+talk of assistance, it it's as easy as
+that. You can literally click on it and
+let's turn this up so you can hear. It's
+going to call. Hello, this is Charlie
+from Agency Start. How can I assist you
+today? Yeah, great. I was wondering what
+about what you do?
+Well, we're all about helping businesses
+grow and crush their goals. We offer
+awesome resources and support to get you
+where you want to be. So, what's cooking
+in your world? What challenges are you
+facing? Um, I'm struggling getting
+appointments.
+Um, I totally get that setting
+appointments can feel like hurting cats
+sometimes. Our program actually helps
+turn those lukewarm leads into actual
+appointments like magic. Want to chat
+about how we can tackle that? Yeah,
+absolutely.
+Awesome. So, let's turn that around,
+shall we? I mean, we've got this killer
+organic strategy to help you get
+appointments from those lukewarm leads
+without breaking a sweat. Can I grab
+your name to dive a little deeper?
+Charlie.
+Hey there. So, I just need your full
+name to kick things off. What's your
+name? Charlie Barber.
+Hey, Charlie Barber. So, what motivated
+you to reach out today? Are you looking
+to tackle getting more? Okay, we'll end
+it there because I don't want to talk
+all day on it, but you can see that it's
+it's pretty solid and obviously you can
+change the tonality. Um, yeah, you can
+change the actual voice, the visibility,
+the clarity, all of this stuff. So, you
+can play around with it. And if you go
+into cool logs, I believe you can do
+that in um God, I got to remember where
+everything is. Yeah, in logs and then
+call. Yeah, I recommend talking with it,
+changing the prompt, making your script
+different, things like that. Um, and in
+terms of if you just want to start
+calling leads like straight away inside
+Vappy, um, all you need to do is click
+on phone numbers to here and you can
+basically, yeah, just put in whoever you
+want to call. So, let's say you wanted
+to call someone in the United States.
+You would just put their phone number as
+like the prospect, select the assistant
+you want. So, you can see here that
+we've got my caller. Um, this was the
+one that we tried building, but I didn't
+want to have to build the entire prompt,
+but you get you guys get the point. So,
+you select the assistant. Simple as
+that. Um, so once you do that, like if I
+just put in my number quickly, just give
+it a
+second. You can see that I am actually
+getting a call right now. You can see
+here that I'm getting a call. If I pick
+up,
+hello, this is Charlie from Agency Star.
+How can I assist you today, Ben? Yeah,
+great. How are you?
+I'm doing great. No complaints over
+here. So, I'm just calling to chat about
+your company and see how we might be
+able to help with Okay. So, I ended it,
+but that's how you would call these.
+Right. Very simple. Um, and that was
+from my Florida phone number all the way
+to UK, right? Very simple. You can put
+whoever you want to call right here and
+you can call using AI, right? Okay. So,
+we're inside make.com and we're about to
+take it up a level. So, obviously I will
+provide you guys in the community with
+this blueprint. So, you don't have to
+build this. You can just copy and paste
+it into your own freemake.com account
+really easily with one click of a
+button. And you would go down to these
+three dots right here, and you would
+click import. Now, once you click
+import, you would choose the file you
+just downloaded, which will be below
+this post. And you'll basically just
+click it, click save, and it will
+populate just like this. And once you
+see it inside your make.com account like
+this, um, all you need to do is just
+change a few things. So obviously this
+will be blank um and you won't have it
+connected. So all you'll need to do is
+just click add. You don't need IP
+restrictions. Just click save. And
+you'll notice how you'll get a URL like
+this. Right. And this is your yeah web
+hook URL. And this will become really
+important in a second. So I need you to
+focus. So that's the first thing we're
+going to do is just yeah click save. And
+you can call it whatever you want. So,
+we could call this
+um web
+hook for GHL or something. Doesn't
+really matter to be honest. And you can
+see that you get a URL basically. So, do
+that. Click save because you constantly
+want to be saving this. And then you'd
+go to this variable section right here.
+And once again, this won't be like this.
+You'll see it and it'll be blank
+probably. So, just click add. You can
+keep this blank. Click save. Um, but I
+believe it should be, yeah, if you go,
+it should be how I've got it here. Um,
+and then for contact ID. But once you
+click on it, you'll get options like
+this. Um, which will all make sense in a
+second. Um, and this won't actually show
+the gray numbers here. Um, but it will
+in a second after we So, this is just
+all the information from the goal level,
+which is how we're going to get it to
+call
+automatically. So, click okay. Save it.
+constantly be saving us. Um, and then
+for this Vappy call, this is um, just a
+thing you need to really pay attention
+to. So, you've got the URL, you've got
+method, which is post. So, this will be
+how it is in your one. You want to get
+your your key. Um, either private or
+public, I think, should work, but you
+can always test both. Um, so once you've
+done that, let's scroll down. And you'll
+see that it will look something like
+this. And all you need to do is I think
+this should be the same. Um and then
+this should be your phone number. This
+is giving Vappy information to be able
+to call your go high level phone
+numbers. So save that and yeah that's
+perfect. So um in the next video we're
+going to be going into high level and
+just building a really quick automation
+and then that's all that you need to do.
+So after the next video, we're going to
+be um testing it and just like that,
+it's as simple as that. Like there's a
+lot of confusing videos out there. I
+want to make this really easy. So yeah,
+make sure to watch the next video where
+you're going to be building it in high
+level. And yeah, take it easy and have
+an amazing day. Okay, perfect. So now we
+are inside go level. Um just in case you
+don't know how to get into an
+automation, you would just go um yeah to
+automations in your sub account and you
+would create a new workflow. start from
+scratch. And that is how you would start
+this. Um, so now let me walk you through
+how you would actually build this very
+easily. You're just going to follow me
+step by step. The first thing we're
+going to add is a drip. So this will
+make sense in a second. Um, and we're
+going to put the drip as 1 second and
+it's going to do this every minute. So
+the reason we want this is because you
+can do like multiple calls using the
+Vappy um agent inside Vappy. Um, but to
+be honest, we want to keep it as like
+safe as possible. So, it's just going to
+do one call every minute. Um, and that's
+what we want to do personally. So,
+that's why we have a drip mode instead
+of just like if you were to upload a
+bunch of leads in here. Um, then you can
+see how it would start to be a problem.
+So, um, yeah, that's the first thing.
+Second thing is going to be a web hook.
+Um, so if we actually go back to the
+other one, let's not save that. Uh, let
+me show you what it looks like inside my
+one. So you can you can name it whatever
+you want by the way, but you can see
+that we have the same thing here of drip
+mode. We've got batch size one. So it's
+the same thing. We've got the web hook
+method is going to be post and then URL
+is going to be the URL that you got from
+here. So just copy that address into
+make.com and you can see that it should
+just be the same one. So yeah, you can
+see that you get it right here. Um, and
+then that's all that's needed to do. So
+save that. Then you need to this this is
+optional. Um, but this makes sense for
+if you want to have a pipeline. So I
+would highly recommend doing that. And
+you upload a file and you actually
+upload a file. Um, you can add a tag and
+a tag keeps the contacts organized. So
+if you upload leads who are like cold
+leads, you want a tag saying like cold
+leads, right? You want to keep them
+organized compared to if you were to
+upload warm leads. You wouldn't know
+who's who. So always use tags. That's
+super important. And then the trigger to
+start this workflow to start calling
+leads every minute on autopilot would be
+contact tag added. So, just like what I
+said, you would upload leads into your
+contacts. And you do this after you've
+built this and published it obviously
+because it needs to be published for it
+to work. But you would upload leads, you
+would add them as a tag, which could be
+whatever you want. And then that this
+would be the trigger. So tag added and
+it would be like um cold leads, right?
+As an example. Um so that's how you
+would start this automation, but you
+could also start it from a form being
+submitted. So if your clients or you run
+like Facebook ads and you're getting
+leads opt in that could be the trigger
+where it could even like wait. So if we
+go here it could I mean the trigger
+could be form submitted. It could
+literally be anything. You can see how
+many different things you could do but
+form is and then you just select the
+form that they submit. So if someone
+signs up to like a webinar you could
+call them and or someone books an
+appointment you could call them increase
+your shut rate so forth. Um,
+and yeah, that could be the trigger. And
+then you could even wait like, I don't
+know, five minutes or four minutes to
+make it a bit more human. Um, I don't
+recommend doing more than five because
+you want to call leads as soon as
+possible. Um, but then it's obviously
+going to do one. It's going to yeah,
+it's got the web hook. So, this
+basically tells um high level
+aboutmake.com and vice versa. And then
+it's going to remove them from the tag
+being not called yet. So that's just in
+case you added them into your CRM with
+the tag like cold leads not called yet
+and then it's going to add them as a tag
+being called once. So you can experiment
+with tags but the most important thing
+are these two things right here. So yeah
+and then obviously having a trigger for
+how you want the automation to start
+which can be outbound directly it can be
+inbound it's whatever you want it to be.
+So okay so now we can actually do the
+fun part which is going to be testing
+this automation. So all you're going to
+do is click run once and you can see
+that it's going to be waiting for a web
+hook. So all we need to do is come into
+our girl level automation you should
+have built by now and just click on test
+workflow and then you're going to select
+a contact. So just make sure you upload
+yourself as a contact in the contact
+section of your sub account. And then
+you can search for your name or it could
+be a test or whatever but you click on
+it and then run test. And if we go back
+to make, you can see that it's going to
+go directly across and it should just
+call my phone number. Um, so if you give
+it a second, you can see that it's done
+it. And if we wait a second, you can see
+that I am receiving a call, which is
+amazing. And it's as simple as that. So,
+it's actually super simple. You can see
+that it's from Florida. And if we pick
+it up, hello, this is Charlie from
+Agency Start. How can I assist you
+today? Yeah, I hope you're having an
+amazing day. I was wondering what you
+sell. You know, it's all about building
+value and getting those potential
+clients to take action. Pretty neat,
+right? Yeah, it's amazing. How do I book
+an appointment? Okay, so as you can see,
+it's that easy. And if you want to
+publish this automation, just make sure
+that you have scheduling turned on and
+it's going to be immediately as data
+arrives because once you turn this on,
+it's going to be running 24/7. and then
+make sure you have your automation
+turned on as published. And from that
+point on, you're good to go. So, all you
+need to do is just add a trigger for how
+you want this um thing to work. And it's
+as easy as that. I do recommend going
+into the classroom and learning how to
+build a pipeline because obviously once
+you've called the lead, it can move them
+through the pipeline into a different
+section and you can really get more
+advanced from that point on. Um, but
+this was a really easy and quick
+demonstration of how you would use Vappy
+to do outbound calls um for whoever you
+want, whenever you want, 247. So,
+hopefully you enjoyed and I'll catch you
+in the next one.

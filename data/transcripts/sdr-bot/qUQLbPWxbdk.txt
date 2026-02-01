@@ -1,0 +1,1740 @@
+# How to build AI voice agents with Vapi Full course
+# Video: https://www.youtube.com/watch?v=qUQLbPWxbdk
+# Category: vapi-voice
+
+hello and welcome in this video I'll
+create an air voice agent sort of like a
+virtual receptionist from scratch the
+air agent will receive a call answer all
+the users questions from the knowledge
+base and then send them an email with
+the cly link so that they can book a
+meeting and finally after the call ends
+the a will create an end of call Report
+with the call summary and write it to
+Google Sheets okay so I'll be creating
+this AI receptionist for my AI agency
+flip bites so that you can follow along
+also in this video I will deep dive into
+the W voice a platform and we'll go over
+all the key settings you need to know to
+build powerful voice AI agents okay
+here's a quick demo of what we will be
+building okay great so for the demo what
+I'm going to do is I'm going to call
+this number 646 762
+5060 and uh then I'm going to talk to
+the AI agent basically because this
+number is connected to flip bites AI
+agent right here okay so once I call
+this number this should get activated
+ated and once this activates I'm going
+to ask the AI agent certain questions
+and after that try to book a call if
+possible so okay let's see how that goes
+I'm going to call it right
+now there thanks for calling flip bites
+AI agency we specialize in AI automation
+to boost your business how can I assist
+you today hi I wanted to actually get a
+wife's a solution for my business
+awesome our AI voice agents are designed
+to optimize customer engagement and a
+automate business operations would you
+like to set up a free consultation to
+discuss this further yeah sure but
+before that I wanted to know what
+exactly voice AI is could you tell me a
+little bit about that sure thing voice
+AI uses Cutting Edge Technologies like
+vapi and Hume AI to create intelligent
+voice agents these agents can handle
+customer inquiries provide seamless
+interactions and automate business
+operations they help enhance user
+engagement and operational efficency
+would you like to dive deeper into this
+during a free
+consultation yeah I want to know that as
+well but uh before that again uh wanted
+to know more about your services so what
+all services do you guys
+provide sure thing we offer a range of
+AI driven services including one AI
+voice agents these optimize customer
+engagement and automate business
+operations two AI chat Bots intelligent
+chat Bots that provide instant responses
+and automate routine interactions three
+custom coded AI apps tailored AI
+applications for your specific business
+needs four AI okay marketing automation
+that sounds good okay so yeah I can I'm
+ready to book a call
+now great let's get you set up can I
+have your first name phone number
+including country code an email address
+I'll send you a calend link to book a
+time that works for you yeah that sounds
+great okay so my first name is Rob and
+my phone number is + 1 1 2 3 4 5 6 7 8
+and my email is hello flip b.co and that
+is flip bites which is starting with an
+F uh f l i p b YT s.co did he get all
+that got it Rob so to confirm your phone
+number is +12
+345678 your email is hello at flip.
+compan is that correct it's not compan
+it Isco so it'll be f as in Frank
+LBT s.co and it's hello flip bites. got
+it so your email is hello flip bites.
+that's f as in Frank L IB YT s.co
+is that correct yeah that is correct
+perfect I'll send you the cly link so
+you can book a time that works for you
+keep an eye on your inbox if you have
+any more questions just let me
+know sure that sounds great all right
+awesome so I've received an email and uh
+let me just open this right now and it's
+right here uh for Rob with the canly
+link so if you click on this link you
+directly go on the meeting uh you know
+you can easily book a meeting with me uh
+for flip bites so this is exactly what
+was intended and if you go to the end of
+call report that is the Google sheet you
+can see the summary of the call so it's
+right here just buy a Rob the number is
+1 2 3 4 5 6 7 8 and it summarized
+everything so it says Rob called flip BS
+ai ai agency seeking a a solution oh
+sorry not a voice but a voice solution
+and the call concluded with air
+confirming drops contact information and
+promising to sent a cand lead link which
+it did and you have all the other
+information as well so you can see the
+transcript here as well of the call you
+have a link and you can click on this
+thing and uh you can actually hear the
+the actual call itself and uh okay and
+this is the status which is resolved
+which is true because the call actually
+happened was not a fail and then of
+course the email which is hello flip
+b.co so it captures all those things and
+this is what we will be actually seeing
+in this video how to uh build a system
+which sends an email out and then of
+course has an end of call report as well
+okay so let's see how to do that
+and just like that the air answer all
+the questions send out a canly link
+using email and summarized all the call
+details in the Google sheet so whether
+you're running an agency a restaurant
+real estate business or working as a
+lawyer doctor dentist or any other
+profession AI voice agents can function
+as a virtual receptionist they can
+handle calls inform callers about your
+product or Services book appointments
+take orders and much more the
+possibilities for automation are endless
+helping you streamline your workflow
+boost your productivity and save you a
+lot of money in the process also I've
+been building AI voice agents for my
+clients for a few months now and I've
+explored W's many features so in this
+video in addition to building the
+receptionist I also want to go over all
+the important Wy settings and explain
+when and how to use them essentially I
+want this video to serve as a reference
+guide for anyone looking to build an AI
+voice app showing you how to maximize
+the potential of Wy okay if you're
+watching my video for the first time and
+don't know who I am my name is sandep
+kesta I have over two decades of
+experience in Building Technology
+different systems and have worked with
+multiple Fortune 500 companies I also
+hold double master's degrees from Top us
+universities now I run my a agency
+called flip bite where we help
+businesses with automations using AI to
+help streamline their workflow uh get
+them more clients boost their
+productivity and save them money all
+right here are the topics we'll be
+covering in this video first we'll start
+with a brief overview on what is voice
+Ai and how it works next we'll go over
+the wppi dashboard and I'll provide an
+OV of the platform then we will create
+an assistant and we'll go through every
+setting in each tab including choosing a
+model
+transcriber voice functions advanced
+settings and call analysis next is the
+phoneone number setup and I'll show you
+how to add a phone number using
+twio after that is the files tab also
+known as the knowledge base and I'll
+show you how to add files to create a
+knowledge base from scratch and then use
+it in the system we are creating the
+tools section is the key section that
+lets W take actions such as adding
+client's detail to CRM sending emails or
+sending a candly link and so on next we
+will briefly go over blocks and squads
+and I'll give you a brief explanation of
+what they are and how to use them after
+that we will see the voice library and
+how to get different voices for your
+project including creating and importing
+your own voice and lastly I'll show you
+logs where you can see all the call
+details including transcriptions
+summaries Etc so there you go that's the
+plan also at the end of each section
+we'll apply what we have learned to
+build our AI receptionist this way
+you'll not only understand the settings
+but also know how to use them
+practically this will be a comprehensive
+step-by-step video for building a basic
+AI inbound call agent or an AI
+receptionist which should suffice for
+70% of the business cases however if
+your requirements are more advanced I
+suggest joining our flip bites AI
+Community where you'll meet other voice
+a enthusiasts who can help you or you
+can book a free Discovery call with my
+agency flip bite where we can discuss
+your project I'll leave the link to join
+the community or to book a call with my
+jensy in the description for now now
+close all your tabs grab a cup of coffee
+or your favorite drink and let's get
+started don't forget to add this video
+to your favorites so you can easily come
+back to it later for reference as always
+all the templates links documents prompt
+Etc which I use in this video will be
+available on the resource Hub also this
+is a long video so my suggestion is that
+if there's a part you want me to explain
+or a topic you want me to cover in the
+future videos pause this video and write
+down your comments in the section below
+so you don't forget and miss it okay
+let's go to Step One what is voice AI
+well voice AI refers to a system that is
+designed to interact with humans using
+spoken language you've probably already
+encountered it in everyday life uh think
+about Voice air systems like Siri Alexa
+or even automated customer service
+systems these systems use ACC
+combination Technologies speech to text
+to understand what we say and natural
+language processing to interpret that
+information and then back to text to
+speech to respond back to the user next
+how does voice air work so let's break
+down how this all works in the voice
+orchestration model when you talk to a
+voice assistant your spoken words are
+first turned into text using something
+called a speech to text engine this
+engine might be powered by services like
+deep gram whisper or some other service
+then this text is processed by AI models
+such as open AI or anthropic or some
+other large language model which
+interprets the meaning and context of
+your words after that the AI process is
+what you have said and it generates a
+response this response is then sent back
+as text which is then again converted
+into speech by a text to speech engine
+uh something like a 11 Labs or a play HD
+the key challenge has always been making
+these steps happen fast enough to feel
+like a natural
+conversation okay now let's go to the W
+voice a platform we start with the
+dashboard which provides a breakdown and
+Analysis of your calls it gives you a
+quick snapshot of how calls are
+performing within your organization you
+can view key metrics such as total call
+minutes number of calls total spent
+average calls per sorry average cost per
+call reason call ended and average call
+duration by the assistant this ovie
+helps you monitor call activity and
+performance at a
+glance okay now let me create an
+assistant so that I can walk you through
+all the assistant settings as well as
+configure it as we go along to create an
+assistant click on create a assistant
+button you can choose a predefined
+template or you can go with a blank
+template I will choose a blank template
+so that I can explain all the settings
+for the assistant name since I'm
+creating it for my agency sorry my AI
+agency I will call it flip bites AI
+agent now our AI assistant is created
+okay the first tab is the model this
+section lets you set up the model for
+your assistant first message this is the
+initial message the assistant will say
+when someone calls you can either write
+the message or provide a URL to an audio
+file MP3 file wave Etc it acts as a
+greeting for the caller the system
+prompt the system prompt is where you
+set the context role personality and
+instructions for your assistant this is
+the most important part because it tells
+the AI exactly what you expect from it
+creating clear and specific prompt is
+crucial for getting the right output
+from the model I can make a detailed
+video on prompt engineering for voice AI
+systems if you're interested just leave
+a comment below if there's enough
+interest I'll break it down and explain
+how to craft a perfect prompt okay next
+is provider and model here you can
+choose the language model provider such
+as open AI enthropy or Gro the model you
+choose will depend on the provider for
+our flip a agency example we'll use open
+a GPD 4 which I found to work best so
+far okay knowledge base in this section
+you can select the knowledge base you
+want to use we haven't set up one yet so
+we'll come back to this part later after
+creating the knowledge base temperature
+this setting controls how creative or
+predictable the assistants response are
+a higher temperature results in more
+creative responses while a lower
+temperature which is close to zero makes
+the output more focused and predictable
+if you want the system to strictly
+answer word for word uh from the
+knowledge base set the temperature to
+zero personally I prefer keeping it
+around3 to4 which allows the assistant
+to reference the knowledge base but
+still add a bit of creative flare keep
+in mind the higher the temperature the
+more likely the assistant will generate
+off topic or hallucinated responses okay
+Max tokens this setting limits the
+number of tokens or words the assistant
+can generate in each conversation for
+voice AI it is best to keep responses
+short and concise so I recommend setting
+it around 250 to 300 tokens any higher
+and the assistant might generate overly
+lendy responses detect emotion now
+enable this feature to detect the user's
+emotion like anger or joy and add that
+as an extra context for the assistant to
+improve its
+responses okay now let's configure the
+flip bites AI agent for the first
+message we will simply say hi there
+thanks for calling flip by geny we
+specialize in AI automation to boost
+your business how can assist you today
+next is the provider and the model so
+our agent will use the provider as open
+Ai and the model as GPD 40 because in my
+experience it has worked best but feel
+free to play around with other models
+for your project okay for the knowledge
+base um once I create it I will attach
+it to the assistant uh for temperature I
+will keep it at Point uh 4 to have the
+right balance of the AI Crea flare and
+uh I will keep Max tokens as 300 so the
+answers are short and crisp and I'll
+keep the delete emotion switched off as
+I don't want it okay finally the system
+prompt I've created a system prompt for
+flip btes and I will share it with you
+in the source up however here's a brief
+overview on how to create a system
+prompt the main thing is that you need
+to tell the AI who it is and what it
+needs to do so for flip bites first I
+have to I have specified that it is uh
+it's an AI voice agent second you need
+to give instructions on what it should
+do so in this case it should answer all
+the questions and then ask the users U
+its name uh you sorry users name email
+and phone number if they are interested
+to schedule a free Discovery call third
+if there are any function calls and we
+will cover that shortly you need to
+specify it here in the correct order so
+that the AI can take the necessary
+action and fourth is Give an example
+script of the conversation this really
+helps the AI so as I mentioned earlier
+writing a system prompt is a detailed
+process and I would be happy to create a
+video dedicated for creating great
+system prompts okay so if you want that
+please pause this video and and leave a
+comment below okay the next section is
+transcriber so the transcriber is a
+speech to text engine and converts audio
+into text so that we can send the
+questions to the AI there are various
+providers you can use to handle this
+okay so like you have deep gram you have
+open AI you have
+tasbe so after choosing a provider you
+need to select a model offered by that
+provider uh such as you have NOA 2 for
+deepgram uh however if you choose a
+provider as Tas cribe the only available
+model is whisper so the main purpose of
+this section which is transcriber is to
+turn spoken speech into text to give to
+the AI all right so for our sorry for
+our agent I will use the provider as
+deep gram the language as English and
+the model as NOA 2 all right the next
+section is the voice section this part
+is about converting the Air's response
+from text to speech so that the user can
+hear it there are many voice providers
+like Cartia and 11 labs and you can
+choose the voice that works best for you
+providers like 11 Labs even let you
+upload your own voice you can record
+your voice on their platform upload it
+through the API to Wy and use your voice
+in your AI system okay so if you're
+interested I can make a video showing uh
+showing you how to do this just let me
+know in the comments below okay so when
+choosing a voice be sure to keep the
+latency which is the delay as low as
+possible for a smooth conversation the
+higher the latency the longer the AI
+assistant takes to respond okay
+so uh okay so first pick the
+provider and the voice you want to
+use so in the additional settings you
+can configure the background sound you
+can also decide if you want background
+sounds like the noise of a busy office
+to give you the caller sorry to give the
+callor a sense of an active environment
+personally I'm not a big fan of it but
+by default phone calls have an office
+background while web calls have it
+turned off and you can change that from
+the drop- down input minimum characters
+now this sets the minimum number of
+characters sent to the voice provider it
+helps decide the size of the text Chunk
+for generating The Voice by default it
+is 10 okay punctuation boundaries these
+are the punctuations that are considered
+valid D limiters this helps decide the
+chunks that are sent to the voice
+provider for voice generation as the llm
+tokens are streaming in even though I've
+not used them the common punctuations
+are commas and pipes filler injection
+enabl this decides if uh filter sorry
+fillers like um and O uh are added to
+make the speech sound more natural like
+in nor uh normal conversation you know
+people generally use arms and rs so if
+you want that a assistant to use these
+filler words as well you can switch on
+the setting uh and it will exactly do
+that well this is uh off by default back
+channeling enabled this B the bot can
+say things like M or yeah while
+listening to the user to make the
+conversation sound more natural this is
+again uh off by
+default and the last is background d d
+ionizing enabled this setting filters
+out the background noise while the user
+is speaking this is again off by default
+okay for the flip bites AI assistant
+I'll select the provider as aure and the
+voice as Andrew okay the rest of the
+settings I'll keep uh default so default
+background sounds and nothing enabled
+but feel free to play around with these
+to get the perfect AI Voice
+output all right next up is function
+call
+now let's talk about function calling
+this is one of the most important parts
+of the system because it connects wppi
+to the outside world with function
+calling you can do things like send
+emails update CRM or perform any action
+you need all while the call isn't
+progress or when the call ends if you
+give multiple instructions in the system
+prompt the AI will perform the first
+action then the second third and so on
+for our flipy agency example we can have
+the assistant U you know ask for user's
+name name phone number email and then
+send them uh an email with the candal
+link also we will configure the end of
+call report where the AI will summarize
+the full conversation and output that
+into the Google sheet so if you want to
+make the system more advanced you could
+also do things like uh you can check if
+the caller is an existing customer and
+then do a certain action uh second you
+can actually do something like pull the
+customer's data from a CRM and then
+personalize the whole conversation
+according to them or third you could
+have separate workflows for new or
+existing users so the possibilities are
+endless and can be tailored to your
+business needs I won't cover this more
+advanced setup in this video but if
+you'd like a tutorial on handling both
+new and existing customers using vapy
+leave a comment below you uh could also
+schedule a free Discovery call with my
+agency to discuss your project okay next
+is tools so tools allow your voice Bots
+to perform specific actions uh sorry
+task during a call you can add tools
+from tools library to connect your Bots
+with a workflow for platform like
+make.com or go high level you can also
+create custom tools using your own
+backend okay predefined
+functions enable end call function allow
+the assistant to end the call on its own
+you know so best for gbd4 or larger
+models and then you have dial keypad
+which lets the assistant dial numbers on
+the keypad it is off by
+default after that is your forwarding
+phone number so W's call forwarding
+functionality allows you to redirect
+calls to a different phone number this
+is the number the assistant will use to
+transfer the call and this only applies
+to phone calls not web calls so this is
+something which you need to understand
+okay and end of call phrases Now by
+default the wapy assistant doesn't end
+call on its own however you can set up
+uh you know end of call phrases like
+goodbye or talk to you soon to signal
+that the assistant should disconnect you
+can add multiple and of called phrases
+here separate by commas and whenever the
+user says any of these words or phrases
+the bot will end the call finally
+there's custom functions custom
+functions operate similar to tools but
+follow an older format based on the a uh
+open AI specifications however there's
+no need to use custom functions since
+you'll be utilizing tools instead so
+it's basically one of the same thing and
+we will be using tools okay
+next is the advanced settings okay
+privacy hiaa compliance Hippa uh which
+is health insurance portability and
+accountability Act is a US law that
+ensures that privacy and security of
+medical information any organization uh
+handling protected health information
+you know which is called Phi must follow
+Hippa guidelines to keep patients data
+safe so when this setting is enabled no
+logs recording or transcriptions will be
+stored if you are developing an AI voice
+solution in USA for medical
+practitioners you definitely need to
+activate this and get more information
+on Hippa so you are compliant audio
+recording this setting will record the
+conversation with the assistant video
+recording so turns video recording on or
+off during a web call this records your
+users video okay now let's configure
+these setting for our flip bites
+assistant since flip bites is an agency
+I don't have to worry about the Hippa
+compliance so that is off I will switch
+on the audio recording because I want to
+record the conversation with the
+assistant and the video recording uh
+stays off okay next is the start
+speaking plan now this plan controls
+when the assistant should start talking
+okay wait time before speaking this
+setting sets how long the assistant
+Waits after the customer finishes
+talking uh the default is4 seconds but
+you can adjust it if the assistant speak
+too quickly or waits too
+long all right smart endp pointing this
+detects when the customer has really
+finished speaking even if they pause
+mids sentence it's off by default but
+you can be turned on uh if needed
+transcription based detection you
+customize how the assistant detects that
+the customer has finished talking based
+on the content of their speech for more
+precise control so you can have on
+punctuation seconds uh which is the
+minimum seconds to wait after
+transcription ending with punctuation uh
+on no punctuation seconds which is the
+minimum seconds to wait after
+transcription ending without punctuation
+and the last is on number seconds which
+is the minimum seconds to wait after
+transcription ending with a number so
+now for a flip bites agency I'll go with
+the default values which is 0.4 seconds
+uh for weit seconds smart end pointing
+off and
+0.1 for on punctuation seconds 1.5 for
+on uh no punctuation seconds and 0.5 for
+on number seconds all right so the next
+is the stop speaking
+plan first is the number of words now in
+this setting you can set how many words
+the customer needs to say before the
+assistant stops talking you can set it
+to zero for immediate reaction or
+increase it to avoid interruptions
+during short responses like
+okay voice seconds this is the voice AC
+ity detection you can set how long the
+customer must talk before the assistant
+stops the default is 2 seconds but you
+can adjust this to avoid false
+triggers and uh back off seconds now
+that controls how long the assistant
+waits to start talking again after being
+interrupted the default is 1 second but
+you can adjust it depending on how fast
+you want the system to respond for our
+geny it will be zero for number of
+words2 for voice seconds and one for or
+back off
+seconds okay call timeout settings
+silence timeout this sets uh how long
+the assistant Waits before ending a call
+due to silence and the next is maximum
+duration this sets the maximum length of
+a call U Can last so for flip bites what
+are uh what we'll do is it will be 30
+seconds for silence time out and 1,800
+seconds which is approximately half an
+hour for maximum duration
+okay messaging so these are settings for
+messages sent to and from the assistant
+okay the first is server URL now this is
+a URL W uses to send and receive
+messages via HTTP post requests so it
+helps W retrieve context call functions
+and generate call reports server URLs
+allow your app to uh you know receive
+status updates about the call get
+transcript updates trigger function
+calls when the assistant needs to
+perform actions receive assistant
+request for dynamic configuration get an
+end of call report receive notification
+if the assistant stops responding and
+for more complex setups server URS can
+also provide real-time conversation data
+to your back
+end all right voicemail messages this is
+the message that the assistant will say
+if the call goes to the
+voicemail end call message and this is
+the message the system will say when the
+call ends
+idle
+messages messages that the assistant
+will say if the user hasn't responded
+you can select one or more from the
+drop-down so you
+have Max idle message this sets the
+maximum number of times the system
+repeat idle messages during the call and
+idle timeout set the number in seconds
+before an idle message is spoke all
+right for flip bites I'm not using the
+server URL as of now but we will be
+using it later in the video so I will
+leave it empty for now okay for client
+and server messages I will go with the
+default values for the voicemail message
+uh let's add hey this is sandip from
+flip bites AI please call back when
+you're available and for the end of call
+message let me add thanks for reaching
+out to flip bites AI it was great
+assisting you have a wonderful day for
+the max idle messages we will leave the
+default
+values okay and finally we have the
+analysis tab so the call analysis
+feature helps you summarize and evaluate
+calls you know offering useful insights
+into how effective the calls were we
+will be using summary uh success
+evaluation and structured data for our
+flip by agent so we can get the end of
+call report and we will write that into
+Google sheet to sort of create a call
+dashboard this will help us know uh how
+the AI agent is handling the calls and
+how to prove them okay let's have a
+closer look summary this is the prompt
+uh which will be used to create a short
+summary of The call so uh here's the
+prompt you are expert notaker summarize
+the given transcript of a call summarize
+the call in two to three sentences if
+applicable the output will be stored in
+call. analysis. summary and you can also
+find it in the call logs page let me
+show you that uh where you can find that
+so now if you go to logs and then you
+click on the
+call you can see all the details of that
+call including logs trans scripts and
+messages Etc however in our example we
+will extract this data and add that to
+the Google sheet okay the next is
+Success evaluation now this evaluates
+whether a call was successful or not you
+can use a rubric a success valuation
+prompt or both now if you if both are
+used they are combined into a set of
+instructions so now we will use this
+success evaluation prompt uh you an
+expert call evaluator you will be given
+a transcript of a call and the system
+prompt of the AI participant determine
+if the call was successful based on the
+objectives inferred from the system
+prompt all
+right success evaluation rubric the
+rubric defines how the success of a call
+is measured these are the sorry these
+are the available rubrics number one is
+numerical scale which rates are from 1
+to 10 descriptive scale rates as
+excellent coulde fair or poor checklist
+a list of criteria with their stat is
+Matrix a grid evaluating multiple
+criteria at different levels percentage
+scale rates from 0 to 100% like scale
+rates from strongly agree to strongly
+disagree automatic rubric breaks down
+evaluation into different criteria each
+with its own score pass fail it's true
+or sorry it's simple true or false to
+indicate if the call
+passed okay structured data the
+structured data prompt extracts specific
+information from the call and stores it
+into call. analysis. structur Data now
+this is great when you want to extract
+user data such as users name his phone
+number email or any other data that the
+user gives during the call okay to
+extract the data you first need to add a
+property such as a name and then add a
+description then in the prompt you can
+add uh something in the prompt you can
+say extract the name that the caller
+gave us in the name property field what
+this will do is this will extract the
+user's name and store it and you can
+then extract it later you need to do the
+same thing that is you need to create a
+schema and write a prompt for every
+property you want so if you want an
+email or if you want to extract their
+phone number you need to add a property
+for phone number and then add a prompt
+for that and then same thing for email
+if you want the email you need to First
+create a property for that and then
+mention that in the prompt okay that
+wraps up the AI assistant configuration
+now our AI assistant more or less done
+let's move to the next section which is
+getting a phone number I've already
+covered this topic in another video so
+I'm going to add that video snippet here
+and it will walk you through how to buy
+a phone number in twio and then import
+that into the W platform all right let's
+see how that is done uh so there are two
+options basically one is that you can
+buy a phone number from um sorry from uh
+wppi so from W you can actually only buy
+phone numbers which are from US and
+Canada all right and there are two other
+options the the second option is that
+you if you have a twio account and twio
+again is I'll just show it to you this
+is twio for communication it has amazing
+apis and everything for communication
+but it also has a feature wherein you
+can actually buy a number and it you the
+numbers available for US Canada
+Australia a lot of other countries as
+well so if you are outside US and Canada
+then you can actually probably look at
+uh twio or wage so I don't I don't have
+a w account I don't have wage basically
+but I do have a twio account okay so I'm
+going to show you how to buy a number in
+twio and then connect it to uh W's AI
+assistant so let's go to twilio and this
+is twio I'm going to go I have an
+account so basically I'm going to log in
+but if you don't uh create an account
+very it's pretty straightforward once
+you create an account you'll come to the
+Account dashboard right here okay and
+once you and this is where you will
+actually so in order to buy a number uh
+you'll go to manage and within manage
+there's something called buyer number
+okay and uh again for the purpose of
+this video I'm going to buy a US number
+only and you can select the number you
+want uh pretty much like you know if you
+know the area code let's say if you want
+New York you can do 212 646 depending on
+the availability you will get a choice
+if in case they are not available then
+of course you will not get that area
+code all right perfect so I'm going to
+buy one of these numbers so I'm just
+going to go ahead and buy and it's going
+to ask you this is the number which
+you're buying are you okay with it so
+I'm just doing it for the demo right now
+so I'm just going to show you how to do
+that 1 14 this number is
+done I'm going to say byy that's
+it and that's like that have youve
+purchased this particular number and now
+it should show in your active
+numbers okay and this is what I bought
+right here you can see this okay so now
+I'm going to pick up this number okay
+and let's go to w sorry let's go to uh
+Wy and then out here in twio just say
+the phone number just paste the number
+out here This Is Us number you need your
+T accounts SSID and Au token so for that
+I'm going to go to the Account
+dashboard okay so I'm going to copy
+account SS
+ID and then I'm going to copy Au
+token and I can
+say
+uh
+vapi SFO San Francisco okay
+bfo and then say import from too all
+right so let's
+import and there you go so you see the
+number right here that's it okay so vapy
+SFO and now what I'm going to do is I'm
+going to connect it with an
+assistant next let's go to the knowledge
+base okay a knowledge base is a
+collection of files that an AI assistant
+can access to provide more detailed and
+accurate responses during conversations
+so you can upload documents like PDF or
+images example jpegs and your assistant
+will use them for extra content sorry
+context so why use a knowledge base well
+integrating a knowledge base with your
+voice AI assistant offers several
+advantages the first one is it improves
+accuracy and it helps your assistant
+provide upto-date and precise
+information second is enhanced
+capabilities it allows your assistant to
+answer more complex questions and give
+detailed responses and the third is
+customizations so you can ta uh sorry
+you can tailor the assistant's responses
+to specific topics or areas by using
+custom documents now how to create a
+knowledge base it is very simple to
+create a knowledge base in W so the
+first step is to upload the documents
+now go to files and upload your custom
+files in formats like markdown PDF uh
+plain text Microsoft Word and so on so
+forth I only have one PDF file uh for
+FAQ for my uh knowledge base but you can
+add multiple files as well all right
+once you do that your knowledge base is
+created now the next step is which is
+step two is to connect your knowledge
+base to your assistant okay so that is
+uh to your W assistant and step three is
+to configure your assistant so what
+you'll do is once it's connected you
+adjust the assistant uh system prompt to
+make sure that it uses the knowledge
+base when responding to user
+queries okay the best practices for
+creating an effective knowledge base is
+is one organize your documents so
+arrange them by topic or category so
+that the assistant can find the right
+information quickly number two is use
+Clear language so keep your documents
+clear and concise for better
+understanding and response accuracy and
+the third is that keep your documents
+updated regularly updating your files to
+ensure the assistant gives the most
+current and accurate information another
+thing is that you don't have to go
+through W's uh knowledge base okay so if
+you have you can also create a custom
+knowledge base so if you prefer not to
+use W's inbuilt knowledge base you can
+set up your own this can be done
+directly in a platform this sorry this
+cannot be done directly in a platform it
+and it must be handled via code you can
+create a custom knowledge Base by
+connecting your own server which will
+then handle all the knowledge requests
+okay next let's briefly talk about
+blocks and squads now blocks and squads
+are Advanced topics and not a part of
+this video however I just wanted to give
+you a brief overview so blocks are the
+building unit in a conversational
+workflow that help design and manage
+interactions so each step in a workflow
+contains one block which defines the
+action at that stage of the conversation
+okay blocks are currently in beta and if
+you want to know more about it and want
+me to do a video on how blocks work and
+how to use them let me know in the
+comments next is Squad squads are a
+workflow tool that lets you connect
+multiple assistant into a single
+workflow each assistant can be fully
+configured to use existing tools prompts
+and set settings or you can customize
+them with unique overr rights squads are
+idal for managing complex workflows and
+tasks okay so instead of placing all the
+functionality in one assistant squads
+let you break down larger more complex
+workflows into smaller specialized
+assistants each assistant in a squad
+handles a specific part of the
+conversation for example one assistant
+might qualify a lead and if they are
+qualified another assistant might take
+that over and book an appointment and
+yet another can write down all the
+details of that lead into a RM and so on
+an a driven call center would be a good
+example of using squads if you want to
+know more about squads or want me to do
+a video on how to use sads with multiple
+assistants pause this video and let me
+know in the comments below okay next I
+want to briefly touch on The Voice
+library now in the voice Library you can
+import voices from 11 Labs playhd or
+many other providers after you import a
+voice you can use that voice in your
+agent now to import voices you need to
+enter your provider credentials and once
+you do that you can import all the
+voices from that provider whether it's
+11 Labs playhd or others directly into
+your W platform so in 11 Labs you can
+also clone your own voice and then
+import it into wpp to use for your
+agents now this is especially useful if
+you want to use your own voice for
+answering questions or booking
+appointments if you like me to make a
+video on how to clone your voice in 11
+labs and then import it into to and
+sorry and use that in W as well let me
+know in the comments just a quick note I
+hope you're finding this video helpful
+and if you are please give it a thumbs
+up and drop a comment below making these
+videos takes a lot of time and effort so
+your support really helps the channel
+and encourages me to keep making more
+cont content sorry like this for you
+also I firmly believe that air
+automation can be transformative for
+many businesses so on this channel my
+goal is to create many more videos where
+I show you step by step how to use AI to
+automate business workflows and
+processes to boost your productivity so
+if you are interested in this kind of
+content hit the Subscribe button below
+so you never miss out when I post a new
+video if you like to work with us you
+can schedule a 30-minute free Discovery
+call with me I'll leave all the links in
+the description okay let's get back to
+our
+video all right so the final section is
+the tool section and uh you know we have
+already covered the assistance phone
+number files blocks squads voice library
+and everything okay so the final section
+is tool section and uh uh so I've
+already created a tool out here called
+email can lead link and what this tool
+does is essentially it sends an email
+out okay and uh but before I actually go
+into how to create a tool and explain
+you all the stuff let me just take you
+to assistance right now and show you
+exactly how tools and where tools are
+used so when you create a tool a tool is
+nothing but uh it is basically to do a
+task uh outside of Wy environment so
+when you want to send an email out via
+Gmail through W you will use a tool
+which actually connects via an an agent
+which is something like a make or a
+zapia and uh then it sends an email out
+or if in case you want to write
+something to a CRM okay and they can be
+endless tasks basically so for that you
+will use tools now once you create a
+tool uh you will come here in this
+section functions and then you connect
+it out here so let me just go to flip by
+agent and if you see functions right
+here you can see you can see all the
+tools right here and then you can select
+the ones which are pertaining to your
+assistant all right and uh in this you
+have email candy link and the next part
+is in the model in the prompt so in the
+prompt as you can see we have when a
+person when a user calls the AI agent
+the AI agent will first greet the user
+uh that's the instruction second thing
+is it will actually answer all the
+questions what the user poses and the
+last is that if the user is interested
+in actually scheduling a call then what
+the AI agent is going to do is is going
+to ask their first name phone number
+including code and email address okay
+once it gets all this uh all this
+information it will confirm that and
+then it will do a function call now this
+is a function call if you can see send
+Cy link this is the same this needs to
+be the same as your tool name uh as in
+the function call out here and the
+function call out here okay all of those
+places all right so now we can go back
+to Tool because we have some context now
+all right so in order to create a tool
+it's pretty straightforward just go and
+cl click on new tool you you have a
+choice of Provider you can create a
+custom tool you can create make or you
+can create go high level now go high
+level is a CRM it's integrated uh but
+for our video we'll use make now just to
+give you some context what is make in
+case you don't know that so now make is
+a connecting uh agent sort of like when
+you you have a v environment okay this
+is a voice a platform and you want to
+send an email via Gmail which is a
+totally different application now how do
+you how do they talk to each other and
+that is what we makeup comes in you talk
+to each other while make okay so make
+essentially is uh is an application
+which connects different applications so
+whether you want to uh you know let's
+say you want to take some information
+from wppi and you want to add it to a
+CRM which is HubSpot so then again you
+can use make or you want to write
+something to Google sheet you can again
+use make so the make if you go to the
+platform right now let me just uh take
+you right there it's called
+make.com okay and that's what it does it
+connects app app s so if you can see
+right here is the platform you have apps
+and services so they have got like a lot
+of apps so you can connect different uh
+so helpspot CRM LinkedIn you want to
+write something to CRM or if something
+happens in LinkedIn let's say somebody
+uh creates a post in LinkedIn and you
+want it automatically to email somebody
+else you can do all those things you can
+basically connect different apps that's
+what make does okay connect anything so
+anyways coming back to um W so this is
+what we'll do and uh in order to create
+a tool we need a server URL now what is
+a server URL now let's go to make and
+within make once you actually create an
+account you will come to the section and
+within scenarios okay so you can see all
+the scenarios right here I'm just going
+to open the one which I have which is
+Fitness uh sorry flip by agent and email
+Cy link okay this is the one and you can
+create a new scenario uh also but I'm
+I've already created this one so I'm
+just going to explain this okay so the
+first thing is the web hook now what is
+a web hook a web Hook is like a program
+which is uh looking for information it's
+polling information okay so this is the
+URL now what you do is the first thing
+you do is you actually go here and you
+add a web hook and once you click on
+this button it's going to add this and
+once it comes here then you can add you
+can click on this thing and then you can
+name uh your web hook anything in our
+case it is you know I'm creating an uh
+I'm creating this for flip btes in web
+hook I'm saying byes email agent sorry
+uh flip byes agent and email cly link so
+this is exactly what it is out here and
+once you do that it will create a web
+hook and it'll add this uh you know this
+URL so you need to copy this URL and
+you'll go out here and you'll paste this
+okay and then you say save and next now
+when you do this what happens is that
+every time this function is called so
+let's say during a call the user says
+hey uh this is my first name this is my
+email address what is going to happen is
+the moment you say that within the
+function call as you saw in the prompt
+it is going to call this uh function
+okay so because this because of this URL
+it is going to send information out here
+saying that hey uh this is the
+information and then this is going to
+capture this information so that is what
+a web Hook is it actually captures
+information and then it is going to pass
+this to the gmail which has uh you know
+all the details like uh it has thanks
+for calling so this is email body this
+is uh the email address and all the
+things so I'm going to show this to you
+exactly how it works but just to give
+you an overview this is the web hook and
+it is connected to Gmail now how do you
+connect it to gmail you connect it from
+here so you can actually just go out
+here and you can connect it to Gmail
+Google Sheets or whatever you want I
+mean there there are like 2,000 apps out
+here or probably more all right so once
+you do this this is connected now every
+time uh you know so let me just go here
+I've already created this so I'm just
+going to okay so let's go to the email
+candly link okay so once you create the
+function you'll come here so let's go to
+integration and if you can see in the
+integration this is the server URL this
+is exactly the same URL which is this
+one okay all right
+so I'm going to save this all right so
+once you create this after that you need
+to add properties so you will say tool
+name and you can name it any way you
+want I generally use the nomenclature
+uncore email so that at least I know
+this is a user defined rather than a
+system find uh tool name but yeah you
+can actually use anything whatever you
+want the tool description is extremely
+important because it tells wppi what is
+this function doing like you know so in
+this case this function will get the
+user's first name phone number and email
+address and then send them an email from
+flip bites with the Catal link so this
+is what it's telling W that this is
+exactly what the function does it's
+supposed to capture these three things
+so where is it going to capture so that
+is when you actually write properties
+okay so in properties I've put in the
+name email phone number and you can
+write more you can actually add many
+more properties whatever your use case
+is so if you want to say that okay
+whether it wrote to a CRM or uh you want
+to say something else basically capture
+their WhatsApp number or uh you know
+whatever it is anything else so you can
+write those properties and then you can
+Define the kind of property it is like
+in this case it is a string uh but if
+it's a phone number it's a number and
+email is again a string name is a string
+and so on and so forth a string is
+nothing but but it's text all right and
+if it's a phone number then it's number
+and then of course you have to write the
+description as well so remember the
+description is very important it
+basically tells Wy what this property is
+what is this field so it says first name
+of the user so email ID of the user so
+all of these things this is what is
+telling W that these are the properties
+and this is the function which has these
+properties okay all right so now let's
+test this so in order to test this what
+I'm going to do is whether it's working
+or not
+I'm going to start this so now I'm
+running this okay now let's go back to
+and uh this is our function call so I'm
+going to go to
+assistant right
+here and within the call itself it's
+supposed to actually invoke this one it
+so what is going to happen is when the
+call is going on it is going to ask me
+all this information and when it
+confirms all this information the Second
+Step it is going to call the function
+right and that is when you'll get all
+the information right here so let's test
+this okay so I'm just going to run this
+right
+now hi there thanks for calling flip
+bites AI agency we specialize in AI
+automation to boost your business how
+can I assist you today hey John I'm
+interested in actually getting a an AI
+chat bot for my
+business awesome you're in the right
+place our AI chat Bots are designed to
+elevate customer support and automate
+routine interactions would you like to
+set up a free consultation to discuss
+this further yeah sure why
+not great let's get started can I get
+your first name phone number including
+country code an email address I'll send
+you a link to book a consultation at
+your convenience sounds good so my name
+is John and my phone number is +
+one12 3 4 5 6 78 and my email is hello
+at flip bites. that is h e l l f
+LBT
+s.co did you get that got
+it all right let's confirm everything
+name John phone number +12
+345678 email hello flip bites. company
+is that all correct uh no my email is
+flip b.co that Isco
+got it let me correct that so your email
+is hello flip b.co that's h l l f
+LBT s.co is that right that's
+right perfect I'll send you a link to
+book your consultation I'll get that
+link over to you in a jiffy one
+moment all said John goodbye you're
+wel goodbye have a a great day and feel
+free to reach out if okay so that's it
+basically so you saw that this is
+working so when actually it calls a
+function okay and then as you can see
+right here uh we've already received the
+email as you saw if you go here and I
+can see right here okay and this is the
+email right here with the call with the
+with the link and so if you click the
+link it directly takes you to okay so
+this is the link all
+right okay uh so this is a function
+called basically so this is like just
+one example in our for example we are
+just using this to send an email out but
+you can do multiple things you can
+actually as I said add it to a CRM sends
+a WhatsApp message send SMS do whatever
+you want okay and there are 2,000 apps
+and so you can really create a pretty
+complicated or a comprehensive workflow
+all right so as you saw like once it
+runs it sends all the information right
+here so you can see all this information
+right within the message itself it has
+timestamp it has tool scal now if you go
+and keep on opening it it has all the
+details so this is the can this is the
+function this is the argument so you
+have John you have hello flip bites and
+you have the phone number as well all
+right and now this is sent to your uh
+Gmail and so in Gmail when you say
+address and the first time when you're
+doing it when you click on this you just
+need to actually go here in the tools
+and then function and arguments and then
+you have it out here basically so in
+this case you will just pick up this um
+email portion and then you just drag it
+here okay and that's it so this is the
+email address
+uh similarly you will put in the first
+name out here so that I'm saying hi John
+and the reason I'm using this P this is
+basically HTML tags if you don't use
+HTML tags what's going to happen is it's
+going to lump everything into one uh you
+know paragraph and you don't want that
+so if you want an email like this which
+comes directly like this so basically
+what you'll do is you'll just go uh go
+to chat GPT put in your email say that
+add HTML tags and then whatever output
+is just input it out here and that's it
+so so this is exactly and say it says
+that it you can use HTML tag so use that
+all right so this is pretty much it so
+this is exactly how you can create a
+function call okay all right so the last
+thing remaining which was the end of
+call report once the call finishes you
+want this end of call report to be
+updated with the call uh call summary so
+it will actually add everything it'll
+add the call summary it'll add the
+transcript what happened and so on so
+forth okay so in order to do that what
+you need to do is you need to do of
+things so now there's nothing so we have
+finished with the tools section now
+let's go back to the
+assistant and we'll go in advanc now in
+advanced you will see a function
+basically when you go down there's
+something called messaging right here
+okay and it in messaging you have a
+server URL now what is this server URL
+oh sorry this is the one Advanced I was
+in the different
+assistant all right so in this case
+basically I'm using this server URL okay
+and you need to
+specify what is it that you want now
+what you'll do is you'll go back to next
+there's another scenario which we'll use
+which is called this one so this is the
+end of call report for that you will use
+another web hook so again in order to
+use a web hook you will again go here
+you can add a webook right here okay so
+when you click on this thing I've again
+called it um flip bytes end of call
+report okay and once you do that once
+you create so in order to add that again
+as I said it's very easy just click on
+ADD and then you name it the way you
+want whatever you want the nomenclature
+you want and after that just says save
+what it's going to happen is it will
+generate this link and then you copy
+this link okay let's go back and out
+here in the server URL I'm just going to
+show this
+again all right so these are two
+different server URLs so if you see this
+is the same one okay so you will use it
+out here because again what it does is
+This Server URL tells vippy that okay
+the call is over now okay and so take
+all this data which the user given which
+which is the phone the the name the
+phone number the email and you know the
+transcript what the user spoke all that
+data basically collect that and send it
+to this particular URL okay so this is
+the existing data which is like the data
+which we just had a call about so if you
+open this you can actually see
+everything right here so this is all the
+details you have the Tim stamp it has
+type of end of call report and then it
+has got the summary John called flip
+bites AI to inquire about getting an AI
+CH chatbot for his business the AI
+representative offered so it basically
+tells the the what exactly with the
+conversation about and this is really
+really helpful especially when you would
+actually you know when you put a
+solution as an AI receptionist uh into
+your business or for your client and
+everything and then you need to know how
+many calls were there what exactly
+happened how did the AI respond so you
+can kind of tweak it as well basically
+so if you go to the AI report now you
+can see it's right here all right so
+this is exactly what happened here are
+the two three sentence summ John called
+flip by AI agency to inquire about about
+getting an air chatbot for his business
+the air representative offered to set up
+a free consultation and collected John's
+contact information including the name
+phone number and email address after
+confirming the details the a
+representative promised to send John a
+link to book the consultation which it
+did okay and this is the actual
+transcription so it's the whole trans
+the so the transcript uh transcript
+sorry of the phone call and uh you have
+a URL as well so basically if you click
+this it will take you to the recording
+and you can actually listen to the
+recording as well all right so yeah so
+this is pretty much what it does now
+this is the end of call report okay so
+once you're here okay so then this is
+this is this has got all that
+information now when we configuring this
+why do we need to do this all right so
+as you saw when you get the information
+it sends you a lot of information okay
+so obviously you cannot put all this
+information into Google sheet you can if
+you want to but generally you don't want
+to okay so that has a lot of information
+because things which you don't need you
+have cost you have end reason you have
+end at start at I don't know I like a
+lot of things basically cost breakdown
+there's way too much data so what you
+need is you want to filter all this
+information and you want only couple of
+things to reach Google sheet so in your
+Google sheet you basically will map
+those columns all right so what you do
+is you add a Google sheet you first add
+a router basically a router the reason
+you add a router is so that you can add
+a filter now this filter what it does is
+basically all the data which is coming
+in through the web hook it it actually
+uh filters all that stuff okay and it
+only lets couple of things pass or
+whatever you specify out here so as I
+said end of call report in the message
+type now once you do that after that
+basically you have in this particular
+one so you add a Google sheet and then
+uh you know you actually go so in my
+case the Go sheet is in Shar Global air
+receptionist and of call report and
+wherever the path is basically so your
+Google sheet path you put it out here
+the sheet name you'll put it out here
+and once you do that that it will
+actually get everything okay and then
+you need to so I have not put in the
+name here I probably forgot to put the
+name here so that then probably doesn't
+have the
+name yep it doesn't have the name right
+here so that is the reason it doesn't
+have the name because I did not added
+out here so you see this is the blank
+and in the phone number also this is
+this is this is gibberish okay so oh
+sorry this is the ID I put the ID
+instead all right so you saw firsthand
+what exactly happens let me just go and
+correct that uh all right so
+this says table content header okay so
+the name so name when I click on this
+thing I
+have okay so yes it is an analysis
+structured data now if you
+remember okay let me just open this and
+show it to you structured data okay so
+why is this coming here so all of this
+thing is right here you have the name
+you have the email you have the phone
+number so let's go back to Wy okay and
+if you remember when we go to assistant
+within the assistant itself uh you know
+when you go here we had actually set up
+all of these things right so earlier in
+the video I showed you this prompt for
+summary for Success evaluation and for
+structured data and we had specified
+structured data here right so we had
+said that okay this is the name property
+add property this is the name email and
+phone number so this is different than
+the tools this is the end of call report
+okay so it can you can actually add much
+more out here basically because if you
+want capture more information you can
+add this out here as well but you know
+uh so anyways so what we we are we
+wanted to capture is I want to capture
+the name email and phone number so I
+could add that in the report and for
+that I did this so I added the
+description as well for each one of them
+and then I added a prompt as well so it
+says extract the name of the caller
+basically gave it to us uh the name in
+the name property field so what it does
+is that within the call when the call is
+going on it actually takes the name
+extracts that and puts that into the
+name column so that is the reason we
+have all that data right here okay so
+when I go here I can so now if I want
+that to be captured what I'll do is I'll
+just pick this up and I'll put it right
+here okay so now the next time when it
+runs it is it knows that okay within the
+name field I need to put data from here
+and there is an email field as well
+which I have not updated so uh what I'm
+going to do is uh let's see if I can do
+that right
+now all right so this is rece resolve
+yes and no but there is yesterday I
+added oh I added that but I did not
+refresh it so I need to refresh this
+okay so refresh
+it
+okay all right so perfect so the email
+is also right here so now I'm going to
+go back to my analysis Tab and then I'm
+going to go to structure data and then
+I'm going to pick up the email and put
+it right here okay and I want the phone
+number as well so it didn't phone number
+again it was coming as Gibb because Ive
+had put message call ID instead of the
+call phone number so that was that's the
+reason if you go here it is giving you
+that uh phone number this kind of weird
+thing right so I don't want that what I
+want is
+uhoh okay what I want is the phone
+number so I'm just going to delete this
+and then I'm going to pick up this phone
+number from here and put it out here so
+now I know basically within the and I
+say
+okay and then just remember to save and
+it's all done okay perfect okay so let's
+see let's run the system one more time
+and then let's see what happens so what
+I'm going to do now is I will switch on
+both of these agents all right so you
+can either switch them from here you can
+run once or you can just switch them on
+so once you switch them on this is like
+running you don't have to see them again
+so it will start showing it out
+here okay so you can see it out here
+flip bites this is on and so I'm just
+going to go down and see the flip bites
+agent example as well so I'm going to
+switch this on as well okay so both of
+them are switched on
+now okay great so now now this is both
+are running right now and this is also
+we've already tested this is also
+working fine okay so what I want to do
+now is that I don't want to actually
+call from the platform what it should do
+is when somebody calls on the phone to
+this number right we'll go into phone
+numbers we already have this phone
+number I've got connected this okay and
+I've bought this phone number from um
+trilo as I showed earlier in the video
+but I did not connected so let me show
+you how to connect this as well to the
+assistant so when you go down if you go
+into inbound settings inbound phone
+number number and this is assistant so
+you need to select the assistant and I
+will select Fitness Now flip by a agent
+okay so you just select that and that's
+it that's all you need to do all right
+so now the inbound phone number is
+this and it is connected to the flip b a
+agent so every time somebody calls this
+particular phone number what it's going
+to do is it is going to start this
+particular agent which is a flip bit
+agent and then as the call progresses
+everything else falls into place so let
+me just call this number and then what
+we'll do is we will actually see if this
+works or not okay so now let's try to
+give a call okay I've already connected
+the number with uh the assistant as you
+saw so now what I'm going to do is I'm
+going to actually call this Us number
+which is 646 762 and 560 just so you
+know basically this is a temporary
+number so after this uh particular call
+I am going to actually delete this but
+anyways uh so I have connected this
+number with the flipit a agent and what
+essentially should happen is that when I
+call this number the a agent should
+start responding okay so I'm just going
+to go ahead and dial this again and see
+what happens I'm putting on
+speaker hi there thanks for calling flip
+bites AI agency we specialize in AI
+automation to boost your business how
+can I assist you
+today hey I'm interested in actually um
+getting a solution for an AI voice for
+my business awesome our AI voice agents
+are designed to optimize customer
+engagement and automate business
+operations would you like to set up a
+free consultation to discuss this
+further yeah why not great can I get
+your first name phone number including
+country code an email I'll send you a
+cly link to book a time that works for
+you okay sounds good so my first name is
+Matt and my phone number is +1
+9111 45
+643 and my email is hello at flip bites.
+Co so that is h e l l o f l b YT
+s.co did you get all
+that got it so your first name is Matt
+your phone number is +1
+91114
+5643 and your email is hello flip bites.
+is that correct yeah that is correct
+perfect I'll send you a countly link
+shortly so you can book a time that
+works best for you thanks Matt keep an
+eye on your
+inbox sure I'll do that thanks a lot
+goodbye okay and now let's see we should
+get an email and there is that email and
+there should be a end of call report as
+well so I'm just going to go ahead with
+call
+report oh okay so as you can see the
+call Port is right here so you have the
+date you have the name and there was no
+name but once we rectified it now we
+have the name we have the phone number
+it has a summary Matt call Flip by a
+agency to inquire about AI voice
+solution for his business the air
+represented offered to set up a free
+consultation and so you can ask
+questions as well so everything will be
+summarized right here so it has true
+which is the status of the call and then
+it has the email as well so this is the
+end of call report it just tells you
+everything which is working perfectly
+fine and that's it you now know most of
+the settings on the w a platform and how
+to make the most out of it okay we've
+also created an a receptionist for flip
+bites but you can easily use the same
+approach to create one for your business
+or your clients if you're a business
+looking to build an air receptionist
+with more advanced features like end of
+call summaries or automatic meeting
+scheduling with interested customers Etc
+we can help you with that feel free to
+schedule a free 30 minute Discovery call
+with me and we can discuss your project
+I'll include the meeting Link in the Des
+description lastly check out this
+step-by-step video on how to create a
+voice AI appointment setter from scratch
+using wppi or watch another video that
+I'm sure you'll find very useful I can't
+wait to see you in future videos thanks
+for watching and I'll see you next time

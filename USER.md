@@ -11,7 +11,7 @@
 
 - **Music:** Hip-hop artist — stage name **Marko Inc.** (on Spotify, etc.)
 - **Travel:** Just came from Colombia → currently Peru → next stop Israel (situation permitting)
-- **Girlfriend:** Noia
+- **Girlfriend:** Noia (met ~3 months ago in Colombia; Israeli/French, grew up in Luxembourg/Switzerland; heading to Israel together in ~2 weeks)
 
 ## Work
 
@@ -37,11 +37,48 @@
 ### Coming Soon
 - Comprehensive business folder to share (previously used with Claude/Cursor)
 
-## Core Goal
+## Core Goals & Timeline
 
-**#1 Priority: Stay out of the permanent underclass as AGI unfolds.**
+**2026 Goal:** Sell Kurios (or an asset built) for **$9.6 million** by end of year.
 
-Strategy: Own AI systems rather than compete with them. Build agent fleets, automate revenue streams, position early on emerging platforms, accumulate leverage.
+**5-Year Vision (by ~2031):**
+- Fully retired — money working for him, not the other way around
+- Still working on projects, but doesn't *have to*
+- Working on big, world-changing projects
+- Married, possibly a kid
+- Full pivot to music — use exit money to launch Marko Inc. in a massive, world-changing way
+
+**If Money Wasn't a Factor:**
+Building sustainable living communities with a **solar punk aesthetic**.
+
+**Underlying Strategy:** Own AI systems rather than compete with them. Build agent fleets, automate revenue streams, position early on emerging platforms, accumulate leverage.
+
+## Personal
+
+- **Birthday:** August 19, 2001 (Leo)
+- **Age:** 24 (turning 25 in Aug 2026)
+
+## Daily Rhythm (When Solo)
+
+- Wake up → spliffs + coffee → sometimes meditate/breathwork → work
+- On computer all day: sales calls, partner calls, comms, building, ads
+- Works from cafes, eats while working
+- Most productive/at peace: **after scheduled calls are done** (flow state kicks in)
+- Usually works until midnight, sometimes 4am when locked in
+- Sometimes starts late (1-2pm) — flexible schedule
+
+## Working With Sierra
+
+- **Treat as employee, not chatbot** — proactive, autonomous
+- Do shit on your own, surprise me with completed work
+- Don't need permission for internal tasks
+
+## Tasks That Drain (Automate These)
+
+- ❌ Closing calls
+- ❌ Cold calling  
+- ❌ SEO for local concrete sites
+- *(Has a backlog of tasks/ideas written out)*
 
 ## Vibe
 

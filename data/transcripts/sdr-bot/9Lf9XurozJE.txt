@@ -1,0 +1,1632 @@
+# The Best Ai Booking For Gohighlevel 2024 - Zappychat Full Install
+# Video: https://www.youtube.com/watch?v=9Lf9XurozJE
+# Category: ghl-chatbot
+
+all right everybody we're actually so
+super excited we have Andrew Hagen who
+is like the creator of this crazy bot
+that I'm about to show you today called
+zappy chat we're going to literally do
+an install from start to finish
+throughout this entire video this is
+probably one of the most advanced spots
+I've seen over the last like two years
+and it's Advanced
+significantly but before anything else I
+definitely wanted to give Andrew like a
+little bit of a spotlight here we've
+know I've known Andrew for now I think
+going on four years Andrew I think it's
+been four years that's insane like right
+at the beginning of high level right
+when you're coming in and right when
+zappy chat was making its early kind of
+like showings but give me a little bit
+of your background Andrew just so then
+we know who we're talking to and then a
+little bit of zappy chat history yeah
+for sure so before I made it into the
+high LEL space I was a youth pastor and
+then a forensic accountant and then a
+head of finance and then came into high
+level so background all over the place
+but yeah so zappy chat initially started
+just like a single side product
+connected to Google dialogue flow which
+was Google's large like anguage model
+nothing like chat gbt today and so like
+figured out a way to do conversational
+booking in high level back in the fall
+of 2020 uh I think it was August 2020
+and so that put us in a position where
+we were working with conversational
+booking working with AI working with the
+tools that existed at that time but then
+obviously back at the beginning of 2023
+when chat gbt burst onto the scene and
+kind of completely blew everyone's Minds
+with what AI could do we were uniquely
+positioned to just slot that into the
+systems we already had the learnings we
+already had and immediately just use a
+new brain there to create this
+conversational AI system that can be
+entirely customized for any sort of
+situation book conversation on to
+calendars qualify leads handle support
+FAQs and respond on any channel through
+high level and now also outside of high
+level using live chat widgets directly
+on sites that don't even need a CRM to
+function so it's just been a wild ride
+of the last four years and particularly
+the last 18 months or so here has been
+uh really fun to be a part of oh so I
+got a few questions here that I gotta
+kind of like probe a little bit on so
+for accounting that's I never knew that
+about you so I didn't know that's pretty
+intense that is not like a light job of
+accounting if I recall right yeah I mean
+it was really fun for me because I love
+XEL like I love spreadsheets as a matter
+of fact yeah there's my prop my favorite
+hat here
+spreadsheets I'm a massive spre nerd and
+basically all I did was just build
+Financial models for different
+industries that had experience some sort
+of loss and determine like what Revenue
+they lost and what insurance companies
+owed them and we did a few fraud cases
+as well but yeah just sitting in front
+of spreadsheets all day so definitely
+like a little bit of a logic kind of
+background that kind of goes a little
+bit into like AI as soon as yeah as soon
+as I discovered high level and got into
+high level like I loved at the time it
+was triggers and campaigns now workflows
+way better but just like the logic of
+being able to create these systems and
+automations around it was so much fun
+for me and then bringing AI into it like
+it's all been obviously from that
+experience I don't have a technical
+background in terms of coding or
+developing I hire other people to pay to
+do that but I love the logic element and
+love making systems to improve things
+and to improve those systems and like
+sit me down in a spreadsheet for a
+couple hours and I get lost and just
+have a great time there so there's a
+little TMI background information yeah
+know that's I mean that's great but it
+makes sense right now I know you
+mentioned one of the things that I just
+want to make sure that the audience
+really understands right so like when we
+were talking about like the Google
+digiflow this is actually really really
+important a lot of people don't realize
+this AI has been around for many years
+right like I'm talking about like
+probably closer probably 10 years if not
+more right oh yeah oh yeah like even
+what we colloquially call AI these days
+artificial intelligence we're now mostly
+talking about things like chat gbt these
+large language learning models that are
+able to interact with us in a
+conversational way but artificial
+intelligence you know you can go back
+decades into the I don't know into the '
+80s 90s in terms of likeing and and just
+sort of artificial intelligence I'm
+beginning to talk out of school here
+where like I don't know a ton about the
+background I just know a ton about how
+it works now but artificial intelligence
+has been around in different capacities
+for decades and like Google dialog flow
+had a version that could Converse and
+could like we said be able to book on
+but you had to like teach it different
+intents so you had to be like an early
+intent that we added in was like
+indifferent approval where someone just
+says like sure when you offer them to
+available versus a yes yeah and just
+like giving dialog flow a list of like
+these are sort of indifferent approval
+where people are just like non-committal
+and we want you to go ahead and book the
+appointment for the first time you know
+if I tell you 10 or noon and you say
+sure I'm going to be like great we're
+booked for 10 and so just like training
+things like that versus now where we
+have this incredibly smart language
+model that you can just prompt it kind
+of give it a role give it its goal and
+context and then set it loose and anyone
+who has ever played with chat GPT or any
+of the other large language models knows
+like what it's capable of now hey we
+want to interrupt this video for a quick
+little minute to just let you know that
+I hope you're enjoying this video we
+want to thank you for being here but
+more importantly we're hoping that this
+content helps you do whatever you're
+trying to do inside a high level we also
+want to let you know that you have
+options to get additional help we offer
+a 197 a month VIP coaching program that
+includes four days of office hours first
+come first serve with Andy or myself
+where we go in and we answer any of your
+questions that you might have live with
+a group setting for other people that
+are also working in high level we also
+have a VIP group where we answer
+questions directly oneon-one with
+anybody posting in that group to give
+you the absolute best support it also
+comes with a bunch of other features
+including our frontal brick system our
+little mini course and more importantly
+a couple guides that will help you
+through this and also including our sop
+library that we use for pretty much
+everything inside of our agency so thank
+you for this quick little minute but
+more importantly go back to the video
+get whatever you need and if you have
+any questions that we can answer inside
+the video just drop a comment on the
+video and we'll make sure to answer
+whenever we get a chance and now back to
+the show yeah know that's pretty wild I
+mean so going from where you had to
+train it to where now it's like pretty
+much like self- evolving and just like
+knows and understands based on you know
+all the different advances that happened
+literally over the last 18 months if not
+probably a little bit sooner but
+regardless of which and it's like a
+weird hockey puck progression it's not
+like it learned a little bit it
+literally went from here to like here
+and it's just been ongoing and it's
+growing ever since which is pretty I
+mean I love it I'm like you I have a
+logic background so like I love the
+logic piece of it this is why we've been
+excelling so well in high level because
+it has all these functions now you
+mentioned that zappy chat does a variety
+of functions and again this is where I
+think it's really important for the
+audience to understand most common Bots
+even the Bots currently in high level
+have like a function meaning they are
+either an appointment setter they're
+either an FAQ person meaning they're
+answering questions it's really hard at
+leasing the account with the current
+conversational AI for it to do both I
+know for a fact trying to myself that it
+does get confused on times if you give
+it too many tasks or the instructions
+are not right how would you say like
+zappy chat difference what's the key
+differentiator there because there is
+there is a very key differentiator just
+in that itself alone from the
+conversational AI that high level has
+versus what zappy chat can do yeah so
+the fundamental difference is that the
+zappy chat AI can be customized in terms
+of its prompt and it's that is you know
+its role what it's doing what it's
+fulfilling and what information it has
+it can be customized on a per contact
+basis so that the AI can actually use
+information based on that contact based
+on a tag they have based on what
+workflows they've been through based on
+what offers they are what stage they are
+in your pipeline you know once more the
+highle logic thing it's like any logic
+that you can do you can then change the
+prompt for that where it's like maybe
+Nuno is a brand new lead who's curious
+about the offer and so I want it to be
+more in sales mode and book them to a
+demo appointment but maybe Andrew is an
+active customer who has Tech questions
+and so I want to answer those questions
+and if he does want a call I don't want
+to push him towards a call but if he
+does want to call I want to provide him
+times for the support calendar you can
+set up systems to literally take care of
+any conversation and really provide that
+sort of connective tissue to the
+marketing automations that we're all
+familiar with because whether it's high
+level or back in the day of other
+platforms like you can create these
+automated systems that send and outbound
+but then when the customer the lead
+responds with an inbound message you
+have to do some manual work to kind of
+like do the connective tissue to get it
+to the next step to do that like
+connecting piece and so zapy chat AI
+really provides these AI agents that can
+dynamically adapt to the situation and
+can handle any sort of conversation and
+so rather than just approaching it as
+take this one action then this next
+action we're now like hey this agent is
+going to sit here and is going to handle
+this sort of connective process to get
+them from opting in to booking a sales
+appointment or from a support query to
+getting an answer or booking a support
+call whatever that looks like so long
+story short you can completely customize
+and so therefore can do so much more
+than kind of what is put into the
+conversational AI over in high level and
+then there's just also the element of
+the pricing is a big one as well where
+two cents a message over with high
+levels AI or paying $79 $9 a sub account
+for unlimited we actually have a way to
+do it completely marginless where you
+get full unlimited usage with one of our
+API keys or you just pay the cost
+directly to the AI provider oh wow so
+there's no no markup on that well I was
+not aware with that I didn't even
+understand that there was a cost
+difference so so zappy chat can be a
+standalone product or it can actually be
+added to the agency for everybody to
+have the functionality right so that's
+pretty amazing again that there is a
+cost differentiator there that is really
+really cool but not only that so I'm a
+big follower of Andrew like I said I'm
+known for four years so anything that
+Andrew puts out I usually buy I was
+actually one of the first people that
+bought zappy chat like in the early
+stages like ironically enough like we
+put it into use really early on we were
+using the digiflow when it first came
+out we used it for a little while and
+then we stopped because of all the stuff
+that was going on with Chach TP and now
+all of a sudden here we are we're back
+again and then the really cool part
+about it is as you can see Andrew's
+incredibly full of knowledge his whole
+entire team is full of knowledge and
+they work in conjunction with HL Pro
+Tools which also supports zappy chat
+which is also another benefit of like
+going with that Suite we use HL Protools
+for support we use zappy chat now for
+our Ai and the technicians in HL
+Protools which are part of our team they
+now do both which is super exciting
+especially for our clients are using
+that in our software version of high
+level which I think is pretty cool but
+then there is also I was so impressed by
+this and I got to kind of like put it
+here in perspective here I went into the
+members area for the first time in a
+while now remember I'm an old schooler
+and this in itself alone I don't know if
+you guys can see my screen but this is
+amazing not only do they give you a
+variety of like you know your get
+started here and everything else this is
+a full course for a quick little setup
+how to set up your entire AI additional
+features that all come with this look at
+this thing you have live chat where we
+talked about Cy integration which is an
+outside software for calendars
+clickfunnels the old school Nemesis of a
+high level but still a go-to for a lot
+of people qualification web hooks that
+you can do all this kind of crazy crazy
+stuff that's going in here and they have
+correct me if I'm wrong you have daily
+office hours are like are there certain
+days a week yeah we have multiple Live
+support calls every day of the week I'm
+on three or four of those a week and we
+have some Partners handle other ones we
+also have some sales coaching calls paid
+ads and creative coaching calls and AI
+customization calls so we have multiple
+Live support calls every day of the
+sorry every workday of the week we don't
+yeah very very nice yeah we like to take
+our weekend off right so then I got to
+ask what is the self- selling snapshot
+yeah so the self- selling AI is a way to
+demo conversational AI to potential
+leads where it takes the leads website
+scrapes it and generates an AI agent to
+like run a demo specifically for their
+business so if you are doing Nuno
+Plumbing so let's say I'm an agency
+owner and I used you in the past you've
+done good work in my house and so I'm
+like hey Nuno I've been working on this
+new tool for or businesses would you
+mind testing it out for me just text
+this number the word AI you know you can
+set up any sort of trigger word or you
+can base it on a form and run ads to it
+but then when you texted AI it says like
+great I'm going to run this demo for you
+just give me your website you put in
+newos plumbing.com it scrapes the
+website and it goes all right I'm a
+plumbing assistant and so it's going to
+then go in and say like hey can you tell
+me about the issue you're having in your
+home and have some back and forth
+conversation about your plumbing issue
+before offering to book an appointment
+book you into an appointment and then
+say like hey how was that do you want to
+get that set up for your business let's
+chat and so it's this
+incredible what Matt calls like a
+Cinnabon experience where it gives you
+like the smell it gives you the sample
+taste and you
+just and so this was actually birthed
+out of something that I put together
+last year I think it was May of last
+year and I texted it to a couple friends
+earnestly like business owners wanting
+to test it and three of the four friends
+I texted said like whoa that was really
+cool can I like can we set this up in my
+business I was like oh yeah and it was
+at that point I was like yes this is a
+good idea we should get this into the
+hands of agency owners and so that is so
+cool now funny is for anybody that
+doesn't know Matt Ceno uh a really good
+friend of mine again also known for
+quite a few years I actually coached for
+Matt well I call the Elon Musk of like
+of like crms or SAS versions of this and
+he comes up with these like phrases I
+didn't know that that Cinema that's
+actually pretty funny the other one is
+like easy like CCO you know I'm a big
+fan of his and some of the things he
+says but that's pretty cool and then
+just let's talk about a little bit about
+this B bonuses what is all this yeah so
+these are just some white label
+resources to help agencies be able to
+sell the AI and so we've got a couple
+white label sales funnels I think
+there's three of them in there right now
+we've got a wh label like template for a
+speed to lead infographic ebooks white
+label slide deck wh label ad some email
+templates and lastly some wh label like
+Facebook demo videos some templates to
+use for Facebook videos as well so we're
+always adding in some additional free
+Bon in here because in this space like
+we only win if our customers win and so
+we're always aiming to like make it
+easier to build and run in AI agency
+here that is amazing and then again just
+template libraries just some different
+template libraries for different uh yeah
+so like prompt templates I think it's
+over 50 templates at this point for
+dozens of different niches and different
+situations there so you can take those
+promp templates and use them in any
+capacity and then also like the last one
+over there in back in your home screen
+is the prompt generator honestly it's
+just a custom GPT that we've built using
+dozens of our really high performing
+prompts so you can just interact with
+that gbt tell it what you want the AI to
+do and it spits out a prompt you copy
+paste that over and you're Off to the
+Races so holy smoke look at the
+tremendous amount of value that you're
+getting just with this membership alone
+now it is a monthly cost and there are
+different costs right there's one for
+single account there's also one for
+agency correct and is there any other
+plans or is that mostly it uh the other
+plan is an annual plan where you get
+something like I think 30% off if you go
+annual that plan actually includes the
+self- selling AI snapshot if you go
+monthly you'll get offered it as a Oto
+on checkout but going annual you get
+access to the self- selling AI snapshot
+on top of everything else in here which
+comes with your base level subscriptions
+yeah and that's awesome so just for
+anybody again that's already this is
+blowing your mind wait until we install
+it and we actually see this in action
+but just from the beginning and all the
+value that you're going to get remember
+you can always click on the link below
+this video that's to take you directly
+to zappy chat it is my affiliate link I
+only affiliate for the things I use
+period so this is something that
+honestly the tremendous amount of value
+you're going to get for what you're
+paying is completely in proportion so I
+think they give you a lot for what
+you're going to get so without further
+Ado I mean let's do this I have an
+account ready here I have my actual
+original account back in the day I mean
+I don't rarely use this account this is
+an old school one but it is ready for
+everything so where do I go how do I get
+this thing going yeah so the process is
+is going to look like connecting your
+highl account over to app. zappy chat so
+creating that connection and then
+loading in the snapshot updating some
+custom values there into high level and
+then over in app. zappy chats creating a
+bot and so let's actually start over in
+app. zappy chat all right so the first
+step that we're going to do is we're
+going to go to app. zappy cat.net right
+so just I'm sorry.com and I'm going to
+put in my credentials here so this is my
+credentials that I get when I purchase
+zappy chat and I'm going to come right
+through here put a password and I'm
+going to go ahead and sign in awesome
+I'm in here and what do we do next great
+well and so are you logged in to the CRM
+account you want to use in app.goo.gl
+inside currently like using somebody
+else's like what do you recommend for us
+setting up the individual's account in
+that point yeah so if you're in someone
+else's then you can use a location type
+integration with the app what we're
+going to do now is do an agency type
+integration which gives access to like
+all the accounts and does the V2 o off
+process which is why you got log in
+through app. go high level but the other
+piece is that you'll need the zapy chat
+snapshot loaded into your account and so
+you will need to get in contact with an
+account admin that can load that
+snapshot into your awesome so we're
+definitely here and we're going to go to
+our account awesome and then in here
+like I said this is Legacy account so
+this is perfect all right so I'm in here
+and we're also going to need the
+snapshot should I do that now or let's
+take care of a few things in app. zappy
+chat here and then we'll go over to the
+snapshot on the high Lev side all right
+so now we're back at app.app chat.com
+and we're under for Bots okay and so
+click on Integrations up at the top and
+let's just go ahead and get your account
+integrated so let's do high L V2 since
+you're an agency admin here in your
+you're logged in an app. go high Lev
+this is just going to take two seconds
+to go and click your agency check that
+box checks the next one that enables
+future installation proceed and just
+like that your account is connected so
+Bingo Bongo next click on account down
+at the bottom left and we're going to
+grab some custom JavaScript there that
+we're going to drop into your agency
+settings
+so before we move on right Andrew so
+really quickly if I was a standard user
+meaning under somebody else's CRM that
+has zappy chat what I would do is I
+would come into Integrations and I'm
+going to select the first one right in
+here yeah so you would connect there and
+toggle to the location type and then you
+can add the location from there don't
+click update there just because it'll
+switch you over to V1 stay on V2 for now
+yeah but if that's the case they would
+do this they would do that particular
+part and hit location and then right
+after that we going to go to account and
+we're putting this in the agency side
+right yep and so this is going to bring
+in the bot icon up into the top menu of
+the highle account so that you or your
+clients can manage their FAQs and manage
+their bot directly from high level here
+so I'm gonna go back to my agency view
+which is what we did now and then from
+here what I'm going to do is I'm going
+to go over to settings in settings I'm
+going to go over to company and then in
+company I'm going to go all the way to
+the bottom I mean obviously it doesn't
+matter where we put it right right and
+so just paste it in and then SC scroll
+down and click update down there and
+agree to the
+uh go yep and we're good to go cool
+awesome and so now that we've done that
+we established the connection between
+highle and app. zabby chat and we loaded
+in the widget there and so now click on
+locations and FAQs on the left side here
+and we should see um let's see can you
+click refresh sub accounts up at the top
+right and we should see your existing
+sub accounts from your agency might take
+a minute since it's the first time
+loading and I'm not sure how many sub
+accounts you have in your old AG see
+here a few doing all right cool so yeah
+so now everything's loaded in here and
+from this screen you can manage your
+FAQs for a given sub account but you can
+also do it from the sub account over in
+High Level so yeah if you click that
+faq's icon there it's going to load in
+your FAQ database for that sub account
+and so in here you can see you can
+manually add you could edit if they
+exist so you can export a CSV or import
+a CSV search through it and then the
+last piece is you can actually scrape a
+URL to have the AI generate its own FAQs
+and so if you want to do that for the
+account we're going to set up that would
+be a great go ahead and um AI to work on
+generating its FAQs
+there and it's me it's my
+site yeah grab that URL there and you
+know I'm not used to walking people
+through who are so knowledgeable and
+comfortable with high level already so
+I'm sorry if I talk over you while
+you're trying to oh no no no by all
+means and that's the whole point right
+for anybody that's watching right like
+obviously we're doing an agency setup
+versus an account setup we'll do an
+account setup at you know at some point
+here but that's what we're kind of
+moving into now so for instance if I was
+installing this for one of my clients
+either I would have to do this for my
+client if I'm the agency correct you
+could or you can have your client do the
+FAQs and scrape the website directly
+from the highle sub account and so so
+like go back over to your your y label
+high level and let's head over to
+digital voltage and go ahead and do a
+hard Refresh on this page just because
+we might need to refresh in order for
+that custom JavaScript to load in so now
+up at the top right you see you got
+friendly Little Robot guy if you click
+him there this same screen loads up
+directly in the sub account so
+this you can do it yourself from App
+zappy chat or from in here or you can
+direct your client to say like hey you
+know maybe they have a CSV of FAQs
+already just load it in right here or
+like script your website you can always
+come here to review your FAQs edit
+things add in new ones if you want to
+give the bot new information
+so all that's accessible to your client
+and to your team so you recommend a CSV
+file or is that better like questions on
+one side and like answers on another or
+would a word doc work or in order to
+import it in here it does need to be in
+a CSV so one column of questions one
+column of answers that's just how the
+system works here for loading it in just
+in the same way that you would load in
+contacts into high level or something
+like that all right so I'm gonna
+actually for anybody that's here just to
+make it super sweet like I mean
+obviously we would do a CSV file to get
+it very complex order but for here I'm
+just going to scrape my site because I
+have it up already I put it in here
+under the parent URL and then I'm going
+to add not replace and I'm gonna
+basically hit submit yep very very this
+will take a minute to put in the request
+and then it'll take up to five minutes
+to generate FAQs depending on your site
+it could be 10 FAQs it could be a
+thousand FAQs so it's going to process
+through and generate what it sees as
+relevant there obviously much like any
+other AI tool it's not always going to
+be perfect in like the FAQs it generates
+so I typically recommend testing out the
+conversation or reviewing the FAQs in
+there to just make sure that everything
+looks as you expected yeah absolutely so
+we can leave that processing and while
+that's generating let's go ahead and
+create our first bot so click bots on
+the left
+side and yeah go and click get started
+or continue and we can create our first
+bot so you know do we want to create a
+booking bot here or do you want to yeah
+i' like to create a booking bu for my
+coaching services so that will be the
+majority of it it goes along with the
+site because that's what that site does
+awesome yeah so click that first drop
+down and you'll have options for
+different types of bots just to run
+through these really briefly Live Chat
+is the type of Bot that creates an
+actual live chat widget completely
+independent of high level and that can
+be either booking or non- booking a
+booking bot has the ability to book onto
+either a highle calendar or a cly
+calendar a non- booking bot does not
+have the ability to book a qualification
+bot can run through a series of
+qualification questions and then lastly
+an assistant is a way to use open ai's
+Assistant API which is a different model
+of connecting to open ai's backend but
+the simplest and best way to go about
+booking here is just click on booking
+and create a booking type bot and so up
+at the top right you can name your Bot
+this is just internal so it's not
+actually gonna you know you might want
+to name it something cute like Jill but
+it's not actually okay got it got it no
+no no I'm saying I'm saying DVM booking
+bot is better it's not going to
+reference the name in its actual convers
+oh got it I was like yeah it would be
+kind of weird but all right yeah yeah no
+I'm just saying like sometimes people
+put the name in here and they're like
+thei isn't saying its name it's like
+well that's just the internal name of
+the bot uh so anyway the description is
+just for internal purposes so you can
+leave it blank or you can also say
+booking bot or dbm for coaching yeah for
+dbm coaching so just internal notes Here
+for calendar type click that drop down
+and let's select high level if you did
+want to do cly instead you know we run
+into business owners who are attached to
+their cly and don't want to give it up
+yeah and so well if you do that it'll
+prompt you to do an authentication to
+log into the calendly there and create
+that connection but we'll just stick to
+high level here for now GPT model over
+here we can leave it on 3.5 zappy chat
+that runs all the cost through zappy
+chat so there's no marginal cost at all
+but if you want to use one of the other
+models if you want to use like 40 as the
+latest model then it'll require your
+open AI API key copied and pasted in
+here yeah for the samples I mean I'm
+just going to click on this real quick
+and I would put my API key very simple
+for people that don't know how to get
+open API we'll you know there's separate
+videos on the channel that can show you
+how to do that but for now we'll just
+use a zappy chat just kind of move it
+along so awesome and so if we wanted to
+we could totally just click add and be
+done with it and say hey there's our
+first bot easy peasy but I'll show you
+what's in the advanced settings here
+just so we can walk through those as
+well down here in the advanced settings
+The Prompt type and intro message type
+this is set up to work seamlessly with
+our snapshot and so that's part of the
+reason that we hide it in the advanced
+settings here is that the vast majority
+of use cases it doesn't make sense to
+change this but if you know you want to
+click on one of those drop downs we use
+the custom field because that gives it
+that sort of infinite customizability
+where it can be a slightly different
+prompt for Nuno than it is for Andrew
+than it is for Bob Dick and Harry but if
+you wanted to use a custom value instead
+of a custom field and just customize it
+on a per location basis that's an option
+and if you want to use hardcoded text
+where you actually have the prompt live
+here in the app you could use that as
+well but once more those are only very
+Fringe cases where that makes sense we
+always recommend using custom field and
+leaving those options as is okay so
+we're going to use custom field because
+we are going to download the snapshot
+it's going to be critical because that's
+honestly like I've seen it it's pretty
+amazing kind of pointless to like not
+use it so all right then we have
+anything else here as far as no once
+more the only reason you would change
+those are Fringe use cases and just
+customization that customers have
+requested and so we built it in there
+but once more I just don't recommend
+playing with it like just use it with a
+snapshot it's great and so the rest of
+the options down here at the bottom you
+could adjust the temperature of the AI
+the higher that number is the more
+creative and loose it's allowed to be
+like if you drag that slider all the way
+up you're going to get just random
+strings of text so not recommended to do
+that point three is kind of The Sweet
+Spot that we leave it at but we have had
+some customers who prefer to drag it
+down lower to keep it more sort of rigid
+in its responses so you have
+customization there if you want once
+more leave it on the standard and you're
+fine conversation limit if you want to
+limit how many messages the AI can send
+in a given conversation you can put on a
+waiting delay if you want it to delay
+its messaging longer if you don't want
+it to respond as quickly you can toggle
+between the time zone to communicate in
+the contacts time zone or the locations
+time zone and so if you have contact
+time zone that means anytime a lead you
+know if a lead comes in and they filled
+out a form in their EST it's going to
+communicate those available times in EST
+if they switch to PDT it's going to
+communicate in PDT and go from there
+time zone format like it's going to send
+it as abbreviated so send EST or sorry
+EDT or you can have the option to hide
+it if you just don't want the time zone
+in there at all and then lastly the time
+format you could go 12h hour you could
+go 24hour if you're outside of the US
+and want that more military time zone
+there awesome and then what is goal yeah
+so goals here are a powerful tool that
+you can use to conditionally add tags or
+update custom fields or even fire web
+hooks based on the conversation so this
+is where if you want your AI to to say
+like gather qualifying information that
+is like if you want the AI to determine
+what industry the lead is in and like
+log that into a custom field it can do
+that or if you want it to say like oh if
+anyone mentions that they're just
+getting started add this newbie tag or
+if someone mentions they've been doing
+it for more than three years add this
+veteran tag and so right so let's do
+that yeah let's let's do the I like that
+let's do the if they've been in high
+level if they're brand new to high level
+let's give them the Newbie tag if
+they're established we'll say
+established just those two tags just so
+then I can decipher so what do we do
+here so go and click add a goal and
+we'll select the tag type okay you're
+going to want it to add a tag and so in
+here we just give it the tag name so new
+a high level and so over in Gold
+description I would say something like
+the lead is new to high level or is just
+getting started with high level like
+something as simple as that and so
+what's going to happen on the back end
+here is that as the AI is having the
+conversation it's going to analyze the
+conversation and say all right is the
+lead new to high level are they just
+getting started if they are I'm going to
+add this tag new to high level and so in
+the same way you know you could update a
+field or even fire off a custom web hook
+if you wanted to reach out to the
+software's outside of high level but
+yeah so let's go ahead and click add a
+goal oh so you just clicked add which
+just added the bot so you can go back
+click the edit pencil on our all right
+so let's edit that oops Yeah and click
+add a goal click that white add a goal
+button okay tag type again and uh we can
+do the same sort of thing for
+established or veteran or whatever you
+want to go with there I'm simple we'll
+do it that way the lead is established
+veteran of high level awesome okay and
+then just hit upate I and I would also
+maybe just add description of high level
+or ghl just knowing the way that people
+communicate about this software well the
+AI is super smart it doesn't always know
+our like our language yeah absolutely
+that's great but yeah so go ahead and
+hit update and you've got yourself a bot
+there awesome okay so actually before
+continuing let's just quickly create a
+non- booking bot as well just so once
+you have a customer booked into the
+appointment you have non booking bot
+that's not going to mess with booking
+and we'll just chat with them basically
+there so which is a very big difference
+if you were using like conversation AI
+inste a high level it's like that one
+bot does it all and it's like either
+either or or so this is something I'm
+personally not used to so this is pretty
+cool so this is yeah so just go ahead in
+dbm non- Booking bot and the booking bot
+is totally capable of having those non-
+booking conversations it's just cleaner
+to like have it completely separated and
+be like hey once my contact makes it to
+this point in the conversation I don't
+want it booking on the calendars anymore
+or customizing uh what it goes to from
+there so that's literally all we need to
+do you can just click add here because
+we don't need to change anything else
+non booking portion cool all right so
+we're just going to go ahead and hit add
+yep and so now we've got two different
+Bots and each one you'll notice has a
+different web hook with it and so we're
+going to use those in the custom values
+in our snapshot that's the ultimate
+Destiny here very cool yeah so basically
+you know we're doing a really detailed
+walk through here but the only things
+you need to do are integrate your high
+level copy the code over into your
+custom JavaScript and then to get
+started create a booking bot and a non-
+booking bot and a cool thing about the
+way we' built the system here is that
+these booking Bots and non- booking Bots
+label them DVM but you could actually
+use them across dozens of clients
+because we didn't customize anything in
+there that's only for digital voltage
+marketing a prompt and everything is
+going to live over in high level in
+custom values so that way you don't even
+have to come back in here and create
+more Bots for new clients obviously you
+can and you can customize that but you
+can use the same Bots for for unlimited
+clients really oh wow okay so because
+you're customizing in the account not
+necessarily here so it's leveraging
+these Bots to do pretty much everything
+so one does booking one does not and
+then when I go into the account that's
+where the information gets pulled in
+absolutely brilliant Okay cool so yeah
+the next piece is we're gonna need to
+load in the snapshot cool and in here
+the snapshot would be yeah it's GNA be
+in zappy chat AI here and so you could
+either click the snapshot down below or
+click quick setup I think the link is in
+both of those yep so we've got the
+supercharge speed the lead snapshot
+that's why we logged into our app. gooh
+high.com first because it allows us to
+import snapshots in and again if you're
+working with the agency the agency would
+have the snapshot you would just request
+it to have it loaded into your account
+and then you would do the setup inside
+your account like Andrew is going to
+show us right now as you kind of go
+through so we're going to go yes import
+now and then we're going to physically
+load this so I'm going to show you how
+to load it too so we'll go into sub
+accounts we're looking for our dbm
+account awesome and then in here I'm
+going to click on that I'm going to here
+go into action load snapshot and the
+snapshot name is cu you know I have
+gazillions of them you type in super
+it'll probably pop up awesome Yep there
+it is super snapshot speed to lead
+awesome and then we're going to proceed
+we're just going to go ahead and import
+everything and we're GNA hit boom and
+thenit okay awesome so we're going to
+switch over to the sub account now we're
+actually in the physical account that we
+just imported the snapshot every now and
+again it does take a few minutes so if
+we don't all the values in here just
+understand that that's normal remember
+we see our cool little bot That's so
+exciting I don't know if did it scrape
+the scrape their URL yet or let's see
+was that over on the uh click over to
+the other Tab and and so I think it was
+positioned over there okay so get air it
+out so you know what let's close this
+one out and let's just do it again one
+more time because I have a feeling we're
+gonna need that so I'm just gonna hit my
+black eye again here um at this site and
+it's going to be add submit we're gonna
+let that process or should we wait or
+let's let that process just because it
+can take up to five minutes and uh got
+more to walk through more to go through
+here all right so I'm just GNA duplicate
+my tab here and I am G to go down and
+I'm GNA go over to actually where do we
+go first custom values or yeah let's go
+to custom values because really in order
+to use the snapshot the only thing you
+need to update is custom values then
+obviously you can customize from there
+in terms of the workflows and how things
+interact but the custom values are what
+we're going to use here so it looks like
+you have some custom values from
+potentially an older version or maybe a
+different AI provider probably an older
+version but I'm assuming it's the folder
+or no yep yeah the folder in here is
+going to be our five custom values
+awesome five that's awesome we try to
+keep it simple that's great yeah and so
+just like brief overview of these the
+calendar ID is going to tell it which
+calendar to book on to the prompt is
+going to give it its General prompt like
+its role goal and context reactivation
+message is only if you want to use our
+database reactivation snapshot or
+workflow that we have in here this is
+where you'd put in that like initial
+reactivation message but that's an
+optional feature you know if you're
+running reactivations not everyone is or
+you might have a different automation
+already set up for it which is fine and
+then the robot web Hook and the robot
+web hook non- booking those are where
+we're going to paste in those web hooks
+from the app so all right so what we're
+going to do is we're going to update the
+robot web hook first all right we're
+going to start with easy first so I'm
+going to edit the custom value I'm going
+to come directly in here I'm going to go
+to zappy chat and and I'm going to do my
+booking bot I'm assuming in that one oh
+look there convenient copy button right
+there and we're going to paste it in the
+re web hook now this is for the one for
+that books correct exactly yeah all
+right while that's updating just want to
+make sure there's no error in here still
+processing okay and then now we're in
+the robot web hooking non- booking I'm
+going to go ahead and hit edit custom
+value I'm going to go over to zappy chat
+so I'm going to hit close here and I'm
+going to click over here for copy for
+the non- booking bot version and I'm
+going to come right over here I'm going
+to paste that I'm going to hit update
+now I do have a specific calendar that
+people can book on so I'm going to get
+that calendar ID I'm going to show you
+how to do that so right here right now
+we're in custom values I'm actually
+going to come out of custom values and
+go to calendars which is right up here
+and inside of calendars what we're going
+to do is we're going to come over here
+and it is my round robin somewhere in
+here main coaching calendar somewhere in
+here strategy call which we're going to
+do I don't know why it's taking so long
+it's a little scary the old screen share
+high level equals pretty much oh no he's
+like he's screaming at me there we go so
+we're going to go ahead and we're going
+to come in here the ID just so you guys
+understand is directly under here so
+we're just going to copy this all right
+let copy the clipboard I'm going to head
+back and I am going to go over to my
+settings again I shouldn't head back but
+with custom values and then in the
+folders which are so awesomely organized
+with the five only five custom values
+that's amazing and I'm going to come in
+here I'm going to hit edit I'm going to
+drop it right in here and I'm going to
+hit update I love being able to just to
+sit back and let you roll this is great
+awesome now this is where we're going to
+need a little support right because some
+people might have different variety of
+like skills when it comes to the prompts
+now do you recommend us using the AI
+prompt helper that you gave us yeah
+let's go let's go use the uh let's go
+use the prompt generator there so view
+all right so right now as you can see
+I'm in the quick setup part which by the
+way you'll have access to and you can go
+through the setup we're trying to just
+give you this live like we always
+promise here we always show you
+everything live so what I'm going to do
+is actually use the tools that zappy
+chat loves to provide
+so we're going to go into the promt
+generator and we're going to use their
+custom GTP that they've generated just
+for this so I'm going to come over here
+yeah click that link below the video
+awesome and so in here let's just tell
+it what you want the AI to do so you can
+say the AI is an assistant for digital
+voltage media and they should determine
+how long the user has used high level
+and book appointments for a coaching
+call if you want for intro call so yeah
+I got you so the AI is an assistant for
+Taris and digital voltage media they
+specialize in highlevel coaching and
+support the bot will ask some questions
+to find out the level of knowledge thank
+God that it doesn't really require good
+spelling habits or also i' get with AI
+to find the level of knowledge and
+experience in high level and it will
+book a 15minute discovery call to see if
+they would be a good fit or coaching and
+Consulting Services all right and again
+everybody's service is going to be
+different right we got a lot of like
+local businesses that listen to this
+channel we also got again thank God I
+can't spell for anything but we're just
+going to let the bot dude sting what's
+really cool about this is is that the
+fact that they even give you a prompt
+writer again this is why I'm thoroughly
+impressed with everything as long as the
+bot decides to work there we go
+searching my knowledge so zappy chat is
+done and if you said you create a lot
+bunch of bots we did there we go look at
+this and so it's going to give you a
+pretty robust prompting here and so this
+also now like serves as a template for
+you moving forward where you go okay
+we've got kind of these like steps to a
+conversation flow and I can see where oh
+I can like change the sort of suggested
+message I can change the tone I can
+change the way like the general context
+or it's like overall role at the
+beginning and so just spat out a uh
+pretty hefty prompt there I feel like
+that's a longer version than we
+typically get but you can always
+interact with it back and forth to be
+like hey actually I want to qualify
+leads based on their credit score or I
+want to discuss more of like we should
+find out what Niche they're in and how
+many clients they have so you can go
+back and forth tweak your prompt and
+change it from there and also if any of
+our users ever have issues with
+prompting in general I've got a bunch of
+great prompt Engineers on the team who
+love like working through this and so
+they're always happy to review prompts
+and give adjustments and edits from
+there but for now yeah let's just
+highlight uh yeah I'm going to say I'm
+just obviously when you have some time
+you want to take this very seriously you
+would copy it and adjustment put in a
+word doc you know yeah and it's it's
+great to take that as the first start
+here and to like run a test conversation
+through and then from there go and be
+like okay actually I wanted to use
+emojis I wanted to make jokes I wanted
+to use the lead's first name whatever
+you personally want to do there awesome
+so what we're going to do is just to
+make it super simple again back in
+custom values we got the prompt we
+copied and pasted what we're going to
+copy and now we're going to paste it so
+we're going to get Ed a custom value now
+I know it seems weird that you're going
+to have this one little line for all
+this tremendous thing but it's okay
+because the bot does read it anyway so
+you'll be good to go so we're just going
+to hit contrl + V get it all in there
+hit update and now you're going to
+notice that all of a sudden our custom
+value here will be pretty huge but it
+has everything that you need to go to
+get started which is amazing all right
+cool so we're pretty much set on this
+part now what's the next step The Next
+Step would be to test it out and give it
+a try but before doing that do you want
+to take a look at just the workflows
+real quick I can just give like a high
+level oh absolutely absolutely so let's
+go into automations and let's go into
+might be an older one so hold on uh no
+that AI chatbot folder is uh looks like
+the one yeah was important today and so
+we've got I think it's now 11 workflows
+in here a lot of these are like
+additional features added on like the
+database reactivation and the double
+message processing appointment status
+updates Miss call text bag like these
+are just things to set up the AI in such
+a way that it can interact but really
+the core of it are these like first four
+workflows so basically the AI z00
+Channel just sets the response channel
+so that when someone responds via text
+we know to respond via text when someone
+replies via Facebook we know to reply
+via Facebook Instagram you can even set
+it up for email which you know has some
+mixed results there and has some
+limitations just around using high level
+like in high level you can't respond
+automatically within a thread it creates
+a new email so it's a little clunky to
+use it over email but we have some
+customers successfully using it if you
+want to do so but so all of that happens
+in here just setting those response
+channels so let me ask you question if I
+wanted to like disable the email per se
+because I know for a fact that it won't
+work well for me so how do I just delete
+it right yeah you can totally delete it
+but actually you don't need to do so
+this comes without the email on you can
+see that in the if El's condition ah I
+see it okay got it okay exactly so the
+way that we do it is we have a custom
+field called response Channel and
+anytime someone replies we update that
+channel and so the workflow later on
+that sends the message checks that and
+sends it accordingly so right now you
+know if you and I are texting back and
+forth and the AI is responding over text
+and in the meantime you send an email we
+don't want the AI to then try to send an
+email right now because we don't have it
+on for email so long story short no
+action needed it's set to work on these
+channels but if you did want to say turn
+off Facebook you could go and delete
+that update response Channel step under
+the FB path so down here yeah so any of
+those that you delete it essentially
+just removes the AI from being able to
+respond on that channel very very cool
+and then send message to AI is the next
+one right yeah so this is where we
+trigger off those web hooks so when
+someone replies we trigger off a web
+hook over to the AI to generate a
+response and so you can see that there's
+a booking path and a non- booking path
+and then under the booking path we
+actually have it automatically set up to
+supplementally gather the name if the
+name is empty gather phone and email if
+those are empty or if all info is
+provided just Cruise right through just
+knowing that we're going through this
+booking path here if we're booking we
+want to get the phone and the email
+before booking so that's all bit into
+the snapshot right here absolutely
+awesome right so all this is already
+pretty much done great and then 1B is
+just specifically for the live chat
+Channel just to help with Gathering the
+name and just kind of a simplified
+streamline for that specific Channel and
+so functions similarly but it's just a
+simpler version here for live chat and
+then workflow two is how we actually
+send the response back to the contact
+and so in workflow 2 here just basically
+the AI when it generates a response it
+adds the response tag comes through here
+and you can see all these different
+channels set up so based on that field
+that was updated in aoo sensor response
+there and appropriately rolls from that
+and again if I don't have the first
+initial one set up for Facebook I don't
+have to come in here and change this one
+because this is only if the first part
+was set up then this one would respond
+back but if the first part is not set up
+like if I turned on Facebook Messenger
+this would never activate correct you
+got it awesome so really the only one we
+really have to like think about is
+logically is this response channel is
+this sure I have the response channels I
+wanted to respond to and then the rest
+is pretty much in the back yeah and then
+when we talk about like creating complex
+systems where you want the AI to book
+onto multiple different calendars based
+on criteria you just apply the sort of
+workflow logic to ai1 that's where you
+can really customize and build some like
+really intense systems and we you know
+people like yourself and me like really
+enjoy that but for folks who don't want
+to get into that you can just use the
+snapshot as is and what it's going to do
+is for New Leads it's going to work on
+booking them into an appointment once
+it's booked it's going to be just a
+conversational bot to answer any
+questions and respond in a quick kind
+and thorough way there cool and the
+appointment confirmations and reminders
+I already have some already now do I
+want to maybe turn those off or how does
+that work so in here if you scroll down
+a little bit in this workflow this sends
+a confirmation message on the
+appropriate channel so if you scroll
+down to like the if else condition and
+it also just like cleans up tags removes
+from workflows Etc and so sends the
+confirmation message on that appropriate
+Channel and then if you go over to the
+right a little bit you'll see that's
+where the actual reminders start and so
+you can just delete that email
+confirmation and everything else below
+it and so if you click that first email
+confirmation there and delete that step
+those are internal notifications which
+you can remove those as well if you want
+but yeah you can delete all actions from
+there and that's if I already have my
+appointment confirmations all set for
+whatever exactly yeah if you're using
+another snapshot that already has
+appointment confirmations we just had
+enough people starting from scratch that
+didn't have that already and so that is
+baked in here and it's just easier to
+delete than it is to manually go back in
+and add yeah absolutely okay cool and
+then anything else like as far as that
+so we have the appointment what about
+the alert user anything else like here
+just notable mention like I said we
+don't want to get too crazy into it yeah
+so like alert user comes off but if you
+in part because that is an alert set up
+to send an internal notification when
+the bot fails and so you could turn that
+on and you can also add in your white
+label domain so it sends a link directly
+to the contact in the case that the bot
+fails or yeah it's just like as a
+fallback there like the fallback
+workflow adds that tag in the event of a
+bot failing stop bot tag that is there
+to be able to shut off the bot for any
+given contact by adding a tag stop robot
+follow-up you can actually set up the AI
+to reach back out if someone falls off
+in the middle of a conversation so say
+you want to set it to like if the lead
+doesn't respond after 20 minutes or
+after 45 minutes send a dynamic followup
+and so they I will look at the past
+conversation and actually reference that
+and oh we're going to turn that on that
+sounds cool cool so this one will take a
+little additional uh setup within here
+and so got it turned on which is great
+scroll down a little bit and So
+currently it's set to 45 minutes that an
+appropriate weit time for you or would
+you absolutely longer great and then
+let's click on the uh follow-up web hook
+there at 45 minutes and so this is one
+of our web hooks here and so in order to
+use this feature you would need to copy
+and paste your highle location API key
+into that location key field and also
+your open AI API key into that field all
+right so obviously we might have to go
+back and do that but because we don't
+have that here and that's going to make
+this video basically yeah but basically
+like you provide it your keys there and
+then you give it the prompt in that
+prompt field above and so you'll see the
+one that we have in there is just like
+you've sent a message but Nuno hasn't
+responded in 45 minutes send a
+re-engaging message like did I lose you
+or are you still there and I think looks
+like it says like response should be no
+more than more than two SS long yeah
+just to like keep it short and so you
+can customize it there where it's like
+if you want to have it re-engage in a
+different way maybe you want to like
+drop a specific offer or maybe you want
+to encourage the AI to highlight how
+your Marketing Solutions will be perfect
+for their specific situation so that way
+it can like reference back in the
+conversation and follow up like that
+very very cool and so you can obviously
+fire off that web hook as many times as
+you want create as many conditions as
+you want nerd out on that as much as you
+want yeah very cool yeah there's
+definitely going to be a lot of nerding
+out I can tell you that much well
+without further Ado let's see this thing
+in action how can I uh I start engaging
+with it so at this point if you want to
+test your um sorry text that's the word
+my Brand's looking for if you want to
+text your toio number here uh it should
+kick on and engage all right so I am
+going to use my phones in here so give
+us a second right so I'm going to find
+my number which is always funny because
+I never find and that number will get
+blurred out so obviously you guys can
+spam me like some people like to do so I
+am going to text this number just give
+me two seconds I'll just read off what
+the bot is saying and I'm just going to
+type in hello
+okay and I believe I typed the right
+number looks right kcks on here oh here
+we go hi I'm here to assist you with any
+questions or scheduling needs you may
+have how can I help you today need help
+with high level yeah and so from here
+the AI will have the conversation
+according to its prompt and be able to
+reference any FAQs on that piece and
+move it towards since we selected a
+booking type bot it's going to move
+towards booking that appointment and
+rolling through there oh here it is
+right here so we can see a live in
+action there we go all right to better
+sist you could you please tell me about
+your Cent experience knowledge high
+level so it's asking that kind of newbie
+question I am
+new all right I have no experience
+whatsoever so guys you are seeing this
+live and again this is what's super
+exciting now this will work with
+Facebook Messenger this will work with
+your website chat widget that you can
+install on your website this will work
+with Instagram and all those other
+things great here has you new high level
+could you share your primary goals in
+seeking coaching and specific challenges
+you're currently facing just need
+someone to help me understand the basics
+yeah and so it's currently using like
+some of those example phrases that came
+in that prompt generated off of The
+Prompt generator and so it's like if
+you're going okay this currently sounds
+like a little too buttoned up in
+professional like I maybe want it looser
+then you can go in and change that
+language or you can give it like
+defining role characteristics where it's
+like laidback and casual or buttoned up
+and professional you know you can change
+yeah you can play around with it so this
+is pretty cool would it be interesting
+yeah sure now I'm using not yet I'm
+trying to be as vague as possible to see
+how much the bot is going to P yeah yeah
+I mean like it's funny back in the
+dialogue flow days a customer was doing
+a live demo and it was like four lawyers
+and they responded with like yuppers
+like y u p p RS and luckily we had
+loaded that phrase in there but like at
+the time if we hadn't the AI likely
+would have failed so our client was like
+texting me directly and was like oh crap
+he said yuppers like is it gonna that I
+was we got good news for you man that
+was on our list
+that's pretty awesome but like Chad gbt
+is so much more just robust in its
+ability and the different large language
+models like and we're going to open up
+the um Google Gemini brain into zappy
+chat as well just to continue to expand
+the options for using different brains
+with the AI and for the different
+experiences there because while open AI
+has definitely been in the lead ever
+since January of last year and when I
+really bust on the scene with chat gbt
+we're not counting out any other
+providers and want to continue to give
+flexibility in the future here moving
+cool yeah I have hopes for Gemini I
+think it's catching up pretty quickly
+but uh yeah yeah just like the resources
+behind are great so yeah I went ahead
+and awesome look at this there yeah and
+so since you already have a confirmation
+in there oh and it looks like you got an
+internal notification to yourself as
+well yeah so but but literally honestly
+everything that I was supposed to do it
+Beyond did that and even created an
+opportunity in my sales pipeline which
+again is part of my automation that I
+originally had this is so freaking
+badass it took like about 45 minutes it
+was a lot of dialog right because we
+wanted to take our time and explaining
+what was happening we did so really
+about 30 minutes to set this up at the
+agency level which is pretty darn
+remarkable and you have yourself a GTP
+and again we went so incredibly basic
+just to get something up and running
+quickly and as you can see there are
+snapshots there are demo snapshots
+there's all these cool things you can do
+so this is like absolutely next level in
+the things that we're doing so got blown
+away and I think that this is pretty
+cool like and I honestly I'm even more
+excited so what we're going to do is
+like again for anybody that's interested
+you have the link below we want to make
+sure that you guys take full advantage
+of this this is absolutely amazing like
+again we've tried conversational AI
+we've tried a lot of them out there
+they've been around for close to four
+years doing this they've went through
+the ringer they did it before was
+actually AI as you could see it live the
+setup was as bad as simple as it can get
+and the fact that you're able to do a
+non- booking with the booking bot look
+how simple we made it and look already
+the results that is my time that is my
+automation that fired there were no
+hiccups you guys saw it live and we did
+it completely raw which means there was
+no practice Andrew and I didn't practice
+for 7 hours we literally jumped on a
+call as of today to try to show you this
+outstanding product So for anybody
+that's out there that's interested if
+you want to book your own demo for this
+booket you know they have tons of
+resources out there and we're going to
+be coming back because we're going to
+show you how to use the live agents in
+another video because that's where you
+can put basically web Bots anywhere and
+you can make a business out of it where
+you could basically design live chat
+Bots for people and put it on their
+sites and that is another function that
+just comes with zappy chat so we're H
+going to be super excited to bring you
+that next so thank you for watching
+we'll see you in the next one
+[Music]

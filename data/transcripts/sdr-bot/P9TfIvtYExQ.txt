@@ -1,0 +1,1471 @@
+# I Built a Lead Generation AI Agent with no code on n8n
+# Video: https://www.youtube.com/watch?v=P9TfIvtYExQ
+# Category: n8n-automation
+
+So, I've just built the ultimate lead
+generation agent, and I'm super excited
+to share it with you. Generate a list of
+leads for founders of marketing agencies
+in London, United Kingdom, Chicago,
+United States, and Sydney, Australia.
+So, as you guys can see, the AI agent
+runs. Boom. And just like that, the AI
+agent responds with, "I've added 272 new
+contacts for founders of marketing
+agencies in London, United Kingdom,
+Chicago, United States, and Sydney,
+Australia." And if we open up the Google
+Sheets that we've connected to the
+agent, you can see that now we have a
+list of
+272 different founders for marketing
+agencies. And if we take a look at the
+actual location, you can see that the
+location is in line with what I actually
+requested from the AI agent. Now, let's
+say we're super interested in finding
+out more about this lead here, James
+Ferman. We can just go and grab his
+LinkedIn URL and then tell the agent to
+research this lead and give the actual
+LinkedIn URL. And then just like that,
+the agent is going to run again. And
+after about a minute, the AI agent is
+going to respond with the research on
+James Ferman is now complete. Please
+check your email for the full report.
+And if I open up my inbox, you can see
+that 0 minutes ago, we received an email
+that says James Ferman research report.
+It's got a nice photo of him and his
+company. And then there's a whole bunch
+of information, including his
+information, his company's information,
+his interests, the similarities between
+us, different pain points and solutions
+to those pain points that we can offer
+as a business, and a whole bunch of
+other granular information as well. So,
+as you can see, this AI agent is
+extremely powerful. Imagine pulling out
+your phone, going on Telegram, and
+recording a voice about what sort of
+leads you want to generate. And just
+like that, you'll have a bunch of leads
+inside an Excel sheet and even reports
+sent directly to your email. So, just
+before I get into the workflow and show
+you guys exactly how everything is
+working under the hood, I wanted to let
+you guys know that as always, I'm giving
+away this template for completely free.
+It's going to be in the link in the
+description down below. So, click on
+that link. It's going to take you to my
+free school community. go to the YouTube
+resources section and look for the video
+that has the title, which is the same as
+this video's title, and then just
+download the template, import it into
+your own workflow, and follow along with
+the video to set it up exactly how I've
+set it up. Now, let's not waste any more
+time and get back to the video. So, the
+lead generation agent that we built is
+called Lead Generation Joe. As you can
+see, he's a goofy guy. All you guys have
+to do is open up messages and then start
+texting him. So, let's just say hi.
+We'll send that through and then we'll
+run the AI agent. And as you can see,
+the AI agent runs and it uses the brain
+and it responds back to us saying, "Hi,
+I'm lead generation Joe. What leads can
+I help you scrape today? Just let me
+know the locations, business types, and
+job titles, and I'll take care of the
+rest." So, I've just typed in, "Please
+create a list of leads for IT
+consultants in Toronto, Canada, and New
+York, United States." So, I'll send that
+through. And then the agent is going to
+respond back to me saying, "Could you
+please specify the job titles you're
+interested in for these IT consults?"
+So, as you can see, if I don't give
+enough information, otherwise the
+locations, business types, and job
+titles, the AI agent is going to try and
+clarify with me so it has enough
+information to actually scrape the lead.
+So, we're just going to respond with
+founders, please. And if we run the
+workflow, you can see that this time the
+brain is actually going to call on the
+lead scraping workflow. And then the
+lead scraping workflow is actually going
+to scrape those leads, put it inside
+this Google sheet that has all these
+different pieces of information, and
+then it's going to respond back to us
+saying, "Done. I've added five new
+contacts for founders of IT consulting
+firms in Toronto, Canada, and New York,
+United States. So, let's take a look at
+the lead scraping workflow. As you can
+see, the AI agent basically sends a
+query over to this workflow that starts
+the workflow. Um, and the query is in
+JSON formatting. So, over here, we
+change it to actual JSON. You can see
+that it says the location has to be
+Toronto, Canada, and New York, United
+States, which is what we asked. And
+also, the business or the business type
+or basically the industry is going to be
+IT consultants. and the job title is
+going to be founder. And then what
+happens is that information goes over to
+an Apollo scraper or an API that's
+actually using Apollo in the back end to
+scrape leads. And then it's scraping a
+list of leads. So in this instance, it
+only found five leads in these um
+regions for IT consulting firm founders,
+which is not usual. It usually gets a
+lot more than that, but I guess it
+really just depends on what sort of
+keywords you guys are searching up and
+also um in what regions you're actually
+searching that up. So in terms of IT
+consultants in New York and United
+States, Apollo doesn't really have much
+information for the actual founders. So
+that information is is then getting
+manipulated through a bunch of different
+nodes and then eventually it's going to
+Google Sheets where it's getting
+uploaded. So if we go over here and we
+go to the very bottom, you can see that
+we now have five IT consultants here
+with only one of them being in Toronto
+and the rest of them being in New York
+in United States. So now let's test out
+the second capability of the AI agent.
+Let's say please research this lead and
+send me an email with the report. And
+then you basically just have to chuck in
+the actual LinkedIn URL of that lead
+that you want to research. And then
+let's say we send it through to lead
+genen Joe and we run the workflow.
+Basically what happens in this instance
+is the brain decides that it should call
+on the actual lead research tool. Um,
+and the lead research tool itself is
+basically a separate workflow which as
+you guys can see researches that actual
+lead and then sends off an email to us
+with the actual research report for that
+lead. So let's take a look at the actual
+lead research workflow. Now the lead
+research workflow is a little bit more
+complex than the other workflow. As you
+can see, it's separated to four
+different sections. The first part is
+researching the actual prospect. So,
+every time you send through a LinkedIn
+URL, that LinkedIn URL gets sent to
+Relevance AI via API. And then Relevance
+AI basically just scrapes everything on
+that person's uh LinkedIn account,
+including their LinkedIn posts, all the
+information on their LinkedIn account
+and even their company LinkedIn account.
+And then that information goes through a
+bunch of code which basically just
+formats it into a nice report. And then
+using the Perplexity API, we do a bunch
+of research about them online, basically
+finding any information that exists
+about them or their company. And then
+the third API is using Apify to scrape
+the Trust Pilot reviews about that
+actual lead. And then that information
+is then getting sent on to a bunch of
+OpenAI nodes that's going to analyze
+that information and extract a bunch of
+valuable information for us. So in this
+instance, we're looking at creating a
+summary for that actual person first. So
+basically just a summary section that
+goes inside the report. And then we're
+looking at similarities. So what sort of
+similarity points do we have with that
+person? Um because using those
+similarity points, you guys can
+obviously send some sort of cold
+outreach email that says like, "Hey, me
+and you are both XY Z." And then you can
+obviously start a conversation and try
+and convert them that way. And then in
+the third analysis node, we're basically
+looking at what sort of pain points that
+person has, which obviously depends on
+what sort of business they run, what
+sort of industry they're in, what sort
+of job title they have, and then based
+on those pain points, we're coming up
+with solutions or opportunities of what
+we can offer them in order to obviously
+onboard them as a client. So basically,
+these three analysis nodes work really
+well. if you guys are sending out
+massive cold outreach campaigns and you
+want to be able to analyze information
+that you can use inside those called
+outreach campaigns. Um, and then in the
+next node we basically have a generate
+report node. And in this node, basically
+all the information is put getting put
+into a HTML report. And then once that
+HTML report has actually been created,
+it's getting sent over to us via email.
+So if I open up my email, you can see
+that this is the report for the person's
+LinkedIn URL that we sent through. Their
+name is Mosa Regurai. I hope I'm not
+saying that wrong. Um, and then there's
+basically just a whole bunch of
+information about them. So, as I said,
+there's a summary section at the top.
+There's a person summary, which is all
+the information about them specifically.
+So, for example, they have 12 years of
+experience in founding and developing
+companies. They're the founder and
+president of ATD technologies. They have
+expertise in fundraising, business
+development, modernization, management,
+leading organizations. And then after
+that, there's a summary section for the
+actual company itself. So, AT Technology
+LLC established in 2012 and based in
+Lake Grove, New York, is a
+forward-thinking staffing and recruiting
+agency committed to diversity and
+inclusion. So, there's a bunch of
+information there that just by reading
+that, you'd know everything about their
+company. Um, and then there's some dot
+points as to what sort of interests they
+actually have. So, in this case, she has
+interests in entrepreneurship, talent
+acquisition, business development,
+diversity and inclusion, and information
+technology. Um, and then there's unique
+facts about this person. Unique facts
+are really good if you guys are sending
+out cold emails because if you can reach
+out to them mentioning a unique fact
+about them, obviously that email will
+feel more personalized and they feel
+like they have to respond back to you.
+Um, so in this case, Mezenna is not only
+the founder and president of AT
+Technology, but also serves as a founder
+and board member at Tailored Staffing
+Inc. demonstrating her extensive
+involvement in staffing industry. And
+she's also held some leadership
+positions at other places as well. And
+then after that there's a similarity
+section which basically just determines
+the similarities between you and that
+person. And then there's the opportunity
+section in the third analysis node which
+basically just looks at the pain points
+that they potentially have. Um and these
+pain points are obviously pain points
+that are related to your product or
+service. So you obviously change that
+prompt for it to match your product and
+service. But in this case it's thinking
+of me which is an AI and automation
+agency. And then in the next column
+there's basically evidence as to why the
+large language model thinks that this is
+the case. And then there's also a
+solution which is basically what we can
+offer them to fix this painoint. And the
+solution section is also somewhat
+replicated down here with automation
+opportunities which basically just talks
+about the different opportunities for
+automation or as I said different
+opportunities for us to sell them on our
+service. And then there's a whole bunch
+of other information which is more
+granular that's actually been extracted
+from their LinkedIn account like their
+name, the headline, the location, the
+about us section, the city, the country,
+the job title, the company, the company
+description and bunch of other stuff.
+And then usually there's an education
+section here which basically just goes
+through all the different educational
+institutions that they've studied at. Um
+but in this instance she doesn't have
+anything on her LinkedIn but this
+usually fills up the table. And there's
+an experience section here which similar
+to the education section. This one
+actually looks at the previous job
+history. So worked at this company. The
+title in this company was this. The date
+range was this. And the location was
+this. And then same for this other
+company. And then usually there's a
+section here that says recent LinkedIn
+post which basically just scrapes the
+last 30 days of posts that they've made
+on LinkedIn. But in this case, she also
+hasn't posted any sort of things on
+LinkedIn. And then I'll just show you
+guys what this looks like in another
+research report. So in this instance,
+it's a research report of myself. So as
+you can see, that's me. That's my
+company. Um that's the information that
+we just went through. Over here, we have
+my education. And then we have my
+experience, which is the places that
+I've worked. And over here, this is my
+last two most recent LinkedIn posts. So
+if I had more LinkedIn posts over the
+past 30 days, it would basically scrape
+all of those. And then coming back to
+me, you can see that there's a Google
+research analysis section, which is
+basically all the research that was
+found on her company by searching
+through Google. And the tool used here
+is Perplexity. And then we have a
+Trustpilot review section, which is
+meant to import the negative Trust Pilot
+reviews that they've recently received.
+So in this case, they don't have any
+negative Trust Pilot reviews. But if I
+bring up another example and we scroll
+down, you can see that this person has
+got a couple of one-star and two star
+Trust Pilot reviews that were created
+recently. So you can use these Trust
+Pilot reviews to also figure out what
+sort of pain points they have and you
+can actually reach out to them saying,
+"Hey, I know you guys got a negative
+review on this specific thing and this
+is how you guys can fix it. This is how
+we can help you." So if we come back to
+the actual Google sheet itself, you can
+see that for each lead, there's a bunch
+of information that's being scraped.
+There's their full name, their email
+address, the phone number, the location
+that they're in, which is basically
+meant to be the city, followed by the
+actual state. Um, and then there's also
+the industry that they're in, which is
+basically the business type that we sent
+through, their company name, the job
+title inside that company, the seniority
+level inside that company. So, are they
+founders? In some instances, they might
+be entry level like this person here,
+but we haven't really searched up for
+anyone entry level at this stage. And
+then there's their website URL and their
+actual LinkedIn URL. And then at the
+very end, there's also a column here
+that is the actual research reports that
+we've created. So in this instance, this
+is James Ferman, which we just demoed
+before. And if you go over here, that's
+the actual research report that we
+created for James in HTML format. So now
+let's run through another demo, and then
+I'm going to show you guys exactly
+what's happening in every single node.
+So let's say, hey, lead genenjo, can you
+please scrape a list of leads for owners
+of real estate agencies in Sydney,
+Australia, and Oakuckland, New Zealand?
+So we'll send that through and then
+let's run the workflow. So as you guys
+can see basically what happens here is
+the actual telegram trigger triggers
+because a new message has been sent to
+the actual chatbot. And then in the next
+node the workflow decides whether this
+was a voice message or whether it was a
+text message. So in this case it was a
+voice message. So it went upwards and
+then the actual voice file got
+downloaded from Telegram and it got
+transcribed and then once it got
+transcribed it got fed to the actual AI
+agent which then sent that information
+over to its brain and decided okay well
+in this case we have to call on the lead
+scraping tool. So then it called on the
+lead scraping tool and then it responded
+back to me saying done I've added 28 new
+contacts for owners of real estate
+agencies in Sydney Australia and
+Oakuckland New Zealand. So if we come
+back to the actual Google sheet, you can
+see that it is indeed true. We we now
+have a bunch of leads for owners of real
+estate agencies that are either in New
+Zealand or in Australia. So taking a
+closer look here, the actual first note
+is the trigger note. Obviously, every
+automation needs a trigger, which
+basically just tells the automation,
+hey, it's time for you to run. And in
+this case, obviously the trigger is a
+message being sent to the bot telegram.
+So if you guys want to set up this
+Telegram trigger yourself, obviously the
+first thing you have to do is create the
+bot. And then once you create the bot,
+you have to hook it up to your native.
+Let me show you exactly how to do that.
+So setting up a bot in Telegram is super
+easy. All you guys have to do is search
+up bot father like godfather but for
+bots. Godfather looking bot comes up.
+And this is exactly what you want to
+see. So botfather this one here. Then
+you want to send it a message saying
+start. And once you send that there a
+instruction manual that comes up saying
+what do you want to do next? What we
+want to click on is new bot. And then
+it's going to say all right you want to
+build a new bot. What are we going to
+call it? So, we're going to call this
+one lead generation Joe 2.0. So, we'll
+send that through. So, that's the name
+of the bot. And then it's going to say,
+okay, well, now you have to give me a
+username. For the username, it has to
+end with bot. So, just keep that in
+mind. So, in this case, let's call it
+lead_jen
+Joe_2bot. Send that through. And then
+it's going to say, congratulations, your
+new bot has now been created. And we
+don't really care about the rest of this
+message. You want to click on this me
+button and that's going to take you to
+the actual bot. So if I click on start
+right now, nothing's going to happen cuz
+it's not connected to your NA10 account
+yet. So coming back to the bot father,
+you can see that it gives you a token to
+actually access it via API and that
+token is this one here. So you click on
+it and then it's going to copy to
+clipboard. So then once you've created
+your bot and you've copied the actual
+API token to clipboard, you want to come
+back to your Telegram trigger and you
+want to click on web hook URLs. Then as
+you can see two options come up, the
+test URL or the production URL. Now,
+basically what these URLs are, it's
+basically just a way for your Telegram
+bot to know where it's meant to send the
+trigger once that message gets sent
+through inside Telegram itself. Um, and
+that's basically this URL here. So, it
+could either be a test URL or production
+URL. The test URL you want to keep when
+you're still testing. So, if I have test
+URL, I'd have to manually click on test
+workflow every single time for the
+actual workflow to work. But if I were
+to activate this actual workflow to
+click on activate, I would want to be
+using the actual production URL and then
+in that case I don't actually have to
+have the workflow open. I can just close
+my laptop if anything just go on my
+phone and talk to the bot and then that
+will run the workflow in the back end
+and then respond to me. So for the time
+being, just because I'm going to show
+you guys how it works, I'm going to keep
+it as test URL. But once you guys have
+built it, I would recommend clicking on
+activate and then going back and
+changing it to production URL. Cool.
+Cool. So, now that we know what the web
+URL is going to be, and we also have
+access to the actual API key, um there's
+a little bit of code that you guys have
+to put into some sort of CLI. So, I'm
+going to give you guys access to this
+code inside the description of this
+video. So, just click on that and you
+guys will be able to access the code so
+you don't have to screenshot it or
+anything. But basically, what you guys
+want to do is you want to open up some
+sort of CLI. So, in this case, I've
+opened up terminal. Now, you guys would
+open whatever else. And then you would
+paste in the actual code that I send
+you. And then all you have to do is
+replace these two parameters here. So,
+we've got web hook URL here. here and
+then over here we've got API key. So the
+web URL will actually replace it with
+the actual web URL from NA10. So in this
+case I'm using the test URL. So I just
+click on copy and then I will paste it
+here. And then over here the second
+parameter the API key. You'd basically
+just go back to botfather. You'd copy
+the actual API key to your clipboard.
+And then you will replace this section
+here with API key. And then all you have
+to do is click on enter. And just by
+doing that, your bot is going to be
+connected to this NA10 workflow. So, I'm
+obviously not going to do that because
+I've already connected my bot to NA10.
+Um, but once you guys click that,
+there's nothing else you have to worry
+about. The trigger is going to work. So,
+every time you send a new message to
+your actual bot, it will trigger and the
+workflow will run in the back end. So,
+then once that trigger comes in or that
+message comes in, it's going to be one
+of two different uh types. Obviously,
+it's either going to be a voice message
+or it's going to be a text message. So
+this next note here, this if statement
+basically just decides whether it is a
+voice message or a text message. So if
+it's a voice, it will go up and if it's
+a text, it will go down. So in this
+case, the last message that we sent was
+indeed a voice. And then the next node
+is basically just downloading that
+voice. And that downloaded sort of
+soundtrack now is sent over to OpenAI to
+transcribe to turn that voice into text
+so we can send it through to the AI
+agent. So I wouldn't recommend changing
+anything here. You'd basically just want
+to add your credentials, which is super
+simple to do. Basically, you just have
+to go to OpenAI and get an API key and
+then pop it in here, which is really
+easy. And then that message gets sent
+over to the AI agent itself. So this was
+text. What would happen is basically
+that information will come through. Then
+it will get put into a parameter called
+text. And then that parameter will be
+sent over to the AI agent. So as you
+guys can see in the actual AI agent
+itself, the text comes in as a user
+message, which is basically just
+defining what the AI agent needs to do
+in that very instance. And obviously for
+this workflow we're using a tools AI
+agent and it's got this nice prompt
+here. So getting into the prompt, the
+prompt has got four main sections. We've
+got an overview section, a tools
+section, a rules section, and also an
+example section. So basically for the
+overview, we're basically just telling
+the AI agent what its role is and we're
+giving it some context. We're saying you
+are a lead generation agent responsible
+for scraping and researching leads. And
+the next section, we've got the tools
+section, which is basically just telling
+the AI agent what sort of tools it has
+access to. tool or basically what sort
+of capabilities it has and for each
+capability which tool should it be
+calling. So we've tried to keep it
+really simple. We've said use this tool
+for the lead scraping tool to scrape
+leads into a Google sheet. Only call
+this tool once you have enough
+information to complete the desired JSON
+search query. So if we come back and
+have a look at the actual tool itself,
+you can see that the tool is basically
+just a NA10 workflow that's been
+connected. So if you guys want to add
+more tools, you just click on this plus
+button and then you would click on call
+NA10 workflow tool and then you would
+obviously go and build an NA10 workflow
+and then you would just choose it from
+this dropown menu here and then just
+like that your AI agent will have access
+to that actual tool. So deleting that
+one for the actual lead scraping tool.
+What we have is two sections. Obviously
+we've got the name of the lead scraping
+tool. I like to make the actual names
+for the tools descriptive of what that
+actual tool is meant to achieve because
+obviously by doing that it removes all
+sort of uncertainty for the AI agent as
+to what that tool exactly is and what
+when it should use it. So then the
+second thing we have to define inside a
+tool is the actual description of that
+tool. Inside the description of that
+tool, it's really tool for the first
+thing you have to do is basically just
+say when the AI agent is meant to use
+that tool or basically what that tool's
+used for. So call this tool to scrape
+leads once you have enough details about
+the search query. kind of replicated the
+same thing I said inside the actual
+prompt. You don't necessarily have to
+replicate it. And then the second thing
+you want to say in the description is
+you want to tell the AI agent what sort
+of input format it should give to this
+tool. So for the agent to be able to
+communicate well with this actual tool,
+it would have to send through a JSON
+formatted query which includes these
+three arrays. So the first array is the
+location array and it basically just has
+the different locations that that person
+says inside the prompt. Um, and really
+important thing here is that we've
+replaced all the spaces with pluses. So,
+plus and plus. And then for the
+business, it's the same sort of thing.
+So, business one here, business two
+here. And then for the job titles, it's
+also the same thing. So, then coming
+back to the actual AI agent, you can see
+that the second tool that we've defined
+is the lead research tool. And I've told
+the AI agent that it's meant to use this
+tool to research a lead by using the
+LinkedIn URL. So, if we take a look at
+the second tool, it's also another NA10
+workflow that we've connected as I
+showed you guys before. So the name of
+this tool is the lead research tool
+which is also descriptive. And then for
+the actual description, we've said you
+should call this tool to research lead.
+The input that you should give should be
+the LinkedIn URL. And the actual JSON
+formatting for the input should be this
+format here. So now that the AI agent
+knows what tools it has access to and
+how it's meant to use them, we basically
+give the AI agent a bunch of rules to
+define how we want that AI agent to
+actually behave. So first rule is to ask
+clarifying questions if you're unsure
+about something. And the second rule is
+to ask questions to gather enough
+information to actually satisfy the
+query for each of the tools. And we saw
+that one before when the AI agent
+basically asks us to clarify exactly
+what job titles we want to use. And then
+the next rule is telling the AI agent
+it's meant to introduce itself as lead
+generation Joe. And then the next one's
+basically just saying that thing about
+the spaces and the plus. So replace all
+the spaces with plus. And then I'm just
+reinforcing a couple of things to make
+sure that the AI agent is robust in how
+it acts. So depending on whether you
+guys want to add more things to this
+lead generation agent, you'd also add
+more rules and also add more tools to
+define that behavior and make sure that
+the AI agent doesn't like stray away
+from it, if that makes sense. And then
+at the very end, we have an example
+which basically just is an example of an
+interaction with the AI agent. So in
+this scenario, it's basically an example
+where an interaction with the AI agent
+to basically tell the AI agent how it's
+meant to handle different situations. So
+in this situation, we said, "Hi." The AI
+agent said, "Hi, I'm Leen Joe. What what
+can I do for you? These are the
+information that you have to give me."
+And then I basically just gave it a
+specific request. I said, "I'm looking
+for Chicago, United States, Sydney,
+Australia, and financial planners." And
+then lead genen Joe said, "Awesome. I
+think you forgot the job title." So it
+basically clarified to make sure it has
+enough details. And I said, "Only CEOs,
+please." And then what lead genen Joe
+did is that it basically called on the
+lead scrape tool with this JSON
+formatting here. and then the tool
+responded to it saying we've added 25
+new contacts to the Google sheet and
+then lead genenjo used that response to
+respond to us. So this is basically just
+like a example of an ideal situation of
+how a certain scenario should be handled
+by lead genenjo. So then lead genenjo is
+obviously connected to a simple memory
+and that's basically just allowing the
+AI agent to be able to remember previous
+conversations or previous messages. In
+this case we want the AI agent to
+remember 10 previous messages that's
+been sent through. And we've defined the
+actual key of that memory to be the same
+as the chat ID of the actual Telegram
+chat. So if we were to open up a new
+chat, that 10 will kind of refresh. But
+if we're still in one chat, it's going
+to remember the last 10 messages inside
+that specific chat. And obviously, as
+always, the AI agent is connected to a
+brain. And in this case, we're just
+using GPT40. So then once the lead genen
+agent gets a response back whether from
+the brain or from the actual tools or
+the workflows itself it will send that
+response back to us in telegram. So if
+it's an error, it's going to send an
+error response saying whatever the error
+was or why whyever the tools didn't
+work. So you guys can come back and try
+and figure out what was wrong there and
+solve that edge case. Or if it was a
+success, it will basically just return
+the actual output from that tool or the
+brain back to us inside Telegram. And
+that's what we see on the actual chat
+interface when the bot responds to us.
+So taking a closer look at the actual
+lead scraping workflow, you can see that
+the first trigger that we have is a when
+executed by another workflow trigger.
+And the when executed by another
+workflow trigger basically just tells
+the automation or the workflow that it
+should run when another workflow calls
+upon it. So as you can see the input
+that came in from the other workflow or
+the AI agent was the actual query
+itself. And if we go back to the actual
+lead agent itself and go to logs and
+click on lead scraping you can see that
+indeed a query was sent over with the
+location business and job title arrays
+and that's reflected here. So then in
+the next node once that information
+comes in it's being converted into
+proper JSON formatting. So as you can
+see now we have location Sydney
+Australia and Oakland New Zealand and
+the business type is real estate
+agencies and the job title is the owners
+of real estate agencies. And then that
+information is going through a bunch of
+custom JavaScript code which is
+converting that information to a URL so
+we can scrape that URL from Apollo. So
+if I basically grab this and click on
+copy and then paste it into Google, you
+can see that once it runs Apollo would
+come up and inside Apollo that specific
+search is being prepopulated. So real
+estate agencies, we're looking at owners
+and we're looking at Sydney, Australia
+and Oakuckland, New Zealand. So then
+this page is what we're basically
+scraping in order to be able to grab
+information about those leads to put
+inside the Excel sheet. So to do this,
+what I've had to do is I've had to
+basically analyze the URL that Apollo
+has and figure out how we can convert a
+certain search query to a certain URL
+because obviously the URL isn't just as
+simple as saying business this location
+this yada yada yada then it looks pretty
+confusing here. So I wouldn't really
+recommend changing this code. If you
+guys decide to change the actual
+parameters inside the query to have more
+things than just location, business, and
+job title, you'd probably need to come
+back to Apollo, add that specific thing
+to the lefthand side, and then see how
+the URL changes, and then update that
+code to account for that change inside
+your actual workflow, if that makes
+sense. Now, if you guys don't know how
+to code, you don't have to necessarily
+worry about it. you can just ask chatbt
+and chatbt will be more than capable of
+analyzing it and giving you this custom
+code that will convert the query to a
+URL for you to scrape. So then once that
+URL has been created, it's actually
+being sent over to a HTTP request node
+which is making an API call to a tool on
+Apify in order to scrape that actual URL
+itself. So you guys wouldn't necessarily
+need to change anything in this HTTP
+request node. The only thing you'd have
+to change is your URL and also the
+actual API key itself in the HTTP
+request node. So you guys want to open
+up your Apify account. Now if you guys
+don't have an AFI account, it's
+basically very simple to make one and
+they also give you $5 of free credits
+per month. So Aify is really good.
+Depending on how many leads you guys
+want to scrape, you might not even have
+to pay Apple. But if you guys do decide
+to buy an Apple subscription, you can
+put code 20 kgm, which is 20 followed by
+my name in as a promo code and you guys
+will get 20% off and I'll get a little
+kickback on it as well. So then once
+you're in Appify, you basically just
+want to click on Appify store and then
+look for Apollo scrapers and a whole
+bunch of different Apollo scrapers will
+come up. The one that you want to click
+on is the one that says up to 50K leads.
+This one's the cheapest one, probably
+the one that I would recommend for you
+guys to use. So basically just click on
+this one. You want to click on save. So
+then you can refer back to it later if
+you'd like to. And then all you have to
+do to connect it to your NA10 account is
+basically just click on API and then
+click on API endpoints. Look for the one
+that says run actor synchronously and
+get data set items. Click on copy to
+clipboard. Come back to NAN. Replace the
+actual URL. And then as you can see at
+the very end it would say token equals
+to and it would have your actual API key
+there. So you can literally just keep it
+like that and remove this API key in the
+query parameters if you want to. But if
+you want to set it up like how I've set
+it up, you can basically just copy that,
+bring it down here, paste it in, keep
+token as the name, and then for the
+actual API key, bring it down to the
+actual value. Now I've removed my API
+key and I've just kept this anonymous
+sort of parameter so you guys don't have
+access to my API key. But for you, you
+would be able to see your API key here
+at the end. So then coming down to the
+actual request that we're sending
+through to Appify, we're basically
+saying that we want to get personal
+emails, although I haven't actually put
+it inside the Google Sheets. We want to
+get work emails and we want a total
+records of 500. Now this specific ampify
+tool needs you to give a total records
+number of minimum 500, which basically
+means if there is 500 leads to be
+scraped, they will be scraped. But in
+scenarios like what we saw before, if
+there's only five or 10 or 20 leads that
+Apollo can find, then in that case, it
+would only scrape those five to let's
+say 20 leads. And then the last
+parameter which is the most important
+one is the actual URL that we're trying
+to search on Apollo to scrape those
+links. So it is worth mentioning that
+there is also another Apify API that you
+guys can use or a different tool. It's
+this one here that's called Apollo
+Scraper unlimited no cookie 75 cents
+per,000 by Supreme Coder. There is pros
+and cons to either of these tools. The
+reason why you might want to use this
+tool is that this tool gives you a
+couple of additional parameters compared
+to the other tools. So, this one also
+gives you number of employees, I think,
+from memory, and also it gives you a
+couple of other minor things that you
+can add into the Google Sheets if you'd
+like. But the problem with this Apify
+tool is that unless you have a paid
+Apollo account, it's only going to
+scrape 25 leads per request. So, not
+500, not a,000. Every time you send that
+request, it can only take 25 leads, but
+it is cheaper per thousand. So, it's
+really up to you guys. If you want to
+save money, it might be worthwhile to
+use this Apollo tool instead of the
+other one. So moving on, we can see that
+the Apollo scraper pulled in 28 leads.
+In the next node, what we're doing is
+we're extracting all the important
+pieces of information from the actual
+Apollo API output. So there's a whole
+bunch of different parameters that that
+Appify tool will give us. We don't
+really care about everything, or at
+least I don't really care about
+everything. So, I'm just extracting the
+ones that I care about, which is their
+full name, email address, LinkedIn URL,
+seniority level, job title, company
+name, location, country, their phone
+number, website URL, and their business
+industry. So, it's really up to you guys
+if you want to add more of these uh
+parameters. You can literally just click
+on that drag and input fields, put a
+name for that parameter. Let's say
+height. Imagine if you wanted to get the
+person's height. Um, and then you would
+drag in whatever parameter is equal to
+that person's height. But we're not
+going to do that for this instance. And
+as you guys can see for this number one,
+it looks like it's a really complicated
+piece of JSON variable code that I have
+here. But basically what this is doing
+is it's just saying if there is a
+number, then pull in the number. If
+there is no number, then just say that
+it's null. And we've had to do this to
+make sure that the workflow doesn't
+break because a lot of people don't
+actually have their numbers on Apollo.
+In this instance, this person didn't
+even have their email address on Apollo,
+probably because they're a real estate
+agent. But for a lot of people, probably
+99% of leads that you scrape, they will
+have an email address. So then once that
+information comes in, uh there is this
+really cool node that basically removes
+all the duplicates, not duplicates
+inside these 28 items, but it removes
+all the duplicates from previous
+executions. So let's say if you guys are
+searching up real estate agencies in um
+Sydney, I know Sydney and stuff because
+I'm from Australia. I don't really know
+the uh United States states, but let's
+say if you guys search up Sydney and
+then you want to search up Melbourne and
+then you want to search up let's say
+Perth, which is three different places
+inside Australia, you might get some
+duplicates depending on how Apollo would
+show that data. And then this node over
+here basically just checks the items
+that came in from this execution against
+the other executions and removes the
+ones that are repetitive. So it doesn't
+double add it to the actual Google sheet
+node. Now, with that being said, I
+really wanted to put this node in just
+to show you guys what it does. Uh, but
+you really didn't need this node because
+in the next node, we're actually
+uploading this to Google Sheet. And what
+we have here is an append or update row
+node. And basically what this means is
+that it will look through the actual
+Google sheet itself. And it will match
+each item from the previous node to the
+rows inside the Google sheet. So let's
+say for example if inside the Google
+sheet there is a LinkedIn URL that is
+Kevin Collins then it will match it to
+that specific row and it will update
+that row as opposed to add a duplicate
+row at the very end if that makes sense.
+So to connect yourself to Google Sheets
+it's also very simple. You want to click
+on create new credential and then you
+just want to sign in which is really
+simple and straightforward and then you
+can choose which column you want to
+match on. I would probably say LinkedIn
+URL is the best because it's the hardest
+for the LinkedIn URL to be the same
+across any two people. like I don't
+think will ever happen. Um, and then
+I've just uploaded each of those data
+points from the previous node into the
+actual Google sheet itself. So feel free
+to add more columns to the actual Google
+sheet if you'd like and then also pull
+it in from the previous node to upload
+it to that column from NAN. So in the
+next node, what I've done is I've
+basically just defined a new parameter
+that is pulling in the length of the
+previous node's items or basically how
+many items is in the previous node and
+then it's saying this length new
+contacts has been added to Google sheet.
+So basically let's say if we've scraped
+500 different people or different leads
+the length or the number of items in the
+previous node would be 500 and it will
+say 500 new contacts has been added to
+the Google sheet. Now because there's 2
+items coming through this would also
+output 28 different parameters saying
+the same exact thing. So in the next
+node I've basically just limited that
+down to one single parameter which is
+going to say output 28 new contacts have
+been added to the Google sheet. And then
+that output is going to be sent back to
+your AI agent once the workflow runs
+successfully. So your AI agent knows
+that the workflow actually worked and
+how many leads were uploaded. So if we
+come back here, you can see that the
+output from the lead scraping workflow
+was indeed 28 new contacts have been
+added to the Google sheet. And then
+based on that information, the AI agents
+responded to us saying done. I've added
+28 new contacts for owners of real
+estate agencies in Sydney, Australia and
+Oakuckland, New Zealand. let me know if
+there's anything else that I can assist
+you with. And then at the very end,
+obviously that's being uploaded to the
+memory so the AI agent can remember that
+for the next messages inside the
+conversation. So now let's quickly work
+through the lead research workflow. If
+we come back to the Google Sheets, let's
+just grab someone's LinkedIn URL. Let's
+say Clarissa Yao. She is a marketing,
+she runs a marketing agency in the
+United Kingdom. So let's just grab her
+LinkedIn URL. And then actually we can
+test the agent here. Let's see what her
+name was. So Clarissa Yale, let's grab
+her name. Let's say please research
+Clarissa Ya. So we'll send it through.
+We'll run the agent. Agent will respond
+saying, "Can you please provide me with
+the LinkedIn URL for Clarissa Yao?" So
+this goes back to the actual system
+message or the prompt that we defined
+for the agent. We said to always make
+sure you have enough information and
+always clarify things if you're not
+100%. So in this case, we'll paste in
+the LinkedIn URL. We'll send it through.
+We'll run the agent again. And as you
+guys can see this time it goes to the
+brain and the brain decides that hey I
+got a call onto the lead research
+workflow so I can actually research this
+person. So then coming back to telegram
+you can see that the AI agent says that
+they've created a research report on
+Clarissa Yao which is sent to my email.
+So before we check out the actual
+research report itself I'm going to
+quickly take you guys through the actual
+research report workflow. Again, the
+query is coming in, but in this
+instance, there's not multiple different
+objects or multiple different uh arrays.
+So, there's no need to try and reconvert
+it into JSON formatting. In this case,
+it's already in JSON formatting. So, so
+that's perfect. And then moving on,
+basically what's happening here is we're
+grabbing that LinkedIn URL and we're
+sending it via an API request to a
+relevance AI tool to scrape all the
+information on Clarissa's LinkedIn
+account. So, as you can see, the result
+of that is all of these different
+parameters. We've got the about section,
+the company section, the company
+website, educations, experience, all the
+different stuff that would be on
+someone's LinkedIn profile. Now, setting
+this up for yourself is also extremely
+simple. You basically just want to open
+up your relevance AI account. Now, if
+you guys don't have a relevance AI
+account, it's very simple to make one.
+Just search up relevance AI and then
+create yourself a free account. So then
+you want to go to the tools section
+which is going to be on the left hand uh
+menu bar. And then once you choose the
+tool section, so I'm already on the
+tools section. You want to click on this
+import button. And then once you click
+on this import button, you basically
+just want to import the tool that I give
+you guys access to inside my free school
+community. So basically, you'd import
+the tool. And then once you import it,
+you'd see something like this, which
+would basically say LinkedIn research
+tool. You want to just click on that
+tool. And then once you click on that
+tool, you can see how it's actually been
+set up. You don't have to worry about
+anything. All you have to do is go and
+click on use. Then go and click on API
+and then over here you basically want to
+just grab the API information so that
+you can connect NA10 to your instance of
+this tool. So the first thing you want
+to do is you want to basically just copy
+the actual URL itself. You want to come
+to the re lead research tool and paste
+it in as the URL. And then you want to
+go and click on generate API key. And
+then you want to copy that API key. come
+back to the NA10 workflow and replace
+the value of this authorization section
+or this authorization parameter with
+your actual API key. So, I just realized
+that I gave you guys access to both my
+API keys. Um, so I'm going to be
+changing that, but yeah, just basically
+paste in your API key here. And then
+there is a body that we're sending over
+with this request. And this body has two
+parameters. One of them is the LinkedIn
+URL, which is obviously what we're using
+to scrape. And then one of them is
+saying how many days of post do we want
+to scrape. So in this case, we're
+scraping 30 days of post, but if you
+guys want to scrape 100 days, you can
+change it to 100. If you want to scrape
+only 5 days, you can change it to five.
+Really up to you. So once that
+information comes in, there's three
+separate code nodes. That's basically
+just certain parts of that information.
+Um, and they're creating a HTML section
+that's going to go inside the final
+report. So this one's creating the
+experiences table. This one is creating
+the education table. You guys don't have
+to mess around with this. Just leave it
+as it is. And then after that, we're
+basically using another API request, but
+this time the API request is being sent
+over to Perplexity, and we're basically
+just trying to research the company of
+that specific prospect using all the
+information that's available publicly
+online, like their website and any sort
+of press or any other sort of articles
+about them online. So then to do this,
+you obviously want to connect yourself
+to Perplexity. Connecting to Perplexity
+is also very easy. You basically just
+want to open up Perplexity. You can see
+that I was asking about hotkeys. Um, and
+then you can click on this settings and
+then you want to click on API and put in
+some credits and you will have your API
+key at the bottom there. So then coming
+back here, if you guys don't want to use
+Perplexity, you could also just use
+GPT40 search uh GPT4 search preview um
+or even GPT40 search preview mini which
+is a lot cheaper than Plexity. Really up
+to you guys. Um, and then we just have a
+prompt here that we're saying you are a
+researcher in a business development
+team. Your job is to find as much
+research as you can about a prospect
+company. And then I've basically just
+told it what company it's meant to be
+searching up. So I've grabbed the name
+from the previous node. So I'd said
+Sinoowave or Senoave in this case and
+also the actual website. So it 100%
+knows exactly what company it's meant to
+research about online. So then once that
+information comes from Plexity, it's
+been sent to another code node which is
+reformatting the actual URLs or the
+citation links or basically where the
+information has been scraped from. Um
+which is also going into the final
+report. And then over here, we're making
+another API request to an Ampify tool.
+This one's called Trust Pilot reviews.
+And basically what it does is it scrape
+negative Trust Pilot reviews for a
+certain person. And so to set that one
+up, you always want to obviously come
+back to Appy, click on Appy Store, and
+then search up for Trust Pilot reviews.
+And then you want to look for the one
+with the fire emoji from Nikita. You
+want to click on that one. As I said,
+you want to save it for yourselves. And
+and then all you have to do as I said
+before as well, you want to just click
+on API, go to API endpoints, scroll down
+to the one that says run access
+synchronously and get data set items,
+click on copy, come back to the workflow
+and replace this URL with the URL that
+you copied in. And then you don't even
+need a authentication type. We don't
+need to authorize. You basically have
+already authorized using the actual URL
+cuz it's going to give you the token at
+the very end of the URL like before. So
+then we're also sending a body with this
+actual request. The body has a couple of
+parameters in this instance. First one's
+the company domain, which is basically
+just saying what company are we looking
+for reviews for. That was not proper
+English, but you get what I mean. And
+then we have basically another couple of
+parameters. So this one's saying how
+many reviews are we scraping. So in this
+case, we're scraping the five most
+recent reviews. Um, and these reviews
+are going to be the five mo most recent
+reviews that are 1, two, or three star.
+And then basically just defining that we
+want to start from page number one and
+we don't necessarily need reviews that
+are verified or we don't necessarily
+need reviews that have replies against
+them. So basically this API request is
+going to try pull those Trust Pilot
+reviews. But in a lot of instances if
+the company isn't super huge they're not
+going to have any Trust Pilot reviews.
+So you might get a 400 error code. Um in
+this instance what we've done is we've
+defined that if we do get an error code
+you should just continue anyway so it
+doesn't break the workflow there. So
+then that information is being sent over
+to a code node that's meant to put those
+reviews in a nice format. Now in this
+instance, there was no Trustpilot
+review. So there's not really much
+inside this HTML code. And then in the
+next section, we just have the analysis
+section, which obviously inside this
+section, we're trying to analyze that
+information so we can extract insights
+that's going to help us run our call
+email campaign or call DM campaign or
+whatever we're trying to use that
+information for. So in this instance, I
+have three nodes. The first one is
+basically just summarizing all the
+information about that person and then
+summarizing all the information about
+that company. I'm not going to go
+through the actual prompt, but as I
+said, I'm going to give you guys access
+to this workflow. So, feel free to read
+through the prompt to yourself. And I
+would just recommend changing each of
+these prompts to suit your actual use
+case. Um, for example, in this instance,
+it's obviously starting with you are
+part of the business development team at
+Kimxar, which is an AI consultancy,
+which is my company, not yours. So,
+you'd want to change that to your
+business. And then you'd want to change
+whatever other specific information
+there is about my business or my use
+case to whatever information you want
+for your use case. So then in the next
+node we have a similarities node. In
+this node is trying to identify the
+similarities between me and the actual
+person. And the reason why I like to do
+this is because in cold email campaigns
+and even in consultations, it's really
+good to know what you guys have in
+common before you jump on a call.
+Because a lot of times when two people
+are either meeting for the first time or
+you're sending an email to someone for
+the first time, like there is a certain
+barrier or certain ice of like I don't
+know who you are. And if you guys have
+something to connect on, then obviously
+that's really good because it will allow
+that sort of ice to be broken and that
+barrier to be broken. Um, but obviously
+you can change this to your own use
+case, but basically knowing what sort of
+similarities you have with a certain
+prospect will help break that barrier
+and make that whole interaction
+smoother. Um, but feel free to change it
+if you guys don't want to know about
+similarities. And then the next note, we
+have pain points and solutions, which is
+the most important part of the actual
+analysis itself. It's basically saying
+this is the prospect. This is my
+company. Figure out what sort of pain
+points they have. Figure out how I can
+solve those pain points and onboard them
+as a client. But yet again, this is all
+based on my business and my products and
+my services and my tactics. So, I'd
+recommend reading through this and
+changing the parts that doesn't apply to
+you. So, you can obviously tweak it for
+your own business, but I'll definitely
+recommend keeping this pain points and
+solutions uh node here as well. And then
+if you guys want to add more analysis
+sections, feel free to just add that
+afterwards here. And then we have the
+create report section where all of this
+information is being put into a nicely
+structured report. So that is uh
+Clarissa and that's her company and then
+that's the whole information that we
+have gathered from her inside that
+report. This is obviously just HTML
+code. Um there's these different
+sections that I've imported from the
+previous node. So if you guys do decide
+to add any nodes to this actual
+workflow, you'd basically just add
+little sections into this HTML template
+and then you'd basically just pull in
+that data if that makes sense. So I'd
+probably recommend you guys keep it as
+it is, but if you want to add more, feel
+free to. um at least you change this
+name. This one's called consultant
+research report. You want to change it
+to whatever research report, whatever
+reason you guys have for creating these
+research reports. And then once that
+HTML report is created, it's being sent
+off as an email. So you guys want to
+obviously just connect your own email
+here. And then you also want to define
+what email address you want to send it
+to. So in this instance, I'm sending it
+to myself, but you would probably want
+to send it to your own email address. Um
+and then there's a subject line for that
+email, which in this instance is just
+her name plus research report at the
+very end. and we're just saying that the
+actual email content is being sent over
+as HTML because we've created the HTML
+report. Um, we've just pulled that one
+in here as well. Report get sent off
+through email. So, so coming back to my
+email, you can see that I have indeed
+received a research report for Clarissa.
+That's all the information. So, that's
+her personal summary, that's her company
+summary, that's her interest, that's
+unique facts, that's our similarities,
+and the other information that I talked
+about before as well. So then coming
+back here once that research has been
+sent to you via email, it's also being
+uploaded to the Google Sheets document.
+And obviously for this we just have the
+append or update row again because we
+don't want to add it to the end every
+single time. We want to update the rows
+because it's usually people that we've
+already scraped and added to the Google
+sheet before we're matching it based on
+LinkedIn URL. Again, we're leaving all
+the other columns empty. And then we're
+just adding the research report to the
+final column. So that if we come take a
+look at Clarissa inside our actual lead
+agent Google sheet document. You can see
+that at the very end we now have the
+actual research report as well. So if
+you guys want to use this for any use
+case like cold email or call DM or
+whatever, you can grab that research
+report and put it inside your own
+workflow to say hey this is the research
+report that we have. Use this research
+report to create an email that will do X
+Y and Zed. So then just like that, we're
+able to build a very costefficient lead
+generation and lead research AI agent
+called Lead Gen Joe. And as I said, I'm
+going to give you guys access to all of
+the templates for Lead Gen Joe in the
+description down below. So feel free to
+go to my free school community and just
+download it, import it into your own
+workflow, and tweak it however you'd
+like. Now, as always, if you guys found
+this video useful, I would appreciate it
+if you guys like and subscribe and let
+me know in the comments down below. But
+otherwise, I will see you guys in the
+next

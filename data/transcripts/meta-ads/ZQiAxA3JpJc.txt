@@ -1,0 +1,414 @@
+# The New Way To Use Lookalike Audience On Meta Ads 2026
+# Video: https://www.youtube.com/watch?v=ZQiAxA3JpJc
+# Category: meta-ads
+
+With the Andromeda update by Meta in
+late 2025, I get a lot of messages from
+advertisers saying, "Is using lookalike
+audience still effective on Meta Ads in
+2026?" The answer is absolutely yes. In
+this video, I will show you the new way
+to use lookalike audience on Meta Arts
+in 2026. Lookalike audience is still a
+gamecher for scaling your campaigns on
+Meta Arts if you leverage it
+effectively. Let's dive in. Here is my
+example meta ads manager account. For
+you to create an effective lookalike
+audience in 2026, you need to focus on
+valuebased audience sources. What do I
+mean by value based audience sources?
+Audience that are valuable to your
+business that they make purchase from
+your business or they sign up to your
+business. So if you are creating look
+alike of that it means you are feeding
+the meta ecosystem or the meta system
+with right information to look for the
+look alike of those kind of customers
+for you and when you in 2026 the more
+information the more data you've
+provided or you provided for the meta
+system the more chances of you having
+success or you driving more result on
+the platform. In 2026, the meta system
+is AIdriven. The AI the AI system is
+also smart. The algorithm is very very
+smart. So you need to provide the
+algorithm more data about your business,
+more data about your customers to help
+you make smarter decisions for you. That
+is all. So the more data you provide it
+despite the fact that it is smart, the
+more data you provide for it, the more
+results it will get you. So what should
+we do? How can we create lookalike
+audience focusing on valuebased
+audience? The first thing you need to do
+is to come to all tools here. Then you
+go to audiences. You can also see
+audiences under advertise here. But from
+your meta ads manager account, right?
+You come to all tools. Then you select
+audiences.
+Lookalike audience is very very
+important. It's still very very
+important on meta and it is still
+relevant to your business. You just need
+to know how to use it and know how to
+create effective lookalike audiences. So
+you come to create an audience then you
+select lookalike audience. Can you see
+lookalike audience reach new people who
+are similar to audiences that you are
+you already care about.
+What who are what are the kind of
+audience that you already care about as
+a business? Let's say you are an
+e-commerce business. The kind of
+audience you already care about are
+people that have added product to cart
+on your platform. They are people that
+they've made purchase on your on your
+website. They've already bought product
+from you. You you care about those
+people. So if you are creating lookalike
+audience of all those kind of people, it
+means you are telling the meta system.
+The meta system is AIdriven in 2026. And
+if you are telling the meta system to go
+and look for the lookalike of all those
+kind of audience, they will look for it
+for you.
+It will look for it for you. So you can
+you see you can create a lookalike
+audience based on people who who like
+your page conversion pixel or any of
+your existing custom audience. I will
+tell you to focus on valuebased kind of
+audiences. What are value based kind of
+audience? If I click on this now I will
+select it will ask you select your
+audience source. If you come to this
+select your audience source go to your
+pixel where you have value based
+audience. Your pixel is is collecting
+data. Your pixel has data of people that
+have bought product from your website.
+They have data of people that have that
+have added product to your website that
+they have viewed product. Those are the
+kind of thing you should focus on. They
+are value based audiences. Can you see
+value based sources? If I come to Meta
+Pixel now, let's just say I select Meta
+Pixel. This is just a dummy a dummy ad
+account. I don't really really have a
+lot of data on in here. And so that is
+why you are seeing all these empty. But
+just follow the process that I'm showing
+you in this video to create your own
+lookalike audience. So the select select
+an event source you leave it as website
+because you are using a website. Then
+select an event with value. Choose
+purchase. Can you see they they telling
+you that you should choose purchase
+recommended. So if you come to order
+value now you can see other value. You
+can see add payment info, add to cart,
+add to wish list, complete registration,
+initiate checkout and all those. You can
+also use that. They are they are also
+value based or audience sources but
+let's use purchase for instance. So if
+you select this now if you have data if
+your pixel has data this is a dummy
+account if your pixel has data you will
+see you see highest value passed the
+highest value of kind of customers that
+your day your pixel has passed in the
+last let's say 60 days. Can you see? We
+look at frequency and recency of
+selected events as well as the value
+that it contains. Can you see lowest
+value pass this is very very powerful
+and unique customers that have made
+those purchase. So that is why I said it
+is datadriven. It is really really
+datadriven. Just follow the step in this
+video and make sure your own data is
+sending your own pixel is sending enough
+data. This is a dummy account. So that's
+why you are not seeing a lot of data. So
+once you see this you'll see we have
+received all purchase you it will show
+you the total number of purchase that
+your pixel has recorded in the last 60
+days that contains value from the pixel
+in the last 60 days you will see it
+there. So you also come to select an
+audience location. If you come to select
+an audience location now you type in
+your location there. So let's say United
+Kingdom. Let's say I want to do United
+Kingdom for instance. Now I'll come to
+this then my size select audience size
+number of lookalike audience that you
+want to create. So I create between 1 to
+3%
+depending on your budget depending on
+how you want to leverage this but if you
+are extending to 10 and all I feel it
+will be too broad so 1.6 million is
+still okay a 1.6 6 million audience
+bucket that you want to target is quite
+reasonable size of audience and you you
+you can get you can you can play around
+that data a lot and get customers look
+alike reasonable lookalike audience to
+come and buy from you and can you see a
+1% lookalike audience consist of people
+are most who are most similar to your
+lookalike audience increasing dep create
+a bigger and broader audience that is
+why I don't stretch to to 8 to 9 to 10.
+I leave it between 1% to 2% and to 3%.
+So you can just leave this at 1% or
+let's say 3% for for this video. So if
+you come to this place now you just
+select create audience then your
+audience will be created. So it means
+you have created. So I said focus on
+valuebased
+audiences. Focus on value based
+audiences. Once you click on create
+audience, you've been able to create
+your audience. The not let's so let's
+click on this create audience. If you
+click on this create audience, it will
+create our lookalike audience for us
+right now. So audience can't be your
+lookalike needs to include at least 100
+people in the same country in your
+audience in your audience location.
+Please choose a different audience
+location. So they want it to contain at
+least 100 people
+in the same location that I am. So can
+you see now an audience can't be
+created. Your look alike source needs to
+include at least 100 people in the same
+country in your audience location.
+So it means my pixel hasn't been
+collecting data. And you see that is why
+I'm showing you that the unique number
+of people it hasn't collected data of up
+to 100 people but I you should focus on
+all value based audience. Audience can
+be created your lookalike audience
+source need to include at least 100
+people in the same country in your
+audience location. Please choose a
+different location or lookalike audience
+source. your audience, your lookalike
+audience source needs to include at 100
+people in the same country in your
+audience location. So, so what we will
+do now is to come to this place. Let me
+change this pixel to probably a an
+active pixel. So, let me choose this
+maybe this audience will create. So if I
+click on create now
+able to it's still telling me the same
+thing but focus on value based audience
+focus on value based audience
+for your lookalike audience that you are
+creating. So let's go to another one.
+Let's go to other sources. You have
+options to also create lookalike
+audience based on other sources. But the
+first one you need to prioritize is
+valuebased audience source. So if you if
+you come to this place and you see use
+event with value to create better look
+alikes. Find people who are similar to
+your most valuable customers by using
+value data from from event on your site.
+When you select purchases for example we
+we look at how often and how much they
+spent. So the reason why this audience
+are not creating here,
+this audience that I've set here is
+because I don't have enough data of over
+100 people in in my location that
+they've made purchase and the pixel
+cannot record over 100 people that have
+made purchase on my account. So I can't
+really create lookalike audience on on
+this. But focus on value based audience
+is the most effective. So if you come to
+if we explore other sources for instance
+now other sources are custom audience
+that you've created let's say custom
+audience of people that they've
+interacted with your page custom
+audience of people that they've viewed
+your page and all those things. So we
+can do all custom audience of people
+that have viewed your page in the last
+180 days. You can also create lookalike
+audiences of this. So, so between value
+based sources and other sources, value
+based sources is the is the most
+effective when you are creating
+lookalike audience because it tax your
+pixel data. It has purchase data
+directly from from from meta. But in
+some cases, you can look you can use
+other sources. Let's say you've created
+custom audience of custom audience of
+people using customer list and you have
+those data. At this point you can also
+or you have data of people their name
+their phone number their email address
+and whatever information you have about
+them you can use other sources at that
+point because they are also valuable. So
+if I cancel this now I you if you have
+custom audience using customer list that
+you've created you can select this here
+under other sources then you can use it.
+So but let's say we select this then my
+location will be United Kingdom. Once I
+select I select an audience size number
+of look alikes I can select 1% to 3%
+recommended that I said earlier then
+I'll come to create an audience again.
+So this should create an audience. Can
+you see the this was able to create that
+audience for me. The reason why the
+value based audience wasn't created is
+because this ad account doesn't have
+enough data enough data of up to 100
+people that have made purchase that the
+pixel has recorded. But my advice for
+you is to is for you to focus on
+valuebased sources. Especially if you
+are an e-commerce business and you want
+you want Facebook or the meta system to
+look for the lookalike of those kind of
+customers that you you your pixel has
+recorded that they've made purchase from
+you and you want to retarget them with
+offers. You want to retarget them with
+different offerings basically. So where
+can you use other sources? In the case
+whereby you you are running a lead
+generation campaign and you want to
+you create custom custom audience or
+using customer list of people that have
+submitted their name on your website,
+their email address. You have them in
+your database as a lead and you now want
+to look for the look alike of all those
+kind of leads. So you've created custom
+audience of people based on their name.
+They have named their last name and
+their email address. Then you can use
+other sources at that point. So but
+value based sources is the most
+effective because it has your meta
+pixel, it has conversion data, purchase
+data from you, they are the most
+effective when you are using lookalike
+audience. So how can you use lookalike
+audience
+in your meta ads? When you are setting
+your meta. So let's go to all sources
+because there's a new way to use it
+right now. So let's go to all sources
+and come to ads manager.
+So when I come to ads manager, we we'll
+create a new
+a new campaign. So let's create a new
+campaign right now. So let me give it a
+minute to come up and we'll create a new
+campaign. Let's assume that we are
+creating a new campaign. So when you
+create a new campaign, I will show you
+where you need to apply your lookalike
+audience that you have created. So let's
+come to create a campaign. If you come
+to create a campaign here, right, you go
+to
+sales campaign. So we'll give our
+campaign a name and select sales
+campaign. So our objective should be
+sales.
+So let's select sales.
+Then you click on continue.
+Once you click on continue,
+it will take us to the campaign level
+where you need to give your campaign a
+name. So once you give your campaign a
+name, give your campaign a name. The
+buying type, leave it as auction. The
+campaign objective, leave it as sales.
+Then you go to
+next.
+Once you go to next,
+what I just want to show you is
+where you put in your audience. [music]
+So you come to conversion location. Your
+conversion location is website. Your
+performance goal is number maximize
+numbers of conversion. Then you come
+down to where this is. So where your
+audience is under audience you see
+come to this place you see suggest an
+audience you come to suggest an audience
+then you select suggest an audience then
+you see include this custom audience so
+include this custom audience so this is
+where you include custom audience but
+that's not where you use it you come to
+use saved audience
+So
+this is so let me look for where you see
+it. So let's come to this page and
+select this. Then I come to this place.
+Then you select this.
+So can you see this is where you will
+put it. Can you see the lookalike
+audience we've created? So this is how
+you apply the audience you've created to
+your campaign. So this is the look
+alike. Can you see include this custom
+audience? Can you see look alike? If you
+come to lookalike audience now it will
+show you the lookalike audience that
+you've created but it is still
+populating. So this is how you will just
+apply it. You create a campaign under
+adsets. You come to audiences then you
+come to suggest an audience. Then you
+select the lookalike audience that
+you've just created and it will be
+applied to your campaign. Then you can
+set up your ads, upload the images, put
+the text and description, put the call
+to action and every other thing that you
+need to do to remarket your offers and
+let the meta system and meta look for
+the lookalikes of your ideal customers
+for you to make purchase from your
+business. Leveraging lookalike audience
+is still an effective tactic to scale
+your campaigns on Meta in 2026. When you
+use it strategically, Meta can be the
+best advertising platform for your
+business. If you found this video
+helpful, don't forget to like, share,
+and subscribe to this YouTube channel. I
+will see you in my next

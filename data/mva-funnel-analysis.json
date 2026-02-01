@@ -1,0 +1,198 @@
+{
+  "lastUpdated": "2026-02-01T01:55:00Z",
+  "funnelName": "Texas MVA Lead Gen",
+  "overview": "Multi-step lead qualification and capture for truck accident attorney referrals",
+  
+  "stages": [
+    {
+      "stage": 1,
+      "name": "Traffic Source",
+      "description": "Meta Ads driving traffic to landing pages",
+      "metrics": {
+        "costPerClick": "TBD",
+        "clickThroughRate": "TBD",
+        "dailySpend": "TBD"
+      }
+    },
+    {
+      "stage": 2,
+      "name": "Landing Page",
+      "description": "Texas truck accident attorney site with conversion-optimized hero",
+      "components": {
+        "hero": "Office consultation image (8-12% expected conversion)",
+        "trustMarkers": ["Free Case Review", "No Win No Fee", "24/7 Available"],
+        "cta": "Gold button matching logo"
+      }
+    },
+    {
+      "stage": 3,
+      "name": "Lead Capture Form",
+      "description": "4-step case assessment form",
+      "steps": [
+        {
+          "step": 1,
+          "name": "Accident Details",
+          "fields": ["accidentDate", "city", "truckType"]
+        },
+        {
+          "step": 2,
+          "name": "Injury Assessment",
+          "fields": ["hasInjuries", "injuryType", "receivedMedicalTreatment"]
+        },
+        {
+          "step": 3,
+          "name": "Liability & Evidence",
+          "fields": ["fault", "hasWitnesses", "hasEvidence"]
+        },
+        {
+          "step": 4,
+          "name": "Contact Info + Results",
+          "fields": ["firstName", "lastName", "phone", "email"],
+          "showsQualification": true
+        }
+      ]
+    },
+    {
+      "stage": 4,
+      "name": "Lead Qualification",
+      "description": "Auto-scoring based on form responses",
+      "scoring": {
+        "injuryFactors": {
+          "hasInjuries": "+3 points",
+          "receivedMedicalTreatment": "+2 points",
+          "injuryNotMinor": "+2 points"
+        },
+        "liabilityFactors": {
+          "notAtFault": "+3 points",
+          "hasWitnesses": "+1 point",
+          "hasEvidence": "+1 point"
+        },
+        "timeFactors": {
+          "recent30Days": "+1 point",
+          "past2Years": "-2 points"
+        },
+        "thresholds": {
+          "strong": "8+ points",
+          "moderate": "5-7 points",
+          "weak": "2-4 points",
+          "unlikely": "<2 points"
+        }
+      }
+    },
+    {
+      "stage": 5,
+      "name": "GHL Webhook",
+      "description": "Lead data sent to GoHighLevel for processing",
+      "webhookUrl": "https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/f700e22a-79d5-41bd-b8a5-d464dd65bd5a",
+      "dataPayload": [
+        "firstName", "lastName", "phone", "email",
+        "source", "accidentDate", "city", "truckType",
+        "qualificationLevel", "hasInjuries", "receivedMedicalTreatment",
+        "fault", "hasWitnesses", "hasEvidence"
+      ]
+    },
+    {
+      "stage": 6,
+      "name": "Intake/Follow-up",
+      "description": "GHL automation handles initial contact and qualification call",
+      "goal": "Book sales call"
+    },
+    {
+      "stage": 7,
+      "name": "Sales Call",
+      "description": "Live call to close and sign case",
+      "currentMetrics": {
+        "callsPerWeek": "5-7",
+        "costPerCall": "$180-300"
+      }
+    },
+    {
+      "stage": 8,
+      "name": "Signed Case",
+      "description": "Refer to partner attorneys",
+      "partners": [
+        "Cases on Demand (Max & Jeremy)",
+        "Inquired Esquire (Patrick)"
+      ],
+      "revenue": "~$2,000 per signed case"
+    }
+  ],
+  
+  "optimizationOpportunities": [
+    {
+      "area": "Traffic",
+      "opportunity": "Connect Meta Ads API to track cost per lead directly",
+      "impact": "Real-time ROI visibility"
+    },
+    {
+      "area": "Qualification",
+      "opportunity": "A/B test qualification messaging to improve submit rate",
+      "impact": "More leads from same traffic"
+    },
+    {
+      "area": "Follow-up",
+      "opportunity": "SDR bot for immediate lead response",
+      "impact": "Higher contact rate, lower cost per call"
+    },
+    {
+      "area": "Closing",
+      "opportunity": "AI call handler for initial qualification",
+      "impact": "2-3x more calls/day without Marko on phone"
+    }
+  ],
+  
+  "keyInsights": [
+    "Form already has smart qualification - leverages injury severity and liability factors",
+    "Webhook integrates with GHL - automation pipeline exists",
+    "Multi-step form likely improves completion rates (commitment/consistency)",
+    "Site targets Texas specifically - geographic focus",
+    "Qualification display builds trust before asking for contact info"
+  ],
+  
+  "siteNetwork": {
+    "mainSite": {
+      "name": "texastruckaccidents.net",
+      "path": "/home/ec2-user/data/kurios-finish/sites/texas-mva/",
+      "framework": "Next.js",
+      "purpose": "Primary conversion site with multi-step qualification form",
+      "pages": ["Homepage", "City pages", "Calculator", "Case assessment", "Resources/guides"]
+    },
+    "satelliteSites": [
+      {
+        "name": "network-stats-1",
+        "purpose": "Texas Truck Crash Statistics - ranks for data/statistics keywords",
+        "suggestedDomains": ["texastruckcrashdata.com", "texastruckstats.com"],
+        "path": "/home/ec2-user/data/kurios-finish/sites/network-stats-1/",
+        "framework": "Astro",
+        "status": "Template ready, MVP = 6 pages",
+        "keywordFocus": ["texas truck accident statistics", "truck accident deaths texas", "houston truck accident statistics"]
+      },
+      {
+        "name": "network-corridor-stats",
+        "purpose": "Texas Highway Corridor Statistics - ranks for highway/interstate keywords",
+        "suggestedDomains": ["texascorridordata.com", "i10truckaccidents.com"],
+        "path": "/home/ec2-user/data/kurios-finish/sites/network-corridor-stats/",
+        "framework": "Astro",
+        "status": "Template ready, MVP = 6 pages",
+        "keywordFocus": ["i-10 truck accidents texas", "most dangerous highway texas", "i-35 truck crashes"]
+      },
+      {
+        "name": "mva-engine",
+        "purpose": "Generic MVA lawyer site template - deployable to multiple locations",
+        "path": "/home/ec2-user/data/kurios-finish/sites/mva-engine/",
+        "framework": "Next.js",
+        "services": ["Car Accident", "Truck Accident", "Motorcycle Accident", "Wrongful Death"],
+        "status": "Template ready, location-based generation possible"
+      }
+    ],
+    "networkStrategy": "Satellite sites rank for informational keywords and drive traffic to main site for conversions. All sites interlink and build domain authority for the network."
+  },
+  
+  "legacyProject": {
+    "name": "Concrete Rank & Rent",
+    "description": "Local SEO sites + GBPs for concrete contractors",
+    "status": "Sites still generating leads but no active clients",
+    "platform": "WordPress (Marko wants to migrate to Cloudflare)",
+    "action": "Explore sites on Feb 5, 2pm-4pm (calendar blocked)"
+  }
+}

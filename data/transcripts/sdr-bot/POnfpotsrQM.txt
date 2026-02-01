@@ -1,0 +1,666 @@
+# How to EASILY Automate Email Follow Ups with AI Step by Step
+# Video: https://www.youtube.com/watch?v=POnfpotsrQM
+# Category: followup
+
+What is up guys? Welcome back to another
+video. In this video, I'm going to show
+you how to create a simple workflow that
+auto sends personalized responses to
+prospects. Creating it right here in
+any. So, let's get started. So, in any
+I've created a workflow that I've named
+to follow-up generator. And here we're
+going to add a trigger. Since we're
+capturing
+email responses from prospects, I'm
+going to search for Gmail here to add a
+trigger. Now, I'm going to click on
+Gmail. And our trigger is going to be a
+non-M message received trigger here.
+You'll need to create a new credential
+to connect Gmail 2010 by signing in with
+your Google account right here. And then
+on the new window that pops up, choose
+the account that you like to connect
+2010. And then your credential will be
+created. Since I had already done that,
+I'm going to close this right here. And
+then for the mode here, you can choose
+when you'd like to run this trigger. So
+you can choose to run it every minute,
+every hour, every day, every week, every
+month. I'll customize it right here. The
+event will be a message received. Okay.
+So here we can try sending a message to
+a prospect and then replying it. So we
+can capture the response here in our
+trigger. So to do that
+I'm going to send this example
+outreach email to an example client of
+right. So the email is on the lines of
+high. I run L automation where I design
+workflows that eliminate manual task and
+free up hours every week instead of
+chasing spreadsheets, emails. Emails are
+repetitive client updates. I build
+system that handle the busy work so we
+can focus on growth. Teams I've worked
+with have seen faster client onboarding,
+smoother follow-ups and better
+visibility across operations all without
+adding extra headcount which will be to
+a quick chart. So I can show you what
+this could look like in your business.
+And then here we can decide to send this
+email to a prospect. Here is the email
+that we sent to the prospect. Now we can
+decide to reply to this prospect. This
+message similar to this one right here.
+So we're saying thanks for reaching out.
+What you described sounds really useful.
+You've definitely been spending too much
+time on manual processes. I'll be
+interested in learning more about how
+Lmetric could help streamline things for
+us. Do you have availability next week
+for a call? So here, this could be the
+response that our client is sending to
+us. After we send them this outreach
+message, we're going to generate a
+workflow that automatically responds to
+our prospect after they've already
+replied to our call email or our
+outreach message. In our workflow here,
+I'll click on fetch test event.
+And then here you can see we're getting
+a snippet of our email response that our
+client responded with. So here I'll turn
+this to off to get the full email. Now
+here you can see the full email right
+here that they sent us. So we can use
+the we can pin this data
+and use it to set up our workflow. So
+now the the next thing that we can do
+here we can wait for let's say 3 seconds
+here. Then here name this to wait 3
+seconds
+and execute it right here.
+Now the next thing that we're going to
+do here is we're going to clean our
+you know from maybe emojis
+lines or any other or all these other
+information we getting right here. So we
+would like only to get only what the
+client responded with.
+So we can generate the personalized
+response them for them. So to clean our
+client's response we're going to use AI.
+So here I'm going to click on open AI
+not here. Then click on message a model.
+Yeah, you'll need to also create a
+credential like we did with Gmail by
+clicking on create a new credential.
+Then from your open AI API add a key
+right here. Then click on save to create
+your credential. Since I had already
+done that, I'm going to close it. And
+here I'm going to choose a model. Choose
+the latest model right here. Latest
+model is GP5. The latest model that
+we're using currently.
+I'm going to choose 4.1. It's more
+favorable one. And here we're going to
+add a prompt for the user role.
+prompt copy the lines of you're an
+assistant that cleans email replies here
+I'll add a message and I add a prompt
+for the user here
+so the input will be a full client email
+that may contain signatures previous
+message threads disclaimers or automatic
+photos and here we adding the response
+our client's email over here adding it
+to the text over here then we're telling
+the AI remove signatures for example
+name job titles phone numbers best
+regards etc we also like the AI to
+remove quoted previous message. So this
+is quoted message right here. We'll also
+like to remove disclaimers or
+confidentiality notice. We also like to
+remove breaks and new lines and return
+only the call message client wrote in
+plain text. The output should be a clean
+client response only. No extra
+formatting or explanation. So here I'll
+click on back to canvas and turn this
+option to on. And then I'll click on
+execute step right here. And now you can
+see we're getting our cleaned client
+response over here without any emojis,
+disclaimers or all the other information
+that we eliminated using our AI node
+over here. So I'll click on back to
+convers here and here. I rename this to
+client response cleaner. The next thing
+that we're going to do here is we're
+going to wait a few seconds. For
+example, we can wait let's say 2
+seconds.
+Okay. Then I can rename this to wait 2
+seconds.
+I click on rename. The next thing that
+we're going to do here is we cleaned our
+client response from here. We're going
+to now analyze the sentiment of the
+client and then we're going to either
+categorize it as a positive, neutral or
+negative. So to analyze the client's
+response,
+we're going to also use AI. So in AI,
+I'm going to click on open AI right
+here. Then I'll click on message.
+It will first of all need to execute
+this previous node.
+Then here I'll open this node. And then
+here we're going to choose our
+credential. Then our model I'm going to
+choose GP4.1
+right here. Then here to add a system ro
+then I click on expression it right here
+and add this prompt which is on the
+lines of a system that classifies client
+email responses into sentiment
+categories. And here converse then add a
+message and add the prompt for the user
+ro over here. Expand it here and the
+brown command line here. So here we're
+going to start by adding the clean
+client response. Then we're telling the
+AI analyze the tone and intent of the
+client's response. Then classify the
+sentiment into exactly one of these
+categories, positive, neutral, or
+negative. So we like to classify the
+response as positive if the client is
+interested, agreeable, or open to the
+next steps. We also like to classify the
+client's response to neutral if the
+client is uncertain, asking for more
+information, or non-committal. And
+lastly, like to classify the response as
+negative if the client is not
+interested, declining or dismissive. And
+we'll only like to output
+the sentiment is either positive,
+neutral or negative. So here all output
+content is a JSON. Then here I'll click
+on execute step to analyze our client
+response right here. You can see it was
+a positive
+response. So here I'll click on back to
+canvas and here I'll rename this to to
+sentiment analysis. Then click on rename
+right here. Now the next thing that
+we're going to do here is we're going to
+use a switch node to switch between the
+classifications. So here I'll search for
+a switch node right here. Then click on
+it.
+So here if the sentiment is equal to
+positive
+we like to rename it to positive then
+if the sentiment is equal to neutral
+want to rename it to neutral and lastly
+if the sentiment is uh equal to negative
+Rename
+it to negative. And here we can execute
+step. You can see our sentiment was in
+the positive branch right here. So now
+we can set up our positive
+branch right here. So here can wait a
+few seconds. For example, we can wait
+let's say
+4 seconds. Yeah, I rename this to wait 4
+seconds.
+and click on rename.
+Now the next thing that we're going to
+do here is we're going to generate a
+custom reply to our prospects response.
+So I'm going to use AI. I'm going to use
+open AI and then here click on message
+the model node.
+Here we can first of all execute these
+steps
+and we can go back to our model over
+here. I'm going to choose our model.
+Choose 4.1. And here we're going to add
+a prompt for the system ro.
+The prompt is is on the lines of you're
+an assistant that writes professional
+but friendly sales follow-ups. And here
+we can add a prompt for the user role
+here. The prompt could be on the lines
+of the prospect has responded positively
+and show and shown interest in
+automation services.
+Then here we adding their response.
+Then you're telling the agent
+acknowledge their interest and suggest a
+clear next step. For example, scheduling
+a call, quick demo sharing availability.
+Keep the tone professional, approachable
+and concise. Do not include greetings
+like hi prospects or any placeholders.
+Do not use dashes and sign off as Dennis
+from N automation. So here I'll click on
+back to canvas right here. And then here
+I like to output the content as JSON.
+Then here I'll click on execute step.
+You can see now it generated for us this
+very personalized reply to a prospect's
+response. This is incredible. So here
+I'll click on back to converse right
+here.
+Then then here I'll rename this to
+posive reply. Then click on rename. And
+now we can reply to the prospect.
+So here you can wait let's say a few
+seconds in case we're sending
+multi multiple emails.
+to prospects. So we don't want to
+overwhelm Gmail. So
+then here I search for Gmail and then
+I'll click on reply to a message node
+like we did here. We're going to execute
+self first.
+Then I'll go back to Gmail and here
+we're going to add a message ID. So in
+Gmail trigger I'll drag the ID right
+here type. I'm going to choose text.
+Then the message will be this message
+that we generated right here. Then I
+click on execute step to send a message.
+Add options. I'm going to click on
+append in attribution. Turn it off.
+Then I can send the respon the reply to
+a prospect.
+This is incredible. The last thing that
+we're going to do here is we're going to
+log in the client response. And the
+reply that we generated using our
+workflow to a database.
+In your table, I've created a database
+that I've named to follow our payment
+base. And then in this table is where
+we're going to add our client responses.
+You're going to add the client's name,
+their email status, which can either be
+positive, negative, or neutral. Then the
+client response that they responded to
+our outreach email. Then the follow-up
+reply that we generated using our
+workflow. Okay, in case our team would
+like to come in and
+check the responses that our work is
+sending to our prospects. So now to log
+in our
+responses from here to this base. Yeah,
+I'm going to search for air table.
+Then here click on create a record.
+Yeah, you also need to create a
+credential like we did previously with
+other nodes by clicking on create a new
+credential. Then add your access token
+right here. Then click on save to create
+your credential. Since I had already
+done that, I'm going to choose my
+credential right here. Then here I'm
+going to choose our base. Our base is
+choose the follow base. The table will
+be the client response table. And here
+we're going to map values to our columns
+in our table with the data from our
+workflow. So the client email, we're
+going to grab the client email, the
+client name and email from the email
+that they sent us right here. So I'll
+map the name right here
+and the email set. Since this is a
+positive branch, I'm going to choose
+positive client response will be this
+text that they sent us right here. And
+lastly, we're going to add the followup
+that we're sending them,
+which is this email follow up right
+here.
+Then I'll click on execute step to add
+our dig to our B. Now when I open our B,
+you can see we added a new record right
+here. We added a client, the email set
+is positive, the client sent us, and the
+followup that we generated using our
+workflow and sent. So our positive
+branch works perfectly.
+I have the neutral and the negative
+branch. We're going to follow the same
+process that we did right here. The only
+thing that we're going to change is this
+node where now it's going to generate
+a different response to the prospect. So
+instead of having to manually set up
+like we did with uh the positive branch
+and they're all going to be the same, we
+can try to duplicate
+these nodes
+a couple of times. So this one will be
+for the neutral. Can try duplicating
+this one again.
+And this will be for the negative
+right here. Then we can auto align it.
+Now we can autoign our workflow right
+here. And now the only thing we're going
+to change is the pro prompt for our
+neutral and our negative
+nodes right here. Let me do that.
+I've changed the prompt of this node
+over here. So the system prompt is on
+the lines of you're an assistant that
+writes professional but friendly says
+follow-ups. Then the prompt for the user
+roles on the lines of
+the prospect has responded with a
+neutral message that shows uncertaintity
+or request for more details about
+automation services and guiding our
+prospects response. Then instructing AI
+to politely acknowledge their response
+provide clarity by by briefly explaining
+the value of lax automations services in
+simple terms. Then would like the AI to
+suggest a light next step such as
+sharing a short example, sending over
+details or scheduling a quick call.
+The agent should also keep the tone
+professional, approachable and concise.
+That's why instructing the AI not to
+include greetings like hi, prospect
+name. Also like not to include dashes
+and we like to sign off as from
+automation. So that is a prompt for the
+usual
+reply response. Then for the negative
+reply response, the system prompt is on
+the lines of you're an assistant that
+writes professional but respectful sales
+follow-ups. And then the user prompt is
+on the lines of the prospect has
+responded with a negative message
+indicating they're not interested in
+automation services. Then here we're
+inputting the client's
+response. Then we instructing the AI to
+acknowledge their response respectfully.
+We also like to thank them for their
+time and consideration. We'll also like
+to leave the door open for future
+contact without pushing for a meeting.
+We also like to keep the tone polite,
+professional, and concise. We'll also
+like not to include greetings like hi
+prospects and dashes in our email. And
+then we would like to send off as Dennis
+from automation here. And then so those
+are the prompts for
+AI nodes right here that that are
+responsible for generating personalized
+responses to our prospects. Then we're
+waiting a few seconds. Then here we're
+replying to the prospects over here. So
+instead generating the custom message,
+we're going to map it right here. And
+then the only thing that I will change
+on this air table node is the status. So
+for the neutral response, we're going to
+choose the status as neutral here. And
+then for the negative, we're going to
+change it to negative over here.
+And here I'll click on back to canvas
+here. So now we can try executing our
+workflow to test it.
+Now to test our workflow here, we're
+going to unpin this data. We can try
+sending
+a response as a a neutral response as a
+client. Here we're going to assume this
+is a outreach message that we sent to
+one of our prospects and we're going to
+reply with a neutral response. So the
+the neutral response come in the lines
+of I appreciate you reaching out. I'm
+not sure if automation is something
+we'll be ready to commit right now. I'll
+be open to seeing what kind of processes
+usually set up and how they could apply
+to our business. So I'll send this
+message right here. And then in our
+workflow I'm going to click on execute
+workflow over here.
+Here we can see that our workflow was
+executed successfully. When I open this
+node over here, you can see we captured
+our neutral response from a prospect. So
+here's a neutral response and then we
+waited a few seconds. Then we clean the
+response within using this node right
+here. But we only outputed their
+response, the clean response. Then we
+wait a few seconds to analyze the
+sentiment using this node here. The
+sentiment was neutral.
+Then we wait a few seconds to generate a
+neutral response. A response to the
+prospects. And here is a custom response
+that we generated using this node right
+here.
+Then we wait a few seconds to send the
+reply to our prospect using this node
+right here. You can see it was sent and
+then we logged in the client data the
+response and the response that we
+generated using our node to our
+database. Here you can see the custom
+response that we generated using our
+workflow that we send the prospect. The
+response that our workflow generated for
+us is on the lines of thank you for your
+response and interest in our automation
+services. Lax automation helps
+streamline repetitive tasks and
+integrate different tools so your team
+can save time and focus on high value
+work. For example, you can automate
+daily reports or client follow-ups with
+just a few clicks. I'll be happy to
+share a brief case study or schedule a
+quick call to discuss your specific
+needs. Let me know which option works
+best for you. Best regards Dennis from
+Lax Automation. Now when you open our
+database, we can see we update we added
+a new record right here. So we added the
+client name address status was neutral
+since our sentiment after analyzing the
+sentiment which was classified as
+neutral here. Then we added the client
+response and the followup email that we
+generated using our workflow here to our
+database. So our neutral branch works
+perfectly. Let us try testing the
+negative branch. Let's see if our
+negative branch works.
+Yeah, I'm going to send an a negative
+response as a prospect. So here we're
+going to add this response which is on
+the lines of we not we're not interested
+in your services. Please remove us from
+your list and do not contact us again.
+So I'll send this message and then here
+I'll click on execute workflow. There's
+our workflow.
+Here we can see that our workflow was
+executed successfully. So when I open
+this node here, you can see we captured
+the email response from a from our
+prospect. Yeah. Then we wait a few
+seconds. Then here we clean the response
+using this node right here.
+Then we wait a few seconds and analyze
+the sentiment using this node. The
+sentiment was labeled as negative. Then
+here it was switched to the negative
+branch where we waited a few seconds and
+generated a custom
+reply to this prospect right here, this
+response and then wait a few seconds to
+send the reply to our prospect and and
+then logged in the client response and
+the response that we generated using our
+workflow to our database email. You can
+see the response that our workflow
+generated for us over here after we sent
+this negative response as a prospect.
+The response that is generated for us is
+on the lines of thank you for letting me
+know and for considering our automation
+services. I appreciate your time and I
+understand that that this may not be the
+right fit at the moment. If your needs
+change in the future, I will be able to
+reconnect and provide any information
+you might need as regards Dennis using
+our workflow.
+And now when I open our database, you
+can see we added a new record here. So
+we so here we added the client name, the
+email, the status this time around was
+negative. We also added the response
+that the prospect sent and the reply
+that the workflow generated and sent the
+prospect here.
+this workflow that we created here in
+any gen. Let us try testing the positive
+branch to test it. Yeah, I'm going to
+send
+a positive response as a prospect could
+be the lines of I'm very interested in
+your services. Later is exactly what we
+need and I want to move forward as soon
+as possible. Then here, please send me
+your availability so we can book a call
+right away. So here I'll send the
+message and then here I'll click on
+execute workflow to test our workflow.
+Here we can see that our workflow was
+executed successfully. Yeah, captured
+the positive response that we got from
+one of our prospects.
+here. So, the positive response was on
+here. It's on the lines of I'm
+interested in your services. Last
+information is exactly what we need and
+I want to move forward as soon as
+possible. Please send me your
+availability so we can book a call right
+away. Then here we're waiting a few
+seconds and then we're cleaning the
+client's response from here using this
+node.
+Then we're waiting a few seconds. Then
+we're analyzing the client's sentiment
+using this node right here. The
+sentiment was a positive sentiment. Then
+here, then here we are switching to the
+positive branch. Then where we're
+waiting a few seconds to generate a a
+custom response to this prospect. Here's
+the email that we're sending to our
+prospect that we generated using this
+not here. Then we're waiting a few
+seconds to send the reply to the
+prospect. Then we're logging in the
+response to our database here. Here is a
+custom response that we're sending to
+our prospect that we generated using our
+workflow. The response is on the lines
+of thank you for your enthusiasm and for
+considering automation. I'm thrilled to
+hear our solutions align your needs. I'm
+available this week for a call and I can
+offer time slots on on Tuesday at 10:00
+a.m. or Thursday at 2 p.m. Please let me
+know which options work best for you or
+suggest a time that fits your schedule.
+Looking forward to discussing how we can
+help streamline your operations here.
+Besides sharing the time that you're
+available, we can also share a
+calendarly link with this prospect. So
+we can define that in our in our node
+right here. Now in our database you can
+see we added a new record over here. So
+we added the client name, client email,
+the status of both saved. We also added
+the client response show the positive
+response. And then lastly, we added the
+reply that we generated using our
+workflow right here
+using the simple workflow that we
+created here in any gen. So our workflow
+works perfectly. Here we are capturing a
+prospect response that is sent to us
+after we sent them an outreach message.
+Then we're waiting a few seconds
+to clean the response using this node
+over here. Then we're waiting a few
+seconds to analyze their sentiment from
+their response. Then using the switch
+node switching from positive, negative
+or neutral depending on the sentiment
+depending on their sentiment that we
+analyze using this node. And then we're
+waiting a few seconds to generate a
+custom reply to the prospect's response
+using these nodes over here. Then we're
+waiting a few seconds and then sending
+the and then sending the reply to our
+prospect using Gmail. Then we're logging
+in the responses that our client sent us
+and the one that we sent them to to a
+database in their table. And this is the
+database that we are adding the custom
+response and the client response over
+here. So here we adding the client name,
+the email status, the client response
+and the custom reply that we generated
+using our workflow over here. Our
+workflow works perfectly. Now, if you'd
+like me to create this workflow for you,
+just click the first link in the
+description to schedule a call with me
+on the call. We're going to discuss into
+details the workflow that you like me to
+create, create for you or your business,
+and then I'll proceed to create the
+workflow for you. But if you enjoy the
+video and you have a workflow or an AI
+agent that you like me to create using
+any 10, just comment down below in the
+comment section. I read all the comments
+and if I land on your comment and I find
+it intriguing, I'll come back on a
+future video showing you how to create
+the entire workflow or AI agent from
+scratch using any. But for now, thank
+you for watching and I'll see you in the
+next video. Goodbye.

@@ -1,0 +1,529 @@
+# How to Create AI Instagram Chatbot in 2024 Manychat Tutorial
+# Video: https://www.youtube.com/watch?v=WqiKhE4jaj8
+# Category: omnichannel
+
+I will break down how you can create an
+AI Instagram chatbot in
+2024 and we are going to create a
+chatbot that automatically answers
+questions about an e-commerce business
+by using Ai and I will guide you step by
+step so I will show you how you can
+create your first Instagram automations
+how you can train your chatbot using
+custom Ai and train it on your own
+websites or internal documents about
+your business and the four best
+practices on when you're going to create
+your first Instagram chatbot or when
+you're going to create this for one of
+your clients and at the end I will even
+give you the template for free so you
+don't have to build it yourself and you
+can just copy and paste it and if you're
+new to the channel my name is Jordan and
+I'm the founder of chamise and at
+chamise we are inspiring over 50,000
+people every month to create chat
+automations that generate leads boost
+revenue and reduce cost and we are
+working with business businesses from
+small to large and in any industry so if
+you just follow the steps in this
+tutorial it will work for your business
+as well so here's what we're going to
+build we are going to build an Instagram
+chatbot that automatically answers
+questions about an e-commerce business
+and in this video I will use the example
+of an e-commerce business but this will
+actually work for any kind of business
+because we're going to train the chatbot
+on a custom knowledge based document so
+if you just change the content of that
+custom knowledge based document to your
+own business and train the chatbot on
+that document it can automatically
+answer questions about your business and
+you will get full access to this
+knowledge based document because I will
+also give it to you with the free
+template that you can get at the end of
+this video Let's dive in the first step
+that you need to take is create a free
+manat account and man chat is the chat
+automation platform that I've been using
+for the last four years for all almost
+all of my clients and I use manhat
+because they're very easy to use if you
+don't have any experience with chat
+automation you can get started
+immediately they're 100% meta approved
+so you can just use them without the
+risk of getting banned and they're very
+cheap they offer a free plan but the pay
+plan already starts at $15 a month so
+what you need to do is you need to go to
+jiz.com
+/mc and this will bring you directly to
+the man website and then here you can
+click on get started and then select
+Instagram and then continue with your
+Facebook account and then now you can
+log in with your Facebook account once
+you have done that your manhat account
+gets automatically created and I
+actually have a separate video that
+explains all the steps for connecting
+your Instagram account to manat so after
+watching this video I highly recommend
+going to that video as well because
+there are some steps that you need to
+follow and if you miss one of the steps
+it might be the that you cannot use all
+the features of manat but once you have
+connected your manat account to
+Instagram you can get started with
+creating your first Instagram automation
+so let's say someone has a question
+about your return policy this is a
+question that is asked a lot to
+e-commerce businesses then you want to
+automatically answer that question and
+we can do that by using manat so in many
+chat we can go to Automation and then
+click on new automation and then click
+on start from scratch so this is an
+Automation and each Automation in man
+chat starts with a trigger and a trigger
+is an event that starts the automation
+so in this case it will be when someone
+asks a question about the return policy
+then we want to automatically answer
+that question so in order to do that we
+can just click on new trigger click on
+Instagram and then select the Instagram
+DM keyword the user sends a direct
+message with a keyword and then here we
+can determine to what message we want to
+reply so we want to reply if the message
+contains return and we want to reply if
+the message also contains policy and we
+can do that by using a message condition
+so if you click on message condition
+then we can say if the message contains
+return and the message contains
+policy then we are going to reply with
+an automatic message so if you just
+click on create here then we can
+determine the first message in our
+Instagram automation so here we can
+select Instagram and then we can give an
+answer to their question so I just copy
+this from my second screen but we can
+say at e-commerce Bas you always have
+the option of returning your order
+within 14 days after the delivery make
+sure that the products have not been
+worn and have all text attached when
+they are returned so now if someone asks
+a question about return policy then we
+automatically answer that question with
+this answer and after you gave an answer
+to that question you actually need to
+ensure a good customer experience and
+you can do that by just asking Does this
+answer your question and if they say yes
+it did answer my question then it's all
+fine if they say no it didn't answer my
+question then you can connect them with
+one of your live chat agents so what we
+can do here is we can add a Next Step
+which will be another Instagram message
+and we can say does that answer your
+question
+and then we can add two quick replies so
+one quick replies is will be yes it does
+and the other quick reply is no it
+doesn't oh no it
+doesn't and then we can connect these
+quick replies to two other messages and
+to be clear quick replies in Instagram
+are buttons where users can click on so
+if they click on a quick reply we can
+trigger another message so in order to
+do that we can just grab this this
+direct that over here and this is the
+option when somebody clicks on yes it
+does yes it does answer my question then
+we can just say great if you have any
+more questions feel free to ask them
+here if they say no it doesn't we
+actually want to forward them to one of
+your live chat agents and this is great
+about using man chat because man chat
+has a build-in live chat so when your
+chatbot doesn't know the answer to a
+question we can actually forward them to
+a live chat agent that can solve the
+problem of the customer so here we can
+just say no problem we will now connect
+you with one of our support agents and
+in order to connect them with one of
+these support agents we actually need to
+add an action to our flow so what we can
+do here is we can add a Next Step which
+will be an action and then here we need
+to add three actions so if you can just
+click on this then you can click on live
+chat and then first we need to Mark the
+conversation as open so in many chat you
+have two types of conversations we have
+closed conversations and open
+conversations closed conversations are
+conversations that are handled by your
+chatbot and your chat automations open
+conversations are conversations that are
+handled by your support agents so what
+you need to do in this case is Mark the
+conversation as open then as a next
+action we can click on this again click
+on live chat and then assign the
+conversation so here we can assign the
+conversation to a specific team member
+or to a specific group of team members
+so in this case I would just assign it
+to myself and then lastly we want to
+notify the person or persons that are
+assigned to this conversation so as a
+last thing we can notify the
+SNES and then we can say full name just
+did something you wanted to know about
+and you can actually change this
+notification text so here you can for
+example say okay someone has a question
+about return policy and then you can
+also determine how you want to notify
+them so you can notify the whole team or
+you can just notify them one person so I
+will just select myself again and that's
+basically it so now we can just click on
+set live and that should be working so
+every time someone asks a question about
+return policy we give an answer to that
+question and then we ask does it answer
+the question if they say yes it does
+then say great if they say no it doesn't
+then we say no problem we will now
+connect you with one of our support
+agents so up until now it has been
+pretty simple someone sends a question
+to our Instagram account and we can
+automatically reply to that question if
+there is a certain keyword in it but we
+can actually take it one step further we
+can add custom AI that is strained on
+our own data such as our website or
+internal documents about our business
+and many chat doesn't have build-in ai
+so that's why we're going to use
+chatbase chatbase is an AI tool that you
+can use to train a chatbot on your own
+data such as your websites or internal
+documents and if you haven't used
+chatbase before what you can just do is
+you can go to chadis.com
+[Music]
+slcb and this will bring you directly to
+the chatbase website and then here you
+can just click on build your chatbot and
+then you can log in with a free account
+I already have an account so I'll just
+go here to chatbots and then click on
+this chatbot so what I have done is I've
+trained this chatbot on a custom
+knowledge based document and this custom
+knowledge based document looks like like
+this so it has information about returns
+about delivery so the delivery times and
+how people can trct their order the
+shipping cost and about the warranty so
+what are the warranty conditions if a
+product is broken how they can get the
+warranty all that information so what I
+did in chatbase is I trained the chatbot
+on this document so if you go to sources
+and then go to files then here we have
+the file that it has been trade on which
+is this file and then here we can ask
+questions to this chap out so here I can
+say okay what are the shipment
+costs then says if you order more than
+50 the shipping costs are free otherwise
+it's 5 then we say okay what are your
+warranty
+conditions then say if your product is
+broken within 8 weeks of ordering it you
+will be eligible for a full refund so
+you can basically train chat base on
+your own custom data which is in thise a
+file but you can also train it on text
+on your website on q&as on notion
+basically on literally anything so this
+is great so what we actually need to do
+now is every time someone asks a
+question in man chat we need to send
+that question over to chat base chat
+base will answer the question for us and
+we can give the answer back to manat and
+in order to create this integration we
+are going to use make so make is an
+integration platform that you can use to
+connect applications to each other
+without using any code and in this video
+I'm going to use make to connect many
+chat to chatbase and if this sounds like
+a lot I actually have a step-by-step
+video on how you can create this
+integration between many chat and chat
+base that appears over here probably so
+if you're interested in that I highly
+recommend checking out that video in
+this video I will just use that
+integration and we'll explain it like in
+general terms but if you want to Deep
+dive in all the things that need to do
+please go to that video as well so what
+we can do here is in many chat we need
+to set our default reply so if we go to
+settings and then go to Instagram then
+here we have the default reply and the
+default reply is the Automation in man
+chat that triggers if no other
+automation is triggered so if someone
+sends a message and that message is not
+triggered by any keyword or any other
+manat automation then it will trigger
+the default reply so what we need to do
+here is in the default reply we need to
+grab that question that they are asking
+us and then we need to send that over to
+Jet base and I actually created already
+a flow for this that is also part of my
+template that you can just download for
+free so I highly recommend just checking
+out my template and then using that in
+your man account so here you can just
+click on select existing and then you
+need to select the Instagram default
+reply
+which is the flow that is part of my
+template so we can pick this Automation
+and then click on it and with this flow
+there are a few important things so the
+first important thing is the trigger so
+the trigger is the default reply but it
+needs to be set to every time so every
+time someone asks a question we're going
+to send it to chatbase and we want to
+skip the story replies so if someone
+replies to a story then we don't want to
+send this to chat base basically because
+story replies don't have have anything
+to do often with customer support so
+then what we're going to do in this step
+is we're going to save the last text
+input which is the question of someone
+we're going to save that to a field in
+many chat so I created a field which is
+called chat based question and that
+contains the last text input and then
+we're going to send that question to
+make so this is the trigger to make and
+what then happens in make and this is
+the scenario that we' been using again
+this is part of my free template but
+what we do here is we watch the data
+from manat so every time this action is
+triggered then this will start then
+we're going to send the question to
+chatbase chatbase gives an answer we're
+are going to store that answer in a
+manhat field and then we're going to
+send a flow in man chat and the flow
+that we will be sending is the chatbase
+answer Instagram again this is part of
+my free template but what we do here is
+we're going to give the answer from chat
+base and then we say Does this answer
+your question if they say yes then it's
+great if they say no then it says no
+problem one of our agents will contact
+you as soon as possible and help you
+this is basically the same flow that we
+did before with the return policy but
+now we're using the chatbase answer
+instead of a predefined answer that we
+did ourselves but that's it that's how
+we can add custom AI to our Instagram
+chatbot so what you need to do now is
+you need to make sure that this is set
+to life and also you need to make sure
+that the instag default reply is also
+live when those are both live we are
+using custom AI in our Instagram chat
+bot and now we can take a look at
+Instagram how this looks on Instagram
+okay so now I'm on Instagram and then if
+I ask a question about the return policy
+so I can say what is your return policy
+then our Instagram keyword will trigger
+and it will automatically answer the
+question for us so it will say at
+eCommerce B you always have the option
+of returning your order within 14 days
+after delivery and then if we say yes it
+does then that's working and now we can
+also trigger chat Bas so if we just ask
+another question for example what are
+your warranty
+conditions then it says if your product
+is broken within 8 weeks of ordering it
+you will get a full refund and I can say
+okay what are your delivery
+times and then it says if you create an
+order before three it will be shipped
+from our warehouse within two business
+days and then if we say no it doesn't
+answer my question and I need
+help then it will say no problem one of
+our agents will contact you as soon as
+possible and then if you go to many chat
+and then go to live chat over here you
+will see that the message comes up and
+then what you can do as a live chat
+agent and this is the great part about
+many chat because they have a built-in
+live chat what you can do is you can
+just pass the Automation and then you
+can say hey Jordan here from e-commerce
+Bas how can I help you and then a
+customer support agent can actually
+solve the problem for them and you can
+see that it will look the same on your
+uh Instagram account so we'll say hey
+Jordan here from e-commerce B you can
+have a back and forward conversation and
+once you have solved the problem for the
+customer what you actually can do you
+can just pause the Automation and then
+you can mark the conversation is closed
+and then the chatbot will take over
+again so now if I type in another
+question for example how can I track my
+order then the chatbot takes over again
+will send the question to chatbase and
+chatbase will send the answer back to
+man chat so here will say yes you can
+track your order when your order is
+shipped you will get a track and Trace
+link so that's it that's how you can
+create an AI chatbot for an e-commerce
+business on Instagram and before I'm
+going to end this video I first want to
+give you the four best practices on
+creating your first Instagram chatbot or
+when you're going to create this for one
+of your clients so my first best
+practice is to go live as soon as
+possible and you want to do this because
+when you go live you can get real
+customer data and you can see where your
+chatbot is already pretty good and where
+your chatbot can be improved and this
+will give you steps on how you can
+improve your chatbot even faster so
+that's my first best practice so my
+second best practice is to go live with
+just using Instagram keywords and not
+going live with AI and if you get more
+experience with ai ai is sometimes
+really bad at giving good answers and
+because of this what you actually need
+to do is you need to train your AI
+chatbot on your own custom data and then
+you need to to have a lot of
+conversations with your AI chapot to
+fine-tune the answers and once you have
+fine-tuned the answers then you can go
+live with AI but especially at the
+beginning I would just go live with
+Instagram keywords because then you can
+control how your chatbot responds to
+certain questions and once you find
+youed the AI part then I would go live
+with AI and especially if you're doing
+this with clients I don't recommend
+going live with AI because if the AI
+tool is giving bad respons to clients it
+actually hurts their business and they
+can probably back out from the project
+all along so what you need to do is just
+go live with keywords first and then add
+AI in a later version so my third
+recommendation is to create an
+integration between the chatbot and an
+e-commerce system so whether they're
+using wo Commerce or Shopify or
+Bigcommerce or Magento it doesn't really
+matter you need to integrate your
+chatbot with that e-commerce system
+because that's where you can add the the
+most value because a lot of people will
+have questions about the status of their
+order about the status of their return
+and if you can get that information
+automatically that will actually save a
+lot of time and money for the business
+so that's actually the third
+recommendation what you need to do is
+you need to create Integrations with the
+e-commerce shop and my last
+recommendation is to actually improve
+over time and you can do this in
+multiple ways you you can add more flows
+you can add more knowledge to the AI
+tool you can add more Integrations it
+doesn't really matter but you need to
+have a plan on how you are going to
+improve the chatbot step by step but
+that's it that's how you can create an
+AI Instagram chatbot in 2024 without
+using any code and there's actually much
+more that you can do with Instagram
+automation for example if someone
+comments on one of your Instagram posts
+you can automatically start a
+conversation with them in the Instagram
+DM and you can actually use this to
+boost the engagement of your Instagram
+account but also generate more leads
+from Instagram so if you're interested
+in that I highly recommend going to the
+video that appears over here and if
+you're interested in getting more
+familiar with using many chat and
+Instagram I actually have a manat
+Instagram beginner course on my website
+so if you're interested in that just go
+to the link in the description and also
+if you want to get my free template
+that's also with the link in the
+description if you enjoyed the video
+please like it and subscribe to my
+channel and as always if you have any
+questions on using man chat or creating
+an Instagram chat bot please leave a
+comment below and I will reply as soon
+as
+possible

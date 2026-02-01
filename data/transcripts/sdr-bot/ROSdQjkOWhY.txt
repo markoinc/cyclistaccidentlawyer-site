@@ -1,0 +1,500 @@
+# Step-by-Step Tutorial Create a Simple AI Chatbot with n8n
+# Video: https://www.youtube.com/watch?v=ROSdQjkOWhY
+# Category: n8n-automation
+
+welcome back to let automated with Robin
+Automation and AI for non techies and
+today we're going to do a basic basic
+basic instructional video for those of
+you out there who are starting to work
+with n10 and AI for the very first time
+we're just going to cover the basics of
+AI nodes and how they work in n8n I'm
+going to build this with you live right
+now come along with me this is going to
+be simple it's going to be
+straightforward and the goal here is
+just to build the very basic Foundation
+of understanding how n8n and AI work
+together so we can kick on and create
+more complex n8n driven automations with
+AI so I've opened up a brand new
+workflow here in n8n and we need to
+start with the first step because we
+need a trigger we need something to
+start with let me actually just give
+this a little bit more context actually
+before I go further what I want to build
+today with you guys right now is our
+very own chat GPT I want to build a a
+chat bot that I can talk to and ask
+questions and get responses exactly like
+you would if you were talking to jat GPT
+via the chat GPT website obviously we
+can just go to chat GP and do that but
+right now today we want to build the
+foundation here in n8n so that we can
+retrieve the information that we would
+get from Chad GPT and we don't have to
+cut and paste it we can ask the
+questions right from here get the
+information from chat GPT or in this
+case actually open AI the company that
+owns CH GPT bring it back here into n8n
+so we can use that information to do
+other very amazing automation so that's
+what we're trying to do here so we need
+a first step so I'm just going to click
+on this first step button here and what
+I'm what we're going to trigger this
+with we need some kind of trigger we
+have lots of options here but we're
+going to we're going to trigger with a
+chat message because we're building a
+chat bot I'm going to click on that and
+uh we'll leave it actually yeah we'll
+leave it like this now if you this is
+make chat publicly available if you turn
+this on it's going to give you a URL and
+you can go to this URL if it's made
+public and the chat interface will be at
+that URL and you'll be able to chat with
+the AI that we're about to build uh via
+this basically this website with this
+URL um but we're just going to we're
+going to keep this simple for now I'm
+just going to make this private but know
+that you can pull this on and go and
+publish this somewhere and amaze and
+impress your friends and your clients
+and uh obviously you can uh set some
+stating here but let's keep this simple
+so we've got there we have our chat
+message ready to go now we need to add
+an action to it we've got our trigger
+now we need an add an action so I'm just
+going to click on the little button
+there and here we have advanced the AI
+we're going to click into this and it's
+going to reveal a whole fantastic world
+of AI n8n is being amazing in fact I'm
+recording this video on the 21th of
+December 2024 I think if you're watching
+this video and more than a month or two
+has gone by you're probably going to see
+a completely different interface here as
+n8n and AI are developing so fast this
+is such a fast moving space that this
+video may not even be relevant anymore
+however I think the foundational stuff
+will still be relevant for quite some
+time to come so that's what we're
+focusing on today so we've got lots of
+options here we can look at some
+templates and uh we could message opena
+AI itself I'm not going to go through
+all of these but the one I find most
+useful is an AI agent generates an
+action plan and executes it so we got
+lots of options in here so I'm going to
+grab an AI agent just by clicking on
+this and let's click away from there and
+there it is it's connected it to our
+chat we have our AI agent we have the
+option to choose a chat model memory and
+tools I'm going to go through each of
+those one by one but let's just start by
+clicking here into the main agent and
+we're going to look here at a couple of
+options there's different types of agent
+tool agent which is for doing very very
+structured tasks more advanced we have a
+conversational agent which is what we're
+going to use today because we're going
+to have a conversation like you would
+with chat GPT and we can call functions
+and we can do other things react agents
+SQL agents this is a start video for the
+basic so let's keep it basic and we're
+going to go with a conversational agent
+so choose that option our prompt our
+request our instruction our question is
+going to come from the previous node
+that previous node is the chat node that
+we've already got now you could bring it
+in from some other node you could have
+another node feeding into this AI uh for
+example you may have information in a
+Google sheet uh and you're feeding this
+into the AI but today to keep it simple
+we're going to take from the previous
+node which is our chat node so it knows
+how to do that and we need to add some
+options here so we want to add a system
+message so it comes preconfigured with a
+system message here which is pretty good
+you can actually leave it leave it alone
+uh and leave it like this but I want to
+show you I just want to help you
+understand what a system message is by
+putting our own one in here so I'm
+deleting all of those out and we think
+of a system message as setting the
+context for the AI if you can think of
+the AI as as an employee at a business
+the system message is its full job
+description if it was a CTO a chief
+technical officer at a company its job
+would be to manage the it systems to
+make sure the ID department is working
+properly it that that the Technologies
+talk to each other that you're choosing
+um the correct um Technologies to work
+in the company so it's kind of the
+overriding context of what you want the
+a the the role you want the AI to adopt
+it's not the actual instruction and
+that's what I've got these little on the
+screen here so you don't have to watch
+me retype because my typing so bad so
+I've just grabbed here a little system
+prompt and we'll go through it quickly
+you're an expert in n8n I thought I
+would build an n8n specialist chatbot
+for us you're an expert in na10 your
+role is to offer advice in building out
+and designing workflows choosing nodes
+explaining node functions structuring
+input and output writing single line
+Expressions that work with n8n so that
+that is our system node so it knows now
+what its job is its job is to be an
+expert in n8n so that's fantastic we've
+got some other options here we have a
+human message which is actually going to
+be the The Prompt we're going to get
+from the chat and uh you can control you
+know how many times it's going to work
+and uh if there aren't intermediate
+steps you can run those we're going to
+leave that out because this is a simple
+flow so we've got that taken care of now
+but we're not done yet this AI has not
+actually this agent is not connected to
+an AI model to one of the models and
+we've got lots of models to choose from
+so let's click on this plus sign for
+chat
+model and we can choose from a host of
+chat models now you're going to need
+credentials for each of those so choose
+the one you've got credentials for but
+seeing as we're building uh we've been
+talking about open Ai and chat GPT I'm
+going to use the open AI chat model but
+you can use any one of these that you've
+got credentials for my favorite actually
+at the moment is anthropic uh although
+these are changing so fast you know
+Google's latest releases is amazingly
+powerful but let's go with open AI chat
+model pop that in there choose your
+credential if you don't know how to use
+a credential click through into docs
+over here and the documentation will
+talk you through how to go over to a
+open.com and generate an API credential
+and you've got lots of lots of models to
+choose from here it's often CH uh
+tempting to choose the most powerful and
+latest one but bear in mind that's often
+way more powerful for your needs and
+also more expensive I like this little
+mini I love it it's very it's a nice mix
+of power and and affordability so uh
+that's what I'm I'm going to go with
+here we have a couple of options here
+let me run through them very very very
+quickly the ones that are important to
+us we can set a max number of tokens now
+tokens cost money so you may want to
+choose a maximum of tokens there you
+know 200 tokens 500 tokens 1 th000
+tokens I'm going to leave it blank so it
+can choose as many tokens as it wants
+but you can control how many tokens it
+chooses tokens are kind of like the the
+little credits that are needed to run an
+AI and um you your credit card via the
+API is build based on the number of
+tokens that are used think of tokens
+like words not quite a full length word
+depending on the length of the word but
+think of tokens is the number of words
+and that are being sent to the AI and
+that the AI sending back to you we get
+charged both times um we have the other
+interesting one is sampling temperatures
+think of sampling temperature like how
+creative how how uh creatively you would
+like the AI to perform so a sampling
+temperature if I open this up now it's a
+scale of 0.0 to to uh 1 and 0.7 is 70%
+creative so it's pretty creative 0.1
+would be not very creative at all it's
+going to follow extractions exactly and
+you're not going to get too much
+variation so depending on the task that
+you're after you may you know you're
+going to adjust this variation let's
+leave it at0 7 at the moment let's come
+back with that and um let's you know we
+well there we go um I think those are
+the most important ones to get your head
+around at the moment so we've got that
+set up Okay so we've we' got that set up
+going at the moment okay now we've got
+something called memory now what's
+interesting when you're calling an AI
+agent via API unlike when you're working
+on the chat GPT
+website the AI agent will have no memory
+of a preceding chat uh or even the
+preceding um message and answer uh prior
+to the latest message and answer that
+you've been doing if you don't give it
+memory so in other words it's kind of
+like meeting a human being in real life
+and uh that you know that you ask that
+human being a question it answers the
+question and then immediately forgets
+who you are the question you asked and
+the answer that it gave it's it's like
+starting a brand new conversation again
+that's what will happen if we chat with
+this agent right now not having hooked
+up any memory so let's go and hook up
+some memory so that we can have a bit of
+a sensible conversation and not feel
+like we're chatting with a goldfish so
+we're going to click on to memory now
+we've got lots of memory options here uh
+you can use external uh databases to
+store conversations and act as memory
+we're going to go with the simplest one
+here and literally says here easiest so
+we're going to go the windows buffer
+memory this is good enough for simple
+flows as your flows get more complex
+more involved especially if you go into
+production with anything this won't be
+good enough but it's definitely going to
+be good enough for for now we'll need a
+session ID so that it knows which
+session it's memorizing this is already
+filled out for us and contact window
+link this is as it says here how many
+past interactions the model receives
+contact so how far back do you want to
+go let's leave it at five for now so now
+our chatbot has memory and now we know
+what model to be using and now we have
+tools as well we're not going to give it
+any tools because tools is more complex
+but this is where you might ask the AI
+to go you know your instruction might
+require that it searches the internet we
+need to give it the ability to search
+the internet or go and search a
+knowledge base or read a folder or a
+file or you know do something like that
+it's going to need a tool to to do that
+it's more advanced we'll do that in
+future videos but I'm going to leave
+that alone for now and um let's get that
+out of the way we've already used that
+and what I want to do now that we've
+created our little chatbot is we're
+going to ask it some questions I've just
+pre-written these questions so you don't
+have to watch me type which is painful
+for me and I'm sure very painful for you
+to watch but we're going to have a
+little chat here all right so let me
+just copy
+this and let's test this so I'm going to
+hit chat here and we got a little chat
+window just going to paste in my
+question here please explain to me how
+to build a simp flow that will enable me
+to chat with a llm model using na1
+exactly what we're doing right now a
+little bit mattera let's have some fun
+for it and see what it comes up with now
+remember this as far as I know uh and
+please correct me in the comments that
+the the model we're using at the moment
+which is this open ey chat uh open AI um
+GPT 4 mini I think it's been trained up
+to about April
+2024 um so it's knowledge of NN and N8
+nodes may not be that great so let's see
+what it let's see what it gives us here
+I'm going to push go and you can see now
+the agent's working it knows that it
+needs to go and call an agent so it's
+here we go to build a simple flow in
+na10 for chatting with the model we need
+an HTTP node which we don't because we
+can see we've got something on the
+screen here uh we need an API endpoint
+which we do we need uh we need a message
+we need to format the parameters which
+is what we've been doing need a response
+node webw node ex okay so it's it's got
+a way of doing things but it doesn't
+it's not doesn't seem it's aware of the
+latest n8n tools but that's not the
+point the point is here we've asked it a
+question and it's given us a pretty good
+answer it may not be the answer of the
+latest Cutting Edge technology with N8
+n8n but it's giving us something and if
+we had asked this to be uh someone to
+help us write copy for a website or you
+know to you know help us um write a poem
+or whatever the case may be whatever the
+system prompt would give it would give
+us a different answer so all right we've
+got that let's go for gold here please
+give me the full Json for this workflow
+that I can simply cut and paste into the
+N into the n8n canvas let's see if this
+will work so there it is please give me
+the full Json for this workflow that I
+can simply paste into the nat1 canvas
+that uh to create this workflow so let's
+push go now it's going to use the memory
+because it needs to know what we we
+asked previously if we were asking this
+without memory it would say sure tell me
+what you want the flow with and we'd
+have to explain the flow again okay so
+we've got an answer here there's the
+answer you can see we've got lots of
+Json because we we asked for Json so
+it's given us Json back now we can go
+and cut and paste this from here but I
+can also uh just click out of this click
+into the agents here and we can see the
+various outputs here so if we click on
+Json we've got the Json click on schema
+we've got the schema and so like so
+let's I'm not sure this is going to work
+this was a bit of a hail Mar but let's
+go and cut all I don't this is going to
+work all these backspace ends mean
+spaces and uh I don't see this working
+anyway I'm going to actually see if I
+can't cut and paste this I'm not
+expecting this to work if it doesn't
+work we're not going to try and fix it
+because that's not the point of this
+video but I'm just going to click there
+and paste that n8n in nope didn't work
+there's something poorly formatted in
+that Json I tell you what let's uh let's
+let's um sorry I was clicking on the
+wrong thing there let's just try again
+and say uh that did not
+work please try again H that's not
+really a great prompt at all but let's
+see again it's going to pull on the
+memory and let's see what we get out
+here it's having a a little think well
+that looks a lot better that looks like
+far more
+structured all right I don't know I
+don't know if that's going to work I'm G
+to I'm going to actually copy it from
+here because this looks better I'm also
+let's just see if that works I've copied
+all that
+Json let's just this is a little test a
+little squirrel of our of our meeting
+and
+uh you know what it kind of worked we've
+got two nodes it created two nodes and
+Pops it in here here not exactly what
+we're after it didn't do the whole thing
+but a little bit of tweaking you could
+actually build a AI here that will
+create workflows for you that can cut
+cut and paste anyway we're going to
+break away from
+that but that really is what we're
+talking about here this is let's move
+these out of the way not to be a
+distraction so what we're actually
+talking about here is a n8n workflow
+that is essentially duplicating a chat
+GPT interface and here we have it we
+have a check mechanism that's talking to
+an AI bot the AI bot is calling on a
+large language model in this case open
+Ai and it's got memory and it's giving
+us an output and now we can now add
+additional nodes to this on this side
+let's add a set node for example and we
+can actually drag this output onto this
+set node run this step and we now have
+data that we can now start putting into
+other flows into other nodes and and you
+know publishing on a website pushing
+into a
+database um you know pushing into a CRM
+whatever the case may be but what we've
+got here is the fundamental basic
+building blocks of how to start using AI
+how to get the basic AI configuration
+how to get a prompt in either via chat
+or via some other node preceding this
+get the answer you want get that answer
+back here from uh from the agent back
+here in n8n and then push that back into
+uh n8n and then wow the world's your
+oyster your creativity is only thing
+that limit you and you can go and use
+this data now to build fantastic AI
+powered
+applications by all by uh all means
+please ask your questions in the
+comments we've got a community called
+let automated details in the description
+like subscribe hit the Bell you guys
+have watch YouTube you know the deal the
+more you kind of Pat us on the back and
+support us the more motivated we are to
+do videos so it's a win-win situation
+all around the table so uh give us your
+feedback good bad ugly we don't mind we
+just want to be better and uh if you
+want this actual flow if this is not if
+you're not up to rebuilding it you can
+go grab it in our community but it's so
+simple I almost just say you know
+rebuild this and just get your head
+around how NN and AI agents work I'm
+recording this just before uh Christmas
+so wherever you are in the world merry
+Christmas if Christmas is something that
+is important to you otherwise Happy
+Holidays and if it is coming towards the
+end of your your year if you are running
+to the Western year and um then uh Happy
+New Year and we'll be back in the new
+year to record this if you're watching
+this and it's the middle of the Year
+well I hope you had a great day and I
+hope you have a great week we'll catch
+you soon cheers
