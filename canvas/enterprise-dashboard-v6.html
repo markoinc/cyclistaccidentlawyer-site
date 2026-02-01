@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurios Command Center | Powered by Clawdbot</title>
+    <meta name="description" content="Enterprise dashboard with AI agent orchestration">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* ========================================
+           ENTERPRISE DASHBOARD v6
+           CLAWDBOT-POWERED EDITION
+           
+           New Features:
+           - Agent Status Panel
+           - Memory/Context Viewer
+           - API Usage/Cost Tracking
+           - Integration Status
+           - Cron Job Management
+           - Sub-agent Orchestration
+           - Real-time WebSocket simulation
+           - Offline fallback
+           - Auto-refresh
+           - Connection status
+           ======================================== */
+        
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #18181b;
+            --bg-card: #1c1c1f;
+            --bg-elevated: #232326;
+            --bg-hover: #2a2a2e;
+            --bg-active: #323236;
+            --border-subtle: #27272a;
+            --border-default: #3f3f46;
+            --border-strong: #52525b;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --text-disabled: #52525b;
+            --accent-primary: #6366f1;
+            --accent-primary-hover: #818cf8;
+            --accent-secondary: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --success: #22c55e;
+            --success-muted: rgba(34,197,94,0.15);
+            --warning: #f59e0b;
+            --warning-muted: rgba(245,158,11,0.15);
+            --danger: #ef4444;
+            --danger-muted: rgba(239,68,68,0.15);
+            --info: #3b82f6;
+            --info-muted: rgba(59,130,246,0.15);
+            --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            --gradient-success: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+            --gradient-agent: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.6);
+            --shadow-glow: 0 0 40px rgba(99,102,241,0.15);
+            --shadow-glow-cyan: 0 0 30px rgba(6,182,212,0.2);
+            --sidebar-width: 280px;
+            --topbar-height: 64px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.2s ease;
+            --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 14px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.5; overflow-x: hidden; }
+
+        *:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 4px; }
+
+        /* Connection Status Indicator */
+        .connection-status {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            font-weight: 500;
+            transition: var(--transition-base);
+        }
+        .connection-status.online { border-color: var(--success); }
+        .connection-status.offline { border-color: var(--danger); background: var(--danger-muted); }
+        .connection-status.reconnecting { border-color: var(--warning); }
+        .connection-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        .connection-status.online .connection-dot { background: var(--success); }
+        .connection-status.offline .connection-dot { background: var(--danger); animation: none; }
+        .connection-status.reconnecting .connection-dot { background: var(--warning); animation: blink 0.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,10,11,0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.3s;
+        }
+        .loading-overlay.hidden { opacity: 0; pointer-events: none; }
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--border-default);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-text { margin-top: 16px; font-size: 14px; color: var(--text-secondary); }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-hover) 50%, var(--bg-tertiary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: var(--radius-sm);
+        }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* Error State */
+        .error-state {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--danger-muted);
+            border: 1px solid var(--danger);
+            border-radius: var(--radius-lg);
+        }
+        .error-state i { font-size: 48px; color: var(--danger); margin-bottom: 16px; }
+        .error-state h3 { margin-bottom: 8px; }
+        .error-state p { color: var(--text-secondary); margin-bottom: 16px; }
+
+        /* Layout */
+        .app-shell { display: flex; min-height: 100vh; }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-subtle);
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            transition: transform var(--transition-base);
+        }
+        @media (max-width: 992px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+        }
+
+        .sidebar-header { padding: 20px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-icon { width: 40px; height: 40px; background: var(--gradient-brand); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; box-shadow: var(--shadow-glow); }
+        .brand-text { font-size: 18px; font-weight: 700; }
+        .brand-text span { background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .sidebar-toggle { width: 28px; height: 28px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); background: var(--bg-tertiary); color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .sidebar-toggle:hover { background: var(--bg-hover); color: var(--text-primary); }
+
+        .sidebar-nav { flex: 1; padding: 16px 12px; overflow-y: auto; }
+        .nav-group { margin-bottom: 24px; }
+        .nav-group-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 0 12px; margin-bottom: 8px; }
+
+        .nav-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: var(--radius-md); color: var(--text-secondary); cursor: pointer; transition: var(--transition-fast); margin-bottom: 2px; position: relative; }
+        .nav-item:hover { background: var(--bg-hover); color: var(--text-primary); }
+        .nav-item.active { background: var(--accent-primary); color: white; }
+        .nav-item.active::before { content: ''; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); width: 3px; height: 24px; background: var(--accent-primary); border-radius: 0 2px 2px 0; }
+        .nav-item i { width: 20px; text-align: center; font-size: 15px; }
+        .nav-item .label { flex: 1; font-size: 13px; font-weight: 500; }
+        .nav-badge { padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+        .nav-badge.danger { background: var(--danger-muted); color: var(--danger); }
+        .nav-badge.success { background: var(--success-muted); color: var(--success); }
+        .nav-badge.warning { background: var(--warning-muted); color: var(--warning); }
+        .nav-badge.info { background: var(--info-muted); color: var(--info); }
+        .nav-badge.cyan { background: rgba(6,182,212,0.15); color: var(--accent-cyan); }
+
+        /* Agent Status Widget */
+        .agent-widget {
+            margin: 12px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(6,182,212,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border: 1px solid rgba(6,182,212,0.3);
+            border-radius: var(--radius-lg);
+        }
+        .agent-widget-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .agent-widget-title { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+        .agent-widget-title i { color: var(--accent-cyan); }
+        .agent-status-indicator { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; }
+        .agent-status-indicator.running { color: var(--success); }
+        .agent-status-indicator.idle { color: var(--text-muted); }
+        .agent-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--success); animation: pulse 1.5s infinite; }
+        .agent-metric { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); font-size: 12px; }
+        .agent-metric:last-child { border-bottom: none; padding-bottom: 0; }
+        .agent-metric-label { color: var(--text-muted); }
+        .agent-metric-value { font-weight: 600; font-family: var(--font-mono); }
+
+        /* Goal Widget */
+        .goal-widget { margin: 12px; padding: 16px; background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.1) 100%); border: 1px solid rgba(99,102,241,0.2); border-radius: var(--radius-lg); }
+        .goal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .goal-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; }
+        .goal-amount { font-size: 24px; font-weight: 800; background: var(--gradient-success); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .goal-bar { height: 8px; background: var(--bg-hover); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+        .goal-bar-fill { height: 100%; background: var(--gradient-success); border-radius: 4px; transition: width 0.5s; }
+        .goal-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); }
+
+        /* User Widget */
+        .user-widget { padding: 16px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .user-widget:hover { background: var(--bg-hover); }
+        .user-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; }
+        .user-info { flex: 1; }
+        .user-name { font-size: 13px; font-weight: 600; }
+        .user-role { font-size: 11px; color: var(--text-muted); }
+
+        /* Main Content */
+        .main-content { flex: 1; margin-left: var(--sidebar-width); display: flex; flex-direction: column; min-height: 100vh; }
+        @media (max-width: 992px) { .main-content { margin-left: 0; } }
+
+        /* Top Bar */
+        .topbar { height: var(--topbar-height); background: var(--bg-secondary); border-bottom: 1px solid var(--border-subtle); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); }
+        .topbar-left { display: flex; align-items: center; gap: 16px; }
+        .hamburger { display: none; width: 40px; height: 40px; border-radius: var(--radius-md); border: 1px solid var(--border-default); background: var(--bg-tertiary); color: var(--text-secondary); cursor: pointer; align-items: center; justify-content: center; }
+        @media (max-width: 992px) { .hamburger { display: flex; } }
+        .page-title { font-size: 20px; font-weight: 700; }
+        .page-subtitle { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .topbar-right { display: flex; align-items: center; gap: 12px; }
+
+        .search-global { display: flex; align-items: center; gap: 8px; background: var(--bg-tertiary); border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: 8px 14px; min-width: 280px; }
+        .search-global:focus-within { border-color: var(--accent-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+        .search-global input { background: none; border: none; color: var(--text-primary); font-size: 13px; width: 100%; outline: none; }
+        .search-global input::placeholder { color: var(--text-muted); }
+        .search-global kbd { background: var(--bg-hover); border: 1px solid var(--border-default); border-radius: 4px; padding: 2px 6px; font-size: 11px; color: var(--text-muted); }
+
+        .icon-button { width: 40px; height: 40px; border-radius: var(--radius-md); border: 1px solid var(--border-default); background: var(--bg-tertiary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-fast); position: relative; }
+        .icon-button:hover { background: var(--bg-hover); color: var(--text-primary); }
+        .notification-dot { position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background: var(--danger); border-radius: 50%; border: 2px solid var(--bg-tertiary); }
+
+        /* Auto-refresh indicator */
+        .refresh-indicator { display: flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--bg-tertiary); border: 1px solid var(--border-default); border-radius: var(--radius-md); font-size: 11px; color: var(--text-muted); }
+        .refresh-indicator i { color: var(--accent-cyan); }
+        .refresh-countdown { font-family: var(--font-mono); color: var(--text-secondary); }
+
+        /* Page Content */
+        .page-content { flex: 1; padding: 24px; display: none; animation: fadeIn 0.3s ease; }
+        .page-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Hero Stats */
+        .hero-stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 24px; }
+        @media (max-width: 1400px) { .hero-stats { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
+
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 20px; position: relative; overflow: hidden; transition: var(--transition-fast); cursor: pointer; }
+        .stat-card:hover { border-color: var(--border-default); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+        .stat-card.revenue::before { background: var(--success); }
+        .stat-card.pipeline::before { background: var(--info); }
+        .stat-card.clients::before { background: var(--accent-primary); }
+        .stat-card.projects::before { background: var(--warning); }
+        .stat-card.burn::before { background: var(--danger); }
+        .stat-card.agents::before { background: var(--accent-cyan); }
+
+        .stat-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .stat-label { font-size: 12px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; }
+        .stat-icon { width: 36px; height: 36px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .stat-card.revenue .stat-icon { background: var(--success-muted); color: var(--success); }
+        .stat-card.pipeline .stat-icon { background: var(--info-muted); color: var(--info); }
+        .stat-card.clients .stat-icon { background: rgba(99,102,241,0.15); color: var(--accent-primary); }
+        .stat-card.projects .stat-icon { background: var(--warning-muted); color: var(--warning); }
+        .stat-card.burn .stat-icon { background: var(--danger-muted); color: var(--danger); }
+        .stat-card.agents .stat-icon { background: rgba(6,182,212,0.15); color: var(--accent-cyan); }
+
+        .stat-value { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+        .stat-trend { display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; }
+        .stat-trend.up { color: var(--success); }
+        .stat-trend.down { color: var(--danger); }
+        .stat-trend.neutral { color: var(--text-muted); }
+
+        /* Dashboard Grid */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+        .span-3 { grid-column: span 3; }
+        .span-4 { grid-column: span 4; }
+        .span-5 { grid-column: span 5; }
+        .span-6 { grid-column: span 6; }
+        .span-8 { grid-column: span 8; }
+        .span-12 { grid-column: span 12; }
+        @media (max-width: 1200px) { .span-3, .span-4 { grid-column: span 6; } .span-5, .span-6, .span-8 { grid-column: span 12; } }
+        @media (max-width: 768px) { .span-3, .span-4, .span-5, .span-6, .span-8 { grid-column: span 12; } }
+
+        /* Card */
+        .card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; }
+        .card.loading .card-body { position: relative; min-height: 200px; }
+        .card.loading .card-body::after { content: ''; position: absolute; inset: 0; background: var(--bg-card); display: flex; align-items: center; justify-content: center; }
+        .card-header { padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+        .card-title { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .card-title i { color: var(--accent-primary); }
+        .card-title .live-badge { background: var(--success); color: white; font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: 600; text-transform: uppercase; animation: pulse 2s infinite; }
+        .card-actions { display: flex; gap: 8px; }
+        .card-body { padding: 20px; }
+        .card-body.no-padding { padding: 0; }
+
+        .card-btn { padding: 6px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-default); background: transparent; color: var(--text-secondary); font-size: 12px; font-weight: 500; cursor: pointer; transition: var(--transition-fast); }
+        .card-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+        .card-btn.primary { background: var(--accent-primary); border-color: var(--accent-primary); color: white; }
+        .card-btn:active { transform: scale(0.95); }
+
+        .chart-container { position: relative; height: 280px; }
+        .chart-container.small { height: 200px; }
+
+        /* ============================================
+           CLAWDBOT-SPECIFIC COMPONENTS
+           ============================================ */
+
+        /* Agent Status Panel */
+        .agent-panel {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+            border: 1px solid var(--accent-cyan);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .agent-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-agent); }
+        .agent-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .agent-panel-title { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .agent-panel-title i { color: var(--accent-cyan); }
+
+        .agent-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        @media (max-width: 1200px) { .agent-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .agent-grid { grid-template-columns: 1fr; } }
+
+        .agent-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            transition: var(--transition-fast);
+        }
+        .agent-card:hover { border-color: var(--accent-cyan); }
+        .agent-card.active { border-color: var(--success); box-shadow: var(--shadow-glow-cyan); }
+
+        .agent-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .agent-name { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .agent-name i { color: var(--accent-cyan); }
+        .agent-status { font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+        .agent-status.running { background: var(--success-muted); color: var(--success); }
+        .agent-status.idle { background: var(--bg-hover); color: var(--text-muted); }
+        .agent-status.error { background: var(--danger-muted); color: var(--danger); }
+        .agent-status.pending { background: var(--warning-muted); color: var(--warning); }
+
+        .agent-task { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; padding: 8px; background: var(--bg-tertiary); border-radius: var(--radius-sm); font-family: var(--font-mono); }
+        .agent-progress { margin-bottom: 8px; }
+        .agent-progress-bar { height: 4px; background: var(--bg-hover); border-radius: 2px; overflow: hidden; }
+        .agent-progress-fill { height: 100%; background: var(--gradient-agent); transition: width 0.3s; }
+        .agent-meta { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); }
+
+        /* Memory/Context Viewer */
+        .memory-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .memory-header { padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+        .memory-title { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .memory-title i { color: var(--accent-secondary); }
+        .memory-body { max-height: 400px; overflow-y: auto; }
+
+        .memory-item { padding: 14px 20px; border-bottom: 1px solid var(--border-subtle); transition: var(--transition-fast); }
+        .memory-item:hover { background: var(--bg-hover); }
+        .memory-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .memory-item-type { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+        .memory-item-type.fact { background: var(--info-muted); color: var(--info); }
+        .memory-item-type.preference { background: rgba(139,92,246,0.15); color: var(--accent-secondary); }
+        .memory-item-type.context { background: var(--success-muted); color: var(--success); }
+        .memory-item-type.decision { background: var(--warning-muted); color: var(--warning); }
+        .memory-item-time { font-size: 11px; color: var(--text-muted); }
+        .memory-item-content { font-size: 13px; color: var(--text-secondary); }
+        .memory-item-source { font-size: 11px; color: var(--text-muted); margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+
+        /* API Usage Card */
+        .api-usage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+        }
+        .api-usage-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .api-usage-title { font-size: 14px; font-weight: 600; }
+        .api-usage-total { font-size: 12px; color: var(--text-muted); }
+        .api-usage-total span { font-weight: 600; color: var(--warning); }
+
+        .api-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-subtle); }
+        .api-row:last-child { border-bottom: none; }
+        .api-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .api-icon.claude { background: rgba(99,102,241,0.15); color: var(--accent-primary); }
+        .api-icon.openai { background: var(--success-muted); color: var(--success); }
+        .api-icon.google { background: var(--info-muted); color: var(--info); }
+        .api-icon.other { background: var(--bg-hover); color: var(--text-muted); }
+        .api-info { flex: 1; }
+        .api-name { font-size: 13px; font-weight: 500; }
+        .api-calls { font-size: 11px; color: var(--text-muted); }
+        .api-cost { font-size: 13px; font-weight: 600; font-family: var(--font-mono); }
+
+        /* Integration Status */
+        .integration-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .integration-item {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition-fast);
+        }
+        .integration-item:hover { border-color: var(--border-default); }
+        .integration-item.connected { border-left: 3px solid var(--success); }
+        .integration-item.disconnected { border-left: 3px solid var(--danger); opacity: 0.6; }
+        .integration-item.syncing { border-left: 3px solid var(--warning); }
+        .integration-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 18px; background: var(--bg-card); }
+        .integration-info { flex: 1; }
+        .integration-name { font-size: 13px; font-weight: 600; }
+        .integration-status { font-size: 11px; display: flex; align-items: center; gap: 4px; }
+        .integration-status.connected { color: var(--success); }
+        .integration-status.disconnected { color: var(--danger); }
+        .integration-status.syncing { color: var(--warning); }
+        .integration-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; }
+        .integration-status.connected::before { background: var(--success); }
+        .integration-status.disconnected::before { background: var(--danger); }
+        .integration-status.syncing::before { background: var(--warning); animation: blink 0.5s infinite; }
+
+        /* Cron Jobs Panel */
+        .cron-table { width: 100%; border-collapse: collapse; }
+        .cron-table th { text-align: left; padding: 12px 16px; background: var(--bg-tertiary); font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; border-bottom: 1px solid var(--border-subtle); }
+        .cron-table td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid var(--border-subtle); }
+        .cron-table tbody tr { transition: var(--transition-fast); }
+        .cron-table tbody tr:hover { background: var(--bg-hover); }
+        .cron-schedule { font-family: var(--font-mono); font-size: 12px; color: var(--accent-cyan); background: var(--bg-tertiary); padding: 4px 8px; border-radius: 4px; }
+        .cron-next { font-size: 12px; color: var(--text-muted); }
+        .cron-toggle { width: 40px; height: 22px; background: var(--bg-hover); border-radius: 11px; position: relative; cursor: pointer; transition: var(--transition-fast); }
+        .cron-toggle.active { background: var(--success); }
+        .cron-toggle::after { content: ''; width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: var(--transition-fast); }
+        .cron-toggle.active::after { transform: translateX(18px); }
+
+        /* Activity Log */
+        .activity-log { max-height: 400px; overflow-y: auto; }
+        .activity-item { display: flex; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); transition: var(--transition-fast); }
+        .activity-item:hover { background: var(--bg-hover); }
+        .activity-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+        .activity-icon.success { background: var(--success-muted); color: var(--success); }
+        .activity-icon.error { background: var(--danger-muted); color: var(--danger); }
+        .activity-icon.info { background: var(--info-muted); color: var(--info); }
+        .activity-icon.warning { background: var(--warning-muted); color: var(--warning); }
+        .activity-icon.agent { background: rgba(6,182,212,0.15); color: var(--accent-cyan); }
+        .activity-content { flex: 1; }
+        .activity-title { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+        .activity-time { font-size: 11px; color: var(--text-muted); }
+        .activity-details { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-family: var(--font-mono); background: var(--bg-tertiary); padding: 6px 10px; border-radius: 4px; }
+
+        /* Webhook Config */
+        .webhook-card { background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px; margin-bottom: 12px; }
+        .webhook-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .webhook-name { font-size: 14px; font-weight: 600; }
+        .webhook-method { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+        .webhook-method.post { background: var(--success-muted); color: var(--success); }
+        .webhook-method.get { background: var(--info-muted); color: var(--info); }
+        .webhook-url { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); background: var(--bg-primary); padding: 8px 12px; border-radius: 4px; word-break: break-all; }
+        .webhook-meta { display: flex; gap: 16px; margin-top: 12px; font-size: 11px; color: var(--text-muted); }
+
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: var(--radius-md); font-size: 13px; font-weight: 500; cursor: pointer; transition: var(--transition-fast); border: none; }
+        .btn:active { transform: scale(0.95); }
+        .btn-primary { background: var(--accent-primary); color: white; }
+        .btn-primary:hover { background: var(--accent-primary-hover); }
+        .btn-secondary { background: var(--bg-hover); color: var(--text-primary); }
+        .btn-cyan { background: var(--accent-cyan); color: white; }
+        .btn-outline { background: transparent; border: 1px solid var(--border-default); color: var(--text-secondary); }
+        .btn-outline:hover { background: var(--bg-hover); color: var(--text-primary); }
+        .btn-danger { background: var(--danger); color: white; }
+
+        .quick-actions { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+
+        /* Toast */
+        .toast { position: fixed; bottom: 24px; right: 24px; padding: 14px 20px; background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-xl); display: flex; align-items: center; gap: 12px; animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards; z-index: 9999; }
+        .toast.success { border-left: 4px solid var(--success); }
+        .toast.error { border-left: 4px solid var(--danger); }
+        .toast.info { border-left: 4px solid var(--info); }
+        @keyframes toastIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes toastOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+
+        /* Modal */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: var(--bg-card); border: 1px solid var(--border-default); border-radius: var(--radius-xl); width: 100%; max-width: 600px; max-height: 90vh; overflow: hidden; animation: modalIn 0.3s ease; }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(-20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-header { padding: 20px 24px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+        .modal-title { font-size: 18px; font-weight: 600; }
+        .modal-close { width: 32px; height: 32px; border-radius: var(--radius-sm); border: none; background: var(--bg-hover); color: var(--text-secondary); cursor: pointer; }
+        .modal-close:hover { background: var(--danger); color: white; }
+        .modal-body { padding: 24px; overflow-y: auto; max-height: 60vh; }
+        .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 12px; }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 4px; margin-bottom: 20px; background: var(--bg-tertiary); padding: 4px; border-radius: var(--radius-md); width: fit-content; }
+        .tab { padding: 8px 16px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; color: var(--text-secondary); cursor: pointer; transition: var(--transition-fast); border: none; background: none; }
+        .tab:hover { color: var(--text-primary); }
+        .tab.active { background: var(--bg-card); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+
+        /* Print */
+        @media print {
+            .sidebar, .topbar, .connection-status, .quick-actions { display: none !important; }
+            .main-content { margin-left: 0 !important; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Connection Status Indicator -->
+    <div class="connection-status online" id="connectionStatus">
+        <div class="connection-dot"></div>
+        <span id="connectionText">Connected</span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading dashboard...</div>
+    </div>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="brand-icon">K</div>
+                    <div class="brand-text">Kurios<span>HQ</span></div>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()"><i class="fas fa-chevron-left"></i></button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <div class="nav-group-label">Command</div>
+                    <div class="nav-item active" data-page="command-center"><i class="fas fa-th-large"></i><span class="label">Command Center</span></div>
+                    <div class="nav-item" data-page="pipeline"><i class="fas fa-filter"></i><span class="label">Pipeline/CRM</span><span class="nav-badge danger">12</span></div>
+                    <div class="nav-item" data-page="clients"><i class="fas fa-building"></i><span class="label">Client Portfolio</span><span class="nav-badge success">24</span></div>
+                </div>
+
+                <div class="nav-group">
+                    <div class="nav-group-label">Clawdbot</div>
+                    <div class="nav-item" data-page="agents"><i class="fas fa-robot"></i><span class="label">Agent Status</span><span class="nav-badge cyan">3</span></div>
+                    <div class="nav-item" data-page="memory"><i class="fas fa-brain"></i><span class="label">Memory Viewer</span></div>
+                    <div class="nav-item" data-page="api-usage"><i class="fas fa-chart-pie"></i><span class="label">API Usage</span></div>
+                    <div class="nav-item" data-page="cron"><i class="fas fa-clock"></i><span class="label">Cron Jobs</span><span class="nav-badge warning">2</span></div>
+                </div>
+
+                <div class="nav-group">
+                    <div class="nav-group-label">Operations</div>
+                    <div class="nav-item" data-page="financial"><i class="fas fa-chart-line"></i><span class="label">Financial</span></div>
+                    <div class="nav-item" data-page="projects"><i class="fas fa-project-diagram"></i><span class="label">Projects</span></div>
+                    <div class="nav-item" data-page="integrations"><i class="fas fa-plug"></i><span class="label">Integrations</span></div>
+                </div>
+
+                <div class="nav-group">
+                    <div class="nav-group-label">System</div>
+                    <div class="nav-item" data-page="activity"><i class="fas fa-history"></i><span class="label">Activity Log</span></div>
+                    <div class="nav-item" data-page="webhooks"><i class="fas fa-webhook"></i><span class="label">Webhooks</span></div>
+                    <div class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span class="label">Settings</span></div>
+                </div>
+            </nav>
+
+            <!-- Agent Status Widget -->
+            <div class="agent-widget">
+                <div class="agent-widget-header">
+                    <div class="agent-widget-title"><i class="fas fa-robot"></i> Clawdbot</div>
+                    <div class="agent-status-indicator running"><div class="agent-pulse"></div> Running</div>
+                </div>
+                <div class="agent-metric"><span class="agent-metric-label">Active Agents</span><span class="agent-metric-value">3</span></div>
+                <div class="agent-metric"><span class="agent-metric-label">Tasks Today</span><span class="agent-metric-value">47</span></div>
+                <div class="agent-metric"><span class="agent-metric-label">API Calls</span><span class="agent-metric-value">1,284</span></div>
+            </div>
+
+            <!-- Goal Widget -->
+            <div class="goal-widget">
+                <div class="goal-header"><span class="goal-label">🎯 Exit Goal</span></div>
+                <div class="goal-amount">$9.6M</div>
+                <div class="goal-bar"><div class="goal-bar-fill" style="width: 0.33%"></div></div>
+                <div class="goal-meta"><span>$31,750 closed</span><span>0.33%</span></div>
+            </div>
+
+            <div class="user-widget" onclick="showPage('settings')">
+                <div class="user-avatar">MG</div>
+                <div class="user-info"><div class="user-name">Marko</div><div class="user-role">Founder / CEO</div></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="hamburger" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+                    <div><h1 class="page-title" id="pageTitle">Command Center</h1><div class="page-subtitle" id="pageSubtitle">Real-time business overview</div></div>
+                </div>
+                <div class="topbar-right">
+                    <div class="search-global">
+                        <i class="fas fa-search" style="color: var(--text-muted)"></i>
+                        <input type="text" placeholder="Search..." id="globalSearch">
+                        <kbd>⌘K</kbd>
+                    </div>
+                    <div class="refresh-indicator" id="refreshIndicator">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Next refresh: <span class="refresh-countdown" id="refreshCountdown">30s</span></span>
+                    </div>
+                    <button class="icon-button" onclick="refreshData()" title="Refresh Now"><i class="fas fa-sync-alt"></i></button>
+                    <button class="icon-button" title="Notifications"><i class="fas fa-bell"></i><span class="notification-dot"></span></button>
+                </div>
+            </header>
+
+            <!-- Command Center -->
+            <div class="page-content active" id="command-center">
+                <!-- Agent Panel -->
+                <div class="agent-panel">
+                    <div class="agent-panel-header">
+                        <div class="agent-panel-title"><i class="fas fa-robot"></i> Clawdbot Agent Orchestration</div>
+                        <button class="btn btn-cyan" onclick="spawnAgent()"><i class="fas fa-plus"></i> Spawn Agent</button>
+                    </div>
+                    <div class="agent-grid">
+                        <div class="agent-card active">
+                            <div class="agent-card-header">
+                                <div class="agent-name"><i class="fas fa-brain"></i> Main Session</div>
+                                <span class="agent-status running">Running</span>
+                            </div>
+                            <div class="agent-task">Monitoring dashboard & heartbeat</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 100%"></div></div></div>
+                            <div class="agent-meta"><span>Model: claude-opus-4-5</span><span>47 tasks today</span></div>
+                        </div>
+                        <div class="agent-card active">
+                            <div class="agent-card-header">
+                                <div class="agent-name"><i class="fas fa-code"></i> Codex Agent</div>
+                                <span class="agent-status running">Running</span>
+                            </div>
+                            <div class="agent-task">Building AI Intake Agent (90%)</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 90%"></div></div></div>
+                            <div class="agent-meta"><span>Model: o4-mini</span><span>12 tasks</span></div>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-card-header">
+                                <div class="agent-name"><i class="fas fa-search"></i> Research Agent</div>
+                                <span class="agent-status idle">Idle</span>
+                            </div>
+                            <div class="agent-task">Awaiting task...</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 0%"></div></div></div>
+                            <div class="agent-meta"><span>Model: gemini-3-flash</span><span>Ready</span></div>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-card-header">
+                                <div class="agent-name"><i class="fab fa-x-twitter"></i> Social Agent</div>
+                                <span class="agent-status pending">Pending</span>
+                            </div>
+                            <div class="agent-task">Scheduled: Post daily update</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 0%"></div></div></div>
+                            <div class="agent-meta"><span>Model: grok-4</span><span>9:00 AM</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Stats -->
+                <div class="hero-stats">
+                    <div class="stat-card revenue" onclick="showPage('financial')">
+                        <div class="stat-header"><span class="stat-label">Revenue</span><div class="stat-icon"><i class="fas fa-dollar-sign"></i></div></div>
+                        <div class="stat-value">$31,750</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> First close 2026</div>
+                    </div>
+                    <div class="stat-card pipeline" onclick="showPage('pipeline')">
+                        <div class="stat-header"><span class="stat-label">Pipeline</span><div class="stat-icon"><i class="fas fa-filter"></i></div></div>
+                        <div class="stat-value">$24,625</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12 prospects</div>
+                    </div>
+                    <div class="stat-card clients" onclick="showPage('clients')">
+                        <div class="stat-header"><span class="stat-label">Clients</span><div class="stat-icon"><i class="fas fa-building"></i></div></div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 15+ states</div>
+                    </div>
+                    <div class="stat-card projects" onclick="showPage('projects')">
+                        <div class="stat-header"><span class="stat-label">Projects</span><div class="stat-icon"><i class="fas fa-tasks"></i></div></div>
+                        <div class="stat-value">5</div>
+                        <div class="stat-trend neutral"><i class="fas fa-minus"></i> 2 stalled</div>
+                    </div>
+                    <div class="stat-card burn" onclick="showPage('financial')">
+                        <div class="stat-header"><span class="stat-label">Burn Rate</span><div class="stat-icon"><i class="fas fa-fire"></i></div></div>
+                        <div class="stat-value">$3,000</div>
+                        <div class="stat-trend down"><i class="fas fa-exclamation-triangle"></i> Review Feb 3</div>
+                    </div>
+                    <div class="stat-card agents" onclick="showPage('agents')">
+                        <div class="stat-header"><span class="stat-label">AI Agents</span><div class="stat-icon"><i class="fas fa-robot"></i></div></div>
+                        <div class="stat-value">3</div>
+                        <div class="stat-trend up"><i class="fas fa-check"></i> 2 active</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Revenue Chart -->
+                    <div class="card span-8">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-chart-area"></i> Revenue & Pipeline <span class="live-badge">Live</span></div>
+                            <div class="card-actions">
+                                <button class="card-btn">Weekly</button>
+                                <button class="card-btn primary">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="card-body"><div class="chart-container"><canvas id="revenueChart"></canvas></div></div>
+                    </div>
+
+                    <!-- API Usage Mini -->
+                    <div class="card span-4">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-chart-pie"></i> API Usage Today</div>
+                            <button class="card-btn" onclick="showPage('api-usage')">Details</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="api-usage-card" style="padding: 0; border: none;">
+                                <div class="api-usage-header"><div class="api-usage-title">Cost: <span style="color: var(--warning);">$4.82</span></div></div>
+                                <div class="api-row"><div class="api-icon claude"><i class="fas fa-brain"></i></div><div class="api-info"><div class="api-name">Claude (Opus)</div><div class="api-calls">847 calls</div></div><div class="api-cost">$3.24</div></div>
+                                <div class="api-row"><div class="api-icon openai"><i class="fas fa-code"></i></div><div class="api-info"><div class="api-name">OpenAI (o4-mini)</div><div class="api-calls">312 calls</div></div><div class="api-cost">$0.94</div></div>
+                                <div class="api-row"><div class="api-icon google"><i class="fab fa-google"></i></div><div class="api-info"><div class="api-name">Gemini Flash</div><div class="api-calls">125 calls</div></div><div class="api-cost">$0.64</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card span-6">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-history"></i> Recent Activity</div>
+                            <button class="card-btn" onclick="showPage('activity')">View All</button>
+                        </div>
+                        <div class="card-body no-padding">
+                            <div class="activity-log" style="max-height: 300px;">
+                                <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">Codex Agent completed task</div><div class="activity-time">2 minutes ago</div><div class="activity-details">AI Intake Agent progress: 90%</div></div></div>
+                                <div class="activity-item"><div class="activity-icon success"><i class="fas fa-check"></i></div><div class="activity-content"><div class="activity-title">Deal closed: Jason E - Eisenberg Law</div><div class="activity-time">1 hour ago</div><div class="activity-details">Revenue: $31,750</div></div></div>
+                                <div class="activity-item"><div class="activity-icon info"><i class="fas fa-sync"></i></div><div class="activity-content"><div class="activity-title">Google Calendar synced</div><div class="activity-time">3 hours ago</div></div></div>
+                                <div class="activity-item"><div class="activity-icon warning"><i class="fas fa-exclamation"></i></div><div class="activity-content"><div class="activity-title">Heartbeat check: Email inbox</div><div class="activity-time">4 hours ago</div><div class="activity-details">3 unread important emails</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Integrations Status -->
+                    <div class="card span-6">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-plug"></i> Integration Status</div>
+                            <button class="card-btn" onclick="showPage('integrations')">Manage</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="integration-grid">
+                                <div class="integration-item connected"><div class="integration-icon" style="color: var(--success);"><i class="fas fa-plug"></i></div><div class="integration-info"><div class="integration-name">GoHighLevel</div><div class="integration-status connected">Connected</div></div></div>
+                                <div class="integration-item connected"><div class="integration-icon" style="color: var(--info);"><i class="fab fa-google"></i></div><div class="integration-info"><div class="integration-name">Google Calendar</div><div class="integration-status connected">Connected</div></div></div>
+                                <div class="integration-item connected"><div class="integration-icon" style="color: var(--accent-secondary);"><i class="fas fa-book"></i></div><div class="integration-info"><div class="integration-name">Notion</div><div class="integration-status connected">Connected</div></div></div>
+                                <div class="integration-item syncing"><div class="integration-icon" style="color: var(--text-primary);"><i class="fab fa-x-twitter"></i></div><div class="integration-info"><div class="integration-name">X/Twitter</div><div class="integration-status syncing">Syncing...</div></div></div>
+                                <div class="integration-item connected"><div class="integration-icon" style="color: var(--accent-primary);"><i class="fab fa-telegram"></i></div><div class="integration-info"><div class="integration-name">Telegram</div><div class="integration-status connected">Connected</div></div></div>
+                                <div class="integration-item connected"><div class="integration-icon" style="color: var(--success);"><i class="fab fa-whatsapp"></i></div><div class="integration-info"><div class="integration-name">WhatsApp</div><div class="integration-status connected">Connected</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Status Page -->
+            <div class="page-content" id="agents">
+                <div class="quick-actions">
+                    <button class="btn btn-primary" onclick="spawnAgent()"><i class="fas fa-plus"></i> Spawn New Agent</button>
+                    <button class="btn btn-secondary"><i class="fas fa-stop"></i> Stop All</button>
+                    <button class="btn btn-outline" onclick="refreshData()"><i class="fas fa-sync"></i> Refresh</button>
+                </div>
+
+                <div class="agent-panel" style="margin-bottom: 24px;">
+                    <div class="agent-panel-header">
+                        <div class="agent-panel-title"><i class="fas fa-robot"></i> Active Agent Sessions</div>
+                    </div>
+                    <div class="agent-grid">
+                        <div class="agent-card active">
+                            <div class="agent-card-header"><div class="agent-name"><i class="fas fa-brain"></i> agent:main:main</div><span class="agent-status running">Running</span></div>
+                            <div class="agent-task">Primary orchestration session</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 100%"></div></div></div>
+                            <div class="agent-meta"><span>claude-opus-4-5</span><span>47 tasks</span></div>
+                        </div>
+                        <div class="agent-card active">
+                            <div class="agent-card-header"><div class="agent-name"><i class="fas fa-code"></i> agent:codex:ai-intake</div><span class="agent-status running">Running</span></div>
+                            <div class="agent-task">Building AI Intake Agent system</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 90%"></div></div></div>
+                            <div class="agent-meta"><span>o4-mini (high)</span><span>12 tasks</span></div>
+                        </div>
+                        <div class="agent-card">
+                            <div class="agent-card-header"><div class="agent-name"><i class="fas fa-search"></i> agent:research:pi-vendors</div><span class="agent-status idle">Idle</span></div>
+                            <div class="agent-task">Last: Competitor analysis</div>
+                            <div class="agent-progress"><div class="agent-progress-bar"><div class="agent-progress-fill" style="width: 0%"></div></div></div>
+                            <div class="agent-meta"><span>gemini-3-flash</span><span>Standby</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><div class="card-title"><i class="fas fa-list"></i> Agent Task History</div></div>
+                    <div class="card-body no-padding">
+                        <div class="activity-log">
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">Codex: AI Intake Agent - WhatsApp integration</div><div class="activity-time">10 mins ago</div><div class="activity-details">Status: Complete ✓</div></div></div>
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">Main: Enterprise Dashboard v6</div><div class="activity-time">30 mins ago</div><div class="activity-details">Status: Complete ✓</div></div></div>
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">Research: X/Twitter trending analysis</div><div class="activity-time">2 hours ago</div><div class="activity-details">Status: Complete ✓</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Viewer Page -->
+            <div class="page-content" id="memory">
+                <div class="quick-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Memory</button>
+                    <button class="btn btn-secondary"><i class="fas fa-search"></i> Search</button>
+                    <button class="btn btn-outline"><i class="fas fa-sync"></i> Refresh</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="memory-panel span-8">
+                        <div class="memory-header">
+                            <div class="memory-title"><i class="fas fa-brain"></i> Supermemory Context</div>
+                            <div class="card-actions">
+                                <button class="card-btn">Facts</button>
+                                <button class="card-btn primary">All</button>
+                                <button class="card-btn">Preferences</button>
+                            </div>
+                        </div>
+                        <div class="memory-body">
+                            <div class="memory-item">
+                                <div class="memory-item-header"><span class="memory-item-type fact">Fact</span><span class="memory-item-time">2 hours ago</span></div>
+                                <div class="memory-item-content">Marko is traveling to Israel in ~2 weeks with Noia</div>
+                                <div class="memory-item-source"><i class="fas fa-database"></i> supermemory</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="memory-item-header"><span class="memory-item-type preference">Preference</span><span class="memory-item-time">Yesterday</span></div>
+                                <div class="memory-item-content">Prefers Codex CLI with high reasoning for coding tasks</div>
+                                <div class="memory-item-source"><i class="fas fa-file"></i> TOOLS.md</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="memory-item-header"><span class="memory-item-type context">Context</span><span class="memory-item-time">Today</span></div>
+                                <div class="memory-item-content">Exit goal: $9.6M | Current progress: $31,750 (0.33%)</div>
+                                <div class="memory-item-source"><i class="fas fa-file"></i> MEMORY.md</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="memory-item-header"><span class="memory-item-type decision">Decision</span><span class="memory-item-time">Jan 30</span></div>
+                                <div class="memory-item-content">Attack Chase Sapphire CC first (21.99% APR) before other debts</div>
+                                <div class="memory-item-source"><i class="fas fa-file"></i> memory/2026-01-30.md</div>
+                            </div>
+                            <div class="memory-item">
+                                <div class="memory-item-header"><span class="memory-item-type fact">Fact</span><span class="memory-item-time">Jan 29</span></div>
+                                <div class="memory-item-content">24 active clients across 15+ states, $10M+ total spend, 5,000+ cases signed</div>
+                                <div class="memory-item-source"><i class="fas fa-table"></i> kurios-performance.json</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card span-4">
+                        <div class="card-header"><div class="card-title"><i class="fas fa-file-alt"></i> Memory Files</div></div>
+                        <div class="card-body no-padding">
+                            <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 13px;">MEMORY.md</span>
+                                <span style="font-size: 11px; color: var(--text-muted);">Updated today</span>
+                            </div>
+                            <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 13px;">memory/2026-02-02.md</span>
+                                <span style="font-size: 11px; color: var(--text-muted);">Active</span>
+                            </div>
+                            <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 13px;">memory/2026-02-01.md</span>
+                                <span style="font-size: 11px; color: var(--text-muted);">2.4KB</span>
+                            </div>
+                            <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 13px;">HEARTBEAT.md</span>
+                                <span style="font-size: 11px; color: var(--success);">Checklist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Usage Page -->
+            <div class="page-content" id="api-usage">
+                <div class="tabs">
+                    <button class="tab active">Today</button>
+                    <button class="tab">This Week</button>
+                    <button class="tab">This Month</button>
+                </div>
+
+                <div class="hero-stats" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-card" style="--card-color: var(--warning);">
+                        <div class="stat-header"><span class="stat-label">Total Cost Today</span><div class="stat-icon" style="background: var(--warning-muted); color: var(--warning);"><i class="fas fa-dollar-sign"></i></div></div>
+                        <div class="stat-value" style="color: var(--warning);">$4.82</div>
+                        <div class="stat-trend neutral">1,284 API calls</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><span class="stat-label">Claude Usage</span><div class="stat-icon" style="background: rgba(99,102,241,0.15); color: var(--accent-primary);"><i class="fas fa-brain"></i></div></div>
+                        <div class="stat-value">847</div>
+                        <div class="stat-trend neutral">$3.24 cost</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><span class="stat-label">OpenAI Usage</span><div class="stat-icon" style="background: var(--success-muted); color: var(--success);"><i class="fas fa-code"></i></div></div>
+                        <div class="stat-value">312</div>
+                        <div class="stat-trend neutral">$0.94 cost</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header"><span class="stat-label">Other APIs</span><div class="stat-icon" style="background: var(--bg-hover); color: var(--text-muted);"><i class="fas fa-plug"></i></div></div>
+                        <div class="stat-value">125</div>
+                        <div class="stat-trend neutral">$0.64 cost</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card span-8">
+                        <div class="card-header"><div class="card-title"><i class="fas fa-chart-line"></i> API Usage Over Time</div></div>
+                        <div class="card-body"><div class="chart-container"><canvas id="apiChart"></canvas></div></div>
+                    </div>
+                    <div class="card span-4">
+                        <div class="card-header"><div class="card-title"><i class="fas fa-list"></i> Breakdown by Model</div></div>
+                        <div class="card-body">
+                            <div class="api-row"><div class="api-icon claude"><i class="fas fa-brain"></i></div><div class="api-info"><div class="api-name">Claude Opus 4.5</div><div class="api-calls">Main orchestration</div></div><div class="api-cost">$2.80</div></div>
+                            <div class="api-row"><div class="api-icon claude"><i class="fas fa-comment"></i></div><div class="api-info"><div class="api-name">Claude Sonnet 4.5</div><div class="api-calls">Conversation</div></div><div class="api-cost">$0.44</div></div>
+                            <div class="api-row"><div class="api-icon openai"><i class="fas fa-code"></i></div><div class="api-info"><div class="api-name">o4-mini (Codex)</div><div class="api-calls">Coding tasks</div></div><div class="api-cost">$0.94</div></div>
+                            <div class="api-row"><div class="api-icon google"><i class="fab fa-google"></i></div><div class="api-info"><div class="api-name">Gemini 3 Flash</div><div class="api-calls">Research</div></div><div class="api-cost">$0.64</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cron Jobs Page -->
+            <div class="page-content" id="cron">
+                <div class="quick-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Create Cron Job</button>
+                    <button class="btn btn-outline"><i class="fas fa-pause"></i> Pause All</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><div class="card-title"><i class="fas fa-clock"></i> Scheduled Jobs</div></div>
+                    <div class="card-body no-padding">
+                        <table class="cron-table">
+                            <thead><tr><th>Job Name</th><th>Schedule</th><th>Next Run</th><th>Last Run</th><th>Status</th><th>Enabled</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Heartbeat Check</strong><br><span style="font-size: 11px; color: var(--text-muted);">Check inbox, calendar, mentions</span></td>
+                                    <td><span class="cron-schedule">*/30 * * * *</span></td>
+                                    <td class="cron-next">in 12 mins</td>
+                                    <td>18 mins ago</td>
+                                    <td><span class="agent-status running">OK</span></td>
+                                    <td><div class="cron-toggle active"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Daily Briefing</strong><br><span style="font-size: 11px; color: var(--text-muted);">Morning summary to Telegram</span></td>
+                                    <td><span class="cron-schedule">0 9 * * *</span></td>
+                                    <td class="cron-next">Tomorrow 9:00 AM</td>
+                                    <td>Today 9:00 AM</td>
+                                    <td><span class="agent-status running">OK</span></td>
+                                    <td><div class="cron-toggle active"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory Maintenance</strong><br><span style="font-size: 11px; color: var(--text-muted);">Review and consolidate memories</span></td>
+                                    <td><span class="cron-schedule">0 2 * * 0</span></td>
+                                    <td class="cron-next">Sunday 2:00 AM</td>
+                                    <td>Last Sunday</td>
+                                    <td><span class="agent-status idle">Idle</span></td>
+                                    <td><div class="cron-toggle active"></div></td>
+                                </tr>
+                                <tr style="opacity: 0.6;">
+                                    <td><strong>Social Post</strong><br><span style="font-size: 11px; color: var(--text-muted);">Auto-post to X</span></td>
+                                    <td><span class="cron-schedule">0 12 * * 1-5</span></td>
+                                    <td class="cron-next">-</td>
+                                    <td>Never</td>
+                                    <td><span class="agent-status pending">Paused</span></td>
+                                    <td><div class="cron-toggle"></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations Page -->
+            <div class="page-content" id="integrations">
+                <div class="quick-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Integration</button>
+                    <button class="btn btn-outline" onclick="refreshData()"><i class="fas fa-sync"></i> Test All</button>
+                </div>
+
+                <div class="integration-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--success);"><i class="fas fa-plug"></i></div>
+                            <div class="integration-info"><div class="integration-name">GoHighLevel</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">CRM • $407/mo • Last sync: 5 mins ago</div>
+                    </div>
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--info);"><i class="fab fa-google"></i></div>
+                            <div class="integration-info"><div class="integration-name">Google Calendar</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">mark@kuriosbrand.com • Last sync: 3 hrs ago</div>
+                    </div>
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--accent-secondary);"><i class="fas fa-book"></i></div>
+                            <div class="integration-info"><div class="integration-name">Notion</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Sierra Workspace • SOPs only</div>
+                    </div>
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--text-primary);"><i class="fab fa-x-twitter"></i></div>
+                            <div class="integration-info"><div class="integration-name">X/Twitter</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">@markkodg • OAuth working</div>
+                    </div>
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--accent-primary);"><i class="fab fa-telegram"></i></div>
+                            <div class="integration-info"><div class="integration-name">Telegram</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Primary channel • Clawdbot</div>
+                    </div>
+                    <div class="integration-item connected" style="flex-direction: column; align-items: flex-start; padding: 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; width: 100%;">
+                            <div class="integration-icon" style="color: var(--success);"><i class="fab fa-whatsapp"></i></div>
+                            <div class="integration-info"><div class="integration-name">WhatsApp</div><div class="integration-status connected">Connected</div></div>
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Business API • AI Intake ready</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Log Page -->
+            <div class="page-content" id="activity">
+                <div class="tabs">
+                    <button class="tab active">All</button>
+                    <button class="tab">Agents</button>
+                    <button class="tab">Deals</button>
+                    <button class="tab">System</button>
+                    <button class="tab">Errors</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-history"></i> Activity Log <span class="live-badge">Live</span></div>
+                        <div class="card-actions">
+                            <button class="card-btn">Export CSV</button>
+                            <button class="card-btn">Export PDF</button>
+                        </div>
+                    </div>
+                    <div class="card-body no-padding">
+                        <div class="activity-log" style="max-height: none;">
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">[Agent] Codex completed AI Intake module</div><div class="activity-time">2 minutes ago</div><div class="activity-details">Session: agent:codex:ai-intake | Model: o4-mini | Duration: 847s</div></div></div>
+                            <div class="activity-item"><div class="activity-icon success"><i class="fas fa-dollar-sign"></i></div><div class="activity-content"><div class="activity-title">[Deal] Jason E - Eisenberg Law closed</div><div class="activity-time">1 hour ago</div><div class="activity-details">Revenue: $31,750 | State: CA | Source: Cases on Demand</div></div></div>
+                            <div class="activity-item"><div class="activity-icon info"><i class="fas fa-sync"></i></div><div class="activity-content"><div class="activity-title">[System] Google Calendar sync completed</div><div class="activity-time">3 hours ago</div><div class="activity-details">Events synced: 12 | Token refreshed</div></div></div>
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">[Agent] Main session heartbeat</div><div class="activity-time">4 hours ago</div><div class="activity-details">Checks: email ✓, calendar ✓, twitter ✓ | 3 items flagged</div></div></div>
+                            <div class="activity-item"><div class="activity-icon warning"><i class="fas fa-exclamation-triangle"></i></div><div class="activity-content"><div class="activity-title">[System] API rate limit warning</div><div class="activity-time">5 hours ago</div><div class="activity-details">Claude API: 80% of hourly limit reached</div></div></div>
+                            <div class="activity-item"><div class="activity-icon agent"><i class="fas fa-robot"></i></div><div class="activity-content"><div class="activity-title">[Agent] Research agent spawned</div><div class="activity-time">6 hours ago</div><div class="activity-details">Task: X/Twitter trend analysis | Model: grok-4</div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webhooks Page -->
+            <div class="page-content" id="webhooks">
+                <div class="quick-actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Create Webhook</button>
+                    <button class="btn btn-outline"><i class="fas fa-code"></i> View Docs</button>
+                </div>
+
+                <div class="webhook-card">
+                    <div class="webhook-header"><div class="webhook-name">GHL Lead Webhook</div><span class="webhook-method post">POST</span></div>
+                    <div class="webhook-url">https://clawd.gateway.example.com/webhooks/ghl-lead</div>
+                    <div class="webhook-meta"><span><i class="fas fa-check" style="color: var(--success);"></i> Active</span><span>Last triggered: 2 hours ago</span><span>47 calls today</span></div>
+                </div>
+                <div class="webhook-card">
+                    <div class="webhook-header"><div class="webhook-name">Telegram Notification</div><span class="webhook-method post">POST</span></div>
+                    <div class="webhook-url">https://clawd.gateway.example.com/webhooks/telegram-notify</div>
+                    <div class="webhook-meta"><span><i class="fas fa-check" style="color: var(--success);"></i> Active</span><span>Last triggered: 30 mins ago</span><span>124 calls today</span></div>
+                </div>
+                <div class="webhook-card">
+                    <div class="webhook-header"><div class="webhook-name">Calendar Event Hook</div><span class="webhook-method post">POST</span></div>
+                    <div class="webhook-url">https://clawd.gateway.example.com/webhooks/calendar-event</div>
+                    <div class="webhook-meta"><span><i class="fas fa-check" style="color: var(--success);"></i> Active</span><span>Last triggered: 3 hours ago</span><span>12 calls today</span></div>
+                </div>
+            </div>
+
+            <!-- Simplified other pages -->
+            <div class="page-content" id="pipeline"><div class="empty-state"><div class="empty-state-icon"><i class="fas fa-filter"></i></div><h3>Pipeline/CRM</h3><p>12 active prospects • $24,625 pipeline value</p><button class="btn btn-primary" onclick="showPage('command-center')">Back to Command Center</button></div></div>
+            <div class="page-content" id="clients"><div class="empty-state"><div class="empty-state-icon"><i class="fas fa-building"></i></div><h3>Client Portfolio</h3><p>24 clients • 15+ states • $10M+ spend</p><button class="btn btn-primary" onclick="showPage('command-center')">Back to Command Center</button></div></div>
+            <div class="page-content" id="financial"><div class="empty-state"><div class="empty-state-icon"><i class="fas fa-chart-line"></i></div><h3>Financial Dashboard</h3><p>$31,750 revenue • $3K/mo burn</p><button class="btn btn-primary" onclick="showPage('command-center')">Back to Command Center</button></div></div>
+            <div class="page-content" id="projects"><div class="empty-state"><div class="empty-state-icon"><i class="fas fa-project-diagram"></i></div><h3>Projects</h3><p>5 active • 2 stalled</p><button class="btn btn-primary" onclick="showPage('command-center')">Back to Command Center</button></div></div>
+            <div class="page-content" id="settings"><div class="empty-state"><div class="empty-state-icon"><i class="fas fa-cog"></i></div><h3>Settings</h3><p>KuriosBrand LLC • Marko</p><button class="btn btn-primary" onclick="showPage('command-center')">Back to Command Center</button></div></div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal"><div class="modal-header"><h2 class="modal-title" id="modalTitle">Modal</h2><button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button></div><div class="modal-body" id="modalBody"></div><div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">Close</button><button class="btn btn-primary">Save</button></div></div>
+    </div>
+
+    <script>
+        // ============================================
+        // CLAWDBOT ENTERPRISE DASHBOARD v6
+        // Real-time, Robust, Production-Ready
+        // ============================================
+
+        // State Management with Local Storage Cache
+        const AppState = {
+            lastRefresh: Date.now(),
+            refreshInterval: 30000,
+            isOnline: navigator.onLine,
+            cache: JSON.parse(localStorage.getItem('dashboardCache') || '{}')
+        };
+
+        // Navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => showPage(item.dataset.page));
+        });
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            const page = document.getElementById(pageId);
+            const nav = document.querySelector(`[data-page="${pageId}"]`);
+            if (page) page.classList.add('active');
+            if (nav) nav.classList.add('active');
+
+            const titles = {
+                'command-center': ['Command Center', 'Real-time business overview'],
+                'agents': ['Agent Status', 'Clawdbot agent orchestration'],
+                'memory': ['Memory Viewer', 'Supermemory context and facts'],
+                'api-usage': ['API Usage', 'Cost tracking and analytics'],
+                'cron': ['Cron Jobs', 'Scheduled tasks and automations'],
+                'integrations': ['Integrations', 'Connected services status'],
+                'activity': ['Activity Log', 'Audit trail and history'],
+                'webhooks': ['Webhooks', 'Endpoint configurations'],
+                'pipeline': ['Pipeline/CRM', '12 active prospects'],
+                'clients': ['Client Portfolio', '24 clients across 15+ states'],
+                'financial': ['Financial', 'Revenue and expenses'],
+                'projects': ['Projects', '5 active projects'],
+                'settings': ['Settings', 'System configuration']
+            };
+            const [title, subtitle] = titles[pageId] || ['Dashboard', ''];
+            document.getElementById('pageTitle').textContent = title;
+            document.getElementById('pageSubtitle').textContent = subtitle;
+        }
+
+        function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
+
+        // Connection Status Management
+        function updateConnectionStatus(status) {
+            const el = document.getElementById('connectionStatus');
+            const text = document.getElementById('connectionText');
+            el.className = 'connection-status ' + status;
+            text.textContent = status === 'online' ? 'Connected' : status === 'offline' ? 'Offline' : 'Reconnecting...';
+        }
+
+        window.addEventListener('online', () => { updateConnectionStatus('online'); showToast('Connection restored', 'success'); refreshData(); });
+        window.addEventListener('offline', () => { updateConnectionStatus('offline'); showToast('Connection lost - working offline', 'error'); });
+
+        // Auto-refresh with countdown
+        let refreshCountdown = 30;
+        setInterval(() => {
+            refreshCountdown--;
+            document.getElementById('refreshCountdown').textContent = refreshCountdown + 's';
+            if (refreshCountdown <= 0) {
+                refreshData();
+                refreshCountdown = 30;
+            }
+        }, 1000);
+
+        function refreshData() {
+            if (!navigator.onLine) { showToast('Cannot refresh - offline', 'error'); return; }
+            const indicator = document.getElementById('refreshIndicator');
+            indicator.querySelector('i').classList.add('fa-spin');
+            
+            // Simulate data refresh
+            setTimeout(() => {
+                indicator.querySelector('i').classList.remove('fa-spin');
+                refreshCountdown = 30;
+                AppState.lastRefresh = Date.now();
+                localStorage.setItem('dashboardCache', JSON.stringify({ lastRefresh: AppState.lastRefresh }));
+                showToast('Data refreshed', 'success');
+            }, 1000);
+        }
+
+        // Agent Spawning
+        function spawnAgent() {
+            openModal('Spawn New Agent', `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 48px; margin-bottom: 16px;"><i class="fas fa-robot" style="color: var(--accent-cyan);"></i></div>
+                    <h3 style="margin-bottom: 16px;">Spawn Sub-Agent</h3>
+                    <div style="text-align: left; background: var(--bg-tertiary); padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px;">
+                        <label style="display: block; margin-bottom: 8px; font-size: 12px; color: var(--text-muted);">Model</label>
+                        <select style="width: 100%; padding: 10px; background: var(--bg-primary); border: 1px solid var(--border-default); border-radius: var(--radius-sm); color: var(--text-primary);">
+                            <option>claude-opus-4-5 (Orchestration)</option>
+                            <option>o4-mini (Coding)</option>
+                            <option>gemini-3-flash (Research)</option>
+                            <option>grok-4 (Social)</option>
+                            <option>deepseek-chat (Bulk)</option>
+                        </select>
+                    </div>
+                    <div style="text-align: left; background: var(--bg-tertiary); padding: 16px; border-radius: var(--radius-md);">
+                        <label style="display: block; margin-bottom: 8px; font-size: 12px; color: var(--text-muted);">Task Description</label>
+                        <textarea style="width: 100%; padding: 10px; background: var(--bg-primary); border: 1px solid var(--border-default); border-radius: var(--radius-sm); color: var(--text-primary); min-height: 80px; resize: vertical;" placeholder="Describe the task for this agent..."></textarea>
+                    </div>
+                </div>
+            `);
+        }
+
+        // Toast Notifications
+        function showToast(message, type = 'success') {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Modal
+        function openModal(title, content) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = content;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+        function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); }
+        document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); document.getElementById('globalSearch').focus(); }
+            if ((e.metaKey || e.ctrlKey) && e.key === 'r') { e.preventDefault(); refreshData(); }
+        });
+
+        // Initialize Charts
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide loading overlay
+            setTimeout(() => document.getElementById('loadingOverlay').classList.add('hidden'), 500);
+
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart');
+            if (revenueCtx) {
+                new Chart(revenueCtx, {
+                    type: 'line',
+                    data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [
+                        { label: 'Revenue', data: [31750, 0, 0, 0, 0, 0], borderColor: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', fill: true, tension: 0.4 },
+                        { label: 'Pipeline', data: [24625, 28000, 32000, 35000, 40000, 45000], borderColor: '#3b82f6', borderDash: [5, 5], fill: false, tension: 0.4 }
+                    ]},
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#a1a1aa' } } }, scales: { x: { grid: { color: '#27272a' }, ticks: { color: '#71717a' } }, y: { grid: { color: '#27272a' }, ticks: { color: '#71717a' } } } }
+                });
+            }
+
+            // API Usage Chart
+            const apiCtx = document.getElementById('apiChart');
+            if (apiCtx) {
+                new Chart(apiCtx, {
+                    type: 'line',
+                    data: { labels: ['12AM', '4AM', '8AM', '12PM', '4PM', '8PM'], datasets: [
+                        { label: 'Claude', data: [50, 20, 150, 300, 200, 127], borderColor: '#6366f1', tension: 0.4 },
+                        { label: 'OpenAI', data: [20, 10, 80, 120, 50, 32], borderColor: '#22c55e', tension: 0.4 },
+                        { label: 'Gemini', data: [10, 5, 30, 50, 20, 10], borderColor: '#3b82f6', tension: 0.4 }
+                    ]},
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#a1a1aa' } } }, scales: { x: { grid: { color: '#27272a' }, ticks: { color: '#71717a' } }, y: { grid: { color: '#27272a' }, ticks: { color: '#71717a' } } } }
+                });
+            }
+
+            // Cron toggles
+            document.querySelectorAll('.cron-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    toggle.classList.toggle('active');
+                    showToast(toggle.classList.contains('active') ? 'Job enabled' : 'Job disabled', 'info');
+                });
+            });
+
+            console.log('Clawdbot Enterprise Dashboard v6 loaded');
+            console.log('Features: Real-time refresh, Offline support, Agent orchestration, Memory viewer, API tracking');
+        });
+    </script>
+</body>
+</html>
