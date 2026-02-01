@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KuriosBrand Dashboard | Sierra 🏔️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .tab-active { border-bottom: 2px solid #3b82f6; color: #3b82f6; }
+    .card { transition: all 0.2s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+    .modal { display: none; }
+    .modal.active { display: flex; }
+    .status-active { background: #dcfce7; color: #166534; }
+    .status-building { background: #fef3c7; color: #92400e; }
+    .status-pending { background: #fee2e2; color: #991b1b; }
+    .status-live { background: #dbeafe; color: #1e40af; }
+    .status-dev { background: #f3e8ff; color: #6b21a8; }
+    .priority-high { border-left: 4px solid #ef4444; }
+    .priority-medium { border-left: 4px solid #f59e0b; }
+    .priority-low { border-left: 4px solid #22c55e; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🏔️</span>
+          <div>
+            <h1 class="text-xl font-bold text-gray-900">KuriosBrand Dashboard</h1>
+            <p class="text-sm text-gray-500">Sierra's Control Center</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-sm text-gray-500" id="lastUpdated">Updated: --</span>
+          <button onclick="location.reload()" class="px-3 py-1.5 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600">
+            Refresh
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-white border-b">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex gap-6 overflow-x-auto">
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600 tab-active" data-tab="overview">
+          📊 Overview
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="pipeline">
+          🎯 Pipeline
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="projects">
+          📁 Projects
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="sites">
+          🌐 Sites
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="tools">
+          🛠️ Tools
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="agents">
+          🤖 Agents
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="integrations">
+          🔌 Integrations
+        </button>
+        <button class="tab py-3 px-1 text-sm font-medium text-gray-600 hover:text-blue-600" data-tab="sales">
+          💰 Sales Process
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    
+    <!-- Overview Tab -->
+    <div id="overview" class="tab-content">
+      <!-- GOAL TRACKER -->
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl p-4 mb-6 text-white">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-bold">🎯 Goal: $9.6M Exit</h2>
+          <span class="text-sm opacity-80">Fully automated, high margin</span>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-white/20 rounded-lg p-3">
+            <p class="text-xs opacity-80">Calls Today</p>
+            <p class="text-2xl font-bold">0<span class="text-sm font-normal">/2-3</span></p>
+            <p class="text-xs opacity-60">Target: 2-3/day</p>
+          </div>
+          <div class="bg-white/20 rounded-lg p-3">
+            <p class="text-xs opacity-80">Cost/Call</p>
+            <p class="text-2xl font-bold">$240</p>
+            <p class="text-xs opacity-60">Goal: minimize</p>
+          </div>
+          <div class="bg-white/20 rounded-lg p-3">
+            <p class="text-xs opacity-80">Pipeline Value</p>
+            <p class="text-2xl font-bold">$200k+</p>
+            <p class="text-xs opacity-60">7 hot + 5 progress</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-4 shadow-sm border">
+          <p class="text-sm text-gray-500">Hot Leads</p>
+          <p class="text-2xl font-bold text-red-600" id="hotLeads">7</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm border">
+          <p class="text-sm text-gray-500">In Progress</p>
+          <p class="text-2xl font-bold text-yellow-600" id="inProgress">5</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm border">
+          <p class="text-sm text-gray-500">Closed This Month</p>
+          <p class="text-2xl font-bold text-green-600">$30k</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-sm border">
+          <p class="text-sm text-gray-500">Calls This Week</p>
+          <p class="text-2xl font-bold text-blue-600">5-7</p>
+        </div>
+      </div>
+
+      <!-- Quick Stats Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Hot Pipeline -->
+        <div class="bg-white rounded-xl shadow-sm border p-4">
+          <h3 class="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            🔥 Hot Pipeline
+          </h3>
+          <div class="space-y-2" id="hotPipelinePreview"></div>
+        </div>
+
+        <!-- Active Projects -->
+        <div class="bg-white rounded-xl shadow-sm border p-4">
+          <h3 class="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            📁 Active Projects
+          </h3>
+          <div class="space-y-2" id="activeProjectsPreview"></div>
+        </div>
+
+        <!-- Live Sites -->
+        <div class="bg-white rounded-xl shadow-sm border p-4">
+          <h3 class="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            🌐 Live Sites
+          </h3>
+          <div class="space-y-2" id="liveSitesPreview"></div>
+        </div>
+      </div>
+
+      <!-- Next Actions -->
+      <div class="mt-6 bg-white rounded-xl p-4 shadow-sm border">
+        <h3 class="font-bold text-gray-900 mb-3">⚡ Next Actions (Client Acquisition)</h3>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3 p-2 bg-red-50 rounded-lg border border-red-100">
+            <span class="text-red-500">🔥</span>
+            <div class="flex-1">
+              <span class="font-medium">Lucas Naccarati</span> — Fast Scaler (89) — Strategy call
+            </div>
+            <span class="text-xs text-red-600 font-medium">HIGHEST PRIORITY</span>
+          </div>
+          <div class="flex items-center gap-3 p-2 bg-orange-50 rounded-lg border border-orange-100">
+            <span class="text-orange-500">📅</span>
+            <div class="flex-1">
+              <span class="font-medium">Joan Suh</span> — Partnership meeting Feb 2
+            </div>
+            <span class="text-xs text-orange-600">2 days</span>
+          </div>
+          <div class="flex items-center gap-3 p-2 bg-yellow-50 rounded-lg border border-yellow-100">
+            <span class="text-yellow-600">📞</span>
+            <div class="flex-1">
+              <span class="font-medium">Prospect Outreach Block</span> — Call/text/email all pipeline
+            </div>
+            <span class="text-xs text-yellow-600">Feb 4 10am</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="mt-4 text-center text-sm text-gray-500">
+        <p>🏔️ Own AI systems, don't compete with them. Every action → 2-3 calls/day → $9.6M exit.</p>
+      </div>
+    </div>
+
+    <!-- Pipeline Tab -->
+    <div id="pipeline" class="tab-content hidden">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Hot -->
+        <div>
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            🔥 Hot <span class="text-sm font-normal text-gray-500">(7)</span>
+          </h3>
+          <div class="space-y-3" id="pipelineHot"></div>
+        </div>
+        <!-- In Progress -->
+        <div>
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            ⏳ In Progress <span class="text-sm font-normal text-gray-500">(5)</span>
+          </h3>
+          <div class="space-y-3" id="pipelineInProgress"></div>
+        </div>
+        <!-- Closed -->
+        <div>
+          <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+            ✅ Closed <span class="text-sm font-normal text-gray-500">(1)</span>
+          </h3>
+          <div class="space-y-3" id="pipelineClosed"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Tab -->
+    <div id="projects" class="tab-content hidden">
+      <div class="grid md:grid-cols-2 gap-4" id="projectsGrid"></div>
+    </div>
+
+    <!-- Sites Tab -->
+    <div id="sites" class="tab-content hidden">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="sitesGrid"></div>
+    </div>
+
+    <!-- Tools Tab -->
+    <div id="tools" class="tab-content hidden">
+      <div class="space-y-6">
+        <div>
+          <h3 class="font-bold text-lg mb-3">🕷️ Scrapers</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="toolsScrapers"></div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">🎙️ Transcribers</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="toolsTranscribers"></div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">🔌 APIs</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="toolsApis"></div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3">⚙️ Automation</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3" id="toolsAutomation"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agents Tab -->
+    <div id="agents" class="tab-content hidden">
+      <div class="grid md:grid-cols-2 gap-4" id="agentsGrid"></div>
+    </div>
+
+    <!-- Integrations Tab -->
+    <div id="integrations" class="tab-content hidden">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-3 text-green-600">✅ Connected</h3>
+          <div class="space-y-2" id="integrationsConnected"></div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-3 text-yellow-600">⚠️ Needs Setup</h3>
+          <div class="space-y-2" id="integrationsNeeded"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Process Tab -->
+    <div id="sales" class="tab-content hidden">
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Pricing Tiers -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">💵 Pricing Tiers</h3>
+          <div class="space-y-3" id="pricingTiers"></div>
+        </div>
+        <!-- Guarantee Offer -->
+        <div>
+          <h3 class="font-bold text-lg mb-4">🎯 Guarantee Offer</h3>
+          <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-6 text-white">
+            <h4 class="font-bold text-xl mb-2">Sign 15 Cases in 90 Days</h4>
+            <div class="space-y-2">
+              <p><span class="opacity-75">Upfront:</span> <span class="font-bold">$50,000</span></p>
+              <p><span class="opacity-75">Per Case:</span> <span class="font-bold">$3,000</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GHL Workflows -->
+      <div class="mt-8">
+        <h3 class="font-bold text-lg mb-4">⚡ GHL Workflows (8)</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3" id="ghlWorkflows"></div>
+      </div>
+
+      <!-- Data Assets -->
+      <div class="mt-8">
+        <h3 class="font-bold text-lg mb-4">📦 Data Assets</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3" id="dataAssets"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal fixed inset-0 bg-black/50 items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <h3 id="modalTitle" class="font-bold text-xl"></h3>
+          <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+        </div>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data from business registry
+    const data = {
+      meta: { lastUpdated: "2026-01-31T12:01:00Z" },
+      pipeline: {
+        hot: [
+          { name: "Scott Barney", company: "Barney Injury Law", location: "Virginia Beach", priority: "high", notes: "Burned $250k on marketing. Down from 131 to 30 cases. DESPERATE.", nextAction: "FOLLOW UP on Patrick call (was 2:30 PM)", avatar: "Burned Veteran", avatarScore: 48, closeProb: "85%", approach: "Patrick's intake credibility. Different from other vendors. $2k/case in VA.", riskTolerance: "LOW", budget: "$15k+" },
+          { name: "Ross Robin", company: "Rohin Law (NEW)", location: "Houston, TX", priority: "high", notes: "Mass tort lawyer starting NEW PI firm. 4-state license. Zero PI leads yet.", nextAction: "Schedule Patrick call, follow up on email", avatar: "Mass Tort Crossover", avatarScore: 75, closeProb: "75%", approach: "Start signing cases day one. Perfect for firm without intake.", riskTolerance: "HIGH", budget: "$15k" },
+          { name: "Jalal Abdallah", company: "Jalal Law", budget: "$50k", location: "MI → CA expansion", notes: "Family firm, 8-10 cases/mo. HATES form fills. Spanish-speaking.", nextAction: "Follow up Wednesday. Prep MI+CA proposal.", avatar: "Expansionist", avatarScore: 70, closeProb: "70%", approach: "Patrick's done-for-you intake. Multi-state package.", riskTolerance: "MEDIUM" },
+          { name: "Omeed Hakimianpour", company: "The Injury Partners", budget: "$50k", location: "CA", notes: "Comparison shopping. SB 37 compliance focused. Has partner.", nextAction: "Send summary email. Address insurance drop credits.", avatar: "Compliance Scaler", avatarScore: 52, closeProb: "65%", approach: "SB 37 compliance. Performance-based pricing. Credits for bad leads.", riskTolerance: "LOW" },
+          { name: "Rich Hyde", company: "Trial Tribe", location: "Texas", notes: "Burned by Quintessa. Currently pays $2,500/signed MVA. Skeptical.", nextAction: "Send proposal with GUARANTEED MINIMUMS in writing", avatar: "Skeptical Veteran", avatarScore: 48, closeProb: "60%", approach: "Written guarantees. Max cost cap. Credits. Patrick intro critical.", riskTolerance: "LOW", budget: "$15-30k" },
+          { name: "Dagmawi Getachew", company: "DG Firm", location: "Texas", notes: "Solo practitioner. Tried Case Connect - failed. Solicitation concerns.", nextAction: "Follow up on pay-per-lead test decision", avatar: "Solo Transitioner", avatarScore: 40, closeProb: "65%", approach: "Warm transfers = no solicitation. Pay-per-lead test first.", riskTolerance: "LOW", budget: "$17.5k" },
+          { name: "Lucas Naccarati", notes: "Scalable paid acquisition. Fast decision maker.", nextAction: "Send proposal ASAP - high value", avatar: "Fast Scaler", avatarScore: 89, closeProb: "80%", approach: "Media buy model. Fast close. Scale immediately.", riskTolerance: "HIGH", hot: true }
+        ],
+        inProgress: [
+          { name: "Daniel Ramirez", location: "Dallas→Houston", notes: "Spanish markets. Waiting on Houston office.", followUp: "2026-02-05", avatar: "Expansionist", avatarScore: 40, closeProb: "50%", approach: "1-week follow-up" },
+          { name: "Josh Sweeney", company: "Shane Smith", notes: "Needs YouTube-only proof", avatar: "Channel Strategist", avatarScore: 52, closeProb: "45%", approach: "Channel-specific strategy" },
+          { name: "Michael Shirts", company: "BS Injury", location: "Las Vegas", notes: "Scheduled with Patrick", avatar: "Cautious Buyer", avatarScore: 48, closeProb: "55%", approach: "Patrick call is key" },
+          { name: "Michael Schulz", company: "RMD Law", followUp: "2026-02-10", avatar: "Sophisticated Buyer", avatarScore: 52, closeProb: "50%", approach: "Quality focus, compliance" },
+          { name: "Joan Suh", notes: "Partnership meeting Feb 2", followUp: "2026-02-02", avatar: "Unknown", avatarScore: 0, closeProb: "TBD", approach: "Discovery call - identify avatar" }
+        ],
+        closed: [
+          { name: "Jason E", company: "GCE Law (Eisenberg)", value: "$3k", dealSize: "$31,750", closedDate: "2026-01-20", avatar: "Fast Scaler", avatarScore: 89, closeProb: "100%", approach: "Returning client + Patrick on call + $2M previous case", won: true }
+        ]
+      },
+      projects: [
+        { name: "MVA Lead Gen", status: "active", priority: 1, description: "Motor vehicle accident leads for lawyers - primary business focus", partners: ["Cases on Demand (Max & Jeremy)", "Inquired Esquire (Patrick)"], metrics: { costPerCall: "$180-300", callsPerWeek: "5-7" }, pricing: { lead: "$250-350", signedCase: "~$2,000" } },
+        { name: "PI Vendor Intelligence", status: "active", priority: 2, description: "AI-powered vendor matching for PI attorneys", domain: "personalinjuryvendors.com", tools: ["SCOUT bot", "Reddit scraper", "LinkedIn scraper", "Matching engine"] },
+        { name: "GHL Sales Automation", status: "building", priority: 3, description: "5 workflows for appointment booking, no-show, contracts, nurture", workflows: 8 },
+        { name: "Customer Avatar System", status: "active", description: "11 buyer personas from sales call analysis", topAvatars: ["Fast Scaler (89/100)", "Sophisticated Buyer (52/100)", "Burned Veteran (48/100)"] },
+        { name: "Concrete Rank & Rent", status: "pending", description: "Local SEO sites generating leads - needs monetization" }
+      ],
+      sites: [
+        { name: "Texas Truck Accidents", url: "https://texastruckaccidents.net", status: "live", stack: "Next.js 16, React 19, Tailwind CSS 4", features: ["22+ city pages", "Case calculator", "IndexNow", "Sticky CTA"] },
+        { name: "MVA Engine", status: "dev", stack: "Next.js, Cloudflare", purpose: "Template system for spinning up new MVA sites" },
+        { name: "Network Corridor Stats", url: "https://texascorridordata.com", status: "dev", stack: "Astro 4", purpose: "Satellite site for SEO/backlinks" },
+        { name: "Texas Crash Stats", status: "dev", stack: "Astro 4", purpose: "Satellite PBN site" },
+        { name: "leads.kuriosbrand.com", status: "live", purpose: "Landing page - Cases on Demand whitelabel" },
+        { name: "Vendors KuriosBrand", url: "vendors.kuriosbrand.com", status: "built-not-deployed", stack: "React 19, Vite 7, Tailwind 4", purpose: "Authority SEO site for vendor matching" }
+      ],
+      agents: [
+        { 
+          name: "Sierra", 
+          emoji: "🏔️", 
+          status: "active", 
+          model: "Claude Opus", 
+          channels: ["Telegram", "Slack"], 
+          telegram: "@Sierra_molt_bot", 
+          role: "Main orchestrator",
+          isHead: true,
+          subagents: [
+            { label: "moltbook-engagement", status: "completed", lastRun: "08:27 UTC", summary: "Posted roasts, upvoted content, grew karma" },
+            { label: "discovery-tools", status: "completed", lastRun: "08:10 UTC", summary: "Inventoried 32 tools across 5 categories" },
+            { label: "discovery-automation", status: "completed", lastRun: "08:08 UTC", summary: "Found 7 automation systems, 8 GHL workflows" },
+            { label: "discovery-sites", status: "completed", lastRun: "08:08 UTC", summary: "Cataloged 6 sites incl. satellite PBN network" },
+            { label: "discovery-projects", status: "completed", lastRun: "08:08 UTC", summary: "Mapped pi-vendors, vendor-db, vendors-kuriosbrand" },
+            { label: "discovery-integrations", status: "completed", lastRun: "08:08 UTC", summary: "Found 11 connected integrations, 1 needs setup" }
+          ]
+        },
+        { name: "SCOUT", emoji: "🔍", status: "active", model: "Claude Sonnet", telegram: "@scoutassstantdatabot", role: "Intel gatherer - X, Reddit, review sites", isHead: false }
+      ],
+      tools: {
+        scrapers: [
+          { name: "Reddit Scraper", path: "pi-vendors/agents/scrapers/reddit_scraper.py" },
+          { name: "LinkedIn Scraper", path: "pi-vendors/agents/scrapers/linkedin_scraper.py" },
+          { name: "Review Scraper", path: "pi-vendors/agents/scrapers/review_scraper.py" },
+          { name: "X/Twitter Scraper", path: "pi-vendors/agents/scrapers/x_scraper.py" },
+          { name: "Reddit 24x7 Crawler", path: "kurios-finish/automation/research/reddit_24x7_link_crawler.py" }
+        ],
+        transcribers: [
+          { name: "YouTube Transcriber", path: "kurios-finish/automation/content/transcribe_youtube.py", usage: "python transcribe_youtube.py <url>" },
+          { name: "Whisper Transcription", path: "clawd/scripts/transcribe.sh" }
+        ],
+        apis: [
+          { name: "X/Twitter Tools", path: "clawd/scripts/x_tools.py", account: "@markkodg" },
+          { name: "Calendar Fetcher", path: "clawd/scripts/fetch_calendar.py", calendar: "mark@kuriosbrand.com" },
+          { name: "DataForSEO", capabilities: ["SERP", "Keywords", "Backlinks", "Domain Analytics"] },
+          { name: "Codex CLI", usage: "codex --model o4-mini --reasoning-effort high 'task'" }
+        ],
+        automation: [
+          { name: "Customer Avatar Agent", path: "kurios-finish/business/automation/customer_avatar_agent/" },
+          { name: "SCOUT Bot", path: "pi-vendors/agents/scout_bot.py", telegram: "@scoutassstantdatabot" },
+          { name: "Matching Engine", path: "pi-vendors/agents/matching_engine.py" }
+        ]
+      },
+      integrations: {
+        connected: [
+          { name: "Google Calendar", calendar: "mark@kuriosbrand.com" },
+          { name: "Notion", workspace: "Sierra Workspace" },
+          { name: "X/Twitter", account: "@markkodg" },
+          { name: "DataForSEO" },
+          { name: "Slack" },
+          { name: "Moltbook", profile: "https://moltbook.com/u/Sierra" },
+          { name: "Google Drive" },
+          { name: "Gemini API" },
+          { name: "OpenAI API" },
+          { name: "ClawdHub" }
+        ],
+        needsSetup: [
+          { name: "GoHighLevel", note: "CRM needed for pipeline" }
+        ]
+      },
+      salesProcess: {
+        tiers: [
+          { tier: 1, name: "OTP Verified Leads", minimum: "$15k", cpa: "$2,143-$3,000" },
+          { tier: 2, name: "Qualified Live Transfers", minimum: "$25k", cpa: "$2,083-$3,571" },
+          { tier: 3, name: "Full-Service Case Closing", minimum: "$35k", cpa: "$2,917-$3,500" }
+        ]
+      },
+      ghlWorkflows: [
+        { name: "Lead Source Tagging", description: "Auto-tags leads by source" },
+        { name: "Qualification Level Routing", description: "Routes by case strength" },
+        { name: "High-Value Lead Detection", description: "Priority follow-up for $20k+ cases" },
+        { name: "Calculator Lead Sequence", description: "5-step follow-up sequence" },
+        { name: "Case Assessment (Strong)", description: "4-step sequence for qualified leads" },
+        { name: "Case Assessment (Weak) Nurture", description: "Educational nurture sequence" },
+        { name: "Police Report Review", description: "3-step acknowledgment sequence" },
+        { name: "Homepage Lead Sequence", description: "5-step welcome sequence" }
+      ],
+      dataAssets: [
+        { name: "Backlink Outreach Contacts", size: "96KB", type: "csv", description: "PI law firm contacts" },
+        { name: "Buyer Profiles Master", size: "52KB", type: "md", description: "12 call transcripts analyzed" },
+        { name: "Sales Transcripts", size: "220KB", type: "txt", description: "Consolidated call transcripts" },
+        { name: "Sales Bootcamp", size: "758KB", type: "pdf", description: "24hr MVA PI training" }
+      ]
+    };
+
+    // Render functions
+    function renderPipelineCard(item, type) {
+      const priorityClass = item.priority === 'high' ? 'priority-high' : '';
+      const hotClass = item.hot ? 'ring-2 ring-red-400' : '';
+      const avatarColors = {
+        'Fast Scaler': 'bg-green-100 text-green-800',
+        'Sophisticated Buyer': 'bg-blue-100 text-blue-800',
+        'Burned Veteran': 'bg-orange-100 text-orange-800',
+        'Solo Transitioner': 'bg-purple-100 text-purple-800',
+        'Unknown': 'bg-gray-100 text-gray-600'
+      };
+      const avatarClass = avatarColors[item.avatar] || 'bg-gray-100 text-gray-600';
+      return `
+        <div class="bg-white rounded-lg p-3 shadow-sm border ${priorityClass} ${hotClass} card cursor-pointer" onclick='showProspectModal(${JSON.stringify(item).replace(/'/g, "\\'")})'>
+          <div class="flex items-start justify-between mb-1">
+            <div class="font-medium text-gray-900">${item.name}</div>
+            <div class="flex items-center gap-1">
+              ${item.closeProb ? `<span class="text-xs font-bold ${item.closeProb.includes('8') || item.closeProb.includes('100') ? 'text-green-600' : item.closeProb.includes('7') || item.closeProb.includes('6') ? 'text-yellow-600' : 'text-gray-500'}">${item.closeProb}</span>` : ''}
+            </div>
+          </div>
+          ${item.company ? `<div class="text-sm text-gray-500">${item.company}</div>` : ''}
+          ${item.avatar ? `<div class="inline-block px-2 py-0.5 rounded text-xs ${avatarClass} mt-1">${item.avatar}</div>` : ''}
+          ${item.budget ? `<div class="text-sm font-medium text-green-600 mt-1">${item.budget}</div>` : ''}
+          ${item.value ? `<div class="text-sm font-medium text-green-600">Won: ${item.value}</div>` : ''}
+          ${item.notes ? `<div class="text-xs text-gray-500 mt-1">${item.notes}</div>` : ''}
+          ${item.nextAction ? `<div class="text-xs text-blue-600 mt-2 font-medium">→ ${item.nextAction}</div>` : ''}
+          ${item.followUp ? `<div class="text-xs text-orange-600 mt-1">📅 ${item.followUp}</div>` : ''}
+        </div>
+      `;
+    }
+    
+    function showProspectModal(prospect) {
+      document.getElementById('modalTitle').textContent = prospect.name;
+      
+      const avatarColors = {
+        'Fast Scaler': 'bg-green-100 text-green-800 border-green-300',
+        'Sophisticated Buyer': 'bg-blue-100 text-blue-800 border-blue-300',
+        'Burned Veteran': 'bg-orange-100 text-orange-800 border-orange-300',
+        'Solo Transitioner': 'bg-purple-100 text-purple-800 border-purple-300',
+        'Unknown': 'bg-gray-100 text-gray-600 border-gray-300'
+      };
+      const avatarClass = avatarColors[prospect.avatar] || 'bg-gray-100 text-gray-600';
+      
+      let content = `
+        <div class="space-y-4">
+          <!-- Avatar Badge + Close Probability -->
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="px-3 py-1 rounded-lg text-sm font-medium ${avatarClass} border">${prospect.avatar || 'Unknown'}</span>
+            ${prospect.closeProb ? `<span class="px-3 py-1 rounded-lg text-sm font-bold ${prospect.closeProb.includes('8') || prospect.closeProb.includes('100') ? 'bg-green-100 text-green-800' : prospect.closeProb.includes('7') || prospect.closeProb.includes('6') ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-600'}">Close: ${prospect.closeProb}</span>` : ''}
+            ${prospect.riskTolerance ? `<span class="text-sm text-gray-500">Risk: ${prospect.riskTolerance}</span>` : ''}
+          </div>
+          
+          <!-- Details Grid -->
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            ${prospect.company ? `<div><span class="text-gray-500">Company:</span> <span class="font-medium">${prospect.company}</span></div>` : ''}
+            ${prospect.location ? `<div><span class="text-gray-500">Location:</span> <span class="font-medium">${prospect.location}</span></div>` : ''}
+            ${prospect.budget ? `<div><span class="text-gray-500">Budget:</span> <span class="font-medium text-green-600">${prospect.budget}</span></div>` : ''}
+            ${prospect.dealSize ? `<div><span class="text-gray-500">Deal Size:</span> <span class="font-medium text-green-600">${prospect.dealSize}</span></div>` : ''}
+          </div>
+          
+          <!-- Notes -->
+          ${prospect.notes ? `
+          <div class="bg-gray-50 rounded-lg p-3">
+            <div class="text-sm font-medium text-gray-700 mb-1">Notes</div>
+            <div class="text-sm text-gray-600">${prospect.notes}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Recommended Approach -->
+          ${prospect.approach ? `
+          <div class="bg-blue-50 rounded-lg p-3 border border-blue-200">
+            <div class="text-sm font-medium text-blue-800 mb-1">🎯 Recommended Approach</div>
+            <div class="text-sm text-blue-700">${prospect.approach}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Next Action -->
+          ${prospect.nextAction ? `
+          <div class="bg-green-50 rounded-lg p-3 border border-green-200">
+            <div class="text-sm font-medium text-green-800 mb-1">→ Next Action</div>
+            <div class="text-sm text-green-700 font-medium">${prospect.nextAction}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Follow Up -->
+          ${prospect.followUp ? `
+          <div class="bg-orange-50 rounded-lg p-3 border border-orange-200">
+            <div class="text-sm font-medium text-orange-800 mb-1">📅 Follow Up</div>
+            <div class="text-sm text-orange-700">${prospect.followUp}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Closed Deal Info -->
+          ${prospect.won ? `
+          <div class="bg-emerald-50 rounded-lg p-3 border border-emerald-200">
+            <div class="text-sm font-medium text-emerald-800 mb-1">✅ Deal Closed</div>
+            <div class="text-sm text-emerald-700">Value: ${prospect.value} | Deal Size: ${prospect.dealSize} | Closed: ${prospect.closedDate}</div>
+          </div>
+          ` : ''}
+        </div>
+      `;
+      
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function renderProjectCard(project) {
+      const statusClass = `status-${project.status}`;
+      return `
+        <div class="bg-white rounded-xl p-4 shadow-sm border card cursor-pointer" onclick='showModal("${project.name}", ${JSON.stringify(project).replace(/'/g, "\\'")})'>
+          <div class="flex items-start justify-between mb-2">
+            <h4 class="font-semibold text-gray-900">${project.name}</h4>
+            <span class="px-2 py-0.5 rounded-full text-xs ${statusClass}">${project.status}</span>
+          </div>
+          <p class="text-sm text-gray-600 mb-3">${project.description}</p>
+          ${project.metrics ? `
+            <div class="flex gap-4 text-xs">
+              <span class="text-gray-500">Cost/Call: <span class="font-medium text-gray-700">${project.metrics.costPerCall}</span></span>
+              <span class="text-gray-500">Calls/Week: <span class="font-medium text-gray-700">${project.metrics.callsPerWeek}</span></span>
+            </div>
+          ` : ''}
+          ${project.domain ? `<div class="text-xs text-blue-600">🌐 ${project.domain}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderSiteCard(site) {
+      const statusClass = `status-${site.status}`;
+      return `
+        <div class="bg-white rounded-xl p-4 shadow-sm border card cursor-pointer" onclick='showModal("${site.name}", ${JSON.stringify(site).replace(/'/g, "\\'")})'>
+          <div class="flex items-start justify-between mb-2">
+            <h4 class="font-semibold text-gray-900">${site.name}</h4>
+            <span class="px-2 py-0.5 rounded-full text-xs ${statusClass}">${site.status}</span>
+          </div>
+          ${site.url ? `<a href="${site.url}" target="_blank" class="text-sm text-blue-600 hover:underline block mb-2">${site.url}</a>` : ''}
+          <p class="text-sm text-gray-600">${site.purpose || ''}</p>
+          ${site.stack ? `<div class="text-xs text-gray-400 mt-2">${site.stack}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderToolCard(tool) {
+      return `
+        <div class="bg-white rounded-lg p-3 shadow-sm border card cursor-pointer" onclick='showModal("${tool.name}", ${JSON.stringify(tool).replace(/'/g, "\\'")})'>
+          <div class="font-medium text-gray-900 text-sm">${tool.name}</div>
+          ${tool.path ? `<div class="text-xs text-gray-400 truncate">${tool.path}</div>` : ''}
+          ${tool.account ? `<div class="text-xs text-blue-600">${tool.account}</div>` : ''}
+          ${tool.capabilities ? `<div class="text-xs text-gray-500">${tool.capabilities.join(', ')}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderAgentCard(agent) {
+      const subagentCount = agent.subagents ? agent.subagents.length : 0;
+      const clickHandler = agent.isHead ? `showAgentModal('${agent.name}')` : `showModal("${agent.name}", ${JSON.stringify({...agent, subagents: undefined}).replace(/'/g, "\\'")})`;
+      return `
+        <div class="bg-white rounded-xl p-4 shadow-sm border card cursor-pointer" onclick="${clickHandler}">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-3xl">${agent.emoji}</span>
+            <div>
+              <h4 class="font-semibold text-gray-900">${agent.name}</h4>
+              <span class="text-sm text-gray-500">${agent.model}</span>
+            </div>
+            <div class="ml-auto flex items-center gap-2">
+              ${subagentCount > 0 ? `<span class="px-2 py-0.5 rounded-full text-xs bg-purple-100 text-purple-700">${subagentCount} swarm</span>` : ''}
+              <span class="px-2 py-0.5 rounded-full text-xs status-active">${agent.status}</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">${agent.role}</p>
+          ${agent.telegram ? `<div class="text-xs text-blue-600 mt-2">${agent.telegram}</div>` : ''}
+          ${subagentCount > 0 ? `<div class="text-xs text-purple-600 mt-1">👆 Click to view subagents</div>` : ''}
+        </div>
+      `;
+    }
+
+    function showAgentModal(agentName) {
+      const agent = data.agents.find(a => a.name === agentName);
+      if (!agent) return;
+      
+      document.getElementById('modalTitle').textContent = `${agent.emoji} ${agent.name}`;
+      
+      let content = `
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div><span class="text-gray-500">Model:</span> <span class="font-medium">${agent.model}</span></div>
+            <div><span class="text-gray-500">Status:</span> <span class="px-2 py-0.5 rounded-full text-xs status-active">${agent.status}</span></div>
+            <div><span class="text-gray-500">Role:</span> <span class="font-medium">${agent.role}</span></div>
+            ${agent.telegram ? `<div><span class="text-gray-500">Telegram:</span> <span class="text-blue-600">${agent.telegram}</span></div>` : ''}
+          </div>
+          ${agent.channels ? `<div class="text-sm"><span class="text-gray-500">Channels:</span> ${agent.channels.join(', ')}</div>` : ''}
+      `;
+      
+      if (agent.subagents && agent.subagents.length > 0) {
+        content += `
+          <div class="border-t pt-4 mt-4">
+            <h4 class="font-semibold text-gray-900 mb-3">🐝 Swarm Agents (${agent.subagents.length})</h4>
+            <div class="space-y-2">
+        `;
+        
+        agent.subagents.forEach(sub => {
+          const statusColor = sub.status === 'completed' ? 'bg-green-100 text-green-700' : 
+                              sub.status === 'running' ? 'bg-blue-100 text-blue-700' : 
+                              'bg-gray-100 text-gray-700';
+          content += `
+            <div class="bg-gray-50 rounded-lg p-3 border">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-medium text-gray-900">${sub.label}</span>
+                <span class="px-2 py-0.5 rounded-full text-xs ${statusColor}">${sub.status}</span>
+              </div>
+              <p class="text-sm text-gray-600">${sub.summary}</p>
+              <p class="text-xs text-gray-400 mt-1">Last: ${sub.lastRun}</p>
+            </div>
+          `;
+        });
+        
+        content += `</div></div>`;
+      }
+      
+      content += '</div>';
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function renderIntegration(item, connected) {
+      const icon = connected ? '✅' : '⚠️';
+      return `
+        <div class="bg-white rounded-lg p-3 shadow-sm border flex items-center gap-3">
+          <span>${icon}</span>
+          <div>
+            <div class="font-medium text-gray-900">${item.name}</div>
+            ${item.account ? `<div class="text-xs text-gray-500">${item.account}</div>` : ''}
+            ${item.workspace ? `<div class="text-xs text-gray-500">${item.workspace}</div>` : ''}
+            ${item.note ? `<div class="text-xs text-orange-600">${item.note}</div>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function showModal(title, data) {
+      document.getElementById('modalTitle').textContent = title;
+      let content = '<div class="space-y-3">';
+      for (const [key, value] of Object.entries(data)) {
+        if (typeof value === 'object' && !Array.isArray(value)) {
+          content += `<div><span class="font-medium text-gray-700">${key}:</span><pre class="text-sm text-gray-600 bg-gray-50 p-2 rounded mt-1">${JSON.stringify(value, null, 2)}</pre></div>`;
+        } else if (Array.isArray(value)) {
+          content += `<div><span class="font-medium text-gray-700">${key}:</span><ul class="list-disc list-inside text-sm text-gray-600">${value.map(v => `<li>${v}</li>`).join('')}</ul></div>`;
+        } else {
+          content += `<div><span class="font-medium text-gray-700">${key}:</span> <span class="text-gray-600">${value}</span></div>`;
+        }
+      }
+      content += '</div>';
+      document.getElementById('modalContent').innerHTML = content;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+        tab.classList.add('tab-active');
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+        document.getElementById(tab.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Close modal on backdrop click
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
+
+    // Initialize
+    function init() {
+      // Update timestamp
+      document.getElementById('lastUpdated').textContent = `Updated: ${new Date(data.meta.lastUpdated).toLocaleString()}`;
+
+      // Overview previews
+      document.getElementById('hotPipelinePreview').innerHTML = data.pipeline.hot.slice(0, 4).map(p => 
+        `<div class="text-sm p-2 bg-red-50 rounded"><span class="font-medium">${p.name}</span> ${p.budget ? `<span class="text-green-600">${p.budget}</span>` : ''}</div>`
+      ).join('');
+      
+      document.getElementById('activeProjectsPreview').innerHTML = data.projects.filter(p => p.status === 'active').map(p =>
+        `<div class="text-sm p-2 bg-blue-50 rounded"><span class="font-medium">${p.name}</span></div>`
+      ).join('');
+      
+      document.getElementById('liveSitesPreview').innerHTML = data.sites.filter(s => s.status === 'live').map(s =>
+        `<div class="text-sm p-2 bg-green-50 rounded"><span class="font-medium">${s.name}</span></div>`
+      ).join('');
+
+      // Pipeline
+      document.getElementById('pipelineHot').innerHTML = data.pipeline.hot.map(p => renderPipelineCard(p, 'hot')).join('');
+      document.getElementById('pipelineInProgress').innerHTML = data.pipeline.inProgress.map(p => renderPipelineCard(p, 'progress')).join('');
+      document.getElementById('pipelineClosed').innerHTML = data.pipeline.closed.map(p => renderPipelineCard(p, 'closed')).join('');
+
+      // Projects
+      document.getElementById('projectsGrid').innerHTML = data.projects.map(p => renderProjectCard(p)).join('');
+
+      // Sites
+      document.getElementById('sitesGrid').innerHTML = data.sites.map(s => renderSiteCard(s)).join('');
+
+      // Tools
+      document.getElementById('toolsScrapers').innerHTML = data.tools.scrapers.map(t => renderToolCard(t)).join('');
+      document.getElementById('toolsTranscribers').innerHTML = data.tools.transcribers.map(t => renderToolCard(t)).join('');
+      document.getElementById('toolsApis').innerHTML = data.tools.apis.map(t => renderToolCard(t)).join('');
+      document.getElementById('toolsAutomation').innerHTML = data.tools.automation.map(t => renderToolCard(t)).join('');
+
+      // Agents
+      document.getElementById('agentsGrid').innerHTML = data.agents.map(a => renderAgentCard(a)).join('');
+
+      // Integrations
+      document.getElementById('integrationsConnected').innerHTML = data.integrations.connected.map(i => renderIntegration(i, true)).join('');
+      document.getElementById('integrationsNeeded').innerHTML = data.integrations.needsSetup.map(i => renderIntegration(i, false)).join('');
+
+      // Sales Process - Tiers
+      document.getElementById('pricingTiers').innerHTML = data.salesProcess.tiers.map(t => `
+        <div class="bg-white rounded-xl p-4 shadow-sm border">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-gray-500">Tier ${t.tier}</span>
+            <span class="text-sm font-bold text-green-600">${t.minimum} min</span>
+          </div>
+          <h4 class="font-semibold text-gray-900">${t.name}</h4>
+          <p class="text-sm text-gray-500">CPA: ${t.cpa}</p>
+        </div>
+      `).join('');
+
+      // GHL Workflows
+      document.getElementById('ghlWorkflows').innerHTML = data.ghlWorkflows.map(w => `
+        <div class="bg-white rounded-lg p-3 shadow-sm border">
+          <div class="font-medium text-sm text-gray-900">${w.name}</div>
+          <div class="text-xs text-gray-500">${w.description}</div>
+        </div>
+      `).join('');
+
+      // Data Assets
+      document.getElementById('dataAssets').innerHTML = data.dataAssets.map(d => `
+        <div class="bg-white rounded-lg p-3 shadow-sm border">
+          <div class="font-medium text-sm text-gray-900">${d.name}</div>
+          <div class="text-xs text-gray-500">${d.description}</div>
+          <div class="text-xs text-gray-400 mt-1">${d.size} • ${d.type}</div>
+        </div>
+      `).join('');
+    }
+
+    init();
+  </script>
+</body>
+</html>

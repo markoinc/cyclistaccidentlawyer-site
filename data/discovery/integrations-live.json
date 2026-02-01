@@ -1,0 +1,253 @@
+{
+  "snapshot_time": "2026-01-31T08:36:00Z",
+  "integrations": {
+    "google_calendar": {
+      "status": "connected",
+      "calendar_id": "mark@kuriosbrand.com",
+      "auth_account": "sierra@kuriosbrand.com",
+      "upcoming_events_count": 20,
+      "prospect_meetings": [
+        {
+          "title": "Online Meeting: Joan Suh - Partnership - Qualified Leads",
+          "date": "2026-02-02T16:00:00-05:00",
+          "contact": {
+            "name": "Joan Suh",
+            "email": "joan0407@gmail.com",
+            "phone": "(404) 914-7752"
+          },
+          "attendees": ["joan0407@gmail.com", "max@casesondemand.net", "patrick@inquire2esquire.com"],
+          "type": "partnership"
+        },
+        {
+          "title": "follow up - Meeting with Scott Poisson",
+          "date": "2026-02-03T15:00:00-05:00",
+          "attendees": ["patrick@inquire2esquire.com", "max@casesondemand.net"],
+          "type": "follow_up"
+        },
+        {
+          "title": "📞 Prospect Outreach - Call/Text/Email All Pipeline",
+          "date": "2026-02-04T10:00:00-05:00",
+          "hot_leads": [
+            "Scott Barney (VA Beach) - Burned $250k",
+            "Ross Robin - New PI firm, eager to scale",
+            "Jalal Abdallah - $50k budget, verbal commit",
+            "Omeed Hakimianpour - $50k budget, CA",
+            "Rich Hyde (Trial Tribe) - Wants reliable vendor",
+            "Dagmawi Getachew - Small test first",
+            "Lucas Naccarati - Scalable paid acquisition"
+          ],
+          "in_progress": [
+            "Daniel Ramirez (Dallas→Houston) - Spanish markets",
+            "Josh Sweeney (Shane Smith) - YouTube/TikTok interest",
+            "Michael Shirts (BS Injury) - Las Vegas",
+            "Michael Schulz (RMD Law) - Follow up 02/10",
+            "Joan Suh - Call scheduled 02/02"
+          ],
+          "type": "outreach_block"
+        },
+        {
+          "title": "Follow up Call with Cases on Demand <> Michael rmdlaw",
+          "date": "2026-02-10T11:00:00-05:00",
+          "contact": {
+            "name": "Michael Schulz",
+            "email": "michaels@rmdlaw.com",
+            "phone": "(949) 501-4622",
+            "website": "rmdlaw.com"
+          },
+          "type": "follow_up"
+        },
+        {
+          "title": "Check-in: Jason E (Eisenberg Law) - Campaign Performance",
+          "date": "2026-02-12T10:00:00-05:00",
+          "contact": {
+            "name": "Jason E",
+            "email": "jason@gcelaw.com",
+            "firm": "eisenberglawgrouppc.com"
+          },
+          "type": "client_checkin"
+        }
+      ],
+      "recurring_meetings": [
+        {
+          "title": "7 Figure Accountability Group",
+          "frequency": "weekly",
+          "next_occurrence": "2026-02-05T12:00:00-05:00",
+          "organizer": "nick@lyonsventures.co",
+          "attendee_count": 21
+        }
+      ],
+      "other_events": [
+        {
+          "title": "Build .md domain redirect strategy",
+          "date": "2026-01-31T14:00:00-05:00",
+          "type": "task"
+        },
+        {
+          "title": "Build Sales Flow Automations in GHL",
+          "date": "2026-02-01T13:00:00-05:00",
+          "type": "task"
+        },
+        {
+          "title": "Build Sales Assistant Head Agent",
+          "date": "2026-02-01T15:00:00-05:00",
+          "type": "task"
+        },
+        {
+          "title": "Build Social Media Head Agent",
+          "date": "2026-02-02T13:00:00-05:00",
+          "type": "task"
+        },
+        {
+          "title": "Go to cusco and fly to lima",
+          "date": "2026-02-04T13:30:00-05:00",
+          "type": "travel"
+        }
+      ]
+    },
+    "notion": {
+      "status": "connected",
+      "database_id": "2f89371d-3030-8185-adbd-e6e4febece73",
+      "database_name": "Sierra Documents",
+      "total_documents": 25,
+      "by_type": {
+        "Research": 7,
+        "Playbook": 5,
+        "Strategy": 4,
+        "Report": 2,
+        "Resource": 2,
+        "Training": 2,
+        "SOP": 1,
+        "Analysis": 2
+      },
+      "by_project": {
+        "MVA Lead Gen": 13,
+        "Sales": 4,
+        "SEO": 3,
+        "Automation": 2,
+        "General": 1,
+        "Paid Ads": 1
+      },
+      "by_status": {
+        "Final": 23,
+        "Draft": 2
+      },
+      "recent_documents": [
+        {
+          "name": "Carlos Sales Flow",
+          "type": "Playbook",
+          "project": "MVA Lead Gen",
+          "status": "Final",
+          "last_edited": "2026-01-30T21:40:00.000Z"
+        },
+        {
+          "name": "Sales Call Transcript - Scott (Las Vegas PI Attorney)",
+          "type": "Research",
+          "project": "MVA Lead Gen",
+          "status": "Final",
+          "priority": "High",
+          "last_edited": "2026-01-30T21:00:00.000Z"
+        },
+        {
+          "name": "Clawdbot / AI Agent Ideas & Tips",
+          "type": "Research",
+          "project": "Automation",
+          "status": "Draft",
+          "last_edited": "2026-01-30T18:55:00.000Z"
+        },
+        {
+          "name": "Commenting Opportunities - Reddit + LinkedIn (Rolling)",
+          "type": "Resource",
+          "project": "SEO",
+          "status": "Final",
+          "tags": ["Reddit", "LinkedIn", "Rolling Log"],
+          "last_edited": "2026-01-30T16:42:00.000Z"
+        },
+        {
+          "name": "Buyer Research Log (Rolling)",
+          "type": "Research",
+          "project": "Sales",
+          "status": "Final",
+          "tags": ["Reddit", "Buyer Profile", "Rolling Log"],
+          "last_edited": "2026-01-31T03:04:00.000Z"
+        }
+      ],
+      "key_documents": [
+        {
+          "name": "Jacky Chou Strategies - MVA Lead Gen Playbook",
+          "type": "Playbook",
+          "tags": ["SEO", "LLM", "Reddit", "GEO"]
+        },
+        {
+          "name": "Customer Avatar Master (Mitch Wiggins Framework)",
+          "type": "Research",
+          "tags": ["Avatar", "Sales"]
+        },
+        {
+          "name": "Integrated Growth Plan 2026",
+          "type": "Strategy",
+          "tags": ["2026", "Growth", "Strategy"]
+        },
+        {
+          "name": "24hr MVA PI Sales Bootcamp",
+          "type": "Training",
+          "tags": ["Sales", "Training", "MVA"]
+        }
+      ]
+    },
+    "x_twitter": {
+      "status": "limited",
+      "username": "@markkodg",
+      "user_id": "1198729883867848706",
+      "api_error": "Credits depleted - API access suspended",
+      "workaround": "Use scraping for reads, API only for posting",
+      "note": "Web scraping blocked by X privacy wall - need browser automation"
+    },
+    "google_drive": {
+      "status": "connected",
+      "folder_id": "1igaRyFYqMF0rAKR3rVcRWa747j9hroUQ",
+      "folder_name": "Kurios Automated Business",
+      "files_count": 4,
+      "files": [
+        {
+          "name": "Carlos Sales Flow.jpg",
+          "type": "image/jpeg",
+          "id": "1MKURzqmSfLjyZw_9otJ2SqyjbLj-XCpd",
+          "created": "2026-01-30T21:41:27.709Z"
+        },
+        {
+          "name": "JACKY BRAIN — Executive Summary",
+          "type": "Google Doc",
+          "id": "14yPapD94IkozXNh3arGFCvDtIFEiSlOVLjiyFPscydw",
+          "created": "2026-01-29T23:58:14.200Z"
+        },
+        {
+          "name": "Jacky Chou Full SOPs - Reddit, Appointments, ClawdBot",
+          "type": "Google Doc",
+          "id": "1ZtyOZwMYXh2RwpFeQky9Dsjb_3B0tw-ZYbhEyb42ySk",
+          "created": "2026-01-29T23:55:10.611Z"
+        },
+        {
+          "name": "MVA Case Studies - Landing Page",
+          "type": "Google Doc",
+          "id": "1uha8sLc44a0Gbkbtwhj1Amn-CTzLBsYxyEItkPY5ITs",
+          "created": "2026-01-29T21:29:21.057Z"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_prospect_meetings": 5,
+    "hot_leads_count": 7,
+    "in_progress_leads_count": 5,
+    "notion_documents": 25,
+    "drive_files": 4,
+    "next_meeting": {
+      "title": "Build .md domain redirect strategy",
+      "time": "2026-01-31T14:00:00-05:00"
+    },
+    "next_prospect_meeting": {
+      "title": "Online Meeting: Joan Suh - Partnership",
+      "time": "2026-02-02T16:00:00-05:00"
+    }
+  }
+}

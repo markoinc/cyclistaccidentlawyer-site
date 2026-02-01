@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "name": "PI Vendor Intelligence System",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/",
+      "description": "AI-powered vendor matching platform for PI attorneys. Multi-source scraping (Reddit 14 subreddits, LinkedIn, review sites). GPT-4o-mini extraction, weighted matching algorithm.",
+      "status": "active",
+      "keyFiles": [
+        "agents/coordinator.py - 24/7 orchestrator",
+        "agents/scout_bot.py - Telegram bot (@scoutassstantdatabot)",
+        "agents/profile_extractor.py - GPT-4o-mini AI extraction",
+        "agents/matching_engine.py - Weighted vendor-buyer scoring",
+        "agents/scrapers/reddit_scraper.py",
+        "agents/scrapers/linkedin_scraper.py",
+        "agents/scrapers/review_scraper.py",
+        "data/vendor_intel.db - SQLite database (135KB)"
+      ],
+      "tools": ["Python + asyncio", "Playwright", "SQLite", "OpenAI", "python-telegram-bot"],
+      "sites": {
+        "domain": "personalinjuryvendors.com",
+        "status": "planned"
+      },
+      "telegramBot": "@scoutassstantdatabot",
+      "clientAcquisitionRelevance": "HIGH - Core MVA lead gen tool. SCOUT bot provides real-time intel. Positions Kurios as authority."
+    },
+    {
+      "name": "Vendor Database",
+      "path": "/home/ec2-user/clawd/projects/vendor-db/",
+      "description": "Earlier/simpler version of vendor intelligence. Superseded by pi-vendors.",
+      "status": "stalled/superseded",
+      "clientAcquisitionRelevance": "LOW - Superseded by pi-vendors"
+    },
+    {
+      "name": "Vendors Kurios Brand Site",
+      "path": "/home/ec2-user/clawd/projects/vendors-kuriosbrand/",
+      "description": "Authority SEO website for PI vendor matching. React/Vite/Tailwind SPA. Quiz/matcher tool for lead capture.",
+      "status": "development/stalled",
+      "keyFiles": [
+        "site/src/App.tsx",
+        "site/src/components/HeroSection.tsx",
+        "site/src/components/VendorPreview.tsx",
+        "site/src/components/QuizCTA.tsx"
+      ],
+      "tools": ["React 19", "Vite 7", "Tailwind CSS 4", "TypeScript"],
+      "sites": {
+        "domain": "vendors.kuriosbrand.com",
+        "status": "built but not deployed"
+      },
+      "seoStrategy": {
+        "targetKeywords": ["best personal injury lead generation companies", "legal lead gen reviews", "PI leads cost", "FindLaw alternatives"]
+      },
+      "clientAcquisitionRelevance": "MEDIUM-HIGH - Frontend for vendor matching. Quiz captures PI attorney leads."
+    }
+  ],
+  "relationships": {
+    "evolution": "vendor-db → pi-vendors (backend) + vendors-kuriosbrand (frontend)",
+    "integration": "pi-vendors provides data/intelligence, vendors-kuriosbrand displays it"
+  },
+  "overallMVARelevance": "These form a cohesive MVA client acquisition funnel. pi-vendors collects intelligence, SCOUT bot provides queries, vendors-kuriosbrand (when deployed) captures leads via SEO and quiz."
+}

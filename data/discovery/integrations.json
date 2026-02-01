@@ -1,0 +1,147 @@
+{
+  "integrations": [
+    {
+      "name": "Google Calendar (gcal-pro)",
+      "status": "connected",
+      "capabilities": ["calendar.read", "calendar.write", "gmail.modify", "drive.full", "spreadsheets", "documents"],
+      "configPath": "~/.config/gcal-pro/token.json",
+      "details": {
+        "project": "sierra-485808",
+        "authenticatedAs": "sierra@kuriosbrand.com",
+        "markoCalendarId": "mark@kuriosbrand.com",
+        "tokenExpiry": "2026-01-29T10:04:18Z",
+        "hasRefreshToken": true
+      },
+      "usage": "Scheduling client meetings, tracking deadlines, availability checks for sales calls"
+    },
+    {
+      "name": "Notion",
+      "status": "connected",
+      "capabilities": ["read", "write", "database.query", "page.create", "block.append"],
+      "configPath": "~/.config/notion/api_key",
+      "details": {
+        "workspacePageId": "2f79371d-3030-8083-8ac8-c16af6cb0f07",
+        "documentsDbId": "2f89371d-3030-8185-adbd-e6e4febece73",
+        "documentTypes": ["Report", "Playbook", "SOP", "Resource", "Training", "Strategy"]
+      },
+      "usage": "Central knowledge base for SOPs, client research, lead tracking, campaign documentation"
+    },
+    {
+      "name": "X/Twitter (@markkodg)",
+      "status": "connected",
+      "capabilities": ["post_tweet", "reply", "like", "get_user_info", "scrape_search"],
+      "configPath": "~/.config/x-api/credentials.json",
+      "details": {
+        "userId": "1198729883867848706",
+        "username": "@markkodg",
+        "oauth1": "working",
+        "oauth2": "working",
+        "scriptPath": "~/clawd/scripts/x_tools.py"
+      },
+      "usage": "Social proof building, engagement with prospects, thought leadership content"
+    },
+    {
+      "name": "DataForSEO",
+      "status": "connected",
+      "capabilities": ["serp_analysis", "keyword_research", "backlinks", "onpage_audit", "domain_analytics"],
+      "configPath": "~/.env.local",
+      "details": {
+        "login": "mark@kuriosbrand.com",
+        "endpoints": ["SERP", "Keywords", "Backlinks", "On-Page", "Domain Analytics"]
+      },
+      "usage": "SEO audits for prospects, competitive analysis, keyword opportunity identification"
+    },
+    {
+      "name": "Slack",
+      "status": "connected",
+      "capabilities": ["send_message", "read_channels", "bot_integration"],
+      "configPath": "~/.config/slack/bot_token",
+      "usage": "Internal team communication, notifications"
+    },
+    {
+      "name": "Moltbook",
+      "status": "connected",
+      "capabilities": ["agent_identity", "network_participation", "profile_management"],
+      "configPath": "~/.config/moltbook/credentials.json",
+      "details": {
+        "agentName": "Sierra",
+        "agentId": "45bc41a9-6ba2-4e1a-8729-a3c24d03cf9e",
+        "profileUrl": "https://moltbook.com/u/Sierra"
+      },
+      "usage": "AI agent networking, B2B agent partnerships"
+    },
+    {
+      "name": "Scout Bot",
+      "status": "connected",
+      "capabilities": ["telegram_bot", "vendor_scouting"],
+      "configPath": "~/.config/scout-bot/config.json",
+      "details": {
+        "botUsername": "PIVendorScoutBot"
+      },
+      "usage": "Lead/vendor scouting via Telegram"
+    },
+    {
+      "name": "Google Drive",
+      "status": "connected",
+      "capabilities": ["read", "write", "file_management"],
+      "configPath": "~/.config/gcal-pro/token.json",
+      "details": {
+        "kuriosFolderId": "1igaRyFYqMF0rAKR3rVcRWa747j9hroUQ",
+        "mvaPartnershipFolderId": "1qshu4wTkayK-3C_h8nPEy_YWtWoaPAUX"
+      },
+      "usage": "Client deliverable storage, proposals"
+    },
+    {
+      "name": "Gemini API",
+      "status": "connected",
+      "capabilities": ["text_generation", "research", "bulk_processing"],
+      "configPath": "~/.env.local",
+      "usage": "Research, bulk content processing"
+    },
+    {
+      "name": "OpenAI API",
+      "status": "connected",
+      "capabilities": ["gpt-4", "codex", "planning"],
+      "configPath": "~/.env.local",
+      "usage": "Planning, coding via Codex CLI"
+    },
+    {
+      "name": "GoHighLevel (GHL)",
+      "status": "needs-setup",
+      "capabilities": ["crm", "pipeline", "automation", "landing_pages"],
+      "configPath": null,
+      "usage": "CRM for lead management - NOT CONFIGURED"
+    },
+    {
+      "name": "Cloudflare Wrangler",
+      "status": "partial",
+      "capabilities": ["pages_deploy", "workers"],
+      "configPath": "~/.config/.wrangler/",
+      "usage": "Landing page deployment"
+    },
+    {
+      "name": "ClawdHub",
+      "status": "connected",
+      "capabilities": ["skill_registry", "plugin_management"],
+      "configPath": "~/.config/clawdhub/config.json",
+      "usage": "Skill/plugin ecosystem"
+    }
+  ],
+  "summary": {
+    "fullyConnected": 11,
+    "needsSetup": 1,
+    "clientAcquisitionStack": [
+      "DataForSEO (prospect research)",
+      "X/Twitter (social outreach)",
+      "Google Calendar (scheduling)",
+      "Notion (lead tracking)",
+      "Scout Bot (prospecting)",
+      "Slack (communication)",
+      "Google Drive (proposals)"
+    ],
+    "missingForFullPipeline": [
+      "GoHighLevel - CRM/pipeline management",
+      "Email outreach tool"
+    ]
+  }
+}

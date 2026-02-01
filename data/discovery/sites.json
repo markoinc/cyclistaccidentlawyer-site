@@ -1,0 +1,105 @@
+{
+  "sites": [
+    {
+      "name": "Texas Truck Accidents",
+      "url": "https://texastruckaccidents.net",
+      "path": "/home/ec2-user/data/kurios-finish/sites/texas-mva",
+      "stack": "Next.js 16, React 19, Tailwind CSS 4, TypeScript",
+      "status": "live",
+      "purpose": "Lead gen site for Texas truck accident victims - connects with attorneys, free case review",
+      "features": ["SEO-optimized", "22+ city pages", "Case calculator", "Sticky mobile CTA", "IndexNow integration"]
+    },
+    {
+      "name": "MVA Engine (kurios-finish)",
+      "url": null,
+      "path": "/home/ec2-user/data/kurios-finish/sites/mva-engine",
+      "stack": "Next.js 16, React 19, Tailwind CSS 4, Framer Motion",
+      "status": "dev",
+      "purpose": "Template/engine for MVA lead gen sites - reusable site generator"
+    },
+    {
+      "name": "MVA Engine (Kurios Automation)",
+      "url": null,
+      "path": "/home/ec2-user/data/Kurios Automation Projects/sites/mva-engine",
+      "stack": "Next.js (with Wrangler for Cloudflare)",
+      "status": "dev",
+      "purpose": "MVA site engine with Cloudflare deployment"
+    },
+    {
+      "name": "Network Corridor Stats",
+      "url": "https://texascorridordata.com",
+      "path": "/home/ec2-user/data/kurios-finish/sites/network-corridor-stats",
+      "stack": "Astro 4, Tailwind CSS 3",
+      "status": "dev",
+      "purpose": "Satellite site - Texas highway corridor truck accident data. Links back to main site for SEO."
+    },
+    {
+      "name": "Texas Truck Crash Stats",
+      "url": null,
+      "path": "/home/ec2-user/data/kurios-finish/sites/network-stats-1",
+      "stack": "Astro 4, Tailwind CSS 3",
+      "status": "dev",
+      "purpose": "Satellite site - Texas truck crash statistics. Part of PBN/link network."
+    }
+  ],
+  "dataAssets": [
+    {
+      "name": "Backlink Outreach Contacts",
+      "path": "/home/ec2-user/data/kurios-finish/data/contacts/texastruckaccidents_backlink_outreach_contacts.csv",
+      "type": "csv",
+      "size": "96KB",
+      "description": "PI law firm marketing contacts with LinkedIn profiles for link building"
+    },
+    {
+      "name": "Outreach Contacts (with emails)",
+      "path": "/home/ec2-user/data/kurios-finish/data/contacts/texastruckaccidents_outreach_with_emails.csv",
+      "type": "csv",
+      "size": "39KB",
+      "description": "Enriched outreach list with email addresses"
+    },
+    {
+      "name": "Buyer Profiles Master",
+      "path": "/home/ec2-user/data/Kurios Automation Projects/business/strategy/live_transfer_buyer_profiles.md",
+      "type": "markdown",
+      "size": "52KB",
+      "description": "Deep buyer persona analysis from 12 call transcripts"
+    },
+    {
+      "name": "Customer Avatar Master",
+      "path": "/home/ec2-user/data/Kurios Automation Projects/business/strategy/CUSTOMER_AVATAR_MASTER.md",
+      "type": "markdown",
+      "size": "34KB",
+      "description": "Comprehensive customer avatar documentation"
+    },
+    {
+      "name": "Consolidated Transcripts",
+      "path": "/home/ec2-user/data/Kurios Automation Projects/business/transcripts/ALL_TRANSCRIPTS_CONSOLIDATED.txt",
+      "type": "txt",
+      "size": "220KB",
+      "description": "All sales call transcripts consolidated"
+    }
+  ],
+  "leadSources": [
+    {
+      "name": "Reddit Content Opportunities",
+      "path": "/home/ec2-user/data/kurios-finish/data/opportunities/reddit_content_opportunities.csv",
+      "description": "Reddit posts identified for content marketing"
+    },
+    {
+      "name": "Reddit Link Building Strategy",
+      "path": "/home/ec2-user/data/Kurios Automation Projects/automation/research/REDDIT_LINK_BUILDING_STRATEGY.md",
+      "description": "Documented strategy for Reddit link building"
+    },
+    {
+      "name": "Reddit Crawlers",
+      "path": "/home/ec2-user/data/Kurios Automation Projects/automation/research/",
+      "description": "reddit_24x7_link_crawler.py and opportunity finders"
+    }
+  ],
+  "summary": {
+    "primarySite": "texastruckaccidents.net - Live Next.js 16 lead gen site",
+    "satelliteSites": "2 Astro sites for PBN/backlinks",
+    "siteEngine": "mva-engine template for new MVA sites",
+    "outreachData": "150KB+ of PI law firm contacts"
+  }
+}

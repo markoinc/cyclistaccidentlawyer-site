@@ -1,0 +1,96 @@
+{
+  "events": [
+    {
+      "id": "btoh6fj0iqjco2gta89ucvhth4",
+      "title": "Build Sales Flow Automations in GHL",
+      "start": "2026-02-01T13:00:00-05:00",
+      "end": "2026-02-01T15:00:00-05:00",
+      "location": "",
+      "description": "Create sales flow automations in GoHighLevel for Carlos's flow.\nThis creates the SOPs needed for the Sales Assistant Head Agent.",
+      "allDay": false
+    },
+    {
+      "id": "o3u9i4eu39nu0ts86ce851485k",
+      "title": "Build Sales Assistant Head Agent",
+      "start": "2026-02-01T15:00:00-05:00",
+      "end": "2026-02-01T17:00:00-05:00",
+      "location": "",
+      "description": "Create head agent with access to:\n- GoHighLevel (GHL)\n- Google Sheets\n- Gmail\n- Calendar\n\nStart with small tasks, eventually replace subscriptions.",
+      "allDay": false
+    },
+    {
+      "id": "lol4j6bhehpri4cj1aq6s0hj1o",
+      "title": "Build Social Media Head Agent",
+      "start": "2026-02-02T13:00:00-05:00",
+      "end": "2026-02-02T15:00:00-05:00",
+      "location": "",
+      "description": "Create head agent for:\n- Instagram client acquisition\n- Nano Banana Pro for images\n- Branding guidelines\n- Reddit account army",
+      "allDay": false
+    },
+    {
+      "id": "hs81n1b6ndb4dmitv0hikhhhqs",
+      "title": "Online Meeting: Marc Salpeter - Partnership - Qualified Leads",
+      "start": "2026-02-02T15:30:00-05:00",
+      "end": "2026-02-02T16:00:00-05:00",
+      "location": "(806) 541-5366",
+      "description": "\n\n==========\n\nPhone:- (954) 224-1322\nEmail:- msalpeter@buckeyelawgroup.com\n\nBe ",
+      "allDay": false
+    },
+    {
+      "id": "roh26mcnc2qkvj5ptk5dif8000",
+      "title": "Online Meeting: Joan Suh - Partnership - Qualified Leads",
+      "start": "2026-02-02T16:00:00-05:00",
+      "end": "2026-02-02T16:30:00-05:00",
+      "location": "(806) 541-5366",
+      "description": "\n\n==========\n\nPhone:- (404) 914-7752\nEmail:- joan0407@gmail.com\n\nBe ",
+      "allDay": false
+    },
+    {
+      "id": "3jc8b06nh6cer9eg0uau8lt65g",
+      "title": "follow up - Meeting with Scott Poisson",
+      "start": "2026-02-03T15:00:00-05:00",
+      "end": "2026-02-03T15:30:00-05:00",
+      "location": "",
+      "description": "This will be a phone call",
+      "allDay": false
+    },
+    {
+      "id": "2rlb8mren0haacjlsdhj8sjkgk",
+      "title": "\ud83d\udcde Prospect Outreach - Call/Text/Email All Pipeline",
+      "start": "2026-02-04T10:00:00-05:00",
+      "end": "2026-02-04T12:00:00-05:00",
+      "location": "",
+      "description": "Review and update status of all prospects:\n\nHOT LEADS (7):\n\u2022 Scott Barney (VA Beach) - Burned $250k\n\u2022 Ross Robin - New PI firm, eager to scale\n\u2022 Jalal Abdallah - $50k budget, verbal commit\n\u2022 Omeed Hakimianpour - $50k budget, CA\n\u2022 Rich Hyde (Trial Tribe) - Wants reliable vendor\n\u2022 Dagmawi Getachew - Small test first\n\u2022 Lucas Naccarati - Scalable paid acquisition\n\nIN PROGRESS (5):\n\u2022 Daniel Ramirez (Dallas\u2192Houston) - Spanish markets\n\u2022 Josh Sweeney (Shane Smith) - YouTube/TikTok interest\n\u2022 Michael Shirts (BS Injury) - Las Vegas\n\u2022 Michael Schulz (RMD Law) - Follow up 02/10\n\u2022 Joan Suh - Call scheduled 02/02\n\nActions: Call, text, email each. Update CRM status.",
+      "allDay": false
+    },
+    {
+      "id": "0u2gcclh4gb2vdijbn9qhh1ura",
+      "title": "Go to cusco and fly to lima",
+      "start": "2026-02-04T13:30:00-05:00",
+      "end": "2026-02-04T20:45:00-05:00",
+      "location": "",
+      "description": "",
+      "allDay": false
+    },
+    {
+      "id": "3qbhpitd1bkvnggn06ojgrdclc_20260205T170000Z",
+      "title": "7 Figure Accountability Group",
+      "start": "2026-02-05T12:00:00-05:00",
+      "end": "2026-02-05T13:00:00-05:00",
+      "location": "",
+      "description": "Overview:\u00a0<a href=\"https://docs.google.com/document/d/19Gt5dveezJFr1P-YAL7-Hh5WksGkDFszXYpGa14powo/edit?tab=t.0#heading=h.74lkz1q2lnj8\" class=\"pastedDriveLink-0\">https://docs.google.com/document/d/19Gt5dveezJFr1P-YAL7-Hh5WksGkDFszXYpGa14powo/edit?tab=t.0#heading=h.74lkz1q2lnj8</a>",
+      "allDay": false
+    },
+    {
+      "id": "s9bqpc2r11cuo9uaq2u4m39k5s",
+      "title": "\ud83d\udd27 Explore: Concrete Sites Migration + SEO Automation",
+      "start": "2026-02-05T14:00:00-05:00",
+      "end": "2026-02-05T16:00:00-05:00",
+      "location": "",
+      "description": "With Sierra - explore:\n\n1. MIGRATION PLAN\n- Audit all concrete sites on 10web.io\n- List domains, current rankings, traffic\n- Plan Cloudflare migration (copy design/content exactly)\n- Timeline for migration\n\n2. SEO AUTOMATION IDEAS\n- Programmatic local SEO (city pages)\n- Automated content freshness\n- Link building automation\n- Review systems\n- Schema automation\n\n3. MONETIZATION\n- Current lead flow from these sites\n- How to convert leads to revenue\n- Rank & rent vs direct client model\n\nGoal: Automate passive income from concrete sites while focusing on MVA.",
+      "allDay": false
+    }
+  ],
+  "count": 10,
+  "updated": "2026-02-01T00:25:48.498554Z"
+}

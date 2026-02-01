@@ -1,0 +1,95 @@
+{
+  "batch": 2,
+  "research_date": "2026-01-31",
+  "status": "pending_transcription",
+  "note": "YouTube blocking AWS IPs - requires residential IP for transcript extraction",
+  "videos": [
+    {
+      "id": "KKp3rA0QK9A",
+      "title": "How to Write Winning Meta Ad Scripts ($450M Spent)",
+      "creator": "Fraser Cottrell (Fraggell)",
+      "channel_url": "/@FraserCottrell",
+      "url": "https://www.youtube.com/watch?v=KKp3rA0QK9A",
+      "topic": "Ad Creative / Copywriting",
+      "published": "2026-01",
+      "views": "4.8K",
+      "subscribers": "17.8K",
+      "priority": 1
+    },
+    {
+      "id": "Tj2oufaLQjg",
+      "title": "The Creative Process I Use To Make Winning Meta Ads Over And Over Again",
+      "creator": "Andrew Faris",
+      "channel_url": "/@andrewfarispodcast",
+      "url": "https://www.youtube.com/watch?v=Tj2oufaLQjg",
+      "topic": "Creative Process",
+      "published": "2026-01",
+      "priority": 2
+    },
+    {
+      "id": "MLCNXcF_brM",
+      "title": "How to Create AI UGC Ads That Get 3.8x ROAS (Full Tutorial)",
+      "creator": "Unknown",
+      "url": "https://www.youtube.com/watch?v=MLCNXcF_brM",
+      "topic": "UGC / Video Ads",
+      "published": "2025-12",
+      "priority": 3
+    },
+    {
+      "id": "ZQiAxA3JpJc",
+      "title": "The New Way To Use Lookalike Audience On Meta Ads in 2026",
+      "creator": "Nestuge",
+      "url": "https://www.youtube.com/watch?v=ZQiAxA3JpJc",
+      "topic": "Lookalike Audiences",
+      "published": "2026-01",
+      "priority": 4
+    },
+    {
+      "id": "cs23-HQp12s",
+      "title": "I Found the BEST Strategy to Scale Facebook Ads in 2026",
+      "creator": "Skale It Agency",
+      "url": "https://www.youtube.com/watch?v=cs23-HQp12s",
+      "topic": "Scaling Strategy",
+      "published": "2026-01",
+      "priority": 5
+    },
+    {
+      "id": "4jCF6Fug9To",
+      "title": "Copy This NEW Meta Ads Strategy, It'll Blow Up Your Business (Post-Andromeda)",
+      "creator": "Charley T (Disrupter School)",
+      "channel_url": "/@ProfessorCharleyT",
+      "url": "https://www.youtube.com/watch?v=4jCF6Fug9To",
+      "topic": "Post-Andromeda Strategy",
+      "published": "2025-12",
+      "duration": "16:15",
+      "views": "7.4K",
+      "priority": 6
+    },
+    {
+      "id": "E_wZJhuSK5U",
+      "title": "The NEW BEST Facebook Ads Campaign Structure for 2026",
+      "creator": "Charley T (Disrupter School)",
+      "channel_url": "/@ProfessorCharleyT",
+      "url": "https://www.youtube.com/watch?v=E_wZJhuSK5U",
+      "topic": "Campaign Structure",
+      "published": "2026-01",
+      "priority": 7
+    }
+  ],
+  "topics_covered": [
+    "Ad creative best practices",
+    "Copywriting for Meta Ads",
+    "Video ads and UGC strategies",
+    "Retargeting and lookalike audiences",
+    "Scaling strategies",
+    "Post-Andromeda algorithm changes",
+    "Campaign structure optimization"
+  ],
+  "creators_featured": [
+    "Fraser Cottrell (Fraggell) - $450M+ ad spend expertise",
+    "Andrew Faris - Meta ads podcast host",
+    "Charley T / Disrupter School - Meta ads educator",
+    "Nestuge - Targeting specialist",
+    "Skale It Agency - Scaling specialist"
+  ]
+}

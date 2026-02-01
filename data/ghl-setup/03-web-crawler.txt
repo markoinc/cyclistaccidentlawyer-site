@@ -1,0 +1,8 @@
+=====================================
+TRAINING TAB → Web Crawler
+=====================================
+
+Add these URLs:
+
+1. https://leads.kuriosbrand.com
+2. https://kuriosbrand.com

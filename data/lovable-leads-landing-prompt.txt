@@ -1,0 +1,65 @@
+Update the landing page to showcase BOTH offers: Exclusive MVA Leads AND Live Transfers.
+
+## Structure
+
+### Hero Section
+- Headline: "Exclusive MVA Leads & Live Transfers for PI Law Firms"
+- Subheadline: "100% exclusive. Never shared. Choose the option that fits your firm."
+- CTA: "Book a Call" button
+
+### Two Offer Cards (side by side on desktop, stacked on mobile)
+
+**Card 1: Exclusive MVA Leads**
+- Icon: document/list icon
+- Headline: "Exclusive Leads"
+- Subtitle: "You call. You control."
+- Bullet points:
+  • 100% exclusive — never shared
+  • Real-time delivery to your team
+  • OTP-verified contact info
+  • TCPA compliant (TrustedForm, Jornaya)
+  • Full control over your follow-up
+- Best for: "Firms with strong intake teams"
+- CTA: "Get Leads" or "Learn More"
+
+**Card 2: Live Transfers (Premium)**
+- Icon: phone/headset icon
+- Headline: "Live Transfers"
+- Subtitle: "We call. You sign."
+- Bullet points:
+  • 30 qualified transfers in 30 days — guaranteed
+  • 40-60% sign rate
+  • Pre-qualified: liability, treatment, no rep
+  • Warm transferred while still on the line
+  • We handle ALL follow-up
+- Best for: "Firms that want done-for-you"
+- CTA: "Get Transfers" or "Learn More"
+
+### How It Works Section
+Show a simple 3-step process for each option:
+
+**For Leads:**
+1. We run targeted ads
+2. Leads delivered in real-time
+3. Your team closes
+
+**For Live Transfers:**
+1. We run ads & call within 5 min
+2. We qualify & nurture (18 touches)
+3. Warm transfer to your intake
+
+### Trust/Credibility Section
+- "30+ states covered"
+- "4+ year client relationships"
+- "No retainer, cancel anytime"
+- "Pilot program available"
+
+### Final CTA
+- "Not sure which is right for you? Book a quick call — we'll help you figure it out."
+- Book a Call button
+
+## Design Notes
+- Keep the existing color scheme and styling
+- Make the two offer cards visually distinct but balanced
+- Mobile-first — cards should stack nicely
+- CTAs should be prominent

@@ -1,0 +1,136 @@
+{
+  "avatars": [
+    {
+      "rank": 1,
+      "name": "The Fast Scaler",
+      "score": 89,
+      "closeRate": "100%",
+      "avgDealSize": "$27,500",
+      "frequency": "20%",
+      "riskTolerance": "HIGH",
+      "demographics": {
+        "firmSize": "1-10 attorneys",
+        "experience": "5-15 years",
+        "revenue": "$1M-$10M+",
+        "caseload": "50-200+ active"
+      },
+      "psychographics": {
+        "decisionStyle": "Data-driven, fast",
+        "growthStage": "Aggressive expansion",
+        "values": ["Scalability", "Efficiency", "Proven systems"]
+      },
+      "painPoints": ["Need consistent case flow", "Marketing channels maxed out", "Inconsistent vendor results"],
+      "desiredOutcome": "Scale to 100+ signups/month",
+      "buyingBehavior": {
+        "budget": "$20k-$50k+",
+        "pricingPreference": "Media buy (performance-based)",
+        "decisionTimeline": "Fast - 1-2 calls"
+      },
+      "whatResonates": ["Patrick's intake background", "Dedicated 1:1 campaigns", "$30M+ ad spend experience"],
+      "prospects": ["Jason E", "Lucas Naccarati"]
+    },
+    {
+      "rank": 2,
+      "name": "The Sophisticated Buyer",
+      "score": 52,
+      "closeRate": "0% (but high intent)",
+      "avgDealSize": "$30,000+",
+      "frequency": "20%",
+      "riskTolerance": "MEDIUM",
+      "demographics": {
+        "firmSize": "5-50+ attorneys",
+        "experience": "10-25+ years",
+        "revenue": "$5M-$50M+",
+        "caseload": "200-1000+ active"
+      },
+      "psychographics": {
+        "decisionStyle": "Analytical, comparison-focused",
+        "growthStage": "Strategic expansion",
+        "values": ["Quality", "Transparency", "Track record"]
+      },
+      "painPoints": ["Finding vendors who meet high standards", "Committee decisions slow things", "Need differentiation"],
+      "desiredOutcome": "Predictable, high-quality case flow",
+      "buyingBehavior": {
+        "budget": "$30k-$100k+",
+        "pricingPreference": "Flexible - media buy or CPL",
+        "decisionTimeline": "Longer - 2-4 weeks"
+      },
+      "whatResonates": ["Detailed reporting", "Case quality metrics", "Compliance emphasis"],
+      "prospects": ["Omeed Hakimianpour", "Josh Sweeney"]
+    },
+    {
+      "rank": 3,
+      "name": "The Burned Veteran",
+      "score": 48,
+      "closeRate": "25%",
+      "avgDealSize": "$15,000",
+      "frequency": "40%",
+      "riskTolerance": "LOW",
+      "demographics": {
+        "firmSize": "1-5 attorneys",
+        "experience": "10-25+ years",
+        "revenue": "$500k-$5M",
+        "caseload": "20-100 active"
+      },
+      "psychographics": {
+        "decisionStyle": "Skeptical, needs proof",
+        "growthStage": "Cautious growth",
+        "values": ["Protection", "Guarantees", "No surprises"]
+      },
+      "painPoints": ["Wasted $100-250k on bad vendors", "Trust issues", "Need contractual protections"],
+      "desiredOutcome": "Reliable, predictable case flow without risk",
+      "buyingBehavior": {
+        "budget": "$15k-$30k",
+        "pricingPreference": "Pay-per-lead with guarantees",
+        "decisionTimeline": "Slow - multiple calls needed"
+      },
+      "whatResonates": ["Credit for bad leads", "Contractual guarantees", "Patrick's credibility"],
+      "objections": ["Been burned before", "Want replacement policy", "Need transparency"],
+      "prospects": ["Scott Barney", "Rich Hyde", "Michael Shirts", "Jalal Abdallah"]
+    },
+    {
+      "rank": 4,
+      "name": "The Solo Transitioner",
+      "score": 40,
+      "closeRate": "50%",
+      "avgDealSize": "$17,500",
+      "frequency": "20%",
+      "riskTolerance": "MEDIUM-LOW",
+      "demographics": {
+        "firmSize": "Solo practitioner",
+        "experience": "5-10 years",
+        "revenue": "$200k-$800k",
+        "caseload": "10-50 active"
+      },
+      "psychographics": {
+        "decisionStyle": "Cautious but eager",
+        "growthStage": "Building foundation",
+        "values": ["Consistency", "Predictability", "Growth potential"]
+      },
+      "painPoints": ["Transitioning from employed to solo", "Limited budget", "Need to build caseload"],
+      "desiredOutcome": "5-10 consistent signups/month",
+      "buyingBehavior": {
+        "budget": "$15k-$25k",
+        "pricingPreference": "Pay-per-lead initially, then media buy",
+        "decisionTimeline": "Medium - needs confidence building"
+      },
+      "whatResonates": ["Pilot programs", "Gradual scaling", "Hands-on support"],
+      "prospects": ["Dagmawi Getachew", "Ross Robin"]
+    }
+  ],
+  "prospectAvatarMap": {
+    "Scott Barney": {"avatar": "Burned Veteran", "score": 48, "notes": "Burned $250k, needs guarantees"},
+    "Ross Robin": {"avatar": "Solo Transitioner", "score": 40, "notes": "New PI firm, eager to scale"},
+    "Jalal Abdallah": {"avatar": "Burned Veteran", "score": 48, "notes": "$50k budget, verbal commit"},
+    "Omeed Hakimianpour": {"avatar": "Sophisticated Buyer", "score": 52, "notes": "$50k budget, CA multi-state"},
+    "Rich Hyde": {"avatar": "Burned Veteran", "score": 48, "notes": "Trial Tribe, wants reliable vendor"},
+    "Dagmawi Getachew": {"avatar": "Solo Transitioner", "score": 40, "notes": "Small test first"},
+    "Lucas Naccarati": {"avatar": "Fast Scaler", "score": 89, "notes": "Scalable paid acquisition - HOT"},
+    "Daniel Ramirez": {"avatar": "Solo Transitioner", "score": 40, "notes": "Spanish markets, Dallas→Houston"},
+    "Josh Sweeney": {"avatar": "Sophisticated Buyer", "score": 52, "notes": "Shane Smith, YouTube/TikTok"},
+    "Michael Shirts": {"avatar": "Burned Veteran", "score": 48, "notes": "BS Injury, Las Vegas"},
+    "Michael Schulz": {"avatar": "Sophisticated Buyer", "score": 52, "notes": "RMD Law"},
+    "Joan Suh": {"avatar": "Unknown", "score": 0, "notes": "Call scheduled 02/02"},
+    "Jason E": {"avatar": "Fast Scaler", "score": 89, "notes": "CLOSED $30k - GCE Law"}
+  }
+}

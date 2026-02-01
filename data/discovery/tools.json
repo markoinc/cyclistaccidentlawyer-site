@@ -1,0 +1,190 @@
+{
+  "tools": [
+    {
+      "name": "Reddit Scraper (pi-vendors)",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/reddit_scraper.py",
+      "category": "scraper",
+      "description": "Scrapes 14 PI attorney subreddits for vendor reviews and discussions",
+      "usage": "Part of pi-vendors automated scraping"
+    },
+    {
+      "name": "Vendor Scraper",
+      "path": "/home/ec2-user/clawd/projects/vendor-db/agents/vendor_scraper.py",
+      "category": "scraper",
+      "description": "Scrapes 50+ PI lead vendors from Trustpilot/G2/BBB",
+      "usage": "python vendor_scraper.py"
+    },
+    {
+      "name": "X/Twitter Scraper",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/x_scraper.py",
+      "category": "scraper",
+      "description": "X/Twitter scraper for AI agent & PI industry intel",
+      "usage": "Part of pi-vendors"
+    },
+    {
+      "name": "Reddit 24x7 Link Crawler",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/reddit_24x7_link_crawler.py",
+      "category": "scraper",
+      "description": "24/7 Reddit crawler for link-building opportunities, outputs to Google Sheets",
+      "usage": "python reddit_24x7_link_crawler.py"
+    },
+    {
+      "name": "Notion Playwright Scraper",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/scrape_notion_playwright.py",
+      "category": "scraper",
+      "description": "Scrapes Notion SEO SOPs with JS rendering",
+      "usage": "python scrape_notion_playwright.py <url>"
+    },
+    {
+      "name": "LinkedIn Scraper",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/linkedin_scraper.py",
+      "category": "scraper",
+      "description": "LinkedIn company data scraper",
+      "usage": "Part of pi-vendors"
+    },
+    {
+      "name": "Review Site Scraper",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/review_scraper.py",
+      "category": "scraper",
+      "description": "Multi-platform review aggregation (Trustpilot, G2, BBB, Clutch)",
+      "usage": "Part of pi-vendors"
+    },
+    {
+      "name": "YouTube Transcriber",
+      "path": "/home/ec2-user/data/kurios-finish/automation/content/transcribe_youtube.py",
+      "category": "transcriber",
+      "description": "Transcribes YouTube videos via youtube-transcript-api",
+      "usage": "python transcribe_youtube.py <youtube_url>"
+    },
+    {
+      "name": "Whisper Transcription",
+      "path": "/home/ec2-user/clawd/scripts/transcribe.sh",
+      "category": "transcriber",
+      "description": "OpenAI Whisper API for audio files",
+      "usage": "./transcribe.sh <audio_file>"
+    },
+    {
+      "name": "X/Twitter Tools",
+      "path": "/home/ec2-user/clawd/scripts/x_tools.py",
+      "category": "api",
+      "description": "Post tweets, get auth user via @markkodg account",
+      "usage": "python x_tools.py post 'tweet text'"
+    },
+    {
+      "name": "Calendar Fetcher",
+      "path": "/home/ec2-user/clawd/scripts/fetch_calendar.py",
+      "category": "api",
+      "description": "Fetches events from mark@kuriosbrand.com calendar",
+      "usage": "python fetch_calendar.py"
+    },
+    {
+      "name": "Reddit Opportunity Finder",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/find_reddit_opportunities.py",
+      "category": "api",
+      "description": "Uses DataForSEO to find ranking Reddit posts",
+      "usage": "python find_reddit_opportunities.py"
+    },
+    {
+      "name": "Exa Websets Downloader",
+      "path": "/home/ec2-user/data/kurios-finish/automation/content/download_exa_websets.py",
+      "category": "api",
+      "description": "Fetches lead lists/company data from Exa.ai",
+      "usage": "python download_exa_websets.py"
+    },
+    {
+      "name": "DataForSEO Tools",
+      "path": "/home/ec2-user/data/kurios-finish/automation/seo/dataforseo.ts",
+      "category": "api",
+      "description": "Keywords, SERP, competitors analysis",
+      "usage": "npx ts-node dataforseo.ts"
+    },
+    {
+      "name": "Codex CLI",
+      "path": "codex",
+      "category": "api",
+      "description": "OpenAI code generation with reasoning",
+      "usage": "codex --model o4-mini --reasoning-effort high 'task'"
+    },
+    {
+      "name": "Customer Avatar Agent",
+      "path": "/home/ec2-user/data/kurios-finish/business/automation/customer_avatar_agent/",
+      "category": "automation",
+      "description": "Full pipeline: audio → transcript → extraction → customer avatar docs using Mitch Wiggins framework",
+      "usage": "python agent.py"
+    },
+    {
+      "name": "Transcript Analyzer",
+      "path": "/home/ec2-user/data/kurios-finish/analyze_transcripts_and_create_docs.py",
+      "category": "automation",
+      "description": "Sales call analysis and documentation",
+      "usage": "python analyze_transcripts_and_create_docs.py"
+    },
+    {
+      "name": "Transcript Extractor",
+      "path": "/home/ec2-user/data/kurios-finish/extract_all_transcripts.py",
+      "category": "automation",
+      "description": "Batch transcript extraction from various formats",
+      "usage": "python extract_all_transcripts.py"
+    },
+    {
+      "name": "Weekly Summary Generator",
+      "path": "/home/ec2-user/data/kurios-finish/business/automation/customer_avatar_agent/weekly_summary.py",
+      "category": "automation",
+      "description": "Customer avatar weekly insights summary",
+      "usage": "python weekly_summary.py"
+    },
+    {
+      "name": "SCOUT Bot",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scout_bot.py",
+      "category": "bot",
+      "description": "Telegram bot for PI vendor intelligence queries (@scoutassstantdatabot)",
+      "usage": "systemctl start scout-bot"
+    },
+    {
+      "name": "Profile Extractor",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/profile_extractor.py",
+      "category": "automation",
+      "description": "GPT-4o-mini AI extraction for vendor/buyer profiles",
+      "usage": "Part of pi-vendors"
+    },
+    {
+      "name": "Matching Engine",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/matching_engine.py",
+      "category": "automation",
+      "description": "Weighted vendor-buyer scoring across 6 dimensions",
+      "usage": "Part of pi-vendors"
+    },
+    {
+      "name": "URL Extractor (Texas Sites)",
+      "path": "/home/ec2-user/data/kurios-finish/automation/data_extraction/extract_texas_site_links.py",
+      "category": "utility",
+      "description": "Extracts all URLs from Texas MVA site",
+      "usage": "python extract_texas_site_links.py"
+    },
+    {
+      "name": "Knowledge Registry Builder",
+      "path": "/home/ec2-user/data/kurios-finish/automation/knowledge-management/build_registry.py",
+      "category": "utility",
+      "description": "Builds knowledge registry for AI prompts",
+      "usage": "python build_registry.py"
+    },
+    {
+      "name": "Dashboard Updater",
+      "path": "/home/ec2-user/clawd/scripts/update_dashboard.sh",
+      "category": "utility",
+      "description": "Updates dashboard-data.json with current stats",
+      "usage": "./update_dashboard.sh"
+    }
+  ],
+  "summary": {
+    "total": 25,
+    "categories": {
+      "scraper": 7,
+      "transcriber": 2,
+      "api": 6,
+      "automation": 6,
+      "bot": 1,
+      "utility": 3
+    }
+  }
+}

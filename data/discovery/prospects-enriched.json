@@ -1,0 +1,596 @@
+{
+  "metadata": {
+    "generated": "2026-01-26",
+    "source": "/home/ec2-user/data/ - transcripts, buyer profiles, avatar analysis",
+    "purpose": "Enriched pipeline prospects with full context for sales follow-up"
+  },
+  "prospects": {
+    "HOT": [
+      {
+        "name": "Scott Barney",
+        "firm": "Barney Injury Law",
+        "website": "barneyinjurylaw.com",
+        "location": "Virginia Beach, Virginia",
+        "avatar_type": "Burned Veteran + Solo Transitioner (Hybrid)",
+        "context": {
+          "background": "Solo practitioner with litigation paralegal. 15+ years experience. Excellent reputation as litigator. Majority of cases settle out of court.",
+          "current_state": "Had 131 cases during COVID, now down to 30-35. Signing 3-5 cases/month. Desperate for consistent lead flow.",
+          "previous_vendors": [
+            "Case Connect",
+            "eLocal",
+            "Vertical 10",
+            "Vantage",
+            "Google LSAs"
+          ],
+          "spent_on_marketing": "$250,000+ wasted on failed marketing",
+          "what_hasnt_worked": "Everything except Meta campaigns. Never tried Facebook/Instagram campaigns."
+        },
+        "pain_points": [
+          "Quarter million dollars wasted on marketing that didn't deliver",
+          "Only 30-35 active cases (was 131 during COVID)",
+          "Sales pitches never pan out as promised",
+          "Can't afford TV/billboards",
+          "Needs trusted long-term partner",
+          "May not be saying right things on intake (self-doubt)",
+          "In litigation fight with Florida referral partner (stressed)"
+        ],
+        "budget": "$15,000 minimum (willing to go higher for results)",
+        "deal_size": "$15,000+ initial, scalable",
+        "timeline": "URGENT - scheduled Patrick call next day at 2:30 PM",
+        "what_resonated": [
+          "Patrick as dedicated intake person (former intake director)",
+          "Different from other lead gen firms",
+          "Doesn't have to do calling himself",
+          "Cost per case around $2,000 in Virginia",
+          "3-5X ROI on first batch, potentially 10-15X long term"
+        ],
+        "quotes": [
+          "I have probably spent quarter million dollars on wasted marketing",
+          "I'm just pulling my hair out at my wit's end",
+          "I'm not a marketing expert. I'm a personal injury expert",
+          "I don't have the time to do what he's doing",
+          "It's nice to speak to somebody who's a professional"
+        ],
+        "recommended_next_action": "FOLLOW UP IMMEDIATELY on Patrick call outcome. He was scheduled with Patrick at 2:30 PM. Desperate buyer - high close probability if Patrick delivers confidence.",
+        "close_probability": "HIGH - 85%",
+        "deal_breaker_watch": "Needs actual results, not more promises. Burned veteran mindset."
+      },
+      {
+        "name": "Ross Robin",
+        "firm": "Rohin Law",
+        "website": "rohinlaw.com (new PI firm)",
+        "location": "Houston, Texas (lives there) - Licensed in Texas, Arizona, Colorado, Florida",
+        "avatar_type": "Mass Tort Crossover / Fast Scaler",
+        "context": {
+          "background": "15 years as mass tort lawyer with significant success. Setting up NEW personal injury firm - separate entity, separate brand. Has intake team experience from mass tort.",
+          "current_state": "Starting PI firm from scratch. Zero PI lead gen yet. Wants Texas to start.",
+          "what_they_need": "Quick lead flow to new PI firm. Focused on Texas initially but licensed in 4 states."
+        },
+        "pain_points": [
+          "Starting from complete scratch with PI",
+          "Needs dedicated intake (not using mass tort firm's assets)",
+          "Needs new intake team, new managers, new everything",
+          "Shopping around with many vendors (booked 'a ton' of calls)"
+        ],
+        "budget": "$15,000 minimum recommended",
+        "deal_size": "$15,000 initial, multi-state expansion potential",
+        "timeline": "READY - Was sent email, asked to review and circle back",
+        "what_resonated": [
+          "Patrick's $350/signup - perfect for firm without intake team",
+          "Can start signing cases day one",
+          "Live transfer option ($100/transfer)",
+          "Texas focus initially"
+        ],
+        "quotes": [
+          "I've been a mass tot lawyer for about 15 years and had a lot of success",
+          "What I'm doing for this year is setting up a separate entity, totally separate brand"
+        ],
+        "recommended_next_action": "Follow up on email sent. Schedule Patrick call ASAP. Position as 'start signing cases day one' - perfect for new firm without intake team.",
+        "close_probability": "HIGH - 75%",
+        "deal_breaker_watch": "None identified. Decision maker. Ready to start."
+      },
+      {
+        "name": "Jalal Abdallah",
+        "firm": "Jalal Law",
+        "website": "jalallaw.com",
+        "location": "Michigan (licensed), looking to expand to California, New York, Massachusetts",
+        "avatar_type": "The Expansionist (Young & Hungry)",
+        "context": {
+          "background": "Family firm with brother (brother licensed in CA). Signing 8-10 MVA cases/month. Aggressively looking to scale coast to coast.",
+          "current_state": "Buying transfers and leads. Everyone in firm trained on intake. Spanish-speaking capabilities important."
+        },
+        "pain_points": [
+          "HATES form fills then chase - 'waste of time'",
+          "100 calls for 2 cases is unacceptable",
+          "Can't stand the grunt work of intake",
+          "Values time over nickels and dimes"
+        ],
+        "budget": "$15,000 minimum for Michigan, $50,000 for California",
+        "deal_size": "Multi-state potential: $50,000+ if expanding to CA",
+        "timeline": "Requested follow-up call Wednesday",
+        "what_resonated": [
+          "Patrick's outsourced intake (done-for-you)",
+          "15% conversion rate on 100 leads = 15 cases",
+          "$1,500-$2,000 cost per case in Michigan",
+          "Patrick's expertise - 'knows legal, knows cases, not just a call center'",
+          "Inquire to Esquire positioning"
+        ],
+        "quotes": [
+          "I can't stand the, you know, form and then chase 'em... It just a waste of time",
+          "For every a hundred people we call, maybe you'll get a couple cases. It's just a waste of time",
+          "Looking to expand for sure... coast to coast"
+        ],
+        "recommended_next_action": "Follow up Wednesday as scheduled. Emphasize Patrick's done-for-you intake. Prepare multi-state (MI + CA) proposal for brother's CA license.",
+        "close_probability": "MEDIUM-HIGH - 70%",
+        "deal_breaker_watch": "Anything requiring manual follow-up or chasing leads personally"
+      },
+      {
+        "name": "Omeed Hakimianpour",
+        "firm": "The Injury Partners",
+        "website": "theinjurypartners.com",
+        "location": "California (multi-state)",
+        "avatar_type": "Compliance/Quality-Focused Scaler (Sophisticated Buyer)",
+        "context": {
+          "background": "Already buying leads from agencies - both signed retainers and qualified leads. Has intake team. Looking for additional vendors to scale.",
+          "current_state": "Comparison shopping. Has partner to consult. Interested in SB 37 compliance."
+        },
+        "pain_points": [
+          "SB 37 compliance concerns - new California law",
+          "Human error in intake leading to bad signups",
+          "Insurance 'drops' after signing - wants credits",
+          "Needs performance-based pricing (pay for results)",
+          "Wants to minimize risk"
+        ],
+        "budget": "$50,000 (California minimum)",
+        "deal_size": "$50,000 initial",
+        "timeline": "Mid-next week follow-up. Needs to talk to partner.",
+        "what_resonated": [
+          "SB 37 compliance - disclaimers, 72-hour cure rule",
+          "Patrick's $350/signup or $100/transfer model",
+          "Performance-based pricing (only pay for results)",
+          "Dedicated 1:1 campaigns (not shared leads)",
+          "Walker Advertising works with Cases on Demand"
+        ],
+        "quotes": [
+          "How are you guys handling SB 37?",
+          "What happens if a lead was qualified but shouldn't have been... insurance drops?",
+          "I was looking at, you know, getting help like this, signed cases at the beginning"
+        ],
+        "recommended_next_action": "Send summary email as promised. Connect with Patrick. Address insurance drop credits. Emphasize SB 37 compliance. Follow up mid-next week.",
+        "close_probability": "MEDIUM-HIGH - 65%",
+        "deal_breaker_watch": "Vague answers on compliance. Lack of credit system for bad insurance/liability."
+      },
+      {
+        "name": "Rich Hyde",
+        "firm": "Trial Tribe",
+        "website": "trialtribe.com",
+        "location": "Texas",
+        "avatar_type": "Burned Veteran (The Skeptical Veteran)",
+        "context": {
+          "background": "Deeply experienced trial lawyer. Only does live transfers or pre-signed retainers. Big in plaintiffs bar, involved with legislative changes in Texas.",
+          "current_state": "Currently paying $2,500 for signed MVAs in Texas. Has multiple vendors. Very skeptical of marketing agencies."
+        },
+        "pain_points": [
+          "Burned by Quintessa (fake leads, bar complaint threat)",
+          "Walker advertising 'hot and cold'",
+          "Burned by agencies taking high margins",
+          "Wants pay-per-lead for control and accountability",
+          "Hates 'tough conversations down the road'",
+          "Needs contractual guarantees"
+        ],
+        "budget": "$15,000-$30,000 (has 'shit ton of capital' once trust earned)",
+        "deal_size": "$15,000+ with significant scaling potential",
+        "timeline": "Ready - agreed to receive proposal with guarantees",
+        "what_resonated": [
+          "Patrick's former director of intake background",
+          "Willingness to offer guaranteed minimum case costs",
+          "Transparency about margins (20%)",
+          "Credits for bad leads",
+          "Specific qualifier discussions (30-day treatment gaps)"
+        ],
+        "quotes": [
+          "I've heard the same pitch time and time again. I don't know you from Adam",
+          "I like per lead because I'm able to pinpoint and there's no tough conversations",
+          "Welcome to Texas. It's a competitive market",
+          "Those guys we're not gonna house them because Florida decided to go super conservative"
+        ],
+        "recommended_next_action": "Send proposal with GUARANTEED MINIMUMS in writing. Max case cost cap. Credits for bad leads. Patrick intro is critical. Put terms in writing.",
+        "close_probability": "MEDIUM - 60% (requires contractual guarantees)",
+        "deal_breaker_watch": "Opaque pricing, no guarantees, 'just trust us' attitude, bar complaint concerns"
+      },
+      {
+        "name": "Dagmawi Getachew",
+        "firm": "DG Firm",
+        "website": "dgfirm.law",
+        "location": "Texas",
+        "avatar_type": "Solo Transitioner",
+        "context": {
+          "background": "Solo practitioner. 7 years PI experience. HE IS the intake (solo). Has medical provider network. Transitioning to own practice.",
+          "current_state": "Needs consistent lead flow to feel comfortable about revenue. Tried Case Connect and LegalMap - didn't work."
+        },
+        "pain_points": [
+          "Uncomfortable calling raw leads - solicitation concerns",
+          "Case Connect gave opt-in leads he had to call himself",
+          "Too general, not specific enough",
+          "Many people said 'I never did this' or 'wrong number'",
+          "Compliance concern - lawyers can't solicit",
+          "Doesn't want to pay for leads where coverage/liability unclear",
+          "Wants to limit immediate overhead cost"
+        ],
+        "budget": "$17,500 (50 leads at $350/lead pay-per-lead test)",
+        "deal_size": "$17,500 initial, transition to media buy after proof",
+        "timeline": "Thinking on it - said will respond in couple days",
+        "what_resonated": [
+          "Patrick's vetting process (coverage, liability, treatment gaps)",
+          "Warm transfers = no solicitation risk",
+          "Pay-per-lead test = lower risk, then transition to lower cost model",
+          "Medical control remains with him",
+          "One retained case = $8,000-$11,000 profit"
+        ],
+        "quotes": [
+          "As lawyers, we can't solicit it. I don't wanna even the impression that I'm the one making the initial contact",
+          "The issue is if I don't know the coverage... That's when the cost of lead becomes troublesome",
+          "Right now my main focus is limiting the immediate overhead cost"
+        ],
+        "recommended_next_action": "Follow up on pay-per-lead proposal. Emphasize Patrick makes initial contact, NOT him. Address compliance concern directly. Connect with Patrick.",
+        "close_probability": "MEDIUM-HIGH - 65%",
+        "deal_breaker_watch": "Being forced to call raw leads personally. High upfront risk with unproven quality."
+      },
+      {
+        "name": "Lucas Naccarati",
+        "firm": "Muniz Kim Law",
+        "website": "munizkimlaw.com",
+        "location": "New Jersey / SoCal",
+        "avatar_type": "Fast Scaler (Ops/Marketing Partner)",
+        "context": {
+          "background": "Direct partner at firm. Handles all operations and marketing (100% his capital). Grew previous firm to $5M annually. 120+ clients in less than a year (all referral).",
+          "current_state": "Building platform for long-term scale. Has intake dialed in. Wants predictable marketing system."
+        },
+        "pain_points": [
+          "Referrals are great but not predictable",
+          "Wants to mitigate risk with consistent lead flow",
+          "Needs to be able to predict and plan financially",
+          "New firm (less than a year old)"
+        ],
+        "budget": "$30,000 initial",
+        "deal_size": "$30,000+ (likely $25,000+)",
+        "timeline": "Call cut short (connection issues). Requested proposal.",
+        "what_resonated": [
+          "End-to-end case acquisition model",
+          "Patrick's $350/signup service",
+          "$3,500 acquisition cost in California",
+          "10% conversion rate",
+          "API integration available"
+        ],
+        "quotes": [
+          "I do believe a lot in marketing. Any company I've had... I typically implement the marketing side",
+          "If I can mitigate risk and predict stuff that's gonna happen for the company... it helps me with investing, with planning"
+        ],
+        "recommended_next_action": "Send proposal with Patrick CC'd. Emphasize platform building, API integration, and scalability. High-value Fast Scaler - prioritize.",
+        "close_probability": "HIGH - 80%",
+        "deal_breaker_watch": "None identified. Decision maker with budget."
+      }
+    ],
+    "IN_PROGRESS": [
+      {
+        "name": "Daniel Ramirez",
+        "firm": "Rey de la Ley",
+        "website": "reydelaley.com",
+        "location": "Dallas, Texas (20 years) - Expanding to Houston",
+        "avatar_type": "Solo Transitioner / The Expansionist",
+        "context": {
+          "background": "Has Dallas office for 20 years. Doing $1M+ in attorney fees annually. ~10 MVA cases/month. Primarily Spanish-speaking clients. Full staff in Dallas.",
+          "current_state": "Just moved to Houston area. Wants to start office there. Needs signed cases initially to minimize Houston staff."
+        },
+        "pain_points": [
+          "Starting new Houston office from scratch",
+          "Needs to minimize staff expenses at beginning",
+          "Wants signed cases (not leads) initially",
+          "Needs Spanish-speaking intake person in Houston",
+          "Needs office space before launching"
+        ],
+        "budget": "$15,000 minimum",
+        "deal_size": "$15,000+ with expansion potential to 15-20 cases/month",
+        "timeline": "1 week follow-up - Needs office and intake person first",
+        "what_resonated": [
+          "Patrick's signed case service ($350/case)",
+          "Spanish leads are $100-$150 cheaper per acquisition",
+          "Patrick's training goal (eventually transition to internal intake)",
+          "Cases on Demand - seen them for a long time",
+          "Minimize staff by using signed cases"
+        ],
+        "quotes": [
+          "I want to start an office here in the Houston area... I want signed cases at the beginning",
+          "We do a lot of Spanish speaker cases. That's been our bread and butter",
+          "I want to minimize staff expenses at the beginning",
+          "Check back with me about a week from this, see where we're at"
+        ],
+        "recommended_next_action": "Follow up in 1 week as agreed. Check on office and intake person progress. Prepare Spanish-focused campaign proposal. Position Patrick's training as path to internal intake.",
+        "close_probability": "HIGH - 75% (once office is ready)",
+        "deal_breaker_watch": "Logistics (office, intake person) - not sales objections"
+      },
+      {
+        "name": "Josh Sweeney",
+        "firm": "Shane Smith Law",
+        "website": "shanesmithlaw.com",
+        "location": "Atlanta, Georgia - Expanding to North Carolina",
+        "avatar_type": "Channel Strategist / Volume King",
+        "context": {
+          "background": "15 different lead sources already. Full intake team. Looking for different channels they're NOT on. Getting duplicates and overlap.",
+          "current_state": "Strong intake team (50 calls before stopping). Higher conversion rates than most clients. Budget increasing monthly/quarterly."
+        },
+        "pain_points": [
+          "Getting duplicates from overlapping vendors",
+          "Has 3 Meta vendors already - starting to overlap",
+          "Looking for pure play on YouTube or TikTok",
+          "Needs geofencing for specific cities (Charlotte overflow)",
+          "Doesn't want to be 'test dummy' on new channels"
+        ],
+        "budget": "$30,000+ (budget increasing monthly/quarterly)",
+        "deal_size": "High volume - leads only (has intake)",
+        "timeline": "Next week follow-up. Leadership meeting to determine budget.",
+        "what_resonated": [
+          "Dedicated channels (exclusivity)",
+          "YouTube/TikTok/SEO projects",
+          "ChatGPT ads coming soon",
+          "North Carolina focus"
+        ],
+        "quotes": [
+          "We have leads coming in from 15 different sources",
+          "I'm mostly curious about your non-meta ads... Can somebody make another channel work?",
+          "We're starting to get duplicates and overlap",
+          "What other channels should we be on?"
+        ],
+        "recommended_next_action": "Provide data on YouTube-only vs Meta conversion rates. Show channel isolation capabilities. Prove non-Meta channel effectiveness before pitch.",
+        "close_probability": "MEDIUM - 50% (requires channel differentiation proof)",
+        "deal_breaker_watch": "Overlap with existing vendors. Can't prove YouTube/TikTok-only performance."
+      },
+      {
+        "name": "Michael Shirts",
+        "firm": "BS Injury Law",
+        "website": "bsinjurylaw.com",
+        "location": "Las Vegas, Nevada (20+ years in legal community)",
+        "avatar_type": "Cautious New Buyer (Burned Veteran-lite)",
+        "context": {
+          "background": "Been in legal community 15-18 years. Primarily referral-based. Tried ONE lead vendor (Law Pronation) - complete failure.",
+          "current_state": "Nothing currently. Law Pronation was waste of time and money. Looking for live transfers with quality."
+        },
+        "pain_points": [
+          "Law Pronation disaster - out of state leads, 6-month-old accidents, no treatment",
+          "Rarely got anyone to pick up phone on follow-ups",
+          "Insurance companies in Nevada focused on treatment gaps",
+          "Vegas saturated with PI firms",
+          "Wants treatment within first week ideally (30 days max)",
+          "Wants firm branding on ads"
+        ],
+        "budget": "$15,000 minimum",
+        "deal_size": "$15,000 initial",
+        "timeline": "Scheduled Patrick call for 1:30 PM next day (10:30 AM Pacific)",
+        "what_resonated": [
+          "Patrick's live transfer or signed case service",
+          "$30M in pixel data = seasoned, quality leads",
+          "Dedicated channels = firm branding possible",
+          "Cases on Demand testimonials",
+          "$2,000 cost per case with good intake"
+        ],
+        "quotes": [
+          "Law Pronation was a waste of time and money",
+          "Ones that did pick up were out of state or the accident was six months ago without treatment",
+          "I'd like to see them at least go to urgent care within the first week",
+          "Is there an opportunity to have it branded with our firm name?"
+        ],
+        "recommended_next_action": "Follow up on Patrick call outcome. He was scheduled with Patrick. Emphasize dedicated channels and firm branding. Address Law Pronation trauma with quality assurances.",
+        "close_probability": "HIGH - 70%",
+        "deal_breaker_watch": "Shared leads, out-of-state leads, old accidents, no treatment verification"
+      },
+      {
+        "name": "Michael Schulz",
+        "status": "NO TRANSCRIPT DATA FOUND",
+        "notes": "Listed as IN PROGRESS but no call transcript or notes found in /home/ec2-user/data/. May need to search CRM or other sources for context.",
+        "recommended_next_action": "Search CRM/HubSpot for Michael Schulz contact history. Request call notes from sales team.",
+        "avatar_type": "UNKNOWN - requires research",
+        "close_probability": "UNKNOWN"
+      },
+      {
+        "name": "Joan Suh",
+        "status": "NO TRANSCRIPT DATA FOUND",
+        "notes": "Listed as IN PROGRESS but no call transcript or notes found in /home/ec2-user/data/. May need to search CRM or other sources for context.",
+        "recommended_next_action": "Search CRM/HubSpot for Joan Suh contact history. Request call notes from sales team.",
+        "avatar_type": "UNKNOWN - requires research",
+        "close_probability": "UNKNOWN"
+      }
+    ],
+    "CLOSED": [
+      {
+        "name": "Jason E",
+        "firm": "Eisenberg Law Group PC",
+        "website": "eisenberglawgrouppc.com",
+        "location": "California",
+        "avatar_type": "Fast Scaler (Returning Client)",
+        "context": {
+          "background": "Returning client. Worked with Cases on Demand multiple times over 5 years. Got a $2 MILLION case from them previously. Grown tremendously over past 5-7 years.",
+          "current_state": "Ready to restart. 'Mixed bag of results' before but the $2M case 'paid for itself'."
+        },
+        "deal_details": {
+          "amount": "$31,750 total",
+          "breakdown": {
+            "media_buy": "$30,000",
+            "patrick_signup_deposit": "$1,750 (5 cases @ $350)"
+          },
+          "payment_method": "Amex on file (ACH)",
+          "timeline": "Campaign live first thing Monday"
+        },
+        "pain_points_addressed": [
+          "Treatment gap concerns (30 days max agreed)",
+          "SB 37 compliance (dedicated 1:1 campaigns)",
+          "Lead quality distribution (not shared with bigger firms)",
+          "Inconsistent results from past (Patrick solves this)"
+        ],
+        "what_closed_the_deal": [
+          "Patrick on the call - former intake director credibility",
+          "All-inclusive positioning",
+          "Dedicated 1:1 campaigns (SB 37 compliant)",
+          "Previous $2M case = baseline trust",
+          "Max's relationship from 5 years of working together",
+          "Hotline for edge cases",
+          "15% commercial policies in leads (Uber, trucking)"
+        ],
+        "quotes": [
+          "I did get a $2 million case with you guys. So I paid for myself.",
+          "I think we should give it a shot.",
+          "I would love to get up and running as soon as possible.",
+          "Let's find another four, $5 million deal this time!"
+        ],
+        "criteria_agreed": {
+          "treatment_gap_max": "30 days (unless legitimate excuse like pregnancy/military)",
+          "coverage": "Insurance on both sides or uninsured motorist",
+          "liability": "Relatively well established",
+          "recency": "Within 30-60 days preferred"
+        },
+        "lessons_learned": [
+          "Returning clients close FAST when Patrick is on the call",
+          "Previous big win ($2M case) creates massive trust",
+          "All-inclusive model removes friction",
+          "Performance-based pricing ($350/case) aligns incentives"
+        ]
+      }
+    ]
+  },
+  "avatar_framework": {
+    "avatar_1_fast_scaler": {
+      "description": "Growing firms with proven intake systems, budget available, understand digital marketing ROI, ready to scale immediately",
+      "close_rate": "100% (2/2 in data)",
+      "average_deal_size": "$27,500",
+      "profit_margin": "HIGHEST",
+      "key_selling_points": [
+        "Results and scale ($30M ad spend, 8-figure revenue)",
+        "Patrick's expertise",
+        "Cost per CASE focus (not cost per lead)",
+        "Path to scale ($30K → $100K+)"
+      ],
+      "prospects_in_category": ["Jason E (CLOSED)", "Lucas Naccarati", "Ross Robin"]
+    },
+    "avatar_2_burned_veteran": {
+      "description": "Experienced buyers with bad vendor history. Demands contractual protections. Deep skepticism.",
+      "close_rate": "25% (without guarantees), higher with written guarantees",
+      "average_deal_size": "$15,000",
+      "profit_margin": "MEDIUM",
+      "key_selling_points": [
+        "Acknowledge their pain",
+        "Guaranteed minimums in WRITING",
+        "Transparency about margins",
+        "Patrick intro builds trust",
+        "Credits for bad leads"
+      ],
+      "prospects_in_category": ["Rich Hyde", "Scott Barney", "Michael Shirts"]
+    },
+    "avatar_3_solo_transitioner": {
+      "description": "Solo practitioners going independent. Cautious budget. Needs confidence building.",
+      "close_rate": "50%",
+      "average_deal_size": "$17,500",
+      "profit_margin": "MEDIUM-LOW initially, good upsell potential",
+      "key_selling_points": [
+        "Pay-per-lead initially",
+        "Small test (25-50 leads)",
+        "Transition path to media buy",
+        "Patrick saves their time"
+      ],
+      "prospects_in_category": ["Dagmawi Getachew", "Daniel Ramirez"]
+    },
+    "avatar_4_sophisticated_buyer": {
+      "description": "Multi-state firms, comparison shopping, high standards, need differentiation",
+      "close_rate": "0% immediately, high future potential",
+      "average_deal_size": "$50,000+",
+      "profit_margin": "VERY HIGH",
+      "key_selling_points": [
+        "Clear differentiation (Patrick is key)",
+        "Competitive intelligence",
+        "State prioritization",
+        "Data and metrics"
+      ],
+      "prospects_in_category": ["Omeed Hakimianpour", "Josh Sweeney"]
+    },
+    "avatar_5_expansionist": {
+      "description": "Young firms/partners aggressively scaling. Values time over nickels. Wants done-for-you.",
+      "close_rate": "HIGH when intake is included",
+      "average_deal_size": "$50,000+ (multi-state)",
+      "profit_margin": "HIGH",
+      "key_selling_points": [
+        "Done-for-you intake engine",
+        "Speed - expand quickly",
+        "Multi-state capability",
+        "Coast-to-coast leads"
+      ],
+      "prospects_in_category": ["Jalal Abdallah"]
+    }
+  },
+  "key_insights": {
+    "patrick_is_the_differentiator": "In 90%+ of calls, Patrick's background as 'former director of intake' was the #1 trust builder",
+    "guaranteed_minimums_close_burned_veterans": "Offering to put minimum case counts in writing converts skeptical buyers",
+    "done_for_you_closes_solos": "Solo practitioners hate chasing leads - Patrick's service is perfect fit",
+    "sb37_compliance_critical_for_california": "California buyers need verified compliance, disclaimers, 72-hour cure rule",
+    "spanish_leads_cheaper": "Spanish-speaking leads are $100-$150 cheaper per acquisition cost"
+  },
+  "priority_follow_ups": [
+    {
+      "rank": 1,
+      "name": "Scott Barney",
+      "action": "Check Patrick call outcome (was scheduled 2:30 PM). Close immediately if positive.",
+      "urgency": "IMMEDIATE"
+    },
+    {
+      "rank": 2,
+      "name": "Michael Shirts",
+      "action": "Check Patrick call outcome (was scheduled 1:30 PM). Address Law Pronation trauma.",
+      "urgency": "IMMEDIATE"
+    },
+    {
+      "rank": 3,
+      "name": "Lucas Naccarati",
+      "action": "Send proposal with Patrick CC. High-value Fast Scaler.",
+      "urgency": "TODAY"
+    },
+    {
+      "rank": 4,
+      "name": "Ross Robin",
+      "action": "Follow up on email. Schedule Patrick call.",
+      "urgency": "TODAY"
+    },
+    {
+      "rank": 5,
+      "name": "Rich Hyde",
+      "action": "Send proposal WITH GUARANTEES in writing. Max case cost cap.",
+      "urgency": "TODAY"
+    },
+    {
+      "rank": 6,
+      "name": "Jalal Abdallah",
+      "action": "Follow up Wednesday as scheduled. Prepare CA + MI proposal for brother.",
+      "urgency": "WEDNESDAY"
+    },
+    {
+      "rank": 7,
+      "name": "Omeed Hakimianpour",
+      "action": "Send summary email. Connect with Patrick. Follow up mid-next week.",
+      "urgency": "MID-WEEK"
+    },
+    {
+      "rank": 8,
+      "name": "Dagmawi Getachew",
+      "action": "Follow up on pay-per-lead decision. He said 'couple days'.",
+      "urgency": "2-3 DAYS"
+    },
+    {
+      "rank": 9,
+      "name": "Daniel Ramirez",
+      "action": "Follow up in 1 week on office/intake person progress.",
+      "urgency": "1 WEEK"
+    },
+    {
+      "rank": 10,
+      "name": "Josh Sweeney",
+      "action": "Prepare YouTube/TikTok-only channel data. Follow up next week.",
+      "urgency": "NEXT WEEK"
+    }
+  ]
+}

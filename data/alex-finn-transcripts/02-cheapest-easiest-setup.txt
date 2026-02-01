@@ -1,0 +1,161 @@
+Video: This is the CHEAPEST and EASIEST way to set up ClawdBot
+URL: https://www.youtube.com/watch?v=04wh2Hlgbds
+Channel: Alex Finn
+================================================================================
+
+Clawdbot is the most important technology you should be using in 2026. It's literally an AI employee that works for you 24/7, 365, and it is changing many people's lives, including my own. The issue is it is incredibly difficult and expensive to set up if you do not know what you're doing. In this video, I'll go through a way of setting up CloudBot that's so simple and so cheap, it'll save you a ton of money and time, and anyone will be able to do it. I'll also go over the first few workflows you should use with Claudebot. Whether you've never used Claudebot before or you're Claudebot pro, you have a ton to learn from this video. Let's lock in and get into it.
+
+So, everyone is going out and buying Mac minis to use for Cloudbot. It's what I did. I actually just returned my Mac Mini to buy a Mac Studio. But that's not the only way to run Claudebot. There are significantly cheaper ways, especially if you want to a save money or b just dip your toes and see if Claudebot is for you because this is a brand new radical technology. If you are one of those people where you're just trying to save time, you don't want to buy a new computer or you just want to save a little money, this is the right way to do it.
+
+We are going to be able to host our Cloudbot on the internet. So, we do not need to buy any hardware. I'm going to put the link down for this below. You can do this alongside with me if you want to, or you can watch this, then go out and do it right after.
+
+HOSTING ON AMAZON EC2:
+
+So, we are going to get Claudebot up and running on Amazon EC2. Amazon EC2 is a virtual server where we'll be able to install Claudebot, then have it run 24/7 for us, doing work, being our employee. This might look a little technical, but I promise if you stick with me, I'll make this as easy as possible for you. Anyone should be able to set this up.
+
+STEP-BY-STEP SETUP:
+
+1. Go to the link I have down below for Amazon EC2. Create an account here. Once you signed in or created your account, search for EC2 at the top, virtual servers in the cloud.
+
+2. Click on that, then go down and click "launch instance"
+
+3. Name our server - we can name it "Claudebot"
+
+4. Choose Ubuntu for this (Linux server)
+
+5. Choose tier - Click the drop down, choose "Flex Large" (C7i Flex large)
+   - Could be free with low usage
+   - Around $15-25/month with fair amount of usage
+
+6. Set storage to 30 gigabytes
+
+7. Create key pair:
+   - Give it a name (e.g., "claudebot key")
+   - Make sure RSA is selected
+   - Use PM if on Mac or Linux
+   - Use PPK if on Windows
+   - This downloads a file - keep it safe (your password for connecting)
+
+8. Network settings:
+   - Check "create security group"
+   - Check "allow SSH traffic"
+   - Click edit, add security group rule
+   - Custom TCP, Port range: 18789
+   - Source type: anywhere
+
+9. Click "launch instance"
+
+10. Go to "view all instances", click on instance ID
+
+11. Click "connect" then "connect" again in bottom right
+
+12. This opens the console - paste the Claudebot installation command from docs
+
+MODEL SELECTION (CHEAPEST OPTIONS):
+
+The point of this video is showing you the absolute cheapest way to use Claudebot.
+
+Option 1: Use existing subscriptions (cheapest if you already pay)
+- If you already pay for Claude Max or ChatGPT subscription
+- Choose OAuth option - gives you a command to reveal a key
+- Put that command in your terminal to get the OAuth key
+
+Option 2: MiniMax (absolute cheapest new model)
+- Very inexpensive to use
+- Recommended by Claudebot creator Peter Steinberger
+- Issue: Not nearly as intelligent or personable as Claude Opus
+- Can be unreliable
+
+Option 3: ChatGPT API (best cost/results balance)
+- Sign up at platform.openai.com
+- Go to dashboard > API keys > create new key
+- Choose GPT 5.2 for best balance of cost to intelligence
+- Need credit card for API charges
+
+Option 4: Claude Opus ($200/month)
+- Greatest AI model created of all time
+- Best performance on planet Earth
+- Most expensive option
+
+CHANNEL SETUP:
+
+Set up your messaging channel:
+- Telegram (recommended)
+- WhatsApp (recommended)
+- Discord
+- Others available
+
+This is where you'll text your 24/7 agent.
+
+ONBOARDING YOUR CLAWDBOT:
+
+1. Name your Clawdbot (example: "Jones")
+2. Define the role (assistant, chief of staff, etc.)
+3. Set the vibe (blunt, warm, somewhere in between)
+4. Choose a signature emoji (lion, owl, etc.)
+5. Tell it your name and timezone
+
+FIRST WORKFLOWS TO SET UP:
+
+1. MASSIVE BRAIN DUMP:
+First thing everyone should do - brain dump on who you are:
+- Your business
+- Your family
+- Relationships
+- What you like
+- Your hobbies
+- What you do for work
+- How you want to make money
+- Your dreams and aspirations
+Everything you tell it, it will remember. More = better.
+
+2. SET UP MORNING BRIEF:
+Prompt: "I want to create a morning brief that you text me every day. Please let me know any news going on in the world that is relevant to me. The weather in [your location] and tasks you can do today that will be helpful. And tasks I should do that will advance my career."
+
+Example: Alex's Claudebot researches competitors on YouTube, tells him trending news/stories, gives content creation ideas.
+
+3. MONITOR YOUR EMAIL:
+Prompt: "Please monitor my email for me and send me a summary of my emails at the end of every day."
+
+Claudebot will walk you through the setup (Gmail API key, etc.). If you get confused, just say "Hey, I don't know what I'm doing here. Can you help me out?"
+
+4. INTERVIEW YOUR CLAWDBOT:
+Prompt: "Based on what you know about me, what are five workflows and tasks you can do for me every day? These can include connectors or skills we don't have yet."
+
+This uncovers the "unknown unknowns" - Claude looks at your memories and finds helpful tasks. Then say "Hey, do that task for me every day at [time]. Then text me about it."
+
+AWS VS MAC MINI TRADE-OFFS:
+
+AWS (Cloud):
+- Much faster setup
+- No hardware purchase needed
+- $15-25/month
+- Cheaper upfront
+- Need to set up connectors for each tool
+- Good for "dipping toes"
+
+Mac Mini/Studio:
+- $600+ upfront
+- Everything on computer accessible automatically
+- No monthly hosting fees
+- Better if you're committed
+
+COST SUMMARY:
+
+- AWS instance: ~$15-20/month depending on usage
+- MiniMax: Very cheap but unreliable
+- ChatGPT API: Best balance of cost/quality
+- Claude Max: $200/month for best performance
+
+This is the quickest, easiest, cheapest way to get Claudebot set up. No matter what device you have, this will work for you.
+
+KEY TAKEAWAYS:
+
+1. Don't need expensive hardware to start
+2. Brain dump everything about yourself first
+3. Set up morning brief for daily value
+4. Interview Clawdbot for workflow ideas
+5. Schedule tasks to automate your life
+6. Not knowing how to do things is not an excuse - just ask Clawdbot
+
+================================================================================

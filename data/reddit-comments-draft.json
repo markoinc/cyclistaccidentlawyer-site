@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "created_date": "2026-01-30",
+    "purpose": "Drafted Reddit comments for PI lead gen threads - client acquisition",
+    "approach": "Genuinely helpful expert perspective, not sales pitches",
+    "status": "DRAFT - Review before posting"
+  },
+  "comments": [
+    {
+      "thread_title": "Buying leads for personal injury?",
+      "thread_url": "https://www.reddit.com/r/LawFirm/comments/1m7gbdv/buying_leads_for_personal_injury/",
+      "subreddit": "r/LawFirm",
+      "posted_date": "July 2025",
+      "pain_point_addressed": "The 'roulette table' unpredictability of buying PI leads - people feel like they're gambling with marketing dollars",
+      "drafted_comment": "The 'roulette table' analogy is apt for most lead sources, but it doesn't have to be that way. The difference usually comes down to three things:\n\n**1. Exclusive vs. shared leads.** Shared leads get sent to 3-5 firms simultaneously. By the time you call, someone else already signed them. Exclusive leads convert 25-40% higher in my experience.\n\n**2. Speed to lead.** This is where most firms fail. If your intake isn't calling within 5 minutes, you're losing half your conversions right there. The best operators I've seen do 18 touches over 9 days on every lead.\n\n**3. Knowing your real CPA.** Most firms track cost-per-lead ($150-300 for MVA). But what matters is cost-per-signed-case. If you're converting at 10-15% on quality exclusive leads, a $300 lead is really a $2,000-$3,000 signed case. That math works.\n\nLSAs are good but they've gotten expensive in competitive markets ($140-340/lead depending on market) and you need a ton of reviews to rank.\n\nThe real question isn't 'should I buy leads' - it's 'do I have the intake infrastructure to convert them?' A lot of solos would be better off paying for intake help than paying for more leads.",
+      "why_this_adds_value": "Provides specific, actionable framework (3 factors) with real numbers. Doesn't push any service - just shares expertise. Addresses the underlying problem (intake) that most commenters miss."
+    },
+    {
+      "thread_title": "Paying For Leads",
+      "thread_url": "https://www.reddit.com/r/LawFirm/comments/1i4azgy/paying_for_leads/",
+      "subreddit": "r/LawFirm",
+      "posted_date": "January 2025",
+      "pain_point_addressed": "Uncertainty about whether paying for leads is worth it vs referrals/networking",
+      "drafted_comment": "The referral/chiro network approach is solid and has the highest conversion rate of any channel (because they're pre-qualified and warm). But it doesn't scale predictably - you're at the mercy of your network's caseload.\n\nFor paid leads, here's what I've seen work:\n\n- **Test before you commit.** Any vendor worth working with should offer a capped pilot ($15-25k range) instead of a long-term retainer. If they won't prove ROI before locking you in, that's a red flag.\n\n- **Demand transparency.** Ask what your actual ad spend is vs. their management fee. A lot of agencies won't tell you. The good ones operate on ~20% management fee and show you exactly where the money goes.\n\n- **Track cost per SIGNED case, not cost per lead.** A $200 lead with 15% conversion is a $1,333 CPA. A $100 lead with 5% conversion is $2,000 CPA. The cheap leads are often more expensive.\n\n- **Intake speed matters more than lead quality.** I've seen firms double their conversion rate just by getting call-back time under 5 minutes. Most 'bad leads' are actually leads that went cold because nobody called fast enough.\n\nReferrals + a small paid channel that you've validated with a pilot = most sustainable growth model for smaller PI firms.",
+      "why_this_adds_value": "Balanced perspective that validates referrals while explaining how paid can work. Specific tactical advice (pilots, transparency, CPA tracking). Addresses the real issue: intake speed."
+    },
+    {
+      "thread_title": "Anyone use Case Connect for MVA leads?",
+      "thread_url": "https://www.reddit.com/r/LawFirm/comments/yytuf9/anyone_use_case_connect_for_mva_leads/",
+      "subreddit": "r/LawFirm",
+      "posted_date": "November 2022 (evergreen complaints)",
+      "pain_point_addressed": "Concerns about Case Connect's advertising practices, ethics, and lead quality",
+      "drafted_comment": "The advertising ethics issue is a real concern with several lead vendors. If your name is attached to ads that misrepresent settlement amounts or make guarantees, that's a bar complaint waiting to happen.\n\nBefore signing with any lead gen company, ask to see the actual ads they'll run. If they won't show you, walk away. Also:\n\n- **Verify the leads are exclusive.** A lot of vendors sell the same lead to multiple firms and call it 'exclusive' because you're the only one in that specific county or whatever technicality.\n\n- **Ask about their qualification process.** Do they verify treatment status? Insurance coverage? Incident recency? Or are they just collecting form fills and calling them 'leads'?\n\n- **Understand the replacement policy.** If a lead is garbage (already represented, no injury, wrong jurisdiction), do you get a credit or replacement? Some vendors have 'no refund' policies.\n\n- **Check for OTP verification.** One-time password verification on phone numbers eliminates a huge chunk of fake/spam leads.\n\nThe bar has been pretty clear on this stuff in multiple states. SB 37 in California, for example, has specific requirements. If a vendor is playing fast and loose with advertising, they're probably playing fast and loose with lead quality too.",
+      "why_this_adds_value": "Validates their concerns with specific, protective advice. Provides checklist for vetting vendors. Mentions compliance (SB 37) which shows expertise. Doesn't bash Case Connect directly - focuses on what to look for."
+    },
+    {
+      "thread_title": "Scorpion…any insights on leaving?",
+      "thread_url": "https://www.reddit.com/r/LawFirm/comments/t1zfek/scorpionany_insights_on_leaving/",
+      "subreddit": "r/LawFirm",
+      "posted_date": "February 2022 (evergreen issue)",
+      "pain_point_addressed": "Firms trapped in Scorpion contracts, losing website ownership, difficulty leaving",
+      "drafted_comment": "The website ownership issue is the biggest trap. Before signing with ANY agency, confirm in writing that:\n\n1. **You own the domain** (registered in your name, not theirs)\n2. **You own the website files/code** (and can transfer to any host)\n3. **You own your Google Ads account** (with full admin access, not their MCC)\n4. **You keep your tracking/pixel data** (this is actually valuable)\n\nScorpion and FindLaw are the most notorious for holding firms hostage, but it's an industry-wide problem. A lot of lawyers sign agreements without reading the IP clauses.\n\nFor leaving: \n- Get everything in writing about what you'll receive on exit\n- Export your Google Analytics data before canceling\n- Screenshot your Google Ads performance history\n- Get a list of all backlinks to your current site\n- Have a new site ready to launch the day you leave\n\nThe transition period is when you're most vulnerable. Some firms see their rankings tank because the old agency strips everything. Plan the exit like you'd plan a case - document everything, assume bad faith, and have your next move ready.\n\nAlso worth noting: you probably don't need an agency that big. A good independent SEO consultant + basic PPC management often outperforms these mega-agencies at 1/3 the cost.",
+      "why_this_adds_value": "Specific, protective checklist. Tactical exit advice. Positions as someone who understands both legal and marketing sides. Suggests alternatives without naming specific vendors."
+    },
+    {
+      "thread_title": "PI Firm Owners - How much do you spend a month on marketing?",
+      "thread_url": "https://www.reddit.com/r/LawFirm/comments/1d9cf2r/pi_firm_owners_how_much_do_you_spend_a_month_on/",
+      "subreddit": "r/LawFirm",
+      "posted_date": "June 2024",
+      "pain_point_addressed": "Uncertainty about scaling marketing spend from $10-12k/month",
+      "drafted_comment": "The common guidance is 18-20% of revenue for marketing, but that's backward thinking. Better framework:\n\n**What's your cost per signed case, and what's your LTV?**\n\nIf your average case fee is $10-15k (33% of $30-45k settlement) and you're acquiring cases at $2,500 each, you've got a 4-6x ROI. Scale that until the math stops working.\n\nFor SoCal specifically, expect higher CPAs than most markets. PI keywords in LA/OC can hit $200-300/click. Most firms I've seen there are comfortable at $3,500-5,000 per signed case because case values tend to be higher.\n\nBefore ramping from $10k to $30k+, I'd ask:\n\n1. **Is your intake keeping up?** Throwing more money at lead gen when intake is the bottleneck just burns cash. What's your speed-to-lead? Contact rate? Conversion rate?\n\n2. **What's working now?** Don't just 'scale' - identify which channels have the best CPA and double down there first.\n\n3. **Can you test before committing?** Any new channel should prove itself with a $15-25k capped pilot before you commit to ongoing spend.\n\n4. **Are your leads exclusive?** If you're buying shared leads, scaling just means racing more people to the phone.\n\nI've seen firms go from $10k to $50k/month successfully, but usually they spent 3-6 months dialing in their intake and tracking first. The firms that just dump more money in without fixing the funnel tend to regret it.",
+      "why_this_adds_value": "Answers the actual question with specific numbers relevant to their market (SoCal). Provides decision framework instead of just a number. Emphasizes intake - the differentiator they should focus on."
+    },
+    {
+      "thread_title": "Has anyone worked with a marketing agency for a law firm? Looking for real feedback.",
+      "thread_url": "https://www.reddit.com/r/Lawyertalk/comments/1o8dyei/has_anyone_worked_with_a_marketing_agency_for_a/",
+      "subreddit": "r/Lawyertalk",
+      "posted_date": "October 2025",
+      "pain_point_addressed": "Difficulty separating agencies that deliver vs those just rebranding generic services",
+      "drafted_comment": "The challenge is that ~80% of legal marketing agencies are essentially the same - generic services with a legal skin. Here's how to spot the difference:\n\n**Red flags:**\n- Long-term contracts upfront (12-24 months before proving results)\n- Won't show you actual ad creative before you sign\n- Can't tell you their average cost per signed case for firms like yours\n- Vague about what percentage is ad spend vs. their fee\n- You don't own your domain, website, or ad accounts\n- No clear replacement/credit policy for bad leads\n\n**Green flags:**\n- Offer a capped pilot ($15-25k) to prove results before ongoing commitment\n- Transparent about margins (good agencies operate around 20% management fee)\n- Can cite specific CPAs by market and practice area\n- You own everything - domain, site, accounts, data\n- Have expertise in intake, not just marketing (lead gen without intake optimization is waste)\n\n**Questions I'd ask:**\n1. What's your average cost per signed case for PI in [my market]?\n2. What's the difference between your ad spend and your management fee?\n3. Can you show me the ads you'd run before I commit?\n4. Who owns the website/domain/accounts if we part ways?\n5. What's your lead replacement policy?\n\nThe best operators I've seen actually started on the intake side (call centers, legal ops) and moved into lead gen because they understood the full funnel. Pure marketing agencies often don't understand that a lead is worthless if nobody answers the phone in 5 minutes.",
+      "why_this_adds_value": "Direct answer to their question with specific vetting criteria. Red flags AND green flags. Specific questions to ask. Insight about intake being the real differentiator."
+    }
+  ],
+  "posting_notes": {
+    "timing": "Spread posts out over 2-3 days to avoid looking spammy",
+    "account_age": "Use an account with some history, not a new account",
+    "engagement": "Reply to follow-up questions to build credibility",
+    "never_do": [
+      "Link to any website or service",
+      "Mention company names directly",
+      "Use sales language like 'DM me' or 'happy to chat'",
+      "Over-post in the same subreddit"
+    ],
+    "follow_up_opportunity": "If someone asks 'who do you recommend?' - can continue conversation naturally"
+  }
+}

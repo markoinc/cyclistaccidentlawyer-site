@@ -1,0 +1,69 @@
+=====================================
+BOT GOALS TAB → Actions Setup
+=====================================
+
+1. APPOINTMENT BOOKING ✅ (Primary Action)
+   - Enable: YES
+   - Calendar: Select your sales call calendar
+   - Trigger phrase: "book a call", "schedule a call", "find a time", "set up a meeting"
+   - Send booking link: YES (sends direct link instead of showing slots)
+   - Pause bot after booking: YES
+
+2. CONTACT INFO COLLECTION ✅
+   - Enable: YES
+   - Collect: Email, Phone, Name, State
+   - Trigger: When they want info sent instead of booking
+   - Example: "What's the best email to send that to?"
+
+3. HUMAN HANDOVER ✅
+   - Enable: YES
+   - Trigger phrases: "talk to a human", "real person", "speak to someone"
+   - Also trigger when: Bot is stuck, prospect is frustrated, complex questions
+   - Notify: Your team's notification channel
+
+4. STOP BOT ✅
+   - Enable: YES
+   - Trigger: When human takes over manually
+   - Also stops: After appointment booked, after handover
+
+5. TRIGGER WORKFLOW ✅
+   - Enable: YES
+   - Workflows to connect:
+     a) "New Lead" workflow → triggers when contact info collected
+     b) "Call Booked" workflow → triggers after appointment
+     c) "Send Info Packet" workflow → when they want info without booking
+
+6. AUTO FOLLOW UP ⚠️
+   - Enable: OPTIONAL
+   - Use if: Conversation goes cold (no response 24h+)
+   - Message: "Hey, just checking in — still interested in learning about our MVA leads? Happy to answer any questions or find a time to chat."
+
+7. TRANSFER BOT ❌
+   - Enable: NO (unless you have multiple specialized bots)
+
+=====================================
+RECOMMENDED WORKFLOW TRIGGERS
+=====================================
+
+When prospect books call:
+→ Send confirmation email
+→ Add to "Sales Pipeline" in CRM
+→ Send reminder 1 hour before
+
+When prospect wants info (no booking):
+→ Send info packet email
+→ Add to "Nurture" sequence
+→ Follow up in 3 days
+
+When human handover:
+→ Notify sales team (Slack/email)
+→ Tag contact as "Needs Human"
+
+=====================================
+QUICK SETUP CHECKLIST
+=====================================
+[ ] Connect your booking calendar
+[ ] Set up "Send Info Packet" workflow
+[ ] Set up "Call Booked" confirmation workflow  
+[ ] Configure human handover notifications
+[ ] Test each action with Bot Trial

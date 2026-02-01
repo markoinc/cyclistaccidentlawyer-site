@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0b;
+  --foreground: #fafafa;
+  --muted: #71717a;
+  --border: #27272a;
+  --accent: #6366f1;
+  --accent-muted: #4f46e5;
+  --card: #18181b;
+  --card-hover: #1f1f23;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+  border-radius: 3px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Markdown Styles */
+.prose {
+  color: #e4e4e7;
+  max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #fafafa;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h1 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose p {
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose code {
+  background: #27272a;
+  color: #a5b4fc;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.prose pre {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #a1a1aa;
+  font-style: italic;
+}
+
+.prose hr {
+  border-color: #27272a;
+  margin: 2rem 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose th, .prose td {
+  border: 1px solid #27272a;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.prose th {
+  background: #18181b;
+  font-weight: 600;
+}
+
+/* Highlight.js overrides for dark theme */
+.hljs {
+  background: transparent !important;
+}
+
+.hljs-keyword { color: #c084fc; }
+.hljs-string { color: #86efac; }
+.hljs-number { color: #fbbf24; }
+.hljs-comment { color: #71717a; }
+.hljs-function { color: #60a5fa; }
+.hljs-class { color: #f472b6; }
+.hljs-variable { color: #f87171; }

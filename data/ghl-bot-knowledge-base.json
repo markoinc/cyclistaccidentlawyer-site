@@ -1,0 +1,125 @@
+{
+  "business_info": {
+    "name": "Kurios",
+    "website": "kuriosbrand.com / leads.kuriosbrand.com",
+    "service": "Exclusive MVA live transfers and leads for PI law firms",
+    "tagline": "We handle the dirty work. You sign retainers."
+  },
+  
+  "offer": {
+    "headline": "30 Qualified Calls in 30 Days — Guaranteed",
+    "sign_rate": "40-60%",
+    "cost_per_case": "~$2,000 average for established partners",
+    "exclusivity": "100% exclusive - never shared",
+    "contract": "No retainer, no long-term contract, cancel anytime",
+    "compliance": ["TCPA Compliant", "TrustedForm", "Jornaya"]
+  },
+  
+  "follow_up_system": {
+    "speed_to_lead": "Within 5 minutes of form submit",
+    "total_touches": 18,
+    "duration_days": 9,
+    "day_1_calls": 4,
+    "subsequent_days_calls": 3,
+    "includes_texts": true,
+    "description": "18 touches over 9 days. Zero leads left behind."
+  },
+  
+  "qualification_criteria": {
+    "clear_liability": true,
+    "treatment_window": "Within 21 days",
+    "no_existing_representation": true,
+    "verified_contact": "OTP-verified"
+  },
+  
+  "states_served": [
+    "Texas", "California", "Florida", "Arizona", "Louisiana",
+    "Pennsylvania", "Georgia", "New Mexico", "North Carolina", "New York"
+  ],
+  "total_states": "30+",
+  
+  "integrations": [
+    "Lead Docket", "Filevine", "Litify", "Salesforce", "Clio"
+  ],
+  
+  "differentiators": [
+    "100% exclusive leads - never shared",
+    "OTP-verified contact info",
+    "We do ALL follow-up - you just answer warm transfers",
+    "Pilot-based approach - prove ROI before scaling",
+    "Many clients with us 4+ years",
+    "Former director of intake running the team"
+  ],
+  
+  "faqs": [
+    {
+      "question": "What's the catch?",
+      "answer": "No catch — we make money when you sign cases. Our incentives are aligned. We do pilot batches so you can see results before committing."
+    },
+    {
+      "question": "How much does it cost?",
+      "answer": "Pricing depends on your state and volume. The team can walk you through exact numbers on a quick call."
+    },
+    {
+      "question": "Are the leads exclusive?",
+      "answer": "100% exclusive. Every lead we generate only goes to one firm. Never shared."
+    },
+    {
+      "question": "What's the minimum?",
+      "answer": "We have a minimum to make sure we can deliver meaningful results. The team can explain the options on a call."
+    },
+    {
+      "question": "How do I know the leads are real?",
+      "answer": "Every lead is OTP-verified (they confirm via text code) and goes through TrustedForm/Jornaya compliance. Real people, real contact info."
+    },
+    {
+      "question": "What states do you work in?",
+      "answer": "We're in 30+ states including Texas, California, Florida, Arizona, Louisiana, Pennsylvania, Georgia, and more."
+    },
+    {
+      "question": "I've been burned by lead vendors before",
+      "answer": "Totally understand — that's why we do pilot batches. Prove ROI first, then scale. No long contracts, cancel anytime."
+    },
+    {
+      "question": "What's the conversion rate?",
+      "answer": "Our live transfers see 40-60% sign rates because they're pre-qualified and warm transferred while still on the line."
+    },
+    {
+      "question": "How fast do you contact leads?",
+      "answer": "Within 5 minutes of form submit. Then 18 touches over 9 days. We do all the follow-up so your team just handles warm transfers."
+    },
+    {
+      "question": "Do you sign the cases?",
+      "answer": "We can do either — warm transfer to your intake, or full case signing through our partner team. Whatever works for your setup."
+    },
+    {
+      "question": "What CRMs do you integrate with?",
+      "answer": "Lead Docket, Filevine, Litify, Salesforce, Clio — or we can work with your existing system."
+    },
+    {
+      "question": "What if quality drops after the first month?",
+      "answer": "Same filters, always. We don't bait and switch. Our established partners have been with us 4+ years for a reason."
+    },
+    {
+      "question": "Can I start with a small test?",
+      "answer": "That's exactly how we prefer to start. Prove the numbers work, then scale."
+    }
+  ],
+  
+  "bot_guidelines": {
+    "goal": "Get prospects to book a call",
+    "do_not_reveal": ["Specific pricing", "Minimum commitments", "Detailed tier structure"],
+    "qualify_first": "Confirm they're a PI attorney or work for a PI firm",
+    "keep_responses_short": "1-3 sentences max",
+    "deflect_detailed_questions_to_call": true,
+    "handle_non_pi_politely": "We only work with personal injury law firms"
+  },
+  
+  "comparison_to_competitors": {
+    "shared_leads": "Never - ours are 100% exclusive",
+    "contact_quality": "OTP-verified vs take your chances",
+    "quality_consistency": "Same filters always vs classic bait & switch",
+    "contracts": "No long contracts vs 6-12 month minimum",
+    "cost_per_case": "~$2,000 vs $8-10K industry average"
+  }
+}

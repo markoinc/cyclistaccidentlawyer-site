@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "lastUpdated": "2026-01-31T08:15:00Z",
+    "version": "1.0",
+    "discoveredBy": "Sierra discovery swarm"
+  },
+  "business": {
+    "name": "KuriosBrand LLC",
+    "owner": "Mark Gundrum",
+    "address": "361 Falls Rd, Grafton, WI",
+    "focus": "MVA Lead Gen Client Acquisition",
+    "goal": "Stay out of the permanent underclass as AGI unfolds - own AI systems rather than compete with them"
+  },
+  "projects": {
+    "core": [
+      {
+        "name": "MVA Lead Gen",
+        "status": "active",
+        "priority": 1,
+        "description": "Motor vehicle accident leads for lawyers - primary business focus",
+        "partners": [
+          "Cases on Demand (Max & Jeremy)",
+          "Inquired Esquire (Patrick)"
+        ],
+        "metrics": {
+          "costPerCall": "$180-300",
+          "callsPerWeek": "5-7"
+        },
+        "pricing": {
+          "lead": "$250-350",
+          "signedCase": "~$2,000"
+        }
+      },
+      {
+        "name": "PI Vendor Intelligence",
+        "status": "active",
+        "priority": 2,
+        "description": "AI-powered vendor matching for PI attorneys",
+        "path": "/home/ec2-user/clawd/projects/pi-vendors/",
+        "domain": "personalinjuryvendors.com",
+        "telegramBot": "@scoutassstantdatabot",
+        "tools": [
+          "SCOUT bot",
+          "Reddit scraper",
+          "LinkedIn scraper",
+          "Matching engine"
+        ]
+      },
+      {
+        "name": "GHL Sales Automation",
+        "status": "building",
+        "priority": 3,
+        "description": "5 workflows for appointment booking, no-show, contracts, nurture",
+        "workflows": 8
+      },
+      {
+        "name": "Customer Avatar System",
+        "status": "active",
+        "description": "11 buyer personas from sales call analysis",
+        "topAvatars": [
+          "Fast Scaler (89/100)",
+          "Sophisticated Buyer (52/100)",
+          "Burned Veteran (48/100)",
+          "Solo Transitioner (40/100)"
+        ]
+      },
+      {
+        "name": "Concrete Rank & Rent",
+        "status": "pending",
+        "description": "Local SEO sites generating leads - needs monetization"
+      }
+    ],
+    "sites": [
+      {
+        "name": "Texas Truck Accidents",
+        "url": "https://texastruckaccidents.net",
+        "status": "live",
+        "stack": "Next.js 16, React 19, Tailwind CSS 4",
+        "features": [
+          "22+ city pages",
+          "Case calculator",
+          "IndexNow",
+          "Sticky CTA"
+        ],
+        "purpose": "Lead gen for truck accident victims"
+      },
+      {
+        "name": "MVA Engine",
+        "status": "dev",
+        "stack": "Next.js, Cloudflare",
+        "purpose": "Template system for spinning up new MVA sites"
+      },
+      {
+        "name": "Network Corridor Stats",
+        "url": "https://texascorridordata.com",
+        "status": "dev",
+        "stack": "Astro 4",
+        "purpose": "Satellite site for SEO/backlinks"
+      },
+      {
+        "name": "Texas Crash Stats",
+        "status": "dev",
+        "stack": "Astro 4",
+        "purpose": "Satellite PBN site"
+      },
+      {
+        "name": "leads.kuriosbrand.com",
+        "status": "live",
+        "purpose": "Landing page - Cases on Demand whitelabel"
+      },
+      {
+        "name": "Vendors KuriosBrand",
+        "url": "vendors.kuriosbrand.com",
+        "status": "built-not-deployed",
+        "stack": "React 19, Vite 7, Tailwind 4",
+        "purpose": "Authority SEO site for vendor matching"
+      }
+    ],
+    "agents": [
+      {
+        "name": "Sierra",
+        "emoji": "🏔️",
+        "status": "active",
+        "model": "Claude Opus",
+        "path": "/home/ec2-user/clawd",
+        "channels": [
+          "Telegram",
+          "Slack"
+        ],
+        "telegram": "@Sierra_molt_bot",
+        "role": "Main orchestrator"
+      },
+      {
+        "name": "SCOUT",
+        "emoji": "🔍",
+        "status": "active",
+        "model": "Claude Sonnet",
+        "path": "/home/ec2-user/agents/scout",
+        "telegram": "@scoutassstantdatabot",
+        "role": "Intel gatherer - X, Reddit, review sites"
+      }
+    ],
+    "research": [
+      {
+        "name": "Buyer Profile Scraper",
+        "status": "running",
+        "schedule": "Every 4h",
+        "sources": [
+          "Reddit",
+          "LinkedIn"
+        ]
+      },
+      {
+        "name": "Reddit Link Building",
+        "status": "active",
+        "path": "/home/ec2-user/data/kurios-finish/automation/research/"
+      }
+    ]
+  },
+  "tools": {
+    "scrapers": [
+      {
+        "name": "Reddit Scraper",
+        "path": "pi-vendors/agents/scrapers/reddit_scraper.py"
+      },
+      {
+        "name": "LinkedIn Scraper",
+        "path": "pi-vendors/agents/scrapers/linkedin_scraper.py"
+      },
+      {
+        "name": "Review Scraper",
+        "path": "pi-vendors/agents/scrapers/review_scraper.py"
+      },
+      {
+        "name": "X/Twitter Scraper",
+        "path": "pi-vendors/agents/scrapers/x_scraper.py"
+      },
+      {
+        "name": "Reddit 24x7 Crawler",
+        "path": "kurios-finish/automation/research/reddit_24x7_link_crawler.py"
+      }
+    ],
+    "transcribers": [
+      {
+        "name": "YouTube Transcriber",
+        "path": "kurios-finish/automation/content/transcribe_youtube.py",
+        "usage": "python transcribe_youtube.py <url>"
+      },
+      {
+        "name": "Whisper Transcription",
+        "path": "clawd/scripts/transcribe.sh"
+      }
+    ],
+    "apis": [
+      {
+        "name": "X/Twitter Tools",
+        "path": "clawd/scripts/x_tools.py",
+        "account": "@markkodg"
+      },
+      {
+        "name": "Calendar Fetcher",
+        "path": "clawd/scripts/fetch_calendar.py",
+        "calendar": "mark@kuriosbrand.com"
+      },
+      {
+        "name": "DataForSEO",
+        "capabilities": [
+          "SERP",
+          "Keywords",
+          "Backlinks",
+          "Domain Analytics"
+        ]
+      },
+      {
+        "name": "Codex CLI",
+        "usage": "codex --model o4-mini --reasoning-effort high 'task'"
+      }
+    ],
+    "automation": [
+      {
+        "name": "Customer Avatar Agent",
+        "path": "kurios-finish/business/automation/customer_avatar_agent/"
+      },
+      {
+        "name": "SCOUT Bot",
+        "path": "pi-vendors/agents/scout_bot.py",
+        "telegram": "@scoutassstantdatabot"
+      },
+      {
+        "name": "Matching Engine",
+        "path": "pi-vendors/agents/matching_engine.py"
+      }
+    ]
+  },
+  "integrations": {
+    "connected": [
+      {
+        "name": "Google Calendar",
+        "status": "connected",
+        "calendar": "mark@kuriosbrand.com"
+      },
+      {
+        "name": "Notion",
+        "status": "connected",
+        "workspace": "Sierra Workspace"
+      },
+      {
+        "name": "X/Twitter",
+        "status": "connected",
+        "account": "@markkodg"
+      },
+      {
+        "name": "DataForSEO",
+        "status": "connected"
+      },
+      {
+        "name": "Slack",
+        "status": "connected"
+      },
+      {
+        "name": "Moltbook",
+        "status": "connected",
+        "profile": "https://moltbook.com/u/Sierra"
+      },
+      {
+        "name": "Google Drive",
+        "status": "connected"
+      },
+      {
+        "name": "Gemini API",
+        "status": "connected"
+      },
+      {
+        "name": "OpenAI API",
+        "status": "connected"
+      },
+      {
+        "name": "ClawdHub",
+        "status": "connected"
+      }
+    ],
+    "needsSetup": [
+      {
+        "name": "GoHighLevel",
+        "status": "needs-setup",
+        "note": "CRM needed for pipeline"
+      }
+    ]
+  },
+  "pipeline": {
+    "hot": [
+      {
+        "name": "Scott Barney",
+        "location": "VA Beach",
+        "priority": "high",
+        "notes": "Burned $250k",
+        "nextAction": "Call to discuss pain points"
+      },
+      {
+        "name": "Ross Robin",
+        "priority": "high",
+        "notes": "New PI firm, eager to scale",
+        "nextAction": "Send proposal"
+      },
+      {
+        "name": "Jalal Abdallah",
+        "budget": "$50k",
+        "notes": "Multi-state, verbal commit",
+        "nextAction": "Finalize contract"
+      },
+      {
+        "name": "Omeed Hakimianpour",
+        "budget": "$50k",
+        "location": "CA",
+        "nextAction": "Campaign setup call"
+      },
+      {
+        "name": "Rich Hyde",
+        "company": "Trial Tribe",
+        "notes": "Wants reliable vendor",
+        "nextAction": "Case study call"
+      },
+      {
+        "name": "Dagmawi Getachew",
+        "notes": "Small test first",
+        "nextAction": "Pilot proposal"
+      },
+      {
+        "name": "Lucas Naccarati",
+        "notes": "Scalable paid acquisition",
+        "nextAction": "Strategy call"
+      }
+    ],
+    "inProgress": [
+      {
+        "name": "Daniel Ramirez",
+        "location": "Dallas→Houston",
+        "notes": "Spanish markets",
+        "followUp": "2026-02-05"
+      },
+      {
+        "name": "Josh Sweeney",
+        "company": "Shane Smith",
+        "notes": "YouTube/TikTok interest"
+      },
+      {
+        "name": "Michael Shirts",
+        "company": "BS Injury",
+        "location": "Las Vegas"
+      },
+      {
+        "name": "Michael Schulz",
+        "company": "RMD Law",
+        "followUp": "2026-02-10"
+      },
+      {
+        "name": "Joan Suh",
+        "notes": "Call scheduled 02/02"
+      }
+    ],
+    "closed": [
+      {
+        "name": "Jason E",
+        "company": "GCE Law",
+        "value": "$3k",
+        "dealSize": "$30k",
+        "closedDate": "2026-01-20"
+      }
+    ]
+  },
+  "salesProcess": {
+    "tiers": [
+      {
+        "tier": 1,
+        "name": "OTP Verified Leads",
+        "minimum": "$15k",
+        "cpa": "$2,143-$3,000"
+      },
+      {
+        "tier": 2,
+        "name": "Qualified Live Transfers",
+        "minimum": "$25k",
+        "cpa": "$2,083-$3,571"
+      },
+      {
+        "tier": 3,
+        "name": "Full-Service Case Closing",
+        "minimum": "$35k",
+        "cpa": "$2,917-$3,500"
+      }
+    ],
+    "guaranteeOffer": {
+      "name": "Sign 15 Cases in 90 Days",
+      "upfront": "$50,000",
+      "perCase": "$3,000"
+    }
+  },
+  "dataAssets": [
+    {
+      "name": "Backlink Outreach Contacts",
+      "size": "96KB",
+      "type": "csv",
+      "description": "PI law firm contacts"
+    },
+    {
+      "name": "Buyer Profiles Master",
+      "size": "52KB",
+      "type": "md",
+      "description": "12 call transcripts analyzed"
+    },
+    {
+      "name": "Sales Transcripts",
+      "size": "220KB",
+      "type": "txt",
+      "description": "Consolidated call transcripts"
+    },
+    {
+      "name": "Sales Bootcamp",
+      "size": "758KB",
+      "type": "pdf",
+      "description": "24hr MVA PI training"
+    }
+  ],
+  "ghlWorkflows": [
+    {
+      "name": "Lead Source Tagging",
+      "description": "Auto-tags leads by source"
+    },
+    {
+      "name": "Qualification Level Routing",
+      "description": "Routes by case strength"
+    },
+    {
+      "name": "High-Value Lead Detection",
+      "description": "Priority follow-up for $20k+ cases"
+    },
+    {
+      "name": "Calculator Lead Sequence",
+      "description": "5-step follow-up sequence"
+    },
+    {
+      "name": "Case Assessment (Strong)",
+      "description": "4-step sequence for qualified leads"
+    },
+    {
+      "name": "Case Assessment (Weak) Nurture",
+      "description": "Educational nurture sequence"
+    },
+    {
+      "name": "Police Report Review",
+      "description": "3-step acknowledgment sequence"
+    },
+    {
+      "name": "Homepage Lead Sequence",
+      "description": "5-step welcome sequence"
+    }
+  ]
+}

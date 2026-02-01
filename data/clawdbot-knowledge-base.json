@@ -1,0 +1,319 @@
+{
+  "lastUpdated": "2026-01-31T18:45:00Z",
+  "version": "1.0",
+  "totalVideosFound": 15,
+  "newVideosToday": false,
+  "sources": {
+    "alexFinn": {
+      "channel": "https://www.youtube.com/@AlexFinnOfficial",
+      "description": "The number 1 vibe coding channel on YouTube. Built $300k/year AI app without writing code.",
+      "totalClawdbotVideos": 8
+    },
+    "jackyChou": {
+      "channel": "The Startup Ideas Podcast",
+      "description": "Serial entrepreneur, growth hacking expert, hosts Alex Finn for Clawdbot deep-dives",
+      "totalClawdbotVideos": 1
+    },
+    "otherCreators": {
+      "matthewBerman": 1,
+      "worldOfAI": 1,
+      "julianGoldieSEO": 1,
+      "nateHerkAI": 1,
+      "aiCodeKing": 2
+    }
+  },
+  "videos": [
+    {
+      "id": "QkqE-uRhQJE",
+      "title": "ClawdBot is the most powerful AI tool I've ever used in my life. Here's how to set it up",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=QkqE-uRhQJE",
+      "recapioUrl": "https://recapio.com/digest/clawdbot-is-the-most-powerful-ai-tool-ive-ever-used-in-my-life-heres-how-to-set-it-up-by-alex-finn",
+      "keyInsights": [
+        "ClawdBot is a 24/7 AI employee that can control your entire computer",
+        "Has infinite memory - saves everything you say and do",
+        "Interface through Telegram, iMessage, WhatsApp",
+        "Claude Opus offers best experience, MiniMax is budget option",
+        "Treat it like a new employee - provide detailed info about yourself",
+        "VPS recommended for security isolation",
+        "Give ClawdBot its own email/accounts for privacy"
+      ],
+      "techniques": [
+        "Morning briefs with news, weather, tasks",
+        "Vibe coding - give access to repos for building features",
+        "Second brain for organizing ideas",
+        "Project management board automation"
+      ],
+      "warnings": [
+        "Zero guardrails - understand capabilities and risks",
+        "Personalization is key for good results"
+      ]
+    },
+    {
+      "id": "6RMpUnvHmJw",
+      "title": "LIVE: How I'm using ClawdBot to change my life",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=6RMpUnvHmJw",
+      "recapioUrl": "https://recapio.com/digest/live-how-i-m-using-clawdbot-to-change-my-life-by-alex-finn",
+      "keyInsights": [
+        "Hardware 'bum rush' predicted within 12 months",
+        "Mac Mini recommended over VPS for non-technical users (secure by default)",
+        "VPS requires technical security setup",
+        "OAuth risk: might get kicked off Claude plan",
+        "API keys can cost $200+/month with regular use",
+        "Own your hardware for freedom and experimentation"
+      ],
+      "techniques": [
+        "Reverse Prompting: Ask AI what it can do for you based on what it knows",
+        "Use Codec CLI as coding muscle to save Opus tokens",
+        "Memory flush prompt for context loss issues"
+      ],
+      "modelAdvice": [
+        "Use Codec CLI for coding, reserve Opus for brain functions",
+        "This is KEY for token optimization"
+      ]
+    },
+    {
+      "id": "U8kXfk8enrY",
+      "title": "Clawdbot/OpenClaw Clearly Explained (and how to use it)",
+      "creator": "Alex Finn + Jacky Chou (The Startup Ideas Podcast)",
+      "url": "https://www.youtube.com/watch?v=U8kXfk8enrY",
+      "spotifyUrl": "https://open.spotify.com/episode/7LjkhmAX4BEer1G5hspdkl",
+      "keyInsights": [
+        "Alex treats Clawdbot as teammate named 'Henry'",
+        "Core workflow: Morning brief → Research → Content → Delivery",
+        "Henry sends daily morning brief proactively",
+        "Researches topics, handles tasks autonomously"
+      ]
+    },
+    {
+      "id": "04wh2Hlgbds",
+      "title": "This is the CHEAPEST and EASIEST way to set up ClawdBot",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=04wh2Hlgbds",
+      "keyInsights": [
+        "Host on Amazon EC2 for ~$15-25/month",
+        "No Mac Mini required",
+        "Ubuntu Linux recommended",
+        "30GB storage sufficient",
+        "Connect messaging channel (Telegram/WhatsApp/Discord)"
+      ],
+      "firstUseCases": [
+        "Massive brain dump about yourself",
+        "Daily morning brief setup",
+        "Email inbox monitoring/summarization",
+        "Ask bot to suggest 5 workflows it can automate"
+      ]
+    },
+    {
+      "id": "XkpskYqB5v4",
+      "title": "Building apps LIVE with my 24/7 AI employee Clawdbot",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=XkpskYqB5v4"
+    },
+    {
+      "id": "-5ym_hGHp0U",
+      "title": "LIVE: Showing AMAZING ClawdBot/OpenClaw use cases",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=-5ym_hGHp0U"
+    },
+    {
+      "id": "b-l9sGh1-UY",
+      "title": "5 insane ClawdBot uses cases you need to do immediately",
+      "creator": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=b-l9sGh1-UY"
+    },
+    {
+      "id": "kpDPYEmYNqM",
+      "title": "Moltbot: App Store Moment for AI Agents",
+      "creator": "Alex Finn + Cailyn",
+      "url": "https://www.youtube.com/watch?v=kpDPYEmYNqM"
+    },
+    {
+      "id": "iaZROXDKN90",
+      "title": "Clawdbot LIVE",
+      "creator": "Matthew Berman",
+      "url": "https://www.youtube.com/watch?v=iaZROXDKN90",
+      "recapioUrl": "https://recapio.com/digest/clawdbot-live-by-matthew-berman",
+      "keyInsights": [
+        "Security risks: prompt injections, password/key exposure",
+        "Isolate on separate wiped machine or VM",
+        "Use Claude Max subscription ($100/mo) not API keys",
+        "DGX Spark planned for local models",
+        "Grok account connected for powerful X search"
+      ],
+      "securityOptions": [
+        "Option 1: Direct install on main computer (HIGH RISK)",
+        "Option 2: New isolated computer (MEDIUM RISK - Recommended)",
+        "Option 3: Docker/Loom/UTM virtualization (MEDIUM RISK)",
+        "Option 4: Cloud hosting (varies by auth)"
+      ],
+      "useCases": [
+        "Control N8N for sophisticated automations",
+        "Cron jobs for scheduled tasks",
+        "Municipal website scraping (trash schedule)",
+        "Google Drive sync automation"
+      ]
+    },
+    {
+      "id": "W15UztbGEJw",
+      "title": "ClawdBot The 24/7 AI Agent Employee That Can Automate Your Life!",
+      "creator": "World of AI",
+      "url": "https://www.youtube.com/watch?v=W15UztbGEJw",
+      "recapioUrl": "https://recapio.com/digest/clawdbot-the-24-7-ai-agent-employee-that-can-automate-your-life-by-worldofai",
+      "keyInsights": [
+        "Open-source alternative to Claude Co-work",
+        "Can make trades on betting platforms via research",
+        "Security: like handing keys to your computer",
+        "AWS free tier available for cloud hosting"
+      ]
+    },
+    {
+      "id": "CFahwp0biWM",
+      "title": "Build Anything with Clawdbot + AntiGravity: Here's How!",
+      "creator": "Julian Goldie SEO",
+      "url": "https://www.youtube.com/watch?v=CFahwp0biWM",
+      "recapioUrl": "https://recapio.com/digest/build-anything-with-clawdbot-antigravity-here-s-how-by-julian-goldie-seo",
+      "keyInsights": [
+        "Clawdbot as orchestrator for multiple AI coding agents",
+        "Browser Relay extension for browser control",
+        "Claude Opus 4.5 + Gemini 3 Flash combo works well",
+        "API choice significantly impacts performance"
+      ],
+      "modelAdvice": [
+        "More intelligent API = better browser control",
+        "Opus 4.5 for brain, Gemini Flash for execution",
+        "Cheaper models (GLM, MiniMax) give worse outputs"
+      ]
+    },
+    {
+      "id": "CBNbcbMs_Lc",
+      "title": "I Tested Clawdbot Against Claude Code: What You Need to Know",
+      "creator": "Nate Herk | AI Automation",
+      "url": "https://www.youtube.com/watch?v=CBNbcbMs_Lc",
+      "recapioUrl": "https://recapio.com/digest/i-tested-clawdbot-against-claude-code-what-you-need-to-know-by-nate-herk-ai-automation",
+      "keyInsights": [
+        "Clawdbot: 9/10 out-of-box ability, persistent memory, no deployment concerns",
+        "Claude Code: Better security, proven results, lower risk",
+        "900+ exposed Clawdbot servers found with leaked API keys",
+        "Never enter API keys in chat - use environment files"
+      ],
+      "ratings": {
+        "clawdbot": {
+          "outOfBox": "9/10",
+          "setupFriction": "6/10",
+          "cost": "6/10",
+          "powerAccess": "10/10"
+        },
+        "claudeCode": {
+          "outOfBox": "7/10",
+          "setupFriction": "8/10",
+          "cost": "8/10",
+          "powerAccess": "7/10"
+        }
+      }
+    }
+  ],
+  "keyTechniques": {
+    "setup": {
+      "installation": "One-line command from claude.bot/molt.bot",
+      "wizard": "Recommended for any OS setup",
+      "hostingOptions": [
+        "Mac Mini (secure by default, recommended for non-technical)",
+        "AWS EC2 (~$15-25/month)",
+        "Hostinger VPS (~$6-8/month)",
+        "Local Docker/VM"
+      ]
+    },
+    "security": {
+      "critical": [
+        "Don't let others talk to your Clawdbot (root access)",
+        "Use dedicated computer/VM for isolation",
+        "Give Clawdbot its own accounts (not your personal ones)",
+        "Never paste API keys in chat - use .env files",
+        "Regular security audits"
+      ]
+    },
+    "workflows": {
+      "morningBrief": {
+        "description": "Daily proactive message with relevant news, weather, tasks",
+        "setup": "Define interests, timezone, task preferences"
+      },
+      "inboxManagement": {
+        "description": "Summarize emails, flag urgent items",
+        "requires": "Email skill/connector"
+      },
+      "cronJobs": {
+        "description": "Natural language scheduled tasks",
+        "examples": ["Trash schedule notifications", "Daily summaries", "Automated backups"]
+      },
+      "vibeCoding": {
+        "description": "Give repo access, describe features, let it build",
+        "tools": ["Claude Code", "Codex CLI", "AntiGravity"]
+      },
+      "secondBrain": {
+        "description": "Organize thoughts, notes, ideas automatically"
+      }
+    }
+  },
+  "workingPrompts": [
+    {
+      "name": "Reverse Prompting",
+      "prompt": "Based on everything you know about me, what are 5 workflows you could automate for me every day?",
+      "source": "Alex Finn"
+    },
+    {
+      "name": "Token Optimization",
+      "prompt": "Optimize for TPM, split the task into smaller ones, and be cautious",
+      "source": "Reddit r/clawdbot"
+    },
+    {
+      "name": "Memory Flush",
+      "prompt": "Found in Alex Finn video description - enables memory flush and session memory search",
+      "source": "Alex Finn LIVE video"
+    }
+  ],
+  "costAnalysis": {
+    "subscriptionBased": {
+      "claudeMax": "$100/month - 5-hour rolling window, weekly limits",
+      "claudePro": "$20/month - limited but usable"
+    },
+    "apiBased": {
+      "warning": "Can easily exceed $200/day with heavy use",
+      "tokens": "Token costs add up fast with always-on assistant"
+    },
+    "hosting": {
+      "macMini": "$600-800 one-time",
+      "awsEc2": "$15-25/month",
+      "hostingerVps": "$6-8/month",
+      "awsFreeTier": "Free (limited)"
+    },
+    "optimization": "Use subscription auth, delegate to cheaper models for grunt work"
+  },
+  "communityInsights": {
+    "redditTips": [
+      "Sonnet 4.5 great for conversation, Opus for complex tasks",
+      "Clawdbot can launch sub-agents with Opus, Gemini 3 Pro, GPT 5.2",
+      "Hybrid workflows: local LLMs for context, Opus for reasoning",
+      "99% of what people want can be done with Claude Code + Telegram/WhatsApp interface"
+    ],
+    "securityIncidents": [
+      "900+ exposed servers with no password protection",
+      "Leaked API keys and chat histories",
+      "Default settings meant for local testing deployed online"
+    ]
+  },
+  "futureOutlook": {
+    "predictions": [
+      "Hardware bum rush within 12 months (Alex Finn)",
+      "OAuth access may be restricted by AI companies",
+      "Local model capabilities improving rapidly",
+      "AI becoming 'operating layer' not just chat tool"
+    ],
+    "trends": [
+      "Always-on AI assistants becoming infrastructure",
+      "Multi-model orchestration essential for cost management",
+      "Security and isolation increasingly important"
+    ]
+  }
+}

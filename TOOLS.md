@@ -35,11 +35,21 @@
 
 Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
 
-## Notion - Sierra Workspace
+## Notion - Sierra Workspace (SOPs ONLY)
 - **Sierra Workspace Page ID:** `2f79371d-3030-8083-8ac8-c16af6cb0f07`
 - **Sierra Documents Database ID:** `2f89371d-3030-8185-adbd-e6e4febece73`
-- **Purpose:** Central knowledge base - reports, SOPs, resources, training, videos, tools
+- **Purpose:** SOPs ONLY — Standard Operating Procedures for tasks Sierra does
+- **NOT for:** Research, reports, memory, notes → Use Supermemory for that
 - **Use PATCH method** for adding blocks: `curl -X PATCH "https://api.notion.com/v1/blocks/{page_id}/children"`
+
+### When to use Notion vs Supermemory:
+| Content Type | Where |
+|--------------|-------|
+| SOPs / How-to procedures | Notion |
+| Research / Analysis | Supermemory |
+| Memory / Context | Supermemory |
+| Reports | Supermemory |
+| Meeting notes | Supermemory |
 
 ### Database Properties:
 | Property | Type | Options |

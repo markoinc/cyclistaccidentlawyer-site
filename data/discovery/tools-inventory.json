@@ -1,0 +1,323 @@
+{
+  "discoveredAt": "2026-01-31T07:30:00Z",
+  "summary": {
+    "totalTools": 32,
+    "categories": {
+      "scraper": 10,
+      "transcriber": 4,
+      "api": 8,
+      "utility": 6,
+      "automation": 4
+    }
+  },
+  "tools": [
+    {
+      "name": "x_tools.py",
+      "path": "/home/ec2-user/clawd/scripts/x_tools.py",
+      "description": "X/Twitter posting and scraping tool. Uses OAuth1 for API posting, browser scraping for reading.",
+      "usage": "python x_tools.py [me|tweet|search] [args]",
+      "category": "api",
+      "dependencies": ["requests_oauthlib"],
+      "config": "/home/ec2-user/.config/x-api/credentials.json"
+    },
+    {
+      "name": "dashboard_api.py",
+      "path": "/home/ec2-user/clawd/scripts/dashboard_api.py",
+      "description": "Generates real-time dashboard data from Clawdbot state (sessions, cron jobs, stats)",
+      "usage": "python dashboard_api.py",
+      "category": "utility",
+      "dependencies": ["subprocess", "json", "http.server"]
+    },
+    {
+      "name": "update_dashboard.sh",
+      "path": "/home/ec2-user/clawd/scripts/update_dashboard.sh",
+      "description": "Updates dashboard data file with current session/cron info and calendar",
+      "usage": "bash update_dashboard.sh",
+      "category": "utility",
+      "dependencies": ["python3", "fetch_calendar.py"]
+    },
+    {
+      "name": "fetch_calendar.py",
+      "path": "/home/ec2-user/clawd/scripts/fetch_calendar.py",
+      "description": "Fetches Google Calendar events and outputs as JSON. Uses mark@kuriosbrand.com calendar.",
+      "usage": "python fetch_calendar.py",
+      "category": "api",
+      "dependencies": ["google-api-python-client", "google-auth"],
+      "config": "/home/ec2-user/.config/gcal-pro/token.json"
+    },
+    {
+      "name": "transcribe_youtube.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/content/transcribe_youtube.py",
+      "description": "YouTube video transcription using youtube-transcript-api. Fetches and saves transcripts with timestamps.",
+      "usage": "python transcribe_youtube.py <video_url_or_id> [output_file]",
+      "category": "transcriber",
+      "dependencies": ["youtube-transcript-api"]
+    },
+    {
+      "name": "transcribe.sh (Whisper)",
+      "path": "/home/ec2-user/.npm-global/lib/node_modules/clawdbot/skills/openai-whisper-api/scripts/transcribe.sh",
+      "description": "OpenAI Whisper API transcription for audio files. Supports multiple languages and formats.",
+      "usage": "transcribe.sh <audio-file> [--model whisper-1] [--out /path/to/out.txt] [--language en] [--json]",
+      "category": "transcriber",
+      "dependencies": ["curl", "OPENAI_API_KEY env var"]
+    },
+    {
+      "name": "reddit_scraper.py (vendor-db)",
+      "path": "/home/ec2-user/clawd/projects/vendor-db/agents/reddit_scraper.py",
+      "description": "Scrapes Reddit for PI attorney discussions about lead vendors. Monitors multiple subreddits for keywords.",
+      "usage": "python reddit_scraper.py",
+      "category": "scraper",
+      "dependencies": ["requests"],
+      "subreddits": ["LawFirm", "lawyers", "Lawyertalk", "legal", "personalinjury", "Insurance", "marketing", "PPC", "digitalmarketing"]
+    },
+    {
+      "name": "vendor_scraper.py",
+      "path": "/home/ec2-user/clawd/projects/vendor-db/agents/vendor_scraper.py",
+      "description": "Gathers data on PI lead generation vendors from various platforms (Trustpilot, G2, BBB, Reddit)",
+      "usage": "python vendor_scraper.py",
+      "category": "scraper",
+      "dependencies": ["requests", "beautifulsoup4"],
+      "vendors_tracked": 50
+    },
+    {
+      "name": "reddit_scraper.py (pi-vendors/Playwright)",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/reddit_scraper.py",
+      "description": "Browser-based Reddit scraper using Playwright to avoid API limits. More robust than API version.",
+      "usage": "python -c 'from reddit_scraper import RedditScraper; import asyncio; asyncio.run(RedditScraper().run())'",
+      "category": "scraper",
+      "dependencies": ["playwright", "beautifulsoup4"]
+    },
+    {
+      "name": "x_scraper.py",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/x_scraper.py",
+      "description": "X/Twitter scraper for AI agent use cases and PI industry intelligence. Uses Playwright for browser automation.",
+      "usage": "python x_scraper.py",
+      "category": "scraper",
+      "dependencies": ["playwright"],
+      "keywords_monitored": 40
+    },
+    {
+      "name": "review_scraper.py",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/review_scraper.py",
+      "description": "Scrapes review platforms for vendor ratings and feedback",
+      "usage": "python review_scraper.py",
+      "category": "scraper",
+      "dependencies": ["playwright"]
+    },
+    {
+      "name": "linkedin_scraper.py",
+      "path": "/home/ec2-user/clawd/projects/pi-vendors/agents/scrapers/linkedin_scraper.py",
+      "description": "LinkedIn profile scraper for buyer research and vendor intelligence",
+      "usage": "python linkedin_scraper.py",
+      "category": "scraper",
+      "dependencies": ["playwright"]
+    },
+    {
+      "name": "find_reddit_opportunities.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/find_reddit_opportunities.py",
+      "description": "Uses DataForSEO to find Reddit posts ranking for Texas truck accident keywords. Exports opportunities to CSV.",
+      "usage": "python find_reddit_opportunities.py",
+      "category": "api",
+      "dependencies": ["requests", "pandas", "python-dotenv"],
+      "env_vars": ["DATAFORSEO_LOGIN", "DATAFORSEO_PASSWORD"]
+    },
+    {
+      "name": "reddit_24x7_link_crawler.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/reddit_24x7_link_crawler.py",
+      "description": "Continuous Reddit monitor for link-building opportunities. Saves to Google Sheets for manual review.",
+      "usage": "python reddit_24x7_link_crawler.py",
+      "category": "scraper",
+      "dependencies": ["requests", "schedule", "gspread", "oauth2client"],
+      "sites_network": ["texastruckaccidents.net", "texastruckcrashdata.com", "texascorridordata.com"]
+    },
+    {
+      "name": "scrape_notion_playwright.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/scrape_notion_playwright.py",
+      "description": "Scrapes SEO and AI SEO SOPs from Notion pages with JavaScript rendering",
+      "usage": "python scrape_notion_playwright.py",
+      "category": "scraper",
+      "dependencies": ["playwright", "beautifulsoup4"]
+    },
+    {
+      "name": "download_exa_websets.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/content/download_exa_websets.py",
+      "description": "Downloads and extracts data from Exa.ai websets (lead lists, company data)",
+      "usage": "python download_exa_websets.py",
+      "category": "api",
+      "dependencies": ["requests"],
+      "api_key_location": "hardcoded in script"
+    },
+    {
+      "name": "extract_urls_from_websets.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/data_extraction/extract_urls_from_websets.py",
+      "description": "Extracts all URLs from Exa websets for further processing",
+      "usage": "python extract_urls_from_websets.py",
+      "category": "utility",
+      "dependencies": ["requests"]
+    },
+    {
+      "name": "customer_avatar_agent",
+      "path": "/home/ec2-user/data/kurios-finish/business/automation/customer_avatar_agent/agent.py",
+      "description": "Full pipeline: transcription → extraction → document updates → ranking. Processes sales call audio files.",
+      "usage": "python agent.py --watch OR python agent.py --file <audio_path>",
+      "category": "automation",
+      "dependencies": ["openai-whisper", "anthropic", "google-docs-api"],
+      "modules": ["transcription", "extraction", "document_updater", "ranking", "file_watcher", "weekly_summary"]
+    },
+    {
+      "name": "extract_pdf_transcripts_final.py",
+      "path": "/home/ec2-user/data/kurios-finish/extract_pdf_transcripts_final.py",
+      "description": "Extracts call transcripts from PDF files and saves as individual .txt files with proper naming",
+      "usage": "python extract_pdf_transcripts_final.py <pdf_path>",
+      "category": "utility",
+      "dependencies": ["pypdf OR PyPDF2"]
+    },
+    {
+      "name": "build_registry.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/knowledge-management/build_registry.py",
+      "description": "Builds SYSTEM_REGISTRY.md - Master index of all knowledge assets with frontmatter parsing",
+      "usage": "python build_registry.py",
+      "category": "utility",
+      "dependencies": ["pyyaml"]
+    },
+    {
+      "name": "aggregate_context.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/knowledge-management/aggregate_context.py",
+      "description": "Aggregates context from multiple knowledge sources into unified view",
+      "usage": "python aggregate_context.py",
+      "category": "automation",
+      "dependencies": ["pyyaml"]
+    },
+    {
+      "name": "add_metadata.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/knowledge-management/add_metadata.py",
+      "description": "Adds YAML frontmatter metadata to markdown files",
+      "usage": "python add_metadata.py <file_path>",
+      "category": "utility",
+      "dependencies": ["pyyaml"]
+    },
+    {
+      "name": "find_reddit_engagement_opportunities.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/find_reddit_engagement_opportunities.py",
+      "description": "Identifies high-value Reddit threads for engagement and link building",
+      "usage": "python find_reddit_engagement_opportunities.py",
+      "category": "scraper",
+      "dependencies": ["requests"]
+    },
+    {
+      "name": "dataforseo.ts",
+      "path": "/home/ec2-user/data/kurios-finish/sites/texas-mva/admin/lib/dataforseo.ts",
+      "description": "TypeScript DataForSEO API client for admin dashboard. Keywords, SERP, competitors analysis.",
+      "usage": "Import in Next.js app: import { DataForSEOClient } from '@/lib/dataforseo'",
+      "category": "api",
+      "dependencies": ["typescript", "node-fetch"],
+      "features": ["getKeywordData", "getSerpResults", "getCompetitorData", "getBacklinks"]
+    },
+    {
+      "name": "youtube_transcript_api (CLI)",
+      "path": "/home/ec2-user/.local/bin/youtube_transcript_api",
+      "description": "Command-line tool for fetching YouTube transcripts",
+      "usage": "youtube_transcript_api <video_id> [--languages en]",
+      "category": "transcriber",
+      "dependencies": ["youtube-transcript-api"]
+    },
+    {
+      "name": "yt-dlp",
+      "path": "/home/ec2-user/.local/bin/yt-dlp",
+      "description": "YouTube video/audio downloader. Supports 1000+ sites.",
+      "usage": "yt-dlp <url> [--extract-audio --audio-format mp3]",
+      "category": "transcriber",
+      "dependencies": ["ffmpeg (optional for audio extraction)"]
+    },
+    {
+      "name": "clawdbot",
+      "path": "/home/ec2-user/.npm-global/bin/clawdbot",
+      "description": "Main Clawdbot CLI - agent orchestration, sessions, cron, gateway control",
+      "usage": "clawdbot [sessions|cron|gateway|skills] <subcommand>",
+      "category": "utility",
+      "dependencies": ["node.js"]
+    },
+    {
+      "name": "codex",
+      "path": "/home/ec2-user/.npm-global/bin/codex",
+      "description": "OpenAI Codex CLI for code generation with reasoning",
+      "usage": "codex --model o4-mini --reasoning-effort high \"task\"",
+      "category": "api",
+      "dependencies": ["node.js", "OPENAI_API_KEY"]
+    },
+    {
+      "name": "extract_texas_site_links.py",
+      "path": "/home/ec2-user/data/kurios-finish/automation/data_extraction/extract_texas_site_links.py",
+      "description": "Extracts and organizes links from Texas MVA sites for analysis",
+      "usage": "python extract_texas_site_links.py",
+      "category": "utility",
+      "dependencies": ["requests", "beautifulsoup4"]
+    },
+    {
+      "name": "weekly_summary.py",
+      "path": "/home/ec2-user/data/kurios-finish/business/automation/customer_avatar_agent/modules/weekly_summary.py",
+      "description": "Generates weekly summary of customer avatar insights and trends",
+      "usage": "Module of customer_avatar_agent",
+      "category": "automation",
+      "dependencies": ["anthropic"]
+    },
+    {
+      "name": "extract_all_transcripts.py",
+      "path": "/home/ec2-user/data/kurios-finish/extract_all_transcripts.py",
+      "description": "Batch extracts all transcripts from a directory of audio/PDF files",
+      "usage": "python extract_all_transcripts.py <input_dir> <output_dir>",
+      "category": "automation",
+      "dependencies": ["pypdf", "openai-whisper"]
+    },
+    {
+      "name": "analyze_transcripts_and_create_docs.py",
+      "path": "/home/ec2-user/data/kurios-finish/analyze_transcripts_and_create_docs.py",
+      "description": "Analyzes sales call transcripts and creates structured documentation",
+      "usage": "python analyze_transcripts_and_create_docs.py",
+      "category": "automation",
+      "dependencies": ["anthropic", "openai"]
+    }
+  ],
+  "configs": {
+    "x-api": {
+      "path": "/home/ec2-user/.config/x-api/credentials.json",
+      "description": "X/Twitter OAuth1 and OAuth2 credentials for @markkodg"
+    },
+    "gcal-pro": {
+      "path": "/home/ec2-user/.config/gcal-pro/",
+      "files": ["client_secret.json", "token.json"],
+      "description": "Google Calendar OAuth tokens for sierra@kuriosbrand.com (with Drive scope)"
+    },
+    "notion": {
+      "path": "/home/ec2-user/.config/notion/api_key",
+      "description": "Notion API key for workspace integration"
+    },
+    "slack": {
+      "path": "/home/ec2-user/.config/slack/bot_token",
+      "description": "Slack bot token for channel integration"
+    },
+    "pulse": {
+      "path": "/home/ec2-user/.config/pulse/",
+      "description": "Pulse monitoring configuration"
+    },
+    "scout-bot": {
+      "path": "/home/ec2-user/.config/scout-bot/",
+      "description": "SCOUT agent configuration"
+    },
+    "moltbook": {
+      "path": "/home/ec2-user/.config/moltbook/",
+      "description": "Moltbook social engagement configuration"
+    }
+  },
+  "apiCredentials": {
+    "DataForSEO": {
+      "login": "mark@kuriosbrand.com",
+      "authHeader": "Basic bWFya0BrdXJpb3NicmFuZC5jb206YjI5MmI0YTVlNjg2YmM3NQ==",
+      "usage": "curl -H 'Authorization: Basic $BASE64' https://api.dataforseo.com/v3/..."
+    },
+    "Exa.ai": {
+      "apiKey": "f62e0d36-3d76-4eef-8520-26b66c249bce",
+      "baseUrl": "https://api.exa.ai/v0"
+    }
+  }
+}

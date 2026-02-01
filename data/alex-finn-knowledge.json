@@ -1,0 +1,229 @@
+{
+  "source": "Alex Finn YouTube Channel (@AlexFinnOfficial)",
+  "topic": "Clawdbot/Moltbot Best Practices",
+  "videos_analyzed": 3,
+  "extraction_date": "2026-01-31",
+  "purpose": "Knowledge base for maximizing Clawdbot effectiveness for business goals",
+  
+  "videos": [
+    {
+      "id": 1,
+      "title": "5 insane ClawdBot uses cases you need to do immediately",
+      "url": "https://www.youtube.com/watch?v=b-l9sGh1-UY",
+      "views": "45K",
+      "duration": "~13 min",
+      "focus": "Advanced use cases and workflows"
+    },
+    {
+      "id": 2,
+      "title": "This is the CHEAPEST and EASIEST way to set up ClawdBot",
+      "url": "https://www.youtube.com/watch?v=04wh2Hlgbds",
+      "views": "69K",
+      "duration": "~15 min",
+      "focus": "AWS EC2 setup and first workflows"
+    },
+    {
+      "id": 3,
+      "title": "ClawdBot is the most powerful AI tool I've ever used in my life. Here's how to set it up",
+      "url": "https://www.youtube.com/watch?v=Qkqe-uRhQJE",
+      "views": "448K",
+      "duration": "~27 min",
+      "focus": "Complete setup guide and philosophy"
+    }
+  ],
+
+  "top_10_suggestions_for_marko": [
+    {
+      "rank": 1,
+      "suggestion": "Set up a Morning Brief with Revenue-Focused Intelligence",
+      "description": "Create an automated morning brief that includes: trending news in your industry, calendar for today, tasks from your to-do list, what Clawdbot accomplished overnight, and proactive recommendations for revenue-generating activities.",
+      "prompt": "I want you to send me a morning brief every morning at 8 a.m. my time. Include: local weather, trending news in AI/automation/agency space, my tasks for today from my to-do list, tasks you can do for me today proactively, trending stories relevant to my business, and recommendations to make today super productive for hitting my $9.6M goal.",
+      "impact": "High - Start each day with AI-generated priorities focused on your exit goal",
+      "source_video": 1
+    },
+    {
+      "rank": 2,
+      "suggestion": "Enable Proactive Overnight Vibe Coding",
+      "description": "Let Clawdbot build tools, automations, and improvements while you sleep. It will create PRs for your review. This is Alex Finn's favorite use case - waking up to new features.",
+      "prompt": "I am a one-man business working toward a $9.6M exit. I need an employee taking as much off my plate as possible. Please take everything you know about me and just do work you think would make my life easier or improve my business. Wake me up every morning with what you got done while I was sleeping. Don't push anything live - create PRs for me to review. Schedule time to work every night at 11:00 p.m.",
+      "impact": "Very High - Multiply output without additional effort. Your agency essentially gets 24/7 development.",
+      "source_video": 1
+    },
+    {
+      "rank": 3,
+      "suggestion": "Build a Second Brain Document System",
+      "description": "Have Clawdbot build a Next.js app that captures and organizes all your conversations, ideas, and important concepts into a searchable knowledge base with daily journal entries.",
+      "prompt": "Build a second brain. This should be a next.js app that shows a list of documents you create as we work together in a nice document viewer (like Obsidian meets Linear). Create daily journal entries recording our discussions. When we talk about important concepts, flesh them out in dedicated documents. Auto-tag with categories like: revenue ideas, client work, automation, content.",
+      "impact": "High - Never lose an idea again. Review past brilliance when planning strategy.",
+      "source_video": 1
+    },
+    {
+      "rank": 4,
+      "suggestion": "Set Up Daily Research Reports for Business Intelligence",
+      "description": "Get an afternoon research report that deep dives on concepts to improve your business, workflow optimizations, or market trends.",
+      "prompt": "Send me a daily research report every afternoon. Based on what you know about me and my $9.6M exit goal, research and report on: concepts that would improve my agency, processes that would improve our working relationship, competitor analysis, market opportunities, or new automation possibilities.",
+      "impact": "High - Continuous learning and business intelligence without manual research",
+      "source_video": 1
+    },
+    {
+      "rank": 5,
+      "suggestion": "Install the Reddit/X Trend Research Skill",
+      "description": "Use Matt Van Horn's skill to research trending topics on Reddit and X in parallel. Great for finding leads, content ideas, and market sentiment.",
+      "prompt": "Install this skill: [Matt Van Horn's X/Reddit research skill]. Then: Use the last 30 days skill to find me trending discussions about [AI agencies / automation services / your niche] including top Reddit threads and X posts by engagement.",
+      "requirements": "xAI API (Grok) + OpenAI API key",
+      "impact": "Very High - Find prospects talking about problems you solve. Generate endless content ideas.",
+      "source_video": 1
+    },
+    {
+      "rank": 6,
+      "suggestion": "Do a Complete Brain Dump About Your Business",
+      "description": "Clawdbot has infinite memory. Tell it EVERYTHING about you, your agency, your goals, your clients, your processes. This is the foundation for all other workflows.",
+      "prompt": "Let me brain dump everything about my business. I run [agency name]. My goal is a $9.6M exit. I want 2-3 calls per day. Here's my ICP... Here's my service offering... Here's my pricing... Here's what I love doing... Here's what I hate doing... [Continue with everything relevant]",
+      "impact": "Critical Foundation - Every other feature works better with deep context",
+      "source_video": 2
+    },
+    {
+      "rank": 7,
+      "suggestion": "Monitor and Summarize Email Daily",
+      "description": "Have Clawdbot watch your inbox and send you a daily summary. Filter noise, highlight opportunities, draft responses.",
+      "prompt": "Please monitor my email for me. At the end of every day, send me a summary highlighting: potential leads, urgent items, opportunities that match my business goals, and draft any responses you think I should send.",
+      "impact": "Medium-High - Email is where deals hide. Never miss an opportunity.",
+      "source_video": 2
+    },
+    {
+      "rank": 8,
+      "suggestion": "Use Codex CLI for Cost-Efficient Coding",
+      "description": "If using Opus (expensive), install Codex CLI so Opus orchestrates while Codex does the actual coding. Saves significant tokens.",
+      "prompt": "Make sure to use Codex CLI anytime you vibe code. You are the brain, Codex is the hands.",
+      "technical_note": "Requires ChatGPT subscription for Codex CLI access",
+      "impact": "Medium - Cost optimization for heavy coding users",
+      "source_video": 1
+    },
+    {
+      "rank": 9,
+      "suggestion": "Interview Your Clawdbot for Unknown Opportunities",
+      "description": "Ask Clawdbot what workflows it can do for you based on everything it knows. Uncover the 'unknown unknowns'.",
+      "prompt": "Based on what you know about me and my goal of $9.6M exit with 2-3 calls per day, what are ten workflows and tasks you can do for me every day that I haven't thought of? These can include connectors or skills we don't have yet.",
+      "impact": "High - Let AI creativity expand your possibilities",
+      "source_video": 2
+    },
+    {
+      "rank": 10,
+      "suggestion": "Schedule Proactive Tasks at Specific Times",
+      "description": "Once you identify helpful tasks, schedule them to run automatically and text you results.",
+      "prompt": "Do [task] every day at [time]. Then text me about it with results.",
+      "examples": [
+        "Check my calendar every morning at 7am and prep me for meetings",
+        "Research my scheduled calls every afternoon and prepare briefing docs",
+        "Check competitor websites weekly for changes",
+        "Generate LinkedIn content ideas every Monday morning"
+      ],
+      "impact": "Medium-High - Automation compounds over time",
+      "source_video": 2
+    }
+  ],
+
+  "model_recommendations": {
+    "best_overall": {
+      "model": "Claude Opus 4.5",
+      "cost": "$200/month (Claude Max subscription)",
+      "pros": ["Highest intelligence", "Best personality", "Most enjoyable to work with"],
+      "cons": ["Most expensive"]
+    },
+    "best_value": {
+      "model": "ChatGPT API (GPT 5.2)",
+      "cost": "Pay per token",
+      "pros": ["Very intelligent", "Reliable", "Good cost/performance"],
+      "cons": ["Robotic personality"]
+    },
+    "budget_option": {
+      "model": "MiniMax",
+      "cost": "Very cheap",
+      "pros": ["Extremely affordable", "Recommended by Peter Steinberger"],
+      "cons": ["Less intelligent", "Personality is 'meh'", "Can be unreliable"]
+    }
+  },
+
+  "hosting_options": {
+    "mac_mini": {
+      "cost": "$600+ upfront",
+      "pros": ["Everything on computer accessible", "No monthly fees", "Best Mac ecosystem integration"],
+      "cons": ["Higher upfront cost"]
+    },
+    "aws_ec2": {
+      "cost": "$15-25/month",
+      "instance_type": "C7i Flex Large",
+      "storage": "30GB",
+      "pros": ["Cheaper upfront", "Isolated/secure", "Good for testing"],
+      "cons": ["Need to set up connectors for each tool", "Monthly cost adds up"]
+    },
+    "vps_general": {
+      "note": "Any VPS works - Digital Ocean, Linode, etc.",
+      "benefit": "Security through isolation from personal files"
+    }
+  },
+
+  "messaging_channels": ["Telegram", "WhatsApp", "iMessage", "Discord"],
+
+  "security_best_practices": [
+    "Use VPS to isolate from main computer",
+    "Give Clawdbot its own dedicated accounts (not personal)",
+    "Understand there are ZERO guardrails",
+    "Review actions before deployment",
+    "Don't let others talk to your Clawdbot (it has root access)",
+    "Create PRs instead of pushing directly to production"
+  ],
+
+  "key_insights": {
+    "philosophy": "Treat Clawdbot like a new employee - onboard thoroughly, give context, set expectations",
+    "personalization_is_critical": "The more you tell it about yourself, the better it performs",
+    "proactivity": "The magic is in making Clawdbot proactive, not just reactive",
+    "personality_matters": "A good personality makes the experience enjoyable and sustainable",
+    "reverse_prompting": "Have Claude prompt YOU for what to do - uncovers unknown unknowns",
+    "schedule_everything": "If it's helpful, schedule it to run automatically"
+  },
+
+  "prompts_library": {
+    "morning_brief": "I want you to send me a morning brief every morning at 8 a.m. my time. Include: local weather, trending YouTube videos about my interests, tasks from my to-do list, tasks you can do for me today proactively, trending stories based on my interests, and recommendations to make today super productive.",
+    
+    "proactive_coding": "I am a one-man business. I work from the moment I wake up to the moment I go to sleep. I need an employee taking as much off my plate and being as proactive as possible. Please take everything you know about me and just do work you think would make my life easier or improve my business and make me money. I want to wake up every morning and be like 'Wow, you got a lot done while I was sleeping.' Don't be afraid to monitor my business and build things that would help improve our workflow. Just create PRs for me to review. Don't push anything live. I'll test and commit. Every night when I go to bed, build something cool I can test. Schedule time to work every night at 11:00 p.m.",
+    
+    "second_brain": "I want you to build a second brain. This should be a next.js app that shows a list of documents you create as you work together in a nice document viewer that feels like a mix of obsidian and linear. I want you to create a folder where all the documents in that folder are viewable in the second brain. Update your memory skills so that when we talk every day, you create documents in that second brain that explore some of the more important concepts we discuss. You should also create daily journal entries that record from a high level all our daily discussions.",
+    
+    "daily_research": "I want a daily research report sent to me every afternoon. Based on what you know about me, I want you to research and give me a report about a concept that would improve me, processes that would improve our working relationship, or anything else that would be helpful for me. Examples would be deep dives on concepts I'm interested in like machine learning or new workflows we can implement together that will improve our productivity.",
+    
+    "workflow_discovery": "Based on what you know about me, what are five workflows and tasks you can do for me every day? These can include connectors or skills we don't have yet."
+  },
+
+  "skills_to_install": [
+    "Things 3 / To-do list integration",
+    "Brave Search API (for efficient web search)",
+    "Matt Van Horn's Reddit/X research skill",
+    "Apple Notes / Notion integration",
+    "Email monitoring",
+    "Calendar integration",
+    "GitHub access for vibe coding"
+  ],
+
+  "marko_specific_applications": {
+    "goal": "$9.6M exit, 2-3 calls per day",
+    "recommended_focus_areas": [
+      "Lead research automation (Reddit/X skill)",
+      "Morning briefs with prospect intelligence",
+      "Automated email monitoring for inbound leads",
+      "Content idea generation for thought leadership",
+      "Competitor monitoring and analysis",
+      "Meeting prep automation",
+      "Overnight development of agency tools",
+      "Second brain for capturing client insights and patterns"
+    ],
+    "suggested_daily_schedule": {
+      "7am": "Wake up to morning brief",
+      "8am": "Review overnight Clawdbot work",
+      "morning": "2-3 sales calls (AI-prepped briefings)",
+      "afternoon": "Receive research report",
+      "evening": "Set priorities for overnight work",
+      "11pm": "Clawdbot starts nightly tasks"
+    }
+  }
+}

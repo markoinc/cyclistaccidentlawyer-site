@@ -1,0 +1,140 @@
+{
+  "automations": [
+    {
+      "name": "Customer Avatar Agent",
+      "path": "/home/ec2-user/data/kurios-finish/business/automation/customer_avatar_agent/",
+      "purpose": "Automated sales call analysis using Mitch Wiggins framework",
+      "status": "active",
+      "components": ["agent.py", "scheduler.py", "transcription.py", "extraction.py", "document_updater.py"]
+    },
+    {
+      "name": "Clawd AI Agent System",
+      "path": "/home/ec2-user/data/kurios-finish/automation/clawd-agents/",
+      "purpose": "Lead qualification and routing via WhatsApp/Telegram",
+      "status": "awaiting_api_key",
+      "components": ["server.js", "intake-agent.js", "avatar-detector.js", "context-loader.js"]
+    },
+    {
+      "name": "Reddit Link Building Crawler",
+      "path": "/home/ec2-user/data/kurios-finish/automation/research/",
+      "purpose": "24/7 Reddit monitoring for link building opportunities",
+      "status": "planned"
+    },
+    {
+      "name": "Knowledge Management Suite",
+      "path": "/home/ec2-user/data/kurios-finish/automation/knowledge-management/",
+      "purpose": "Aggregates context, adds metadata, builds registry",
+      "status": "active"
+    }
+  ],
+  "businessDocs": [
+    {
+      "name": "CUSTOMER_AVATAR_MASTER.md",
+      "path": "/home/ec2-user/data/kurios-finish/business/strategy/CUSTOMER_AVATAR_MASTER.md",
+      "type": "strategy",
+      "summary": "10 MVA attorney call analysis - 4 main customer avatars"
+    },
+    {
+      "name": "buyer_profiles.md",
+      "path": "/home/ec2-user/data/kurios-finish/business/strategy/buyer_profiles.md",
+      "type": "avatar",
+      "summary": "Detailed buyer personas - Skeptical Veteran, Solo Scaler, etc."
+    },
+    {
+      "name": "live_transfer_buyer_profiles.md",
+      "path": "/home/ec2-user/data/kurios-finish/business/strategy/live_transfer_buyer_profiles.md",
+      "type": "avatar",
+      "summary": "4 consolidated buyer categories with winning pitches"
+    },
+    {
+      "name": "INTEGRATED_GROWTH_PLAN_2026.md",
+      "path": "/home/ec2-user/data/kurios-finish/business/strategy/INTEGRATED_GROWTH_PLAN_2026.md",
+      "type": "strategy",
+      "summary": "Master growth plan with 90-day roadmap"
+    },
+    {
+      "name": "24hr MVA PI Sales Bootcamp.txt",
+      "path": "/home/ec2-user/data/kurios-finish/business/Sales/24hr MVA PI Sales Bootcamp.txt",
+      "type": "playbook",
+      "summary": "Complete sales training - scripts, objections, proposals"
+    },
+    {
+      "name": "Offers_2026.md",
+      "path": "/home/ec2-user/data/kurios-finish/business/offers/Offers_2026.md",
+      "type": "offer",
+      "summary": "Sign 15 Cases in 90 Days Guaranteed - $50k offer"
+    }
+  ],
+  "ghlWorkflows": [
+    {"name": "Lead Source Tagging", "description": "Auto-tags leads by source"},
+    {"name": "Qualification Level Routing", "description": "Routes by case strength"},
+    {"name": "High-Value Lead Detection", "description": "Priority follow-up for $20k+ cases"},
+    {"name": "Calculator Lead Sequence", "description": "5-step follow-up sequence"},
+    {"name": "Case Assessment (Strong)", "description": "4-step sequence for qualified leads"},
+    {"name": "Case Assessment (Weak) Nurture", "description": "Educational nurture sequence"},
+    {"name": "Police Report Review", "description": "3-step acknowledgment sequence"},
+    {"name": "Homepage Lead Sequence", "description": "5-step welcome sequence"}
+  ],
+  "avatars": [
+    {
+      "name": "The Fast Scaler",
+      "score": 89,
+      "ranking": 1,
+      "description": "Small/mid firms, aggressive expansion, 100% close rate, $20-50k budget"
+    },
+    {
+      "name": "The Sophisticated Buyer",
+      "score": 52,
+      "ranking": 2,
+      "description": "Mid/large firms, committee decisions, $30-100k budget"
+    },
+    {
+      "name": "The Burned Veteran",
+      "score": 48,
+      "ranking": 3,
+      "description": "Wasted $100-250k on failed marketing, needs guarantees"
+    },
+    {
+      "name": "The Solo Transitioner",
+      "score": 40,
+      "ranking": 4,
+      "description": "Solo practitioners transitioning, $15-25k budget"
+    },
+    {
+      "name": "Intake-Needy Buyer",
+      "category": "consolidated",
+      "description": "Need Patrick's intake service ($100/transfer)"
+    },
+    {
+      "name": "Transparency Seeker",
+      "category": "consolidated",
+      "description": "Want control and contractual guarantees"
+    },
+    {
+      "name": "Channel Strategist",
+      "category": "consolidated",
+      "description": "Multi-vendor firms needing channel isolation"
+    },
+    {
+      "name": "Compliance/Quality-Focused Scaler",
+      "category": "consolidated",
+      "description": "Risk-averse, $30-50k+ budgets"
+    }
+  ],
+  "salesProcess": {
+    "pricingTiers": [
+      {"tier": 1, "name": "OTP Verified Leads", "minimum": "$15,000", "cpa": "$2,143-$3,000"},
+      {"tier": 2, "name": "Qualified Live Transfers", "minimum": "$25,000", "cpa": "$2,083-$3,571"},
+      {"tier": 3, "name": "Full-Service Case Closing", "minimum": "$35,000", "cpa": "$2,917-$3,500"}
+    ],
+    "guaranteeOffer": {
+      "name": "Sign 15 Cases in 90 Days Guaranteed",
+      "upfront": "$50,000",
+      "costPerCase": "$3,000"
+    },
+    "partners": {
+      "casesOnDemand": "Media buy model, $250-350/lead",
+      "inquire2Esquire": "Patrick's intake - $100/transfer or $350/signed"
+    }
+  }
+}

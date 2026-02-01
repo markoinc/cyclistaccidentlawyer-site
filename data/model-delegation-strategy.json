@@ -1,0 +1,180 @@
+{
+  "lastUpdated": "2026-01-31T18:45:00Z",
+  "version": "1.0",
+  "sources": [
+    "Alex Finn - YouTube (@AlexFinnOfficial)",
+    "Jacky Chou - The Startup Ideas Podcast",
+    "Reddit r/clawdbot, r/LocalLLM, r/vibecoding",
+    "Dev.to Bifrost Guide",
+    "Community Best Practices"
+  ],
+  "overview": {
+    "concept": "Brain/Muscle Architecture",
+    "description": "Use Claude Opus as the orchestrating 'brain' that makes decisions and delegates computationally expensive or specialized tasks to other 'muscle' models",
+    "benefits": [
+      "Avoid rate limits on expensive models",
+      "Cost optimization (10-30x savings possible)",
+      "Leverage specialized model strengths",
+      "Parallel task execution",
+      "Better context management"
+    ]
+  },
+  "modelRoles": {
+    "brain": {
+      "model": "Claude Opus 4.5",
+      "role": "Orchestrator / Decision Maker",
+      "useCases": [
+        "Main conversation with user",
+        "Task planning and breakdown",
+        "Complex reasoning and decisions",
+        "Reviewing outputs from muscle models",
+        "Final delivery to user"
+      ],
+      "costTier": "High",
+      "notes": "Best personality for conversational AI. Worth the cost for orchestration."
+    },
+    "muscles": {
+      "coding": {
+        "primary": "Codex CLI (o4-mini high reasoning)",
+        "alternatives": ["GPT-5.2 Codex", "Gemini 3 Pro", "Grok Code Fast 1"],
+        "useCases": ["Writing code", "Debugging", "Code review", "Refactoring"],
+        "alexFinnTip": "Use Codex CLI as the coding muscle to save Claude Opus tokens"
+      },
+      "research": {
+        "primary": "Gemini 3 Flash",
+        "alternatives": ["Grok 4.1", "Perplexity"],
+        "useCases": ["Web search", "Bulk data processing", "Internet research"],
+        "notes": "300k+ tokens/day feasible with Gemini Flash"
+      },
+      "realTimeSearch": {
+        "primary": "Grok",
+        "useCases": ["X/Twitter search", "Real-time news", "Social media monitoring"],
+        "notes": "Connect Grok account to get powerful real-time search"
+      },
+      "planning": {
+        "primary": "ChatGPT / GPT-5.2",
+        "useCases": ["Task breakdown", "Planning", "Chain of thought"],
+        "notes": "Good for structured planning before execution"
+      },
+      "budget": {
+        "primary": "MiniMax 2.1",
+        "alternatives": ["GLM 4.6V", "Local models"],
+        "useCases": ["Simple tasks", "File operations", "Basic automation"],
+        "notes": "Decent intelligence + personality at low cost"
+      },
+      "imageGeneration": {
+        "primary": "Nano Banana Pro",
+        "useCases": ["Thumbnails", "Graphics", "Visual content"]
+      }
+    }
+  },
+  "delegationFramework": {
+    "pattern": "Opus orchestrates, delegates to specialists, reviews results",
+    "implementation": {
+      "clawdbotConfig": {
+        "description": "Configure Clawdbot to spawn sub-agents with different models",
+        "method": "sessions_spawn with model parameter",
+        "example": "For complex coding tasks, Clawdbot launches Opus, Gemini 3 Pro, or GPT 5.2 High as sub-agents"
+      },
+      "bifrostGateway": {
+        "description": "Use Bifrost for multi-provider routing and automatic failover",
+        "features": [
+          "Single endpoint for 15+ providers",
+          "Automatic failover on rate limits",
+          "Cost tracking and budgets",
+          "Load balancing"
+        ],
+        "setup": "clawdbot config set models.providers.bifrost with baseUrl to Bifrost"
+      }
+    },
+    "workflowExamples": [
+      {
+        "task": "Build a new feature",
+        "flow": [
+          "Opus receives request, creates plan",
+          "Opus spawns Codex CLI sub-agent for implementation",
+          "Codex writes code, returns to Opus",
+          "Opus reviews, requests changes if needed",
+          "Opus delivers final result to user"
+        ]
+      },
+      {
+        "task": "Research and summarize topic",
+        "flow": [
+          "Opus receives request",
+          "Spawns Gemini Flash for bulk research",
+          "Gemini returns raw data",
+          "Opus synthesizes and summarizes",
+          "Delivers polished result"
+        ]
+      },
+      {
+        "task": "Monitor X/Twitter for mentions",
+        "flow": [
+          "Scheduled task triggers",
+          "Grok performs search",
+          "Results passed to Opus",
+          "Opus filters and prioritizes",
+          "Sends alert if relevant"
+        ]
+      }
+    ]
+  },
+  "costOptimizationStrategies": [
+    {
+      "strategy": "Use subscription over API",
+      "details": "Authenticate with Claude Max subscription ($100/mo) instead of API keys to avoid $200+/day costs",
+      "source": "Matthew Berman, Alex Finn"
+    },
+    {
+      "strategy": "Sonnet for conversation, Opus for complexity",
+      "details": "Use Sonnet 4.5 as main conversational model, only escalate to Opus for complex reasoning",
+      "source": "Reddit r/clawdbot"
+    },
+    {
+      "strategy": "Local models for grunt work",
+      "details": "Use local models (GLM 4.6V, etc.) for file searches, exploration, simple tasks",
+      "source": "GitHub issue #18873"
+    },
+    {
+      "strategy": "Optimize for TPM",
+      "details": "Tell bot to optimize for tokens per minute, split tasks smaller, be cautious",
+      "source": "Reddit user experience"
+    },
+    {
+      "strategy": "Gemini Flash as default",
+      "details": "Run Gemini Flash 3 as main model (~300k tokens/day), only call Opus for heavy reasoning",
+      "source": "Reddit r/LocalLLM"
+    }
+  ],
+  "rateLimitAvoidance": [
+    {
+      "technique": "Model rotation",
+      "description": "Automatically rotate between providers when hitting limits"
+    },
+    {
+      "technique": "Bifrost failover",
+      "description": "Configure Bifrost gateway to failover to backup providers"
+    },
+    {
+      "technique": "Context compression",
+      "description": "Use memory flush and context compaction to reduce token usage"
+    },
+    {
+      "technique": "Task batching",
+      "description": "Batch similar operations to reduce API calls"
+    }
+  ],
+  "recommendedSetupForMarko": {
+    "mainModel": "Claude Opus 4.5 (via subscription)",
+    "codingMuscle": "Codex CLI with o4-mini high reasoning",
+    "researchMuscle": "Gemini 3 Flash (API key in .env.local)",
+    "searchMuscle": "Grok (for X/Twitter)",
+    "budgetFallback": "MiniMax or local model",
+    "imageGen": "Nano Banana Pro",
+    "configuration": {
+      "TOOLS.md": "Already configured with this architecture",
+      "usage": "Spawn sub-agents for heavy tasks, keep Opus for orchestration"
+    }
+  }
+}
