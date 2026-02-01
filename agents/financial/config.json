@@ -1,0 +1,124 @@
+{
+  "agent_name": "Ledger",
+  "version": "1.0.0",
+  
+  "google": {
+    "token_path": "~/.config/gcal-pro/token.json",
+    "scopes": ["https://www.googleapis.com/auth/spreadsheets.readonly"]
+  },
+  
+  "sheets": {
+    "2025-09": "1IuZIUjz4R0umPP3ihciMySq_NgrtO4lxB18hhbtLaSM",
+    "2025-11": "1DmOeIoWJ-K6P4vST4-Sdbf35cZqiuej7AjS0facCsA0",
+    "2025-12": "1sGg3SHDLKAmDz0V79MvF-ZVCHcaxjCYMTDV-fZlLWOo"
+  },
+  
+  "tabs": {
+    "overview": "Overview",
+    "accounts": ["Chase Checking", "Chase Credit", "Business Checking"]
+  },
+  
+  "categories": {
+    "income": {
+      "patterns": ["STRIPE", "ZELLE", "DEPOSIT", "PAYROLL", "TRANSFER FROM"],
+      "subcategories": {
+        "stripe": ["STRIPE"],
+        "zelle": ["ZELLE"],
+        "other": []
+      }
+    },
+    "subscriptions": {
+      "patterns": [],
+      "known": {
+        "10web": {"pattern": "10WEB", "expected": 136, "category": "business", "subcategory": "hosting"},
+        "canva": {"pattern": "CANVA", "expected": 15, "category": "business", "subcategory": "design"},
+        "google_one": {"pattern": "GOOGLE.*STORAGE|GOOGLE ONE", "expected": 20, "category": "business", "subcategory": "storage"},
+        "chatgpt": {"pattern": "OPENAI|CHATGPT", "expected": 20, "category": "business", "subcategory": "ai_tools"},
+        "ideogram": {"pattern": "IDEOGRAM", "expected": 20, "category": "business", "subcategory": "ai_tools"},
+        "flowith": {"pattern": "FLOWITH", "expected": 20, "category": "business", "subcategory": "ai_tools"},
+        "spotify": {"pattern": "SPOTIFY", "expected": 13, "category": "personal", "subcategory": "entertainment"},
+        "apify": {"pattern": "APIFY", "expected": 39, "category": "business", "subcategory": "automation"},
+        "airalo": {"pattern": "AIRALO", "expected": 33, "category": "personal", "subcategory": "travel"},
+        "apple": {"pattern": "APPLE\\.COM|APPLE BILL", "expected": null, "category": "mixed", "subcategory": "apple"},
+        "amazon_prime": {"pattern": "PRIME VIDEO|AMAZON PRIME", "expected": 15, "category": "personal", "subcategory": "entertainment"},
+        "claude": {"pattern": "ANTHROPIC", "expected": 20, "category": "business", "subcategory": "ai_tools"},
+        "github": {"pattern": "GITHUB", "expected": 4, "category": "business", "subcategory": "dev_tools"},
+        "notion": {"pattern": "NOTION", "expected": 10, "category": "business", "subcategory": "productivity"},
+        "vercel": {"pattern": "VERCEL", "expected": 20, "category": "business", "subcategory": "hosting"},
+        "railway": {"pattern": "RAILWAY", "expected": null, "category": "business", "subcategory": "hosting"},
+        "digital_ocean": {"pattern": "DIGITALOCEAN|DO ", "expected": null, "category": "business", "subcategory": "hosting"},
+        "aws": {"pattern": "AMAZON WEB SERVICES|AWS", "expected": null, "category": "business", "subcategory": "hosting"},
+        "namecheap": {"pattern": "NAMECHEAP", "expected": null, "category": "business", "subcategory": "domains"},
+        "godaddy": {"pattern": "GODADDY", "expected": null, "category": "business", "subcategory": "domains"}
+      }
+    },
+    "transfers": {
+      "patterns": ["TRANSFER", "ZELLE SENT", "VENMO", "PAYPAL TRANSFER"],
+      "exclude_from_expenses": true
+    },
+    "food": {
+      "patterns": ["DOORDASH", "UBER EATS", "GRUBHUB", "RESTAURANT", "MCDONALD", "CHIPOTLE", "STARBUCKS"],
+      "category": "personal"
+    },
+    "utilities": {
+      "patterns": ["ELECTRIC", "GAS BILL", "WATER", "INTERNET", "PHONE"],
+      "category": "mixed"
+    },
+    "travel": {
+      "patterns": ["AIRLINE", "HOTEL", "AIRBNB", "UBER", "LYFT"],
+      "category": "mixed"
+    }
+  },
+  
+  "annotations": {
+    "action_keywords": {
+      "cancelled": "Subscription cancelled - track for confirmation",
+      "investigate": "Needs manual review",
+      "switch to biz debit": "Move to business account",
+      "refund pending": "Expecting refund",
+      "duplicate": "Possible double charge",
+      "tax deductible": "Mark for tax prep"
+    }
+  },
+  
+  "thresholds": {
+    "subscription_detection": {
+      "min_occurrences": 2,
+      "amount_variance_percent": 15,
+      "days_between_min": 25,
+      "days_between_max": 35
+    },
+    "large_expense": 500,
+    "unusual_expense_multiplier": 2.5
+  },
+  
+  "debt": {
+    "cards": {
+      "chase_freedom": {"limit": 5000, "apr": 24.99},
+      "chase_sapphire": {"limit": 10000, "apr": 21.99}
+    },
+    "target_utilization": 30,
+    "paydown_strategy": "avalanche"
+  },
+  
+  "assets": {
+    "tracked": {
+      "rank_rent_sites": {"type": "business", "estimated_value": 150000},
+      "cash": {"type": "liquid", "accounts": ["checking", "savings"]},
+      "stocks": {"type": "investment", "accounts": ["brokerage"]},
+      "crypto": {"type": "investment", "assets": ["BTC", "SOL"]}
+    }
+  },
+  
+  "tax": {
+    "business_categories": ["hosting", "ai_tools", "automation", "design", "storage", "dev_tools", "domains", "productivity"],
+    "personal_categories": ["entertainment", "travel"],
+    "mixed_categories": ["apple", "utilities"],
+    "fiscal_year_end": "12-31"
+  },
+  
+  "output": {
+    "data_dir": "data/processed",
+    "reports_dir": "data/reports"
+  }
+}

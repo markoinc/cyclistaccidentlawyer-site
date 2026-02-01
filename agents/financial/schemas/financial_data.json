@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ledger Financial Data Schema",
+  "description": "Schema for processed financial data",
+  
+  "definitions": {
+    "transaction": {
+      "type": "object",
+      "required": ["id", "date", "description", "amount", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique transaction ID (hash of date+description+amount)"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Transaction date (YYYY-MM-DD)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Raw transaction description from bank"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Transaction amount (negative = expense, positive = income)"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["debit", "credit"],
+          "description": "Bank transaction type"
+        },
+        "balance": {
+          "type": "number",
+          "description": "Account balance after transaction"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["income", "subscription", "transfer", "food", "utilities", "travel", "shopping", "other"],
+          "description": "Auto-detected category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "More specific category (e.g., 'ai_tools', 'hosting')"
+        },
+        "tax_category": {
+          "type": "string",
+          "enum": ["business", "personal", "mixed", "unknown"],
+          "description": "Tax classification"
+        },
+        "is_recurring": {
+          "type": "boolean",
+          "description": "Whether this is a recurring charge"
+        },
+        "subscription_id": {
+          "type": "string",
+          "description": "Reference to subscription if recurring"
+        },
+        "annotation": {
+          "type": "string",
+          "description": "Manual annotation from Google Sheet"
+        },
+        "flags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Auto-generated flags (large_expense, unusual, etc.)"
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "sheet_id": {"type": "string"},
+            "tab": {"type": "string"},
+            "row": {"type": "integer"}
+          }
+        }
+      }
+    },
+    
+    "subscription": {
+      "type": "object",
+      "required": ["id", "name", "amount", "frequency"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique subscription identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Service name (e.g., 'ChatGPT')"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Regex pattern to match transactions"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Expected monthly cost"
+        },
+        "actual_amounts": {
+          "type": "array",
+          "items": {"type": "number"},
+          "description": "Historical amounts charged"
+        },
+        "frequency": {
+          "type": "string",
+          "enum": ["monthly", "annual", "quarterly", "weekly"],
+          "description": "Billing frequency"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["business", "personal", "mixed"],
+          "description": "Tax category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "Specific category (hosting, ai_tools, etc.)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "cancelled", "pending_cancel", "paused"],
+          "description": "Current subscription status"
+        },
+        "first_seen": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_charged": {
+          "type": "string",
+          "format": "date"
+        },
+        "next_expected": {
+          "type": "string",
+          "format": "date"
+        },
+        "total_spent": {
+          "type": "number",
+          "description": "Total spent on this subscription"
+        },
+        "charge_count": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    
+    "debt_account": {
+      "type": "object",
+      "required": ["id", "name", "type", "limit"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "type": {
+          "type": "string",
+          "enum": ["credit_card", "loan", "line_of_credit"]
+        },
+        "limit": {"type": "number"},
+        "balance": {"type": "number"},
+        "available": {"type": "number"},
+        "utilization_percent": {"type": "number"},
+        "apr": {"type": "number"},
+        "minimum_payment": {"type": "number"},
+        "due_date": {"type": "integer", "minimum": 1, "maximum": 31},
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {"type": "string", "format": "date"},
+              "balance": {"type": "number"},
+              "utilization": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    
+    "monthly_summary": {
+      "type": "object",
+      "required": ["month", "income", "expenses"],
+      "properties": {
+        "month": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}$",
+          "description": "Month in YYYY-MM format"
+        },
+        "income": {
+          "type": "object",
+          "properties": {
+            "total": {"type": "number"},
+            "breakdown": {
+              "type": "object",
+              "additionalProperties": {"type": "number"}
+            }
+          }
+        },
+        "expenses": {
+          "type": "object",
+          "properties": {
+            "total": {"type": "number"},
+            "subscriptions": {"type": "number"},
+            "one_time": {"type": "number"},
+            "by_category": {
+              "type": "object",
+              "additionalProperties": {"type": "number"}
+            }
+          }
+        },
+        "net": {"type": "number"},
+        "savings_rate": {"type": "number"},
+        "burn_rate": {"type": "number"},
+        "subscription_total": {"type": "number"},
+        "debt_utilization": {"type": "number"},
+        "tax_deductible": {"type": "number"},
+        "flags": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  },
+  
+  "type": "object",
+  "properties": {
+    "version": {"type": "string"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "period": {
+      "type": "object",
+      "properties": {
+        "start": {"type": "string", "format": "date"},
+        "end": {"type": "string", "format": "date"}
+      }
+    },
+    "transactions": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/transaction"}
+    },
+    "subscriptions": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/subscription"}
+    },
+    "debt_accounts": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/debt_account"}
+    },
+    "monthly_summaries": {
+      "type": "array",
+      "items": {"$ref": "#/definitions/monthly_summary"}
+    }
+  }
+}

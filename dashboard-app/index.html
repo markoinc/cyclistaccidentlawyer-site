@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: { 900: '#09090b', 800: '#18181b', 700: '#27272a', 600: '#3f3f46' },
+                        brand: { DEFAULT: '#3b82f6', light: '#60a5fa' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scrollbar-width: thin; scrollbar-color: #3f3f46 #18181b; }
+        .glass { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(12px); }
+        .glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
+        .pulse-dot { animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .gradient-border { background: linear-gradient(135deg, #3b82f6, #a855f7); padding: 1px; border-radius: 0.75rem; }
+        .gradient-border > div { background: #18181b; border-radius: 0.65rem; }
+        .action-urgent { border-left: 4px solid #ef4444; }
+        .action-high { border-left: 4px solid #f97316; }
+        .action-normal { border-left: 4px solid #3b82f6; }
+        .prob-high { color: #22c55e; }
+        .prob-medium { color: #eab308; }
+        .prob-low { color: #ef4444; }
+    </style>
+</head>
+<body class="bg-dark-900 text-zinc-100 font-sans min-h-screen">
+    <!-- Auth Gate -->
+    <div id="auth-gate" class="fixed inset-0 bg-dark-900 z-50 flex items-center justify-center">
+        <div class="glass rounded-2xl p-8 max-w-md w-full mx-4 glow">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl">🏔️</div>
+                <h1 class="text-2xl font-bold">Sierra Command Center</h1>
+                <p class="text-zinc-400 mt-2">KuriosBrand Dashboard</p>
+            </div>
+            <form id="auth-form" class="space-y-4">
+                <input type="password" id="auth-password" placeholder="Enter access code" 
+                    class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" autocomplete="current-password">
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-lg transition">
+                    Access Dashboard
+                </button>
+                <p id="auth-error" class="text-red-400 text-sm text-center hidden">Invalid access code</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="hidden">
+        <!-- Header -->
+        <header class="sticky top-0 z-40 glass border-b border-dark-700">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-xl">🏔️</div>
+                    <div>
+                        <h1 class="font-bold text-lg">Sierra</h1>
+                        <p class="text-xs text-zinc-500">Command Center</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-medium" id="current-date">Loading...</p>
+                        <p class="text-xs text-zinc-500" id="current-time">--:--</p>
+                    </div>
+                    <button onclick="refreshData()" id="refresh-btn" class="p-2 hover:bg-dark-700 rounded-lg transition" title="Refresh">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </button>
+                    <div class="flex items-center gap-2 text-xs text-zinc-400">
+                        <span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
+                        <span class="hidden sm:inline">Online</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="max-w-7xl mx-auto px-4 py-6 space-y-6">
+            <!-- Quick Stats Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer" onclick="scrollToSection('actions')">
+                    <p class="text-xs text-zinc-500 mb-1">Today's Actions</p>
+                    <p class="text-2xl font-bold text-orange-400" id="stat-actions">0</p>
+                </div>
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer" onclick="scrollToSection('pipeline')">
+                    <p class="text-xs text-zinc-500 mb-1">Hot Leads</p>
+                    <p class="text-2xl font-bold text-red-400" id="stat-hot">0</p>
+                </div>
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer" onclick="scrollToSection('pipeline')">
+                    <p class="text-xs text-zinc-500 mb-1">Pipeline Value</p>
+                    <p class="text-2xl font-bold text-green-400" id="stat-value">$0</p>
+                </div>
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer" onclick="scrollToSection('opportunities')">
+                    <p class="text-xs text-zinc-500 mb-1">Opportunities</p>
+                    <p class="text-2xl font-bold text-purple-400" id="stat-opps">0</p>
+                </div>
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer hidden lg:block" onclick="scrollToSection('growth')">
+                    <p class="text-xs text-zinc-500 mb-1">Growth Score</p>
+                    <p class="text-2xl font-bold text-blue-400" id="stat-growth">--</p>
+                </div>
+                <div class="glass rounded-xl p-4 border border-dark-700 hover:border-dark-600 transition cursor-pointer hidden lg:block">
+                    <p class="text-xs text-zinc-500 mb-1">Win Rate</p>
+                    <p class="text-2xl font-bold text-cyan-400" id="stat-winrate">--%</p>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- Left Column - Actions & Calendar -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- TODAY'S ACTIONS - THE HERO SECTION -->
+                    <section id="actions" class="gradient-border">
+                        <div class="p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-2xl">🎯</span>
+                                    <div>
+                                        <h2 class="font-bold text-lg">Today's Actions</h2>
+                                        <p class="text-xs text-zinc-500">What needs to happen TODAY</p>
+                                    </div>
+                                </div>
+                                <span class="bg-orange-500/20 text-orange-400 text-xs font-semibold px-3 py-1 rounded-full" id="action-count">0 items</span>
+                            </div>
+                            <div id="action-list" class="space-y-2">
+                                <!-- Actions loaded here -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pipeline Section -->
+                    <section id="pipeline" class="glass rounded-xl border border-dark-700 p-5">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🔥</span>
+                                <div>
+                                    <h2 class="font-bold text-lg">Sales Pipeline</h2>
+                                    <p class="text-xs text-zinc-500">With close probabilities</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 text-xs">
+                                <span class="text-green-400">●</span><span class="text-zinc-400">High</span>
+                                <span class="text-yellow-400">●</span><span class="text-zinc-400">Med</span>
+                                <span class="text-red-400">●</span><span class="text-zinc-400">Low</span>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-4" id="pipeline-grid">
+                            <!-- Pipeline columns -->
+                        </div>
+                    </section>
+
+                    <!-- Unit Economics -->
+                    <section class="glass rounded-xl border border-dark-700 p-5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">💰</span>
+                            <div>
+                                <h2 class="font-bold text-lg">Unit Economics</h2>
+                                <p class="text-xs text-zinc-500">MVA Lead Gen Funnel</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-dark-700 rounded-lg p-4 text-center">
+                                <p class="text-xs text-zinc-500 mb-1">Cost/Lead</p>
+                                <p class="text-xl font-bold text-red-400">$250</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4 text-center">
+                                <p class="text-xs text-zinc-500 mb-1">Conversion</p>
+                                <p class="text-xl font-bold text-yellow-400">15%</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4 text-center">
+                                <p class="text-xs text-zinc-500 mb-1">Case Price</p>
+                                <p class="text-xl font-bold text-blue-400">$3,000</p>
+                            </div>
+                            <div class="bg-dark-700 rounded-lg p-4 text-center">
+                                <p class="text-xs text-zinc-500 mb-1">Margin/Case</p>
+                                <p class="text-xl font-bold text-green-400">$1,000+</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column - Opportunities & Growth -->
+                <div class="space-y-6">
+                    <!-- OPPORTUNITIES & ALERTS -->
+                    <section id="opportunities" class="glass rounded-xl border border-dark-700 p-5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">⚡</span>
+                            <h2 class="font-bold text-lg">Opportunities</h2>
+                        </div>
+                        <div id="opportunities-list" class="space-y-3">
+                            <!-- Opportunities loaded here -->
+                        </div>
+                    </section>
+
+                    <!-- Growth Initiatives -->
+                    <section id="growth" class="glass rounded-xl border border-dark-700 p-5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">📈</span>
+                            <h2 class="font-bold text-lg">Growth Initiatives</h2>
+                        </div>
+                        <div id="growth-list" class="space-y-2">
+                            <!-- Growth items loaded here -->
+                        </div>
+                    </section>
+
+                    <!-- Quick Links -->
+                    <section class="glass rounded-xl border border-dark-700 p-5">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">🔗</span>
+                            <h2 class="font-bold text-lg">Quick Access</h2>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="https://texastruckaccidents.net" target="_blank" class="bg-dark-700 hover:bg-dark-600 rounded-lg p-3 text-center transition">
+                                <span class="text-lg">🌐</span>
+                                <p class="text-xs mt-1">TX Trucks</p>
+                            </a>
+                            <a href="#" class="bg-dark-700 hover:bg-dark-600 rounded-lg p-3 text-center transition">
+                                <span class="text-lg">📊</span>
+                                <p class="text-xs mt-1">GHL</p>
+                            </a>
+                            <a href="#" class="bg-dark-700 hover:bg-dark-600 rounded-lg p-3 text-center transition">
+                                <span class="text-lg">📧</span>
+                                <p class="text-xs mt-1">Email</p>
+                            </a>
+                            <a href="#" class="bg-dark-700 hover:bg-dark-600 rounded-lg p-3 text-center transition">
+                                <span class="text-lg">📱</span>
+                                <p class="text-xs mt-1">Telegram</p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Financial Health (placeholder) -->
+                    <section class="glass rounded-xl border border-dark-700 p-5 opacity-60">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">🏦</span>
+                            <div>
+                                <h2 class="font-bold text-lg">Financial Health</h2>
+                                <p class="text-xs text-zinc-500">Coming soon</p>
+                            </div>
+                        </div>
+                        <div class="bg-dark-700 rounded-lg p-4 text-center text-zinc-500">
+                            <p class="text-sm">Financial agent integration pending</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Projects & Agents Row -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Active Projects -->
+                <section class="glass rounded-xl border border-dark-700 p-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">📁</span>
+                        <h2 class="font-bold text-lg">Active Projects</h2>
+                    </div>
+                    <div id="projects-list" class="space-y-2">
+                        <!-- Projects loaded here -->
+                    </div>
+                </section>
+
+                <!-- Agents -->
+                <section class="glass rounded-xl border border-dark-700 p-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">🤖</span>
+                        <h2 class="font-bold text-lg">Active Agents</h2>
+                    </div>
+                    <div id="agents-list" class="space-y-2">
+                        <!-- Agents loaded here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-dark-700 mt-8 py-4">
+            <div class="max-w-7xl mx-auto px-4 flex items-center justify-between text-xs text-zinc-500">
+                <span>Sierra • KuriosBrand</span>
+                <span id="last-update">Last updated: --</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

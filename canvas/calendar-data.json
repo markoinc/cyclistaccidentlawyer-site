@@ -19,6 +19,24 @@
       "allDay": false
     },
     {
+      "id": "0rqchb3ddf2g1oogkkfrdehj7o",
+      "title": "\ud83d\udd25 HIGHEST PRIORITY: Setup sales flow automations in GHL (no video needed)",
+      "start": "2026-02-02T09:00:00-05:00",
+      "end": "2026-02-02T11:00:00-05:00",
+      "location": "",
+      "description": "Set up the sales flow automations in GoHighLevel. Video not needed to start - can do that after.",
+      "allDay": false
+    },
+    {
+      "id": "q6g1eds42i02irhchofk8nu4tg",
+      "title": "\ud83c\udfa5 Record sales video (or figure out with AI)",
+      "start": "2026-02-02T11:00:00-05:00",
+      "end": "2026-02-02T12:30:00-05:00",
+      "location": "",
+      "description": "Record the sales video for the automations, or explore AI alternative.",
+      "allDay": false
+    },
+    {
       "id": "lol4j6bhehpri4cj1aq6s0hj1o",
       "title": "Build Social Media Head Agent",
       "start": "2026-02-02T13:00:00-05:00",
@@ -91,6 +109,6 @@
       "allDay": false
     }
   ],
-  "count": 10,
-  "updated": "2026-02-01T01:46:34.840529Z"
+  "count": 12,
+  "updated": "2026-02-01T02:09:51.739056Z"
 }

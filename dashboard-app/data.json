@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "lastUpdated": "2026-02-01T02:15:00Z",
+    "version": "2.0"
+  },
+  "business": {
+    "name": "KuriosBrand LLC",
+    "owner": "Mark Gundrum",
+    "focus": "MVA Lead Gen Client Acquisition"
+  },
+  "todayActions": [
+    {
+      "icon": "📞",
+      "title": "Call Scott Barney",
+      "description": "Burned $250k - discuss pain points",
+      "priority": "urgent",
+      "contact": "VA Beach"
+    },
+    {
+      "icon": "📧",
+      "title": "Send proposal to Ross Robin",
+      "description": "New PI firm, eager to scale",
+      "priority": "high"
+    },
+    {
+      "icon": "📝",
+      "title": "Finalize Jalal contract",
+      "description": "$50k verbal commit",
+      "priority": "high"
+    },
+    {
+      "icon": "🤖",
+      "title": "Deploy AI Intake Agent",
+      "description": "Add OpenAI API key - saves $5K/month",
+      "priority": "high"
+    }
+  ],
+  "opportunities": [
+    {
+      "icon": "🤖",
+      "title": "AI Intake Agent",
+      "savings": "$5K/month",
+      "status": "90% complete",
+      "action": "Add OpenAI API key to .env files",
+      "priority": "high"
+    },
+    {
+      "icon": "📊",
+      "title": "Call Cost Reduction",
+      "savings": "$150/call",
+      "status": "Researching AI voice",
+      "action": "Evaluate VAPI, Bland.ai",
+      "priority": "medium"
+    },
+    {
+      "icon": "🌐",
+      "title": "SEO Network",
+      "potential": "2K-6K visitors/mo",
+      "status": "Sites built, not deployed",
+      "action": "Deploy satellite sites",
+      "priority": "medium"
+    }
+  ],
+  "growthInitiatives": [
+    {
+      "name": "Call Cost Reduction",
+      "target": "$250 → <$100 via AI voice",
+      "progress": 20
+    },
+    {
+      "name": "SEO Network Build",
+      "target": "5-7 niche sites",
+      "progress": 35
+    },
+    {
+      "name": "Customer Refinement",
+      "target": "Mitch Wiggins framework",
+      "progress": 70
+    },
+    {
+      "name": "Texas Site Strategy",
+      "target": "Primary SEO asset",
+      "progress": 85
+    },
+    {
+      "name": "AI SEO",
+      "target": "ChatGPT + Google AI Overviews",
+      "progress": 10
+    }
+  ],
+  "unitEconomics": {
+    "costPerLead": 250,
+    "conversionRate": 0.15,
+    "casePrice": 3000,
+    "marginPerCase": 1000,
+    "flagshipOffer": {
+      "name": "Sign 15 Cases in 90 Days",
+      "upfront": 50000,
+      "perCase": 3000
+    }
+  },
+  "projects": {
+    "core": [
+      {
+        "name": "MVA Lead Gen",
+        "status": "active",
+        "priority": 1,
+        "description": "Motor vehicle accident leads for lawyers - primary business focus",
+        "partners": ["Cases on Demand", "Inquired Esquire"]
+      },
+      {
+        "name": "PI Vendor Intelligence",
+        "status": "active",
+        "priority": 2,
+        "description": "AI-powered vendor matching for PI attorneys"
+      },
+      {
+        "name": "GHL Sales Automation",
+        "status": "building",
+        "priority": 3,
+        "description": "8 workflows for appointment booking, no-show, contracts, nurture"
+      },
+      {
+        "name": "Customer Avatar System",
+        "status": "active",
+        "description": "11 buyer personas from sales call analysis"
+      },
+      {
+        "name": "Concrete Rank & Rent",
+        "status": "pending",
+        "description": "Local SEO sites generating leads - needs monetization"
+      }
+    ],
+    "agents": [
+      {
+        "name": "Sierra",
+        "emoji": "🏔️",
+        "status": "active",
+        "model": "Claude Opus",
+        "telegram": "@Sierra_molt_bot",
+        "role": "Main orchestrator"
+      },
+      {
+        "name": "SCOUT",
+        "emoji": "🔍",
+        "status": "active",
+        "model": "Claude Sonnet",
+        "telegram": "@scoutassstantdatabot",
+        "role": "Intel gatherer - X, Reddit, review sites"
+      }
+    ]
+  },
+  "pipeline": {
+    "hot": [
+      {
+        "name": "Scott Barney",
+        "location": "VA Beach",
+        "priority": "high",
+        "notes": "Burned $250k",
+        "nextAction": "Call to discuss pain points"
+      },
+      {
+        "name": "Ross Robin",
+        "priority": "high",
+        "notes": "New PI firm, eager to scale",
+        "nextAction": "Send proposal"
+      },
+      {
+        "name": "Jalal Abdallah",
+        "budget": "$50k",
+        "notes": "Multi-state, verbal commit",
+        "nextAction": "Finalize contract"
+      },
+      {
+        "name": "Omeed Hakimianpour",
+        "budget": "$50k",
+        "location": "CA",
+        "nextAction": "Campaign setup call"
+      },
+      {
+        "name": "Rich Hyde",
+        "company": "Trial Tribe",
+        "notes": "Wants reliable vendor",
+        "nextAction": "Case study call"
+      },
+      {
+        "name": "Dagmawi Getachew",
+        "notes": "Small test first",
+        "nextAction": "Pilot proposal"
+      },
+      {
+        "name": "Lucas Naccarati",
+        "notes": "Scalable paid acquisition",
+        "nextAction": "Strategy call"
+      }
+    ],
+    "inProgress": [
+      {
+        "name": "Daniel Ramirez",
+        "location": "Dallas→Houston",
+        "notes": "Spanish markets",
+        "followUp": "2026-02-05"
+      },
+      {
+        "name": "Josh Sweeney",
+        "company": "Shane Smith",
+        "notes": "YouTube/TikTok interest"
+      },
+      {
+        "name": "Michael Shirts",
+        "company": "BS Injury",
+        "location": "Las Vegas"
+      },
+      {
+        "name": "Michael Schulz",
+        "company": "RMD Law",
+        "followUp": "2026-02-10"
+      },
+      {
+        "name": "Joan Suh",
+        "notes": "Call scheduled 02/02"
+      }
+    ],
+    "closed": [
+      {
+        "name": "Jason E",
+        "company": "GCE Law",
+        "value": "$3k",
+        "dealSize": "$30k",
+        "closedDate": "2026-01-20"
+      }
+    ]
+  },
+  "integrations": {
+    "connected": [
+      "Google Calendar",
+      "Notion",
+      "X/Twitter",
+      "DataForSEO",
+      "Slack",
+      "Google Drive"
+    ],
+    "pending": ["GoHighLevel"]
+  }
+}
