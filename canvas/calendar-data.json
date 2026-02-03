@@ -1,33 +1,6 @@
 {
   "events": [
     {
-      "id": "tv363niu85g79tnhnjstjc4q5g",
-      "title": "Online Meeting: Thomas Stover III - Partnership - Qualified Leads",
-      "start": "2026-02-02T12:30:00-05:00",
-      "end": "2026-02-02T13:00:00-05:00",
-      "location": "https://meet.google.com/xje-jzuc-qkk",
-      "description": "\n\n==========\n\nName: Thomas Stover III\nPhone:- (910) 261-6288\nEmail: jacksfat881@gmail.com\n\n\n\nMonday, February 2, 2026 12:30 PM \n\n\ngenerating gmeet link ",
-      "allDay": false
-    },
-    {
-      "id": "hs81n1b6ndb4dmitv0hikhhhqs",
-      "title": "Online Meeting: Marc Salpeter - Partnership - Qualified Leads",
-      "start": "2026-02-02T15:30:00-05:00",
-      "end": "2026-02-02T16:00:00-05:00",
-      "location": "(806) 541-5366",
-      "description": "\n\n==========\n\nPhone:- (954) 224-1322\nEmail:- msalpeter@buckeyelawgroup.com\n\nBe ",
-      "allDay": false
-    },
-    {
-      "id": "roh26mcnc2qkvj5ptk5dif8000",
-      "title": "Online Meeting: Joan Suh - Partnership - Qualified Leads",
-      "start": "2026-02-02T16:00:00-05:00",
-      "end": "2026-02-02T16:30:00-05:00",
-      "location": "(806) 541-5366",
-      "description": "\n\n==========\n\nPhone:- (404) 914-7752\nEmail:- joan0407@gmail.com\n\nBe ",
-      "allDay": false
-    },
-    {
       "id": "3jc8b06nh6cer9eg0uau8lt65g",
       "title": "follow up - Meeting with Scott Poisson",
       "start": "2026-02-03T15:00:00-05:00",
@@ -80,8 +53,17 @@
       "location": "https://meet.google.com/ydh-sswc-gdq",
       "description": "\n\n==========\n\nName: Racumlobato  Pineda\nPhone:- (239) 428-7801\nEmail: alberttmartinez88@gmail.com\n\n\n\nThursday, February 5, 2026 6:30 PM \n\n\ngenerating gmeet link ",
       "allDay": false
+    },
+    {
+      "id": "7n3sfilovsfs91nij7jk33gm6v",
+      "title": "Follow up call with Joan Suh",
+      "start": "2026-02-09T16:00:00-05:00",
+      "end": "2026-02-09T16:45:00-05:00",
+      "location": "",
+      "description": "",
+      "allDay": false
     }
   ],
-  "count": 9,
-  "updated": "2026-02-02T17:53:06.573478Z"
+  "count": 7,
+  "updated": "2026-02-03T04:00:52.903347Z"
 }
