@@ -123,6 +123,14 @@ This keeps history while surfacing only current/relevant docs.
 - **Usage:** `curl --proxy "http://dtwmetwu-1:ww846x37mmd9@p.webshare.io:80" [url]`
 - **Python:** `proxies = {"http": "http://user:pass@p.webshare.io:80", "https": "..."}`
 
+## Neon Postgres Database
+- **Project:** texas-mva-site (`odd-math-10907968`)
+- **Region:** aws-us-east-1
+- **Database:** neondb
+- **Credentials:** `~/.config/neon/credentials.json`
+- **Connection:** `postgresql://neondb_owner:***@ep-summer-silence-ahgxcxho-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require`
+- **Use for:** Dashboard backend, lead tracking, structured data
+
 ## Discord Channels
 - **#general (agent squad):** `1467415347723501580`
 
