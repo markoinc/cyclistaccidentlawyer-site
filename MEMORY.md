@@ -30,6 +30,12 @@
 - **MVA Carlos & Mark Partnership** folder — `1qshu4wTkayK-3C_h8nPEy_YWtWoaPAUX`
 - **MVA Sales Process - COD** doc — `1pJ3l9grF0ed_y-eJ5Mt5-CnLfRbtt8Qas880_s3Wts0` (needs Docs API enabled)
 
+### Terminology
+- **OTP** = One Time Password (SMS verified leads) — NOT "On The Phone"
+- **Form Fill Leads** = Raw leads from form submissions (basic tier)
+- **Live Transfers** = Qualified prospects transferred to attorney's phone
+- **Signed Cases** = Retainers delivered, ready to litigate
+
 ### MVA Sales Model (from pipeline data)
 - **Lead pricing:** ~$250-350/lead depending on state
 - **Conversion rates:** ~8-15% lead-to-signed (varies by state — contract states lower)
@@ -81,6 +87,11 @@
 - Marko prefers voice messages over typing
 - Wants bedtime reminders 9 hours before morning calendar events
 - Direct communication style
+- **Tasks → Calendar:** When Marko says "update my tasks" with action items, ADD THEM TO CALENDAR (not just memory)
+- **NEVER move/reschedule booked appointments** (especially sales calls with law firms) unless explicitly asked
+- **Sales calls = #1 priority** — never deprioritize for tasks
+- **Simulate 1000 scenarios** — Before deploying anything, stress test with 1000 simulated users/conversations/scenarios. Report what breaks.
+- **Simulation budget:** $200/day TOTAL for large-scale simulations (100K scenarios)
 
 ### Tools & Resources
 - **crowdreply.io** — Reddit comments and upvotes
@@ -94,3 +105,69 @@
 
 *Created: 2026-01-29*
 *Last updated: 2026-01-29*
+
+## 2026-02-01 Late Night Updates
+
+### Site Migration
+- **kuriosbrand.com** moved from Lovable → GitHub + Cloudflare Pages
+- Repo: `markoinc/kuriosbrand`
+- Cloudflare project: `kuriosbrandoriginal`
+- Supabase env vars required for build
+
+### Pricing Sheet
+- **Kurios Performance Stats & Pricing** (current - recreated 2026-02-02)
+- Sheet ID: `1Ka5HMSXoxsffYX3W-jlNURMkFiNuA7FcptM4tkx6h7c`
+- Link: https://docs.google.com/spreadsheets/d/1Ka5HMSXoxsffYX3W-jlNURMkFiNuA7FcptM4tkx6h7c/edit
+- OLD Sheet (deleted): `1aFiWHBiugUKLK-fkRru8HcbTVfP6NQHkXjvPhVnXasU`
+
+### Knowledge Base Additions
+- Kit's Clawdbot multi-persona setup (Greg Isenberg podcast)
+- Jacky Chou's $254K/mo SOP - competitor ad scraping, Reddit warm-up
+
+## Core Operating Principle (2026-02-02)
+**BUILD SYSTEMS, NOT ONE-OFFS**
+
+Marko's instruction: "Anytime I ask you to do something, instead of doing it yourself, build something that does it and save it to memory so you can use it in the future."
+
+- Every task → becomes a reusable tool/script
+- Save to ~/clawd/scripts/ + document in TOOLS.md
+- Goal: Every repeated task becomes a one-liner
+
+---
+
+## 2026-02-03 Learnings & SOPs
+
+### Email Preferences (IMPORTANT)
+**Signature format — SIMPLE:**
+```
+Mark Gundrum
+kuriosbrand.com
+```
+- ❌ NO business name (KuriosBrand LLC)
+- ❌ NO phone number
+- ❌ NO address
+
+### MVA Sales Email Language
+- **Timeline:** Signed cases delivered in **30-40 days** (NOT 60-90)
+- **Terminology:** We deliver "signed cases" — not leads, not warm transfers
+- **Differentiation:** "Real signed cases cost more, but they're already converted. That's what we deliver."
+- **Closing:** "Looking forward to getting started." (confident, not passive)
+- **Patrick mentions:** Don't include unless specifically instructed
+
+### SOPs Created
+All saved to `/home/ec2-user/clawd/memory/sops/`:
+- `email-signature.md` — Standard signature format
+- `prospect-follow-up-emails.md` — Full email drafting process
+- `voice-message-workflow.md` — Transcription and response process
+- `contact-enrichment.md` — Enriching contacts for agreements
+
+### Email Addresses
+- Joan Suh: joan0407@gmail.com
+- Sierra: sierra@kuriosbrand.com
+- Carlos: carlos@kuriosbrand.com
+
+### Joan Suh Deal (sent 2026-02-03)
+- Georgia PI lawyer, first-time ad buyer
+- Option 1: $30k for 10 guaranteed signed cases (30-40 days)
+- Option 2: $15k for ~5 signed cases (no guarantee)
+- Follow-up call: **Feb 9, 2026 @ 4:00 PM EST**

@@ -2,12 +2,26 @@
 
 ## Model Architecture (Token Optimization)
 
-| Model | Use For | How |
-|-------|---------|-----|
-| **Claude Opus** | Brain - orchestration, decisions, talking to Marko | Main session |
-| **ChatGPT** | Planning, task breakdown | API/spawn |
-| **Codex CLI** | Coding (high reasoning) | `codex --model o4-mini --reasoning-effort high` |
-| **Grok** | X/Twitter search, social media | API |
+**Full routing config:** `/home/ec2-user/clawd/data/model-routing-config.json`
+
+| Task | Model | Cost Tier | Command/How |
+|------|-------|-----------|-------------|
+| **Orchestration** | Claude Opus 4.5 | $$$$ | Main session - brain |
+| **Coding** | Codex CLI (o4-mini) | $$ | `codex --model o4-mini --reasoning-effort high` |
+| **Research** | Gemini 3 Flash | $ | spawn with model=gemini-3-flash |
+| **X/Social** | Grok 4 Fast | $ | Native X access |
+| **Bulk/Budget** | DeepSeek Chat | ¢ | spawn with model=deepseek-chat |
+| **Fast/Simple** | Groq Llama 3.1 8B | ¢ | 840 TPS, instant |
+| **Long Context** | Gemini 3 Pro | $$ | 2M context window |
+| **Conversation** | Claude Sonnet 4.5 | $$ | Day-to-day execution |
+
+**Task Keywords → Route:**
+- `code|build|fix|debug` → Codex CLI
+- `research|search|analyze` → Gemini Flash
+- `tweet|twitter|social` → Grok
+- `cheap|bulk|batch` → DeepSeek
+- `quick|fast|simple` → Groq
+- `plan|strategy|complex` → Opus (stay in main)
 | **Gemini** | Internet research, bulk processing | API (key in .env.local) |
 | **Nano Banana** | Image generation | API |
 
@@ -108,6 +122,23 @@ This keeps history while surfacing only current/relevant docs.
 - **Password:** ww846x37mmd9
 - **Usage:** `curl --proxy "http://dtwmetwu-1:ww846x37mmd9@p.webshare.io:80" [url]`
 - **Python:** `proxies = {"http": "http://user:pass@p.webshare.io:80", "https": "..."}`
+
+## Discord Channels
+- **#general (agent squad):** `1467415347723501580`
+
+## Go High Level (GHL)
+- **Location ID:** OsNgWuy8oZzLbp5BXbnD (Kurios subaccount - both Mark & Carlos)
+- **API Key:** pit-9c041df9-b51b-4c7b-9329-241b528dc726
+- **API Base:** https://services.leadconnectorhq.com
+- **Credentials file:** ~/.config/ghl/credentials.json
+- **Use for:** Sales appointments (source of truth over Google Calendar)
+
+### GHL Custom Fields Reference:
+- `1ImINic5Ef3ntrFFkQgG` = Website
+- `NXbhfJYvzPwItFz45HJ2` = Role/Title
+- `PMLr40tWCz8J9NvA4sx8` = Intake Setup
+- `QtNRYpA6MqH8HPcncxs2` = Firm Size
+- `g5kONh6i8fwXT84iRNnx` = Target Cost Per Case
 
 ## What Goes Here
 

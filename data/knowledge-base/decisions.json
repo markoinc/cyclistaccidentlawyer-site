@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "Important decisions made and rationale"
+  },
+  "strategic_decisions": [
+    {
+      "id": "mva-focus",
+      "decision": "Focus on MVA lead generation as core business",
+      "date": "Pre-2026",
+      "rationale": [
+        "High ticket ($2k-5k per signed case)",
+        "Scalable through paid ads",
+        "Strong partner network (COD + Patrick)",
+        "Clear path to revenue"
+      ],
+      "alternatives_rejected": ["General PI leads", "Other legal verticals", "B2B SaaS"],
+      "status": "ACTIVE"
+    },
+    {
+      "id": "partner-model",
+      "decision": "Work as referral partner with COD + Patrick, not build in-house",
+      "date": "Pre-2026",
+      "rationale": [
+        "Leverage $30M pixel and expertise",
+        "Patrick's intake experience is major differentiator",
+        "Lower capital requirements",
+        "Focus on sales, not fulfillment"
+      ],
+      "margin": "~20% management fee, additional markup on services",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "kuriosbrand-migration",
+      "decision": "Move kuriosbrand.com from Lovable to GitHub + Cloudflare Pages",
+      "date": "2026-02-01",
+      "rationale": [
+        "More control over code",
+        "Free hosting on Cloudflare",
+        "Better for SEO",
+        "Reduce dependency on Lovable ($50/month)"
+      ],
+      "repo": "markoinc/kuriosbrand",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "ai-seo-strategy",
+      "decision": "Prioritize ChatGPT + AI Overviews over traditional SEO initially",
+      "date": "2026-01",
+      "rationale": [
+        "Faster results (2 weeks vs months)",
+        "No DR requirement for ChatGPT",
+        "Lower competition",
+        "2,000-6,000 visitors/month potential"
+      ],
+      "tactics": ["Listicles on parasite sites", "Press releases via AB Newswire", "Reddit participation", "YouTube embeds"],
+      "budget": "$80-300/month",
+      "status": "TO IMPLEMENT"
+    },
+    {
+      "id": "texas-site-primary",
+      "decision": "Texas truck accidents site is PRIMARY SEO asset, network supports it",
+      "date": "2026-01",
+      "rationale": [
+        "Avoid competing with own sites",
+        "Build authority in one place",
+        "Network drives links/traffic to Texas site"
+      ],
+      "conflict_resolved": "Network sites are link building tools, not competitors",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "pilot-over-retainer",
+      "decision": "Always sell pilots, never retainers",
+      "date": "Pre-2026",
+      "rationale": [
+        "'Retainer' is negative word in PI space",
+        "Pilots prove results first",
+        "Lower barrier to entry",
+        "No long-term commitment = less friction"
+      ],
+      "messaging": "The pilot is the close. You are selling proof, not promises.",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "patrick-always-on-call",
+      "decision": "Patrick should be on closing calls whenever possible",
+      "date": "Learned from calls",
+      "rationale": [
+        "His intake director background is THE differentiator",
+        "Builds massive trust immediately",
+        "Answers technical intake questions",
+        "Jason E closed same-call with Patrick present"
+      ],
+      "success_rate": "Much higher close rate when Patrick joins",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "guarantees-for-burned-veterans",
+      "decision": "Offer guaranteed minimums IN WRITING for burned veteran avatars",
+      "date": "Learned from calls (Rich Hyde, Scott Barney)",
+      "rationale": [
+        "These buyers NEED contractual protection",
+        "Verbal promises don't work",
+        "Credits for bad leads builds trust",
+        "Max case cost caps remove fear"
+      ],
+      "status": "IMPLEMENT FOR BURNED VETERANS"
+    }
+  ],
+  "operational_decisions": [
+    {
+      "id": "cancel-elective",
+      "decision": "Cancel Elective subscription",
+      "date": "2026-01-29",
+      "amount_saved": "$816.67/month",
+      "status": "CANCELLED"
+    },
+    {
+      "id": "stop-discover-payments",
+      "decision": "Stop paying Discover card, let it go to collections",
+      "date": "2026-01",
+      "rationale": "Prioritize other debts, save $500/month for settlements",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "attack-sapphire-first",
+      "decision": "Pay minimums on lower rate cards, attack Chase Sapphire (21.99%) first",
+      "date": "2026-01-29",
+      "rationale": "Highest interest rate = biggest bleed",
+      "monthly_interest_bleed": "~$165 on Sapphire alone",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "ghl-autonomous-block",
+      "decision": "DO NOT build GHL things autonomously",
+      "date": "2026-02-01",
+      "stated_by": "Marko",
+      "rationale": "Don't mess with current working systems without asking",
+      "status": "ACTIVE CONSTRAINT"
+    },
+    {
+      "id": "preserve-kurios-data",
+      "decision": "DO NOT DELETE ANY FILES from Kurios Automation Projects without explicit approval",
+      "date": "2026-01-29",
+      "rationale": [
+        "Important business data",
+        "Can filter mentally when learning",
+        "Suggest consolidations/cuts, but ASK FIRST"
+      ],
+      "status": "ACTIVE CONSTRAINT"
+    }
+  ],
+  "product_decisions": [
+    {
+      "id": "three-tier-pricing",
+      "decision": "Implement 3-tier pricing model",
+      "date": "Pre-2026",
+      "tiers": {
+        "tier_1": {"name": "OTP Leads", "min": 15000, "conversion": "15%"},
+        "tier_2": {"name": "Live Transfers", "min": 25000, "conversion": "35-40%"},
+        "tier_3": {"name": "Signed Cases", "min": 35000}
+      },
+      "matching_logic": "Tier choice reflects intake reality - strong intake = Tier 1, broken = Tier 3",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "replacement-policy",
+      "decision": "Clear replacement policy with caps",
+      "date": "Pre-2026",
+      "tier_1_cap": "30% of pilot volume",
+      "tier_2_cap": "20% of pilot volume",
+      "tier_3": "N/A (deliverable is cases)",
+      "timeline": "7 days of delivery",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "spanish-leads-discount",
+      "decision": "Offer Spanish leads at $100-150 cheaper per acquisition",
+      "date": "Pre-2026",
+      "rationale": "Well-established capability, 'bread and butter'",
+      "options": ["100% Spanish", "Mixed campaigns (50/50, 40/60)"],
+      "status": "ACTIVE CAPABILITY"
+    }
+  ],
+  "technical_decisions": [
+    {
+      "id": "ai-intake-deploy",
+      "decision": "Deploy AI Intake Agent system (90% complete)",
+      "date": "2026-02-01",
+      "blocker": "Needs OpenAI API key in .env files",
+      "path": "/home/ec2-user/data/kurios-finish/automation/clawd-agents/",
+      "expected_savings": "$53,580-$76,980/year",
+      "status": "READY TO DEPLOY"
+    },
+    {
+      "id": "cloudflare-hosting",
+      "decision": "Use Cloudflare Pages for all new sites (free)",
+      "date": "2026",
+      "rationale": "Zero hosting cost, good performance, easy deployment",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "session-memory",
+      "decision": "Enable experimental sessionMemory in Clawdbot config",
+      "date": "2026-02-01",
+      "purpose": "Better context retention across sessions",
+      "status": "ENABLED"
+    }
+  ],
+  "pending_decisions": [
+    {
+      "id": "ai-voice-vs-human",
+      "question": "AI voice appointment setter vs human appointment setters vs hybrid?",
+      "options": ["NVIDIA Persona Plex AI", "Human setters ($40-90/call)", "Hybrid approach"],
+      "decision_timeline": "Q1 2026 testing",
+      "status": "EVALUATING"
+    },
+    {
+      "id": "llm-pbn-investment",
+      "question": "Invest in Indexsy LLM PBN for 'Best X in Y' keywords?",
+      "depends_on": "Budget availability after priority spending",
+      "status": "EVALUATE IF BUDGET ALLOWS"
+    },
+    {
+      "id": "concrete-sites-fate",
+      "question": "What to do with concrete rank & rent sites?",
+      "options": ["Migrate to Cloudflare, find renters", "Sell the properties", "Let them expire"],
+      "status": "BACKLOG"
+    }
+  ]
+}

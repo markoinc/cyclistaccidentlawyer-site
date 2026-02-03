@@ -1,0 +1,86 @@
+{
+  "agents": [
+    {
+      "id": "scout",
+      "name": "Scout",
+      "emoji": "🔍",
+      "focus": "Research & Intel - competitors, buyers, market trends, data gathering",
+      "channel": "#research",
+      "mentionPatterns": ["@scout", "scout"],
+      "skills": []
+    },
+    {
+      "id": "forge",
+      "name": "Forge", 
+      "emoji": "🔨",
+      "focus": "SEO & Content - rankings, articles, AI SEO, programmatic SEO",
+      "channel": "#seo-content",
+      "mentionPatterns": ["@forge", "forge"],
+      "skills": []
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "emoji": "⚡",
+      "focus": "Meta Ads + LLM/ChatGPT Ads ONLY - no Google, no other platforms",
+      "channel": "#paid-ads",
+      "mentionPatterns": ["@spark", "spark"],
+      "skills": []
+    },
+    {
+      "id": "hunter",
+      "name": "Hunter",
+      "emoji": "🏹",
+      "focus": "Sales & Pipeline - prospects, follow-ups, closing, CRM",
+      "channel": "#sales",
+      "mentionPatterns": ["@hunter", "hunter"],
+      "skills": []
+    },
+    {
+      "id": "gears",
+      "name": "Gears",
+      "emoji": "⚙️",
+      "focus": "Automation & Ops - workflows, integrations, systems, dashboards",
+      "channel": "#automation",
+      "mentionPatterns": ["@gears", "gears"],
+      "skills": []
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "emoji": "📢",
+      "focus": "Social - LinkedIn, Reddit, Instagram, Facebook ONLY - no X/Twitter",
+      "channel": "#social",
+      "mentionPatterns": ["@echo", "echo"],
+      "skills": []
+    },
+    {
+      "id": "lens",
+      "name": "Lens",
+      "emoji": "🔎",
+      "focus": "Analytics & Reporting - dashboards, metrics, insights, tracking",
+      "channel": "#analytics",
+      "mentionPatterns": ["@lens", "lens"],
+      "skills": []
+    },
+    {
+      "id": "sierra",
+      "name": "Sierra",
+      "emoji": "🏔️",
+      "focus": "Strategy & Orchestration - coordination, planning, you",
+      "channel": "#sierra-brain",
+      "mentionPatterns": ["@sierra", "sierra"],
+      "skills": []
+    }
+  ],
+  "sharedChannels": {
+    "skills": "#skills - agents post new skills they build",
+    "collaboration": "#collaboration - agents discuss and hand off",
+    "general": "#general - you ask questions, all agents can respond"
+  },
+  "skillBuilding": {
+    "description": "Each agent builds comprehensive skills over time as data is gathered",
+    "skillsPath": "/home/ec2-user/clawd/skills/",
+    "announceChannel": "#skills"
+  }
+}

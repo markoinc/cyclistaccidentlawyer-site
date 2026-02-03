@@ -1,0 +1,1077 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-02-01T08:13:00Z",
+    "version": "2.0",
+    "description": "Comprehensive model capabilities database for intelligent task delegation",
+    "sources": [
+      "OpenAI official pricing (openai.com/api/pricing)",
+      "Anthropic Claude docs (platform.claude.com/docs)",
+      "Google Gemini pricing (ai.google.dev/gemini-api/docs/pricing)",
+      "xAI Grok docs (docs.x.ai/docs/models)",
+      "DeepSeek API docs (api-docs.deepseek.com)",
+      "Groq pricing (groq.com/pricing)",
+      "Mistral AI pricing (mistral.ai/pricing)",
+      "Industry comparison articles (2025-2026)"
+    ]
+  },
+
+  "models": {
+    "anthropic": {
+      "claude-opus-4.5": {
+        "id": "anthropic/claude-opus-4-5",
+        "name": "Claude Opus 4.5",
+        "provider": "Anthropic",
+        "tier": "flagship",
+        "pricing": {
+          "input": 5.00,
+          "output": 25.00,
+          "cached_input": 2.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 200000,
+        "max_output": 64000,
+        "extended_context": 1000000,
+        "speed": "slow",
+        "latency": "high",
+        "capabilities": {
+          "reasoning": "exceptional",
+          "coding": "excellent",
+          "creativity": "excellent",
+          "following_instructions": "excellent",
+          "personality": "excellent",
+          "vision": true,
+          "extended_thinking": true,
+          "tool_use": true,
+          "context_awareness": true
+        },
+        "best_for": [
+          "Complex reasoning",
+          "Orchestration/brain role",
+          "Multi-step analysis",
+          "Creative writing",
+          "Human conversation",
+          "Decision making",
+          "Reviewing other model outputs"
+        ],
+        "not_for": [
+          "Bulk processing (expensive)",
+          "Simple tasks (overkill)",
+          "High-throughput needs",
+          "Cost-sensitive operations"
+        ],
+        "notes": "Best personality for conversational AI. Use as orchestrator, not grunt worker.",
+        "clawdbot_available": true
+      },
+      "claude-sonnet-4.5": {
+        "id": "anthropic/claude-sonnet-4-5",
+        "name": "Claude Sonnet 4.5",
+        "provider": "Anthropic",
+        "tier": "balanced",
+        "pricing": {
+          "input": 3.00,
+          "output": 15.00,
+          "cached_input": 1.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 200000,
+        "max_output": 64000,
+        "extended_context": 1000000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "excellent",
+          "creativity": "very_good",
+          "following_instructions": "excellent",
+          "vision": true,
+          "extended_thinking": true,
+          "tool_use": true,
+          "context_awareness": true
+        },
+        "best_for": [
+          "Complex coding tasks",
+          "Agentic workflows",
+          "Document analysis",
+          "Balanced cost/performance",
+          "General-purpose tasks",
+          "When Opus is overkill"
+        ],
+        "not_for": [
+          "Bulk processing (still pricey)",
+          "Ultra-simple tasks"
+        ],
+        "notes": "Sweet spot for most complex tasks. Consider for main conversation if Opus is too expensive.",
+        "clawdbot_available": true
+      },
+      "claude-haiku-4.5": {
+        "id": "anthropic/claude-haiku-4-5",
+        "name": "Claude Haiku 4.5",
+        "provider": "Anthropic",
+        "tier": "fast",
+        "pricing": {
+          "input": 1.00,
+          "output": 5.00,
+          "cached_input": 0.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 200000,
+        "max_output": 64000,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "good",
+          "coding": "good",
+          "creativity": "good",
+          "following_instructions": "very_good",
+          "vision": true,
+          "extended_thinking": true,
+          "tool_use": true
+        },
+        "best_for": [
+          "Quick responses",
+          "Simple extraction",
+          "Classification",
+          "Summarization",
+          "High-volume tasks",
+          "Subagent work"
+        ],
+        "not_for": [
+          "Complex reasoning",
+          "Multi-step analysis",
+          "Creative writing (use higher tier)"
+        ],
+        "notes": "Great for subsubagent tier. Fast and cheap while still capable.",
+        "clawdbot_available": true
+      },
+      "claude-haiku-3": {
+        "id": "anthropic/claude-3-haiku",
+        "name": "Claude Haiku 3",
+        "provider": "Anthropic",
+        "tier": "budget",
+        "pricing": {
+          "input": 0.25,
+          "output": 1.25,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 200000,
+        "speed": "very_fast",
+        "latency": "very_low",
+        "capabilities": {
+          "reasoning": "moderate",
+          "coding": "moderate",
+          "following_instructions": "good",
+          "vision": true
+        },
+        "best_for": [
+          "Ultra-cheap bulk processing",
+          "Simple classification",
+          "Basic extraction",
+          "Format conversion"
+        ],
+        "not_for": [
+          "Anything requiring nuance",
+          "Complex instructions"
+        ],
+        "notes": "Legacy model. Use Haiku 4.5 unless budget is critical.",
+        "clawdbot_available": true
+      }
+    },
+
+    "openai": {
+      "gpt-5.2": {
+        "id": "openai/gpt-5.2",
+        "name": "GPT-5.2",
+        "provider": "OpenAI",
+        "tier": "flagship",
+        "pricing": {
+          "input": 1.75,
+          "output": 14.00,
+          "cached_input": 0.175,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "exceptional",
+          "coding": "exceptional",
+          "creativity": "excellent",
+          "agentic": "excellent",
+          "vision": true,
+          "tool_use": true
+        },
+        "best_for": [
+          "Complex coding",
+          "Agentic tasks",
+          "Multi-step reasoning",
+          "Industry applications"
+        ],
+        "not_for": [
+          "Budget-sensitive ops",
+          "Simple tasks"
+        ],
+        "notes": "OpenAI's best for coding and agents.",
+        "clawdbot_available": true
+      },
+      "gpt-5.2-pro": {
+        "id": "openai/gpt-5.2-pro",
+        "name": "GPT-5.2 Pro",
+        "provider": "OpenAI",
+        "tier": "ultra",
+        "pricing": {
+          "input": 21.00,
+          "output": 168.00,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "slow",
+        "latency": "very_high",
+        "capabilities": {
+          "reasoning": "maximum",
+          "precision": "maximum"
+        },
+        "best_for": [
+          "Hardest problems",
+          "Scientific reasoning",
+          "When accuracy is critical"
+        ],
+        "not_for": [
+          "Anything routine (extremely expensive)",
+          "Cost-conscious use"
+        ],
+        "notes": "Nuclear option. Only for truly difficult problems.",
+        "clawdbot_available": true
+      },
+      "gpt-5-mini": {
+        "id": "openai/gpt-5-mini",
+        "name": "GPT-5 Mini",
+        "provider": "OpenAI",
+        "tier": "balanced",
+        "pricing": {
+          "input": 0.25,
+          "output": 2.00,
+          "cached_input": 0.025,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "very_good",
+          "coding": "very_good",
+          "following_instructions": "excellent"
+        },
+        "best_for": [
+          "Well-defined tasks",
+          "Medium complexity work",
+          "Good cost/performance ratio"
+        ],
+        "not_for": [
+          "Cutting-edge reasoning"
+        ],
+        "notes": "Excellent value for structured tasks.",
+        "clawdbot_available": true
+      },
+      "gpt-4.1": {
+        "id": "openai/gpt-4.1",
+        "name": "GPT-4.1",
+        "provider": "OpenAI",
+        "tier": "balanced",
+        "pricing": {
+          "input": 3.00,
+          "output": 12.00,
+          "cached_input": 0.75,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 1047576,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "excellent",
+          "long_context": "excellent",
+          "vision": true
+        },
+        "best_for": [
+          "Long document analysis",
+          "Code understanding",
+          "When context > 128k needed"
+        ],
+        "not_for": [
+          "Budget ops"
+        ],
+        "notes": "1M context window. Good for large codebases.",
+        "clawdbot_available": true
+      },
+      "gpt-4.1-mini": {
+        "id": "openai/gpt-4.1-mini",
+        "name": "GPT-4.1 Mini",
+        "provider": "OpenAI",
+        "tier": "fast",
+        "pricing": {
+          "input": 0.80,
+          "output": 3.20,
+          "cached_input": 0.20,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 1047576,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "good",
+          "coding": "good",
+          "long_context": "excellent"
+        },
+        "best_for": [
+          "Long context cheap",
+          "Bulk document processing"
+        ],
+        "notes": "Cheap long-context option.",
+        "clawdbot_available": true
+      },
+      "gpt-4.1-nano": {
+        "id": "openai/gpt-4.1-nano",
+        "name": "GPT-4.1 Nano",
+        "provider": "OpenAI",
+        "tier": "budget",
+        "pricing": {
+          "input": 0.20,
+          "output": 0.80,
+          "cached_input": 0.05,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 1047576,
+        "speed": "very_fast",
+        "latency": "very_low",
+        "capabilities": {
+          "reasoning": "moderate",
+          "following_instructions": "good"
+        },
+        "best_for": [
+          "Ultra-cheap processing",
+          "Simple extraction",
+          "High volume simple tasks"
+        ],
+        "notes": "Cheapest OpenAI option with long context.",
+        "clawdbot_available": true
+      },
+      "gpt-4o": {
+        "id": "openai/gpt-4o",
+        "name": "GPT-4o",
+        "provider": "OpenAI",
+        "tier": "balanced",
+        "pricing": {
+          "input": 5.00,
+          "output": 20.00,
+          "cached_input": 2.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "excellent",
+          "vision": true,
+          "multimodal": true
+        },
+        "best_for": [
+          "Vision tasks",
+          "Multimodal analysis",
+          "General excellence"
+        ],
+        "notes": "Solid all-rounder, vision capable.",
+        "clawdbot_available": true
+      },
+      "gpt-4o-mini": {
+        "id": "openai/gpt-4o-mini",
+        "name": "GPT-4o Mini",
+        "provider": "OpenAI",
+        "tier": "fast",
+        "pricing": {
+          "input": 0.15,
+          "output": 0.60,
+          "cached_input": 0.075,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "good",
+          "coding": "good",
+          "vision": true
+        },
+        "best_for": [
+          "Cheap vision tasks",
+          "High-volume processing",
+          "Subagent work"
+        ],
+        "notes": "Excellent value. Great for subsubagent tier.",
+        "clawdbot_available": true
+      },
+      "o4-mini": {
+        "id": "openai/o4-mini",
+        "name": "o4-mini (Reasoning)",
+        "provider": "OpenAI",
+        "tier": "reasoning",
+        "pricing": {
+          "input": 4.00,
+          "output": 16.00,
+          "cached_input": 1.00,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 200000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "exceptional",
+          "coding": "exceptional",
+          "chain_of_thought": true,
+          "extended_thinking": true
+        },
+        "best_for": [
+          "Complex coding (Codex CLI)",
+          "Multi-step reasoning",
+          "STEM problems",
+          "Code generation"
+        ],
+        "not_for": [
+          "Simple tasks (thinking overhead)"
+        ],
+        "notes": "Primary coding muscle via Codex CLI. Use with high reasoning effort.",
+        "clawdbot_available": true,
+        "clawdbot_usage": "codex --model o4-mini --reasoning-effort high"
+      }
+    },
+
+    "google": {
+      "gemini-2.5-pro": {
+        "id": "google/gemini-2.5-pro",
+        "name": "Gemini 2.5 Pro",
+        "provider": "Google",
+        "tier": "flagship",
+        "pricing": {
+          "input": 1.25,
+          "input_over_200k": 2.50,
+          "output": 10.00,
+          "output_over_200k": 15.00,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 2000000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "excellent",
+          "multimodal": true,
+          "long_context": "exceptional",
+          "audio": true,
+          "video": true
+        },
+        "best_for": [
+          "Massive context tasks",
+          "Video/audio analysis",
+          "Document processing",
+          "Research tasks"
+        ],
+        "notes": "2M context window! Great for huge documents.",
+        "clawdbot_available": true
+      },
+      "gemini-2.5-flash": {
+        "id": "google/gemini-2.5-flash",
+        "name": "Gemini 2.5 Flash",
+        "provider": "Google",
+        "tier": "fast",
+        "pricing": {
+          "input": 0.15,
+          "output": 0.60,
+          "thinking_input": 0.30,
+          "thinking_output": 1.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 1000000,
+        "speed": "very_fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "very_good",
+          "coding": "good",
+          "multimodal": true,
+          "thinking": true,
+          "agentic": true
+        },
+        "best_for": [
+          "High-volume research",
+          "Web scraping processing",
+          "Bulk tasks",
+          "Internet research",
+          "Large-scale processing"
+        ],
+        "not_for": [
+          "Nuanced conversation (personality)",
+          "Complex creative tasks"
+        ],
+        "notes": "PRIMARY RESEARCH MUSCLE. 300k+ tokens/day feasible. Excellent value.",
+        "clawdbot_available": true,
+        "recommended_for": "subagent_research"
+      },
+      "gemini-2.5-flash-lite": {
+        "id": "google/gemini-2.5-flash-lite",
+        "name": "Gemini 2.5 Flash-Lite",
+        "provider": "Google",
+        "tier": "budget",
+        "pricing": {
+          "input": 0.10,
+          "output": 0.40,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 1000000,
+        "speed": "very_fast",
+        "latency": "very_low",
+        "capabilities": {
+          "reasoning": "good",
+          "following_instructions": "good"
+        },
+        "best_for": [
+          "Ultra-cheap bulk processing",
+          "Simple extraction",
+          "High-volume classification"
+        ],
+        "notes": "Cheapest Google option. Great for subsubagent work.",
+        "clawdbot_available": true
+      }
+    },
+
+    "xai": {
+      "grok-4": {
+        "id": "xai/grok-4",
+        "name": "Grok 4",
+        "provider": "xAI",
+        "tier": "flagship",
+        "pricing": {
+          "input": 3.00,
+          "output": 15.00,
+          "cached_input": 1.50,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 2000000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "exceptional",
+          "realtime_knowledge": true,
+          "x_twitter_access": true,
+          "image_understanding": true,
+          "video_understanding": true
+        },
+        "best_for": [
+          "X/Twitter research",
+          "Real-time information",
+          "Social media monitoring",
+          "Current events"
+        ],
+        "notes": "Built-in X/Twitter access. 2M context!",
+        "clawdbot_available": true
+      },
+      "grok-4.1-fast": {
+        "id": "xai/grok-4.1-fast",
+        "name": "Grok 4.1 Fast",
+        "provider": "xAI",
+        "tier": "budget",
+        "pricing": {
+          "input": 0.20,
+          "output": 0.50,
+          "cached_input": 0.10,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 2000000,
+        "speed": "very_fast",
+        "latency": "very_low",
+        "capabilities": {
+          "reasoning": "good",
+          "realtime_knowledge": true,
+          "x_twitter_access": true
+        },
+        "best_for": [
+          "Cheap X/Twitter monitoring",
+          "High-volume social scanning",
+          "Fast research"
+        ],
+        "notes": "EXTREMELY CHEAP with 2M context and X access. Great for bulk social research.",
+        "clawdbot_available": true,
+        "recommended_for": "social_media_subagent"
+      },
+      "tools": {
+        "web_search": {"price_per_1k_calls": 5.00},
+        "x_search": {"price_per_1k_calls": 5.00},
+        "code_execution": {"price_per_1k_calls": 5.00}
+      }
+    },
+
+    "deepseek": {
+      "deepseek-chat": {
+        "id": "deepseek/deepseek-chat",
+        "name": "DeepSeek Chat (V3.2)",
+        "provider": "DeepSeek",
+        "tier": "ultra_budget",
+        "pricing": {
+          "input_cache_hit": 0.028,
+          "input_cache_miss": 0.28,
+          "output": 0.42,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "max_output": 8000,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "very_good",
+          "coding": "excellent",
+          "tool_use": true
+        },
+        "best_for": [
+          "Budget coding",
+          "Bulk processing",
+          "When cost is primary concern"
+        ],
+        "not_for": [
+          "Latency-sensitive (China servers)",
+          "Data privacy concerns"
+        ],
+        "notes": "CHEAPEST capable model available. Use for massive bulk operations.",
+        "clawdbot_available": true,
+        "caveats": ["China-based", "Potential latency", "Data residency"]
+      },
+      "deepseek-reasoner": {
+        "id": "deepseek/deepseek-reasoner",
+        "name": "DeepSeek Reasoner (V3.2 Thinking)",
+        "provider": "DeepSeek",
+        "tier": "ultra_budget",
+        "pricing": {
+          "input_cache_hit": 0.028,
+          "input_cache_miss": 0.28,
+          "output": 0.42,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "max_output": 64000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "chain_of_thought": true,
+          "coding": "excellent"
+        },
+        "best_for": [
+          "Complex reasoning at ultra-low cost",
+          "Math/STEM problems",
+          "Bulk complex tasks"
+        ],
+        "notes": "R1-level reasoning at fraction of the cost.",
+        "clawdbot_available": true
+      }
+    },
+
+    "groq": {
+      "llama-4-maverick": {
+        "id": "groq/llama-4-maverick-17b-128e-instruct",
+        "name": "Llama 4 Maverick (via Groq)",
+        "provider": "Groq",
+        "tier": "fast",
+        "pricing": {
+          "input": 0.20,
+          "output": 0.60,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "ultra_fast",
+        "speed_tps": 562,
+        "latency": "ultra_low",
+        "capabilities": {
+          "reasoning": "very_good",
+          "coding": "good"
+        },
+        "best_for": [
+          "Ultra-low latency needs",
+          "Real-time applications",
+          "High-throughput"
+        ],
+        "notes": "562 tokens/sec! Fastest inference available.",
+        "clawdbot_available": true
+      },
+      "llama-4-scout": {
+        "id": "groq/llama-4-scout-17b-16e-instruct",
+        "name": "Llama 4 Scout (via Groq)",
+        "provider": "Groq",
+        "tier": "budget",
+        "pricing": {
+          "input": 0.11,
+          "output": 0.34,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "ultra_fast",
+        "speed_tps": 594,
+        "latency": "ultra_low",
+        "capabilities": {
+          "reasoning": "good",
+          "coding": "moderate"
+        },
+        "best_for": [
+          "Ultra-fast cheap processing",
+          "Simple tasks at scale"
+        ],
+        "notes": "594 TPS! Cheapest fast option.",
+        "clawdbot_available": true
+      },
+      "llama-3.3-70b": {
+        "id": "groq/llama-3.3-70b-versatile",
+        "name": "Llama 3.3 70B Versatile (via Groq)",
+        "provider": "Groq",
+        "tier": "balanced",
+        "pricing": {
+          "input": 0.59,
+          "output": 0.79,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "ultra_fast",
+        "speed_tps": 394,
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "very_good"
+        },
+        "best_for": [
+          "Fast quality inference",
+          "When you need speed + quality"
+        ],
+        "notes": "Best Groq model for balanced workloads.",
+        "clawdbot_available": true
+      },
+      "llama-3.1-8b-instant": {
+        "id": "groq/llama-3.1-8b-instant",
+        "name": "Llama 3.1 8B Instant (via Groq)",
+        "provider": "Groq",
+        "tier": "ultra_budget",
+        "pricing": {
+          "input": 0.05,
+          "output": 0.08,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 128000,
+        "speed": "ultra_fast",
+        "speed_tps": 840,
+        "latency": "ultra_low",
+        "capabilities": {
+          "reasoning": "moderate",
+          "following_instructions": "good"
+        },
+        "best_for": [
+          "Ultra-cheap ultra-fast processing",
+          "Simple tasks",
+          "High-volume simple extraction"
+        ],
+        "notes": "840 TPS! $0.05 input! Cheapest fast option for simple tasks.",
+        "clawdbot_available": true
+      },
+      "whisper-large-v3-turbo": {
+        "id": "groq/whisper-large-v3-turbo",
+        "name": "Whisper Large V3 Turbo (via Groq)",
+        "provider": "Groq",
+        "tier": "specialized",
+        "pricing": {
+          "per_hour": 0.04,
+          "unit": "per_hour_transcribed"
+        },
+        "speed": "ultra_fast",
+        "speed_factor": "228x",
+        "capabilities": {
+          "transcription": "excellent",
+          "languages": "99+"
+        },
+        "best_for": [
+          "Audio transcription",
+          "Meeting notes",
+          "Podcast processing"
+        ],
+        "notes": "228x realtime! Cheapest fast transcription.",
+        "clawdbot_available": true
+      }
+    },
+
+    "mistral": {
+      "mistral-large": {
+        "id": "mistral/mistral-large-latest",
+        "name": "Mistral Large",
+        "provider": "Mistral",
+        "tier": "flagship",
+        "pricing": {
+          "input": 2.00,
+          "output": 6.00,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 131000,
+        "speed": "medium",
+        "latency": "medium",
+        "capabilities": {
+          "reasoning": "excellent",
+          "coding": "excellent",
+          "multilingual": "excellent"
+        },
+        "best_for": [
+          "European compliance needs",
+          "Multilingual tasks",
+          "Alternative to OpenAI/Anthropic"
+        ],
+        "notes": "European provider. Good for compliance.",
+        "clawdbot_available": true
+      },
+      "mistral-medium-3": {
+        "id": "mistral/mistral-medium-3",
+        "name": "Mistral Medium 3",
+        "provider": "Mistral",
+        "tier": "balanced",
+        "pricing": {
+          "input": 0.40,
+          "output": 2.00,
+          "unit": "per_million_tokens"
+        },
+        "context_window": 131000,
+        "speed": "fast",
+        "latency": "low",
+        "capabilities": {
+          "reasoning": "very_good",
+          "coding": "good",
+          "multilingual": "excellent"
+        },
+        "best_for": [
+          "Cost-effective European option",
+          "Multilingual processing"
+        ],
+        "clawdbot_available": true
+      }
+    },
+
+    "specialized": {
+      "whisper-api": {
+        "id": "openai/whisper-1",
+        "name": "OpenAI Whisper",
+        "provider": "OpenAI",
+        "tier": "specialized",
+        "pricing": {
+          "per_minute": 0.006,
+          "unit": "per_minute_audio"
+        },
+        "capabilities": {
+          "transcription": "excellent",
+          "languages": "99+",
+          "translation": true
+        },
+        "best_for": [
+          "Audio transcription",
+          "Translation"
+        ],
+        "notes": "$0.006/minute. Very affordable for transcription.",
+        "clawdbot_available": true
+      },
+      "gpt-image-1.5": {
+        "id": "openai/gpt-image-1.5",
+        "name": "GPT Image 1.5 (DALL-E successor)",
+        "provider": "OpenAI",
+        "tier": "specialized",
+        "pricing": {
+          "input": 5.00,
+          "output": 10.00,
+          "image_low": 0.01,
+          "image_medium": 0.04,
+          "image_high": 0.17,
+          "unit": "per_million_tokens_and_per_image"
+        },
+        "capabilities": {
+          "image_generation": "excellent",
+          "image_editing": true
+        },
+        "best_for": [
+          "High-quality image generation",
+          "Image editing"
+        ],
+        "clawdbot_available": true
+      },
+      "nano-banana-pro": {
+        "id": "nanobanana/pro",
+        "name": "Nano Banana Pro",
+        "provider": "NanoBanana",
+        "tier": "specialized",
+        "capabilities": {
+          "image_generation": "very_good"
+        },
+        "best_for": [
+          "Thumbnails",
+          "Quick graphics",
+          "Visual content"
+        ],
+        "notes": "Configured in .env.local",
+        "clawdbot_available": true
+      }
+    }
+  },
+
+  "delegation_tiers": {
+    "head_agent": {
+      "description": "Main orchestrator - talks to user, makes decisions, delegates",
+      "models": [
+        "anthropic/claude-opus-4-5",
+        "anthropic/claude-sonnet-4-5"
+      ],
+      "criteria": {
+        "reasoning": "exceptional",
+        "personality": "excellent",
+        "cost_tolerance": "high"
+      },
+      "use_for": [
+        "User conversation",
+        "Decision making",
+        "Task planning",
+        "Output review",
+        "Final delivery"
+      ]
+    },
+    "subagent": {
+      "description": "Worker agents for medium-complexity tasks",
+      "models": [
+        "openai/o4-mini",
+        "google/gemini-2.5-flash",
+        "openai/gpt-5-mini",
+        "xai/grok-4",
+        "mistral/mistral-large-latest",
+        "groq/llama-3.3-70b-versatile"
+      ],
+      "criteria": {
+        "reasoning": "very_good",
+        "speed": "fast",
+        "cost_tolerance": "medium"
+      },
+      "use_for": [
+        "Coding tasks",
+        "Research",
+        "Document analysis",
+        "Data processing"
+      ]
+    },
+    "subsubagent": {
+      "description": "Cheap/fast workers for simple tasks",
+      "models": [
+        "google/gemini-2.5-flash-lite",
+        "openai/gpt-4o-mini",
+        "openai/gpt-4.1-nano",
+        "anthropic/claude-haiku-4-5",
+        "xai/grok-4.1-fast",
+        "groq/llama-3.1-8b-instant",
+        "deepseek/deepseek-chat"
+      ],
+      "criteria": {
+        "speed": "very_fast",
+        "cost": "very_low"
+      },
+      "use_for": [
+        "Simple extraction",
+        "Classification",
+        "Format conversion",
+        "Bulk processing"
+      ]
+    }
+  },
+
+  "task_routing": {
+    "complex_reasoning": {
+      "primary": "anthropic/claude-opus-4-5",
+      "fallback": ["openai/gpt-5.2", "google/gemini-2.5-pro"],
+      "notes": "Keep in head agent, don't delegate"
+    },
+    "coding": {
+      "primary": "openai/o4-mini",
+      "fallback": ["anthropic/claude-sonnet-4-5", "deepseek/deepseek-reasoner"],
+      "implementation": "codex --model o4-mini --reasoning-effort high",
+      "notes": "Use Codex CLI as coding muscle"
+    },
+    "research_internet": {
+      "primary": "google/gemini-2.5-flash",
+      "fallback": ["xai/grok-4.1-fast"],
+      "notes": "Gemini Flash for bulk web research"
+    },
+    "social_media_x": {
+      "primary": "xai/grok-4",
+      "fallback": ["xai/grok-4.1-fast"],
+      "notes": "Built-in X access"
+    },
+    "transcription": {
+      "primary": "groq/whisper-large-v3-turbo",
+      "fallback": ["openai/whisper-1"],
+      "notes": "Groq is 228x faster and cheaper"
+    },
+    "simple_extraction": {
+      "primary": "groq/llama-3.1-8b-instant",
+      "fallback": ["openai/gpt-4o-mini", "google/gemini-2.5-flash-lite"],
+      "notes": "Cheapest option, ultra-fast"
+    },
+    "bulk_processing": {
+      "primary": "deepseek/deepseek-chat",
+      "fallback": ["google/gemini-2.5-flash-lite", "groq/llama-3.1-8b-instant"],
+      "notes": "DeepSeek is cheapest for massive volume"
+    },
+    "long_document": {
+      "primary": "google/gemini-2.5-pro",
+      "fallback": ["xai/grok-4", "openai/gpt-4.1"],
+      "notes": "Gemini has 2M context"
+    },
+    "image_generation": {
+      "primary": "nanobanana/pro",
+      "fallback": ["openai/gpt-image-1.5"],
+      "notes": "NanoBanana configured locally"
+    },
+    "realtime_fast": {
+      "primary": "groq/llama-4-scout-17b-16e-instruct",
+      "fallback": ["groq/llama-4-maverick-17b-128e-instruct"],
+      "notes": "594+ TPS, ultra-low latency"
+    }
+  },
+
+  "cost_comparison": {
+    "description": "Cost for 100k input + 100k output tokens",
+    "estimates": {
+      "claude-opus-4.5": {"input": 0.50, "output": 2.50, "total": 3.00},
+      "claude-sonnet-4.5": {"input": 0.30, "output": 1.50, "total": 1.80},
+      "claude-haiku-4.5": {"input": 0.10, "output": 0.50, "total": 0.60},
+      "gpt-5.2": {"input": 0.175, "output": 1.40, "total": 1.575},
+      "gpt-5-mini": {"input": 0.025, "output": 0.20, "total": 0.225},
+      "gpt-4o-mini": {"input": 0.015, "output": 0.06, "total": 0.075},
+      "gemini-2.5-flash": {"input": 0.015, "output": 0.06, "total": 0.075},
+      "gemini-2.5-flash-lite": {"input": 0.01, "output": 0.04, "total": 0.05},
+      "grok-4.1-fast": {"input": 0.02, "output": 0.05, "total": 0.07},
+      "deepseek-chat": {"input": 0.028, "output": 0.042, "total": 0.07},
+      "llama-3.1-8b-groq": {"input": 0.005, "output": 0.008, "total": 0.013}
+    },
+    "notes": "DeepSeek and Groq Llama are 20-50x cheaper than Opus for bulk work"
+  },
+
+  "clawdbot_configuration": {
+    "current_setup": {
+      "main_model": "anthropic/claude-opus-4-5",
+      "coding_muscle": "codex --model o4-mini --reasoning-effort high",
+      "research_muscle": "google/gemini-2.5-flash",
+      "social_muscle": "xai/grok (via X API)",
+      "budget_fallback": "MiniMax 2.1 or local",
+      "image_gen": "nanobanana/pro"
+    },
+    "api_keys_configured": [
+      "OPENAI_API_KEY",
+      "GEMINI_API_KEY",
+      "NANOBANANA_API_KEY"
+    ],
+    "spawn_usage": {
+      "description": "Use sessions_spawn with model parameter for subagents",
+      "example": "spawn subagent with model=gemini-2.5-flash for research tasks"
+    }
+  }
+}

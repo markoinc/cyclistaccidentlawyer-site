@@ -1,0 +1,2002 @@
+[
+  {
+    "id": 1,
+    "source": "@AnthropicAI",
+    "tweet_url": "https://x.com/AnthropicAI/status/1925591505332576377",
+    "model": "Claude Opus 4, Claude Sonnet 4",
+    "use_case": "Coding - general",
+    "sentiment": "positive",
+    "benchmark": "World's best coding model claim",
+    "date": "2025-05-22"
+  },
+  {
+    "id": 2,
+    "source": "@neil_jhaveri",
+    "tweet_url": "https://x.com/neil_jhaveri/status/1930726122733306004",
+    "model": "Claude Opus, Claude Sonnet",
+    "use_case": "Claude Code usage limits",
+    "sentiment": "negative",
+    "benchmark": "20% usage limit switch from Opus to Sonnet",
+    "date": "2025-06-05"
+  },
+  {
+    "id": 3,
+    "source": "@lmarena_ai",
+    "tweet_url": "https://x.com/lmarena_ai/status/1767997086954573938",
+    "model": "Claude 3 Opus",
+    "use_case": "General performance",
+    "sentiment": "positive",
+    "benchmark": "Top-1 rank with GPT-4-Turbo, 20K votes",
+    "date": "2024-03-14"
+  },
+  {
+    "id": 4,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1972854742167761204",
+    "model": "Claude 4.5 Sonnet",
+    "use_case": "Intelligence benchmark",
+    "sentiment": "positive",
+    "benchmark": "#4 most intelligent, beats Opus 4.1",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 5,
+    "source": "@_catwu",
+    "tweet_url": "https://x.com/_catwu/status/1955694117264261609",
+    "model": "Claude Opus 4.1, Claude Sonnet 4",
+    "use_case": "Plan mode - hybrid usage",
+    "sentiment": "positive",
+    "benchmark": "Opus for planning, Sonnet for execution",
+    "date": "2025-08-15"
+  },
+  {
+    "id": 6,
+    "source": "@skirano",
+    "tweet_url": "https://x.com/skirano/status/1894095482269397318",
+    "model": "Claude Code",
+    "use_case": "Agentic coding - delegation",
+    "sentiment": "positive",
+    "benchmark": "45+ minutes of manual work in one pass",
+    "date": "2025-02-24"
+  },
+  {
+    "id": 7,
+    "source": "@sriniously",
+    "tweet_url": "https://x.com/sriniously/status/1946115553191743540",
+    "model": "Claude Code",
+    "use_case": "Coding delegation paradigm",
+    "sentiment": "positive",
+    "benchmark": null,
+    "date": "2025-07-07"
+  },
+  {
+    "id": 8,
+    "source": "@amorriscode",
+    "tweet_url": "https://x.com/amorriscode/status/2009417425000034742",
+    "model": "Claude Code",
+    "use_case": "Multi-agent coding",
+    "sentiment": "positive",
+    "benchmark": "Run multiple Claudes simultaneously",
+    "date": "2025-12-01"
+  },
+  {
+    "id": 9,
+    "source": "@AndrewYNg",
+    "tweet_url": "https://x.com/AndrewYNg/status/1770897666702233815",
+    "model": "Multi-agent LLMs",
+    "use_case": "Agentic workflows",
+    "sentiment": "positive",
+    "benchmark": "Multi-agent collaboration for better solutions",
+    "date": "2024-03-22"
+  },
+  {
+    "id": 10,
+    "source": "@bcherny",
+    "tweet_url": "https://x.com/bcherny/status/2007179838864666847",
+    "model": "Claude Opus 4.5",
+    "use_case": "Coding with thinking",
+    "sentiment": "positive",
+    "benchmark": "Best coding model - less steering needed",
+    "date": "2025-11-25"
+  },
+  {
+    "id": 11,
+    "source": "@slow_developer",
+    "tweet_url": "https://x.com/slow_developer/status/1941294707365097938",
+    "model": "Claude Opus 4, Claude Sonnet 4",
+    "use_case": "Task routing - planning vs execution",
+    "sentiment": "positive",
+    "benchmark": "Opus for planning/architecture, Sonnet for tests/DB",
+    "date": "2025-06-25"
+  },
+  {
+    "id": 12,
+    "source": "@jjhughes",
+    "tweet_url": "https://x.com/jjhughes/status/1973405263571902703",
+    "model": "GPT-5-Codex, Claude Opus, Claude Sonnet 4.5",
+    "use_case": "Coding comparison",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5-Codex smarter for coding, Sonnet better for context",
+    "date": "2025-09-27"
+  },
+  {
+    "id": 13,
+    "source": "@Techmeme",
+    "tweet_url": "https://x.com/Techmeme/status/1972744707055694282",
+    "model": "Claude Sonnet 4.5, Claude Opus 4.1, GPT-5 Codex",
+    "use_case": "Coding comparison",
+    "sentiment": "neutral",
+    "benchmark": "Sonnet faster than Opus, Codex better for difficult tasks",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 14,
+    "source": "@xdg",
+    "tweet_url": "https://x.com/xdg/status/1973223601584349602",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Coding - complex tasks",
+    "sentiment": "positive",
+    "benchmark": "Faster, between Sonnet 4 and Opus 4.1",
+    "date": "2025-09-27"
+  },
+  {
+    "id": 15,
+    "source": "@jetbrains",
+    "tweet_url": "https://x.com/jetbrains/status/1993973596062875677",
+    "model": "Claude Opus 4.5",
+    "use_case": "IDE coding (Junie)",
+    "sentiment": "positive",
+    "benchmark": "Outperforms Sonnet 4.5 across all benchmarks",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 16,
+    "source": "@kimmonismus",
+    "tweet_url": "https://x.com/kimmonismus/status/1972714702095413440",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "SWE-Bench coding",
+    "sentiment": "positive",
+    "benchmark": "Outperforms Opus 4.1 on SWE-Benchmark",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 17,
+    "source": "@OpenRouterAI",
+    "tweet_url": "https://x.com/OpenRouterAI/status/1972711658423304532",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Coding and math",
+    "sentiment": "positive",
+    "benchmark": "Substantial gains over Opus 4.1 at 1/5th price",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 18,
+    "source": "@svpino",
+    "tweet_url": "https://x.com/svpino/status/1839636284828205431",
+    "model": "Claude Sonnet 3.5, o1, GPT-4o",
+    "use_case": "Coding comparison",
+    "sentiment": "negative",
+    "benchmark": "o1 disappointing, Claude Sonnet 3.5 much better",
+    "date": "2024-09-27"
+  },
+  {
+    "id": 19,
+    "source": "@danshipper",
+    "tweet_url": "https://x.com/danshipper/status/1925592015305416941",
+    "model": "Claude Opus 4, o3",
+    "use_case": "Coding vs writing",
+    "sentiment": "positive",
+    "benchmark": "Opus beast for coding, o3 better for writing",
+    "date": "2025-05-22"
+  },
+  {
+    "id": 20,
+    "source": "@ZacharyHuang12",
+    "tweet_url": "https://x.com/ZacharyHuang12/status/1951835930152866232",
+    "model": "Claude Code, Gemini CLI",
+    "use_case": "Coding agent comparison",
+    "sentiment": "positive",
+    "benchmark": "Claude Code nails agent design + token usage",
+    "date": "2025-07-28"
+  },
+  {
+    "id": 21,
+    "source": "@eeko_systems",
+    "tweet_url": "https://x.com/eeko_systems/status/1958638517073957155",
+    "model": "Deepseek v3.1, Claude Opus 4",
+    "use_case": "Coding benchmark",
+    "sentiment": "neutral",
+    "benchmark": "Deepseek v3.1 beats Opus 4, 68x cheaper",
+    "date": "2025-08-17"
+  },
+  {
+    "id": 22,
+    "source": "@PaulSolt",
+    "tweet_url": "https://x.com/PaulSolt/status/2010121186290929884",
+    "model": "GPT-5.2, Claude Code, Gemini, Grok",
+    "use_case": "Coding agent comparison",
+    "sentiment": "positive",
+    "benchmark": "GPT-5.2 best, Claude needs corrections, Gemini trash, Grok Swift errors",
+    "date": "2025-12-02"
+  },
+  {
+    "id": 23,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1926684223596884024",
+    "model": "Claude 4 Opus, Gemini 2.5 Pro",
+    "use_case": "Agentic coding comparison",
+    "sentiment": "positive",
+    "benchmark": "Claude 4 crushes Gemini for agentic coding",
+    "date": "2025-05-25"
+  },
+  {
+    "id": 24,
+    "source": "@Yampeleg",
+    "tweet_url": "https://x.com/Yampeleg/status/1991608983292141681",
+    "model": "Claude Code, Codex-max, Gemini 3",
+    "use_case": "CLI agent comparison",
+    "sentiment": "neutral",
+    "benchmark": "Claude best CLI, Codex best async, Gemini best web search",
+    "date": "2025-10-17"
+  },
+  {
+    "id": 25,
+    "source": "@badlogicgames",
+    "tweet_url": "https://x.com/badlogicgames/status/1990879580815564891",
+    "model": "Gemini 3 Pro, Claude Sonnet 4.5, GPT 5.1 Codex",
+    "use_case": "Real-world coding comparison",
+    "sentiment": "neutral",
+    "benchmark": "Same inputs, same thinking settings tested",
+    "date": "2025-10-16"
+  },
+  {
+    "id": 26,
+    "source": "@sdrzn",
+    "tweet_url": "https://x.com/sdrzn/status/1990886120654344300",
+    "model": "Gemini 3 Pro",
+    "use_case": "Coding and agentic thinking",
+    "sentiment": "positive",
+    "benchmark": "Best of Claude Sonnet 4.5 + Gemini 2.5 Pro",
+    "date": "2025-10-16"
+  },
+  {
+    "id": 27,
+    "source": "@iannuttall",
+    "tweet_url": "https://x.com/iannuttall/status/1962910312430215307",
+    "model": "Codex CLI, Claude Code",
+    "use_case": "Side-by-side coding comparison",
+    "sentiment": "neutral",
+    "benchmark": "Codex faster with high reasoning",
+    "date": "2025-08-27"
+  },
+  {
+    "id": 28,
+    "source": "@iannuttall",
+    "tweet_url": "https://x.com/iannuttall/status/1953833034794651649",
+    "model": "Claude Code, Codex, Cursor CLI",
+    "use_case": "Next.js app comparison",
+    "sentiment": "neutral",
+    "benchmark": "Codex 5.5x more tokens, code quality matches Opus 4.1",
+    "date": "2025-08-06"
+  },
+  {
+    "id": 29,
+    "source": "@henrythe9ths",
+    "tweet_url": "https://x.com/henrythe9ths/status/1912907910838988915",
+    "model": "Claude Code, Claude 3.7",
+    "use_case": "Coding productivity",
+    "sentiment": "positive",
+    "benchmark": "70.3% SWE-Bench verified, 27 hours saved weekly",
+    "date": "2025-04-18"
+  },
+  {
+    "id": 30,
+    "source": "@svpino",
+    "tweet_url": "https://x.com/svpino/status/1978478492888207611",
+    "model": "Claude Code, Codex",
+    "use_case": "Agentic coding tools",
+    "sentiment": "neutral",
+    "benchmark": "Don't replace Copilot/Cursor, different use cases",
+    "date": "2025-10-02"
+  },
+  {
+    "id": 31,
+    "source": "@liliangjya5",
+    "tweet_url": "https://x.com/liliangjya5/status/1952391272540647581",
+    "model": "Claude Code, OpenAI Codex",
+    "use_case": "Complex coding problems",
+    "sentiment": "positive",
+    "benchmark": "Claude Code most powerful, Codex worse on complex problems",
+    "date": "2025-08-03"
+  },
+  {
+    "id": 32,
+    "source": "@jonas",
+    "tweet_url": "https://x.com/jonas/status/1931005955430355112",
+    "model": "OpenAI Codex, Claude Code",
+    "use_case": "Async coding agent",
+    "sentiment": "neutral",
+    "benchmark": "Codex best async but bad usability, prefer Claude Code",
+    "date": "2025-06-06"
+  },
+  {
+    "id": 33,
+    "source": "@Askwho",
+    "tweet_url": "https://x.com/Askwho/status/1954612421408301291",
+    "model": "GPT-5, Claude",
+    "use_case": "Building individual apps",
+    "sentiment": "positive",
+    "benchmark": "Switched to GPT-5 - faster, more efficient, closer to brief",
+    "date": "2025-08-08"
+  },
+  {
+    "id": 34,
+    "source": "@0xrasit",
+    "tweet_url": "https://x.com/0xrasit/status/1911518151751139657",
+    "model": "Gemini 2.5, Claude",
+    "use_case": "Cursor coding",
+    "sentiment": "neutral",
+    "benchmark": "Gemini smarter (longer context), Claude faster initially",
+    "date": "2025-04-13"
+  },
+  {
+    "id": 35,
+    "source": "@LaurenceBrem",
+    "tweet_url": "https://x.com/LaurenceBrem/status/1951324597090926613",
+    "model": "Gemini CLI, Claude Code",
+    "use_case": "Coding agent switch",
+    "sentiment": "neutral",
+    "benchmark": null,
+    "date": "2025-07-27"
+  },
+  {
+    "id": 36,
+    "source": "@alexgoughcooper",
+    "tweet_url": "https://x.com/alexgoughcooper/status/1940454673338790113",
+    "model": "Claude 4 Opus",
+    "use_case": "Copywriting and workflows",
+    "sentiment": "positive",
+    "benchmark": "S tier for copywriting, vibe coding n8n workflows",
+    "date": "2025-06-23"
+  },
+  {
+    "id": 37,
+    "source": "@TimothyKassis",
+    "tweet_url": "https://x.com/TimothyKassis/status/2001310999480311919",
+    "model": "Claude Opus 4.5, Gemini 3 Pro",
+    "use_case": "Scientific coding and reasoning",
+    "sentiment": "positive",
+    "benchmark": "Opus 4.5 best for scientific coding, Gemini 3 Pro for non-coding",
+    "date": "2025-11-15"
+  },
+  {
+    "id": 38,
+    "source": "@mark_k",
+    "tweet_url": "https://x.com/mark_k/status/1957511355872784630",
+    "model": "Grok 4, Claude 4, GPT-5",
+    "use_case": "Coding style comparison",
+    "sentiment": "neutral",
+    "benchmark": "Claude/GPT-5 eager (more code), Grok 4 minimalistic",
+    "date": "2025-08-18"
+  },
+  {
+    "id": 39,
+    "source": "@aigleeson",
+    "tweet_url": "https://x.com/aigleeson/status/1995450845501251850",
+    "model": "Claude, ChatGPT, Grok, DeepSeek",
+    "use_case": "Coding comparison",
+    "sentiment": "positive",
+    "benchmark": "Claude calmest, most reliable co-pilot for production",
+    "date": "2025-11-08"
+  },
+  {
+    "id": 40,
+    "source": "@ZenomTrader",
+    "tweet_url": "https://x.com/ZenomTrader/status/1943323042286891476",
+    "model": "Grok 4, Claude",
+    "use_case": "Coding performance",
+    "sentiment": "negative",
+    "benchmark": "Grok 4 bad at coding, slow. Only Claude making progress",
+    "date": "2025-07-01"
+  },
+  {
+    "id": 41,
+    "source": "@grok (self)",
+    "tweet_url": "https://x.com/grok/status/1972772265260658890",
+    "model": "Claude Sonnet 4.5, Grok 4, GPT-5",
+    "use_case": "SWE-Bench coding",
+    "sentiment": "neutral",
+    "benchmark": "Claude 77.2% SWE-Bench, Grok 4 75%, GPT-5 100% AIME",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 42,
+    "source": "@cjzafir",
+    "tweet_url": "https://x.com/cjzafir/status/1957444305788035392",
+    "model": "Claude Sonnet 4, Kimi K2, Qwen Coder 3, Gemini, Grok 4, GPT5",
+    "use_case": "Coding model ranking",
+    "sentiment": "positive",
+    "benchmark": "900+ hours testing - Sonnet 4 #1, Kimi K2 #2, Qwen #3",
+    "date": "2025-08-17"
+  },
+  {
+    "id": 43,
+    "source": "@DougVos",
+    "tweet_url": "https://x.com/DougVos/status/1884235445002985608",
+    "model": "DeepSeek R1, OpenAI o1, Claude 3.5 Sonnet",
+    "use_case": "Coding benchmark",
+    "sentiment": "neutral",
+    "benchmark": "DeepSeek R1 #2 Aider coding, above Claude 3.5 Sonnet",
+    "date": "2025-01-28"
+  },
+  {
+    "id": 44,
+    "source": "@TheZvi",
+    "tweet_url": "https://x.com/TheZvi/status/1894735376008274017",
+    "model": "Claude Sonnet 3.7, DeepSeek r1, o1",
+    "use_case": "Reasoning model comparison",
+    "sentiment": "neutral",
+    "benchmark": "Sonnet 3.7 75.2%, r1 73.9%, o1 81.5% with thinking",
+    "date": "2025-02-26"
+  },
+  {
+    "id": 45,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1996110256628539409",
+    "model": "DeepSeek V3.2",
+    "use_case": "Intelligence ranking",
+    "sentiment": "positive",
+    "benchmark": "#2 open weights, ahead of Grok 4, Claude Sonnet 4.5",
+    "date": "2025-11-09"
+  },
+  {
+    "id": 46,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1894437867914682764",
+    "model": "Claude 3.7 Sonnet",
+    "use_case": "Coding benchmark",
+    "sentiment": "positive",
+    "benchmark": "Best non-reasoning model for coding",
+    "date": "2025-02-25"
+  },
+  {
+    "id": 47,
+    "source": "@bind_ai",
+    "tweet_url": "https://x.com/bind_ai/status/1906386696519704590",
+    "model": "Claude 3.7 Sonnet, DeepSeek V3",
+    "use_case": "Cost comparison",
+    "sentiment": "neutral",
+    "benchmark": "Claude $15/M tokens, DeepSeek $0.80/M (18x cheaper)",
+    "date": "2025-03-29"
+  },
+  {
+    "id": 48,
+    "source": "@itsPaulAi",
+    "tweet_url": "https://x.com/itsPaulAi/status/1882138485630566853",
+    "model": "DeepSeek R1, GPT-4o, Claude 3.5 Sonnet",
+    "use_case": "Math on mobile",
+    "sentiment": "positive",
+    "benchmark": "DeepSeek R1 1.5B outperforms GPT-4o & Claude on math",
+    "date": "2025-01-22"
+  },
+  {
+    "id": 49,
+    "source": "@godofprompt",
+    "tweet_url": "https://x.com/godofprompt/status/1999185858948399599",
+    "model": "GPT-5.2, Claude, Gemini",
+    "use_case": "SWE-Bench Pro coding",
+    "sentiment": "positive",
+    "benchmark": "GPT-5.2 55.6% SWE-Bench Pro, beats experts 70.9%",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 50,
+    "source": "@rohanpaul_ai",
+    "tweet_url": "https://x.com/rohanpaul_ai/status/1993046494904217661",
+    "model": "Claude Opus 4.5, GPT-5.1 Codex-Max, Gemini 3 Pro",
+    "use_case": "SWE-Bench results",
+    "sentiment": "positive",
+    "benchmark": "Opus 4.5 80.9%, GPT 77.9%, Gemini 76.2%",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 51,
+    "source": "@silasalberti",
+    "tweet_url": "https://x.com/silasalberti/status/1999211489467781448",
+    "model": "Claude Opus, GPT-5.2",
+    "use_case": "SWE-Bench breakthrough",
+    "sentiment": "positive",
+    "benchmark": "Opus first to break 80%, GPT-5.2 second",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 52,
+    "source": "@KLieret",
+    "tweet_url": "https://x.com/KLieret/status/1999222709419450455",
+    "model": "GPT 5.2, Gemini, Claude Sonnet 4.5",
+    "use_case": "SWE-bench leaderboard",
+    "sentiment": "neutral",
+    "benchmark": "GPT 5.2 #3 after Gemini, cheaper than Sonnet",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 53,
+    "source": "@OpenRouterAI",
+    "tweet_url": "https://x.com/OpenRouterAI/status/1947791592602956258",
+    "model": "Claude Sonnet-4, Qwen3-Coder, OpenAI o3",
+    "use_case": "SWE-Bench Verified",
+    "sentiment": "neutral",
+    "benchmark": "Sonnet 70.4%, Qwen3-Coder 69.6%, o3 69.1%",
+    "date": "2025-07-22"
+  },
+  {
+    "id": 54,
+    "source": "@aakashgupta",
+    "tweet_url": "https://x.com/aakashgupta/status/1999203822552625178",
+    "model": "GPT-5.2",
+    "use_case": "ARC Prize benchmark",
+    "sentiment": "positive",
+    "benchmark": "90.5% accuracy at $11.64 per task (was $4,500)",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 55,
+    "source": "@mattshumer_",
+    "tweet_url": "https://x.com/mattshumer_/status/1942269222047855096",
+    "model": "Claude Max, Cline, Claude Code",
+    "use_case": "AI coding workflow",
+    "sentiment": "positive",
+    "benchmark": "Maximum context, fewer hallucinations, less overbuilding",
+    "date": "2025-06-26"
+  },
+  {
+    "id": 56,
+    "source": "@PSkinnerTech",
+    "tweet_url": "https://x.com/PSkinnerTech/status/1870801058068373586",
+    "model": "Claude 3 Opus, Claude 3.5 Sonnet",
+    "use_case": "Cursor AI coding",
+    "sentiment": "positive",
+    "benchmark": "Opus best for complex tasks, Sonnet good balance",
+    "date": "2024-12-22"
+  },
+  {
+    "id": 57,
+    "source": "@sh_reya",
+    "tweet_url": "https://x.com/sh_reya/status/1956830797543166121",
+    "model": "Claude Code",
+    "use_case": "Terminal vs IDE experience",
+    "sentiment": "positive",
+    "benchmark": "Terminal superior to Cursor agent mode",
+    "date": "2025-08-13"
+  },
+  {
+    "id": 58,
+    "source": "@aidan_mclau",
+    "tweet_url": "https://x.com/aidan_mclau/status/1953520087027380243",
+    "model": "GPT-5, Claude",
+    "use_case": "Cursor default model",
+    "sentiment": "positive",
+    "benchmark": "GPT-5 now default - smartest coding model (Cursor CEO)",
+    "date": "2025-08-05"
+  },
+  {
+    "id": 59,
+    "source": "@markbaileyz",
+    "tweet_url": "https://x.com/markbaileyz/status/1892554233767182840",
+    "model": "Gemini, ChatGPT, Perplexity, Grok-3",
+    "use_case": "Deep Research comparison",
+    "sentiment": "neutral",
+    "benchmark": "Gemini Ultra exceeds GPT-4 on many academic benchmarks",
+    "date": "2025-02-20"
+  },
+  {
+    "id": 60,
+    "source": "@cjzafir",
+    "tweet_url": "https://x.com/cjzafir/status/1779908993768390705",
+    "model": "Claude 3, GPT4, Gemini Pro, Perplexity",
+    "use_case": "Data analysis and content",
+    "sentiment": "positive",
+    "benchmark": "Claude 3 best for data analysis, Gemini Pro for humanlike content",
+    "date": "2024-04-15"
+  },
+  {
+    "id": 61,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1977814648868249639",
+    "model": "Gemini, Perplexity, Claude",
+    "use_case": "Research comparison",
+    "sentiment": "neutral",
+    "benchmark": "Claude/Gemini have deep research, Perplexity has live retrieval",
+    "date": "2025-10-04"
+  },
+  {
+    "id": 62,
+    "source": "@perplexity_ai",
+    "tweet_url": "https://x.com/perplexity_ai/status/1765062913008537793",
+    "model": "Claude 3 Opus",
+    "use_case": "Perplexity Pro default",
+    "sentiment": "positive",
+    "benchmark": "Most capable model surpassing GPT-4",
+    "date": "2024-03-06"
+  },
+  {
+    "id": 63,
+    "source": "@iannuttall",
+    "tweet_url": "https://x.com/iannuttall/status/1937887418079678496",
+    "model": "Claude Opus 4, Gemini 2.5 Pro",
+    "use_case": "Agentic model comparison",
+    "sentiment": "positive",
+    "benchmark": "Opus SIGNIFICANTLY better, best agentic model",
+    "date": "2025-06-15"
+  },
+  {
+    "id": 64,
+    "source": "@TheZvi",
+    "tweet_url": "https://x.com/TheZvi/status/1926988508675051671",
+    "model": "Claude Code, o3, GPT-4.1",
+    "use_case": "Agentic coding",
+    "sentiment": "positive",
+    "benchmark": "Claude Code best agentic environment, just works",
+    "date": "2025-05-26"
+  },
+  {
+    "id": 65,
+    "source": "@Teknium1",
+    "tweet_url": "https://x.com/Teknium1/status/1957325803710230782",
+    "model": "GPT-5, Claude, Gemini",
+    "use_case": "Agentic IDE integration",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5 only good in codex-cli, Claude good in cursor/claude code",
+    "date": "2025-08-17"
+  },
+  {
+    "id": 66,
+    "source": "@sayashk",
+    "tweet_url": "https://x.com/sayashk/status/1953952498105946594",
+    "model": "GPT-5, Claude Opus 4.1",
+    "use_case": "Agentic tasks",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5 cost-effective but never tops agentic leaderboards",
+    "date": "2025-08-06"
+  },
+  {
+    "id": 67,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1999404579599823091",
+    "model": "GPT-5.2, Claude Opus 4.5",
+    "use_case": "Real-world tasks (GDPval-AA)",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5.2 highest but most expensive ($620 vs $370)",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 68,
+    "source": "@_catwu",
+    "tweet_url": "https://x.com/_catwu/status/1900246771374387651",
+    "model": "Claude 3.7 Sonnet",
+    "use_case": "Extended thinking in Claude Code",
+    "sentiment": "positive",
+    "benchmark": "Hybrid reasoning model powers extended thinking",
+    "date": "2025-03-13"
+  },
+  {
+    "id": 69,
+    "source": "@cline",
+    "tweet_url": "https://x.com/cline/status/1928208680903921803",
+    "model": "Claude Opus 4, Claude Sonnet 4",
+    "use_case": "Extended thinking performance",
+    "sentiment": "positive",
+    "benchmark": "Opus 58% better, Sonnet 68% better on reasoning",
+    "date": "2025-05-29"
+  },
+  {
+    "id": 70,
+    "source": "@DillonUzar",
+    "tweet_url": "https://x.com/DillonUzar/status/2003072751020413137",
+    "model": "Claude 4.5 Opus/Sonnet/Haiku",
+    "use_case": "MRCR context benchmark",
+    "sentiment": "neutral",
+    "benchmark": "Opus 4.5 between GPT-5.2 and Gemini 3 Flash (No-Think)",
+    "date": "2025-11-17"
+  },
+  {
+    "id": 71,
+    "source": "@kyleturman",
+    "tweet_url": "https://x.com/kyleturman/status/1768038220544311675",
+    "model": "Claude 3 Opus, Sonnet, Haiku",
+    "use_case": "Speed vs capability tradeoff",
+    "sentiment": "positive",
+    "benchmark": "Haiku's speed/affordability enables more deployments",
+    "date": "2024-03-14"
+  },
+  {
+    "id": 72,
+    "source": "@simonw",
+    "tweet_url": "https://x.com/simonw/status/1853509565469671585",
+    "model": "Claude 3.5 Haiku, Claude 3 Opus",
+    "use_case": "Model tier comparison",
+    "sentiment": "neutral",
+    "benchmark": "3.5 Haiku beats 3 Opus, 4x more expensive than 3 Haiku",
+    "date": "2024-11-04"
+  },
+  {
+    "id": 73,
+    "source": "@MaximeRivest",
+    "tweet_url": "https://x.com/MaximeRivest/status/1951404011527311388",
+    "model": "OpenAI Pro, Claude Max, Gemini Ultra, SuperGrok Heavy",
+    "use_case": "$200/month subscription comparison",
+    "sentiment": "positive",
+    "benchmark": "Claude Code favorite for installs, repos, Git, PyPI",
+    "date": "2025-07-27"
+  },
+  {
+    "id": 74,
+    "source": "@DuaneAdam",
+    "tweet_url": "https://x.com/DuaneAdam/status/1942491010904515079",
+    "model": "Claude Max $100",
+    "use_case": "Subscription value",
+    "sentiment": "positive",
+    "benchmark": "Best value for parallel coding with review",
+    "date": "2025-06-26"
+  },
+  {
+    "id": 75,
+    "source": "@EricBuess",
+    "tweet_url": "https://x.com/EricBuess/status/1923536975375528031",
+    "model": "Claude Max, Claude Code",
+    "use_case": "Subscription efficiency",
+    "sentiment": "positive",
+    "benchmark": "Never hit limit in any 5-hour period",
+    "date": "2025-05-16"
+  },
+  {
+    "id": 76,
+    "source": "@DataCamp",
+    "tweet_url": "https://x.com/DataCamp/status/1905206982191042680",
+    "model": "Gemini 2.5 Pro",
+    "use_case": "Reasoning and multimodal",
+    "sentiment": "positive",
+    "benchmark": "1M token context, improved benchmarks",
+    "date": "2025-03-27"
+  },
+  {
+    "id": 77,
+    "source": "@risphereeditor",
+    "tweet_url": "https://x.com/risphereeditor/status/1905964534650802289",
+    "model": "Gemini 2.5 Pro, Claude 3.7 Sonnet, DeepSeek-V3",
+    "use_case": "Cursor with large context",
+    "sentiment": "neutral",
+    "benchmark": "Gemini 1M context, Claude/DeepSeek better for frontend",
+    "date": "2025-03-28"
+  },
+  {
+    "id": 78,
+    "source": "@konstantinos_fal",
+    "tweet_url": "https://x.com/kostas_fal/status/1938614509742051352",
+    "model": "Claude models, Gemini Pro",
+    "use_case": "Large file handling",
+    "sentiment": "neutral",
+    "benchmark": "Gemini 1M context better for large files",
+    "date": "2025-06-17"
+  },
+  {
+    "id": 79,
+    "source": "@thatroblennon",
+    "tweet_url": "https://x.com/thatroblennon/status/1758165277009965291",
+    "model": "Gemini, Claude",
+    "use_case": "Context window comparison",
+    "sentiment": "positive",
+    "benchmark": "Gemini 1M tokens, Claude 100K (at time of tweet)",
+    "date": "2024-02-15"
+  },
+  {
+    "id": 80,
+    "source": "@DavidOndrej1",
+    "tweet_url": "https://x.com/DavidOndrej1/status/1947660270265884941",
+    "model": "Kimi, DeepSeek, Qwen, Claude 4 Opus",
+    "use_case": "Cost comparison",
+    "sentiment": "neutral",
+    "benchmark": "Opus 100x more expensive than Kimi K2, similar performance",
+    "date": "2025-07-22"
+  },
+  {
+    "id": 81,
+    "source": "@WolframRvnwlf",
+    "tweet_url": "https://x.com/WolframRvnwlf/status/1948152582293098658",
+    "model": "Qwen3-Coder, Kimi K2, Claude Sonnet/Opus",
+    "use_case": "Claude Code alternatives",
+    "sentiment": "positive",
+    "benchmark": "Qwen3-Coder 256K context replaces Claude for coding",
+    "date": "2025-07-24"
+  },
+  {
+    "id": 82,
+    "source": "@Saboo_Shubham_",
+    "tweet_url": "https://x.com/Saboo_Shubham_/status/1943697232982626731",
+    "model": "Kimi K2, Claude Sonnet 4, GPT-4.1",
+    "use_case": "Coding benchmarks",
+    "sentiment": "positive",
+    "benchmark": "Kimi 65.8% SWE-bench vs Claude 50.2%, GPT 40.8%",
+    "date": "2025-07-01"
+  },
+  {
+    "id": 83,
+    "source": "@adonis_singh",
+    "tweet_url": "https://x.com/adonis_singh/status/1856260251999260870",
+    "model": "Qwen2.5 32B, Claude 3.5 Sonnet, GPT-4o",
+    "use_case": "Coding benchmarks",
+    "sentiment": "positive",
+    "benchmark": "Qwen2.5 outperforms Claude 3.5 & GPT-4o on coding",
+    "date": "2024-11-12"
+  },
+  {
+    "id": 84,
+    "source": "@_philschmid",
+    "tweet_url": "https://x.com/_philschmid/status/1856040444771348508",
+    "model": "Qwen 2.5-Coder-32B, Claude Sonnet 3.5",
+    "use_case": "Open source coding",
+    "sentiment": "positive",
+    "benchmark": "Matches Claude with 32B params, beats on HumanEval",
+    "date": "2024-11-12"
+  },
+  {
+    "id": 85,
+    "source": "@TheAhmadOsman",
+    "tweet_url": "https://x.com/TheAhmadOsman/status/1964556793390256529",
+    "model": "GLM 4.5, Claude Opus 4, Kimi K2, Qwen 3",
+    "use_case": "Agent function calling",
+    "sentiment": "positive",
+    "benchmark": "GLM 4.5 beats Opus 4 on Berkeley Function-Calling, $3/$15",
+    "date": "2025-09-03"
+  },
+  {
+    "id": 86,
+    "source": "@igor9silva",
+    "tweet_url": "https://x.com/igor9silva/status/1943701494911418700",
+    "model": "Kimi 2, Claude 4 Sonnet",
+    "use_case": "Cost efficiency",
+    "sentiment": "positive",
+    "benchmark": "Kimi $0.05 vs Claude $0.88, ~13x cheaper",
+    "date": "2025-07-01"
+  },
+  {
+    "id": 87,
+    "source": "@henrythe9ths",
+    "tweet_url": "https://x.com/henrythe9ths/status/1889381891373146421",
+    "model": "Cline, Claude, Cursor, Windsurf",
+    "use_case": "AI coding tool comparison",
+    "sentiment": "positive",
+    "benchmark": "Cline best overall - open source, best code, self-healing",
+    "date": "2025-02-11"
+  },
+  {
+    "id": 88,
+    "source": "@fabriceb",
+    "tweet_url": "https://x.com/fabriceb/status/1898798721854517747",
+    "model": "Cline in Cursor, Claude Code",
+    "use_case": "IDE vs terminal comparison",
+    "sentiment": "neutral",
+    "benchmark": "Prefer Cline - seeing diffs in IDE better",
+    "date": "2025-03-09"
+  },
+  {
+    "id": 89,
+    "source": "@ThibaultJaigu",
+    "tweet_url": "https://x.com/ThibaultJaigu/status/1878407270729478423",
+    "model": "DeepSeek V3, Claude, GPT-4o",
+    "use_case": "Cursor/Cline coding",
+    "sentiment": "positive",
+    "benchmark": "DeepSeek V3 5x cheaper with competitive performance",
+    "date": "2025-01-12"
+  },
+  {
+    "id": 90,
+    "source": "@zanethinks",
+    "tweet_url": "https://x.com/zanethinks/status/1953573236039614684",
+    "model": "GPT 5, Claude Code",
+    "use_case": "Speed comparison",
+    "sentiment": "positive",
+    "benchmark": "Claude Code 10 minutes faster, finished under 2 min",
+    "date": "2025-08-05"
+  },
+  {
+    "id": 91,
+    "source": "@chatgpt21",
+    "tweet_url": "https://x.com/chatgpt21/status/1948763309408145703",
+    "model": "GPT 5, Claude Sonnet 4",
+    "use_case": "Early tester comparison",
+    "sentiment": "positive",
+    "benchmark": "GPT-5 tops Claude Sonnet 4 in direct matches, biggest leap in SE",
+    "date": "2025-07-23"
+  },
+  {
+    "id": 92,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1999580572658860306",
+    "model": "GPT 5.2, Claude Opus 4.5, Gemini 3",
+    "use_case": "Business coding test",
+    "sentiment": "neutral",
+    "benchmark": "Claude produced clean HTML/JS, GPT-5.2 didn't recognize task",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 93,
+    "source": "@keshavrao_",
+    "tweet_url": "https://x.com/keshavrao_/status/1970944367339937804",
+    "model": "GPT 5 Codex, Cursor+GPT5, Claude Code Opus 4.1",
+    "use_case": "Agentic coding ranking",
+    "sentiment": "positive",
+    "benchmark": "GPT 5 Codex High #1, Claude Code Opus 4.1 #5",
+    "date": "2025-09-25"
+  },
+  {
+    "id": 94,
+    "source": "@nateberkopec",
+    "tweet_url": "https://x.com/nateberkopec/status/1991291092449497155",
+    "model": "GPT, Claude",
+    "use_case": "Code reviews vs feature dev",
+    "sentiment": "neutral",
+    "benchmark": "GPT better for reviews/complex bugs, Claude rules for greenfield",
+    "date": "2025-10-17"
+  },
+  {
+    "id": 95,
+    "source": "@jarrodwatts",
+    "tweet_url": "https://x.com/jarrodwatts/status/2009963629500870977",
+    "model": "Claude Code, GPT 5.2",
+    "use_case": "Multi-model plugin",
+    "sentiment": "positive",
+    "benchmark": "GPT 5.2 subagents in Claude Code for architecture/security",
+    "date": "2025-12-02"
+  },
+  {
+    "id": 96,
+    "source": "@helloiamleonie",
+    "tweet_url": "https://x.com/helloiamleonie/status/1949855114837066137",
+    "model": "Claude Code, Gemini CLI, Cursor, Gemini in Colab",
+    "use_case": "Notebook vs terminal coding",
+    "sentiment": "neutral",
+    "benchmark": "Gemini in Colab for experimentation, Claude+Cursor for finalizing",
+    "date": "2025-07-25"
+  },
+  {
+    "id": 97,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1938355002650796398",
+    "model": "Gemini CLI",
+    "use_case": "Free coding tool",
+    "sentiment": "positive",
+    "benchmark": "1000 requests/day free, works with plain English",
+    "date": "2025-06-17"
+  },
+  {
+    "id": 98,
+    "source": "@sama",
+    "tweet_url": "https://x.com/sama/status/1912558495997784441",
+    "model": "o3, o4-mini",
+    "use_case": "Codex CLI launch",
+    "sentiment": "positive",
+    "benchmark": "Super good at coding - open source agent",
+    "date": "2025-04-17"
+  },
+  {
+    "id": 99,
+    "source": "@omarsar0",
+    "tweet_url": "https://x.com/omarsar0/status/1923408662422311203",
+    "model": "codex-mini-latest (o4-mini fine-tuned)",
+    "use_case": "Codex CLI model",
+    "sentiment": "positive",
+    "benchmark": "200K context, 100K output, fine-tuned for CLI",
+    "date": "2025-05-16"
+  },
+  {
+    "id": 100,
+    "source": "@grok (Gemini comparison)",
+    "tweet_url": "https://x.com/grok/status/1953650837164896320",
+    "model": "GPT-5, Claude 3.5, Gemini 1.5",
+    "use_case": "Hallucination comparison",
+    "sentiment": "positive",
+    "benchmark": "GPT-5 80% fewer errors than o3, 1.6% error rate",
+    "date": "2025-08-05"
+  },
+  {
+    "id": 101,
+    "source": "@grok (hallucination)",
+    "tweet_url": "https://x.com/grok/status/1948834556012101673",
+    "model": "Gemini 2.5 Pro, GPT-4.5, Grok 4",
+    "use_case": "Hallucination rate",
+    "sentiment": "neutral",
+    "benchmark": "Gemini 1.1% rate, GPT-4.5 1.2%",
+    "date": "2025-07-23"
+  },
+  {
+    "id": 102,
+    "source": "@dipanjand",
+    "tweet_url": "https://x.com/dipanjand/status/1887378914877767967",
+    "model": "Gemini 2.0 Flash",
+    "use_case": "Hallucination benchmark",
+    "sentiment": "positive",
+    "benchmark": "#1 Vectara leaderboard, 0.7% hallucination rate",
+    "date": "2025-02-06"
+  },
+  {
+    "id": 103,
+    "source": "@amix3k",
+    "tweet_url": "https://x.com/amix3k/status/2001594901713080675",
+    "model": "Gemini 3 Flash",
+    "use_case": "Hallucination rate",
+    "sentiment": "negative",
+    "benchmark": "91% hallucination rate on Artificial Analysis benchmark",
+    "date": "2025-11-15"
+  },
+  {
+    "id": 104,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/2008570655047118914",
+    "model": "Claude 4.5 Sonnet/Opus, GPT5-5.1",
+    "use_case": "Hallucination benchmark",
+    "sentiment": "neutral",
+    "benchmark": "Opus 58%, Sonnet 48%, GPT5-5.1 51% hallucination",
+    "date": "2025-11-24"
+  },
+  {
+    "id": 105,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1969180023107305846",
+    "model": "Grok 4 Fast, Gemini 2.5 Pro, GPT-5",
+    "use_case": "Cost efficiency",
+    "sentiment": "positive",
+    "benchmark": "Grok 4 Fast ~25X cheaper than Gemini, ~23X cheaper than GPT-5",
+    "date": "2025-09-21"
+  },
+  {
+    "id": 106,
+    "source": "@elliotarledge",
+    "tweet_url": "https://x.com/elliotarledge/status/1993114719851626848",
+    "model": "GPT 5.1 codex high, Claude 4.5 Sonnet/Opus, Gemini 3 Pro",
+    "use_case": "Top tier fragmentation",
+    "sentiment": "neutral",
+    "benchmark": "All top tier but fail in different ways",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 107,
+    "source": "@rohanpaul_ai",
+    "tweet_url": "https://x.com/rohanpaul_ai/status/1997141123521998977",
+    "model": "GPT-5.2, Gemini 3",
+    "use_case": "Speed competition",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5.2 rushing to close gap with Gemini 3",
+    "date": "2025-11-10"
+  },
+  {
+    "id": 108,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1969180029717528608",
+    "model": "Grok 4 Fast",
+    "use_case": "Speed benchmark",
+    "sentiment": "positive",
+    "benchmark": "344 tokens/s, 3.8s latency - fastest frontier model",
+    "date": "2025-09-21"
+  },
+  {
+    "id": 109,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1932489573462081898",
+    "model": "o3, Gemini 2.5 Pro, Claude 4 Sonnet/Opus",
+    "use_case": "Pricing comparison",
+    "sentiment": "neutral",
+    "benchmark": "o3 now matches Gemini pricing, 8x cheaper than Opus",
+    "date": "2025-06-10"
+  },
+  {
+    "id": 110,
+    "source": "@demishassabis",
+    "tweet_url": "https://x.com/demishassabis/status/1910107859041271977",
+    "model": "Gemini",
+    "use_case": "MCP support",
+    "sentiment": "positive",
+    "benchmark": "MCP becoming open standard for agentic era",
+    "date": "2025-04-09"
+  },
+  {
+    "id": 111,
+    "source": "@DuaneAdam",
+    "tweet_url": "https://x.com/DuaneAdam/status/1994620986281660790",
+    "model": "Claude Opus 4",
+    "use_case": "MCP agentic behavior",
+    "sentiment": "positive",
+    "benchmark": "First model to use Playwright MCP for testing",
+    "date": "2025-11-07"
+  },
+  {
+    "id": 112,
+    "source": "@omarsar0",
+    "tweet_url": "https://x.com/omarsar0/status/1949922050069365046",
+    "model": "Claude 4, Gemini 2.5 Pro",
+    "use_case": "MCP multi-model workflow",
+    "sentiment": "positive",
+    "benchmark": "MCP servers combine Claude + Gemini capabilities",
+    "date": "2025-07-25"
+  },
+  {
+    "id": 113,
+    "source": "@nathan84686947",
+    "tweet_url": "https://x.com/nathan84686947/status/1939194926501384353",
+    "model": "Claude Code, Gemini Pro",
+    "use_case": "MCP debugging",
+    "sentiment": "positive",
+    "benchmark": "Cross-model debugging works more often than single model",
+    "date": "2025-06-19"
+  },
+  {
+    "id": 114,
+    "source": "@MahRabie",
+    "tweet_url": "https://x.com/MahRabie/status/1958897042924695885",
+    "model": "GPT-5, Grok-4, Claude-4.0-Sonnet",
+    "use_case": "MCP-Universe benchmark",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5 43.72%, Grok-4 33.33%, Claude 29.44% success",
+    "date": "2025-08-17"
+  },
+  {
+    "id": 115,
+    "source": "@claudeai",
+    "tweet_url": "https://x.com/claudeai/status/1993030546243699119",
+    "model": "Claude Opus 4.5",
+    "use_case": "Coding, agents, computer use",
+    "sentiment": "positive",
+    "benchmark": "Best model in world for coding, agents, computer use",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 116,
+    "source": "@katelyn_lesse",
+    "tweet_url": "https://x.com/katelyn_lesse/status/1972709905560920426",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Coding and computer use",
+    "sentiment": "positive",
+    "benchmark": "Best coding and computer use model, with memory tool",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 117,
+    "source": "@learnprompting",
+    "tweet_url": "https://x.com/learnprompting/status/1894317489284419672",
+    "model": "Claude 3.7 Sonnet",
+    "use_case": "Hybrid reasoning",
+    "sentiment": "positive",
+    "benchmark": "Coding + computer use + 200K context",
+    "date": "2025-02-25"
+  },
+  {
+    "id": 118,
+    "source": "@mannyyang",
+    "tweet_url": "https://x.com/mannyyang/status/1873659191698878486",
+    "model": "Claude 3.5 Sonnet, Gemini 2.0 Flash, DeepSeek v3, o1",
+    "use_case": "Cline model testing",
+    "sentiment": "positive",
+    "benchmark": "Cline made for Claude, iterative approach works best",
+    "date": "2025-01-01"
+  },
+  {
+    "id": 119,
+    "source": "@nabeelqu",
+    "tweet_url": "https://x.com/nabeelqu/status/1991310963807514984",
+    "model": "Gemini 3, GPT5.1T, Codex, GPT 5.1 Pro",
+    "use_case": "Daily driver stack",
+    "sentiment": "positive",
+    "benchmark": "All models really good now, $5 Uber era of AI",
+    "date": "2025-10-17"
+  },
+  {
+    "id": 120,
+    "source": "@GlbGPT",
+    "tweet_url": "https://x.com/GlbGPT/status/1972971678885113927",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Coding, finance, law, medicine, STEM",
+    "sentiment": "positive",
+    "benchmark": "Best coding model, reduced hallucination & sycophancy",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 121,
+    "source": "@mattshumer_",
+    "tweet_url": "https://x.com/mattshumer_/status/1953501875602395327",
+    "model": "GPT-5, Claude 4 Opus, o3",
+    "use_case": "Daily driver review",
+    "sentiment": "positive",
+    "benchmark": "GPT-5 big leap, goes one layer deeper than Opus/o3",
+    "date": "2025-08-05"
+  },
+  {
+    "id": 122,
+    "source": "@lmarena_ai",
+    "tweet_url": "https://x.com/arena/status/1988665193275240616",
+    "model": "Claude, GPT-5, GLM-4.6, Gemini",
+    "use_case": "Code Arena live coding evals",
+    "sentiment": "neutral",
+    "benchmark": "Real web app building step-by-step",
+    "date": "2025-10-12"
+  },
+  {
+    "id": 123,
+    "source": "@theomitsa",
+    "tweet_url": "https://x.com/theomitsa/status/1824137896007438637",
+    "model": "ChatGPT, Claude, Gemini",
+    "use_case": "Data analysis",
+    "sentiment": "neutral",
+    "benchmark": "SQL writing comparison across models",
+    "date": "2024-08-15"
+  },
+  {
+    "id": 124,
+    "source": "@thetripathi58",
+    "tweet_url": "https://x.com/thetripathi58/status/1971622888592773591",
+    "model": "GLM 4.5",
+    "use_case": "Claude Code alternative",
+    "sentiment": "positive",
+    "benchmark": "Super cheap way to code with AI",
+    "date": "2025-09-23"
+  },
+  {
+    "id": 125,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1979660835925696960",
+    "model": "Claude Haiku 4.5",
+    "use_case": "Cost efficiency",
+    "sentiment": "positive",
+    "benchmark": "Beats GPT-4, Gemini at 3X lower cost",
+    "date": "2025-10-06"
+  },
+  {
+    "id": 126,
+    "source": "@augmentcode",
+    "tweet_url": "https://x.com/augmentcode/status/1966558757665767931",
+    "model": "GPT 5, Claude Sonnet 4",
+    "use_case": "Agent coding tier",
+    "sentiment": "positive",
+    "benchmark": "Best coding models for complex tasks",
+    "date": "2025-09-18"
+  },
+  {
+    "id": 127,
+    "source": "@AndrewYNg",
+    "tweet_url": "https://x.com/AndrewYNg/status/1975614372799283423",
+    "model": "Multi-agent LLMs",
+    "use_case": "Agentic AI course",
+    "sentiment": "positive",
+    "benchmark": "Reflection, planning, tool use, multi-agent patterns",
+    "date": "2025-09-30"
+  },
+  {
+    "id": 128,
+    "source": "@AndrewYNg",
+    "tweet_url": "https://x.com/AndrewYNg/status/1786057567178834328",
+    "model": "GPT-4-turbo, Claude 3 Opus, Gemini 1.5 Pro, Llama-3-70B",
+    "use_case": "Synthetic data cost",
+    "sentiment": "neutral",
+    "benchmark": "1T tokens: GPT $30M, Opus $75M, Gemini $21M, Llama $790K",
+    "date": "2024-05-02"
+  },
+  {
+    "id": 129,
+    "source": "@GeminiApp",
+    "tweet_url": "https://x.com/GeminiApp/status/1866873306818977945",
+    "model": "Gemini Deep Research",
+    "use_case": "Agentic research",
+    "sentiment": "positive",
+    "benchmark": "Hours of research in minutes with sources",
+    "date": "2024-12-11"
+  },
+  {
+    "id": 130,
+    "source": "@GoogleDeepMind",
+    "tweet_url": "https://x.com/GoogleDeepMind/status/1866869343570608557",
+    "model": "Gemini 2.0",
+    "use_case": "Agentic experiences",
+    "sentiment": "positive",
+    "benchmark": "Multimodal output, Google tool use",
+    "date": "2024-12-11"
+  },
+  {
+    "id": 131,
+    "source": "@doodlestein",
+    "tweet_url": "https://x.com/doodlestein/status/1971675066728698091",
+    "model": "Gemini CLI, Codex CLI, Claude Code",
+    "use_case": "Usage limits comparison",
+    "sentiment": "negative",
+    "benchmark": "OpenAI 20x more usage than Gemini at same cost",
+    "date": "2025-09-23"
+  },
+  {
+    "id": 132,
+    "source": "@JackWoth98",
+    "tweet_url": "https://x.com/JackWoth98/status/1990837441247273364",
+    "model": "Gemini 3, Gemini CLI",
+    "use_case": "Getting started",
+    "sentiment": "positive",
+    "benchmark": "Preview features toggle for Gemini 3 access",
+    "date": "2025-10-16"
+  },
+  {
+    "id": 133,
+    "source": "@ArmandVervaeck",
+    "tweet_url": "https://x.com/ArmandVervaeck/status/1991886639853920749",
+    "model": "Subagents, Orchestrator",
+    "use_case": "Multi-agent architecture",
+    "sentiment": "positive",
+    "benchmark": "Orchestrator delegates to specialized subagents",
+    "date": "2025-10-17"
+  },
+  {
+    "id": 134,
+    "source": "@BetterStackHQ",
+    "tweet_url": "https://x.com/BetterStackHQ/status/1939720534620877303",
+    "model": "Claude Code, Codex CLI, Gemini CLI",
+    "use_case": "Agent multiplexer",
+    "sentiment": "positive",
+    "benchmark": "Claude Squad runs multiple agents on one project",
+    "date": "2025-06-19"
+  },
+  {
+    "id": 135,
+    "source": "@claude_code",
+    "tweet_url": "https://x.com/claude_code/status/1930726122733306004",
+    "model": "Claude Opus 4",
+    "use_case": "Bug solving",
+    "sentiment": "positive",
+    "benchmark": "Solved bug that stumped dev for 200hrs over 4 years",
+    "date": "2025-03-23"
+  },
+  {
+    "id": 136,
+    "source": "@boltdotnew",
+    "tweet_url": "https://x.com/boltdotnew/status/1965448120558559683",
+    "model": "Claude Code, OpenAI Codex",
+    "use_case": "Browser-based coding",
+    "sentiment": "positive",
+    "benchmark": "No setup, no CLI, no error loops",
+    "date": "2025-09-11"
+  },
+  {
+    "id": 137,
+    "source": "@simonw",
+    "tweet_url": "https://x.com/simonw/status/1937865080902934911",
+    "model": "Claude Code, OpenAI Codex, Gemini CLI",
+    "use_case": "Terminal agents category",
+    "sentiment": "neutral",
+    "benchmark": "New category of AI-assisted terminal tools",
+    "date": "2025-06-15"
+  },
+  {
+    "id": 138,
+    "source": "@levie",
+    "tweet_url": "https://x.com/levie/status/1966175904566227366",
+    "model": "Box AI agents",
+    "use_case": "Enterprise unstructured data",
+    "sentiment": "positive",
+    "benchmark": "Insights and automation for enterprise content",
+    "date": "2025-09-18"
+  },
+  {
+    "id": 139,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1928524152773742604",
+    "model": "Claude, Gemini, ChatGPT o3",
+    "use_case": "Best AI coding model",
+    "sentiment": "neutral",
+    "benchmark": "ChatGPT o3 poor for coding, optimized for reasoning",
+    "date": "2025-05-30"
+  },
+  {
+    "id": 140,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1973855708589551998",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Agentic workflows",
+    "sentiment": "positive",
+    "benchmark": "Most reliable for complex multi-step autonomous tasks",
+    "date": "2025-09-27"
+  },
+  {
+    "id": 141,
+    "source": "@ai_for_success",
+    "tweet_url": "https://x.com/ai_for_success/status/1894966955419078950",
+    "model": "Kimi-K1.6-IOI-high, GPT-4.5, Claude 3.7 Sonnet",
+    "use_case": "LiveCodeBench",
+    "sentiment": "positive",
+    "benchmark": "Kimi topping LiveCodeBench",
+    "date": "2025-02-26"
+  },
+  {
+    "id": 142,
+    "source": "@Saboo_Shubham_",
+    "tweet_url": "https://x.com/Saboo_Shubham_/status/1943694224584818808",
+    "model": "Kimi K2, DeepSeek R1, Qwen, GPT-4.1",
+    "use_case": "Agentic workflows",
+    "sentiment": "positive",
+    "benchmark": "1T params, native MCP, Claude 4 level performance",
+    "date": "2025-07-01"
+  },
+  {
+    "id": 143,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/2008388112020631599",
+    "model": "GLM 4.7",
+    "use_case": "Summarization, data processing",
+    "sentiment": "positive",
+    "benchmark": "200K context, MIT licensed, beats GPT/Claude on some tasks",
+    "date": "2025-11-24"
+  },
+  {
+    "id": 144,
+    "source": "@JulianGoldieSEO",
+    "tweet_url": "https://x.com/JulianGoldieSEO/status/1994690996609888292",
+    "model": "Claude Opus 4.5, Gemini 3",
+    "use_case": "Funnel building",
+    "sentiment": "positive",
+    "benchmark": "Claude builds structure/HTML, Gemini beautifies",
+    "date": "2025-11-07"
+  },
+  {
+    "id": 145,
+    "source": "@melvynxdev",
+    "tweet_url": "https://x.com/melvynxdev/status/2009634293187002688",
+    "model": "Claude Code, Gemini",
+    "use_case": "Design enhancement MCP",
+    "sentiment": "positive",
+    "benchmark": "Claude for logic, Gemini MCP for frontend design",
+    "date": "2025-12-02"
+  },
+  {
+    "id": 146,
+    "source": "@Center for AI Safety",
+    "tweet_url": "https://x.com/ai_risks/status/1995916028564701617",
+    "model": "Claude Opus 4.5, Gemini 3 Pro",
+    "use_case": "Frontier safety ranking",
+    "sentiment": "positive",
+    "benchmark": "Opus tops safety, Gemini 3 Pro tops text/vision",
+    "date": "2025-11-08"
+  },
+  {
+    "id": 147,
+    "source": "@ArtificialAnlys",
+    "tweet_url": "https://x.com/ArtificialAnlys/status/1904923020604641471",
+    "model": "Gemini 2.5 Pro",
+    "use_case": "Reasoning benchmark",
+    "sentiment": "positive",
+    "benchmark": "#1 position, MMLU-Pro 86%, GPQA 83%",
+    "date": "2025-03-25"
+  },
+  {
+    "id": 148,
+    "source": "@kimmonismus",
+    "tweet_url": "https://x.com/kimmonismus/status/1895484639252275216",
+    "model": "GPT-4.5, Claude 3.7, Grok-3",
+    "use_case": "Model comparison",
+    "sentiment": "neutral",
+    "benchmark": "Anthropic improved coding where Claude excelled",
+    "date": "2025-02-28"
+  },
+  {
+    "id": 149,
+    "source": "@TheZvi",
+    "tweet_url": "https://x.com/TheZvi/status/1973466468936303007",
+    "model": "Claude Sonnet 4.5",
+    "use_case": "Model alignment",
+    "sentiment": "positive",
+    "benchmark": "Most aligned model from big three labs",
+    "date": "2025-09-27"
+  },
+  {
+    "id": 150,
+    "source": "@METR_Evals",
+    "tweet_url": "https://x.com/METR_Evals/status/1895381625585967180",
+    "model": "GPT-4.5, GPT 4o, o1, Claude 3.5 Sonnet",
+    "use_case": "Time horizon eval",
+    "sentiment": "neutral",
+    "benchmark": "GPT-4.5 above 4o, below o1 and Claude 3.5 Sonnet (~30 min)",
+    "date": "2025-02-28"
+  },
+  {
+    "id": 151,
+    "source": "@BryanMcAnulty",
+    "tweet_url": "https://x.com/BryanMcAnulty/status/1764773397395878333",
+    "model": "Claude 3 Opus, GPT-4",
+    "use_case": "Autonomous coach",
+    "sentiment": "neutral",
+    "benchmark": "Comparison on coaching feature",
+    "date": "2024-03-04"
+  },
+  {
+    "id": 152,
+    "source": "@aide_dev",
+    "tweet_url": "https://x.com/aide_dev/status/1769798603260752062",
+    "model": "Claude Opus, Sonnet, Haiku",
+    "use_case": "IDE coding",
+    "sentiment": "positive",
+    "benchmark": "Opus beats GPT-4 on coding, Sonnet good balance",
+    "date": "2024-03-18"
+  },
+  {
+    "id": 153,
+    "source": "@ajassy",
+    "tweet_url": "https://x.com/ajassy/status/1780272090500956533",
+    "model": "Claude 3 Opus",
+    "use_case": "AWS Bedrock",
+    "sentiment": "positive",
+    "benchmark": "Best-performing foundation model on industry benchmarks",
+    "date": "2024-04-16"
+  },
+  {
+    "id": 154,
+    "source": "@alexalbert__",
+    "tweet_url": "https://x.com/alexalbert__/status/1990819133488091631",
+    "model": "Claude Sonnet 4.5, Haiku 4.5, Opus 4.1",
+    "use_case": "Azure, Microsoft 365",
+    "sentiment": "positive",
+    "benchmark": "Claude everywhere - Azure, Foundry, Excel",
+    "date": "2025-10-16"
+  },
+  {
+    "id": 155,
+    "source": "@sleepinyourhat",
+    "tweet_url": "https://x.com/sleepinyourhat/status/1978507448018231495",
+    "model": "Claude Opus 4.1, Sonnet 4.5, Haiku 4.5",
+    "use_case": "RL training differences",
+    "sentiment": "neutral",
+    "benchmark": "Sonnet/Haiku 4.5 eliminated RL penalties in scratchpads",
+    "date": "2025-10-02"
+  },
+  {
+    "id": 156,
+    "source": "@iannuttall",
+    "tweet_url": "https://x.com/iannuttall/status/1965260740480389161",
+    "model": "Claude Sonnet 4, Haiku 3.5, Opus",
+    "use_case": "Performance bugs",
+    "sentiment": "neutral",
+    "benchmark": "Bugs on Sonnet 4/Haiku 3.5, Opus unaffected",
+    "date": "2025-09-10"
+  },
+  {
+    "id": 157,
+    "source": "@btibor91",
+    "tweet_url": "https://x.com/btibor91/status/1993064110880440616",
+    "model": "Claude Opus 4.5",
+    "use_case": "API pricing",
+    "sentiment": "positive",
+    "benchmark": "$5/$25 per million tokens - top performance",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 158,
+    "source": "@databricks",
+    "tweet_url": "https://x.com/databricks/status/1993041439299710992",
+    "model": "Claude Opus 4.5",
+    "use_case": "Enterprise deployment",
+    "sentiment": "positive",
+    "benchmark": "Outperforms Sonnet 4.5 and Opus 4.1",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 159,
+    "source": "@chrisalbon",
+    "tweet_url": "https://x.com/chrisalbon/status/1947490853230186794",
+    "model": "Claude Max",
+    "use_case": "API workaround",
+    "sentiment": "positive",
+    "benchmark": "Free API via claude -p for testing/experimentation",
+    "date": "2025-07-22"
+  },
+  {
+    "id": 160,
+    "source": "@mattshumer_",
+    "tweet_url": "https://x.com/mattshumer_/status/2012581787575206178",
+    "model": "Claude Max, Claude Code",
+    "use_case": "Multi-agent collaboration",
+    "sentiment": "positive",
+    "benchmark": "10+ agents collaborating on one task",
+    "date": "2025-12-08"
+  },
+  {
+    "id": 161,
+    "source": "@itsbyrobin",
+    "tweet_url": "https://x.com/itsbyrobin/status/1984134797229490189",
+    "model": "Cursor Composer-1, Claude Haiku 4.5",
+    "use_case": "Speed comparison",
+    "sentiment": "neutral",
+    "benchmark": "Both fast, Haiku even cheaper",
+    "date": "2025-10-11"
+  },
+  {
+    "id": 162,
+    "source": "@omarsar0",
+    "tweet_url": "https://x.com/omarsar0/status/1983892163990843692",
+    "model": "Multi-agent planning",
+    "use_case": "Graph-based planning",
+    "sentiment": "positive",
+    "benchmark": "Parallel tool execution with RL scheduling",
+    "date": "2025-10-10"
+  },
+  {
+    "id": 163,
+    "source": "@rohanpaul_ai",
+    "tweet_url": "https://x.com/rohanpaul_ai/status/1874418995224543567",
+    "model": "WorkflowLLM",
+    "use_case": "70+ action workflows",
+    "sentiment": "positive",
+    "benchmark": "10x improvement over current LLM capabilities",
+    "date": "2025-01-05"
+  },
+  {
+    "id": 164,
+    "source": "@catalinmpit",
+    "tweet_url": "https://x.com/catalinmpit/status/1937541297532739698",
+    "model": "OpenAI Codex, Warp AI, Claude Code",
+    "use_case": "Coding agent comparison",
+    "sentiment": "neutral",
+    "benchmark": "Comparison video results",
+    "date": "2025-06-14"
+  },
+  {
+    "id": 165,
+    "source": "@YaniIliev",
+    "tweet_url": "https://x.com/YaniIliev/status/1924852766457135182",
+    "model": "GitHub Copilot, OpenAI Codex, Claude Code",
+    "use_case": "Bug finding",
+    "sentiment": "neutral",
+    "benchmark": "Real bug task in WP Migration plugin",
+    "date": "2025-05-19"
+  },
+  {
+    "id": 166,
+    "source": "@pinegrow",
+    "tweet_url": "https://x.com/pinegrow/status/1970855963113505047",
+    "model": "OpenAI Codex, Claude Code",
+    "use_case": "Visual web editing",
+    "sentiment": "positive",
+    "benchmark": "No extra API fees with subscription",
+    "date": "2025-09-24"
+  },
+  {
+    "id": 167,
+    "source": "@DeryaTR_",
+    "tweet_url": "https://x.com/DeryaTR_/status/2009731441681109214",
+    "model": "DeepSeek V4, Claude Code Opus 4.5, GPT-5.2 Codex",
+    "use_case": "Rumored coding performance",
+    "sentiment": "neutral",
+    "benchmark": "DeepSeek V4 rumored to beat Opus 4.5 and Codex",
+    "date": "2025-12-02"
+  },
+  {
+    "id": 168,
+    "source": "@MikeDoesTech",
+    "tweet_url": "https://x.com/MikeDoesTech/status/1960351399775965302",
+    "model": "Claude CLI, Gemini CLI",
+    "use_case": "Cross-model review",
+    "sentiment": "positive",
+    "benchmark": "Paste code between models for error checking",
+    "date": "2025-08-23"
+  },
+  {
+    "id": 169,
+    "source": "@softm4x",
+    "tweet_url": "https://x.com/softm4x/status/1948749507593724233",
+    "model": "Claude Code, Gemini CLI",
+    "use_case": "Heavy load handling",
+    "sentiment": "positive",
+    "benchmark": "Manually copy Claude instructions to Gemini for load",
+    "date": "2025-07-25"
+  },
+  {
+    "id": 170,
+    "source": "@johncoogan",
+    "tweet_url": "https://x.com/johncoogan/status/1993029789410902380",
+    "model": "Gemini 3, ChatGPT GPT-5",
+    "use_case": "Consumer experience",
+    "sentiment": "positive",
+    "benchmark": "Gemini faster, better model picking than ChatGPT",
+    "date": "2025-11-01"
+  },
+  {
+    "id": 171,
+    "source": "@Varaquilex",
+    "tweet_url": "https://x.com/Varaquilex/status/1946684832123392003",
+    "model": "Gemini CLI",
+    "use_case": "Offline web project",
+    "sentiment": "positive",
+    "benchmark": "Modern high quality CLI, nostalgic ASCII presentation",
+    "date": "2025-07-06"
+  },
+  {
+    "id": 172,
+    "source": "@sohildarshan",
+    "tweet_url": "https://x.com/sohildarshan/status/1991003938787897820",
+    "model": "Gemini 3 Pro, Claude Sonnet 4.5",
+    "use_case": "Antigravity IDE",
+    "sentiment": "positive",
+    "benchmark": "Google's Cursor competitor with multi-model support",
+    "date": "2025-10-16"
+  },
+  {
+    "id": 173,
+    "source": "@codegen",
+    "tweet_url": "https://x.com/codegen/status/1951311620828741667",
+    "model": "Claude Desktop, Cline, Cursor",
+    "use_case": "MCP integration",
+    "sentiment": "positive",
+    "benchmark": "Real-time agent-powered coding from editor",
+    "date": "2025-07-27"
+  },
+  {
+    "id": 174,
+    "source": "@eyad_khrais",
+    "tweet_url": "https://x.com/eyad_khrais/status/2010810802023141688",
+    "model": "Claude Code",
+    "use_case": "Skills and subagents",
+    "sentiment": "positive",
+    "benchmark": "Subagents get own 200K context, skills apply automatically",
+    "date": "2025-12-03"
+  },
+  {
+    "id": 175,
+    "source": "@aakashg0",
+    "tweet_url": "https://x.com/aakashg0/status/1999256122939920893",
+    "model": "Claude Code agents",
+    "use_case": "AI Chief of Staff",
+    "sentiment": "positive",
+    "benchmark": "Daily calendar analysis, delegation, conflict detection",
+    "date": "2025-11-12"
+  },
+  {
+    "id": 176,
+    "source": "@pdrmnvd",
+    "tweet_url": "https://x.com/pdrmnvd/status/1935436244605092094",
+    "model": "Cursor, Windsurf, Cline, Claude Code",
+    "use_case": "Tool landscape chaos",
+    "sentiment": "neutral",
+    "benchmark": "1500 files, 1500 lines each, claude.md, agent.md",
+    "date": "2025-06-11"
+  },
+  {
+    "id": 177,
+    "source": "@affaanmustafa",
+    "tweet_url": "https://x.com/affaanmustafa/status/2012378465664745795",
+    "model": "Claude Code",
+    "use_case": "Subagent skills",
+    "sentiment": "positive",
+    "benchmark": "Subagents can be sandboxed with specific tool permissions",
+    "date": "2025-12-08"
+  },
+  {
+    "id": 178,
+    "source": "@victor_explore",
+    "tweet_url": "https://x.com/victor_explore/status/2008718070089740319",
+    "model": "Multi-agent AI",
+    "use_case": "AI development team",
+    "sentiment": "positive",
+    "benchmark": "Parallel tasks, TODO enforcement, autonomous refactoring",
+    "date": "2025-11-25"
+  },
+  {
+    "id": 179,
+    "source": "@omarsar0",
+    "tweet_url": "https://x.com/omarsar0/status/1865086824944709849",
+    "model": "Flowise",
+    "use_case": "AI agent building",
+    "sentiment": "positive",
+    "benchmark": "No/low-code, multi-agent workflows, any LLM",
+    "date": "2024-12-06"
+  },
+  {
+    "id": 180,
+    "source": "@flowiseai",
+    "tweet_url": "https://x.com/flowiseai",
+    "model": "Flowise Agentflow",
+    "use_case": "AI agent platform",
+    "sentiment": "positive",
+    "benchmark": "WYSIWYG workflow creator, guardrails, evals",
+    "date": "2025-04-10"
+  },
+  {
+    "id": 181,
+    "source": "@digitalocean",
+    "tweet_url": "https://x.com/digitalocean/status/1901766688246501577",
+    "model": "DigitalOcean Gen AI",
+    "use_case": "Agent types",
+    "sentiment": "positive",
+    "benchmark": "7 agent types, agent routing, fine-tuned models",
+    "date": "2025-03-17"
+  },
+  {
+    "id": 182,
+    "source": "@ycombinator",
+    "tweet_url": "https://x.com/ycombinator/status/1937192945427562750",
+    "model": "Workflow86",
+    "use_case": "AI workflow engineer",
+    "sentiment": "positive",
+    "benchmark": "Natural language to automations with AI steps",
+    "date": "2025-06-14"
+  },
+  {
+    "id": 183,
+    "source": "@HiSteveKaplan",
+    "tweet_url": "https://x.com/HiSteveKaplan/status/1958939762871738583",
+    "model": "N8N AI",
+    "use_case": "Workflow automation",
+    "sentiment": "positive",
+    "benchmark": "3 hours manual to 45 min automated, no coding",
+    "date": "2025-08-17"
+  },
+  {
+    "id": 184,
+    "source": "@koltregaskes",
+    "tweet_url": "https://x.com/koltregaskes/status/1955144054842249331",
+    "model": "GPT-5, Claude Opus 4.1",
+    "use_case": "SWE-bench comparison",
+    "sentiment": "neutral",
+    "benchmark": "GPT-5 74.9% on 477/500, Claude leads bash leaderboard",
+    "date": "2025-08-14"
+  },
+  {
+    "id": 185,
+    "source": "@scaling01",
+    "tweet_url": "https://x.com/scaling01/status/1999188971796967869",
+    "model": "GPT-5.2, Opus 4.5, Gemini 3 Pro",
+    "use_case": "Knowledge tasks",
+    "sentiment": "positive",
+    "benchmark": "GPT-5.2 solid on GPQA-Diamond, HLE, but pricier",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 186,
+    "source": "@kimmonismus",
+    "tweet_url": "https://x.com/kimmonismus/status/1999185167559385544",
+    "model": "GPT-5.2",
+    "use_case": "Long-running agents",
+    "sentiment": "positive",
+    "benchmark": "Big jumps in intelligence, reliability, long-context",
+    "date": "2025-11-13"
+  },
+  {
+    "id": 187,
+    "source": "@testingcatalog",
+    "tweet_url": "https://x.com/testingcatalog/status/1989055208308240695",
+    "model": "GPT-5.1",
+    "use_case": "SWE-bench Verified",
+    "sentiment": "positive",
+    "benchmark": "76.3% - big leap",
+    "date": "2025-10-13"
+  },
+  {
+    "id": 188,
+    "source": "@WesRothMoney",
+    "tweet_url": "https://x.com/WesRothMoney/status/1894032034110058829",
+    "model": "Claude 3.7 Sonnet",
+    "use_case": "Hybrid reasoning",
+    "sentiment": "positive",
+    "benchmark": "Extended thinking for complex step-by-step problems",
+    "date": "2025-02-24"
+  },
+  {
+    "id": 189,
+    "source": "@adocomplete",
+    "tweet_url": "https://x.com/adocomplete/status/1996262287603352025",
+    "model": "Claude",
+    "use_case": "API extended thinking",
+    "sentiment": "positive",
+    "benchmark": "budget_tokens: 5000 for step-by-step reasoning",
+    "date": "2025-11-09"
+  },
+  {
+    "id": 190,
+    "source": "@lupantech",
+    "tweet_url": "https://x.com/lupantech/status/1764733806488191009",
+    "model": "Claude 3 Opus, Sonnet, Haiku",
+    "use_case": "MathVista visual math",
+    "sentiment": "positive",
+    "benchmark": "New benchmarks in reasoning, math, coding, vision",
+    "date": "2024-03-04"
+  },
+  {
+    "id": 191,
+    "source": "@helloiamleonie",
+    "tweet_url": "https://x.com/helloiamleonie/status/1851919137481609347",
+    "model": "Vision Language Models",
+    "use_case": "Image + text multimodal",
+    "sentiment": "positive",
+    "benchmark": "VQA, document understanding use cases",
+    "date": "2024-10-30"
+  },
+  {
+    "id": 192,
+    "source": "@rohanpaul_ai",
+    "tweet_url": "https://x.com/rohanpaul_ai/status/1935404570890670133",
+    "model": "GPT-4, Gemini Pro, Claude",
+    "use_case": "Hallucination reduction",
+    "sentiment": "positive",
+    "benchmark": "Repeated instruction patterns reduce hallucinations",
+    "date": "2025-06-11"
+  },
+  {
+    "id": 193,
+    "source": "@Glenn_Mallo",
+    "tweet_url": "https://x.com/Glenn_Mallo/status/1927662430194171938",
+    "model": "ChatGPT, Claude, Gemini",
+    "use_case": "Hallucination testing",
+    "sentiment": "neutral",
+    "benchmark": "Fake theories test - which calls out first",
+    "date": "2025-05-28"
+  },
+  {
+    "id": 194,
+    "source": "@Similarweb",
+    "tweet_url": "https://x.com/Similarweb/status/2004113864347029663",
+    "model": "ChatGPT, Gemini, DeepSeek, Grok, Claude",
+    "use_case": "Traffic share",
+    "sentiment": "neutral",
+    "benchmark": "ChatGPT 68%, Gemini 18.2%, Claude 2%",
+    "date": "2025-11-18"
+  },
+  {
+    "id": 195,
+    "source": "@BradLedford",
+    "tweet_url": "https://x.com/BradLedford/status/1942986180209074684",
+    "model": "Claude Opus, Claude Sonnet",
+    "use_case": "Error workaround",
+    "sentiment": "neutral",
+    "benchmark": "Switch to Sonnet during Opus 500 errors",
+    "date": "2025-06-29"
+  },
+  {
+    "id": 196,
+    "source": "@WolframRvnwlf",
+    "tweet_url": "https://x.com/WolframRvnwlf/status/1804604940268044470",
+    "model": "Claude 3.5 Sonnet, Claude 3 Opus",
+    "use_case": "Refusal behavior",
+    "sentiment": "neutral",
+    "benchmark": "Sonnet more stuck-up than Opus, jailbreak prompt helps",
+    "date": "2024-06-22"
+  },
+  {
+    "id": 197,
+    "source": "@ElieBibliowicz",
+    "tweet_url": "https://x.com/ElieBibliowicz/status/1980372820061528229",
+    "model": "Claude 4.5",
+    "use_case": "Quality concerns",
+    "sentiment": "negative",
+    "benchmark": "Possible routing to worse model due to AWS bandwidth",
+    "date": "2025-10-07"
+  },
+  {
+    "id": 198,
+    "source": "@DotDotJames",
+    "tweet_url": "https://x.com/DotDotJames/status/1968014269779444110",
+    "model": "Claude Opus",
+    "use_case": "Performance recovery",
+    "sentiment": "positive",
+    "benchmark": "Nerf fixed, back to original performance",
+    "date": "2025-09-19"
+  },
+  {
+    "id": 199,
+    "source": "@_catwu",
+    "tweet_url": "https://x.com/_catwu/status/1918017844375371947",
+    "model": "Claude Code, Claude Max",
+    "use_case": "Subscription inclusion",
+    "sentiment": "positive",
+    "benchmark": "Claude Code now included in Max subscription",
+    "date": "2025-05-01"
+  },
+  {
+    "id": 200,
+    "source": "@_catwu",
+    "tweet_url": "https://x.com/_catwu/status/1925593032600310180",
+    "model": "Claude Opus 4",
+    "use_case": "Long-running background tasks",
+    "sentiment": "positive",
+    "benchmark": "Hand it feature requests, run 1+ hour in background",
+    "date": "2025-05-22"
+  }
+]

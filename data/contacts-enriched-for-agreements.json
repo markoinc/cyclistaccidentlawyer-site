@@ -1,0 +1,439 @@
+{
+  "generated": "2026-02-03T03:12:00Z",
+  "purpose": "Enriched contact data for filling out lead generation agreements",
+  "contacts": [
+    {
+      "priority": 1,
+      "status": "VERBALLY_COMMITTED",
+      "name": {
+        "first": "Jalal",
+        "last": "Abdallah",
+        "full": "Jalal Abdallah"
+      },
+      "firm": {
+        "name": "Jalal Abdallah Law",
+        "legal_entity": "Jalal Abdallah PLLC",
+        "website": "jalallaw.com"
+      },
+      "contact": {
+        "phone": "+13135751046",
+        "email": "ja.law.pllc@gmail.com"
+      },
+      "address": {
+        "street": "29820 Telegraph Rd",
+        "city": "Southfield",
+        "state": "Michigan",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Michigan", "California (brother)"],
+      "deal": {
+        "budget": "$50,000",
+        "states": ["Michigan", "California"],
+        "model": "Multi-state media buy",
+        "target_cpa": "$1,500-$2,000 (MI)"
+      },
+      "agreement_fields_needed": ["ZIP code", "State bar number"],
+      "ghl_contact_id": "TMbab78d2UAjI1aSYxXj"
+    },
+    {
+      "priority": 2,
+      "status": "NEEDS_PATRICK_CALL",
+      "name": {
+        "first": "Rich",
+        "last": "Hyde",
+        "full": "Rich Hyde"
+      },
+      "firm": {
+        "name": "Hyde Trial Tribe",
+        "legal_entity": "Hyde Trial Tribe (confirm entity type)",
+        "website": "trialtribe.com"
+      },
+      "contact": {
+        "phone": "+18173015572",
+        "email": "rich@trialtribe.com"
+      },
+      "address": {
+        "street": "4528 W Vickery Blvd, Ste 202",
+        "city": "Fort Worth",
+        "state": "Texas",
+        "zip": "76107"
+      },
+      "states_licensed": ["Texas"],
+      "deal": {
+        "budget": "$15,000-$30,000",
+        "states": ["Texas"],
+        "model": "Pay-per-lead with guarantees",
+        "target_cpa": "<$2,500 per case"
+      },
+      "agreement_fields_needed": ["Legal entity name confirmation", "State bar number"],
+      "ghl_contact_id": "juzgRShK6CE84VH8jJMj"
+    },
+    {
+      "priority": 3,
+      "status": "NEEDS_PATRICK_CALL",
+      "name": {
+        "first": "Lucas",
+        "last": "Naccarati",
+        "full": "Lucas Naccarati"
+      },
+      "firm": {
+        "name": "Muniz Kim Law",
+        "legal_entity": "NEEDS_ENRICHMENT (likely LLP or PC)",
+        "website": "munizkimlaw.com"
+      },
+      "contact": {
+        "phone": "+16266412157",
+        "email": "dlnaccarati@gmail.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "Los Angeles area / New Jersey",
+        "state": "California / New Jersey",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["California", "New Jersey"],
+      "deal": {
+        "budget": "$30,000",
+        "states": ["California", "New Jersey"],
+        "model": "Media buy + API integration",
+        "target_cpa": "$3,500 (CA)"
+      },
+      "notes": "Ops/marketing partner at firm. Grew previous firm to $5M annually.",
+      "agreement_fields_needed": ["Full business address", "Legal entity name", "State bar numbers"],
+      "ghl_contact_id": "ra4DocGiPOTDXt7Hy1PZ"
+    },
+    {
+      "priority": 4,
+      "status": "NEEDS_PATRICK_CALL",
+      "name": {
+        "first": "Scott",
+        "last": "Barney",
+        "full": "Scott R. Barney, Esq."
+      },
+      "firm": {
+        "name": "Barney Injury Law",
+        "legal_entity": "Scott R. Barney, Esq., PLLC",
+        "website": "barneyinjurylaw.com"
+      },
+      "contact": {
+        "phone": "(757) 641-5005",
+        "email": "srb.barneylaw@gmail.com"
+      },
+      "address": {
+        "street": "1551 Laskin Rd",
+        "city": "Virginia Beach",
+        "state": "Virginia",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Virginia"],
+      "deal": {
+        "budget": "$15,000 minimum",
+        "states": ["Virginia"],
+        "model": "Media buy + Patrick transfers",
+        "target_cpa": "$2,000-$2,100"
+      },
+      "notes": "Burned veteran - $250k wasted on marketing. 19+ years experience.",
+      "agreement_fields_needed": ["ZIP code", "State bar number"],
+      "ghl_contact_id": "6iM7ut8OOPi7eusVtcVY"
+    },
+    {
+      "priority": 5,
+      "status": "NEEDS_PATRICK_CALL",
+      "name": {
+        "first": "Omeed",
+        "last": "Hakimianpour",
+        "full": "Omeed Hakimianpour"
+      },
+      "firm": {
+        "name": "The Injury Partners",
+        "legal_entity": "The Injury Partners, LLP",
+        "website": "theinjurypartners.com"
+      },
+      "contact": {
+        "phone": "(310) 220-0066",
+        "email": "omeed@theinjurypartners.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "Beverly Hills / Los Angeles",
+        "state": "California",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["California (multi-state)"],
+      "deal": {
+        "budget": "$50,000",
+        "states": ["California"],
+        "model": "Signed cases @ $350/case or transfers @ $100",
+        "target_cpa": "$3,000-$3,500"
+      },
+      "notes": "Co-founder. Already buying from other agencies. Comparison shopping.",
+      "agreement_fields_needed": ["Full business address", "State bar number"],
+      "ghl_contact_id": null
+    },
+    {
+      "priority": 6,
+      "status": "NEEDS_PATRICK_CALL",
+      "name": {
+        "first": "Dagmawi",
+        "last": "Getachew",
+        "full": "Dagmawi Getachew"
+      },
+      "firm": {
+        "name": "DG Law Firm",
+        "legal_entity": "NEEDS_ENRICHMENT",
+        "website": "dgfirm.law"
+      },
+      "contact": {
+        "phone": "+14696828208",
+        "email": "getachew@dgfirm.law"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "Dallas",
+        "state": "Texas",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Texas"],
+      "bar_number": "24108975",
+      "deal": {
+        "budget": "$17,500 (50 leads @ $350)",
+        "states": ["Texas"],
+        "model": "Pay-per-lead test, then media buy",
+        "target_cpa": "$350/lead"
+      },
+      "notes": "Solo practitioner. Compliance-conscious. Bar # confirmed: 24108975",
+      "agreement_fields_needed": ["Full business address", "Legal entity name"],
+      "ghl_contact_id": "P3FHbzzsC5PvpxiLCBO6"
+    },
+    {
+      "priority": 7,
+      "status": "POSITIVE",
+      "name": {
+        "first": "Michael",
+        "last": "Shirts",
+        "full": "Michael Shirts"
+      },
+      "firm": {
+        "name": "Beal & Shirts / BS Injury Law",
+        "legal_entity": "Beal & Shirts Law, PLLC",
+        "website": "bsinjurylaw.com (redirects to nobslasvegaspersonalinjurylawyers.com)"
+      },
+      "contact": {
+        "phone": "+17252646664",
+        "email": "michael.shirts@bsinjurylaw.com"
+      },
+      "address": {
+        "street": "8488 Rozita Lee Ave, Bldg 3, Ste 100",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "zip": "89113"
+      },
+      "states_licensed": ["Nevada"],
+      "deal": {
+        "budget": "$15,000",
+        "states": ["Nevada"],
+        "model": "Live transfers with firm branding",
+        "target_cpa": "$2,000/case"
+      },
+      "notes": "15-18 years in legal community. Bad experience with Law Pronation.",
+      "agreement_fields_needed": ["State bar number"],
+      "ghl_contact_id": "8UQmKFkgET6SwB2rvy47"
+    },
+    {
+      "priority": 8,
+      "status": "FOLLOW_UP_SCHEDULED",
+      "name": {
+        "first": "Scott",
+        "last": "Poisson",
+        "full": "Scott Poisson"
+      },
+      "firm": {
+        "name": "High Stakes Injury Law",
+        "legal_entity": "NEEDS_ENRICHMENT",
+        "website": "highstakesinjurylaw.com"
+      },
+      "contact": {
+        "phone": "(305) 790-4754",
+        "email": "scott@vegashurt.com"
+      },
+      "address": {
+        "street": "320 S Jones Blvd",
+        "city": "Las Vegas",
+        "state": "Nevada",
+        "zip": "89107"
+      },
+      "states_licensed": ["Nevada", "Florida", "3 others (4 states total)"],
+      "deal": {
+        "budget": "TBD",
+        "states": ["Nevada"],
+        "model": "Pay-per-case with skin in the game",
+        "target_cpa": "$2,500-$3,000"
+      },
+      "notes": "30+ year attorney. Former top-5 TV spender in Vegas. Spent 6 figures with zero ROI. Extremely skeptical. Follow-up Tuesday 3pm ET.",
+      "agreement_fields_needed": ["Legal entity name", "State bar number"],
+      "ghl_contact_id": "1mQVmCBQNAQu4xNreLsJ"
+    },
+    {
+      "priority": 9,
+      "status": "NO_SHOW_2ND_CALL",
+      "name": {
+        "first": "Ross",
+        "last": "Robin",
+        "full": "Ross Robin"
+      },
+      "firm": {
+        "name": "Rohin Law",
+        "legal_entity": "NEEDS_ENRICHMENT",
+        "website": "rohinlaw.com (domain not resolving)"
+      },
+      "contact": {
+        "phone": "(713) 385-6113",
+        "email": "rmr7677@gmail.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "Houston",
+        "state": "Texas",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Texas", "Arizona", "Colorado", "Florida"],
+      "deal": {
+        "budget": "$15,000",
+        "states": ["Texas (initially)"],
+        "model": "Media buy + Patrick intake",
+        "target_cpa": "$2,000-$2,100"
+      },
+      "notes": "15-year mass tort lawyer starting new PI firm. No-showed 2nd call.",
+      "agreement_fields_needed": ["Full business address", "Legal entity name", "State bar numbers"],
+      "ghl_contact_id": "w9j0weo4B4n0IRPlLIwY"
+    },
+    {
+      "priority": 10,
+      "status": "NEEDS_OFFICE_SETUP",
+      "name": {
+        "first": "Daniel",
+        "last": "Ramirez",
+        "full": "Daniel R. Ramirez"
+      },
+      "firm": {
+        "name": "El Rey de la Ley",
+        "legal_entity": "Law Offices of Daniel R. Ramirez, PC",
+        "website": "reydelaley.com"
+      },
+      "contact": {
+        "phone": "(210) 416-5400",
+        "email": "dramirezlaw10@gmail.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT (Dallas office exists, Houston pending)",
+        "city": "Dallas / Houston (expanding)",
+        "state": "Texas",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Texas"],
+      "deal": {
+        "budget": "$15,000 minimum",
+        "states": ["Texas (Houston expansion)"],
+        "model": "Signed cases initially, Spanish-speaking leads",
+        "target_cpa": "Spanish leads $100-$150 cheaper"
+      },
+      "notes": "20 years in Dallas. $1M+ annual revenue. Expanding to Houston. Needs office + Spanish-speaking intake first.",
+      "agreement_fields_needed": ["Houston office address (once established)", "State bar number"],
+      "ghl_contact_id": "UrBgpwY50MunF6EZ85E8"
+    },
+    {
+      "priority": 11,
+      "status": "RESCHEDULED",
+      "name": {
+        "first": "Joan",
+        "last": "Suh",
+        "full": "Joan Suh"
+      },
+      "firm": {
+        "name": "JS Law Group",
+        "legal_entity": "JS Law Group, LLC",
+        "website": "jslawgroup.net"
+      },
+      "contact": {
+        "phone": "(404) 914-7752",
+        "email": "joan0407@gmail.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "Duluth area",
+        "state": "Georgia",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["Georgia"],
+      "deal": {
+        "budget": "TBD",
+        "states": ["Georgia"],
+        "model": "TBD",
+        "target_cpa": "TBD"
+      },
+      "notes": "No-showed Jan 29, rescheduled to Feb 2 4pm. PI + Criminal Defense firm.",
+      "agreement_fields_needed": ["Full business address", "Budget", "State bar number"],
+      "ghl_contact_id": "tJQC4Yc2rZZ0jvvZxaTm"
+    },
+    {
+      "priority": 12,
+      "status": "FOLLOW_UP_SCHEDULED",
+      "name": {
+        "first": "Michael",
+        "last": "Schulz",
+        "full": "Michael Schulz"
+      },
+      "firm": {
+        "name": "RMD Law",
+        "legal_entity": "NEEDS_ENRICHMENT",
+        "website": "rmdlaw.com"
+      },
+      "contact": {
+        "phone": "(949) 501-4622",
+        "email": "michaels@rmdlaw.com"
+      },
+      "address": {
+        "street": "NEEDS_ENRICHMENT",
+        "city": "NEEDS_ENRICHMENT",
+        "state": "California (949 area code = Orange County)",
+        "zip": "NEEDS_ENRICHMENT"
+      },
+      "states_licensed": ["California"],
+      "deal": {
+        "budget": "TBD",
+        "states": ["California"],
+        "model": "TBD",
+        "target_cpa": "TBD"
+      },
+      "notes": "Follow-up scheduled Feb 10, 10am CST. Jeremy sending email with ads + campaign screenshot.",
+      "agreement_fields_needed": ["Full contact/firm enrichment needed"],
+      "ghl_contact_id": "fN9WYJTwy2FA0gbt17Hh"
+    }
+  ],
+  "agreement_template_fields": {
+    "required": [
+      "Client legal entity name (LLC, PC, PLLC, etc.)",
+      "Client full address (street, city, state, zip)",
+      "Primary contact full name",
+      "Primary contact phone",
+      "Primary contact email",
+      "States/jurisdictions for campaign",
+      "Budget amount",
+      "Payment method"
+    ],
+    "recommended": [
+      "State bar number(s)",
+      "Firm website",
+      "Intake contact (if different)",
+      "Special requirements/qualifiers"
+    ]
+  },
+  "summary": {
+    "total_contacts": 12,
+    "ready_for_agreement": 2,
+    "needs_minor_enrichment": 5,
+    "needs_significant_enrichment": 5,
+    "highest_priority": "Jalal Abdallah (verbally committed, $50k multi-state)",
+    "ready_to_send": ["Jalal Abdallah (minor gaps)", "Michael Shirts (full address available)"]
+  }
+}

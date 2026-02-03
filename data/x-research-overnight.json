@@ -1,0 +1,309 @@
+{
+  "research_date": "2026-02-01",
+  "mission": "X/Twitter Research on Clawdbot/Moltbot/OpenClaw",
+  "summary": {
+    "total_sources": 47,
+    "key_accounts_found": 12,
+    "actionable_tips": 34
+  },
+  
+  "clawdbot_findings": {
+    "official_account": "@clawdbot",
+    "creator": "@steipete (Peter Steinberger)",
+    "followers": "10.8K",
+    "description": "Personal AI assistant managing digital life: emails, calendar, iMessage, home automation",
+    "key_features": [
+      "24/7 operation on local hardware",
+      "Multi-channel: WhatsApp, Telegram, Discord, Slack, Mattermost",
+      "Browser automation - autonomous web browsing",
+      "Shell command execution",
+      "Self-modifying code - can rewrite itself and restart",
+      "Canvas feature for dynamic UI",
+      "Phone calls via voice plugin",
+      "Video understanding (as of 2026.1.16)",
+      "Cross-channel talk (same brain across platforms)",
+      "Hooks for automation triggers"
+    ],
+    "notable_tweets": [
+      {
+        "author": "@WolframRvnwlf",
+        "content": "Clawdbot truly is next level - haven't been this excited about AI in a long time! Spent whole weekend setting it up, now my sassy AI assistant Amy is finally running persistently on my Home Assistant box",
+        "url": "https://x.com/WolframRvnwlf/status/2013086102417007083"
+      },
+      {
+        "author": "@tobi_bsf",
+        "content": "Meet Clawd – my new AI assistant running 24/7 on a mini PC at home. Daily reminders, GitHub tracking, weekly accountability nudges for my 2026 goals",
+        "url": "https://x.com/tobi_bsf/status/2008083529284948265"
+      },
+      {
+        "author": "@RayFernando1337",
+        "content": "Clawdbot is single handedly crushing AI personal assistants and it's open source and runs on your own device",
+        "url": "https://x.com/RayFernando1337/status/2008572235179848033"
+      },
+      {
+        "author": "@heyitsyashu",
+        "content": "Turned AI into my personal executive assistant. It's handling my emails, calendar events, tasks and can API into any other tools. It's like Claude code but as a personal Jarvis",
+        "url": "https://x.com/heyitsyashu/status/2008563498423591398"
+      },
+      {
+        "author": "@iamkasparp",
+        "content": "It monitors my baby's room temp while she sleeps, vacuums... I named mine Skippy and his personality is trained based off that. He's a fun guy to talk too",
+        "url": "https://x.com/iamkasparp/status/2007863604260077780"
+      },
+      {
+        "author": "@steipete",
+        "content": "You don't need an agent orchestrator setup. You want a personal assistant that can log into any computer, look at your terminals and type for you",
+        "url": "https://x.com/steipete/status/2006008353554632826"
+      }
+    ],
+    "steipete_tips": [
+      {
+        "tip": "Discord provider + browser tools for autonomous web browsing",
+        "tweet": "https://x.com/steipete/status/2005096057626112108"
+      },
+      {
+        "tip": "Group chat lurking - agents can observe without responding",
+        "tweet": "https://x.com/steipete/status/2005096057626112108"
+      },
+      {
+        "tip": "Hooks system for email triggers and automation",
+        "tweet": "https://x.com/steipete/status/2005096057626112108"
+      },
+      {
+        "tip": "Background bash tool prevents hanging on CLI breaks",
+        "tweet": "https://x.com/steipete/status/2005096057626112108"
+      },
+      {
+        "tip": "Agent can rewrite its own code and trigger restart",
+        "tweet": "https://x.com/steipete/status/2005096057626112108"
+      },
+      {
+        "tip": "Voice call plugin for phone automation",
+        "tweet": "https://x.com/steipete/status/2010982230508683504"
+      },
+      {
+        "tip": "Template system for workspace personality customization",
+        "tweet": "https://x.com/steipete/status/2002551709827280908"
+      }
+    ]
+  },
+
+  "openclaw_findings": {
+    "official_account": "@openclaw",
+    "website": "https://openclaw.ai",
+    "docs": "https://docs.openclaw.ai",
+    "github": "https://github.com/openclaw/openclaw",
+    "install_command": "curl -fsSL https://openclaw.ai/install.sh | bash",
+    "onboard_command": "openclaw onboard --install-daemon",
+    "notable_quotes": [
+      {
+        "source": "@twistartups",
+        "quote": "The single greatest application of AI",
+        "url": "https://x.com/twistartups/status/2015968780883787887"
+      },
+      {
+        "source": "@scottbelsky",
+        "quote": "Good breakdown of the architecture behind OpenClaw",
+        "url": "https://x.com/scottbelsky/status/2017436989604192505"
+      }
+    ]
+  },
+
+  "agent_orchestration": {
+    "key_projects": [
+      {
+        "name": "CLI Agent Orchestrator (CAO)",
+        "by": "AWS",
+        "description": "Multi-agent orchestration framework for developer CLI tools",
+        "url": "https://x.com/AWSOpen/status/1981025761084498406"
+      },
+      {
+        "name": "LangGraph Multi-Agent Supervisor",
+        "by": "LangChain",
+        "description": "Hierarchical AI teams with supervisor agents coordinating specialized workflows",
+        "url": "https://x.com/LangChain/status/1896259203011850343"
+      },
+      {
+        "name": "Claude Code Multi-Agent",
+        "by": "Anthropic (hidden feature)",
+        "description": "Official multi-agent orchestration, disabled by default, can be enabled via CC Mirror",
+        "url": "https://x.com/nummanali/status/2007768692659015877"
+      },
+      {
+        "name": "Docker cagent",
+        "by": "Docker",
+        "description": "CLI for building intelligent agents in YAML with multi-agent orchestration",
+        "url": "https://x.com/Docker/status/1963278070837543333"
+      }
+    ],
+    "patterns": [
+      "Execs delegate to chief agent → department heads → specialized sub-agents",
+      "Parallel agent orchestration with live token sharing",
+      "Iterative refinement between agents",
+      "Agent-to-agent and human broadcasting"
+    ]
+  },
+
+  "claude_agent_sdk": {
+    "rebrand": "Claude Code SDK → Claude Agent SDK",
+    "key_updates": [
+      "Support for 1M context windows",
+      "Sandboxing",
+      "V2 TypeScript interface"
+    ],
+    "notable_accounts": [
+      "@claudeai",
+      "@claude_code",
+      "@alexalbert__",
+      "@trq212"
+    ],
+    "workshop": "2-hour Claude Agent SDK workshop by @trq212 at AI Engineer",
+    "workshop_url": "https://youtube.com/watch?v=TqC1qOfiVcQ"
+  },
+
+  "memory_management": {
+    "key_concepts": [
+      {
+        "name": "MemGPT",
+        "description": "LLM agent manages context window like OS manages memory - uses large persistent memory, agent decides what goes in context",
+        "source": "@AndrewYNg"
+      },
+      {
+        "name": "AgeMem",
+        "description": "Unified framework integrating long-term and short-term memory via tool-based actions (ADD, UPDATE, DELETE, RETRIEVE, SUMMARY, FILTER)",
+        "source": "@omarsar0"
+      },
+      {
+        "name": "mem-agent-mcp",
+        "description": "MCP server for any LLM to use memory management in background",
+        "source": "@kalyan_kpl"
+      }
+    ],
+    "best_practices": [
+      "Long-term memory persists across all stages, short-term context resets between stages",
+      "Unified memory policy beats separate heuristics for each memory type",
+      "Tool-based memory operations let agent learn when/how to invoke memory"
+    ]
+  },
+
+  "delegation_patterns": {
+    "hierarchy": "Chief Agent → Department Heads → Specialized Sub-agents",
+    "key_insight": "Sub-agents and skills are different concepts - sub-agents handle async tasks, skills are reusable procedures",
+    "tools": [
+      "Claude Code /agents command for custom subagents",
+      "Dynamic subagent selection based on description fields",
+      "Begin with Claude-generated agents, iterate with 'e' to edit"
+    ]
+  },
+
+  "skills_system": {
+    "location": "~/.claude/skills/skill-name/SKILL.md",
+    "claude_code_features": [
+      "Forked context",
+      "Hot reload",
+      "Custom agent support",
+      "Invoke with / command"
+    ],
+    "key_quote": {
+      "source": "@omarsar0",
+      "content": "The more skills you build, the more useful Claude Code gets. Skills are the way you make Claude Code more knowledgeable over time"
+    },
+    "anthropic_talk": "Skills > Agents - procedural knowledge and continuous learning"
+  },
+
+  "alex_finn_findings": {
+    "account": "@AlexFinnX / @AlexFinn",
+    "business": "Creator Buddy - AI trained on X posts ($300k ARR)",
+    "skool": "Vibe Coding Academy (skool.com/vibe-coding-ac)",
+    "key_tips": [
+      {
+        "tip": "Claude mobile app has Code section - spin up cloud AI agents that work while you sleep",
+        "action": "Every night kick off 3 small tasks before bed"
+      },
+      {
+        "tip": "Use Claude as business/life coach - tell it daily goals for feedback",
+        "tools": "Claude for coaching, Grok for research, ManusAI for agent work"
+      },
+      {
+        "tip": "Claude for Chrome can control browser - great for research automation",
+        "opinion": "Best AI tool other than Claude Code"
+      },
+      {
+        "tip": "Google Antigravity spawns army of AI agents to build apps",
+        "source": "https://x.com/AlexFinn/status/1996394525804433638"
+      }
+    ]
+  },
+
+  "jacky_chou_findings": {
+    "account": "@indexsy",
+    "followers": "53.9K",
+    "focus": "Online businesses, SEO, Local SEO",
+    "revenue": "$293k/mo from 13 income streams",
+    "ai_usage": [
+      "1-shotted rank and rent sites with AI",
+      "Used Neuron Writer for suggested terms",
+      "Screenshots of sites for 'vibes' reference",
+      "Submit .txt files as prompts on Cursor to bypass char limit"
+    ],
+    "tools_mentioned": [
+      "LocalRank",
+      "BrightLocal", 
+      "Whitespark for citation automation"
+    ],
+    "local_seo_tips": [
+      "NAP consistency critical - 'Ste 105' vs 'Suite 105' causes ranking loss",
+      "Build citations on Yelp, Yellow Pages, TripAdvisor, Facebook, industry directories"
+    ]
+  },
+
+  "dashboard_building": {
+    "openclaw_dashboard": {
+      "command": "openclaw dashboard",
+      "url": "http://127.0.0.1:18789/",
+      "features": ["Chat interface", "Status monitoring", "Token management"]
+    },
+    "tools_mentioned": [
+      "Obsidian integration for personal knowledge",
+      "Daily PDF briefs",
+      "GitHub tracking dashboards"
+    ]
+  },
+
+  "security_warnings": {
+    "critical": [
+      "Bind gateway to loopback - hundreds of vulnerable gateways found on Shodan",
+      "DM policy: default to 'pairing' mode, manually approve devices",
+      "Sandbox tools for group chats",
+      "Use Tailscale/Cloudflare Tunnel for remote access",
+      "Never share API keys carelessly - agent has access to them"
+    ],
+    "configuration": {
+      "safe_bind": "gateway.bind: 'loopback'",
+      "sandbox_mode": "agents.defaults.sandbox.mode: 'non-main'"
+    }
+  },
+
+  "notable_community_accounts": [
+    {"handle": "@steipete", "role": "Clawdbot creator"},
+    {"handle": "@clawdbot", "role": "Official Clawdbot account"},
+    {"handle": "@openclaw", "role": "OpenClaw official"},
+    {"handle": "@claude_code", "role": "Claude Code Community"},
+    {"handle": "@AlexFinnX", "role": "Vibe coding, AI tools"},
+    {"handle": "@indexsy", "role": "SEO automation, AI workflows"},
+    {"handle": "@RayFernando1337", "role": "AI enthusiast"},
+    {"handle": "@trillhause_", "role": "Claude Code skills expert"},
+    {"handle": "@doodlestein", "role": "Agent Flywheel setup"},
+    {"handle": "@dabit3", "role": "Claude Agent SDK tutorials"},
+    {"handle": "@omarsar0", "role": "AI memory research"},
+    {"handle": "@nummanali", "role": "CC Mirror, multi-agent"}
+  ],
+
+  "resources": {
+    "official_docs": "https://docs.openclaw.ai",
+    "github": "https://github.com/openclaw/openclaw",
+    "digitalocean_guide": "https://gist.github.com/dabit3/42cce744beaa6a0d47d6a6783e443636",
+    "claude_agent_workshop": "https://youtube.com/watch?v=TqC1qOfiVcQ",
+    "codecademy_tutorial": "https://www.codecademy.com/article/open-claw-tutorial-installation-to-first-chat-setup"
+  }
+}

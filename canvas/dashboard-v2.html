@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #09090b; --bg-card: #18181b; --bg-hover: #27272a; --bg-active: #3f3f46;
+            --border: #27272a; --text: #fafafa; --text-muted: #a1a1aa; --text-dim: #71717a;
+            --accent: #3b82f6; --green: #22c55e; --yellow: #eab308; --red: #ef4444;
+            --purple: #a855f7; --orange: #f97316; --cyan: #06b6d4; --pink: #ec4899;
+            --gradient-gold: linear-gradient(135deg, #f59e0b, #eab308);
+            --gradient-green: linear-gradient(135deg, #22c55e, #10b981);
+            --gradient-blue: linear-gradient(135deg, #3b82f6, #6366f1);
+            --gradient-purple: linear-gradient(135deg, #a855f7, #ec4899);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text); display: flex; min-height: 100vh; overflow-x: hidden; }
+        
+        /* Sidebar */
+        .sidebar { width: 220px; background: var(--bg-card); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; height: 100vh; z-index: 100; }
+        .logo { padding: 16px 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--purple)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); }
+        .logo-text { font-weight: 800; font-size: 17px; background: linear-gradient(135deg, #fff, #a1a1aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-sub { font-size: 10px; color: var(--text-dim); font-weight: 500; }
+        .nav { flex: 1; padding: 10px 8px; overflow-y: auto; }
+        .nav-section { margin-bottom: 18px; }
+        .nav-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-dim); padding: 0 10px; margin-bottom: 6px; font-weight: 600; }
+        .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; cursor: pointer; color: var(--text-muted); transition: all 0.2s; font-size: 13px; font-weight: 500; }
+        .nav-item:hover { background: var(--bg-hover); color: var(--text); transform: translateX(2px); }
+        .nav-item.active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); }
+        .nav-icon { font-size: 15px; }
+        .nav-badge { margin-left: auto; background: var(--red); padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 600; color: white; }
+        .nav-badge.neutral { background: var(--bg-active); color: var(--text-muted); }
+        .nav-item.active .nav-badge { background: rgba(255,255,255,0.25); }
+        
+        .sidebar-footer { padding: 12px; border-top: 1px solid var(--border); }
+        .agent-status { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+        .status-indicator { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+        .status-indicator.warning { background: var(--yellow); }
+        .status-indicator.offline { background: var(--red); animation: none; }
+        @keyframes pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(34,197,94,0); } }
+        
+        /* Main */
+        .main { flex: 1; margin-left: 220px; min-height: 100vh; }
+        .header { position: sticky; top: 0; background: rgba(9,9,11,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; z-index: 50; }
+        .header-left { display: flex; align-items: center; gap: 16px; }
+        .header-title { font-size: 18px; font-weight: 700; }
+        .header-sub { font-size: 12px; color: var(--text-dim); }
+        .header-actions { display: flex; align-items: center; gap: 12px; }
+        
+        .goal-mini { display: flex; align-items: center; gap: 10px; background: var(--bg-card); border: 1px solid var(--border); padding: 8px 14px; border-radius: 8px; }
+        .goal-mini-label { font-size: 10px; color: var(--text-dim); }
+        .goal-mini-value { font-size: 14px; font-weight: 700; color: var(--yellow); }
+        .goal-mini-bar { width: 60px; height: 6px; background: var(--bg-hover); border-radius: 3px; overflow: hidden; }
+        .goal-mini-fill { height: 100%; background: var(--gradient-gold); border-radius: 3px; transition: width 0.5s ease; }
+        
+        .btn { display: flex; align-items: center; gap: 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 500; transition: all 0.2s; }
+        .btn:hover { background: var(--bg-hover); border-color: var(--text-dim); }
+        .btn.primary { background: var(--accent); border-color: var(--accent); }
+        .btn.primary:hover { background: #2563eb; }
+        .btn.success { background: var(--green); border-color: var(--green); }
+        .btn.loading .icon { animation: spin 1s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .content { padding: 24px; }
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Goal Banner */
+        .goal-banner { background: linear-gradient(135deg, #18181b 0%, #27272a 50%, #18181b 100%); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden; }
+        .goal-banner::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: radial-gradient(ellipse at right, rgba(234,179,8,0.1), transparent); }
+        .goal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; position: relative; }
+        .goal-title { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .goal-amount { font-size: 42px; font-weight: 800; background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .goal-subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .goal-current { text-align: right; }
+        .goal-current-label { font-size: 11px; color: var(--text-dim); }
+        .goal-current-value { font-size: 28px; font-weight: 700; color: var(--green); }
+        .goal-progress { margin-bottom: 16px; }
+        .goal-progress-bar { height: 12px; background: var(--bg-dark); border-radius: 6px; overflow: hidden; position: relative; }
+        .goal-progress-fill { height: 100%; background: var(--gradient-gold); border-radius: 6px; transition: width 1s ease; position: relative; }
+        .goal-progress-fill::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 20px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3)); }
+        .goal-milestones { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-dim); }
+        .milestone { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .milestone.completed { color: var(--green); }
+        .milestone.current { color: var(--yellow); }
+        .milestone-marker { width: 12px; height: 12px; background: var(--bg-active); border-radius: 50%; border: 2px solid var(--border); }
+        .milestone.completed .milestone-marker { background: var(--green); border-color: var(--green); }
+        .milestone.current .milestone-marker { background: var(--yellow); border-color: var(--yellow); animation: pulse 2s infinite; }
+        
+        /* Stats Grid */
+        .stats-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 24px; }
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; cursor: pointer; transition: all 0.2s; position: relative; overflow: hidden; }
+        .stat-card:hover { border-color: var(--text-dim); transform: translateY(-2px); }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); opacity: 0; transition: opacity 0.2s; }
+        .stat-card:hover::before { opacity: 1; }
+        .stat-card.highlight::before { opacity: 1; background: var(--gradient-gold); }
+        .stat-icon { font-size: 20px; margin-bottom: 8px; }
+        .stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500; }
+        .stat-value { font-size: 28px; font-weight: 700; line-height: 1; }
+        .stat-delta { font-size: 10px; margin-top: 6px; display: flex; align-items: center; gap: 4px; }
+        .stat-delta.up { color: var(--green); }
+        .stat-delta.down { color: var(--red); }
+        .stat-value.money { color: var(--green); }
+        .stat-value.hot { color: var(--orange); }
+        .stat-value.leads { color: var(--accent); }
+        .stat-value.purple { color: var(--purple); }
+        
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .grid-2-1 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+        .grid-1-2 { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+        
+        /* Cards */
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+        .card.urgent { border-color: var(--orange); }
+        .card.urgent::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+        .card-header { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .card-title { font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+        .card-count { background: var(--bg-hover); padding: 3px 8px; border-radius: 6px; font-size: 11px; color: var(--text-muted); font-weight: 500; }
+        .card-badge { background: var(--bg-hover); padding: 4px 10px; border-radius: 6px; font-size: 11px; color: var(--text-muted); cursor: pointer; transition: all 0.2s; font-weight: 500; }
+        .card-badge:hover { background: var(--accent); color: white; }
+        .card-body { padding: 14px 18px; max-height: 400px; overflow-y: auto; }
+        .card-body.no-pad { padding: 0; }
+        
+        /* DO TODAY Section */
+        .do-today { margin-bottom: 24px; }
+        .do-today-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+        .do-today-title { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .do-today-title .icon { font-size: 18px; }
+        .do-today-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .action-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; cursor: pointer; transition: all 0.2s; position: relative; }
+        .action-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .action-card.urgent { border-left: 3px solid var(--red); }
+        .action-card.important { border-left: 3px solid var(--orange); }
+        .action-card.normal { border-left: 3px solid var(--accent); }
+        .action-card.completed { opacity: 0.5; border-left-color: var(--green); }
+        .action-type { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+        .action-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .action-meta { font-size: 11px; color: var(--text-dim); }
+        .action-time { font-size: 10px; color: var(--orange); margin-top: 8px; font-weight: 500; }
+        .action-buttons { display: flex; gap: 6px; margin-top: 10px; }
+        .action-btn { flex: 1; padding: 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-dark); color: var(--text-muted); font-size: 10px; cursor: pointer; transition: all 0.2s; }
+        .action-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .action-btn.done:hover { background: var(--green); border-color: var(--green); }
+        
+        /* Pipeline */
+        .pipeline-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .pipeline-col { background: var(--bg-dark); border-radius: 10px; padding: 12px; min-height: 300px; }
+        .pipeline-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+        .pipeline-stage { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        .pipeline-value { font-size: 11px; color: var(--green); font-weight: 600; }
+        .pipeline-count { background: var(--bg-hover); padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+        .pipeline-item { background: var(--bg-card); border: 1px solid var(--border); padding: 12px; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
+        .pipeline-item:hover { border-color: var(--text-dim); transform: translateX(2px); }
+        .pipeline-item.hot { border-left: 3px solid var(--orange); }
+        .pipeline-item.warm { border-left: 3px solid var(--yellow); }
+        .pipeline-item.cold { border-left: 3px solid var(--accent); }
+        .pipeline-name { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+        .pipeline-firm { font-size: 10px; color: var(--text-dim); margin-bottom: 6px; }
+        .pipeline-deal { font-size: 11px; color: var(--green); font-weight: 600; }
+        .pipeline-next { font-size: 10px; color: var(--orange); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+        .pipeline-prob { font-size: 9px; background: var(--bg-hover); padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; }
+        .pipeline-prob.high { background: rgba(34,197,94,0.2); color: var(--green); }
+        .pipeline-prob.medium { background: rgba(234,179,8,0.2); color: var(--yellow); }
+        
+        /* Agent Monitor */
+        .agent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .agent-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+        .agent-card.online { border-color: var(--green); }
+        .agent-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .agent-avatar { width: 44px; height: 44px; background: var(--bg-hover); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        .agent-name { font-size: 14px; font-weight: 600; }
+        .agent-role { font-size: 11px; color: var(--text-dim); }
+        .agent-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        .agent-stat { background: var(--bg-dark); padding: 8px; border-radius: 6px; }
+        .agent-stat-label { font-size: 9px; color: var(--text-dim); }
+        .agent-stat-value { font-size: 13px; font-weight: 600; }
+        .agent-status-bar { display: flex; align-items: center; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 11px; }
+        .agent-status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+        
+        /* Revenue Chart */
+        .revenue-chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; padding: 10px 0; }
+        .chart-bar { flex: 1; background: var(--bg-hover); border-radius: 4px 4px 0 0; position: relative; transition: all 0.3s; }
+        .chart-bar:hover { background: var(--accent); }
+        .chart-bar.current { background: var(--accent); }
+        .chart-label { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 9px; color: var(--text-dim); }
+        .chart-value { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--text-muted); opacity: 0; transition: opacity 0.2s; }
+        .chart-bar:hover .chart-value { opacity: 1; }
+        
+        /* Notifications */
+        .notification-list { }
+        .notification-item { display: flex; gap: 12px; padding: 12px; background: var(--bg-dark); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
+        .notification-item:hover { background: var(--bg-hover); }
+        .notification-item.urgent { border-left: 3px solid var(--red); }
+        .notification-item.warning { border-left: 3px solid var(--yellow); }
+        .notification-item.info { border-left: 3px solid var(--accent); }
+        .notification-icon { font-size: 18px; }
+        .notification-content { flex: 1; }
+        .notification-title { font-size: 12px; font-weight: 500; margin-bottom: 2px; }
+        .notification-meta { font-size: 10px; color: var(--text-dim); }
+        .notification-action { font-size: 10px; color: var(--accent); cursor: pointer; }
+        .notification-action:hover { text-decoration: underline; }
+        
+        /* List Items */
+        .list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--bg-dark); border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid var(--accent); }
+        .list-item:hover { background: var(--bg-hover); transform: translateX(2px); }
+        .list-item:last-child { margin-bottom: 0; }
+        .list-item.green { border-left-color: var(--green); }
+        .list-item.yellow { border-left-color: var(--yellow); }
+        .list-item.orange { border-left-color: var(--orange); }
+        .list-item.purple { border-left-color: var(--purple); }
+        .list-item.cyan { border-left-color: var(--cyan); }
+        .list-item.pink { border-left-color: var(--pink); }
+        .list-content { flex: 1; }
+        .list-title { font-weight: 500; font-size: 12px; margin-bottom: 2px; }
+        .list-meta { font-size: 10px; color: var(--text-dim); }
+        
+        /* Status Badges */
+        .status-badge { padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+        .status-active, .status-live, .status-online { background: rgba(34,197,94,0.15); color: var(--green); }
+        .status-dev, .status-building { background: rgba(59,130,246,0.15); color: var(--accent); }
+        .status-pending { background: rgba(234,179,8,0.15); color: var(--yellow); }
+        .status-hot { background: rgba(249,115,22,0.15); color: var(--orange); }
+        
+        /* Events */
+        .event-item { display: flex; gap: 12px; padding: 10px 12px; background: var(--bg-dark); border-radius: 8px; margin-bottom: 8px; cursor: pointer; border-left: 3px solid var(--accent); transition: all 0.2s; }
+        .event-item:hover { background: var(--bg-hover); }
+        .event-item.call { border-left-color: var(--green); }
+        .event-item.meeting { border-left-color: var(--purple); }
+        .event-item.task { border-left-color: var(--yellow); }
+        .event-time { min-width: 60px; font-size: 11px; color: var(--accent); font-weight: 600; }
+        .event-content { flex: 1; }
+        .event-title { font-size: 12px; font-weight: 500; }
+        .event-location { font-size: 10px; color: var(--text-dim); margin-top: 2px; }
+        .event-prep { font-size: 10px; color: var(--orange); margin-top: 4px; background: rgba(249,115,22,0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; }
+        
+        /* KPI Widget */
+        .kpi-row { display: flex; gap: 16px; margin-bottom: 24px; }
+        .kpi-card { flex: 1; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; display: flex; align-items: center; gap: 14px; }
+        .kpi-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+        .kpi-icon.blue { background: rgba(59,130,246,0.15); }
+        .kpi-icon.green { background: rgba(34,197,94,0.15); }
+        .kpi-icon.orange { background: rgba(249,115,22,0.15); }
+        .kpi-icon.purple { background: rgba(168,85,247,0.15); }
+        .kpi-info { flex: 1; }
+        .kpi-label { font-size: 11px; color: var(--text-dim); margin-bottom: 2px; }
+        .kpi-value { font-size: 24px; font-weight: 700; }
+        .kpi-trend { font-size: 10px; color: var(--green); margin-top: 2px; }
+        .kpi-trend.down { color: var(--red); }
+        
+        /* Quick Actions */
+        .quick-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .quick-action { display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 12px; font-weight: 500; }
+        .quick-action:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .quick-action .icon { font-size: 14px; }
+        
+        /* Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.2s; }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; width: 90%; max-width: 500px; max-height: 80vh; overflow: hidden; transform: scale(0.95); transition: transform 0.2s; }
+        .modal-overlay.active .modal { transform: scale(1); }
+        .modal-header { padding: 18px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .modal-title { font-size: 16px; font-weight: 600; }
+        .modal-close { background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; padding: 4px; line-height: 1; }
+        .modal-close:hover { color: var(--text); }
+        .modal-body { padding: 20px; overflow-y: auto; max-height: 60vh; }
+        .detail-row { margin-bottom: 14px; }
+        .detail-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 500; }
+        .detail-value { font-size: 14px; }
+        .tag { display: inline-block; background: var(--bg-hover); padding: 4px 10px; border-radius: 5px; font-size: 11px; margin-right: 6px; margin-bottom: 6px; }
+        
+        /* Responsive */
+        @media (max-width: 1400px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } .pipeline-container { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1200px) { .grid-2, .grid-3, .grid-2-1, .grid-1-2 { grid-template-columns: 1fr; } .do-today-grid { grid-template-columns: repeat(2, 1fr); } .agent-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .sidebar { width: 60px; } .logo-text, .logo-sub, .nav-label, .nav-item span:not(.nav-icon), .nav-badge { display: none; } .main { margin-left: 60px; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .do-today-grid, .pipeline-container, .kpi-row { grid-template-columns: 1fr; } .goal-banner { padding: 16px; } .goal-amount { font-size: 28px; } }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-active); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🏔️</div>
+            <div>
+                <div class="logo-text">Command Center</div>
+                <div class="logo-sub">KuriosBrand</div>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="nav-section">
+                <div class="nav-label">Mission Control</div>
+                <div class="nav-item active" data-page="overview"><span class="nav-icon">🎯</span><span>Overview</span></div>
+                <div class="nav-item" data-page="pipeline"><span class="nav-icon">🔥</span><span>Pipeline</span><span class="nav-badge">13</span></div>
+                <div class="nav-item" data-page="calendar"><span class="nav-icon">📅</span><span>Calendar</span></div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-label">Analytics</div>
+                <div class="nav-item" data-page="revenue"><span class="nav-icon">💰</span><span>Revenue</span></div>
+                <div class="nav-item" data-page="kpis"><span class="nav-icon">📊</span><span>Sales KPIs</span></div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-label">Business</div>
+                <div class="nav-item" data-page="projects"><span class="nav-icon">📁</span><span>Projects</span><span class="nav-badge neutral">5</span></div>
+                <div class="nav-item" data-page="sites"><span class="nav-icon">🌐</span><span>Sites</span><span class="nav-badge neutral">6</span></div>
+                <div class="nav-item" data-page="avatars"><span class="nav-icon">👤</span><span>Avatars</span></div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-label">System</div>
+                <div class="nav-item" data-page="agents"><span class="nav-icon">🤖</span><span>Agents</span></div>
+                <div class="nav-item" data-page="tools"><span class="nav-icon">🔧</span><span>Tools</span><span class="nav-badge neutral">25</span></div>
+                <div class="nav-item" data-page="integrations"><span class="nav-icon">🔗</span><span>Integrations</span></div>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="agent-status">
+                <span class="status-indicator"></span>
+                <span>Sierra Online</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <div>
+                    <h1 class="header-title" id="pageTitle">Mission Control</h1>
+                    <div class="header-sub" id="pageSub">Your command center for world domination</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="goal-mini">
+                    <div>
+                        <div class="goal-mini-label">EXIT GOAL</div>
+                        <div class="goal-mini-value">$9.6M</div>
+                    </div>
+                    <div class="goal-mini-bar">
+                        <div class="goal-mini-fill" style="width: 2.5%"></div>
+                    </div>
+                </div>
+                <button class="btn" onclick="refreshData()"><span class="icon">↻</span> Refresh</button>
+            </div>
+        </header>
+        
+        <div class="content">
+            <!-- OVERVIEW PAGE -->
+            <div class="page active" id="page-overview">
+                <!-- Goal Banner -->
+                <div class="goal-banner">
+                    <div class="goal-header">
+                        <div>
+                            <div class="goal-title">🎯 Exit Goal</div>
+                            <div class="goal-amount">$9,600,000</div>
+                            <div class="goal-subtitle">Own AI systems, don't compete with them</div>
+                        </div>
+                        <div class="goal-current">
+                            <div class="goal-current-label">Pipeline Value</div>
+                            <div class="goal-current-value" id="totalPipelineValue">$245,000</div>
+                        </div>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="goal-progress-bar">
+                            <div class="goal-progress-fill" id="goalProgressFill" style="width: 2.5%"></div>
+                        </div>
+                    </div>
+                    <div class="goal-milestones">
+                        <div class="milestone completed"><div class="milestone-marker"></div><span>Launch</span></div>
+                        <div class="milestone current"><div class="milestone-marker"></div><span>$100K ARR</span></div>
+                        <div class="milestone"><div class="milestone-marker"></div><span>$500K ARR</span></div>
+                        <div class="milestone"><div class="milestone-marker"></div><span>$1M ARR</span></div>
+                        <div class="milestone"><div class="milestone-marker"></div><span>$2M ARR</span></div>
+                        <div class="milestone"><div class="milestone-marker"></div><span>EXIT 🚀</span></div>
+                    </div>
+                </div>
+
+                <!-- DO TODAY Section -->
+                <div class="do-today">
+                    <div class="do-today-header">
+                        <div class="do-today-title"><span class="icon">⚡</span> DO TODAY</div>
+                        <span class="card-badge" onclick="navigateTo('calendar')">Full Schedule →</span>
+                    </div>
+                    <div class="do-today-grid" id="doTodayGrid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="stats-grid">
+                    <div class="stat-card highlight" onclick="navigateTo('pipeline')">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-label">Hot Leads</div>
+                        <div class="stat-value hot" id="stat-hot">7</div>
+                        <div class="stat-delta up">↑ Ready to close</div>
+                    </div>
+                    <div class="stat-card" onclick="navigateTo('pipeline')">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-label">Pipeline Value</div>
+                        <div class="stat-value money" id="stat-pipeline">$245K</div>
+                        <div class="stat-delta up">↑ $50K this week</div>
+                    </div>
+                    <div class="stat-card" onclick="navigateTo('calendar')">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-label">Today's Events</div>
+                        <div class="stat-value leads" id="stat-events">3</div>
+                    </div>
+                    <div class="stat-card" onclick="navigateTo('kpis')">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-label">Close Rate</div>
+                        <div class="stat-value" style="color: var(--green)">30%</div>
+                        <div class="stat-delta up">↑ 3/10 closed</div>
+                    </div>
+                    <div class="stat-card" onclick="navigateTo('agents')">
+                        <div class="stat-icon">🤖</div>
+                        <div class="stat-label">Agents Online</div>
+                        <div class="stat-value" style="color: var(--green)">2</div>
+                    </div>
+                    <div class="stat-card" onclick="navigateTo('projects')">
+                        <div class="stat-icon">📁</div>
+                        <div class="stat-label">Active Projects</div>
+                        <div class="stat-value purple">5</div>
+                    </div>
+                </div>
+
+                <!-- Main Grid -->
+                <div class="grid-2-1" style="margin-bottom: 20px;">
+                    <!-- Hot Leads -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">🔥 Hot Leads — Ready to Close</span>
+                            <span class="card-badge" onclick="navigateTo('pipeline')">View Pipeline →</span>
+                        </div>
+                        <div class="card-body" id="overview-hot">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">🔔 Needs Attention</span>
+                            <span class="card-count" id="notif-count">3</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="notification-list" id="notifications">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Upcoming -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">📅 Next 48 Hours</span>
+                            <span class="card-badge" onclick="navigateTo('calendar')">Full Calendar →</span>
+                        </div>
+                        <div class="card-body" id="overview-calendar">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">⚡ Quick Actions</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-actions">
+                                <div class="quick-action" onclick="quickAction('call')"><span class="icon">📞</span> Schedule Call</div>
+                                <div class="quick-action" onclick="quickAction('email')"><span class="icon">✉️</span> Send Follow-up</div>
+                                <div class="quick-action" onclick="quickAction('task')"><span class="icon">✅</span> Create Task</div>
+                                <div class="quick-action" onclick="quickAction('lead')"><span class="icon">➕</span> Add Lead</div>
+                                <div class="quick-action" onclick="quickAction('proposal')"><span class="icon">📄</span> Send Proposal</div>
+                                <div class="quick-action" onclick="quickAction('linkedin')"><span class="icon">💼</span> LinkedIn Outreach</div>
+                            </div>
+                            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+                                <div class="list-item green" onclick="showFocus()">
+                                    <div class="list-content">
+                                        <div class="list-title">📍 Current Focus</div>
+                                        <div class="list-meta">MVA Lead Gen — 2-3 sales calls/day</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PIPELINE PAGE -->
+            <div class="page" id="page-pipeline">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">🔥</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Hot Leads</div>
+                            <div class="kpi-value" id="kpi-hot">7</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon blue">📊</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Total Pipeline</div>
+                            <div class="kpi-value" id="kpi-total">13</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon green">💰</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Pipeline Value</div>
+                            <div class="kpi-value" id="kpi-value">$245K</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon purple">📈</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Weighted Forecast</div>
+                            <div class="kpi-value" id="kpi-forecast">$165K</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pipeline-container" id="pipeline-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- CALENDAR PAGE -->
+            <div class="page" id="page-calendar">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-icon blue">📅</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Today</div>
+                            <div class="kpi-value" id="cal-today">0</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon purple">📞</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Calls This Week</div>
+                            <div class="kpi-value" id="cal-calls">4</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon green">✅</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Meetings Booked</div>
+                            <div class="kpi-value" id="cal-meetings">5</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">🎯</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Goal: Calls/Day</div>
+                            <div class="kpi-value">2-3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">📅 Upcoming Events</span>
+                        <span class="card-count" id="cal-count">0 events</span>
+                    </div>
+                    <div class="card-body" id="calendar-events" style="max-height: none;">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- REVENUE PAGE -->
+            <div class="page" id="page-revenue">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-icon green">💵</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Closed This Month</div>
+                            <div class="kpi-value">$55K</div>
+                            <div class="kpi-trend">↑ 3 deals closed</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon blue">📊</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Avg Deal Size</div>
+                            <div class="kpi-value">$18.3K</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">💰</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Open Pipeline</div>
+                            <div class="kpi-value">$245K</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon purple">🎯</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Monthly Target</div>
+                            <div class="kpi-value">$100K</div>
+                            <div class="kpi-trend">55% achieved</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">💰 Revenue by Month</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="revenue-chart" id="revenue-chart">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">📊 Deal Economics</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-item green">
+                                <div class="list-content">
+                                    <div class="list-title">Cost Per Lead</div>
+                                    <div class="list-meta">$250-350 per lead</div>
+                                </div>
+                                <span style="font-weight: 600; color: var(--green);">$300 avg</span>
+                            </div>
+                            <div class="list-item purple">
+                                <div class="list-content">
+                                    <div class="list-title">Cost Per Signed Case</div>
+                                    <div class="list-meta">~$2,000 per case</div>
+                                </div>
+                                <span style="font-weight: 600; color: var(--purple);">$2K</span>
+                            </div>
+                            <div class="list-item orange">
+                                <div class="list-content">
+                                    <div class="list-title">Cost Per Call</div>
+                                    <div class="list-meta">$180-300 per call</div>
+                                </div>
+                                <span style="font-weight: 600; color: var(--orange);">$240 avg</span>
+                            </div>
+                            <div class="list-item cyan">
+                                <div class="list-content">
+                                    <div class="list-title">Calls Per Week</div>
+                                    <div class="list-meta">Target: 5-7 per week</div>
+                                </div>
+                                <span style="font-weight: 600; color: var(--cyan);">6 avg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KPIs PAGE -->
+            <div class="page" id="page-kpis">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-icon green">📈</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Close Rate</div>
+                            <div class="kpi-value">30%</div>
+                            <div class="kpi-trend">3 of 10 closed</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon blue">📞</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Calls Analyzed</div>
+                            <div class="kpi-value">10</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">⏱️</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Avg Sales Cycle</div>
+                            <div class="kpi-value">14 days</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon purple">🎯</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">States Covered</div>
+                            <div class="kpi-value">7</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">🎯 Close Rate by Avatar</span>
+                        </div>
+                        <div class="card-body" id="avatar-kpis">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">📊 Conversion Funnel</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="list-item" style="border-left-color: var(--accent);">
+                                <div class="list-content">
+                                    <div class="list-title">Leads Generated</div>
+                                    <div class="list-meta">Total inbound + outbound</div>
+                                </div>
+                                <span style="font-weight: 700; font-size: 18px;">50</span>
+                            </div>
+                            <div class="list-item" style="border-left-color: var(--purple);">
+                                <div class="list-content">
+                                    <div class="list-title">Calls Booked</div>
+                                    <div class="list-meta">40% of leads</div>
+                                </div>
+                                <span style="font-weight: 700; font-size: 18px;">20</span>
+                            </div>
+                            <div class="list-item" style="border-left-color: var(--orange);">
+                                <div class="list-content">
+                                    <div class="list-title">Calls Completed</div>
+                                    <div class="list-meta">50% of booked</div>
+                                </div>
+                                <span style="font-weight: 700; font-size: 18px;">10</span>
+                            </div>
+                            <div class="list-item" style="border-left-color: var(--green);">
+                                <div class="list-content">
+                                    <div class="list-title">Deals Closed</div>
+                                    <div class="list-meta">30% close rate</div>
+                                </div>
+                                <span style="font-weight: 700; font-size: 18px; color: var(--green);">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGENTS PAGE -->
+            <div class="page" id="page-agents">
+                <div class="agent-grid" id="agents-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- PROJECTS PAGE -->
+            <div class="page" id="page-projects">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">📁 Active Projects</span>
+                        <span class="card-count">5 projects</span>
+                    </div>
+                    <div class="card-body" id="projects-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- SITES PAGE -->
+            <div class="page" id="page-sites">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">🌐 Websites & Properties</span>
+                        <span class="card-count">6 sites</span>
+                    </div>
+                    <div class="card-body" id="sites-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- AVATARS PAGE -->
+            <div class="page" id="page-avatars">
+                <div class="kpi-row">
+                    <div class="kpi-card">
+                        <div class="kpi-icon green">🏆</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Top Avatar</div>
+                            <div class="kpi-value" style="font-size: 16px;">Fast Scaler</div>
+                            <div class="kpi-trend">100% close rate</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon blue">📊</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Calls Analyzed</div>
+                            <div class="kpi-value">10</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon purple">👤</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Avatar Types</div>
+                            <div class="kpi-value">4</div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon orange">💰</div>
+                        <div class="kpi-info">
+                            <div class="kpi-label">Avg Deal (Closed)</div>
+                            <div class="kpi-value">$18.3K</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">🏆 Avatar Rankings</span>
+                        </div>
+                        <div class="card-body" id="avatars-ranked">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">📋 Consolidated Categories</span>
+                        </div>
+                        <div class="card-body" id="avatars-categories">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOOLS PAGE -->
+            <div class="page" id="page-tools">
+                <div class="grid-2" id="tools-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- INTEGRATIONS PAGE -->
+            <div class="page" id="page-integrations">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">✅ Connected</span>
+                        </div>
+                        <div class="card-body" id="integrations-connected">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">⚠️ Needs Setup</span>
+                        </div>
+                        <div class="card-body" id="integrations-pending">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <span class="modal-title" id="modal-title">Details</span>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // Data stores
+        let dashData = {}, calData = {}, prospectsData = {};
+        let lastRefresh = Date.now();
+        
+        // Page config
+        const pageConfig = {
+            overview: { title: 'Mission Control', sub: 'Your command center for world domination' },
+            pipeline: { title: 'Sales Pipeline', sub: '$245K in active opportunities' },
+            calendar: { title: 'Calendar', sub: 'Upcoming calls and meetings' },
+            revenue: { title: 'Revenue Dashboard', sub: 'Track your path to $9.6M' },
+            kpis: { title: 'Sales KPIs', sub: 'Performance metrics and analytics' },
+            projects: { title: 'Projects', sub: '5 active projects in progress' },
+            sites: { title: 'Sites', sub: '6 web properties' },
+            avatars: { title: 'Customer Avatars', sub: 'Know your buyer types' },
+            agents: { title: 'Agent Monitor', sub: 'AI workforce status' },
+            tools: { title: 'Tools & Scripts', sub: '25 automation tools ready' },
+            integrations: { title: 'Integrations', sub: 'Connected services' }
+        };
+        
+        // Navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => navigateTo(item.dataset.page));
+        });
+        
+        function navigateTo(page) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            document.querySelector(`[data-page="${page}"]`)?.classList.add('active');
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + page)?.classList.add('active');
+            const cfg = pageConfig[page] || {};
+            document.getElementById('pageTitle').textContent = cfg.title || page;
+            document.getElementById('pageSub').textContent = cfg.sub || '';
+        }
+        
+        // Modal
+        function showModal(title, content) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-body').innerHTML = content;
+            document.getElementById('modal').classList.add('active');
+        }
+        function closeModal(e) {
+            if (!e || e.target.id === 'modal') document.getElementById('modal').classList.remove('active');
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        
+        // Data loading
+        async function refreshData() {
+            try {
+                const [dash, cal, prospects] = await Promise.all([
+                    fetch('dashboard-data.json?t=' + Date.now()).then(r => r.ok ? r.json() : {}),
+                    fetch('calendar-data.json?t=' + Date.now()).then(r => r.ok ? r.json() : {}),
+                    fetch('../data/discovery/prospects-enriched.json?t=' + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({}))
+                ]);
+                dashData = dash;
+                calData = cal;
+                prospectsData = prospects;
+                render();
+                lastRefresh = Date.now();
+            } catch (e) {
+                console.error('Refresh failed:', e);
+            }
+        }
+        
+        function render() {
+            renderDoToday();
+            renderHotLeads();
+            renderNotifications();
+            renderCalendar();
+            renderPipeline();
+            renderAgents();
+            renderAvatars();
+            renderProjects();
+            renderSites();
+            renderTools();
+            renderIntegrations();
+            renderRevenueChart();
+            renderAvatarKPIs();
+        }
+        
+        // DO TODAY
+        function renderDoToday() {
+            const actions = [
+                { type: 'CALL', title: 'Follow up Scott Barney', meta: 'VA Beach — 85% close prob', time: 'Overdue', priority: 'urgent' },
+                { type: 'CALL', title: 'Connect Ross Robin w/ Patrick', meta: 'New PI firm — ready to start', time: 'Today', priority: 'important' },
+                { type: 'MEETING', title: 'Joan Suh Partnership Call', meta: '4:00 PM EST', time: '2 hours', priority: 'important' },
+                { type: 'EMAIL', title: 'Send Jalal proposal', meta: '$50K multi-state deal', time: 'Today', priority: 'normal' }
+            ];
+            document.getElementById('doTodayGrid').innerHTML = actions.map(a => `
+                <div class="action-card ${a.priority}" onclick="showAction('${esc(JSON.stringify(a))}')">
+                    <div class="action-type">${a.type}</div>
+                    <div class="action-title">${a.title}</div>
+                    <div class="action-meta">${a.meta}</div>
+                    <div class="action-time">⏰ ${a.time}</div>
+                    <div class="action-buttons">
+                        <button class="action-btn done" onclick="event.stopPropagation(); markDone(this)">✓ Done</button>
+                        <button class="action-btn" onclick="event.stopPropagation(); snooze(this)">⏰ Snooze</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function markDone(btn) {
+            btn.closest('.action-card').classList.add('completed');
+            btn.textContent = '✓ Completed';
+        }
+        function snooze(btn) {
+            btn.textContent = 'Snoozed 1h';
+        }
+        
+        // Hot Leads
+        function renderHotLeads() {
+            const hot = prospectsData?.prospects?.HOT || dashData?.pipeline?.hot || [];
+            document.getElementById('stat-hot').textContent = hot.length;
+            document.getElementById('kpi-hot').textContent = hot.length;
+            
+            document.getElementById('overview-hot').innerHTML = hot.slice(0, 5).map(l => `
+                <div class="list-item orange" onclick="showLead(${esc(JSON.stringify(l))})">
+                    <div class="list-content">
+                        <div class="list-title">${l.name}${l.firm ? ' — ' + l.firm : (l.company ? ' — ' + l.company : '')}</div>
+                        <div class="list-meta">${l.location || ''} • ${l.close_probability || l.notes || ''}</div>
+                    </div>
+                    <span style="color: var(--green); font-weight: 600; font-size: 12px;">${l.budget || l.deal_size || ''}</span>
+                </div>
+            `).join('');
+        }
+        
+        // Notifications
+        function renderNotifications() {
+            const notifs = [
+                { type: 'urgent', icon: '🔴', title: 'Scott Barney follow-up overdue', meta: 'Patrick call was scheduled — check outcome', action: 'Follow Up' },
+                { type: 'warning', icon: '🟡', title: 'Jalal waiting on proposal', meta: 'Requested follow-up Wednesday', action: 'Send Proposal' },
+                { type: 'info', icon: '📅', title: 'Joan Suh call tomorrow', meta: 'Partnership qualified leads discussion', action: 'Prep' }
+            ];
+            document.getElementById('notif-count').textContent = notifs.length;
+            document.getElementById('notifications').innerHTML = notifs.map(n => `
+                <div class="notification-item ${n.type}">
+                    <span class="notification-icon">${n.icon}</span>
+                    <div class="notification-content">
+                        <div class="notification-title">${n.title}</div>
+                        <div class="notification-meta">${n.meta}</div>
+                    </div>
+                    <span class="notification-action">${n.action} →</span>
+                </div>
+            `).join('');
+        }
+        
+        // Calendar
+        function renderCalendar() {
+            const events = calData.events || [];
+            const today = new Date().toDateString();
+            const todayEvents = events.filter(e => new Date(e.start).toDateString() === today);
+            
+            document.getElementById('stat-events').textContent = todayEvents.length;
+            document.getElementById('cal-today').textContent = todayEvents.length;
+            document.getElementById('cal-count').textContent = events.length + ' events';
+            
+            // Group by date
+            const grouped = {};
+            events.forEach(e => {
+                const d = new Date(e.start).toDateString();
+                if (!grouped[d]) grouped[d] = [];
+                grouped[d].push(e);
+            });
+            
+            let html = '';
+            for (const [date, evts] of Object.entries(grouped)) {
+                html += `<div style="font-size: 11px; font-weight: 600; color: var(--accent); margin: 16px 0 8px;">${formatDateHeader(date)}</div>`;
+                html += evts.map(e => {
+                    const type = e.title.toLowerCase().includes('call') || e.title.includes('Meeting') ? 'call' : 
+                                 e.title.includes('Build') ? 'task' : 'meeting';
+                    return `
+                        <div class="event-item ${type}" onclick="showEvent(${esc(JSON.stringify(e))})">
+                            <div class="event-time">${formatTime(e.start)}</div>
+                            <div class="event-content">
+                                <div class="event-title">${e.title}</div>
+                                ${e.location ? `<div class="event-location">📍 ${e.location}</div>` : ''}
+                                ${type === 'call' ? `<div class="event-prep">📋 Review prospect notes before call</div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            document.getElementById('calendar-events').innerHTML = html || '<div style="color: var(--text-dim);">No upcoming events</div>';
+            
+            // Overview calendar (next 3)
+            document.getElementById('overview-calendar').innerHTML = events.slice(0, 4).map(e => `
+                <div class="event-item" onclick="showEvent(${esc(JSON.stringify(e))})">
+                    <div class="event-time">${formatTime(e.start)}</div>
+                    <div class="event-content">
+                        <div class="event-title">${e.title}</div>
+                        <div class="event-location" style="color: var(--text-dim); font-size: 10px;">${formatDate(e.start)}</div>
+                    </div>
+                </div>
+            `).join('') || '<div style="color: var(--text-dim);">No events</div>';
+        }
+        
+        // Pipeline
+        function renderPipeline() {
+            const hot = prospectsData?.prospects?.HOT || [];
+            const inProgress = prospectsData?.prospects?.IN_PROGRESS || [];
+            const closed = dashData?.pipeline?.closed || [];
+            const lost = [];
+            
+            // Calculate values
+            const hotValue = hot.reduce((sum, l) => sum + parseBudget(l.budget || l.deal_size), 0);
+            const inProgressValue = inProgress.reduce((sum, l) => sum + parseBudget(l.budget || l.deal_size), 0);
+            const closedValue = closed.reduce((sum, l) => sum + parseBudget(l.value), 0);
+            const totalValue = hotValue + inProgressValue;
+            
+            document.getElementById('stat-pipeline').textContent = '$' + Math.round(totalValue / 1000) + 'K';
+            document.getElementById('kpi-value').textContent = '$' + Math.round(totalValue / 1000) + 'K';
+            document.getElementById('kpi-total').textContent = hot.length + inProgress.length;
+            document.getElementById('totalPipelineValue').textContent = '$' + totalValue.toLocaleString();
+            
+            // Weighted forecast
+            const forecast = hot.reduce((sum, l) => sum + parseBudget(l.budget || l.deal_size) * parseProb(l.close_probability), 0) +
+                            inProgress.reduce((sum, l) => sum + parseBudget(l.budget || l.deal_size) * 0.4, 0);
+            document.getElementById('kpi-forecast').textContent = '$' + Math.round(forecast / 1000) + 'K';
+            
+            document.getElementById('pipeline-container').innerHTML = `
+                <div class="pipeline-col">
+                    <div class="pipeline-header">
+                        <span class="pipeline-stage">🔥 Hot</span>
+                        <div>
+                            <span class="pipeline-value">$${Math.round(hotValue/1000)}K</span>
+                            <span class="pipeline-count">${hot.length}</span>
+                        </div>
+                    </div>
+                    ${hot.map(l => `
+                        <div class="pipeline-item hot" onclick="showLead(${esc(JSON.stringify(l))})">
+                            <div class="pipeline-name">${l.name}</div>
+                            <div class="pipeline-firm">${l.firm || l.company || ''} • ${l.location || ''}</div>
+                            <div class="pipeline-deal">${l.budget || l.deal_size || ''}</div>
+                            <div class="pipeline-next">→ ${l.recommended_next_action?.substring(0, 50) || l.nextAction || 'Follow up'}...</div>
+                            <span class="pipeline-prob ${parseProb(l.close_probability) >= 0.7 ? 'high' : 'medium'}">${l.close_probability || ''}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="pipeline-col">
+                    <div class="pipeline-header">
+                        <span class="pipeline-stage">📋 In Progress</span>
+                        <div>
+                            <span class="pipeline-value">$${Math.round(inProgressValue/1000)}K</span>
+                            <span class="pipeline-count">${inProgress.length}</span>
+                        </div>
+                    </div>
+                    ${inProgress.map(l => `
+                        <div class="pipeline-item warm" onclick="showLead(${esc(JSON.stringify(l))})">
+                            <div class="pipeline-name">${l.name}</div>
+                            <div class="pipeline-firm">${l.firm || l.company || ''} • ${l.location || ''}</div>
+                            <div class="pipeline-deal">${l.budget || l.deal_size || ''}</div>
+                            <div class="pipeline-next">→ ${l.recommended_next_action?.substring(0, 50) || 'Continue engagement'}...</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="pipeline-col">
+                    <div class="pipeline-header">
+                        <span class="pipeline-stage">✅ Closed Won</span>
+                        <div>
+                            <span class="pipeline-value">$${Math.round(closedValue/1000)}K</span>
+                            <span class="pipeline-count">${closed.length}</span>
+                        </div>
+                    </div>
+                    ${closed.map(l => `
+                        <div class="pipeline-item" style="border-left-color: var(--green);">
+                            <div class="pipeline-name">${l.name}</div>
+                            <div class="pipeline-firm">${l.company || ''}</div>
+                            <div class="pipeline-deal" style="color: var(--green);">✅ ${l.value || 'CLOSED'}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="pipeline-col">
+                    <div class="pipeline-header">
+                        <span class="pipeline-stage">❌ Lost / Cold</span>
+                        <span class="pipeline-count">0</span>
+                    </div>
+                    <div style="color: var(--text-dim); font-size: 11px; padding: 20px; text-align: center;">
+                        No lost deals yet 🎉
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Agents
+        function renderAgents() {
+            const agents = [
+                { name: 'Sierra', emoji: '🏔️', model: 'Claude Opus', role: 'Main Orchestrator', status: 'online', tasks: 47, uptime: '99.9%', lastAction: 'Just now' },
+                { name: 'SCOUT', emoji: '🔍', model: 'Claude Sonnet', role: 'Intel Gatherer', status: 'online', tasks: 23, uptime: '98.5%', lastAction: '5m ago' }
+            ];
+            
+            document.getElementById('agents-grid').innerHTML = agents.map(a => `
+                <div class="agent-card ${a.status}">
+                    <div class="agent-header">
+                        <div class="agent-avatar">${a.emoji}</div>
+                        <div>
+                            <div class="agent-name">${a.name}</div>
+                            <div class="agent-role">${a.role}</div>
+                        </div>
+                    </div>
+                    <div class="agent-stats">
+                        <div class="agent-stat">
+                            <div class="agent-stat-label">Model</div>
+                            <div class="agent-stat-value">${a.model}</div>
+                        </div>
+                        <div class="agent-stat">
+                            <div class="agent-stat-label">Tasks Today</div>
+                            <div class="agent-stat-value">${a.tasks}</div>
+                        </div>
+                        <div class="agent-stat">
+                            <div class="agent-stat-label">Uptime</div>
+                            <div class="agent-stat-value" style="color: var(--green);">${a.uptime}</div>
+                        </div>
+                        <div class="agent-stat">
+                            <div class="agent-stat-label">Last Action</div>
+                            <div class="agent-stat-value">${a.lastAction}</div>
+                        </div>
+                    </div>
+                    <div class="agent-status-bar">
+                        <span class="agent-status-dot"></span>
+                        <span>Active & Healthy</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Avatars
+        function renderAvatars() {
+            const ranked = [
+                { name: 'The Fast Scaler', score: 89, closeRate: '100%', avgDeal: '$27.5K', desc: 'Small/mid firms, aggressive expansion, data-driven' },
+                { name: 'The Sophisticated Buyer', score: 52, closeRate: '0%', avgDeal: '$30K+', desc: 'Committee decisions, high future potential' },
+                { name: 'The Burned Veteran', score: 48, closeRate: '25%', avgDeal: '$15K', desc: 'Wasted $100-250k, needs guarantees' },
+                { name: 'The Solo Transitioner', score: 40, closeRate: '50%', avgDeal: '$17.5K', desc: 'Solo practitioners transitioning' }
+            ];
+            const categories = [
+                { name: 'Intake-Needy', desc: "Need Patrick's intake service ($100/transfer)" },
+                { name: 'Transparency Seeker', desc: 'Want control and contractual guarantees' },
+                { name: 'Channel Strategist', desc: 'Multi-vendor firms needing channel isolation' },
+                { name: 'Compliance/Quality-Focused', desc: 'Risk-averse, $30-50k+ budgets' }
+            ];
+            
+            const colors = ['green', 'purple', 'orange', 'yellow'];
+            document.getElementById('avatars-ranked').innerHTML = ranked.map((a, i) => `
+                <div class="list-item ${colors[i]}" onclick="showAvatar(${esc(JSON.stringify(a))})">
+                    <div class="list-content">
+                        <div class="list-title">#${i+1} ${a.name} <span style="color: var(--text-dim);">(${a.score}/100)</span></div>
+                        <div class="list-meta">${a.desc} • Close: ${a.closeRate} • Avg: ${a.avgDeal}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('avatars-categories').innerHTML = categories.map(c => `
+                <div class="list-item cyan">
+                    <div class="list-content">
+                        <div class="list-title">${c.name}</div>
+                        <div class="list-meta">${c.desc}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function renderAvatarKPIs() {
+            const avatars = [
+                { name: 'Fast Scaler', closeRate: '100%', color: 'green' },
+                { name: 'Solo Transitioner', closeRate: '50%', color: 'yellow' },
+                { name: 'Burned Veteran', closeRate: '25%', color: 'orange' },
+                { name: 'Sophisticated Buyer', closeRate: '0%', color: 'purple' }
+            ];
+            document.getElementById('avatar-kpis').innerHTML = avatars.map(a => `
+                <div class="list-item ${a.color}">
+                    <div class="list-content">
+                        <div class="list-title">${a.name}</div>
+                        <div class="list-meta">Based on analyzed calls</div>
+                    </div>
+                    <span style="font-weight: 700; color: var(--${a.color});">${a.closeRate}</span>
+                </div>
+            `).join('');
+        }
+        
+        // Projects
+        function renderProjects() {
+            const projects = dashData?.projects?.core || [
+                { name: 'MVA Lead Gen', status: 'active', description: 'Motor vehicle accident leads for lawyers' },
+                { name: 'PI Vendor Intelligence', status: 'active', description: 'AI-powered vendor matching for PI attorneys' },
+                { name: 'GHL Sales Automation', status: 'building', description: '5 workflows for appointment booking' },
+                { name: 'Customer Avatar System', status: 'active', description: '11 buyer personas from sales analysis' },
+                { name: 'Concrete Rank & Rent', status: 'pending', description: 'Local SEO sites - needs monetization' }
+            ];
+            document.getElementById('projects-list').innerHTML = projects.map(p => `
+                <div class="list-item purple" onclick="showProject(${esc(JSON.stringify(p))})">
+                    <div class="list-content">
+                        <div class="list-title">${p.name}</div>
+                        <div class="list-meta">${p.description || ''}</div>
+                    </div>
+                    <span class="status-badge status-${p.status}">${p.status}</span>
+                </div>
+            `).join('');
+        }
+        
+        // Sites
+        function renderSites() {
+            const sites = dashData?.projects?.sites || [
+                { name: 'Texas Truck Accidents', url: 'texastruckaccidents.net', status: 'live', stack: 'Next.js 16' },
+                { name: 'MVA Engine', status: 'dev', purpose: 'Template system for new MVA sites' },
+                { name: 'leads.kuriosbrand.com', status: 'live', purpose: 'Cases on Demand whitelabel' }
+            ];
+            document.getElementById('sites-list').innerHTML = sites.map(s => `
+                <div class="list-item cyan" onclick="showSite(${esc(JSON.stringify(s))})">
+                    <div class="list-content">
+                        <div class="list-title">${s.name}</div>
+                        <div class="list-meta">${s.url || s.purpose || ''}</div>
+                    </div>
+                    <span class="status-badge status-${s.status}">${s.status}</span>
+                </div>
+            `).join('');
+        }
+        
+        // Tools
+        function renderTools() {
+            const categories = {
+                'Scrapers': ['Reddit Scraper', 'LinkedIn Scraper', 'Review Scraper', 'X/Twitter Scraper'],
+                'Transcribers': ['YouTube Transcriber', 'Whisper Transcription'],
+                'APIs': ['X/Twitter Tools', 'Google Calendar', 'DataForSEO'],
+                'Automation': ['Reddit 24x7 Crawler', 'Buyer Profile Scraper']
+            };
+            
+            document.getElementById('tools-container').innerHTML = Object.entries(categories).map(([cat, tools]) => `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">${cat}</span>
+                        <span class="card-count">${tools.length}</span>
+                    </div>
+                    <div class="card-body">
+                        ${tools.map(t => `
+                            <div class="list-item cyan">
+                                <div class="list-content">
+                                    <div class="list-title">${t}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Integrations
+        function renderIntegrations() {
+            const connected = [
+                { name: 'Google Calendar', account: 'mark@kuriosbrand.com' },
+                { name: 'Notion', account: 'Sierra Workspace' },
+                { name: 'Google Drive', account: 'Kurios Automated Business' },
+                { name: 'Telegram', account: '@Sierra_molt_bot' }
+            ];
+            const pending = [
+                { name: 'X/Twitter API', note: 'Credits depleted - use scraping' },
+                { name: 'GoHighLevel', note: 'Needs OAuth setup' }
+            ];
+            
+            document.getElementById('integrations-connected').innerHTML = connected.map(i => `
+                <div class="list-item green">
+                    <div class="list-content">
+                        <div class="list-title">${i.name}</div>
+                        <div class="list-meta">${i.account}</div>
+                    </div>
+                    <span class="status-badge status-active">Connected</span>
+                </div>
+            `).join('');
+            
+            document.getElementById('integrations-pending').innerHTML = pending.map(i => `
+                <div class="list-item yellow">
+                    <div class="list-content">
+                        <div class="list-title">${i.name}</div>
+                        <div class="list-meta">${i.note}</div>
+                    </div>
+                    <span class="status-badge status-pending">Setup</span>
+                </div>
+            `).join('');
+        }
+        
+        // Revenue Chart
+        function renderRevenueChart() {
+            const months = ['Oct', 'Nov', 'Dec', 'Jan', 'Feb'];
+            const values = [0, 15, 25, 55, 0];
+            const max = Math.max(...values) || 100;
+            
+            document.getElementById('revenue-chart').innerHTML = months.map((m, i) => `
+                <div class="chart-bar ${i === 3 ? 'current' : ''}" style="height: ${Math.max((values[i] / max) * 100, 5)}%;">
+                    <span class="chart-label">${m}</span>
+                    <span class="chart-value">$${values[i]}K</span>
+                </div>
+            `).join('');
+        }
+        
+        // Helpers
+        function esc(str) { return str.replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
+        function formatTime(d) { return new Date(d).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }); }
+        function formatDate(d) { return new Date(d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }); }
+        function formatDateHeader(d) {
+            const dt = new Date(d), today = new Date(), tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            if (dt.toDateString() === today.toDateString()) return '📅 Today';
+            if (dt.toDateString() === tomorrow.toDateString()) return '📅 Tomorrow';
+            return dt.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+        }
+        function parseBudget(str) {
+            if (!str) return 15000;
+            const match = str.match(/\$?([\d,]+)/);
+            return match ? parseInt(match[1].replace(/,/g, '')) : 15000;
+        }
+        function parseProb(str) {
+            if (!str) return 0.5;
+            const match = str.match(/(\d+)/);
+            return match ? parseInt(match[1]) / 100 : 0.5;
+        }
+        
+        // Show modals
+        function showLead(l) {
+            if (typeof l === 'string') l = JSON.parse(l.replace(/&quot;/g, '"'));
+            showModal('🔥 ' + l.name, `
+                <div class="detail-row"><div class="detail-label">Name</div><div class="detail-value" style="font-size: 18px; font-weight: 700;">${l.name}</div></div>
+                ${l.firm ? `<div class="detail-row"><div class="detail-label">Firm</div><div class="detail-value">${l.firm}</div></div>` : ''}
+                ${l.location ? `<div class="detail-row"><div class="detail-label">Location</div><div class="detail-value">📍 ${l.location}</div></div>` : ''}
+                ${l.avatar_type ? `<div class="detail-row"><div class="detail-label">Avatar Type</div><div class="detail-value">${l.avatar_type}</div></div>` : ''}
+                ${l.budget || l.deal_size ? `<div class="detail-row"><div class="detail-label">Budget / Deal Size</div><div class="detail-value" style="color: var(--green); font-weight: 600;">${l.budget || l.deal_size}</div></div>` : ''}
+                ${l.close_probability ? `<div class="detail-row"><div class="detail-label">Close Probability</div><div class="detail-value" style="color: var(--orange);">${l.close_probability}</div></div>` : ''}
+                ${l.pain_points ? `<div class="detail-row"><div class="detail-label">Pain Points</div><div class="detail-value">${l.pain_points.slice(0,3).map(p => `<div>• ${p}</div>`).join('')}</div></div>` : ''}
+                ${l.recommended_next_action ? `<div class="detail-row"><div class="detail-label">Next Action</div><div class="detail-value" style="color: var(--accent); font-weight: 500;">→ ${l.recommended_next_action}</div></div>` : ''}
+            `);
+        }
+        
+        function showEvent(e) {
+            if (typeof e === 'string') e = JSON.parse(e.replace(/&quot;/g, '"'));
+            showModal('📅 ' + e.title, `
+                <div class="detail-row"><div class="detail-label">When</div><div class="detail-value">${formatDate(e.start)} at ${formatTime(e.start)}</div></div>
+                ${e.location ? `<div class="detail-row"><div class="detail-label">Location</div><div class="detail-value">📍 ${e.location}</div></div>` : ''}
+                ${e.description ? `<div class="detail-row"><div class="detail-label">Description</div><div class="detail-value">${e.description}</div></div>` : ''}
+            `);
+        }
+        
+        function showAvatar(a) {
+            if (typeof a === 'string') a = JSON.parse(a.replace(/&quot;/g, '"'));
+            showModal('👤 ' + a.name, `
+                ${a.score ? `<div class="detail-row"><div class="detail-label">Score</div><div class="detail-value" style="font-size: 24px; font-weight: 700;">${a.score}/100</div></div>` : ''}
+                ${a.closeRate ? `<div class="detail-row"><div class="detail-label">Close Rate</div><div class="detail-value" style="color: var(--green);">${a.closeRate}</div></div>` : ''}
+                ${a.avgDeal ? `<div class="detail-row"><div class="detail-label">Avg Deal Size</div><div class="detail-value">${a.avgDeal}</div></div>` : ''}
+                <div class="detail-row"><div class="detail-label">Description</div><div class="detail-value">${a.desc}</div></div>
+            `);
+        }
+        
+        function showProject(p) {
+            if (typeof p === 'string') p = JSON.parse(p.replace(/&quot;/g, '"'));
+            showModal('📁 ' + p.name, `
+                <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value"><span class="status-badge status-${p.status}">${p.status}</span></div></div>
+                <div class="detail-row"><div class="detail-label">Description</div><div class="detail-value">${p.description || ''}</div></div>
+            `);
+        }
+        
+        function showSite(s) {
+            if (typeof s === 'string') s = JSON.parse(s.replace(/&quot;/g, '"'));
+            showModal('🌐 ' + s.name, `
+                <div class="detail-row"><div class="detail-label">Status</div><div class="detail-value"><span class="status-badge status-${s.status}">${s.status}</span></div></div>
+                ${s.url ? `<div class="detail-row"><div class="detail-label">URL</div><div class="detail-value"><a href="https://${s.url}" target="_blank" style="color: var(--accent);">${s.url}</a></div></div>` : ''}
+                ${s.stack ? `<div class="detail-row"><div class="detail-label">Stack</div><div class="detail-value">${s.stack}</div></div>` : ''}
+                ${s.purpose ? `<div class="detail-row"><div class="detail-label">Purpose</div><div class="detail-value">${s.purpose}</div></div>` : ''}
+            `);
+        }
+        
+        function showAction(a) {
+            if (typeof a === 'string') a = JSON.parse(a.replace(/&quot;/g, '"'));
+            showModal('⚡ ' + a.title, `
+                <div class="detail-row"><div class="detail-label">Type</div><div class="detail-value">${a.type}</div></div>
+                <div class="detail-row"><div class="detail-label">Details</div><div class="detail-value">${a.meta}</div></div>
+                <div class="detail-row"><div class="detail-label">Due</div><div class="detail-value" style="color: var(--orange);">⏰ ${a.time}</div></div>
+            `);
+        }
+        
+        function showFocus() {
+            showModal('📍 Current Focus', `
+                <div class="detail-row"><div class="detail-label">Primary Business</div><div class="detail-value" style="font-size: 16px; font-weight: 600;">MVA Lead Gen</div></div>
+                <div class="detail-row"><div class="detail-label">Daily Target</div><div class="detail-value">2-3 sales calls per day</div></div>
+                <div class="detail-row"><div class="detail-label">Pricing</div><div class="detail-value">$250-350/lead • ~$2,000/signed case</div></div>
+                <div class="detail-row"><div class="detail-label">Partners</div><div class="detail-value">
+                    <span class="tag">Cases on Demand (Max & Jeremy)</span>
+                    <span class="tag">Inquired Esquire (Patrick)</span>
+                </div></div>
+                <div class="detail-row"><div class="detail-label">Ultimate Goal</div><div class="detail-value" style="color: var(--yellow); font-weight: 600;">$9.6M Exit</div></div>
+            `);
+        }
+        
+        function quickAction(type) {
+            const messages = {
+                call: 'Opening calendar to schedule call...',
+                email: 'Opening email composer...',
+                task: 'Creating new task...',
+                lead: 'Opening lead form...',
+                proposal: 'Preparing proposal template...',
+                linkedin: 'Opening LinkedIn outreach queue...'
+            };
+            showModal('⚡ Quick Action', `<div style="text-align: center; padding: 20px;"><div style="font-size: 24px; margin-bottom: 12px;">🚀</div><div>${messages[type] || 'Action triggered!'}</div><div style="color: var(--text-dim); font-size: 12px; margin-top: 8px;">Feature coming soon!</div></div>`);
+        }
+        
+        // Initialize
+        refreshData();
+        setInterval(refreshData, 60000);
+    </script>
+</body>
+</html>

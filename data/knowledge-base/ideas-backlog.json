@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "Ideas mentioned but not started / Low priority items in backlog"
+  },
+  "ideas": {
+    "high_potential": [
+      {
+        "id": "shadowlink-moltbook",
+        "name": "Project Shadowlink / Moltbook",
+        "description": "Domain hack strategy (.md domains) + Moltbook secret society (agent army for traffic/links)",
+        "status": "CONCEPTUAL - Moltbook authentication completed",
+        "documented_in": "Notion",
+        "potential": "Massive traffic/link building via coordinated agent network"
+      },
+      {
+        "id": "ai-voice-appointment-setter",
+        "name": "AI Voice Appointment Setter",
+        "description": "Replace human appointment setters with AI voice (NVIDIA Persona Plex or similar)",
+        "target_cost": "<$10/call infrastructure",
+        "current_cost": "$100+/call",
+        "status": "RESEARCH - Need to evaluate NVIDIA Persona Plex pricing",
+        "potential": "90%+ cost reduction on appointment setting"
+      },
+      {
+        "id": "llm-pbn",
+        "name": "LLM Private Blog Network",
+        "description": "Use Indexsy LLM PBN for 'Best X in Y' local keywords",
+        "source": "Jacky Chou / Integrated Growth Plan",
+        "status": "EVALUATE - If budget allows",
+        "success_rate": "Majority get cited if following format"
+      },
+      {
+        "id": "youtube-comparison-videos",
+        "name": "YouTube Comparison Videos",
+        "description": "'Best Truck Accident Lawyers in [City]' videos embedded on site pages",
+        "why": "YouTube is #1 source for AI Overview citations (16,000+ citations)",
+        "status": "PLANNED - Phase 2 of AI SEO strategy",
+        "target": "1-2 videos per month"
+      },
+      {
+        "id": "spanish-leads-expansion",
+        "name": "Spanish Language Lead Expansion",
+        "description": "Target Spanish-speaking MVA victims - $100-150 cheaper per acquisition",
+        "market": "Houston is 45% Hispanic",
+        "mentioned_by": ["Daniel Ramirez", "Jalal Abdallah"],
+        "status": "READY - COD has capability ('bread and butter')"
+      }
+    ],
+    "medium_potential": [
+      {
+        "id": "sdr-bot-ghl",
+        "name": "SDR Bot in GHL Conversation AI",
+        "description": "Configure GHL's native conversation AI with SDR bot knowledge base",
+        "knowledge_base_ready": "70KB, 1,788 lines - backed up to Notion",
+        "status": "DOCS READY - Need to configure in GHL",
+        "note": "Marko said: DO NOT build GHL things autonomously"
+      },
+      {
+        "id": "localrank-llm-citations",
+        "name": "Localrank.so LLM Citations",
+        "description": "Free LLM citations on Enterprise/Scale plans",
+        "status": "EVALUATE - Check if on qualifying plan"
+      },
+      {
+        "id": "facebook-groups-strategy",
+        "name": "Facebook Groups Marketing",
+        "source": "Jacky Chou EP 721",
+        "description": "'Facebook Groups are SO EASY Right Now'",
+        "status": "REFERENCE SAVED - Not started"
+      },
+      {
+        "id": "x-algorithm-cracking",
+        "name": "X/Twitter Algorithm Strategy",
+        "source": "Jacky Chou EP 743, EP 689",
+        "description": "AI to crack X algo, prints customers without ads",
+        "status": "REFERENCE SAVED - Not started"
+      },
+      {
+        "id": "vendor-database-site",
+        "name": "PI Vendor Review Site",
+        "description": "Free directory of 50+ vendors with honest reviews, exclusive partner promotion",
+        "planned_monetization": "Referral fees when users book with exclusive partners",
+        "path": "/home/ec2-user/clawd/memory/projects/mva-lead-gen/",
+        "status": "PLANNED - MVP blocked on pi-vendors data collection"
+      }
+    ],
+    "low_priority_someday": [
+      {
+        "id": "concrete-sites-migration",
+        "name": "Concrete Sites WordPress → Cloudflare Migration",
+        "description": "Save hosting costs by migrating legacy sites",
+        "status": "BACKLOG - Marko mentioned as pending task"
+      },
+      {
+        "id": "second-brain-app",
+        "name": "Second Brain Next.js App",
+        "path": "/home/ec2-user/clawd/projects/second-brain/",
+        "description": "Personal knowledge management app",
+        "status": "EXISTS - Basic functionality, needs polish"
+      },
+      {
+        "id": "dashboard-app",
+        "name": "Dashboard App",
+        "path": "/home/ec2-user/clawd/dashboard-app/",
+        "description": "Business dashboard",
+        "status": "IN PROGRESS - Subagent redesigning with Pencil.dev"
+      },
+      {
+        "id": "financial-agent",
+        "name": "Financial Management Agent",
+        "path": "/home/ec2-user/clawd/agents/financial/",
+        "description": "Track transactions, subscriptions, burn rate from Google Sheets",
+        "status": "BUILDING - Subagent working on framework"
+      }
+    ],
+    "dream_ideas": [
+      {
+        "id": "solar-punk-communities",
+        "name": "Sustainable Solar Punk Living Communities",
+        "description": "What Marko would build if money wasn't a factor",
+        "timeline": "Post-exit",
+        "status": "DREAM - After $9.6M exit"
+      },
+      {
+        "id": "marko-inc-music",
+        "name": "Marko Inc. Music Career Pivot",
+        "description": "Use exit money to launch music in massive, world-changing way",
+        "timeline": "5 years (by ~2031)",
+        "spotify": "Marko Inc.",
+        "status": "5-YEAR VISION"
+      }
+    ]
+  },
+  "sources_for_more_ideas": {
+    "jacky_chou_sops": "/home/ec2-user/clawd/data/jacky-chou-sops.md",
+    "jacky_chou_full": "/home/ec2-user/clawd/data/jacky-chou-full-sops.md",
+    "integrated_growth_plan": "/home/ec2-user/data/kurios-finish/business/strategy/INTEGRATED_GROWTH_PLAN_2026.md",
+    "user_query_log": "/home/ec2-user/data/kurios-finish/project_history/user_query_log.md"
+  }
+}

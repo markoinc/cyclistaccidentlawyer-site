@@ -217,9 +217,9 @@ function renderPipeline() {
                                         <p class="font-medium text-sm">${lead.name}</p>
                                         ${lead.company ? `<p class="text-xs text-zinc-500">${lead.company}</p>` : ''}
                                     </div>
-                                    <span class="text-xs font-bold ${prob.class}">${prob.value}%</span>
+                                    <span class="text-xs font-bold" style="${prob.style || ''}">${prob.value}%</span>
                                 </div>
-                                ${lead.budget ? `<p class="text-xs text-green-400 mt-1">${lead.budget}</p>` : ''}
+                                ${lead.budget ? `<p class="text-xs mt-1" style="color: #00E676;">${lead.budget}</p>` : ''}
                                 ${lead.notes ? `<p class="text-xs text-zinc-400 mt-1 truncate">${lead.notes}</p>` : ''}
                             </div>
                         `;
@@ -237,12 +237,13 @@ function getCloseProbability(lead, stage) {
     // Adjust based on signals
     if (lead.priority === 'high') base += 20;
     if (lead.budget) base += 15;
-    if (lead.value) return { value: 100, class: 'prob-high' };
+    if (lead.value) return { value: 100, class: 'prob-high', style: 'color: #00E676;' };
     
     base = Math.min(base, 95);
     
     const probClass = base >= 60 ? 'prob-high' : base >= 35 ? 'prob-medium' : 'prob-low';
-    return { value: base, class: probClass };
+    const probStyle = base >= 60 ? 'color: #00E676;' : base >= 35 ? 'color: #eab308;' : 'color: #ef4444;';
+    return { value: base, class: probClass, style: probStyle };
 }
 
 function renderOpportunities() {
@@ -273,13 +274,13 @@ function renderOpportunities() {
     ];
     
     container.innerHTML = opportunities.map(opp => `
-        <div class="bg-dark-700 rounded-lg p-3 ${opp.priority === 'high' ? 'border-l-4 border-purple-500' : ''} hover:bg-dark-600 transition cursor-pointer">
+        <div class="bg-dark-700 rounded-lg p-3 ${opp.priority === 'high' ? 'border-l-4' : ''} hover:bg-dark-600 transition cursor-pointer" ${opp.priority === 'high' ? 'style="border-left-color: #3366FF;"' : ''}>
             <div class="flex items-start gap-3">
                 <span class="text-xl">${opp.icon}</span>
                 <div class="flex-1">
                     <div class="flex items-center justify-between">
                         <span class="font-semibold text-sm">${opp.title}</span>
-                        <span class="text-xs text-green-400">${opp.subtitle}</span>
+                        <span class="text-xs" style="color: #00E676;">${opp.subtitle}</span>
                     </div>
                     <p class="text-xs text-zinc-400 mt-1">${opp.description}</p>
                 </div>
@@ -306,9 +307,9 @@ function renderGrowthInitiatives() {
                 <span class="text-xs text-zinc-500">${init.target}</span>
             </div>
             <div class="h-2 bg-dark-600 rounded-full overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all" style="width: ${init.progress}%"></div>
+                <div class="h-full rounded-full transition-all" style="width: ${init.progress}%; background: linear-gradient(90deg, #3366FF, #00E676);"></div>
             </div>
-            <p class="text-xs text-zinc-500 mt-1 text-right">${init.progress}%</p>
+            <p class="text-xs mt-1 text-right" style="color: ${init.progress >= 70 ? '#00E676' : '#3366FF'};">${init.progress}%</p>
         </div>
     `).join('');
 }
@@ -317,15 +318,17 @@ function renderProjects() {
     const container = document.getElementById('projects-list');
     const projects = dashboardData.projects?.core || [];
     
-    container.innerHTML = projects.slice(0, 5).map(project => `
+    container.innerHTML = projects.slice(0, 5).map(project => {
+        const status = getStatusClass(project.status);
+        return `
         <div class="bg-dark-700 rounded-lg p-3 hover:bg-dark-600 transition cursor-pointer">
             <div class="flex items-center justify-between">
                 <span class="font-medium text-sm">${project.name}</span>
-                <span class="text-xs px-2 py-0.5 rounded ${getStatusClass(project.status)}">${project.status}</span>
+                <span class="text-xs px-2 py-0.5 rounded ${status.class}" style="${status.style}">${project.status}</span>
             </div>
             <p class="text-xs text-zinc-400 mt-1 truncate">${project.description || ''}</p>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 function renderAgents() {
@@ -340,8 +343,8 @@ function renderAgents() {
                     <span class="font-medium text-sm">${agent.name}</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></span>
-                    <span class="text-xs text-green-400">Online</span>
+                    <span class="w-2 h-2 rounded-full pulse-dot" style="background: #00E676;"></span>
+                    <span class="text-xs" style="color: #00E676;">Online</span>
                 </div>
             </div>
             <p class="text-xs text-zinc-400 mt-1">${agent.model} • ${agent.role}</p>
@@ -351,13 +354,18 @@ function renderAgents() {
 
 function getStatusClass(status) {
     const classes = {
-        'active': 'bg-green-500/20 text-green-400',
+        'active': 'bg-emerald-500/20',
         'building': 'bg-purple-500/20 text-purple-400',
         'pending': 'bg-yellow-500/20 text-yellow-400',
-        'live': 'bg-green-500/20 text-green-400',
-        'dev': 'bg-blue-500/20 text-blue-400'
+        'live': 'bg-emerald-500/20',
+        'dev': 'bg-blue-500/20'
     };
-    return classes[status] || 'bg-zinc-500/20 text-zinc-400';
+    const styles = {
+        'active': 'color: #00E676;',
+        'live': 'color: #00E676;',
+        'dev': 'color: #3366FF;'
+    };
+    return { class: classes[status] || 'bg-zinc-500/20 text-zinc-400', style: styles[status] || '' };
 }
 
 function scrollToSection(id) {

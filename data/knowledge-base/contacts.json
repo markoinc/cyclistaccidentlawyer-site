@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "Key people, partners, prospects database"
+  },
+  "partners": {
+    "cases_on_demand": {
+      "company": "CasesOnDemand",
+      "relationship": "Lead generation partner",
+      "contacts": [
+        {"name": "Max", "role": "Partner"},
+        {"name": "Jeremy", "role": "Partner"}
+      ],
+      "model": "Media buy - deploys client budget to ad platforms",
+      "capabilities": {
+        "monthly_leads": "8,000+",
+        "ad_spend_experience": "$30M+",
+        "platforms": ["Meta", "Google", "YouTube", "TikTok", "Bing"]
+      },
+      "management_fee": "~20% (baked in)",
+      "minimum_spends": {
+        "standard": 15000,
+        "california": 50000
+      },
+      "clients_mentioned": ["Angel Reyes (3-4 years)", "Carns", "Jacoby", "M&Y", "B&D"],
+      "differentiator": "Seasoned $30M pixel, dedicated 1:1 campaigns (no shared leads)"
+    },
+    "inquire2esquire": {
+      "company": "Inquire2Esquire",
+      "contact": "Patrick",
+      "relationship": "Outsourced intake & case signing partner",
+      "background": "Former director of intake at South Carolina firm (4 years experience)",
+      "approach": "Sales team approach (not call center scripts)",
+      "speed_to_lead": "Calls within 5 minutes",
+      "follow_up": "18 touches over 9 days (4x first day, 3x/day for next week)",
+      "pricing": {
+        "live_transfers": "$100/transfer",
+        "signed_cases": "$350/case"
+      },
+      "upfront_deposit": "$1,750 (5 cases × $350)",
+      "services": [
+        "Speed to lead (5 minutes)",
+        "Aggressive follow-up (18 touches)",
+        "Custom qualification criteria",
+        "Vetting: treatment gaps, coverage, liability",
+        "Firm branding on calls",
+        "Hotline for borderline cases",
+        "Risk sharing (credits for bad cases)"
+      ],
+      "metrics": {
+        "contact_rate": "30-40% of raw leads",
+        "transfer_rate": "~30% of raw leads",
+        "signup_rate": "~15% of raw leads",
+        "close_on_transfers": "40-60%"
+      },
+      "why_critical": "Patrick's background is THE #1 trust builder in 90%+ of calls"
+    }
+  },
+  "prospects": {
+    "hot": [
+      {
+        "name": "Scott Barney",
+        "firm": "Barney Injury Law",
+        "website": "barneyinjurylaw.com",
+        "location": "Virginia Beach, Virginia",
+        "avatar": "Burned Veteran + Solo Transitioner",
+        "context": "$250K wasted on marketing, 30-35 cases (was 131 during COVID)",
+        "pain_points": ["Burned by multiple vendors", "Sales pitches never work", "Needs trusted partner"],
+        "budget": "$15,000+",
+        "probability": "85%",
+        "status": "Patrick call scheduled",
+        "next_action": "Follow up on Patrick call outcome IMMEDIATELY"
+      },
+      {
+        "name": "Ross Robin",
+        "firm": "Rohin Law",
+        "website": "rohinlaw.com",
+        "location": "Houston, Texas",
+        "avatar": "Mass Tort Crossover / Fast Scaler",
+        "context": "15 years mass tort, starting NEW PI firm from scratch",
+        "licensed_states": ["Texas", "Arizona", "Colorado", "Florida"],
+        "budget": "$15,000+",
+        "probability": "75%",
+        "next_action": "Follow up on email, schedule Patrick call ASAP"
+      },
+      {
+        "name": "Lucas Naccarati",
+        "firm": "Muniz Kim Law",
+        "website": "munizkimlaw.com",
+        "location": "New Jersey / SoCal",
+        "avatar": "Fast Scaler",
+        "context": "Grew previous firm to $5M annually, 120+ clients in <1 year (referral)",
+        "budget": "$30,000+",
+        "probability": "80%",
+        "next_action": "Send proposal with Patrick CC'd"
+      },
+      {
+        "name": "Jalal Abdallah",
+        "firm": "Jalal Law",
+        "website": "jalallaw.com",
+        "location": "Michigan (expanding to CA, NY, MA)",
+        "avatar": "The Expansionist",
+        "context": "Family firm, signing 8-10 MVA/month, hates form-fill-then-chase",
+        "budget": "$15,000 MI, $50,000 CA",
+        "probability": "70%",
+        "next_action": "Follow up Wednesday, prepare multi-state proposal"
+      },
+      {
+        "name": "Omeed Hakimianpour",
+        "firm": "The Injury Partners",
+        "website": "theinjurypartners.com",
+        "location": "California (multi-state)",
+        "avatar": "Sophisticated Buyer",
+        "context": "Already buying leads, comparison shopping, SB 37 compliance concerns",
+        "budget": "$50,000",
+        "probability": "65%",
+        "next_action": "Send summary email, connect with Patrick, address insurance drop credits"
+      },
+      {
+        "name": "Rich Hyde",
+        "firm": "Trial Tribe",
+        "website": "trialtribe.com",
+        "location": "Texas",
+        "avatar": "Burned Veteran",
+        "context": "Deep skeptic, burned by Quintessa + Walker, wants pay-per-lead with guarantees",
+        "budget": "$15,000-$30,000 (has 'shit ton of capital' once trust earned)",
+        "probability": "60%",
+        "next_action": "Send proposal WITH GUARANTEES in writing, max case cost cap"
+      },
+      {
+        "name": "Dagmawi Getachew",
+        "firm": "DG Firm",
+        "website": "dgfirm.law",
+        "location": "Texas",
+        "avatar": "Solo Transitioner",
+        "context": "Solo PI attorney, 7 years, compliance concerns about calling leads",
+        "budget": "$17,500 test",
+        "probability": "65%",
+        "next_action": "Follow up on pay-per-lead decision (couple days)"
+      }
+    ],
+    "in_progress": [
+      {
+        "name": "Daniel Ramirez",
+        "firm": "Rey de la Ley",
+        "website": "reydelaley.com",
+        "location": "Dallas (expanding to Houston)",
+        "avatar": "Solo Transitioner / Expansionist",
+        "context": "20 years in Dallas, $1M+/year, 10 MVA/month, Spanish-speaking focus",
+        "budget": "$15,000+",
+        "probability": "75% (when ready)",
+        "blocker": "Needs office and intake person in Houston first",
+        "next_action": "Follow up in 1 week"
+      },
+      {
+        "name": "Josh Sweeney",
+        "firm": "Shane Smith Law",
+        "website": "shanesmithlaw.com",
+        "location": "Atlanta, Georgia (expanding NC)",
+        "avatar": "Channel Strategist / Volume King",
+        "context": "15 lead sources already, getting duplicates, wants YouTube/TikTok-only channels",
+        "budget": "$30,000+ (increasing monthly)",
+        "probability": "50%",
+        "blocker": "Needs proof of non-Meta channel effectiveness",
+        "next_action": "Prepare YouTube/TikTok data, follow up next week"
+      },
+      {
+        "name": "Michael Shirts",
+        "firm": "BS Injury Law",
+        "website": "bsinjurylaw.com",
+        "location": "Las Vegas, Nevada",
+        "avatar": "Cautious New Buyer",
+        "context": "Law Pronation disaster, wants live transfers with quality",
+        "budget": "$15,000",
+        "probability": "70%",
+        "status": "Patrick call scheduled",
+        "next_action": "Follow up on Patrick call outcome"
+      },
+      {
+        "name": "Michael Schulz",
+        "firm": "RMD Law",
+        "status": "NO TRANSCRIPT DATA",
+        "next_action": "Search CRM for contact history, follow up 02/10"
+      },
+      {
+        "name": "Joan Suh",
+        "status": "NO TRANSCRIPT DATA",
+        "next_action": "Search CRM for contact history"
+      }
+    ],
+    "closed": [
+      {
+        "name": "Jason E",
+        "firm": "Eisenberg Law Group PC",
+        "website": "eisenberglawgrouppc.com",
+        "location": "California",
+        "avatar": "Fast Scaler (Returning)",
+        "deal": {
+          "amount": 31750,
+          "breakdown": {"media_buy": 30000, "patrick_deposit": 1750},
+          "payment": "ACH",
+          "date": "2026-01"
+        },
+        "history": "5 years with COD, got $2M case from them previously",
+        "what_closed": ["Patrick on call", "All-inclusive positioning", "Previous $2M case trust", "Dedicated 1:1 campaigns"]
+      }
+    ],
+    "lost": [
+      {
+        "name": "Jonathan Mahler",
+        "firm": "conduit.law",
+        "reason": "Wanted full fee transparency, not a fit"
+      },
+      {
+        "name": "Michael Goodrich",
+        "reason": "Canceled"
+      }
+    ]
+  },
+  "customer_avatars": {
+    "avatar_1_fast_scaler": {
+      "description": "Growing firms with proven intake, budget ready, understand digital marketing ROI",
+      "close_rate": "100%",
+      "avg_deal": 27500,
+      "examples": ["Jason E", "Lucas Naccarati", "Ross Robin"],
+      "key_pitch": "Results and scale, Patrick expertise, cost per CASE focus, path to scale"
+    },
+    "avatar_2_burned_veteran": {
+      "description": "Experienced, burned by vendors, demands contractual protections",
+      "close_rate": "25% (higher with guarantees)",
+      "avg_deal": 15000,
+      "examples": ["Rich Hyde", "Scott Barney", "Michael Shirts"],
+      "key_pitch": "Acknowledge pain, guaranteed minimums IN WRITING, transparency, Patrick intro"
+    },
+    "avatar_3_solo_transitioner": {
+      "description": "Solo practitioners going independent, cautious budget, needs confidence",
+      "close_rate": "50%",
+      "avg_deal": 17500,
+      "examples": ["Dagmawi Getachew", "Daniel Ramirez"],
+      "key_pitch": "Pay-per-lead initially, small test, Patrick saves time"
+    },
+    "avatar_4_sophisticated_buyer": {
+      "description": "Multi-state, comparison shopping, high standards",
+      "close_rate": "0% immediate (high future)",
+      "avg_deal": 50000,
+      "examples": ["Omeed Hakimianpour", "Josh Sweeney"],
+      "key_pitch": "Clear differentiation (Patrick), competitive intelligence, data"
+    },
+    "avatar_5_expansionist": {
+      "description": "Young firms aggressively scaling, values time over money, wants done-for-you",
+      "close_rate": "HIGH when intake included",
+      "avg_deal": 50000,
+      "examples": ["Jalal Abdallah"],
+      "key_pitch": "Done-for-you intake engine, speed, multi-state capability"
+    }
+  },
+  "personal": {
+    "noia": {
+      "relationship": "Girlfriend",
+      "met": "~3 months ago in Colombia",
+      "background": "Israeli/French, grew up in Luxembourg/Switzerland",
+      "travel_plans": "Going to Israel together in ~2 weeks"
+    }
+  },
+  "key_vendors_competitors": {
+    "mentioned_negatively": ["Quintessa (fake leads, bar complaints)", "Walker Advertising (hot and cold)", "Law Pronation (disaster)", "Case Connect (didn't work)"],
+    "mentioned_positively": ["Angel Reyes (long-term COD client)"],
+    "market_intelligence": {
+      "supio_ai": "$250/case, Thomson Reuters partnership, rising star",
+      "mycase_vs_clio": "MyCase (affordable/simple) vs Clio (feature-rich)",
+      "ai_adoption": "37% of PI lawyers use AI, 19% have legal-specific AI"
+    }
+  }
+}

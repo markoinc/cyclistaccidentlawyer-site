@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "All goals with timeline and progress tracking"
+  },
+  "ultimate_goal": {
+    "target": "$9.6M exit",
+    "timeline": "End of 2026",
+    "description": "Sell Kurios (or an asset built) for $9.6 million",
+    "progress": "EARLY STAGE - Building revenue and systems",
+    "strategy": "Own AI systems rather than compete with them. Build agent fleets, automate revenue streams, position early on emerging platforms, accumulate leverage."
+  },
+  "5_year_vision": {
+    "timeline": "By ~2031 (age 30)",
+    "milestones": [
+      "Fully retired — money working for him, not the other way around",
+      "Still working on projects, but doesn't HAVE to",
+      "Working on big, world-changing projects",
+      "Married, possibly a kid",
+      "Full pivot to music — launch Marko Inc. in massive way"
+    ]
+  },
+  "2026_goals": {
+    "Q1": {
+      "client_acquisition": {
+        "target": "2-3 sales calls/day at lowest cost",
+        "current": "5-7 calls/week at $180-300/call",
+        "gap": "Need to increase volume, reduce cost to <$100/call",
+        "progress": "IN PROGRESS",
+        "key_actions": [
+          "Test AI intake agent (90% complete)",
+          "Hire appointment setters",
+          "Evaluate NVIDIA Persona Plex AI voice"
+        ]
+      },
+      "texas_site": {
+        "target": "1,000+ monthly organic traffic",
+        "current": "~0 (site in development)",
+        "milestones": [
+          {"phase": "Sprint 1 - Foundation", "status": "IN PROGRESS"},
+          {"phase": "Sprint 2 - Core Conversion", "status": "NOT STARTED"},
+          {"phase": "Sprint 3 - SEO Expansion", "status": "NOT STARTED"},
+          {"phase": "Sprint 4 - Scale Pages", "status": "NOT STARTED"}
+        ]
+      },
+      "ai_seo": {
+        "target": "10+ ChatGPT citations, 5+ AI Overview features",
+        "current": "0 (not started)",
+        "actions": [
+          "Set up Trackings.ai (free)",
+          "Create 5 listicles for parasite sites",
+          "First press release via AB Newswire ($80)"
+        ]
+      },
+      "call_cost_reduction": {
+        "target": "<$100/call",
+        "current": "$180-300/call",
+        "actions": [
+          "Deploy AI intake agent",
+          "Test appointment setters",
+          "Optimize ad targeting"
+        ]
+      }
+    },
+    "Q2": {
+      "texas_site": {
+        "target": "5,000+ monthly organic traffic",
+        "pages": "100+ indexed",
+        "keywords": "2,000+ ranking"
+      },
+      "ai_seo": {
+        "target": "30+ ChatGPT citations, 15+ AI Overviews",
+        "actions": [
+          "Scale listicles to 20-30",
+          "YouTube comparison videos (5+)",
+          "Reddit authority (50+ contributions)"
+        ]
+      },
+      "call_volume": {
+        "target": "3-5 calls/day at <$75/call"
+      }
+    },
+    "full_year": {
+      "revenue": {
+        "target": "Significant enough for exit discussions",
+        "model": "Recurring client contracts + referral fees"
+      },
+      "systems": {
+        "target": "Fully automated lead-to-close pipeline",
+        "components": [
+          "AI intake handling 80%+ of initial qualification",
+          "SEO generating 50%+ of leads organically",
+          "Partner network (COD + Patrick) handling fulfillment"
+        ]
+      }
+    }
+  },
+  "financial_goals": {
+    "immediate": {
+      "save_500_month": {
+        "purpose": "Settle with collectors",
+        "status": "TARGET"
+      },
+      "cancel_elective": {
+        "amount": "$816.67/month",
+        "status": "CANCELLED"
+      },
+      "reduce_subscriptions": {
+        "target": "Replace with Sierra capabilities",
+        "potential_savings": "$680/month",
+        "items": ["Exa.AI ($491.90)", "OpenAI ($70)", "Perplexity ($10)", "Apify ($39)", "Flowith ($19.90)", "Lovable ($50)"]
+      }
+    },
+    "debt_payoff": {
+      "total_cc_debt": "$20,000",
+      "priority": "Pay minimums on lower rates, attack Sapphire (21.99%) first",
+      "monthly_interest_bleed": "$400"
+    },
+    "scheduled": {
+      "feb_3": "Full expense audit with Marko"
+    }
+  },
+  "operational_metrics": {
+    "3_month": {
+      "call_booking": {
+        "volume": "2-3 calls/day",
+        "cost": "<$100/call",
+        "conversion": "20-30%"
+      },
+      "texas_site": {
+        "pages": "75+ indexed",
+        "keywords": "500+ ranking",
+        "traffic": "1,000+ monthly",
+        "leads": "20+/month from SEO"
+      },
+      "ai_seo": {
+        "chatgpt_citations": "10+",
+        "ai_overviews": "5+",
+        "traffic_from_ai": "500+/month"
+      },
+      "seo_network": {
+        "sites": "5-7 live",
+        "pages_per_site": "10-20"
+      },
+      "customer_refinement": {
+        "identified": "Top 1-2 buyer categories + offer types",
+        "close_rate_improvement": "20%+"
+      }
+    },
+    "6_month": {
+      "call_booking": {
+        "volume": "3-5 calls/day",
+        "cost": "<$75/call",
+        "conversion": "30%+"
+      },
+      "texas_site": {
+        "pages": "100+",
+        "keywords": "2,000+",
+        "traffic": "5,000+ monthly",
+        "leads": "75+/month"
+      },
+      "ai_seo": {
+        "chatgpt_citations": "30+",
+        "ai_overviews": "15+",
+        "traffic": "2,000-6,000/month"
+      }
+    }
+  },
+  "personal_goals": {
+    "health": {
+      "bedtime_reminder": "9 hours before morning calendar events",
+      "status": "Sierra monitoring"
+    },
+    "travel": {
+      "current_location": "Pisac, Peru",
+      "next_destination": "Israel (in ~2 weeks)",
+      "traveling_with": "Noia (girlfriend)"
+    },
+    "music": {
+      "stage_name": "Marko Inc.",
+      "platforms": ["Spotify"],
+      "timeline": "After exit - full pivot"
+    }
+  },
+  "progress_tracking": {
+    "closed_deals": [
+      {
+        "client": "Jason E (Eisenberg Law Group)",
+        "amount": 31750,
+        "date": "2026-01",
+        "what_worked": "Returning client, Patrick on call, all-inclusive positioning"
+      }
+    ],
+    "hot_pipeline": {
+      "total_potential": "$200,000+",
+      "prospects": [
+        {"name": "Scott Barney", "amount": "$15,000+", "probability": "85%"},
+        {"name": "Ross Robin", "amount": "$15,000+", "probability": "75%"},
+        {"name": "Lucas Naccarati", "amount": "$30,000+", "probability": "80%"},
+        {"name": "Jalal Abdallah", "amount": "$50,000+", "probability": "70%"},
+        {"name": "Rich Hyde", "amount": "$15,000+", "probability": "60%"},
+        {"name": "Omeed Hakimianpour", "amount": "$50,000", "probability": "65%"}
+      ]
+    }
+  }
+}

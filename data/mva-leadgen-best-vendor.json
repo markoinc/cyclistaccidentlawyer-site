@@ -1,0 +1,218 @@
+{
+  "analysis_date": "2026-02-01",
+  "objective": "Find MVA/PI lead generation vendor with best online sentiment",
+  
+  "winner": {
+    "name": "4LegalLeads",
+    "website": "https://4legalleads.com",
+    "founded": 2001,
+    "verdict": "BEST OVERALL SENTIMENT",
+    
+    "ratings": {
+      "trustpilot": {
+        "score": 4.9,
+        "max": 5.0,
+        "review_count": 205,
+        "sentiment": "Excellent - highest verified rating among all PI lead vendors"
+      },
+      "scamadviser": {
+        "score": 4.8,
+        "review_count": 131
+      },
+      "realreviews": {
+        "score": 4.9,
+        "review_count": 41
+      }
+    },
+    
+    "credibility_signals": [
+      "ABA Premium Solutions Partner",
+      "Official Clio Grow integration",
+      "23+ years in business (since 2001)",
+      "Thousands of active law firm clients",
+      "No BBB complaints found"
+    ],
+    
+    "what_makes_them_good": [
+      "100% EXCLUSIVE leads - never shared with other attorneys",
+      "Real-time lead delivery (web, email, text, live call transfer, or CRM)",
+      "NO long-term contracts - fund account as needed, cancel anytime with 24hr notice",
+      "Invalid lead return system - 5 business day window for credit",
+      "Prorated refunds available anytime",
+      "Dedicated account managers consistently praised for responsiveness",
+      "40+ legal categories covered",
+      "All 50 states with zip code/county/state targeting",
+      "Verification team reviews lead validity"
+    ],
+    
+    "pricing_model": {
+      "type": "Pay-per-lead with account funding",
+      "contracts": "None - no long-term commitment",
+      "minimums": "No monthly minimums",
+      "pricing_by_category": {
+        "auto_accident": "$300-$1,500/lead",
+        "personal_injury_general": "$175-$425/lead",
+        "medical_malpractice": "$40/lead",
+        "workers_compensation": "$75-$550/lead",
+        "note": "Prices vary by geographic competition"
+      },
+      "billing_options": [
+        "Manual account funding",
+        "Auto-billing for convenience"
+      ]
+    },
+    
+    "delivery_options": [
+      "Live call transfers",
+      "Email notifications",
+      "SMS/text alerts",
+      "Direct CRM integration",
+      "Web dashboard"
+    ],
+    
+    "gaps_and_weaknesses": [
+      "Higher price point than shared lead vendors",
+      "Some Reddit comments mention aggressive sales follow-up after signup",
+      "Lead quality still varies by market - not immune to tire-kickers",
+      "No chatbot or AI intake features",
+      "Less focused on PI specifically (generalist across 40+ categories)",
+      "Conversion tracking requires manual effort or CRM setup"
+    ],
+    
+    "what_attorneys_still_complain_about": [
+      "Speed-to-contact pressure - must answer quickly or lose the lead",
+      "Some leads have bad phone numbers despite verification",
+      "Competitive markets (LA, NYC, Miami) have very high lead costs",
+      "Not all leads become cases - still need strong intake process",
+      "Geographic targeting can be broad in less populated areas"
+    ]
+  },
+  
+  "runner_ups": [
+    {
+      "name": "On Point Legal Leads",
+      "website": "https://onpointlegalleads.com",
+      "founded": 2016,
+      "strengths": [
+        "PI/mass tort specialist",
+        "100% exclusive leads",
+        "Rigorous screening process",
+        "Live transfers and signed retainers available"
+      ],
+      "concerns": [
+        "Less publicly available reviews",
+        "Smaller company",
+        "Limited online sentiment data"
+      ],
+      "sentiment": "Positive but limited data"
+    },
+    {
+      "name": "eGenerationMarketing",
+      "website": "https://egenerationmarketing.com",
+      "founded": 2010,
+      "strengths": [
+        "PI-focused since 2010",
+        "Live call leads with 10% higher conversion",
+        "Own case management software (eLuminate)"
+      ],
+      "concerns": [
+        "Limited public review data",
+        "Less brand recognition"
+      ],
+      "sentiment": "Positive but limited data"
+    },
+    {
+      "name": "Unbundled Attorney",
+      "website": "https://unbundledattorney.com",
+      "strengths": [
+        "Highest converting leads (pre-educated on costs)",
+        "Exclusive leads only",
+        "Limited attorney count per region"
+      ],
+      "concerns": [
+        "Limited practice areas (no pure PI focus)",
+        "Pricing not transparent"
+      ],
+      "sentiment": "Very positive for supported practice areas"
+    }
+  ],
+  
+  "vendors_to_avoid": [
+    {
+      "name": "Martindale-Nolo",
+      "sentiment": "VERY NEGATIVE",
+      "evidence": [
+        "Multiple BBB complaints about fake/recycled leads",
+        "Reddit r/LawFirm: 'Nolo is a very scummy company'",
+        "Reddit: 'Garbage leads - avoid at all costs'",
+        "Complaints about dead emails, bad phone numbers, out-of-area leads",
+        "Leads often beyond statute of limitations",
+        "High sales rep turnover",
+        "Non-exclusive leads create attorney competition"
+      ]
+    },
+    {
+      "name": "LegalMatch",
+      "sentiment": "NEGATIVE",
+      "evidence": [
+        "Very expensive ($4K-$75K/year)",
+        "Usually requires 3-year commitment",
+        "Sitejabber: 'misrepresentations over inflating leads'",
+        "Reddit mentions poor quality"
+      ]
+    },
+    {
+      "name": "Quintessa Marketing",
+      "sentiment": "MIXED TO NEGATIVE",
+      "evidence": [
+        "Lawsuit: ERB Legal Invs. v. Quintessa Mktg. (Google Scholar)",
+        "Reddit r/LawFirm: 'Quintessa is the great deceiver!'",
+        "Employee claims: 'coerce clients into changing info to sign lead'",
+        "Claims 50%+ conversion rate seem inflated vs industry norms"
+      ]
+    },
+    {
+      "name": "Case Connect",
+      "sentiment": "NEGATIVE",
+      "evidence": [
+        "Reddit: 'leads were cases already turned down by other attorneys'",
+        "Leads not properly vetted",
+        "Injuries didn't meet state law requirements"
+      ]
+    },
+    {
+      "name": "Lawyer.com",
+      "sentiment": "NEGATIVE",
+      "evidence": [
+        "Reddit: 'Spammy and scammy'",
+        "BBB complaints about fake lawyers using platform",
+        "Identity theft concerns"
+      ]
+    }
+  ],
+  
+  "industry_insights": {
+    "average_pi_conversion_rate": "7-10% (industry benchmark)",
+    "exclusive_vs_shared": "Exclusive leads cost 2-3x more but convert significantly better",
+    "speed_to_contact": "Critical - quality cases signed within 2 weeks of search start",
+    "typical_cpl_range": {
+      "shared_leads": "$20-$100",
+      "exclusive_leads": "$75-$600",
+      "live_transfers": "$300-$1,500"
+    },
+    "reddit_consensus": "Most attorneys prefer SEO/LSA over purchased leads for long-term ROI"
+  },
+  
+  "sources_consulted": [
+    "Trustpilot",
+    "BBB (Better Business Bureau)",
+    "Reddit r/LawFirm",
+    "Reddit r/Legalmarketing",
+    "Clio blog",
+    "Rankings.io",
+    "Lawyerist",
+    "Scamadviser",
+    "Sitejabber",
+    "Various attorney forums"
+  ]
+}

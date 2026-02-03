@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "Comprehensive project database for Marko / KuriosBrand LLC",
+    "goal_context": {
+      "ultimate_goal": "$9.6M exit ASAP",
+      "short_term": "2-3 sales calls/day at lowest cost",
+      "focus": "Client acquisition first"
+    }
+  },
+  "projects": {
+    "active": [
+      {
+        "id": "mva-lead-gen",
+        "name": "MVA Lead Generation Business",
+        "description": "Core business - generating motor vehicle accident leads for PI attorneys via Meta ads",
+        "status": "ACTIVE - PRIMARY FOCUS",
+        "priority": "P0",
+        "paths": [
+          "/home/ec2-user/clawd/memory/projects/mva-lead-gen/",
+          "/home/ec2-user/data/kurios-finish/business/"
+        ],
+        "partners": {
+          "cases_on_demand": {
+            "contacts": ["Max", "Jeremy"],
+            "role": "Lead generation via paid advertising",
+            "model": "Media buy - $30M+ pixel, 8,000+ leads/month"
+          },
+          "inquire2esquire": {
+            "contact": "Patrick",
+            "role": "Outsourced legal intake & case signing",
+            "pricing": {
+              "live_transfers": "$100/transfer",
+              "signed_cases": "$350/case"
+            }
+          }
+        },
+        "current_metrics": {
+          "cost_per_call": "$180-300",
+          "target_cost_per_call": "<$100",
+          "lead_cost_texas": "$250",
+          "conversion_rate": "15%",
+          "cost_per_signed_case": "$1,700-$2,100"
+        },
+        "revenue_model": {
+          "tier_1_otp_leads": {
+            "minimum": 15000,
+            "deliverable": "35-50 leads",
+            "conversion": "15%",
+            "cpa_range": "$2,143-$3,000"
+          },
+          "tier_2_live_transfers": {
+            "minimum": 25000,
+            "deliverable": "18-25 transfers",
+            "conversion": "35-40%",
+            "cpa_range": "$2,083-$3,571"
+          },
+          "tier_3_signed_cases": {
+            "minimum": 35000,
+            "deliverable": "10-12 signed cases",
+            "average_cpa": "$2,917-$3,500"
+          }
+        },
+        "next_actions": [
+          "Follow up on hot prospects: Scott Barney, Ross Robin, Rich Hyde",
+          "Set up GHL sales flow automations",
+          "Reduce call cost from $250 to <$100",
+          "Test AI Intake Agent (90% complete, needs OpenAI key)"
+        ],
+        "client_acquisition_relevance": "CRITICAL - This IS the business"
+      },
+      {
+        "id": "texas-mva-site",
+        "name": "Texas MVA Site (texastruckaccidents.net)",
+        "description": "SEO authority site for Texas truck accident leads",
+        "status": "ACTIVE - IN DEVELOPMENT",
+        "priority": "P1",
+        "paths": [
+          "/home/ec2-user/data/kurios-finish/sites/texas-mva/",
+          "https://github.com/markoinc/texas-mva-site"
+        ],
+        "tech_stack": ["Next.js", "Tailwind CSS", "MDX", "Cloudflare Pages"],
+        "features": {
+          "implemented": ["Calculator", "Multi-step form", "City pages template", "GHL webhook integration"],
+          "planned": ["400+ programmatic city pages", "FAQ schema", "AI SEO optimization"]
+        },
+        "seo_strategy": {
+          "target_keywords": ["texas truck accident lawyer", "houston car accident attorney", "dallas mva lawyer"],
+          "ai_seo": {
+            "chatgpt_listicles": "5+ on parasite sites",
+            "google_ai_overviews": "Press releases + Reddit + YouTube",
+            "budget": "$80-300/month"
+          }
+        },
+        "traffic_goals": {
+          "3_month": "1,000+ monthly organic",
+          "6_month": "5,000+ monthly organic",
+          "12_month": "8,000-23,000 monthly organic"
+        },
+        "next_actions": [
+          "Complete Sprint 1 (Foundation)",
+          "Add FAQ schema to all pages",
+          "Create 5 ChatGPT listicles for parasite sites",
+          "Submit first press release via AB Newswire ($80)"
+        ],
+        "client_acquisition_relevance": "HIGH - Organic lead source"
+      },
+      {
+        "id": "pi-vendors-intelligence",
+        "name": "PI Vendor Intelligence System (SCOUT)",
+        "description": "AI-powered vendor matching platform for PI attorneys with multi-source scraping",
+        "status": "ACTIVE - EARLY DATA COLLECTION",
+        "priority": "P1",
+        "path": "/home/ec2-user/clawd/projects/pi-vendors/",
+        "tech_stack": ["Python", "asyncio", "Playwright", "SQLite", "OpenAI GPT-4o-mini", "Telegram Bot"],
+        "data_sources": {
+          "reddit": "14 subreddits, 50+ keywords, 30+ vendor names",
+          "linkedin": "Search queries + company pages",
+          "review_sites": ["Trustpilot", "G2", "Capterra", "BBB", "Clutch"],
+          "twitter_x": "Via web search"
+        },
+        "current_data": {
+          "raw_items": 48,
+          "vendors_profiled": 3,
+          "buyers_profiled": 3,
+          "scrape_runs": 4
+        },
+        "telegram_bot": "@scoutassstantdatabot",
+        "planned_site": "personalinjuryvendors.com",
+        "next_actions": [
+          "Continue data collection",
+          "Build matching engine",
+          "Deploy personalinjuryvendors.com frontend"
+        ],
+        "client_acquisition_relevance": "HIGH - Positions Kurios as authority, provides real-time intel"
+      },
+      {
+        "id": "ai-intake-agent",
+        "name": "AI Intake Agent System",
+        "description": "Automated lead qualification via WhatsApp/Telegram using Claude agents",
+        "status": "90% COMPLETE - NEEDS API KEY",
+        "priority": "P0 - COST SAVER",
+        "path": "/home/ec2-user/data/kurios-finish/automation/clawd-agents/",
+        "components": {
+          "context_loader": "9,163 chars of business intel + 11 customer avatars",
+          "intake_agent": "Initial lead qualification via messaging",
+          "avatar_detector": "Identifies Fast Scaler, Burned Veteran, etc.",
+          "voice_transcription": "Handles voice notes via Whisper API",
+          "main_server": "Routes conversations, manages state"
+        },
+        "cost_savings": {
+          "traditional_intake": "$4,550-$6,500/month",
+          "ai_agent": "$55-$85/month",
+          "monthly_savings": "$4,465-$6,415",
+          "annual_savings": "$53,580-$76,980",
+          "reduction": "98%"
+        },
+        "next_actions": [
+          "Add OpenAI API key to .env files",
+          "Test the system",
+          "Connect to GHL pipeline"
+        ],
+        "client_acquisition_relevance": "CRITICAL - Reduces call cost, qualifies leads 24/7"
+      },
+      {
+        "id": "seo-network",
+        "name": "SEO Network (Supporting Sites)",
+        "description": "Network of 5-7 niche sites linking to Texas truck accidents site",
+        "status": "PLANNING",
+        "priority": "P2",
+        "paths": [
+          "/home/ec2-user/data/kurios-finish/sites/network-stats-1/",
+          "/home/ec2-user/data/kurios-finish/sites/network-corridor-stats/",
+          "/home/ec2-user/data/kurios-finish/sites/mva-engine/"
+        ],
+        "planned_sites": [
+          "Statistics site (Texas truck crash data)",
+          "Calculator site (standalone tool)",
+          "Resource site (accident guides)",
+          "2-3 local business sites",
+          "Commercial MVA specific site"
+        ],
+        "tech_stack": ["Astro", "Next.js", "Cloudflare Pages (free)"],
+        "budget": "$5-10/month (domains only)",
+        "next_actions": [
+          "Register first 3 domains",
+          "Set up Cloudflare Pages templates",
+          "Build first wave of sites (after Texas site foundation complete)"
+        ],
+        "client_acquisition_relevance": "MEDIUM - Link building, traffic funneling"
+      },
+      {
+        "id": "kuriosbrand-website",
+        "name": "KuriosBrand Website",
+        "description": "Main company website",
+        "status": "ACTIVE - MIGRATED",
+        "priority": "P2",
+        "migration": {
+          "from": "Lovable",
+          "to": "GitHub + Cloudflare Pages",
+          "repo": "markoinc/kuriosbrand",
+          "cloudflare_project": "kuriosbrandoriginal"
+        },
+        "next_actions": [
+          "Ensure Supabase env vars configured for build",
+          "Update content as needed"
+        ],
+        "client_acquisition_relevance": "MEDIUM - Brand credibility"
+      }
+    ],
+    "stalled": [
+      {
+        "id": "concrete-rank-rent",
+        "name": "Concrete Rank & Rent Sites",
+        "description": "Local SEO sites + Google Business Profiles for concrete contractors",
+        "status": "STALLED - NEEDS MONETIZATION",
+        "priority": "P3",
+        "context": "Built sites still generating leads but no active clients",
+        "hosting": "WordPress (expensive)",
+        "next_actions": [
+          "Migrate from WordPress to Cloudflare to save hosting costs",
+          "Find contractors to rent leads to",
+          "Or: Sell the properties"
+        ],
+        "client_acquisition_relevance": "LOW - Different vertical"
+      },
+      {
+        "id": "vendors-kuriosbrand-site",
+        "name": "Vendors KuriosBrand Site",
+        "description": "Authority SEO website for PI vendor matching with quiz/matcher tool",
+        "status": "STALLED - SUPERSEDED BY PI-VENDORS",
+        "priority": "P3",
+        "path": "/home/ec2-user/clawd/projects/vendors-kuriosbrand/",
+        "tech_stack": ["React 19", "Vite 7", "Tailwind CSS 4", "TypeScript"],
+        "planned_domain": "vendors.kuriosbrand.com",
+        "relationship": "Frontend for pi-vendors intelligence system",
+        "next_actions": [
+          "Decide: Use this or build new frontend for pi-vendors",
+          "If keeping: Complete quiz CTA, deploy"
+        ],
+        "client_acquisition_relevance": "MEDIUM - Quiz captures PI attorney leads"
+      }
+    ],
+    "completed": [
+      {
+        "id": "ec2-security",
+        "name": "EC2 Security Hardening",
+        "completed": "2026-01-29",
+        "what": "SSH IP restriction, auto-updates"
+      },
+      {
+        "id": "google-workspace-2fa",
+        "name": "Google Workspace 2FA",
+        "completed": "2026-01-29",
+        "what": "2FA on admin account"
+      },
+      {
+        "id": "session-memory",
+        "name": "Session Memory Search",
+        "completed": "2026-02-01",
+        "what": "Added experimental sessionMemory to config"
+      },
+      {
+        "id": "knowledge-bases",
+        "name": "Knowledge Bases",
+        "completed": "2026-02-01",
+        "what": "Meta Ads KB (38KB), SDR Bot KB (70KB) - backed up to Notion"
+      }
+    ]
+  },
+  "project_relationships": {
+    "primary_funnel": "Meta Ads → Landing Page → Form → GHL → Intake → Sales Call → Partner Referral",
+    "supporting_assets": {
+      "texas_site": "Organic leads → same funnel",
+      "seo_network": "Links/traffic → texas_site → funnel",
+      "pi_vendors": "Intelligence/authority → client trust → sales"
+    },
+    "cost_reduction": {
+      "ai_intake": "Reduces intake cost by 98%",
+      "appointment_setters": "Target: $100/call vs $300 current"
+    }
+  }
+}

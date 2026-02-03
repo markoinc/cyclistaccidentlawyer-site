@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "generated": "2026-02-01",
+    "purpose": "Standard Operating Procedures extracted from all sources",
+    "sources": [
+      "Jacky Chou Build in Public",
+      "Business transcripts",
+      "Strategy documents",
+      "Sales bootcamp"
+    ]
+  },
+  "sops": {
+    "sales": [
+      {
+        "id": "mva-sales-process",
+        "name": "MVA PI Sales 30-Minute Call Structure",
+        "source": "24hr MVA PI Sales Bootcamp",
+        "phases": {
+          "phase_1_diagnose": {
+            "time": "0:00-6:00",
+            "objective": "Let buyer demonstrate experience and self-qualify",
+            "questions": [
+              "What states are you signing in?",
+              "What's your CPA target?",
+              "How fast does intake call?",
+              "What breaks down after the lead comes in?",
+              "Any vendors you've moved away from recently?"
+            ],
+            "rules": ["Do not interrupt", "Do not correct", "Do not pitch", "Ask one open-ended question, then stop talking"]
+          },
+          "phase_2_agitate": {
+            "time": "6:00-14:00",
+            "objective": "Share real frustrations and identify leverage points",
+            "pain_points": [
+              "Vendor burned for $60k, leads were garbage or recycled",
+              "Too many ghost leads with bad numbers",
+              "Internal team can't scale Google profitably",
+              "Intake team overwhelmed"
+            ]
+          },
+          "phase_3_match": {
+            "time": "14:00-22:00",
+            "objective": "Build qualification criteria and align on CPA",
+            "factors": ["Geography", "Incident window", "Treatment status", "Gap-in-care limits", "Hard no's"]
+          },
+          "phase_4_close": {
+            "time": "22:00-30:00",
+            "objective": "Present the right pilot based on intake assessment",
+            "capacity_check": "Do you have capacity over the next 2-3 weeks?",
+            "soft_close": "Would you be opposed to starting with a small, capped pilot?"
+          }
+        },
+        "key_principle": "You are selling proof, not promises. The pilot is the close."
+      },
+      {
+        "id": "cold-call-script",
+        "name": "Cold Call Script",
+        "opener": "Hey it's Mark Gundrum, you accepted my linkedin invite the other day, so I'm calling to introduce myself and see if there's any way we can help you.",
+        "permission": "It's a cold call you wanna hang up or tell you why I'm calling",
+        "pitch": "We specialize in MVA and work with a lot of PI firms to bring down their cost per signed case so they can scale, and we do that with exclusive leads and live transfers with a high close rate.",
+        "qualifier": "Is that something that aligns with your goals?"
+      },
+      {
+        "id": "objection-handling",
+        "name": "Objection Handling Scripts",
+        "objections": {
+          "too_expensive": {
+            "objection": "Your leads are expensive",
+            "response": "Compared to what — leads, transfers, or signed cases? The CPA math is different at each level."
+          },
+          "need_to_think": {
+            "objection": "We need to think about it",
+            "response": "Totally fair. Is it pricing, intake capacity, or which pilot tier fits best?"
+          },
+          "been_burned": {
+            "objection": "We got burned before",
+            "response": "That's why this is a one-time pilot, not a retainer. Capped pilots, clear criteria, no long-term commitments."
+          },
+          "already_have_vendor": {
+            "objection": "We're already working with another vendor",
+            "response": "What would make you add another source or replace a poor performer? Let's see if we can beat what you already have."
+          }
+        }
+      },
+      {
+        "id": "7-day-appointment-sequence",
+        "name": "7-Day Appointment Booking Sequence",
+        "source": "Jacky Chou EP 653",
+        "stack": "Meta Ads (Instant Forms) → Mailchimp + automation → SMS → Caller/Setter",
+        "speed_to_lead": "Call in <5 minutes whenever possible",
+        "if_no_pickup": "Immediate SMS → Email 1 fires instantly",
+        "call_attempts": "3 attempts/day for 2 days, then 1/day to day 5"
+      }
+    ],
+    "reddit_marketing": [
+      {
+        "id": "reddit-10k-comments",
+        "name": "Reddit 10k Comments Domination SOP",
+        "source": "Jacky Chou EP 742",
+        "step_1": {
+          "name": "Pick 5 money keywords",
+          "examples": ["best [category]", "[category] recommendations", "[category] vs [category]", "is [brand] worth it"],
+          "rule": "If someone can imagine buying within 7 days, it's a money keyword"
+        },
+        "step_2": {
+          "name": "Find threads that already rank",
+          "tool": "Trackings.ai → Discover",
+          "criteria": ["threads ranking on Google already", "20+ comments", "recent activity OR evergreen thread"]
+        },
+        "step_3": {
+          "name": "Choose placement type",
+          "options": [
+            {"type": "Unlinked mention", "risk": "safest, highest survival", "example": "I've been using [Brand] and it's been solid…"},
+            {"type": "Nofollow link", "risk": "medium", "example": "link to a neutral resource page"},
+            {"type": "Direct link", "risk": "highest, rarest", "note": "only if subreddit allows"}
+          ]
+        },
+        "step_4": {
+          "name": "Human Stack Comment Template",
+          "template": [
+            "Line 1: empathy — 'I had the same problem…'",
+            "Line 2: mini story — 'Tried 2–3 options, wasted money/time…'",
+            "Line 3: recommendation (soft) — '[Brand] ended up being the easiest…'",
+            "Line 4: balanced comparison — 'If you just need X, tool A works. If you want Y, this is better…'",
+            "Line 5: exit line (anti-shill) — 'not sponsored, just what worked for me'"
+          ],
+          "style_rules": ["lowercase is fine", "one small typo is fine", "don't sound like a landing page", "avoid: 'game changer', 'revolutionary', 'introducing'"]
+        },
+        "step_5": {
+          "name": "Conversation Stack for top 3 ranking",
+          "strategy": "Add replies to boost visibility",
+          "pattern": ["main comment", "1st reply (agree/add detail)", "2nd reply (tiny tip)"],
+          "variety": "Make each reply feel like different person"
+        },
+        "step_6": {
+          "name": "Boost pattern",
+          "rules": ["Zero votes in 2 weeks", "Drip over 2 days", "Stop once you hit top 3"]
+        },
+        "kpi": "Top 3 comments in threads that rank on Google = compounding traffic"
+      },
+      {
+        "id": "reddit-local-business",
+        "name": "Reddit Marketing for Local Businesses",
+        "source": "Jacky Chou EP 637",
+        "relevance": "Applicable to MVA lead gen"
+      },
+      {
+        "id": "reddit-account-warmup",
+        "name": "Reddit Account Warmup",
+        "source": "Jacky Chou EP 635",
+        "reference": "https://x.com/indexsy/status/1965126923425587621",
+        "key_rules": ["Warm up accounts before shilling", "Don't be too obvious", "Try not to link to your brand name"]
+      }
+    ],
+    "ai_seo": [
+      {
+        "id": "chatgpt-optimization",
+        "name": "ChatGPT Citation Strategy",
+        "source": "Integrated Growth Plan 2026",
+        "timeline": "2 weeks for citations to appear",
+        "content_types": ["Listicles: 'Best X in Y'", "Comparisons", "Reviews"],
+        "distribution_priority": [
+          "1. Parasite Sites (high-DR guest posts) - PRIMARY",
+          "2. LLM PBN (Indexsy) - SECONDARY",
+          "3. Localrank.so (if on Enterprise/Scale) - TERTIARY"
+        ],
+        "key_rule": "Publish on parasite sites, NOT own brand site (avoid self-shilling)",
+        "success_metric": "10+ ChatGPT citations within 2 weeks"
+      },
+      {
+        "id": "google-ai-overviews",
+        "name": "Google AI Overviews Strategy",
+        "ranking_methods": ["Parasites (guest posts)", "Press Releases ($80 AB Newswire)", "Guest Posts", "Articles on Your Blog"],
+        "critical_tactics": {
+          "reddit": "Reddit is #2 source for AI Overview citations. You don't need to rank - just being in thread gets crawled.",
+          "youtube": "YouTube is #1 source. Pages with YouTube embeds can rank even at positions 10-20.",
+          "browserblast": "Simulates virality with 10k sessions. Works best for low-traffic sites.",
+          "press_releases": "AB Newswire $80/release. Helps AI Overviews for first 2-3 days."
+        }
+      },
+      {
+        "id": "aeo-geo-optimization",
+        "name": "Agent-Complete Optimization",
+        "principle": "AI tools decide who to recommend based on: what they can read, whether they trust it, whether they can actually buy from you",
+        "checklist": [
+          "Make website 'agent-complete' (test form submissions, calculator flows)",
+          "Ensure service info matches everywhere (page, schema, GBP, directories)",
+          "Add Q&A section to every service page (5-10 questions with FAQ schema)",
+          "Show proof humans trust you (reviews with schema, case results)",
+          "Describe images/videos properly (detailed alt text, transcripts)",
+          "Don't lie/exaggerate"
+        ]
+      }
+    ],
+    "lead_gen": [
+      {
+        "id": "meta-ads-lead-gen",
+        "name": "Meta Ads Lead Generation Funnel",
+        "flow": "Meta Ads → Landing Page (8-12% conversion) → Multi-step form → Auto-qualification → GHL webhook → Intake/follow-up → Booked call → Sales call → Signed case",
+        "form_types": {
+          "LeadForm": "General inquiry, early stage",
+          "CalculatorForm": "HIGH intent, actively calculating settlement",
+          "CaseAssessmentForm": "MEDIUM-HIGH, evaluating case strength",
+          "PoliceReportSubmissionForm": "Specific need, report disputes"
+        },
+        "lead_scoring": {
+          "calculator_permanent_disability": "+40 points",
+          "strong_qualification_evidence": "+30 points",
+          "high_medical_bills_20k": "+15 points"
+        }
+      },
+      {
+        "id": "cold-email-sequence",
+        "name": "Cold Email 6-Step Sequence",
+        "domain": "leads.kuriosbrand.com",
+        "calendar_link": "https://api.leadconnectorhq.com/widget/booking/x2ycChO5k7nMsFBd8ngj",
+        "steps": [
+          {"day": 1, "focus": "Quick partnership question + key stats (100+ leads in 90 days, ~$2k per case)"},
+          {"day": 2, "focus": "Speed: 'Can usually start sending leads within 7 days'"},
+          {"day": 3, "focus": "Value prop: 'Most firms care about cost per signed case. Ours averages ~$2k.'"},
+          {"day": 4, "focus": "Timing: 'When is the best time to call you?'"},
+          {"day": 5, "focus": "Close the loop: 'Even a not right now helps'"},
+          {"day": 6, "focus": "Final: 'Reply MVA and I'll re-open'"}
+        ]
+      }
+    ],
+    "automation": [
+      {
+        "id": "phone-farm-cloudphones",
+        "name": "Phone Farm with Cloud Phones",
+        "source": "Jacky Chou EP 747",
+        "tools": ["DuoPlus Cloud Phone (duoplus.io)", "VMOS Cloud - Android Cloud Phone"],
+        "use_cases": ["Direction + Drive", "Add to carts + wishlist on Amazon", "Account farming"]
+      },
+      {
+        "id": "clawdbot-high-roi",
+        "name": "Highest ROI ClawdBot Tasks",
+        "source": "Jacky Chou EP 749",
+        "reference": "https://indexsy.notion.site/Jan-29-EP-749-This-ClawdBot-Task-is-the-HIGHEST-ROI-2f7e1e50bed280b3b425ed502d09e7ba"
+      }
+    ]
+  },
+  "tools_mentioned": {
+    "marketing": {
+      "crowdreply_io": "Reddit comments and upvotes",
+      "trackings_ai": "Monitor ChatGPT + Google AI Overviews citations (free tier)",
+      "ab_newswire": "$80/release for press releases",
+      "browserblast": "Simulate virality with 10k sessions"
+    },
+    "crm_automation": {
+      "gohighlevel": "Core CRM, $407/month",
+      "mailchimp": "Email automation",
+      "twilio": "SMS"
+    },
+    "development": {
+      "cloudflare_pages": "Free hosting",
+      "vercel": "Alternative hosting",
+      "lovable": "AI dev tool (migrating away)"
+    }
+  }
+}

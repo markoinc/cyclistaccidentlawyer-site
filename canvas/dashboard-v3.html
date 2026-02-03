@@ -1,0 +1,4038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurios Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0f0f11;
+            --bg-secondary: #16161a;
+            --bg-tertiary: #1c1c21;
+            --bg-card: #1e1e24;
+            --bg-hover: #252530;
+            --border-color: #2d2d35;
+            --border-light: #3d3d45;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a8;
+            --text-muted: #6b6b75;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-yellow: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-pink: #ec4899;
+            --accent-cyan: #06b6d4;
+            --gradient-1: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #10b981, #06b6d4);
+            --gradient-3: linear-gradient(135deg, #f59e0b, #ef4444);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+            --sidebar-width: 260px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Layout */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .logo-text span {
+            color: var(--accent-blue);
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 16px 12px;
+            overflow-y: auto;
+        }
+
+        .nav-section {
+            margin-bottom: 24px;
+        }
+
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0 12px;
+            margin-bottom: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 2px;
+        }
+
+        .nav-item:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .nav-item .badge {
+            margin-left: auto;
+            background: var(--accent-red);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .nav-item.active .badge {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Goal Progress in Sidebar */
+        .goal-widget {
+            padding: 16px;
+            margin: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .goal-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .goal-amount {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-green);
+        }
+
+        .goal-progress-bar {
+            height: 8px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .goal-progress-fill {
+            height: 100%;
+            background: var(--gradient-2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .goal-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            background: var(--bg-primary);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .top-bar-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 16px;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        /* Mobile hamburger menu */
+        .hamburger {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Authority Panel for Sales Calls */
+        .authority-panel {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-tertiary) 100%);
+            border: 1px solid var(--accent-green);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .authority-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-2);
+        }
+
+        .authority-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .authority-title {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .authority-title i {
+            color: var(--accent-green);
+        }
+
+        .authority-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .authority-stat {
+            text-align: center;
+            padding: 16px;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .authority-stat:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .authority-stat .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: var(--bg-hover);
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .authority-stat:hover .copy-btn {
+            opacity: 1;
+        }
+
+        .authority-stat .value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-green);
+            margin-bottom: 4px;
+        }
+
+        .authority-stat .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* State Selector */
+        .state-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+
+        .state-selector select {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 180px;
+        }
+
+        .state-stats {
+            display: flex;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .state-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .state-stat .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .state-stat .label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Enhanced Goal Tracking */
+        .goal-tracker {
+            background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(6,182,212,0.1) 100%);
+            border: 1px solid var(--accent-green);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .goal-tracker-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .goal-tracker-title {
+            font-size: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .goal-amount-large {
+            font-size: 32px;
+            font-weight: 800;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .goal-progress-large {
+            height: 16px;
+            background: var(--bg-hover);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .goal-progress-large .fill {
+            height: 100%;
+            background: var(--gradient-2);
+            border-radius: 8px;
+            transition: width 0.5s ease;
+            min-width: 8px;
+        }
+
+        .goal-milestones {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .milestone {
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        .milestone.achieved {
+            opacity: 1;
+        }
+
+        .milestone .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-size: 14px;
+        }
+
+        .milestone.achieved .icon {
+            background: var(--accent-green);
+        }
+
+        .milestone .label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .milestone .value {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .goal-calculator {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .calc-item {
+            text-align: center;
+        }
+
+        .calc-item .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .calc-item .label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Talking Points */
+        .talking-points {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .talking-points-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .talking-points-title {
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .talking-points-body {
+            padding: 20px;
+            display: none;
+        }
+
+        .talking-points.expanded .talking-points-body {
+            display: block;
+        }
+
+        .talking-point {
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .talking-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .talking-point strong {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 1200px) {
+            .authority-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .authority-stats {
+                grid-template-columns: 1fr;
+            }
+            .state-selector {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .state-stats {
+                flex-wrap: wrap;
+            }
+            .goal-calculator {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .user-info {
+            text-align: left;
+        }
+
+        .user-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .user-role {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 24px;
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        /* KPI Cards Row */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .kpi-card.blue::before { background: var(--accent-blue); }
+        .kpi-card.green::before { background: var(--accent-green); }
+        .kpi-card.purple::before { background: var(--accent-purple); }
+        .kpi-card.yellow::before { background: var(--accent-yellow); }
+        .kpi-card.red::before { background: var(--accent-red); }
+        .kpi-card.cyan::before { background: var(--accent-cyan); }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .kpi-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .kpi-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .kpi-card.blue .kpi-icon { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+        .kpi-card.green .kpi-icon { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+        .kpi-card.purple .kpi-icon { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+        .kpi-card.yellow .kpi-icon { background: rgba(245,158,11,0.15); color: var(--accent-yellow); }
+        .kpi-card.red .kpi-icon { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .kpi-card.cyan .kpi-icon { background: rgba(6,182,212,0.15); color: var(--accent-cyan); }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .kpi-change {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .kpi-change.positive { color: var(--accent-green); }
+        .kpi-change.negative { color: var(--accent-red); }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title i {
+            color: var(--accent-blue);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .card-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .card-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .card-btn.primary {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* Span Classes */
+        .span-4 { grid-column: span 4; }
+        .span-6 { grid-column: span 6; }
+        .span-8 { grid-column: span 8; }
+        .span-12 { grid-column: span 12; }
+
+        /* Pipeline Section */
+        .pipeline-stages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .pipeline-stage {
+            text-align: center;
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pipeline-stage:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .pipeline-stage.hot { border-left: 3px solid var(--accent-red); }
+        .pipeline-stage.progress { border-left: 3px solid var(--accent-yellow); }
+        .pipeline-stage.closed { border-left: 3px solid var(--accent-green); }
+
+        .stage-count {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .hot .stage-count { color: var(--accent-red); }
+        .progress .stage-count { color: var(--accent-yellow); }
+        .closed .stage-count { color: var(--accent-green); }
+
+        .stage-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .stage-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Prospect List */
+        .prospect-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .prospect-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prospect-item:hover {
+            background: var(--bg-hover);
+        }
+
+        .prospect-item:last-child {
+            border-bottom: none;
+        }
+
+        .prospect-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+
+        .prospect-info {
+            flex: 1;
+        }
+
+        .prospect-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .prospect-firm {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .prospect-meta {
+            text-align: right;
+        }
+
+        .prospect-budget {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .prospect-probability {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .prob-high { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+        .prob-medium { background: rgba(245,158,11,0.15); color: var(--accent-yellow); }
+        .prob-low { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-hot { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+        .status-progress { background: rgba(245,158,11,0.15); color: var(--accent-yellow); }
+        .status-closed { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+        .status-active { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+        .status-stalled { background: rgba(107,107,117,0.15); color: var(--text-muted); }
+
+        /* Activity Feed */
+        .activity-feed {
+            max-height: 350px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .activity-icon.call { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+        .activity-icon.deal { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+        .activity-icon.meeting { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+        .activity-icon.email { background: rgba(245,158,11,0.15); color: var(--accent-yellow); }
+        .activity-icon.task { background: rgba(6,182,212,0.15); color: var(--accent-cyan); }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-title {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .activity-time {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .project-progress {
+            margin-bottom: 16px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .progress-label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .progress-value {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--bg-hover);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-fill.blue { background: var(--accent-blue); }
+        .progress-fill.green { background: var(--accent-green); }
+        .progress-fill.yellow { background: var(--accent-yellow); }
+        .progress-fill.purple { background: var(--accent-purple); }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .project-tag {
+            padding: 4px 10px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-priority {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .priority-p0 { color: var(--accent-red); }
+        .priority-p1 { color: var(--accent-yellow); }
+        .priority-p2 { color: var(--accent-blue); }
+        .priority-p3 { color: var(--text-muted); }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table tbody tr {
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .data-table tbody tr:hover {
+            background: var(--bg-hover);
+        }
+
+        /* Contact Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .contact-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .contact-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .contact-role {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .contact-detail i {
+            width: 16px;
+            color: var(--text-muted);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: modalSlide 0.3s ease;
+        }
+
+        @keyframes modalSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: none;
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .modal-section {
+            margin-bottom: 24px;
+        }
+
+        .modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .detail-item {
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .detail-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .pain-points-list {
+            list-style: none;
+        }
+
+        .pain-points-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .pain-points-list li::before {
+            content: "⚠️";
+            font-size: 12px;
+        }
+
+        .pain-points-list li:last-child {
+            border-bottom: none;
+        }
+
+        .quote-box {
+            padding: 16px;
+            background: var(--bg-tertiary);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-light);
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        /* Charts */
+        .chart-container {
+            position: relative;
+            height: 250px;
+        }
+
+        /* Analytics Tab Specific */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .analytics-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .analytics-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        /* Settings */
+        .settings-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .settings-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .setting-info h4 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .setting-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .toggle {
+            width: 48px;
+            height: 26px;
+            background: var(--bg-hover);
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .toggle.active {
+            background: var(--accent-green);
+        }
+
+        .toggle::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.2s;
+        }
+
+        .toggle.active::after {
+            transform: translateX(22px);
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-tab:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .quick-action-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-action-btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-blue);
+        }
+
+        .quick-action-btn i {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .span-4 { grid-column: span 6; }
+            .span-6 { grid-column: span 12; }
+            .span-8 { grid-column: span 12; }
+            .analytics-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .kpi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .span-4, .span-6, .span-8 {
+                grid-column: span 12;
+            }
+            .pipeline-stages {
+                grid-template-columns: 1fr;
+            }
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">K</div>
+                    <div class="logo-text">Kurios<span>Brand</span></div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <div class="nav-item active" data-page="dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </div>
+                    <div class="nav-item" data-page="pipeline">
+                        <i class="fas fa-filter"></i>
+                        <span>Pipeline</span>
+                        <span class="badge">12</span>
+                    </div>
+                    <div class="nav-item" data-page="projects">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </div>
+                    <div class="nav-item" data-page="contacts">
+                        <i class="fas fa-address-book"></i>
+                        <span>Contacts</span>
+                    </div>
+                    <div class="nav-item" data-page="clients">
+                        <i class="fas fa-building"></i>
+                        <span>Client Portfolio</span>
+                        <span class="badge" style="background: var(--accent-green)">22+</span>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Insights</div>
+                    <div class="nav-item" data-page="analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="nav-item" data-page="ideas">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Ideas Backlog</span>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">System</div>
+                    <div class="nav-item" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Goal Widget -->
+            <div class="goal-widget">
+                <div class="goal-header">
+                    <span class="goal-title">🎯 Exit Goal</span>
+                </div>
+                <div class="goal-amount">$9.6M</div>
+                <div class="goal-progress-bar">
+                    <div class="goal-progress-fill" style="width: 0.33%"></div>
+                </div>
+                <div class="goal-meta">
+                    <span>$31,750 closed</span>
+                    <span>0.33% complete</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div style="display: flex; align-items: center;">
+                    <button class="hamburger" id="hamburgerBtn" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title" id="pageTitle">Dashboard Overview</h1>
+                </div>
+                <div class="top-bar-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search" style="color: var(--text-muted)"></i>
+                        <input type="text" placeholder="Search prospects, projects..." id="globalSearch">
+                    </div>
+                    <button class="icon-btn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="icon-btn" title="Calendar">
+                        <i class="fas fa-calendar"></i>
+                    </button>
+                    <div class="user-menu">
+                        <div class="user-avatar">MG</div>
+                        <div class="user-info">
+                            <div class="user-name">Marko</div>
+                            <div class="user-role">Founder</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <div class="page-content active" id="dashboard">
+                <!-- 🎯 Exit Goal Tracker - Prominent -->
+                <div class="goal-tracker">
+                    <div class="goal-tracker-header">
+                        <div>
+                            <div class="goal-tracker-title">🎯 Exit Goal Progress</div>
+                            <div class="goal-amount-large">$9.6M</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 24px; font-weight: 700; color: var(--accent-green);">$31,750</div>
+                            <div style="font-size: 13px; color: var(--text-muted);">0.33% Complete</div>
+                        </div>
+                    </div>
+                    <div class="goal-progress-large">
+                        <div class="fill" style="width: 2%;"></div>
+                    </div>
+                    <div class="goal-milestones">
+                        <div class="milestone achieved">
+                            <div class="icon">✓</div>
+                            <div class="value">$0</div>
+                            <div class="label">Start</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="icon">🎯</div>
+                            <div class="value">$100K</div>
+                            <div class="label">First 100K</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="icon">🚀</div>
+                            <div class="value">$1M</div>
+                            <div class="label">Millionaire</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="icon">💎</div>
+                            <div class="value">$5M</div>
+                            <div class="label">Halfway</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="icon">👑</div>
+                            <div class="value">$9.6M</div>
+                            <div class="label">EXIT</div>
+                        </div>
+                    </div>
+                    <div class="goal-calculator">
+                        <div class="calc-item">
+                            <div class="value">380</div>
+                            <div class="label">Deals needed @ $25K avg</div>
+                        </div>
+                        <div class="calc-item">
+                            <div class="value">32/mo</div>
+                            <div class="label">To hit in 1 year</div>
+                        </div>
+                        <div class="calc-item">
+                            <div class="value">~10 years</div>
+                            <div class="label">At current pace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🏆 Sales Call Authority Panel -->
+                <div class="authority-panel">
+                    <div class="authority-header">
+                        <div class="authority-title"><i class="fas fa-trophy"></i> Sales Call Authority — Quick Stats</div>
+                        <button class="card-btn" onclick="showPage('clients')">View Full Portfolio →</button>
+                    </div>
+                    <div class="authority-stats">
+                        <div class="authority-stat" onclick="copyToClipboard('22+ Active Clients')">
+                            <button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                            <div class="value">22+</div>
+                            <div class="label">Active Clients</div>
+                        </div>
+                        <div class="authority-stat" onclick="copyToClipboard('$10M+ Total Client Spend')">
+                            <button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                            <div class="value">$10M+</div>
+                            <div class="label">Total Client Spend</div>
+                        </div>
+                        <div class="authority-stat" onclick="copyToClipboard('5,000+ Cases Signed')">
+                            <button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                            <div class="value">5,000+</div>
+                            <div class="label">Cases Signed</div>
+                        </div>
+                        <div class="authority-stat" onclick="copyToClipboard('15+ States Covered')">
+                            <button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button>
+                            <div class="value">15+</div>
+                            <div class="label">States Covered</div>
+                        </div>
+                    </div>
+                    <div class="state-selector">
+                        <label style="font-size: 13px; font-weight: 500;"><i class="fas fa-map-marker-alt" style="color: var(--accent-blue);"></i> Quick State Lookup:</label>
+                        <select id="stateSelect" onchange="updateStateStats()">
+                            <option value="">Select a state...</option>
+                            <option value="NATIONAL">🌎 National (All 50 States)</option>
+                            <option value="TX">🔥 Texas (3 clients)</option>
+                            <option value="FL">🔥 Florida (1 client)</option>
+                            <option value="CA">🔥 California ($250K/mo client)</option>
+                            <option value="NC">North Carolina (3 clients, 3.0x ROI)</option>
+                            <option value="NY">New York (3 clients, 3.6x ROI)</option>
+                            <option value="NM">New Mexico (Trucking specialist)</option>
+                            <option value="LA">Louisiana (40+ cases/mo)</option>
+                            <option value="GA">Georgia (15-25% conv)</option>
+                            <option value="PA">Pennsylvania (2 clients)</option>
+                            <option value="VA">VA/OH/SC (100+ cases/mo)</option>
+                            <option value="AZ">Arizona/Utah (80+ cases/mo)</option>
+                            <option value="WA">Washington ($1.5M+ spend)</option>
+                            <option value="OR">Oregon/Utah/Idaho</option>
+                        </select>
+                        <div class="state-stats" id="stateStats">
+                            <div class="state-stat">
+                                <div class="value" id="stateClients">-</div>
+                                <div class="label">Clients</div>
+                            </div>
+                            <div class="state-stat">
+                                <div class="value" id="stateCaseCost">-</div>
+                                <div class="label">Cost/Case</div>
+                            </div>
+                            <div class="state-stat">
+                                <div class="value" id="stateConversion">-</div>
+                                <div class="label">Conversion</div>
+                            </div>
+                            <div class="state-stat">
+                                <div class="value" id="stateHighlight">-</div>
+                                <div class="label">Key Win</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stateStoryBox" style="display: none;"></div>
+                </div>
+
+                <!-- 💬 Talking Points (Collapsible) -->
+                <div class="talking-points" id="talkingPoints">
+                    <div class="talking-points-header" onclick="toggleTalkingPoints()">
+                        <div class="talking-points-title"><i class="fas fa-comment-dots" style="color: var(--accent-purple);"></i> Quick Talking Points</div>
+                        <i class="fas fa-chevron-down" id="talkingPointsChevron"></i>
+                    </div>
+                    <div class="talking-points-body">
+                        <div class="talking-point"><strong>Authority Opener:</strong> "We've signed over 5,000 cases across 15 states in the last 5 years. Our largest client does $250K/month with us."</div>
+                        <div class="talking-point"><strong>Cost Objection:</strong> "Our Texas clients average $1,700-$2,000 per case, with 15% conversion. One $2M case pays for years of leads."</div>
+                        <div class="talking-point"><strong>Trust Builder:</strong> "We have references in every state. Our favorite client signs 100+ cases per month with us."</div>
+                        <div class="talking-point"><strong>Differentiator:</strong> "Patrick from Inquire2Esquire handles our intake - he's a former director of intake, not a call center."</div>
+                        <div class="talking-point"><strong>Risk Reduction:</strong> "We're not asking for commitment - let's do a 30-day pilot and let the numbers speak."</div>
+                    </div>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card green">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Pipeline Value (10%)</span>
+                            <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+                        </div>
+                        <div class="kpi-value">$24,625</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> 12 active prospects
+                        </div>
+                    </div>
+                    <div class="kpi-card blue">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Closed Revenue</span>
+                            <div class="kpi-icon"><i class="fas fa-check-circle"></i></div>
+                        </div>
+                        <div class="kpi-value">$31,750</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> Jason E - Eisenberg Law
+                        </div>
+                    </div>
+                    <div class="kpi-card purple">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Calls This Week</span>
+                            <div class="kpi-icon"><i class="fas fa-phone"></i></div>
+                        </div>
+                        <div class="kpi-value">5-7</div>
+                        <div class="kpi-change negative">
+                            <i class="fas fa-arrow-down"></i> Target: 14-21/week
+                        </div>
+                    </div>
+                    <div class="kpi-card yellow">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Cost Per Call</span>
+                            <div class="kpi-icon"><i class="fas fa-coins"></i></div>
+                        </div>
+                        <div class="kpi-value">$240</div>
+                        <div class="kpi-change negative">
+                            <i class="fas fa-arrow-down"></i> Target: <$100
+                        </div>
+                    </div>
+                    <div class="kpi-card cyan">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Active Projects</span>
+                            <div class="kpi-icon"><i class="fas fa-tasks"></i></div>
+                        </div>
+                        <div class="kpi-value">5</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> 2 stalled
+                        </div>
+                    </div>
+                    <div class="kpi-card red">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Monthly Burn</span>
+                            <div class="kpi-icon"><i class="fas fa-fire"></i></div>
+                        </div>
+                        <div class="kpi-value">$3,000</div>
+                        <div class="kpi-change negative">
+                            <i class="fas fa-exclamation-triangle"></i> Review Feb 3
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Pipeline Summary -->
+                    <div class="card span-8">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-filter"></i> Pipeline Overview</div>
+                            <div class="card-actions">
+                                <button class="card-btn" onclick="showPage('pipeline')">View All</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="pipeline-stages">
+                                <div class="pipeline-stage hot" onclick="showPage('pipeline')">
+                                    <div class="stage-count">7</div>
+                                    <div class="stage-label">🔥 Hot</div>
+                                    <div class="stage-value">$19,250 (10%)</div>
+                                </div>
+                                <div class="pipeline-stage progress" onclick="showPage('pipeline')">
+                                    <div class="stage-count">5</div>
+                                    <div class="stage-label">⏳ In Progress</div>
+                                    <div class="stage-value">$5,375 (10%)</div>
+                                </div>
+                                <div class="pipeline-stage closed" onclick="showPage('pipeline')">
+                                    <div class="stage-count">1</div>
+                                    <div class="stage-label">✅ Closed</div>
+                                    <div class="stage-value">$31,750</div>
+                                </div>
+                            </div>
+                            <div class="prospect-list" id="hotProspectsList">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Feed -->
+                    <div class="card span-4">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-stream"></i> Recent Activity</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-feed" id="activityFeed">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Overview -->
+                    <div class="card span-6">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-project-diagram"></i> Priority Projects</div>
+                            <div class="card-actions">
+                                <button class="card-btn" onclick="showPage('projects')">View All</button>
+                            </div>
+                        </div>
+                        <div class="card-body" id="projectsOverview">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart -->
+                    <div class="card span-6">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-chart-area"></i> Revenue Tracking</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Priority Follow-ups -->
+                    <div class="card span-12">
+                        <div class="card-header">
+                            <div class="card-title"><i class="fas fa-bell"></i> Priority Follow-ups</div>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table" id="followupsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Priority</th>
+                                        <th>Prospect</th>
+                                        <th>Action Required</th>
+                                        <th>Urgency</th>
+                                        <th>Probability</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="followupsList">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipeline Page -->
+            <div class="page-content" id="pipeline">
+                <div class="quick-actions">
+                    <button class="quick-action-btn"><i class="fas fa-plus"></i> Add Prospect</button>
+                    <button class="quick-action-btn"><i class="fas fa-file-export"></i> Export</button>
+                    <button class="quick-action-btn"><i class="fas fa-sync"></i> Sync CRM</button>
+                </div>
+
+                <!-- Time Period Filter -->
+                <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: center;">
+                    <span style="font-size: 13px; color: var(--text-muted);">Time Period:</span>
+                    <div class="filter-tabs" style="margin-bottom: 0;">
+                        <button class="filter-tab" data-period="day" onclick="filterByPeriod('day')">Today</button>
+                        <button class="filter-tab" data-period="week" onclick="filterByPeriod('week')">This Week</button>
+                        <button class="filter-tab active" data-period="month" onclick="filterByPeriod('month')">This Month</button>
+                        <button class="filter-tab" data-period="all" onclick="filterByPeriod('all')">All Time</button>
+                    </div>
+                </div>
+
+                <!-- Status Filter -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All (12)</button>
+                    <button class="filter-tab" data-filter="hot">🔥 Hot (7)</button>
+                    <button class="filter-tab" data-filter="progress">⏳ In Progress (5)</button>
+                    <button class="filter-tab" data-filter="closed">✅ Closed (1)</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-users"></i> All Prospects</div>
+                        <div class="card-actions">
+                            <input type="text" placeholder="Filter prospects..." id="prospectFilter" style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-tertiary); color: var(--text-primary); font-size: 13px;">
+                        </div>
+                    </div>
+                    <div class="card-body" style="padding: 0;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name / Firm</th>
+                                    <th>Location</th>
+                                    <th>Avatar</th>
+                                    <th>Budget</th>
+                                    <th>10% Value</th>
+                                    <th>Probability</th>
+                                    <th>Status</th>
+                                    <th>Next Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pipelineTable">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Page -->
+            <div class="page-content" id="projects">
+                <div class="quick-actions">
+                    <button class="quick-action-btn"><i class="fas fa-plus"></i> New Project</button>
+                    <button class="quick-action-btn"><i class="fas fa-filter"></i> Filter</button>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="active">Active</button>
+                    <button class="filter-tab" data-filter="stalled">Stalled</button>
+                    <button class="filter-tab" data-filter="completed">Completed</button>
+                </div>
+
+                <div class="project-grid" id="projectsGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Contacts Page -->
+            <div class="page-content" id="contacts">
+                <div class="quick-actions">
+                    <button class="quick-action-btn"><i class="fas fa-plus"></i> Add Contact</button>
+                    <button class="quick-action-btn"><i class="fas fa-file-import"></i> Import from CRM</button>
+                    <button class="quick-action-btn"><i class="fas fa-sync"></i> Sync GHL</button>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" onclick="filterContacts('all')">All (8)</button>
+                    <button class="filter-tab" onclick="filterContacts('partner')">Partners (2)</button>
+                    <button class="filter-tab" onclick="filterContacts('vendor')">Vendors (2)</button>
+                    <button class="filter-tab" onclick="filterContacts('client')">Key Clients (3)</button>
+                    <button class="filter-tab" onclick="filterContacts('personal')">Personal (1)</button>
+                </div>
+
+                <!-- Contact Search -->
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="contactSearch" placeholder="Search contacts by name, company, or tags..." 
+                           style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-tertiary); color: var(--text-primary); font-size: 14px;"
+                           oninput="searchContacts(this.value)">
+                </div>
+
+                <div class="contact-grid" id="contactsGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Analytics Page -->
+            <div class="page-content" id="analytics">
+                <div class="kpi-grid">
+                    <div class="kpi-card blue">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Total Pipeline (Full Budget)</span>
+                            <div class="kpi-icon"><i class="fas fa-chart-pie"></i></div>
+                        </div>
+                        <div class="kpi-value">$246,250</div>
+                        <div class="kpi-change">All prospects combined</div>
+                    </div>
+                    <div class="kpi-card green">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Weighted Pipeline</span>
+                            <div class="kpi-icon"><i class="fas fa-balance-scale"></i></div>
+                        </div>
+                        <div class="kpi-value">$17,438</div>
+                        <div class="kpi-change">10% × probability</div>
+                    </div>
+                    <div class="kpi-card purple">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Avg Deal Size</span>
+                            <div class="kpi-icon"><i class="fas fa-calculator"></i></div>
+                        </div>
+                        <div class="kpi-value">$25,625</div>
+                        <div class="kpi-change">Target: $27,500</div>
+                    </div>
+                    <div class="kpi-card yellow">
+                        <div class="kpi-header">
+                            <span class="kpi-label">Conversion Rate</span>
+                            <div class="kpi-icon"><i class="fas fa-percentage"></i></div>
+                        </div>
+                        <div class="kpi-value">15%</div>
+                        <div class="kpi-change">Lead to signed case</div>
+                    </div>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <div class="analytics-title">Pipeline by Avatar Type</div>
+                        <div class="chart-container">
+                            <canvas id="avatarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-title">Deal Size Distribution</div>
+                        <div class="chart-container">
+                            <canvas id="dealSizeChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-title">Close Rate by Avatar</div>
+                        <div class="chart-container">
+                            <canvas id="closeRateChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-title">Monthly Goals Progress</div>
+                        <div class="chart-container">
+                            <canvas id="goalsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ideas Page -->
+            <div class="page-content" id="ideas">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All Ideas</button>
+                    <button class="filter-tab">High Potential</button>
+                    <button class="filter-tab">Medium Potential</button>
+                    <button class="filter-tab">Dream Ideas</button>
+                </div>
+
+                <div class="project-grid" id="ideasGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Clients Page - DATA FROM KURIOS PERFORMANCE SHEET -->
+            <div class="page-content" id="clients">
+                <!-- Hero Stats -->
+                <div class="card span-12" style="margin-bottom: 24px; background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-tertiary) 100%); border: 1px solid var(--accent-green);">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-trophy" style="color: var(--accent-green);"></i> Client Portfolio — Proven Results Across 15+ States</div>
+                        <button class="card-btn primary" onclick="copyToClipboard('24 Active Clients • $10M+ Total Spend • 5,000+ Cases Signed • 15 States • 5+ Years')">
+                            <i class="fas fa-copy"></i> Copy Summary
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="kpi-grid" style="grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 24px;">
+                            <div class="kpi-card green" style="padding: 16px; cursor: pointer;" onclick="copyToClipboard('24 Active Clients')">
+                                <div class="kpi-value" style="font-size: 2rem;">24</div>
+                                <div class="kpi-label">Active Clients</div>
+                            </div>
+                            <div class="kpi-card blue" style="padding: 16px; cursor: pointer;" onclick="copyToClipboard('$10M+ Total Client Spend')">
+                                <div class="kpi-value" style="font-size: 2rem;">$10M+</div>
+                                <div class="kpi-label">Total Client Spend</div>
+                            </div>
+                            <div class="kpi-card purple" style="padding: 16px; cursor: pointer;" onclick="copyToClipboard('5,000+ Cases Signed')">
+                                <div class="kpi-value" style="font-size: 2rem;">5,000+</div>
+                                <div class="kpi-label">Cases Signed</div>
+                            </div>
+                            <div class="kpi-card cyan" style="padding: 16px; cursor: pointer;" onclick="copyToClipboard('Average 2.6x Client ROI')">
+                                <div class="kpi-value" style="font-size: 2rem;">2.6x</div>
+                                <div class="kpi-label">Avg Client ROI</div>
+                            </div>
+                            <div class="kpi-card yellow" style="padding: 16px; cursor: pointer;" onclick="copyToClipboard('5+ Years Track Record')">
+                                <div class="kpi-value" style="font-size: 2rem;">5+ Years</div>
+                                <div class="kpi-label">Track Record</div>
+                            </div>
+                        </div>
+                        <!-- Volume Guarantees -->
+                        <div style="padding: 20px; background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--accent-blue);">
+                            <h4 style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-shield-alt" style="color: var(--accent-blue);"></i> Volume Guarantees (Min: $30K most states, $50K CA)</h4>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: var(--accent-purple); margin-bottom: 8px;">📋 FORM FILL LEADS</div>
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.8;">
+                                        100 leads / 30 days<br>
+                                        250 leads / 60 days<br>
+                                        500 leads / 90 days<br>
+                                        1,000 leads / 120 days
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: var(--accent-blue); margin-bottom: 8px;">📞 LIVE TRANSFERS</div>
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.8;">
+                                        25 transfers / 30 days<br>
+                                        50 transfers / 45 days<br>
+                                        100 transfers / 60 days<br>
+                                        200 transfers / 90 days
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: var(--accent-green); margin-bottom: 8px;">✍️ SIGNED CASES</div>
+                                    <div style="font-size: 12px; color: var(--text-secondary); line-height: 1.8;">
+                                        10 cases / 30 days<br>
+                                        20 cases / 45 days<br>
+                                        35 cases / 60 days<br>
+                                        50 cases / 90 days
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--accent-green);">
+                                <strong>💪 Custom volume — we hit your number or keep delivering FREE until we do</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card span-12">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-map-marker-alt"></i> State-by-State Performance (Real Data)</div>
+                        <button class="card-btn" onclick="copyToClipboard(document.getElementById('stateTableData').innerText)">
+                            <i class="fas fa-copy"></i> Copy Table
+                        </button>
+                    </div>
+                    <div class="card-body" id="stateTableData">
+                        <table class="data-table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>State</th>
+                                    <th>Clients</th>
+                                    <th>Lead Cost</th>
+                                    <th>Case Cost</th>
+                                    <th>Sell Price (+40%)</th>
+                                    <th>Conversion</th>
+                                    <th>ROI</th>
+                                    <th>Key Highlights</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(16,185,129,0.05);">
+                                    <td><strong>🥇 North Carolina</strong></td>
+                                    <td>3 clients</td>
+                                    <td style="color: var(--accent-blue);">$180</td>
+                                    <td>$2,150</td>
+                                    <td style="color: var(--accent-green);">$3,010</td>
+                                    <td>15%</td>
+                                    <td><strong style="color: var(--accent-green);">3.0x</strong></td>
+                                    <td>Client since May 2020, lowest lead cost</td>
+                                </tr>
+                                <tr style="background: rgba(16,185,129,0.05);">
+                                    <td><strong>🥇 New York</strong></td>
+                                    <td>3 clients</td>
+                                    <td style="color: var(--accent-blue);">$225</td>
+                                    <td>$2,600</td>
+                                    <td style="color: var(--accent-green);">$3,640</td>
+                                    <td>15%</td>
+                                    <td><strong style="color: var(--accent-green);">3.6x</strong></td>
+                                    <td>HIGHEST ROI - firms partnering to fund</td>
+                                </tr>
+                                <tr style="background: rgba(16,185,129,0.05);">
+                                    <td><strong>🥇 New Mexico</strong></td>
+                                    <td>2 clients</td>
+                                    <td style="color: var(--accent-blue);">$270</td>
+                                    <td>$3,050</td>
+                                    <td style="color: var(--accent-green);">$4,270</td>
+                                    <td>15%</td>
+                                    <td><strong style="color: var(--accent-green);">3.3x</strong></td>
+                                    <td>Trucking specialist - 4x fatality = high value</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>🔥 Texas</strong></td>
+                                    <td>3 clients</td>
+                                    <td style="color: var(--accent-blue);">$270</td>
+                                    <td>$3,050</td>
+                                    <td style="color: var(--accent-green);">$4,270</td>
+                                    <td>~15%</td>
+                                    <td><strong>2.8x</strong></td>
+                                    <td>500+ cases via signing company, 4+ years</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>🔥 Florida</strong></td>
+                                    <td>1 client</td>
+                                    <td style="color: var(--accent-blue);">$248</td>
+                                    <td>$2,825</td>
+                                    <td style="color: var(--accent-green);">$3,955</td>
+                                    <td>5%</td>
+                                    <td><strong>3.0x</strong></td>
+                                    <td>30+ cases/mo, since early 2020</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Louisiana</strong></td>
+                                    <td>3 clients</td>
+                                    <td style="color: var(--accent-blue);">$248</td>
+                                    <td>$2,825</td>
+                                    <td style="color: var(--accent-green);">$3,955</td>
+                                    <td>5%</td>
+                                    <td><strong>2.8x</strong></td>
+                                    <td>40+ cases/mo with one client</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Georgia</strong></td>
+                                    <td>1 client</td>
+                                    <td style="color: var(--accent-blue);">$248</td>
+                                    <td>$2,825</td>
+                                    <td style="color: var(--accent-green);">$3,955</td>
+                                    <td>15-25%</td>
+                                    <td><strong>2.5x</strong></td>
+                                    <td>Strong conversion market</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pennsylvania</strong></td>
+                                    <td>2 clients</td>
+                                    <td style="color: var(--accent-blue);">$270</td>
+                                    <td>$3,050</td>
+                                    <td style="color: var(--accent-green);">$4,270</td>
+                                    <td>15-20%</td>
+                                    <td><strong>2.3x</strong></td>
+                                    <td>$1,854 avg CPC for 2025, Philly-focused</td>
+                                </tr>
+                                <tr style="background: rgba(139,92,246,0.05);">
+                                    <td><strong>⭐ VA/OH/SC</strong></td>
+                                    <td>3 clients</td>
+                                    <td style="color: var(--accent-blue);">$270</td>
+                                    <td>$3,050</td>
+                                    <td style="color: var(--accent-green);">$4,270</td>
+                                    <td>15-25%</td>
+                                    <td><strong>2.2x</strong></td>
+                                    <td>⭐ FAVORITE CLIENT - 100+ cases/mo</td>
+                                </tr>
+                                <tr style="background: rgba(239,68,68,0.05);">
+                                    <td><strong>🚀 Arizona/Utah</strong></td>
+                                    <td>1 client</td>
+                                    <td style="color: var(--accent-blue);">$225</td>
+                                    <td>$2,600</td>
+                                    <td style="color: var(--accent-green);">$3,640</td>
+                                    <td>5%</td>
+                                    <td><strong>2.3x</strong></td>
+                                    <td>🚀 HIGHEST VOLUME - 80+ cases/mo</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Washington</strong></td>
+                                    <td>1 client</td>
+                                    <td style="color: var(--accent-blue);">$248</td>
+                                    <td>$2,825</td>
+                                    <td style="color: var(--accent-green);">$3,955</td>
+                                    <td>10-15%</td>
+                                    <td><strong>2.8x</strong></td>
+                                    <td>$1.5M+ total spend since 2020</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Oregon/Utah/Idaho</strong></td>
+                                    <td>1 client</td>
+                                    <td style="color: var(--accent-blue);">$248</td>
+                                    <td>$2,825</td>
+                                    <td style="color: var(--accent-green);">$3,955</td>
+                                    <td>5%</td>
+                                    <td><strong>2.1x</strong></td>
+                                    <td>$1.5M+ spend, 80+ cases/mo</td>
+                                </tr>
+                                <tr style="background: rgba(245,158,11,0.05);">
+                                    <td><strong>💰 California</strong></td>
+                                    <td>National</td>
+                                    <td style="color: var(--accent-yellow);">$481</td>
+                                    <td>$5,156</td>
+                                    <td style="color: var(--accent-green);">$7,218</td>
+                                    <td>0-10%</td>
+                                    <td><strong>2.1x</strong></td>
+                                    <td>💰 $4M+ spend, $250K/mo client</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card span-12" style="margin-top: 24px;">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-globe"></i> National Clients</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table" style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>Client Type</th>
+                                    <th>Coverage</th>
+                                    <th>Performance</th>
+                                    <th>Scale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>National Client 1</strong></td>
+                                    <td>Data firm with state offices</td>
+                                    <td>$1,500 avg case cost, $2K CPC</td>
+                                    <td>Enterprise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>National Client 2</strong></td>
+                                    <td>SC, WV, GA, TN, TX</td>
+                                    <td>$2K avg CPC</td>
+                                    <td>Multi-state</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>National Client 3</strong></td>
+                                    <td>All 50 states</td>
+                                    <td>Multi-7-figure annual spend</td>
+                                    <td>🔥 Enterprise — largest client</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 24px; padding: 16px; background: var(--bg-tertiary); border-radius: 8px; border-left: 4px solid var(--accent-green);">
+                            <strong style="color: var(--accent-green);">💡 We have references for every state.</strong><br>
+                            <span style="color: var(--text-secondary);">Between our national clients and state-specific relationships, you can pitch to anyone, anywhere, anytime.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div class="page-content" id="settings">
+                <div class="settings-section">
+                    <h3 class="settings-title"><i class="fas fa-user"></i> Profile</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Business Name</h4>
+                            <p>KuriosBrand LLC</p>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Owner</h4>
+                            <p>Mark Gundrum (Marko)</p>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Location</h4>
+                            <p>Currently: Pisac, Peru | Going to Israel in ~2 weeks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title"><i class="fas fa-bell"></i> Notifications</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Email Notifications</h4>
+                            <p>Receive emails for important updates</p>
+                        </div>
+                        <div class="toggle active" onclick="this.classList.toggle('active')"></div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Telegram Notifications</h4>
+                            <p>Get notified via Telegram bot</p>
+                        </div>
+                        <div class="toggle active" onclick="this.classList.toggle('active')"></div>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Daily Summary</h4>
+                            <p>Morning briefing with key metrics</p>
+                        </div>
+                        <div class="toggle" onclick="this.classList.toggle('active')"></div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title"><i class="fas fa-link"></i> Integrations</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>GoHighLevel</h4>
+                            <p>CRM integration - $407/month</p>
+                        </div>
+                        <span class="status-badge status-active">Connected</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Google Calendar</h4>
+                            <p>mark@kuriosbrand.com</p>
+                        </div>
+                        <span class="status-badge status-active">Connected</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Notion</h4>
+                            <p>Sierra Workspace</p>
+                        </div>
+                        <span class="status-badge status-active">Connected</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>X/Twitter</h4>
+                            <p>@markkodg</p>
+                        </div>
+                        <span class="status-badge status-active">Connected</span>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3 class="settings-title"><i class="fas fa-dollar-sign"></i> Financial Summary</h3>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Monthly Expenses</h4>
+                            <p>Business expenses</p>
+                        </div>
+                        <span style="font-weight: 600; color: var(--accent-red);">~$3,000</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>CC Debt</h4>
+                            <p>Total across all cards</p>
+                        </div>
+                        <span style="font-weight: 600; color: var(--accent-red);">$20,000</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Monthly Interest Bleed</h4>
+                            <p>Priority: Attack Sapphire first (21.99%)</p>
+                        </div>
+                        <span style="font-weight: 600; color: var(--accent-yellow);">~$400</span>
+                    </div>
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h4>Next Review</h4>
+                            <p>Full expense audit</p>
+                        </div>
+                        <span style="font-weight: 600; color: var(--accent-blue);">Feb 3rd</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Prospect Details</h2>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                <button class="btn btn-primary"><i class="fas fa-phone"></i> Schedule Call</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ UTILITY FUNCTIONS ============
+        
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('open');
+        }
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show toast notification
+                const toast = document.createElement('div');
+                toast.textContent = '✓ Copied: ' + text;
+                toast.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: var(--accent-green); color: white; padding: 12px 20px; border-radius: 8px; z-index: 9999; animation: fadeIn 0.3s;';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2000);
+            });
+        }
+
+        // Toggle talking points
+        function toggleTalkingPoints() {
+            const tp = document.getElementById('talkingPoints');
+            const chevron = document.getElementById('talkingPointsChevron');
+            tp.classList.toggle('expanded');
+            chevron.style.transform = tp.classList.contains('expanded') ? 'rotate(180deg)' : '';
+        }
+
+        // REAL State data from Kurios Performance Sheet (Google Sheets ID: 1aFiWHBiugUKLK-fkRru8HcbTVfP6NQHkXjvPhVnXasU)
+        const stateData = {
+            'NC': { 
+                clients: '3 clients', 
+                leadCost: '$180', 
+                transferCost: '$1,000',
+                caseCost: '$2,150', 
+                sellPrice: '$3,010',
+                conversion: '15%', 
+                roi: '3.0x',
+                highlight: '$200/lead, client since May 2020',
+                story: '3 CLIENTS: $200/lead, 15% conv. Client since May 2020, <$1500/case.'
+            },
+            'AZ': { 
+                clients: '1 client', 
+                leadCost: '$225', 
+                transferCost: '$1,225',
+                caseCost: '$2,600', 
+                sellPrice: '$3,640',
+                conversion: '5%', 
+                roi: '2.3x',
+                highlight: '80+ cases/mo - HIGHEST VOLUME',
+                story: '1 CLIENT: $1200 avg case cost, client since early 2020. 80+ cases/mo, 5% conv.'
+            },
+            'NY': { 
+                clients: '3 clients', 
+                leadCost: '$225', 
+                transferCost: '$1,225',
+                caseCost: '$2,600', 
+                sellPrice: '$3,640',
+                conversion: '15%', 
+                roi: '3.6x',
+                highlight: 'Firms partnering to fund campaigns',
+                story: '3 CLIENTS: $250/lead, <$2k/case. One firm expanding rapidly, partnering with others. 15% conv.'
+            },
+            'GA': { 
+                clients: '1 client', 
+                leadCost: '$248', 
+                transferCost: '$1,338',
+                caseCost: '$2,825', 
+                sellPrice: '$3,955',
+                conversion: '15-25%', 
+                roi: '2.5x',
+                highlight: 'Strong conversion market',
+                story: '1 CLIENT: $2k per case or less, $200-350/lead. 15-25% conv. Strong conversion market.'
+            },
+            'LA': { 
+                clients: '3 clients', 
+                leadCost: '$248', 
+                transferCost: '$1,338',
+                caseCost: '$2,825', 
+                sellPrice: '$3,955',
+                conversion: '5%', 
+                roi: '2.8x',
+                highlight: '40+ cases/mo with one client',
+                story: '3 CLIENTS: $2k avg case cost, $250-300/lead. One client since March 2021, signs 40+ cases/mo with us.'
+            },
+            'FL': { 
+                clients: '1 client', 
+                leadCost: '$248', 
+                transferCost: '$1,338',
+                caseCost: '$2,825', 
+                sellPrice: '$3,955',
+                conversion: '5%', 
+                roi: '3.0x',
+                highlight: '30+ cases/mo consistently',
+                story: '1 CLIENT: $2k avg CPC, $1200 avg case cost, client since early 2020. 30+ cases/mo.'
+            },
+            'WA': { 
+                clients: '1 client', 
+                leadCost: '$248', 
+                transferCost: '$1,338',
+                caseCost: '$2,825', 
+                sellPrice: '$3,955',
+                conversion: '10-15%', 
+                roi: '2.8x',
+                highlight: '$1.5M+ total spend',
+                story: '1 CLIENT: $2500 avg CPC, client since 2020, over $1.5M spend. 10-15% conv.'
+            },
+            'OR': { 
+                clients: '1 client', 
+                leadCost: '$248', 
+                transferCost: '$1,338',
+                caseCost: '$2,825', 
+                sellPrice: '$3,955',
+                conversion: '5%', 
+                roi: '2.1x',
+                highlight: '$1.5M+ total spend',
+                story: '1 CLIENT: $1200 avg case cost, client since early 2020. 80+ cases/mo.'
+            },
+            'TX': { 
+                clients: '3 clients', 
+                leadCost: '$270', 
+                transferCost: '$1,450',
+                caseCost: '$3,050', 
+                sellPrice: '$4,270',
+                conversion: '~15%', 
+                roi: '2.8x',
+                highlight: '500+ cases via signing company',
+                story: '3 CLIENTS: (1) $2k avg case cost, 4+ years; (2) $1700-2000 avg acquisition; (3) 500+ cases through signing company. 20+ cases/mo, ~15% conv.'
+            },
+            'NM': { 
+                clients: '2 clients', 
+                leadCost: '$270', 
+                transferCost: '$1,450',
+                caseCost: '$3,050', 
+                sellPrice: '$4,270',
+                conversion: '15%', 
+                roi: '3.3x',
+                highlight: 'Trucking cases 4x more likely fatality',
+                story: '2 CLIENTS: $2k avg case cost, $300/lead, 15% conv. Client since June 2020. Heavy trucking - NM cases 4x more likely to be fatality = very high value.'
+            },
+            'PA': { 
+                clients: '2 clients', 
+                leadCost: '$270', 
+                transferCost: '$1,450',
+                caseCost: '$3,050', 
+                sellPrice: '$4,270',
+                conversion: '15-20%', 
+                roi: '2.3x',
+                highlight: '$1,854 avg CPC for 2025',
+                story: '2 CLIENTS: $1500 possible w/ aggressive intake, $2k or less avg. Client since 2023, $1854 avg CPC for 2025, 15-20% conv, local to Philly.'
+            },
+            'VA': { 
+                clients: '3 clients', 
+                leadCost: '$270', 
+                transferCost: '$1,450',
+                caseCost: '$3,050', 
+                sellPrice: '$4,270',
+                conversion: '15-25%', 
+                roi: '2.2x',
+                highlight: '100+ cases/mo - FAVORITE client',
+                story: '3 CLIENTS: (1) Since March 2021 - FAVORITE client, $1500 or less CPC, sometimes 100+ cases signed/mo; (2) $1M+ spend, $1700 CPC; (3) $1600/case in GA and SC.'
+            },
+            'CA': { 
+                clients: 'National data', 
+                leadCost: '$481', 
+                transferCost: '$2,503',
+                caseCost: '$5,156', 
+                sellPrice: '$7,218',
+                conversion: '0-10%', 
+                roi: '2.1x',
+                highlight: '$4M+ spend, $250K/mo client',
+                story: 'NATIONAL DATA: $3000-4000 avg case cost; One client spends $250k/mo; Over $4M spend to date. 40+ cases/mo.'
+            },
+            'NATIONAL': { 
+                clients: '3 national clients', 
+                leadCost: '$264', 
+                transferCost: '$1,419',
+                caseCost: '$2,987', 
+                sellPrice: '$4,182',
+                conversion: 'Varies', 
+                roi: '2.4x',
+                highlight: 'Multi-7-figure annual spend',
+                story: '3 NATIONAL CLIENTS: (1) Data firm, $1500 avg case cost; (2) SC, WV, GA, TN, TX - $2k avg CPC; (3) All 50 states, multi-7-figure annual spend. References for EVERY state.'
+            }
+        };
+
+        // Volume guarantees from the sheet
+        const volumeGuarantees = {
+            formFills: [
+                { volume: '100 leads', days: 30 },
+                { volume: '250 leads', days: 60 },
+                { volume: '500 leads', days: 90 },
+                { volume: '1,000 leads', days: 120 }
+            ],
+            liveTransfers: [
+                { volume: '25 transfers', days: 30 },
+                { volume: '50 transfers', days: 45 },
+                { volume: '100 transfers', days: 60 },
+                { volume: '200 transfers', days: 90 }
+            ],
+            signedCases: [
+                { volume: '10 cases', days: 30 },
+                { volume: '20 cases', days: 45 },
+                { volume: '35 cases', days: 60 },
+                { volume: '50 cases', days: 90 }
+            ]
+        };
+
+        // Aggregated stats from all clients
+        const totalStats = {
+            totalClients: 24,
+            totalStates: 15,
+            totalSpend: '$10M+',
+            casesSigned: '5,000+',
+            avgROI: '2.6x',
+            yearsExperience: 5,
+            largestClient: '$250K/mo',
+            highestVolume: '100+ cases/mo'
+        };
+
+        // Update state stats on selection - show REAL data from Google Sheet
+        function updateStateStats() {
+            const state = document.getElementById('stateSelect').value;
+            const data = stateData[state];
+            if (!data) {
+                document.getElementById('stateClients').textContent = '-';
+                document.getElementById('stateCaseCost').textContent = '-';
+                document.getElementById('stateConversion').textContent = '-';
+                document.getElementById('stateHighlight').textContent = '-';
+                document.getElementById('stateStoryBox').style.display = 'none';
+                return;
+            }
+            document.getElementById('stateClients').textContent = data.clients;
+            document.getElementById('stateCaseCost').textContent = data.caseCost;
+            document.getElementById('stateConversion').textContent = data.conversion;
+            document.getElementById('stateHighlight').textContent = data.highlight;
+            
+            // Show full story
+            const storyBox = document.getElementById('stateStoryBox');
+            if (storyBox) {
+                storyBox.style.display = 'block';
+                storyBox.innerHTML = `
+                    <div style="margin-top: 16px; padding: 16px; background: var(--bg-primary); border-radius: 8px; border-left: 3px solid var(--accent-green);">
+                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">📊 CLIENT STORY</div>
+                        <div style="font-size: 14px; color: var(--text-secondary);">${data.story}</div>
+                        <div style="display: flex; gap: 24px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-color);">
+                            <div><span style="color: var(--text-muted); font-size: 11px;">Lead Cost:</span> <strong style="color: var(--accent-blue);">${data.leadCost}</strong></div>
+                            <div><span style="color: var(--text-muted); font-size: 11px;">Transfer Cost:</span> <strong style="color: var(--accent-purple);">${data.transferCost}</strong></div>
+                            <div><span style="color: var(--text-muted); font-size: 11px;">Sell Price (+40%):</span> <strong style="color: var(--accent-green);">${data.sellPrice}</strong></div>
+                            <div><span style="color: var(--text-muted); font-size: 11px;">Client ROI:</span> <strong style="color: var(--accent-yellow);">${data.roi}</strong></div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Global search function
+        function initSearch() {
+            const searchInput = document.getElementById('globalSearch');
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                if (query.length < 2) return;
+                
+                // Search prospects
+                const allProspects = [...prospects.hot, ...prospects.inProgress, ...prospects.closed];
+                const results = allProspects.filter(p => 
+                    p.name.toLowerCase().includes(query) || 
+                    (p.firm && p.firm.toLowerCase().includes(query)) ||
+                    (p.location && p.location.toLowerCase().includes(query))
+                );
+                
+                if (results.length > 0 && query.length >= 2) {
+                    showPage('pipeline');
+                    filterPipelineTable(query);
+                }
+            });
+        }
+
+        // Filter pipeline table
+        function filterPipelineTable(query) {
+            const rows = document.querySelectorAll('#pipelineTable tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(query.toLowerCase()) ? '' : 'none';
+            });
+        }
+
+        // Pipeline filter by status
+        function filterPipelineByStatus(status) {
+            const rows = document.querySelectorAll('#pipelineTable tr');
+            rows.forEach(row => {
+                if (status === 'all') {
+                    row.style.display = '';
+                } else {
+                    const statusBadge = row.querySelector('.status-badge');
+                    if (statusBadge) {
+                        const rowStatus = statusBadge.textContent.toLowerCase();
+                        row.style.display = rowStatus.includes(status) ? '' : 'none';
+                    }
+                }
+            });
+        }
+
+        // ============ DATA ============
+        const prospects = {
+            hot: [
+                {
+                    name: "Scott Barney",
+                    firm: "Barney Injury Law",
+                    website: "barneyinjurylaw.com",
+                    location: "Virginia Beach, VA",
+                    avatar: "Burned Veteran + Solo Transitioner",
+                    budget: 15000,
+                    probability: 85,
+                    context: "$250K wasted on marketing, 30-35 cases (was 131 during COVID)",
+                    painPoints: [
+                        "Quarter million dollars wasted on marketing",
+                        "Only 30-35 active cases (was 131 during COVID)",
+                        "Sales pitches never pan out as promised",
+                        "Needs trusted long-term partner"
+                    ],
+                    quotes: [
+                        "I have probably spent quarter million dollars on wasted marketing",
+                        "I'm just pulling my hair out at my wit's end"
+                    ],
+                    nextAction: "Follow up on Patrick call outcome IMMEDIATELY",
+                    urgency: "IMMEDIATE"
+                },
+                {
+                    name: "Ross Robin",
+                    firm: "Rohin Law",
+                    website: "rohinlaw.com",
+                    location: "Houston, TX",
+                    avatar: "Mass Tort Crossover / Fast Scaler",
+                    budget: 15000,
+                    probability: 75,
+                    context: "15 years mass tort, starting NEW PI firm from scratch",
+                    painPoints: [
+                        "Starting from complete scratch with PI",
+                        "Needs dedicated intake",
+                        "Shopping around with many vendors"
+                    ],
+                    quotes: [
+                        "I've been a mass tort lawyer for about 15 years and had a lot of success"
+                    ],
+                    nextAction: "Follow up on email, schedule Patrick call ASAP",
+                    urgency: "TODAY"
+                },
+                {
+                    name: "Lucas Naccarati",
+                    firm: "Muniz Kim Law",
+                    website: "munizkimlaw.com",
+                    location: "New Jersey / SoCal",
+                    avatar: "Fast Scaler",
+                    budget: 30000,
+                    probability: 80,
+                    context: "Grew previous firm to $5M annually, 120+ clients in <1 year",
+                    painPoints: [
+                        "Referrals are great but not predictable",
+                        "Wants to mitigate risk with consistent lead flow"
+                    ],
+                    quotes: [
+                        "If I can mitigate risk and predict stuff that's gonna happen for the company..."
+                    ],
+                    nextAction: "Send proposal with Patrick CC'd",
+                    urgency: "TODAY"
+                },
+                {
+                    name: "Jalal Abdallah",
+                    firm: "Jalal Law",
+                    website: "jalallaw.com",
+                    location: "Michigan (expanding CA, NY, MA)",
+                    avatar: "The Expansionist",
+                    budget: 50000,
+                    probability: 70,
+                    context: "Family firm, signing 8-10 MVA/month, hates form-fill-then-chase",
+                    painPoints: [
+                        "HATES form fills then chase - 'waste of time'",
+                        "100 calls for 2 cases is unacceptable",
+                        "Values time over nickels and dimes"
+                    ],
+                    quotes: [
+                        "I can't stand the, you know, form and then chase 'em..."
+                    ],
+                    nextAction: "Follow up Wednesday, prepare multi-state proposal",
+                    urgency: "WEDNESDAY"
+                },
+                {
+                    name: "Omeed Hakimianpour",
+                    firm: "The Injury Partners",
+                    website: "theinjurypartners.com",
+                    location: "California (multi-state)",
+                    avatar: "Sophisticated Buyer",
+                    budget: 50000,
+                    probability: 65,
+                    context: "Already buying leads, comparison shopping, SB 37 compliance concerns",
+                    painPoints: [
+                        "SB 37 compliance concerns",
+                        "Human error in intake leading to bad signups",
+                        "Wants performance-based pricing"
+                    ],
+                    quotes: [
+                        "How are you guys handling SB 37?"
+                    ],
+                    nextAction: "Send summary email, connect with Patrick",
+                    urgency: "MID-WEEK"
+                },
+                {
+                    name: "Rich Hyde",
+                    firm: "Trial Tribe",
+                    website: "trialtribe.com",
+                    location: "Texas",
+                    avatar: "Burned Veteran",
+                    budget: 22500,
+                    probability: 60,
+                    context: "Deep skeptic, burned by Quintessa + Walker, wants guarantees",
+                    painPoints: [
+                        "Burned by Quintessa (fake leads)",
+                        "Walker advertising 'hot and cold'",
+                        "Needs contractual guarantees"
+                    ],
+                    quotes: [
+                        "I've heard the same pitch time and time again"
+                    ],
+                    nextAction: "Send proposal WITH GUARANTEES in writing",
+                    urgency: "TODAY"
+                },
+                {
+                    name: "Dagmawi Getachew",
+                    firm: "DG Firm",
+                    website: "dgfirm.law",
+                    location: "Texas",
+                    avatar: "Solo Transitioner",
+                    budget: 17500,
+                    probability: 65,
+                    context: "Solo PI attorney, 7 years, compliance concerns about calling leads",
+                    painPoints: [
+                        "Uncomfortable calling raw leads - solicitation concerns",
+                        "Doesn't want to pay for leads with unclear coverage"
+                    ],
+                    quotes: [
+                        "As lawyers, we can't solicit it"
+                    ],
+                    nextAction: "Follow up on pay-per-lead decision",
+                    urgency: "2-3 DAYS"
+                }
+            ],
+            inProgress: [
+                {
+                    name: "Daniel Ramirez",
+                    firm: "Rey de la Ley",
+                    website: "reydelaley.com",
+                    location: "Dallas → Houston",
+                    avatar: "Solo Transitioner / Expansionist",
+                    budget: 15000,
+                    probability: 75,
+                    context: "20 years in Dallas, $1M+/year, Spanish-speaking focus",
+                    painPoints: [
+                        "Starting new Houston office from scratch",
+                        "Needs Spanish-speaking intake"
+                    ],
+                    nextAction: "Follow up in 1 week on office progress",
+                    urgency: "1 WEEK"
+                },
+                {
+                    name: "Josh Sweeney",
+                    firm: "Shane Smith Law",
+                    website: "shanesmithlaw.com",
+                    location: "Atlanta, GA (expanding NC)",
+                    avatar: "Channel Strategist / Volume King",
+                    budget: 30000,
+                    probability: 50,
+                    context: "15 lead sources already, getting duplicates, wants YouTube/TikTok",
+                    painPoints: [
+                        "Getting duplicates from overlapping vendors",
+                        "Looking for pure play on YouTube or TikTok"
+                    ],
+                    nextAction: "Prepare YouTube/TikTok data, follow up next week",
+                    urgency: "NEXT WEEK"
+                },
+                {
+                    name: "Michael Shirts",
+                    firm: "BS Injury Law",
+                    website: "bsinjurylaw.com",
+                    location: "Las Vegas, NV",
+                    avatar: "Cautious New Buyer",
+                    budget: 15000,
+                    probability: 70,
+                    context: "Law Pronation disaster, wants live transfers with quality",
+                    painPoints: [
+                        "Law Pronation was waste of time and money",
+                        "Out of state leads, 6-month-old accidents"
+                    ],
+                    nextAction: "Follow up on Patrick call outcome",
+                    urgency: "IMMEDIATE"
+                },
+                {
+                    name: "Michael Schulz",
+                    firm: "RMD Law",
+                    location: "Unknown",
+                    avatar: "Unknown - requires research",
+                    budget: 15000,
+                    probability: 50,
+                    nextAction: "Search CRM for contact history, follow up 02/10",
+                    urgency: "FEB 10"
+                },
+                {
+                    name: "Joan Suh",
+                    firm: "Unknown",
+                    location: "Unknown",
+                    avatar: "Unknown - requires research",
+                    budget: 15000,
+                    probability: 50,
+                    nextAction: "Search CRM for contact history",
+                    urgency: "TBD"
+                }
+            ],
+            closed: [
+                {
+                    name: "Jason E",
+                    firm: "Eisenberg Law Group PC",
+                    website: "eisenberglawgrouppc.com",
+                    location: "California",
+                    avatar: "Fast Scaler (Returning)",
+                    budget: 31750,
+                    probability: 100,
+                    context: "5 years with COD, got $2M case from them previously",
+                    painPoints: [],
+                    quotes: [
+                        "I did get a $2 million case with you guys. So I paid for itself.",
+                        "Let's find another four, $5 million deal this time!"
+                    ],
+                    nextAction: "Campaign live Monday - maintain relationship",
+                    urgency: "CLOSED",
+                    closedDate: "2026-01"
+                }
+            ]
+        };
+
+        const projects = {
+            active: [
+                {
+                    id: "mva-lead-gen",
+                    name: "MVA Lead Generation Business",
+                    description: "Core business - generating motor vehicle accident leads for PI attorneys via Meta ads",
+                    status: "ACTIVE",
+                    priority: "P0",
+                    progress: 60,
+                    tags: ["Core Business", "Revenue", "Sales"],
+                    nextActions: ["Follow up hot prospects", "Set up GHL automations", "Reduce call cost to <$100"]
+                },
+                {
+                    id: "ai-intake",
+                    name: "AI Intake Agent System",
+                    description: "Automated lead qualification via WhatsApp/Telegram - 90% complete, needs API key",
+                    status: "ACTIVE",
+                    priority: "P0",
+                    progress: 90,
+                    tags: ["Automation", "Cost Savings", "AI"],
+                    nextActions: ["Add OpenAI API key", "Test the system", "Connect to GHL pipeline"],
+                    savings: "$53,580-$76,980/year"
+                },
+                {
+                    id: "texas-mva-site",
+                    name: "Texas MVA Site",
+                    description: "SEO authority site for Texas truck accident leads - texastruckaccidents.net",
+                    status: "ACTIVE",
+                    priority: "P1",
+                    progress: 25,
+                    tags: ["SEO", "Lead Gen", "Next.js"],
+                    nextActions: ["Complete Sprint 1", "Add FAQ schema", "Create ChatGPT listicles"]
+                },
+                {
+                    id: "pi-vendors",
+                    name: "PI Vendor Intelligence (SCOUT)",
+                    description: "AI-powered vendor matching platform with multi-source scraping",
+                    status: "ACTIVE",
+                    priority: "P1",
+                    progress: 15,
+                    tags: ["Intel", "Scraping", "Telegram Bot"],
+                    nextActions: ["Continue data collection", "Build matching engine", "Deploy frontend"]
+                },
+                {
+                    id: "seo-network",
+                    name: "SEO Network (Supporting Sites)",
+                    description: "Network of 5-7 niche sites linking to Texas truck accidents site",
+                    status: "PLANNING",
+                    priority: "P2",
+                    progress: 5,
+                    tags: ["SEO", "Link Building", "Astro"],
+                    nextActions: ["Register first 3 domains", "Set up Cloudflare Pages templates"]
+                }
+            ],
+            stalled: [
+                {
+                    id: "concrete-rank-rent",
+                    name: "Concrete Rank & Rent Sites",
+                    description: "Local SEO sites for concrete contractors - needs monetization",
+                    status: "STALLED",
+                    priority: "P3",
+                    progress: 70,
+                    tags: ["Local SEO", "Rank & Rent"],
+                    nextActions: ["Migrate from WordPress", "Find contractors to rent to", "Or sell"]
+                },
+                {
+                    id: "vendors-kuriosbrand",
+                    name: "Vendors KuriosBrand Site",
+                    description: "Authority SEO website for PI vendor matching - superseded by PI-VENDORS",
+                    status: "STALLED",
+                    priority: "P3",
+                    progress: 40,
+                    tags: ["React", "Vite", "Quiz"],
+                    nextActions: ["Decide: keep or merge with pi-vendors"]
+                }
+            ],
+            completed: [
+                {
+                    id: "ec2-security",
+                    name: "EC2 Security Hardening",
+                    description: "SSH IP restriction, auto-updates",
+                    status: "COMPLETED",
+                    priority: "P1",
+                    progress: 100,
+                    completedDate: "2026-01-29"
+                },
+                {
+                    id: "knowledge-bases",
+                    name: "Knowledge Bases",
+                    description: "Meta Ads KB (38KB), SDR Bot KB (70KB) - backed up to Notion",
+                    status: "COMPLETED",
+                    priority: "P2",
+                    progress: 100,
+                    completedDate: "2026-02-01"
+                }
+            ]
+        };
+
+        const contacts = [
+            // Partners
+            {
+                name: "Max",
+                role: "Partner / Co-Founder",
+                company: "Cases on Demand",
+                type: "partner",
+                email: "max@casesondemand.com",
+                phone: "",
+                note: "Main partner - handles operations",
+                avatar: "var(--gradient-1)",
+                tags: ["partner", "operations"]
+            },
+            {
+                name: "Jeremy",
+                role: "Partner / Co-Founder",
+                company: "Cases on Demand",
+                type: "partner",
+                email: "jeremy@casesondemand.com",
+                phone: "",
+                note: "Partner - handles business development",
+                avatar: "var(--gradient-1)",
+                tags: ["partner", "biz-dev"]
+            },
+            {
+                name: "Patrick",
+                role: "Outsourced Intake Director",
+                company: "Inquire2Esquire",
+                type: "vendor",
+                email: "patrick@inquire2esquire.com",
+                phone: "",
+                note: "🌟 THE DIFFERENTIATOR - Former director of intake, not a call center. Handles live transfers.",
+                avatar: "var(--gradient-2)",
+                tags: ["vendor", "intake", "key-partner"]
+            },
+            // Vendors
+            {
+                name: "GHL Support",
+                role: "CRM Platform",
+                company: "GoHighLevel",
+                type: "vendor",
+                email: "support@gohighlevel.com",
+                phone: "",
+                note: "$407/month - CRM and automation",
+                avatar: "linear-gradient(135deg, #f59e0b, #ef4444)",
+                tags: ["vendor", "crm", "tech"]
+            },
+            // Key Clients (Examples - anonymized)
+            {
+                name: "Favorite Client",
+                role: "VA/OH/SC Client",
+                company: "Multi-State PI Firm",
+                type: "client",
+                email: "",
+                phone: "",
+                note: "Since March 2021 - signs 100+ cases/mo sometimes. $1500 or less CPC.",
+                avatar: "var(--accent-green)",
+                tags: ["client", "favorite", "high-volume"]
+            },
+            {
+                name: "CA Big Spender",
+                role: "California National",
+                company: "Large PI Firm",
+                type: "client",
+                email: "",
+                phone: "",
+                note: "$250K/mo spend, $4M+ total. Since year 1.",
+                avatar: "var(--accent-yellow)",
+                tags: ["client", "high-value", "california"]
+            },
+            {
+                name: "AZ Volume King",
+                role: "Arizona/Utah Client",
+                company: "Regional PI Firm",
+                type: "client",
+                email: "",
+                phone: "",
+                note: "80+ cases/mo - highest volume state performer. Since early 2020.",
+                avatar: "var(--accent-purple)",
+                tags: ["client", "high-volume", "arizona"]
+            },
+            // Personal
+            {
+                name: "Noia",
+                role: "Partner",
+                company: "Personal",
+                type: "personal",
+                note: "Going to Israel together in ~2 weeks",
+                avatar: "linear-gradient(135deg, #ec4899, #f43f5e)",
+                tags: ["personal"]
+            }
+        ];
+
+        // Filter contacts by type
+        function filterContacts(type) {
+            const container = document.getElementById('contactsGrid');
+            const filtered = type === 'all' ? contacts : contacts.filter(c => c.type === type);
+            renderContactsWithData(filtered);
+        }
+
+        // Render contacts with data
+        function renderContactsWithData(contactsList) {
+            const container = document.getElementById('contactsGrid');
+            container.innerHTML = contactsList.map(c => `
+                <div class="contact-card" data-type="${c.type}">
+                    <div class="contact-header">
+                        <div class="contact-avatar" style="background: ${c.avatar}">${c.name.split(' ').map(n => n[0]).join('')}</div>
+                        <div>
+                            <div class="contact-name">${c.name}</div>
+                            <div class="contact-role">${c.role}</div>
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-detail"><i class="fas fa-building"></i> ${c.company}</div>
+                        ${c.email ? `<div class="contact-detail"><i class="fas fa-envelope"></i> <a href="mailto:${c.email}" style="color: var(--accent-blue);">${c.email}</a></div>` : ''}
+                        ${c.phone ? `<div class="contact-detail"><i class="fas fa-phone"></i> ${c.phone}</div>` : ''}
+                        ${c.note ? `<div class="contact-detail" style="margin-top: 8px; padding: 8px; background: var(--bg-tertiary); border-radius: 6px;"><i class="fas fa-sticky-note"></i> ${c.note}</div>` : ''}
+                        ${c.tags ? `<div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px;">${c.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Filter pipeline by time period
+        function filterByPeriod(period) {
+            // Update active state
+            document.querySelectorAll('[data-period]').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.period === period) btn.classList.add('active');
+            });
+            
+            // For now, show all - in production this would filter by date
+            const rows = document.querySelectorAll('#pipelineTable tr');
+            rows.forEach(row => row.style.display = '');
+            
+            // Show toast
+            const toast = document.createElement('div');
+            toast.textContent = `Showing ${period === 'all' ? 'all time' : period === 'day' ? 'today' : period === 'week' ? 'this week' : 'this month'} prospects`;
+            toast.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: var(--accent-blue); color: white; padding: 12px 20px; border-radius: 8px; z-index: 9999;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        // Search contacts
+        function searchContacts(query) {
+            const q = query.toLowerCase();
+            const filtered = contacts.filter(c => 
+                c.name.toLowerCase().includes(q) ||
+                c.company.toLowerCase().includes(q) ||
+                (c.role && c.role.toLowerCase().includes(q)) ||
+                (c.tags && c.tags.some(t => t.includes(q)))
+            );
+            renderContactsWithData(filtered);
+        }
+
+        const ideas = [
+            {
+                name: "AI Voice Appointment Setter",
+                description: "Replace human setters with NVIDIA Persona Plex - target <$10/call",
+                potential: "HIGH",
+                status: "RESEARCH",
+                savings: "90%+ cost reduction"
+            },
+            {
+                name: "Spanish Leads Expansion",
+                description: "Target Spanish-speaking MVA victims - $100-150 cheaper per acquisition",
+                potential: "HIGH",
+                status: "READY",
+                market: "Houston is 45% Hispanic"
+            },
+            {
+                name: "YouTube Comparison Videos",
+                description: "'Best Truck Accident Lawyers in [City]' videos - YouTube is #1 for AI Overview citations",
+                potential: "HIGH",
+                status: "PLANNED"
+            },
+            {
+                name: "LLM Private Blog Network",
+                description: "Use Indexsy LLM PBN for 'Best X in Y' local keywords",
+                potential: "MEDIUM",
+                status: "EVALUATE"
+            },
+            {
+                name: "Marko Inc. Music Career",
+                description: "Full pivot to music after $9.6M exit",
+                potential: "DREAM",
+                status: "5-YEAR VISION"
+            }
+        ];
+
+        const activities = [
+            { type: "deal", title: "Jason E closed - $31,750", time: "Jan 2026" },
+            { type: "call", title: "Patrick call scheduled with Scott Barney", time: "2 days ago" },
+            { type: "meeting", title: "Follow-up with Jalal Abdallah", time: "Wednesday" },
+            { type: "email", title: "Proposal sent to Lucas Naccarati", time: "Today" },
+            { type: "task", title: "AI Intake Agent 90% complete", time: "Needs API key" },
+            { type: "call", title: "Rich Hyde wants guarantees in writing", time: "Pending" }
+        ];
+
+        // ============ FUNCTIONS ============
+
+        // Calculate pipeline value (10% of budget)
+        function calcPipelineValue(budget) {
+            return budget * 0.10;
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(amount);
+        }
+
+        // Get probability class
+        function getProbClass(prob) {
+            if (prob >= 70) return 'prob-high';
+            if (prob >= 50) return 'prob-medium';
+            return 'prob-low';
+        }
+
+        // Get status class
+        function getStatusClass(status) {
+            const s = status.toLowerCase();
+            if (s.includes('hot') || s.includes('immediate')) return 'status-hot';
+            if (s.includes('progress') || s.includes('active')) return 'status-progress';
+            if (s.includes('closed') || s.includes('complete')) return 'status-closed';
+            if (s.includes('stall')) return 'status-stalled';
+            return 'status-active';
+        }
+
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active');
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+            
+            const titles = {
+                dashboard: 'Dashboard Overview',
+                pipeline: 'Pipeline / Prospects',
+                projects: 'Projects',
+                contacts: 'Contacts',
+                analytics: 'Analytics',
+                ideas: 'Ideas Backlog',
+                settings: 'Settings'
+            };
+            document.getElementById('pageTitle').textContent = titles[pageId] || 'Dashboard';
+        }
+
+        // Modal functions
+        function openModal(title, content) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalBody').innerHTML = content;
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        // Show prospect detail
+        function showProspectDetail(prospect) {
+            const pipelineValue = calcPipelineValue(prospect.budget);
+            const painPointsHtml = prospect.painPoints ? prospect.painPoints.map(p => `<li>${p}</li>`).join('') : '<li>No data available</li>';
+            const quotesHtml = prospect.quotes ? prospect.quotes.map(q => `<div class="quote-box">"${q}"</div>`).join('') : '';
+            
+            const content = `
+                <div class="modal-section">
+                    <div class="modal-section-title">Overview</div>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Firm</div>
+                            <div class="detail-value">${prospect.firm || 'Unknown'}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Location</div>
+                            <div class="detail-value">${prospect.location || 'Unknown'}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Avatar Type</div>
+                            <div class="detail-value">${prospect.avatar || 'Unknown'}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Website</div>
+                            <div class="detail-value">${prospect.website ? `<a href="https://${prospect.website}" target="_blank" style="color: var(--accent-blue)">${prospect.website}</a>` : 'N/A'}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <div class="modal-section-title">Deal Info</div>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Full Budget</div>
+                            <div class="detail-value" style="font-size: 18px; color: var(--accent-blue)">${formatCurrency(prospect.budget)}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Pipeline Value (10%)</div>
+                            <div class="detail-value" style="font-size: 18px; color: var(--accent-green)">${formatCurrency(pipelineValue)}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Close Probability</div>
+                            <div class="detail-value"><span class="prospect-probability ${getProbClass(prospect.probability)}">${prospect.probability}%</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Weighted Value</div>
+                            <div class="detail-value">${formatCurrency(pipelineValue * prospect.probability / 100)}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                ${prospect.context ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Context</div>
+                    <p style="color: var(--text-secondary)">${prospect.context}</p>
+                </div>
+                ` : ''}
+                
+                <div class="modal-section">
+                    <div class="modal-section-title">Pain Points</div>
+                    <ul class="pain-points-list">${painPointsHtml}</ul>
+                </div>
+                
+                ${quotesHtml ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Key Quotes</div>
+                    ${quotesHtml}
+                </div>
+                ` : ''}
+                
+                <div class="modal-section">
+                    <div class="modal-section-title">Next Action</div>
+                    <div style="padding: 16px; background: rgba(59,130,246,0.1); border-radius: 8px; border-left: 3px solid var(--accent-blue);">
+                        <div style="font-weight: 600; margin-bottom: 4px;">⚡ ${prospect.nextAction || 'No action specified'}</div>
+                        <div style="font-size: 12px; color: var(--text-muted);">Urgency: ${prospect.urgency || 'TBD'}</div>
+                    </div>
+                </div>
+            `;
+            
+            openModal(prospect.name, content);
+        }
+
+        // Show project detail
+        function showProjectDetail(project) {
+            const content = `
+                <div class="modal-section">
+                    <div class="modal-section-title">Overview</div>
+                    <p style="color: var(--text-secondary); margin-bottom: 16px;">${project.description}</p>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Status</div>
+                            <div class="detail-value"><span class="status-badge ${getStatusClass(project.status)}">${project.status}</span></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Priority</div>
+                            <div class="detail-value"><span class="priority-${project.priority.toLowerCase()}">${project.priority}</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <div class="modal-section-title">Progress</div>
+                    <div class="progress-header">
+                        <span class="progress-label">Completion</span>
+                        <span class="progress-value">${project.progress}%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 10px;">
+                        <div class="progress-fill blue" style="width: ${project.progress}%"></div>
+                    </div>
+                </div>
+                
+                ${project.tags ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Tags</div>
+                    <div class="project-tags">
+                        ${project.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                
+                ${project.nextActions ? `
+                <div class="modal-section">
+                    <div class="modal-section-title">Next Actions</div>
+                    <ul style="list-style: none;">
+                        ${project.nextActions.map(a => `<li style="padding: 8px 0; border-bottom: 1px solid var(--border-color); display: flex; gap: 8px;"><span style="color: var(--accent-blue)">→</span> ${a}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+                
+                ${project.savings ? `
+                <div class="modal-section">
+                    <div style="padding: 16px; background: rgba(16,185,129,0.1); border-radius: 8px; border-left: 3px solid var(--accent-green);">
+                        <div style="font-weight: 600; color: var(--accent-green);">💰 Potential Savings</div>
+                        <div style="font-size: 18px; font-weight: 700; margin-top: 8px;">${project.savings}</div>
+                    </div>
+                </div>
+                ` : ''}
+            `;
+            
+            openModal(project.name, content);
+        }
+
+        // Render hot prospects list
+        function renderHotProspects() {
+            const container = document.getElementById('hotProspectsList');
+            const topProspects = prospects.hot.slice(0, 5);
+            
+            container.innerHTML = topProspects.map(p => `
+                <div class="prospect-item" onclick='showProspectDetail(${JSON.stringify(p).replace(/'/g, "\\'")})'>
+                    <div class="prospect-avatar">${p.name.split(' ').map(n => n[0]).join('')}</div>
+                    <div class="prospect-info">
+                        <div class="prospect-name">${p.name}</div>
+                        <div class="prospect-firm">${p.firm || 'Unknown Firm'}</div>
+                    </div>
+                    <div class="prospect-meta">
+                        <div class="prospect-budget">${formatCurrency(calcPipelineValue(p.budget))}</div>
+                        <span class="prospect-probability ${getProbClass(p.probability)}">${p.probability}%</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render activity feed
+        function renderActivityFeed() {
+            const container = document.getElementById('activityFeed');
+            container.innerHTML = activities.map(a => `
+                <div class="activity-item">
+                    <div class="activity-icon ${a.type}">
+                        <i class="fas fa-${a.type === 'call' ? 'phone' : a.type === 'deal' ? 'handshake' : a.type === 'meeting' ? 'calendar' : a.type === 'email' ? 'envelope' : 'check'}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">${a.title}</div>
+                        <div class="activity-time">${a.time}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render projects overview
+        function renderProjectsOverview() {
+            const container = document.getElementById('projectsOverview');
+            const topProjects = projects.active.slice(0, 3);
+            
+            container.innerHTML = topProjects.map(p => `
+                <div style="padding: 14px 0; border-bottom: 1px solid var(--border-color); cursor: pointer;" onclick='showProjectDetail(${JSON.stringify(p).replace(/'/g, "\\'")})'>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div style="font-weight: 600;">${p.name}</div>
+                        <span class="project-priority priority-${p.priority.toLowerCase()}">${p.priority}</span>
+                    </div>
+                    <div class="progress-bar" style="margin-bottom: 8px;">
+                        <div class="progress-fill ${p.priority === 'P0' ? 'green' : 'blue'}" style="width: ${p.progress}%"></div>
+                    </div>
+                    <div style="font-size: 12px; color: var(--text-muted);">${p.progress}% complete</div>
+                </div>
+            `).join('');
+        }
+
+        // Render follow-ups table
+        function renderFollowups() {
+            const container = document.getElementById('followupsList');
+            const allProspects = [...prospects.hot, ...prospects.inProgress].slice(0, 8);
+            
+            container.innerHTML = allProspects.map((p, i) => `
+                <tr onclick='showProspectDetail(${JSON.stringify(p).replace(/'/g, "\\'")})'>
+                    <td><span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: var(--bg-hover); border-radius: 50%; font-size: 12px; font-weight: 600;">${i + 1}</span></td>
+                    <td><strong>${p.name}</strong><br><span style="font-size: 12px; color: var(--text-muted)">${p.firm || ''}</span></td>
+                    <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${p.nextAction || 'TBD'}</td>
+                    <td><span class="status-badge ${getStatusClass(p.urgency || '')}">${p.urgency || 'TBD'}</span></td>
+                    <td><span class="prospect-probability ${getProbClass(p.probability)}">${p.probability}%</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // Render pipeline table
+        function renderPipelineTable() {
+            const container = document.getElementById('pipelineTable');
+            const allProspects = [
+                ...prospects.hot.map(p => ({...p, status: 'HOT'})),
+                ...prospects.inProgress.map(p => ({...p, status: 'IN PROGRESS'})),
+                ...prospects.closed.map(p => ({...p, status: 'CLOSED'}))
+            ];
+            
+            container.innerHTML = allProspects.map(p => `
+                <tr onclick='showProspectDetail(${JSON.stringify(p).replace(/'/g, "\\'")})'>
+                    <td><strong>${p.name}</strong><br><span style="font-size: 12px; color: var(--text-muted)">${p.firm || ''}</span></td>
+                    <td>${p.location || 'Unknown'}</td>
+                    <td><span style="font-size: 12px;">${p.avatar || 'Unknown'}</span></td>
+                    <td>${formatCurrency(p.budget)}</td>
+                    <td style="color: var(--accent-green); font-weight: 600;">${formatCurrency(calcPipelineValue(p.budget))}</td>
+                    <td><span class="prospect-probability ${getProbClass(p.probability)}">${p.probability}%</span></td>
+                    <td><span class="status-badge status-${p.status.toLowerCase().replace(' ', '-')}">${p.status}</span></td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px;">${p.nextAction || 'TBD'}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Render projects grid
+        function renderProjectsGrid() {
+            const container = document.getElementById('projectsGrid');
+            const allProjects = [...projects.active, ...projects.stalled, ...projects.completed];
+            
+            container.innerHTML = allProjects.map(p => `
+                <div class="project-card" onclick='showProjectDetail(${JSON.stringify(p).replace(/'/g, "\\'")})'>
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">${p.name}</div>
+                        </div>
+                        <span class="status-badge ${getStatusClass(p.status)}">${p.status}</span>
+                    </div>
+                    <div class="project-desc">${p.description}</div>
+                    <div class="project-progress">
+                        <div class="progress-header">
+                            <span class="progress-label">Progress</span>
+                            <span class="progress-value">${p.progress}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill ${p.progress === 100 ? 'green' : p.progress > 50 ? 'blue' : 'yellow'}" style="width: ${p.progress}%"></div>
+                        </div>
+                    </div>
+                    ${p.tags ? `<div class="project-tags">${p.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>` : ''}
+                    <div class="project-meta">
+                        <span class="project-priority priority-${(p.priority || 'P3').toLowerCase()}">${p.priority || 'P3'}</span>
+                        ${p.savings ? `<span style="font-size: 12px; color: var(--accent-green)">💰 ${p.savings}</span>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render contacts grid - uses the new structured contacts data
+        function renderContactsGrid() {
+            renderContactsWithData(contacts);
+        }
+
+        // Render ideas grid
+        function renderIdeasGrid() {
+            const container = document.getElementById('ideasGrid');
+            
+            container.innerHTML = ideas.map(idea => `
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-title">${idea.name}</div>
+                        <span class="status-badge ${idea.potential === 'HIGH' ? 'status-hot' : idea.potential === 'DREAM' ? 'status-progress' : 'status-active'}">${idea.potential}</span>
+                    </div>
+                    <div class="project-desc">${idea.description}</div>
+                    <div class="project-meta">
+                        <span class="project-tag">${idea.status}</span>
+                        ${idea.savings ? `<span style="font-size: 12px; color: var(--accent-green)">${idea.savings}</span>` : ''}
+                        ${idea.market ? `<span style="font-size: 12px; color: var(--accent-blue)">${idea.market}</span>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize Charts
+        function initCharts() {
+            // Revenue Chart
+            new Chart(document.getElementById('revenueChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [0, 5071, 5932, 31750, 0],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#6b6b75' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#6b6b75' }
+                        }
+                    }
+                }
+            });
+
+            // Avatar Chart
+            new Chart(document.getElementById('avatarChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Fast Scaler', 'Burned Veteran', 'Expansionist', 'Sophisticated', 'Solo Trans.'],
+                    datasets: [{
+                        data: [3, 3, 1, 2, 3],
+                        backgroundColor: ['#3b82f6', '#ef4444', '#8b5cf6', '#f59e0b', '#06b6d4']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#a0a0a8', font: { size: 11 } } }
+                    }
+                }
+            });
+
+            // Deal Size Chart
+            new Chart(document.getElementById('dealSizeChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['$15K', '$17.5K', '$22.5K', '$30K', '$50K'],
+                    datasets: [{
+                        label: 'Prospects',
+                        data: [5, 1, 1, 2, 2],
+                        backgroundColor: '#3b82f6'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#6b6b75' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#6b6b75' }
+                        }
+                    }
+                }
+            });
+
+            // Close Rate Chart
+            new Chart(document.getElementById('closeRateChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Fast Scaler', 'Burned Vet', 'Solo Trans', 'Sophisticated', 'Expansionist'],
+                    datasets: [{
+                        label: 'Close Rate %',
+                        data: [100, 25, 50, 0, 70],
+                        backgroundColor: ['#10b981', '#ef4444', '#f59e0b', '#6b6b75', '#8b5cf6']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#6b6b75' }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { color: '#6b6b75' }
+                        }
+                    }
+                }
+            });
+
+            // Goals Chart
+            new Chart(document.getElementById('goalsChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Calls/Day', 'Cost/Call', 'Pipeline', 'Closed'],
+                    datasets: [{
+                        label: 'Current',
+                        data: [1, 240, 24625, 31750],
+                        backgroundColor: '#3b82f6'
+                    }, {
+                        label: 'Target',
+                        data: [3, 100, 50000, 100000],
+                        backgroundColor: '#1e1e24',
+                        borderColor: '#3b82f6',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { color: '#a0a0a8' } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#6b6b75' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#6b6b75' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ============ EVENT LISTENERS ============
+
+        // Navigation clicks
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const page = item.dataset.page;
+                if (page) showPage(page);
+            });
+        });
+
+        // Close modal on overlay click
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target.id === 'modalOverlay') closeModal();
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Filter tabs with actual filtering
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                tab.parentElement.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Get filter value from data attribute or button text
+                const filter = tab.dataset.filter || tab.textContent.toLowerCase();
+                if (filter.includes('hot')) filterPipelineByStatus('hot');
+                else if (filter.includes('progress')) filterPipelineByStatus('progress');
+                else if (filter.includes('closed')) filterPipelineByStatus('closed');
+                else filterPipelineByStatus('all');
+            });
+        });
+
+        // Prospect filter input
+        const prospectFilter = document.getElementById('prospectFilter');
+        if (prospectFilter) {
+            prospectFilter.addEventListener('input', (e) => {
+                filterPipelineTable(e.target.value);
+            });
+        }
+
+        // ============ INITIALIZE ============
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHotProspects();
+            renderActivityFeed();
+            renderProjectsOverview();
+            renderFollowups();
+            renderPipelineTable();
+            renderProjectsGrid();
+            renderContactsGrid();
+            renderIdeasGrid();
+            initCharts();
+            initSearch();
+        });
+    </script>
+</body>
+</html>

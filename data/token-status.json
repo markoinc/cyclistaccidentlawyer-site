@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-02-02T13:58:01.632697",
+  "results": {
+    "gcal": {
+      "success": false,
+      "status": "no_client_creds"
+    },
+    "cloudflare": {
+      "success": true,
+      "status": "valid"
+    },
+    "notion": {
+      "success": true,
+      "status": "valid"
+    },
+    "x_twitter": {
+      "success": false,
+      "status": "no_key"
+    },
+    "ghl": {
+      "success": true,
+      "status": "status_404"
+    }
+  }
+}

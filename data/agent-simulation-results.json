@@ -1,0 +1,1173 @@
+{
+  "summary": {
+    "total_scenarios": 1000,
+    "overall_success_rate": 0.792,
+    "handoff_success_rate": 0.93,
+    "context_preservation_rate": 0.849,
+    "coordination_success_rate": 1.0,
+    "total_messages_exchanged": 6500,
+    "avg_messages_per_scenario": 6.5
+  },
+  "by_scenario_type": {
+    "discovery_tag": {
+      "count": 150,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.8,
+      "avg_coordination_quality": 0.9326666666666661,
+      "avg_message_count": 2.64,
+      "avg_time_to_resolution_ms": 1379720.0
+    },
+    "handoff_context": {
+      "count": 200,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.835,
+      "avg_coordination_quality": 0.9373750000000008,
+      "avg_message_count": 3.48,
+      "avg_time_to_resolution_ms": 4357625.0
+    },
+    "swarm": {
+      "count": 120,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.8916666666666667,
+      "avg_coordination_quality": 0.895833333333334,
+      "avg_message_count": 7.416666666666667,
+      "avg_time_to_resolution_ms": 3690041.6666666665
+    },
+    "sierra_delegation": {
+      "count": 180,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.8555555555555555,
+      "avg_coordination_quality": 0.8890277777777794,
+      "avg_message_count": 11.0,
+      "avg_time_to_resolution_ms": 16182883.333333334
+    },
+    "cross_functional": {
+      "count": 150,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.8533333333333334,
+      "avg_coordination_quality": 0.8815000000000005,
+      "avg_message_count": 11.72,
+      "avg_time_to_resolution_ms": 2788633.3333333335
+    },
+    "conflict_resolution": {
+      "count": 80,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.95,
+      "avg_coordination_quality": 0.9224999999999994,
+      "avg_message_count": 4.0,
+      "avg_time_to_resolution_ms": 743262.5
+    },
+    "async_collaboration": {
+      "count": 70,
+      "success_rate": 1.0,
+      "handoff_success": 0.0,
+      "context_preservation": 0.8142857142857143,
+      "avg_coordination_quality": 0.9307142857142856,
+      "avg_message_count": 3.0,
+      "avg_time_to_resolution_ms": 28234285.714285713
+    },
+    "question_chain": {
+      "count": 50,
+      "success_rate": 1.0,
+      "handoff_success": 1.0,
+      "context_preservation": 0.8,
+      "avg_coordination_quality": 0.9364999999999998,
+      "avg_message_count": 5.0,
+      "avg_time_to_resolution_ms": 573200.0
+    }
+  },
+  "agent_participation": {
+    "Sierra": {
+      "participated": 564,
+      "initiated": 120,
+      "received_handoffs": 37
+    },
+    "Scout": {
+      "participated": 374,
+      "initiated": 157,
+      "received_handoffs": 42
+    },
+    "Forge": {
+      "participated": 319,
+      "initiated": 118,
+      "received_handoffs": 32
+    },
+    "Spark": {
+      "participated": 381,
+      "initiated": 96,
+      "received_handoffs": 94
+    },
+    "Hunter": {
+      "participated": 466,
+      "initiated": 132,
+      "received_handoffs": 153
+    },
+    "Gears": {
+      "participated": 309,
+      "initiated": 55,
+      "received_handoffs": 93
+    },
+    "Echo": {
+      "participated": 455,
+      "initiated": 38,
+      "received_handoffs": 137
+    },
+    "Lens": {
+      "participated": 543,
+      "initiated": 104,
+      "received_handoffs": 189
+    }
+  },
+  "common_failures": {
+    "context_lost": 151,
+    "inappropriate_routing": 619,
+    "coordination_overhead": 89,
+    "handoff_not_acknowledged": 70
+  },
+  "recommendations": [
+    {
+      "priority": "high",
+      "area": "context_management",
+      "issue": "151 instances of context loss in handoffs",
+      "suggestion": "Implement structured context blocks that must be included in handoffs",
+      "implementation": "Use formatted context template: ```context\\n[key_info]\\n[dependencies]\\n[next_actions]\\n```",
+      "expected_impact": "Reduce context loss by 60%"
+    },
+    {
+      "priority": "medium",
+      "area": "agent_routing",
+      "issue": "619 inappropriate agent tags detected",
+      "suggestion": "Agents should route through Sierra for cross-functional requests rather than direct tagging",
+      "implementation": "Exception: established handoff pairs (Scout\u2192Hunter, Spark\u2192Echo) can direct-tag",
+      "expected_impact": "Clearer responsibility chains"
+    },
+    {
+      "priority": "low",
+      "area": "coordinator_load",
+      "issue": "Sierra involved in 564 scenarios (56%)",
+      "suggestion": "Enable more direct agent-to-agent workflows for established patterns",
+      "implementation": "Create 'trusted handoff pairs' that don't need Sierra's coordination",
+      "expected_impact": "Reduced bottleneck, faster execution"
+    },
+    {
+      "priority": "low",
+      "area": "async_collaboration",
+      "issue": "Opportunity for improvement",
+      "suggestion": "Agents should leave detailed status notes when going offline",
+      "implementation": "Standard format: 'Logging off. Status: [done], [in-progress], [blocked]. @[next-agent] can pick up [task].'",
+      "expected_impact": "Smoother async handoffs"
+    },
+    {
+      "priority": "low",
+      "area": "conflict_resolution",
+      "issue": "Proactive improvement",
+      "suggestion": "When agents disagree, default to data-driven resolution via Lens before Sierra mediates",
+      "implementation": "Disagreement protocol: 1) State positions, 2) @Lens for data, 3) @Sierra if still unresolved",
+      "expected_impact": "Faster, more objective conflict resolution"
+    }
+  ],
+  "sample_conversations": [
+    {
+      "id": "conv-6e8faba41cf3",
+      "type": "discovery_tag",
+      "trigger": "Lens discovers relevant information for Sierra",
+      "participants": [
+        "Sierra",
+        "Lens"
+      ],
+      "message_count": 3,
+      "messages": [
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra @Sierra Data shows three new competitors. This impacts your {area} - we should discuss next steps.",
+          "type": "discovery_alert"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Sierra**: @Lens @Lens \ud83d\udc4d On it. Will update the team when I have results.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Sierra**: @Lens FYI @Lens - made good headway. This is going well.",
+          "type": "status_update"
+        }
+      ],
+      "outcome": "discovery_acted_upon",
+      "success": true,
+      "coordination_quality": 0.925
+    },
+    {
+      "id": "conv-ddadde56ea7b",
+      "type": "handoff_context",
+      "trigger": "Handoff from Hunter to Echo",
+      "participants": [
+        "Hunter",
+        "Echo"
+      ],
+      "message_count": 4,
+      "messages": [
+        {
+          "from": "Hunter",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Hunter**: @Echo @Echo These leads need follow-up: list of 25 marketing directors. Can you draft case study emails? Tone should be friendly.",
+          "type": "handoff"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Echo**: @Hunter Got it @Hunter. Quick question - who's the primary stakeholder here?",
+          "type": "question"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Hunter**: @Echo prioritize quality over speed for this one. Happy to jump on a quick call if helpful.",
+          "type": "answer"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Echo**: @Hunter @Hunter Completed. Here's the output with your context incorporated. Ready for next steps.",
+          "type": "task_complete"
+        }
+      ],
+      "outcome": "handoff_complete",
+      "success": true,
+      "coordination_quality": 1.0
+    },
+    {
+      "id": "conv-49666d91c2b7",
+      "type": "swarm",
+      "trigger": "Client escalation: MegaCorp is asking for features we don't have. Help!",
+      "participants": [
+        "Sierra",
+        "Hunter",
+        "Echo",
+        "Lens"
+      ],
+      "message_count": 7,
+      "messages": [
+        {
+          "from": "Sierra",
+          "to": [
+            "Echo",
+            "Hunter",
+            "Lens"
+          ],
+          "content": "**Sierra**: @Echo @Hunter @Lens Client escalation: MegaCorp is asking for features we don't have. Help!",
+          "type": "swarm_join"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Echo**: @Sierra On it. Here's what I can offer: I can draft comms once we have a plan.",
+          "type": "swarm_join"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Hunter**: @Sierra On it. Here's what I can offer: I can reach out to the contacts and get direct feedback.",
+          "type": "swarm_join"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra Jumping in - Let me pull the data so we're making informed decisions. What else do we need?",
+          "type": "swarm_join"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Echo",
+            "Hunter",
+            "Lens"
+          ],
+          "content": "**Sierra**: @Echo @Hunter @Lens Great team. Here's the plan: @Echo handles ['draft', 'comms', 'once'], @Hunter handles ['reach', 'out', 'to'], @Lens handles ['pull', 'the', 'data']. Let's sync in 2 hours.",
+          "type": "coordination"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra Update: made progress on my part. Slight blocker but handling it.",
+          "type": "status_update"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Echo**: @Sierra Update: made progress on my part. On track.",
+          "type": "status_update"
+        }
+      ],
+      "outcome": "swarm_coordinated",
+      "success": true,
+      "coordination_quality": 0.825
+    },
+    {
+      "id": "conv-8f3c0eef6f3b",
+      "type": "sierra_delegation",
+      "trigger": "Create a content marketing strategy",
+      "participants": [
+        "Echo",
+        "Sierra",
+        "User",
+        "Spark",
+        "Scout",
+        "Lens"
+      ],
+      "message_count": 11,
+      "messages": [
+        {
+          "from": "User",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**User**: @Sierra Create a content marketing strategy",
+          "type": "user_request"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Scout",
+            "Lens",
+            "Spark",
+            "Echo"
+          ],
+          "content": "**Sierra**: @Scout @Lens @Spark @Echo On it! Breaking this down:\n\n\u2022 @Scout: Research what topics resonate with our audience\n\u2022 @Lens: Analyze our best-performing content\n\u2022 @Spark: Brainstorm fresh content angles and formats\n\u2022 @Echo: Draft the content calendar and first pieces\n\nLet's coordinate in thread. Questions?",
+          "type": "coordination"
+        },
+        {
+          "from": "Scout",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Scout**: @Sierra \ud83d\udd0d Starting research now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra \ud83d\udcca Pulling the data now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Spark",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Spark**: @Sierra \ud83d\udca1 Love it! Already have some ideas brewing.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Echo**: @Sierra \u270d\ufe0f Ready to write. Will wait for inputs from others.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Scout",
+            "Lens",
+            "Spark",
+            "Echo"
+          ],
+          "content": "**Sierra**: @Scout @Lens @Spark @Echo Quick status check - how's everyone progressing? Any blockers?",
+          "type": "coordination"
+        },
+        {
+          "from": "Spark",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Spark**: @Sierra \u2705 Done with my part: Brainstorm fresh content angle... Ready for review or handoff.",
+          "type": "task_complete"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Echo**: @Sierra \u2705 Done with my part: Draft the content calendar and... Ready for review or handoff.",
+          "type": "task_complete"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra \u2705 Done with my part: Analyze our best-performing co... Ready for review or handoff.",
+          "type": "task_complete"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "User"
+          ],
+          "content": "**Sierra**: @User Great work team! @User - we've completed the initial phase. Summary: [deliverables ready]. What would you like to prioritize next?",
+          "type": "coordination"
+        }
+      ],
+      "outcome": "delegation_complete",
+      "success": true,
+      "coordination_quality": 0.825
+    },
+    {
+      "id": "conv-ebcf4e3d09d2",
+      "type": "cross_functional",
+      "trigger": "Pipeline: Market Research \u2192 Lead Gen \u2192 Outreach",
+      "participants": [
+        "Echo",
+        "Sierra",
+        "Hunter",
+        "Scout",
+        "Lens"
+      ],
+      "message_count": 14,
+      "messages": [
+        {
+          "from": "Scout",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Scout**: @Hunter Starting research. Will produce market_intel for the pipeline.",
+          "type": "status_update"
+        },
+        {
+          "from": "Scout",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Scout**: @Hunter @Hunter market_intel ready. Here's what I found: [market_intel summary]. Your turn for qualify_leads.",
+          "type": "handoff"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Scout"
+          ],
+          "content": "**Hunter**: @Scout Got it @Scout! Processing market_intel now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Hunter**: @Echo Received market_intel from previous stage. Now qualify_leads. Output: prospect_list.",
+          "type": "status_update"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Hunter**: @Echo @Echo prospect_list ready. Here's what I found: [prospect_list summary]. Your turn for write_outreach.",
+          "type": "handoff"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Echo**: @Hunter Got it @Hunter! Processing prospect_list now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Echo**: @Hunter Received prospect_list from previous stage. Now write_outreach. Output: email_campaigns.",
+          "type": "status_update"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Echo**: @Hunter @Hunter email_campaigns ready. Here's what I found: [email_campaigns summary]. Your turn for execute_outreach.",
+          "type": "handoff"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Hunter**: @Echo Got it @Echo! Processing email_campaigns now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Hunter**: @Lens Received email_campaigns from previous stage. Now execute_outreach. Output: responses.",
+          "type": "status_update"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Hunter**: @Lens @Lens responses ready. Here's what I found: [responses summary]. Your turn for analyze_results.",
+          "type": "handoff"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Hunter"
+          ],
+          "content": "**Lens**: @Hunter Got it @Hunter! Processing responses now.",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra Received responses from previous stage. Now analyze_results. Output: insights.",
+          "type": "status_update"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Lens**: @Sierra Pipeline complete! \ud83c\udf89 Final output: insights. All 5 stages finished successfully.",
+          "type": "task_complete"
+        }
+      ],
+      "outcome": "pipeline_complete",
+      "success": true,
+      "coordination_quality": 0.875
+    },
+    {
+      "id": "conv-756de01b7555",
+      "type": "conflict_resolution",
+      "trigger": "Conflict: Forge vs Gears on custom build vs no-code solution",
+      "participants": [
+        "Sierra",
+        "Gears",
+        "Forge"
+      ],
+      "message_count": 4,
+      "messages": [
+        {
+          "from": "Forge",
+          "to": [
+            "Sierra",
+            "Gears"
+          ],
+          "content": "**Forge**: @Sierra @Gears I think we should custom build. Here's why: [reasoning based on my expertise].",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Gears",
+          "to": [
+            "Sierra",
+            "Forge"
+          ],
+          "content": "**Gears**: @Sierra @Forge Respectfully disagree @Forge. I'd recommend no-code solution because: [counter reasoning].",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Sierra",
+          "to": [
+            "Forge",
+            "Gears"
+          ],
+          "content": "**Sierra**: @Forge @Gears Let's get more data before deciding. @Lens can you analyze the historical data on this? Then we'll reconvene.",
+          "type": "coordination"
+        },
+        {
+          "from": "Forge",
+          "to": [
+            "Sierra"
+          ],
+          "content": "**Forge**: @Sierra @Sierra That works for me. @Gears let's try it.",
+          "type": "agent_to_agent"
+        }
+      ],
+      "outcome": "conflict_resolved",
+      "success": true,
+      "coordination_quality": 0.825
+    },
+    {
+      "id": "conv-ea9bf7013a8a",
+      "type": "async_collaboration",
+      "trigger": "Async work between Lens, Echo, Hunter",
+      "participants": [
+        "Hunter",
+        "Echo",
+        "Lens"
+      ],
+      "message_count": 3,
+      "messages": [
+        {
+          "from": "Lens",
+          "to": [
+            "Echo"
+          ],
+          "content": "**Lens**: @Echo Started working on the project. Made progress on [part 1]. @Echo I'm logging off - can you pick up [part 2] when you're online?",
+          "type": "handoff"
+        },
+        {
+          "from": "Echo",
+          "to": [
+            "Lens",
+            "Hunter"
+          ],
+          "content": "**Echo**: @Lens @Hunter @Lens Just saw your message. Picked up where you left off. Completed [part 2]. @Hunter can you review when you get a chance?",
+          "type": "status_update"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Lens",
+            "Echo"
+          ],
+          "content": "**Hunter**: @Lens @Echo @Lens @Echo Reviewed the work - looking good! Added my piece. We're ready to ship. \ud83d\ude80",
+          "type": "task_complete"
+        }
+      ],
+      "outcome": "async_complete",
+      "success": true,
+      "coordination_quality": 0.825
+    },
+    {
+      "id": "conv-31afdf4687d7",
+      "type": "question_chain",
+      "trigger": "Gears asks Lens a question",
+      "participants": [
+        "Hunter",
+        "Gears",
+        "Lens"
+      ],
+      "message_count": 5,
+      "messages": [
+        {
+          "from": "Gears",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Gears**: @Lens @Lens Need your expertise: what's the best approach for handling market expansion",
+          "type": "question"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Gears"
+          ],
+          "content": "**Lens**: @Gears @Gears Good question! Here's what I know: [detailed answer based on my expertise]. Does that help?",
+          "type": "answer"
+        },
+        {
+          "from": "Gears",
+          "to": [
+            "Lens"
+          ],
+          "content": "**Gears**: @Lens That helps! Follow-up: what about [specific aspect]? Should we loop in @Sierra or someone else?",
+          "type": "question"
+        },
+        {
+          "from": "Lens",
+          "to": [
+            "Gears",
+            "Hunter"
+          ],
+          "content": "**Lens**: @Gears @Hunter For that specific piece, @Hunter would know better. @Hunter can you weigh in on [specific aspect]?",
+          "type": "agent_to_agent"
+        },
+        {
+          "from": "Hunter",
+          "to": [
+            "Gears",
+            "Lens"
+          ],
+          "content": "**Hunter**: @Gears @Lens @Gears @Lens Yeah I can help with that. Here's my take: [additional expertise]. Between the three of us that should cover it!",
+          "type": "answer"
+        }
+      ],
+      "outcome": "question_answered",
+      "success": true,
+      "coordination_quality": 1.0
+    }
+  ],
+  "metadata": {
+    "simulation_timestamp": "2026-02-01T19:46:40.397552",
+    "framework_version": "2.0.0",
+    "agent_count": 8,
+    "agents": [
+      "Sierra",
+      "Scout",
+      "Forge",
+      "Spark",
+      "Hunter",
+      "Gears",
+      "Echo",
+      "Lens"
+    ],
+    "scenario_types_tested": [
+      "discovery_tag",
+      "handoff_context",
+      "swarm",
+      "sierra_delegation",
+      "cross_functional",
+      "conflict_resolution",
+      "async_collaboration",
+      "question_chain"
+    ]
+  },
+  "failed_scenarios_sample": [
+    {
+      "id": "conv-70977db20b35",
+      "type": "async_collaboration",
+      "trigger": "Async work between Echo, Scout, Gears",
+      "issues": [
+        "Handoff from Echo not acknowledged"
+      ],
+      "agents": [
+        "Gears",
+        "Echo",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-8eb7b6c9f61d",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Scout, Hunter",
+      "issues": [
+        "Handoff from Forge not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Hunter \u2192 Forge"
+      ],
+      "agents": [
+        "Hunter",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-0f9134468924",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Gears, Echo",
+      "issues": [
+        "Handoff from Forge not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Echo \u2192 Gears"
+      ],
+      "agents": [
+        "Echo",
+        "Gears",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-0286b236dccc",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Lens, Hunter",
+      "issues": [
+        "Handoff from Scout not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Scout",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-ea9bf7013a8a",
+      "type": "async_collaboration",
+      "trigger": "Async work between Lens, Echo, Hunter",
+      "issues": [
+        "Handoff from Lens not acknowledged",
+        "Unusual tag: Lens \u2192 Echo",
+        "Unusual tag: Echo \u2192 Lens"
+      ],
+      "agents": [
+        "Hunter",
+        "Echo",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-46c67e1a43e1",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Lens, Echo",
+      "issues": [
+        "Handoff from Scout not acknowledged",
+        "Unusual tag: Lens \u2192 Echo"
+      ],
+      "agents": [
+        "Echo",
+        "Scout",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-5026f3b4ef39",
+      "type": "async_collaboration",
+      "trigger": "Async work between Gears, Scout, Echo",
+      "issues": [
+        "Handoff from Gears not acknowledged"
+      ],
+      "agents": [
+        "Echo",
+        "Gears",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-dde85469fb9b",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Spark, Gears",
+      "issues": [
+        "Handoff from Scout not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Spark \u2192 Scout",
+        "Unusual tag: Spark \u2192 Gears"
+      ],
+      "agents": [
+        "Gears",
+        "Spark",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-d839437ee7d7",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Hunter, Forge",
+      "issues": [
+        "Handoff from Scout not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-5214db646913",
+      "type": "async_collaboration",
+      "trigger": "Async work between Hunter, Gears, Lens",
+      "issues": [
+        "Handoff from Hunter not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Gears",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-903d9a54e42e",
+      "type": "async_collaboration",
+      "trigger": "Async work between Lens, Hunter, Spark",
+      "issues": [
+        "Handoff from Lens not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Spark",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-7e505b90a302",
+      "type": "async_collaboration",
+      "trigger": "Async work between Gears, Forge, Spark",
+      "issues": [
+        "Handoff from Gears not acknowledged",
+        "Unusual tag: Spark \u2192 Gears"
+      ],
+      "agents": [
+        "Gears",
+        "Spark",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-6a33eede8548",
+      "type": "async_collaboration",
+      "trigger": "Async work between Gears, Lens, Echo",
+      "issues": [
+        "Handoff from Gears not acknowledged",
+        "Context not fully preserved in handoff"
+      ],
+      "agents": [
+        "Echo",
+        "Gears",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-3df0df8238b1",
+      "type": "async_collaboration",
+      "trigger": "Async work between Echo, Scout, Hunter",
+      "issues": [
+        "Handoff from Echo not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Echo",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-09aef9bbd9c4",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Lens, Spark",
+      "issues": [
+        "Handoff from Forge not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Lens \u2192 Spark"
+      ],
+      "agents": [
+        "Spark",
+        "Lens",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-d3b3e3dacab0",
+      "type": "async_collaboration",
+      "trigger": "Async work between Gears, Echo, Spark",
+      "issues": [
+        "Handoff from Gears not acknowledged"
+      ],
+      "agents": [
+        "Echo",
+        "Gears",
+        "Spark"
+      ]
+    },
+    {
+      "id": "conv-6b2fcc61a0c7",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Forge, Gears",
+      "issues": [
+        "Handoff from Scout not acknowledged"
+      ],
+      "agents": [
+        "Gears",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-9192cfa310cf",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Spark, Gears",
+      "issues": [
+        "Handoff from Forge not acknowledged",
+        "Unusual tag: Gears \u2192 Spark"
+      ],
+      "agents": [
+        "Gears",
+        "Spark",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-50c3138800aa",
+      "type": "async_collaboration",
+      "trigger": "Async work between Spark, Forge, Echo",
+      "issues": [
+        "Handoff from Spark not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Forge \u2192 Echo"
+      ],
+      "agents": [
+        "Echo",
+        "Spark",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-801ee3b0781a",
+      "type": "async_collaboration",
+      "trigger": "Async work between Spark, Echo, Gears",
+      "issues": [
+        "Handoff from Spark not acknowledged"
+      ],
+      "agents": [
+        "Gears",
+        "Echo",
+        "Spark"
+      ]
+    },
+    {
+      "id": "conv-0433479d63e4",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Lens, Forge",
+      "issues": [
+        "Handoff from Scout not acknowledged"
+      ],
+      "agents": [
+        "Scout",
+        "Lens",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-a31e7ef750e7",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Spark, Scout",
+      "issues": [
+        "Handoff from Forge not acknowledged"
+      ],
+      "agents": [
+        "Spark",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-aa76142079fd",
+      "type": "async_collaboration",
+      "trigger": "Async work between Echo, Scout, Forge",
+      "issues": [
+        "Handoff from Echo not acknowledged"
+      ],
+      "agents": [
+        "Echo",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-895f0c348d5a",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Spark, Echo",
+      "issues": [
+        "Handoff from Forge not acknowledged",
+        "Context not fully preserved in handoff"
+      ],
+      "agents": [
+        "Echo",
+        "Spark",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-51bb6b78e355",
+      "type": "async_collaboration",
+      "trigger": "Async work between Scout, Hunter, Gears",
+      "issues": [
+        "Handoff from Scout not acknowledged"
+      ],
+      "agents": [
+        "Hunter",
+        "Gears",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-60e74fa1ee79",
+      "type": "async_collaboration",
+      "trigger": "Async work between Forge, Lens, Gears",
+      "issues": [
+        "Handoff from Forge not acknowledged"
+      ],
+      "agents": [
+        "Gears",
+        "Lens",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-9759509f7be4",
+      "type": "async_collaboration",
+      "trigger": "Async work between Spark, Scout, Lens",
+      "issues": [
+        "Handoff from Spark not acknowledged"
+      ],
+      "agents": [
+        "Spark",
+        "Scout",
+        "Lens"
+      ]
+    },
+    {
+      "id": "conv-e8634abf80fe",
+      "type": "async_collaboration",
+      "trigger": "Async work between Echo, Gears, Scout",
+      "issues": [
+        "Handoff from Echo not acknowledged",
+        "Context not fully preserved in handoff"
+      ],
+      "agents": [
+        "Gears",
+        "Echo",
+        "Scout"
+      ]
+    },
+    {
+      "id": "conv-8a5eec5e9eb4",
+      "type": "async_collaboration",
+      "trigger": "Async work between Spark, Scout, Forge",
+      "issues": [
+        "Handoff from Spark not acknowledged",
+        "Context not fully preserved in handoff",
+        "Unusual tag: Spark \u2192 Scout",
+        "Unusual tag: Scout \u2192 Forge"
+      ],
+      "agents": [
+        "Spark",
+        "Scout",
+        "Forge"
+      ]
+    },
+    {
+      "id": "conv-fbbd3ef1b2ae",
+      "type": "async_collaboration",
+      "trigger": "Async work between Gears, Forge, Lens",
+      "issues": [
+        "Handoff from Gears not acknowledged"
+      ],
+      "agents": [
+        "Gears",
+        "Lens",
+        "Forge"
+      ]
+    }
+  ]
+}

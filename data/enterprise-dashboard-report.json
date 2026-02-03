@@ -1,7 +1,7 @@
 {
   "report": {
-    "title": "Enterprise Dashboard 200K Test Simulation Report",
-    "version": "5.0",
+    "title": "Enterprise Dashboard 200K+ Test Simulation Report",
+    "version": "6.0",
     "date": "2026-02-02",
     "testCount": 200000,
     "phase1_tests": 100000,

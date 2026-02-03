@@ -15,7 +15,7 @@
 
 ### 1.2 Automation & Scripts
 - [x] `/home/ec2-user/data/kurios-finish/automation/` - All automation systems ✅ MAJOR FIND!
-- [ ] `/home/ec2-user/clawd/scripts/` - Active scripts
+- [x] `/home/ec2-user/clawd/scripts/` - Active scripts ✅ (dashboard_api.py, x_tools.py, scrape scripts, update_dashboard.sh)
 - [x] `/home/ec2-user/clawd/projects/pi-vendors/` - PI vendor intelligence ✅ (48 raw items, 3 vendors, 3 buyers, SCOUT bot operational)
 - [x] Customer avatar agent - how it works, what it outputs ✅ (11 avatars, auto-processes voice notes)
 
@@ -41,9 +41,9 @@
 ## Phase 2: Integration Deep Dive (1-2 hours)
 
 ### 2.1 Connected APIs
-- [ ] **Google Calendar** - What's scheduled, patterns
-- [ ] **Notion** - Full workspace structure, what's documented
-- [ ] **X/Twitter** - Account status, recent activity, followers
+- [x] **Google Calendar** - ⚠️ AUTH BROKEN (token refresh failed, needs re-auth via browser)
+- [x] **Notion** - Sierra Documents DB connected ✅ (13 doc types, 7 projects, 47+ tags)
+- [x] **X/Twitter** - @markkodg connected ✅ (OAuth 1.0a working, scripts ready)
 - [ ] **DataForSEO** - Available data, what can we pull
 - [ ] **Google Drive** - Folder structure, key docs
 - [ ] **Slack** - Channels, integrations
@@ -213,6 +213,15 @@ What's hard right now? What takes too much time?
   - Budget: $80-300/month for AI SEO + press releases
 
 ---
+
+### 2026-02-01 04:45 UTC
+- ✅ Verified scripts directory: dashboard_api.py, x_tools.py, scrape scripts, update_dashboard.sh
+- ✅ Notion integration confirmed working (Sierra Documents DB: 13 types, 7 projects, 47+ tags)
+- ✅ X/Twitter integration confirmed (@markkodg OAuth working)
+- ⚠️ Google Calendar auth BROKEN - needs re-auth via browser (token refresh failed: invalid_scope)
+- ✅ Created airbnb-cash-reminder cron job for Feb 1 12:00 Peru time
+- 📊 Data assets inventory: 50+ JSON files, knowledge bases, transcripts
+- 📋 Next: Phase 1.4 data assets deep dive, Phase 2.3 potential integrations
 
 ## Success Metrics
 

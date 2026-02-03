@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "generated": "2026-02-01T08:28:00Z",
+    "basedOn": "200 X/Twitter data points + model-capabilities.json",
+    "version": "1.0"
+  },
+  "routingRules": {
+    "coding": {
+      "primary": "codex-cli",
+      "model": "o4-mini",
+      "reasoning": "high",
+      "command": "codex --model o4-mini --reasoning-effort high",
+      "fallback": ["claude-sonnet-4.5", "gemini-3-pro"],
+      "evidence": "Multiple X posts show Codex CLI outperforming for heavy coding. Claude Code uses Sonnet by default.",
+      "useCases": ["writing code", "debugging", "refactoring", "code review", "building features"]
+    },
+    "orchestration": {
+      "primary": "claude-opus-4.5",
+      "reasoning": "Opus best for complex reasoning, planning, decision-making",
+      "fallback": ["gpt-5.2"],
+      "evidence": "X consensus: 'Opus for planning, Sonnet for execution'. Brain/muscle architecture.",
+      "useCases": ["task planning", "strategy", "complex decisions", "reviewing outputs", "talking to user"]
+    },
+    "research": {
+      "primary": "gemini-3-flash",
+      "reasoning": "1M+ context window, cheap ($0.15/M input), fast",
+      "fallback": ["gemini-3-pro", "perplexity"],
+      "evidence": "X users report 300k+ tokens/day feasible. Best for bulk research.",
+      "useCases": ["web research", "document analysis", "summarization", "bulk processing"]
+    },
+    "socialMedia": {
+      "primary": "grok-4-fast",
+      "reasoning": "Built-in X access, real-time search, 2M context",
+      "fallback": ["grok-4"],
+      "evidence": "Native X integration. X users praise for social monitoring.",
+      "useCases": ["X/Twitter search", "social monitoring", "trend analysis", "real-time news"]
+    },
+    "budget": {
+      "primary": "deepseek-chat",
+      "reasoning": "10-50x cheaper than Opus ($0.028/M input). Good for bulk tasks.",
+      "fallback": ["groq-llama-3.1-8b", "gemini-3-flash-lite"],
+      "evidence": "X consensus: DeepSeek is 'insanely cheap' with decent quality.",
+      "useCases": ["simple extraction", "data cleaning", "bulk operations", "file processing"]
+    },
+    "fast": {
+      "primary": "groq-llama-3.1-8b",
+      "reasoning": "840 TPS, $0.05/M input. Fastest option.",
+      "fallback": ["claude-haiku-4.5"],
+      "evidence": "Groq speeds praised on X for real-time applications.",
+      "useCases": ["quick lookups", "simple queries", "triage", "real-time responses"]
+    },
+    "longContext": {
+      "primary": "gemini-3-pro",
+      "reasoning": "2M context window, handles massive documents",
+      "fallback": ["grok-4-fast"],
+      "evidence": "X users use for codebase analysis, long document processing.",
+      "useCases": ["codebase analysis", "long documents", "book summaries", "full repo context"]
+    },
+    "conversation": {
+      "primary": "claude-sonnet-4.5",
+      "reasoning": "Best personality + speed balance for daily work",
+      "fallback": ["claude-opus-4.5"],
+      "evidence": "X consensus: Sonnet for day-to-day, Opus when needed.",
+      "useCases": ["chat", "explanations", "writing", "general assistance"]
+    },
+    "imageGen": {
+      "primary": "nano-banana-pro",
+      "reasoning": "Fast, good quality for thumbnails and graphics",
+      "fallback": ["dall-e-3"],
+      "useCases": ["thumbnails", "graphics", "visual content", "social media images"]
+    }
+  },
+  "costTiers": {
+    "tier1_expensive": {
+      "models": ["claude-opus-4.5", "gpt-5.2"],
+      "costPer100kTokens": "$3.00-$5.00",
+      "useFor": "Complex reasoning, final review, orchestration only"
+    },
+    "tier2_medium": {
+      "models": ["claude-sonnet-4.5", "o4-mini", "gemini-3-pro", "grok-4"],
+      "costPer100kTokens": "$0.50-$2.00",
+      "useFor": "Primary execution, coding, research"
+    },
+    "tier3_cheap": {
+      "models": ["gemini-3-flash", "claude-haiku-4.5", "grok-4-fast"],
+      "costPer100kTokens": "$0.05-$0.20",
+      "useFor": "Bulk work, fast queries, simple tasks"
+    },
+    "tier4_budget": {
+      "models": ["deepseek-chat", "groq-llama-3.1-8b", "gemini-3-flash-lite"],
+      "costPer100kTokens": "$0.01-$0.05",
+      "useFor": "Massive scale, simple extraction, grunt work"
+    }
+  },
+  "clawdbotIntegration": {
+    "spawning": {
+      "description": "Use sessions_spawn with model parameter to delegate tasks",
+      "examples": [
+        {
+          "task": "coding",
+          "spawn": "sessions_spawn with agentId=main, model=o4-mini, thinking=high"
+        },
+        {
+          "task": "research",
+          "spawn": "sessions_spawn with agentId=main, model=gemini-3-flash"
+        },
+        {
+          "task": "bulk_processing",
+          "spawn": "sessions_spawn with agentId=main, model=deepseek-chat"
+        }
+      ]
+    },
+    "mainSession": {
+      "model": "claude-opus-4.5",
+      "role": "Brain - orchestration, user interaction, complex decisions",
+      "delegates": "Spawn subagents for heavy lifting"
+    }
+  },
+  "taskRouter": {
+    "keywords": {
+      "code|build|fix|debug|refactor|implement": "coding",
+      "research|search|find|lookup|analyze": "research",
+      "tweet|x\\.com|twitter|social|trending": "socialMedia",
+      "cheap|bulk|batch|mass|many": "budget",
+      "quick|fast|simple|triage": "fast",
+      "plan|strategy|decide|complex|think": "orchestration",
+      "long|document|codebase|repo|book": "longContext",
+      "chat|explain|write|help": "conversation",
+      "image|graphic|thumbnail|visual": "imageGen"
+    }
+  }
+}

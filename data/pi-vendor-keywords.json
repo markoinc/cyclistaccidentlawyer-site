@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "generated": "2026-02-01T08:22:00Z",
+    "source": "DataForSEO",
+    "targetSite": "personalinjuryvendors.com",
+    "targetAudience": "PI attorneys looking for vendors"
+  },
+  "topKeywords": [
+    {"keyword": "seo for lawyers", "volume": 8100, "cpc": 110.64, "competition": "LOW"},
+    {"keyword": "seo for attorneys", "volume": 8100, "cpc": 110.64, "competition": "LOW"},
+    {"keyword": "law firm seo", "volume": 6600, "cpc": 181.71, "competition": "LOW"},
+    {"keyword": "law firm marketing", "volume": 3600, "cpc": 79.32, "competition": "MEDIUM"},
+    {"keyword": "legal marketing firms", "volume": 3600, "cpc": 79.32, "competition": "MEDIUM"},
+    {"keyword": "marketing for lawyers", "volume": 2400, "cpc": 72.38, "competition": "LOW"},
+    {"keyword": "attorney marketing", "volume": 2400, "cpc": 72.38, "competition": "LOW"},
+    {"keyword": "seo for personal injury lawyers", "volume": 1900, "cpc": 158.36, "competition": "LOW"},
+    {"keyword": "legal seo", "volume": 1900, "cpc": 137.15, "competition": "LOW"},
+    {"keyword": "lawyer marketing agency", "volume": 1600, "cpc": 95.67, "competition": "LOW"},
+    {"keyword": "law firm marketing agency", "volume": 1600, "cpc": 95.67, "competition": "LOW"},
+    {"keyword": "personal injury attorney marketing", "volume": 1300, "cpc": 106.57, "competition": "LOW"},
+    {"keyword": "personal injury lawyer marketing", "volume": 1300, "cpc": 106.57, "competition": "LOW"},
+    {"keyword": "ppc for lawyers", "volume": 1300, "cpc": 100.33, "competition": "LOW"},
+    {"keyword": "legal marketing", "volume": 1300, "cpc": 63.71, "competition": "MEDIUM"},
+    {"keyword": "digital marketing for law firms", "volume": 1000, "cpc": 80.76, "competition": "LOW"},
+    {"keyword": "law firm seo services", "volume": 1000, "cpc": 118.78, "competition": "LOW"},
+    {"keyword": "digital marketing for attorneys", "volume": 1000, "cpc": 58.56, "competition": "LOW"},
+    {"keyword": "legal answering service", "volume": 880, "cpc": 345.78, "competition": "LOW"},
+    {"keyword": "law firm advertising", "volume": 880, "cpc": 67.21, "competition": "LOW"},
+    {"keyword": "law firm seo companies", "volume": 880, "cpc": 256.42, "competition": "LOW"},
+    {"keyword": "personal injury seo", "volume": 720, "cpc": null, "competition": "LOW"},
+    {"keyword": "legal marketing services", "volume": 720, "cpc": 44.44, "competition": "LOW"},
+    {"keyword": "legal marketing agency", "volume": 720, "cpc": 58.77, "competition": "LOW"},
+    {"keyword": "law firm marketing companies", "volume": 720, "cpc": 76.68, "competition": "LOW"},
+    {"keyword": "legal intake services", "volume": 720, "cpc": 84.25, "competition": "MEDIUM"},
+    {"keyword": "best law firm seo companies", "volume": 720, "cpc": 334.15, "competition": "LOW"},
+    {"keyword": "lawyer leads", "volume": 590, "cpc": 24.95, "competition": "LOW"},
+    {"keyword": "law firm seo agency", "volume": 590, "cpc": 118.80, "competition": "MEDIUM"},
+    {"keyword": "legal marketing companies", "volume": 590, "cpc": 13.08, "competition": "LOW"},
+    {"keyword": "law firm marketing services", "volume": 590, "cpc": 77.58, "competition": "LOW"},
+    {"keyword": "best seo for lawyers", "volume": 590, "cpc": 478.07, "competition": "LOW"},
+    {"keyword": "law firm digital marketing agency", "volume": 590, "cpc": 80.39, "competition": "LOW"},
+    {"keyword": "lead generation for lawyers", "volume": 480, "cpc": 94.45, "competition": "LOW"},
+    {"keyword": "attorney lead generation", "volume": 480, "cpc": 94.45, "competition": "LOW"},
+    {"keyword": "social media marketing for lawyers", "volume": 480, "cpc": 38.02, "competition": "LOW"},
+    {"keyword": "personal injury marketing", "volume": 390, "cpc": 103.95, "competition": "LOW"},
+    {"keyword": "law firm website seo", "volume": 390, "cpc": null, "competition": "LOW"},
+    {"keyword": "seo agency for lawyers", "volume": 390, "cpc": null, "competition": "LOW"},
+    {"keyword": "legal call center", "volume": 320, "cpc": 79.33, "competition": "LOW"},
+    {"keyword": "pi leads", "volume": 260, "cpc": 154.24, "competition": "HIGH"},
+    {"keyword": "digital marketing agency for lawyers", "volume": 260, "cpc": 50.92, "competition": "LOW"},
+    {"keyword": "personal injury lead generation", "volume": 210, "cpc": 137.82, "competition": "LOW"},
+    {"keyword": "personal injury lawyer leads", "volume": 210, "cpc": 92.05, "competition": "LOW"},
+    {"keyword": "best law firm marketing companies", "volume": 210, "cpc": 84.49, "competition": "LOW"},
+    {"keyword": "law firm lead generation", "volume": 170, "cpc": 65.01, "competition": "MEDIUM"},
+    {"keyword": "personal injury case management software", "volume": 170, "cpc": 190.72, "competition": "MEDIUM"},
+    {"keyword": "personal injury advertising", "volume": 140, "cpc": 35.36, "competition": "MEDIUM"},
+    {"keyword": "personal injury seo company", "volume": 110, "cpc": null, "competition": "LOW"},
+    {"keyword": "legal lead generation", "volume": 110, "cpc": 92.54, "competition": "HIGH"},
+    {"keyword": "mass tort lead generation", "volume": 90, "cpc": 26.76, "competition": "LOW"},
+    {"keyword": "best legal marketing companies", "volume": 90, "cpc": null, "competition": "MEDIUM"},
+    {"keyword": "personal injury marketing agency", "volume": 90, "cpc": 173.94, "competition": "LOW"},
+    {"keyword": "buy personal injury leads", "volume": 70, "cpc": 208.76, "competition": "MEDIUM"},
+    {"keyword": "personal injury lead generation companies", "volume": 70, "cpc": 201.75, "competition": "LOW"},
+    {"keyword": "personal injury digital marketing", "volume": 50, "cpc": null, "competition": "LOW"},
+    {"keyword": "legal lead generation companies", "volume": 50, "cpc": null, "competition": "HIGH"},
+    {"keyword": "leads for lawyers", "volume": 50, "cpc": 73.47, "competition": "HIGH"},
+    {"keyword": "law firm leads", "volume": 50, "cpc": null, "competition": "MEDIUM"},
+    {"keyword": "personal injury leads for sale", "volume": 50, "cpc": null, "competition": "MEDIUM"},
+    {"keyword": "personal injury crm", "volume": 40, "cpc": null, "competition": "MEDIUM"},
+    {"keyword": "mva leads for attorneys", "volume": 30, "cpc": null, "competition": "MEDIUM"}
+  ],
+  "categoryAnalysis": {
+    "seoServices": {
+      "totalVolume": 25320,
+      "avgCpc": 161.21,
+      "topTerms": ["seo for lawyers", "seo for attorneys", "law firm seo", "seo for personal injury lawyers"]
+    },
+    "marketing": {
+      "totalVolume": 18700,
+      "avgCpc": 85.42,
+      "topTerms": ["law firm marketing", "attorney marketing", "personal injury lawyer marketing"]
+    },
+    "leadGeneration": {
+      "totalVolume": 1570,
+      "avgCpc": 119.32,
+      "topTerms": ["personal injury lead generation", "attorney lead generation", "pi leads"]
+    },
+    "intakeServices": {
+      "totalVolume": 1920,
+      "avgCpc": 169.78,
+      "topTerms": ["legal answering service", "legal intake services", "legal call center"]
+    },
+    "software": {
+      "totalVolume": 210,
+      "avgCpc": 190.72,
+      "topTerms": ["personal injury case management software", "personal injury crm"]
+    }
+  },
+  "strategicInsights": {
+    "highVolumeOpportunities": [
+      "seo for lawyers/attorneys (8,100/mo) - broad, competitive but huge",
+      "law firm marketing (3,600/mo) - general marketing terms",
+      "personal injury attorney marketing (1,300/mo) - PI specific"
+    ],
+    "lowCompetitionGems": [
+      "legal marketing services (720/mo, LOW comp, $44 CPC)",
+      "legal marketing companies (590/mo, LOW comp, $13 CPC!)",
+      "law firm marketing companies (720/mo, LOW comp, $77 CPC)"
+    ],
+    "highIntentBuyers": [
+      "buy personal injury leads (70/mo, $209 CPC) - ready to buy",
+      "personal injury leads for sale (50/mo) - transactional",
+      "pi leads (260/mo, $154 CPC, HIGH comp) - hot market"
+    ],
+    "vendorMatchingTerms": [
+      "best law firm seo companies",
+      "best legal marketing companies",
+      "best law firm marketing companies",
+      "legal lead generation companies"
+    ]
+  },
+  "recommendedPages": [
+    {
+      "page": "/seo-for-personal-injury-lawyers",
+      "targetKeywords": ["seo for personal injury lawyers", "personal injury seo", "personal injury seo company"],
+      "totalVolume": 2730
+    },
+    {
+      "page": "/personal-injury-lead-generation",
+      "targetKeywords": ["personal injury lead generation", "personal injury leads for sale", "buy personal injury leads", "pi leads"],
+      "totalVolume": 610
+    },
+    {
+      "page": "/best-law-firm-marketing-companies",
+      "targetKeywords": ["best law firm marketing companies", "best legal marketing companies", "law firm marketing companies"],
+      "totalVolume": 1020
+    },
+    {
+      "page": "/legal-intake-services",
+      "targetKeywords": ["legal intake services", "legal answering service", "legal call center"],
+      "totalVolume": 1920
+    },
+    {
+      "page": "/attorney-lead-generation",
+      "targetKeywords": ["attorney lead generation", "lead generation for lawyers", "law firm lead generation"],
+      "totalVolume": 1130
+    }
+  ]
+}

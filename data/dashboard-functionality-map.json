@@ -1,0 +1,111 @@
+{
+  "dashboard": "Kurios Command Center Enterprise v4",
+  "url": "admin.kuriosbrand.com",
+  "lastUpdated": "2026-02-01T22:41:00Z",
+  "modules": {
+    "1_command_center": {
+      "name": "Dashboard Overview",
+      "location": "Main page",
+      "features": [
+        {"name": "Pipeline Value KPI", "action": "Click to view pipeline details", "subFeatures": ["Breakdown by stage", "Deal list"]},
+        {"name": "Closed Revenue KPI", "action": "Click to view closed deals", "subFeatures": ["Deal history", "Revenue trend"]},
+        {"name": "Calls This Week KPI", "action": "Click to view call schedule", "subFeatures": ["Calendar view", "Call targets"]},
+        {"name": "Cost Per Call KPI", "action": "Click to view ad spend analysis", "subFeatures": ["Cost breakdown", "ROI metrics"]},
+        {"name": "Active Projects KPI", "action": "Click to view projects", "subFeatures": ["Project list", "Status filters"]},
+        {"name": "Monthly Burn KPI", "action": "Click to view financials", "subFeatures": ["Expense breakdown", "Budget tracking"]},
+        {"name": "Hot Prospects List", "action": "Click prospect to view details", "subFeatures": ["Contact info", "Deal value", "Next action"]},
+        {"name": "Activity Feed", "action": "Scroll through recent activities", "subFeatures": ["Filter by type", "Mark as read"]},
+        {"name": "Priority Projects", "action": "Click to expand project", "subFeatures": ["Tasks", "Deadlines", "Progress"]},
+        {"name": "Follow-ups Table", "action": "Click row to take action", "subFeatures": ["Mark complete", "Reschedule", "Notes"]}
+      ]
+    },
+    "2_pipeline": {
+      "name": "Pipeline/CRM",
+      "location": "Sidebar → Pipeline",
+      "features": [
+        {"name": "Stage Filter Tabs", "action": "Filter by All/Hot/In Progress/Closed", "subFeatures": ["Dynamic counts", "Value totals"]},
+        {"name": "Time Period Toggle", "action": "Filter by Month/Week/Day", "subFeatures": ["Date range selection"]},
+        {"name": "Search Prospects", "action": "Real-time search by name/company", "subFeatures": ["Filter results"]},
+        {"name": "Deal Cards", "action": "Click to view full deal", "subFeatures": ["Contact details", "Timeline", "Notes", "Documents"]},
+        {"name": "Kanban View", "action": "Drag-drop deals between stages", "subFeatures": ["Stage columns", "Deal count per stage"]},
+        {"name": "Add Prospect Button", "action": "Opens modal to add new prospect", "subFeatures": ["Form fields", "Stage selection"]},
+        {"name": "Deal Actions", "action": "Edit/Delete/Move deal", "subFeatures": ["Confirmation dialogs"]}
+      ]
+    },
+    "3_projects": {
+      "name": "Project Management",
+      "location": "Sidebar → Projects",
+      "features": [
+        {"name": "Project Filter Tabs", "action": "Filter by All/Active/Stalled/Complete", "subFeatures": ["Status counts"]},
+        {"name": "Project Cards", "action": "Click to view project details", "subFeatures": ["Tasks list", "Progress bar", "Team members"]},
+        {"name": "Add Project Button", "action": "Opens modal to create project", "subFeatures": ["Name", "Description", "Deadline", "Assignees"]},
+        {"name": "Task Checkboxes", "action": "Toggle task completion", "subFeatures": ["Progress updates automatically"]},
+        {"name": "Project Timeline", "action": "View project milestones", "subFeatures": ["Gantt-style view"]}
+      ]
+    },
+    "4_contacts": {
+      "name": "Contacts Database",
+      "location": "Sidebar → Contacts",
+      "features": [
+        {"name": "Contact Type Filter", "action": "Filter by All/Partners/Prospects/Clients/Vendors", "subFeatures": ["Type badges"]},
+        {"name": "Search Contacts", "action": "Search by name/company/role/notes", "subFeatures": ["Real-time results"]},
+        {"name": "Contact Cards", "action": "Click to view full profile", "subFeatures": ["Email", "Phone", "Notes", "Tags", "History"]},
+        {"name": "Add Contact Button", "action": "Opens modal to add contact", "subFeatures": ["Form with all fields"]},
+        {"name": "Edit Contact", "action": "Modify contact details", "subFeatures": ["Inline editing"]},
+        {"name": "Contact Actions", "action": "Email/Call/Note buttons", "subFeatures": ["Quick actions"]}
+      ]
+    },
+    "5_clients": {
+      "name": "Client Portfolio",
+      "location": "Sidebar → Client Portfolio",
+      "features": [
+        {"name": "Summary KPIs", "action": "View client totals", "subFeatures": ["22+ clients", "$10M+ spend", "5000+ cases", "15+ states"]},
+        {"name": "State-by-State Table", "action": "Click state for details", "subFeatures": ["Clients count", "Avg case cost", "Conversion rate", "Volume", "Client stories"]},
+        {"name": "National Clients Section", "action": "View enterprise clients", "subFeatures": ["Coverage areas", "Spend levels"]},
+        {"name": "Authority Panel", "action": "Copy stats for sales calls", "subFeatures": ["One-click copy"]},
+        {"name": "State Selector", "action": "Quick lookup by state", "subFeatures": ["Instant conversion rates"]}
+      ]
+    },
+    "6_analytics": {
+      "name": "Analytics Hub",
+      "location": "Sidebar → Analytics",
+      "features": [
+        {"name": "Revenue Chart", "action": "View revenue over time", "subFeatures": ["Weekly/Monthly toggle", "Trend line"]},
+        {"name": "Pipeline Chart", "action": "View deal distribution", "subFeatures": ["By stage", "By value"]},
+        {"name": "Conversion Metrics", "action": "View funnel analytics", "subFeatures": ["Lead → Call → Close rates"]},
+        {"name": "Export Button", "action": "Download data as CSV", "subFeatures": ["Date range selection"]},
+        {"name": "Goal Progress", "action": "Track $9.6M progress", "subFeatures": ["Milestones", "Pace calculator"]}
+      ]
+    },
+    "7_ideas": {
+      "name": "Ideas Backlog",
+      "location": "Sidebar → Ideas Backlog",
+      "features": [
+        {"name": "Idea Cards", "action": "Click to view details", "subFeatures": ["Description", "Potential", "Priority"]},
+        {"name": "Potential Filter", "action": "Filter by High/Medium/Dream", "subFeatures": ["Category counts"]},
+        {"name": "Add Idea Button", "action": "Submit new idea", "subFeatures": ["Form with priority selector"]}
+      ]
+    },
+    "8_settings": {
+      "name": "Settings/Admin",
+      "location": "Sidebar → Settings",
+      "features": [
+        {"name": "Profile Section", "action": "View/edit business info", "subFeatures": ["Business name", "Owner", "Location"]},
+        {"name": "Notifications Toggle", "action": "Enable/disable alerts", "subFeatures": ["Email", "Push", "SMS"]},
+        {"name": "Integrations Section", "action": "Connect external services", "subFeatures": ["Google", "Notion", "GHL", "Zapier"]},
+        {"name": "Theme Toggle", "action": "Switch dark/light mode", "subFeatures": ["Auto/Manual"]},
+        {"name": "Data Export", "action": "Export all data", "subFeatures": ["JSON", "CSV formats"]}
+      ]
+    }
+  },
+  "globalFeatures": [
+    {"name": "Sidebar Navigation", "action": "Click to switch pages", "subFeatures": ["Active state indicators", "Badge counts"]},
+    {"name": "Global Search", "action": "Search across all data", "subFeatures": ["Prospects", "Projects", "Contacts"]},
+    {"name": "Notifications Bell", "action": "View recent alerts", "subFeatures": ["Mark as read", "Clear all"]},
+    {"name": "Calendar Button", "action": "Quick calendar view", "subFeatures": ["Today's events", "Upcoming"]},
+    {"name": "User Menu", "action": "Profile and logout", "subFeatures": ["Account settings", "Sign out"]},
+    {"name": "Goal Widget", "action": "Track $9.6M progress", "subFeatures": ["Progress bar", "Amount closed", "Percentage"]}
+  ],
+  "totalFeatures": 68,
+  "totalSubFeatures": 142
+}

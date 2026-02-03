@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVA Calculator Widget Demo</title>
+  <link rel="stylesheet" href="./dist-widget/mva-widget.css">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .widget-container {
+      background: linear-gradient(135deg, #1e293b 0%, #1e3a5f 50%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .instructions {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MVA Calculator Widget Demo</h1>
+    
+    <div class="instructions">
+      <h3>Embedding Instructions</h3>
+      <p>Include these files in your HTML:</p>
+      <pre>&lt;link rel="stylesheet" href="mva-widget.css"&gt;
+&lt;script src="mva-widget.umd.js"&gt;&lt;/script&gt;</pre>
+      
+      <p>Then initialize the widget:</p>
+      <pre>&lt;div id="mva-calculator"&gt;&lt;/div&gt;
+&lt;script&gt;
+  MVACalculatorWidget.default.init('#mva-calculator', {
+    embedded: true
+  });
+&lt;/script&gt;</pre>
+    </div>
+
+    <h2>Live Demo:</h2>
+    <div class="widget-container">
+      <div id="mva-calculator"></div>
+    </div>
+  </div>
+
+  <script src="./dist-widget/mva-widget.umd.js"></script>
+  <script>
+    // Initialize the widget
+    MVACalculatorWidget.default.init('#mva-calculator', {
+      embedded: true
+    });
+  </script>
+</body>
+</html>

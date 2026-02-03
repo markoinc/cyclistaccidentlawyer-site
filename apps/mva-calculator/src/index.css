@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Widget mode - minimal reset */
+.mva-widget {
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+/* Custom Kurios colors */
+@theme {
+  --color-kurios-primary: #2563eb;
+  --color-kurios-secondary: #1e40af;
+  --color-kurios-accent: #3b82f6;
+  --color-kurios-dark: #1e293b;
+  --color-kurios-light: #f8fafc;
+}
