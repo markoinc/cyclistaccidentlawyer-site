@@ -666,7 +666,13 @@ def check_server_health():
 
 
 def check_anthropic_api():
-    """Check Anthropic/Claude API - credits and rate limits."""
+    """Check Anthropic/Claude API - key validity and rate limits.
+    
+    Note: Marko is on the Anthropic Max plan ($200/mo subscription),
+    NOT pay-as-you-go API credits. The standalone API key may show
+    'credit balance too low' — that's expected and NOT an alert.
+    We only check: key exists, auth works, rate limits healthy.
+    """
     service = "Anthropic API"
     api_key = _load_anthropic_key()
     if not api_key:
@@ -721,14 +727,14 @@ def check_anthropic_api():
             error_msg = body["error"].get("message", "")
             details["error_type"] = body["error"].get("type", "")
 
-        # Credit balance exhausted
+        # Credit balance exhausted — expected on Max plan ($200/mo subscription)
+        # The standalone API key won't have credits; Clawdbot routes through its own billing
         if "credit balance" in error_msg.lower() or "billing" in error_msg.lower():
             details["error_message"] = error_msg
-            return CheckResult(service, "critical",
-                             f"Credit balance too low — {error_msg}",
-                             "critical",
-                             "Top up Anthropic credits at console.anthropic.com",
-                             details)
+            details["note"] = "Expected — user is on Anthropic Max plan, not pay-as-you-go API"
+            return CheckResult(service, "healthy",
+                             "Key valid (Max plan — no API credits expected)",
+                             "info", details=details)
 
         # Auth failure
         if resp.status_code == 401:
