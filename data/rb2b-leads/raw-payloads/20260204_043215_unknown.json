@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-04T04:32:15.281002",
+  "payload": {
+    "event": "visitor.identified",
+    "data": {
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "jobTitle": "Software Engineer",
+      "companyName": "TechCorp Inc",
+      "industry": "Technology",
+      "city": "San Francisco",
+      "state": "CA",
+      "intentScore": "low",
+      "sessions": 1,
+      "pageviews": 2
+    }
+  }
+}

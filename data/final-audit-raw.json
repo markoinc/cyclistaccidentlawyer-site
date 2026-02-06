@@ -1,0 +1,1726 @@
+{
+  "score": 854,
+  "design": 278,
+  "template": 330,
+  "math": 246,
+  "issues": [
+    {
+      "category": "design",
+      "check": "Dashboard row 166 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "June 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 166 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "June 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 182 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "June 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 182 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "\ud83d\udcb3 Biz CC 0678 total amount ($-541.07 expected)",
+      "detail": "Sheet total: $-558.23, CSV total: $-541.07 (diff: $17.16)",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $451.13 (5.0% of $9,022.51), got $0.05",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $4,511.26 (50.0% of $9,022.51), got $0.50",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $1,353.38 (15.0% of $9,022.51), got $0.15",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First opex allocation",
+      "detail": "Expected $2,706.75 (30.0% of $9,022.51), got $0.30",
+      "month": "June 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "June 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 17 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 17 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 23 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 23 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 24 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 24 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "July 2025"
+    },
+    {
+      "category": "math",
+      "check": "\ud83d\udcb3 Biz CC 0678 total amount ($1,657.01 expected)",
+      "detail": "Sheet total: $1,558.01, CSV total: $1,657.01 (diff: $99.00)",
+      "month": "July 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First revenue found",
+      "detail": "Could not find revenue value in Profit First tab",
+      "month": "July 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "July 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 161 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 161 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 183 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 183 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "August 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $392.42 (5.0% of $7,848.47), got $0.05",
+      "month": "August 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $3,924.24 (50.0% of $7,848.47), got $0.50",
+      "month": "August 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $1,177.27 (15.0% of $7,848.47), got $0.15",
+      "month": "August 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First opex allocation",
+      "detail": "Expected $2,354.54 (30.0% of $7,848.47), got $0.30",
+      "month": "August 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "August 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 152 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 152 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 175 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 175 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "September 2025"
+    },
+    {
+      "category": "template",
+      "check": "Dashboard has Marketing category",
+      "detail": "No Marketing category found",
+      "month": "September 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $325.48 (5.0% of $6,509.64), got $0.05",
+      "month": "September 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $3,254.82 (50.0% of $6,509.64), got $0.50",
+      "month": "September 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $976.45 (15.0% of $6,509.64), got $0.15",
+      "month": "September 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First opex allocation",
+      "detail": "Expected $1,952.89 (30.0% of $6,509.64), got $0.30",
+      "month": "September 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "September 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 201 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "October 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 201 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "October 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $322.04 (5.0% of $6,440.74), got $0.05",
+      "month": "October 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $3,220.37 (50.0% of $6,440.74), got $0.50",
+      "month": "October 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $966.11 (15.0% of $6,440.74), got $0.15",
+      "month": "October 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First opex allocation",
+      "detail": "Expected $1,932.22 (30.0% of $6,440.74), got $0.30",
+      "month": "October 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "October 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "November 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "November 2025"
+    },
+    {
+      "category": "template",
+      "check": "Dashboard has MVA business line",
+      "detail": "No MVA business line found",
+      "month": "November 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $253.54 (5.0% of $5,070.80), got $-253.54",
+      "month": "November 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $2,535.40 (50.0% of $5,070.80), got $0.50",
+      "month": "November 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $760.62 (15.0% of $5,070.80), got $-760.62",
+      "month": "November 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First opex allocation",
+      "detail": "Expected $1,521.24 (30.0% of $5,070.80), got $513.27",
+      "month": "November 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "November 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "December 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 1 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "December 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 125 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "December 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 125 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "December 2025"
+    },
+    {
+      "category": "template",
+      "check": "Dashboard has MVA business line",
+      "detail": "No MVA business line found",
+      "month": "December 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First profit allocation",
+      "detail": "Expected $316.28 (5.0% of $6,325.59), got $-316.28",
+      "month": "December 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First owner allocation",
+      "detail": "Expected $3,162.80 (50.0% of $6,325.59), got $-1,092.80",
+      "month": "December 2025"
+    },
+    {
+      "category": "math",
+      "check": "Profit First tax allocation",
+      "detail": "Expected $948.84 (15.0% of $6,325.59), got $-948.84",
+      "month": "December 2025"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "December 2025"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 15 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 15 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 25 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 25 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 27 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 27 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 28 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 28 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 29 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 29 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 30 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 30 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 41 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 41 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 62 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 62 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 68 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 68 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 78 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 78 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 81 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 81 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 85 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 85 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 90 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 90 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 91 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 91 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 92 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 92 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 105 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 105 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 110 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 110 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 116 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 116 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 119 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 119 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 122 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 122 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 132 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 132 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 139 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 139 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 140 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 140 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 146 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 146 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 149 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 149 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 154 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 154 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 155 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 155 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 170 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 170 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 171 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 171 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 175 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 175 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 176 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 176 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 185 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 185 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 191 header text white",
+      "detail": "Navy header text not white: {}",
+      "month": "January 2026"
+    },
+    {
+      "category": "design",
+      "check": "Dashboard row 191 header font size",
+      "detail": "Section header font size: 10pt, expected >=11pt",
+      "month": "January 2026"
+    },
+    {
+      "category": "math",
+      "check": "\ud83d\udcbc Business 4991 total amount ($396.10 expected)",
+      "detail": "Sheet total: $-3,803.90, CSV total: $396.10 (diff: $4,200.00)",
+      "month": "January 2026"
+    },
+    {
+      "category": "math",
+      "check": "Profit First revenue found",
+      "detail": "Could not find revenue value in Profit First tab",
+      "month": "January 2026"
+    },
+    {
+      "category": "math",
+      "check": "Pareto cumulative % column found",
+      "detail": "Could not identify cumulative % column",
+      "month": "January 2026"
+    }
+  ],
+  "per_sheet": [
+    {
+      "month": "June 2025",
+      "design": "62/66",
+      "template": "42/42",
+      "math": "12/18",
+      "total": "116/126",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 166 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "June 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 166 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "June 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 182 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "June 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 182 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "\ud83d\udcb3 Biz CC 0678 total amount ($-541.07 expected)",
+          "detail": "Sheet total: $-558.23, CSV total: $-541.07 (diff: $17.16)",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $451.13 (5.0% of $9,022.51), got $0.05",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $4,511.26 (50.0% of $9,022.51), got $0.50",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $1,353.38 (15.0% of $9,022.51), got $0.15",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First opex allocation",
+          "detail": "Expected $2,706.75 (30.0% of $9,022.51), got $0.30",
+          "month": "June 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "June 2025"
+        }
+      ]
+    },
+    {
+      "month": "July 2025",
+      "design": "62/70",
+      "template": "42/42",
+      "math": "11/14",
+      "total": "115/126",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 17 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 17 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 23 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 23 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 24 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "July 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 24 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "July 2025"
+        },
+        {
+          "category": "math",
+          "check": "\ud83d\udcb3 Biz CC 0678 total amount ($1,657.01 expected)",
+          "detail": "Sheet total: $1,558.01, CSV total: $1,657.01 (diff: $99.00)",
+          "month": "July 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First revenue found",
+          "detail": "Could not find revenue value in Profit First tab",
+          "month": "July 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "July 2025"
+        }
+      ]
+    },
+    {
+      "month": "August 2025",
+      "design": "62/68",
+      "template": "42/42",
+      "math": "13/18",
+      "total": "117/128",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "August 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "August 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 161 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "August 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 161 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "August 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 183 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "August 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 183 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "August 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $392.42 (5.0% of $7,848.47), got $0.05",
+          "month": "August 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $3,924.24 (50.0% of $7,848.47), got $0.50",
+          "month": "August 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $1,177.27 (15.0% of $7,848.47), got $0.15",
+          "month": "August 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First opex allocation",
+          "detail": "Expected $2,354.54 (30.0% of $7,848.47), got $0.30",
+          "month": "August 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "August 2025"
+        }
+      ]
+    },
+    {
+      "month": "September 2025",
+      "design": "62/68",
+      "template": "41/42",
+      "math": "13/18",
+      "total": "116/128",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "September 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "September 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 152 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "September 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 152 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "September 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 175 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "September 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 175 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "September 2025"
+        },
+        {
+          "category": "template",
+          "check": "Dashboard has Marketing category",
+          "detail": "No Marketing category found",
+          "month": "September 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $325.48 (5.0% of $6,509.64), got $0.05",
+          "month": "September 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $3,254.82 (50.0% of $6,509.64), got $0.50",
+          "month": "September 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $976.45 (15.0% of $6,509.64), got $0.15",
+          "month": "September 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First opex allocation",
+          "detail": "Expected $1,952.89 (30.0% of $6,509.64), got $0.30",
+          "month": "September 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "September 2025"
+        }
+      ]
+    },
+    {
+      "month": "October 2025",
+      "design": "62/64",
+      "template": "42/42",
+      "math": "13/18",
+      "total": "117/124",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 201 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "October 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 201 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "October 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $322.04 (5.0% of $6,440.74), got $0.05",
+          "month": "October 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $3,220.37 (50.0% of $6,440.74), got $0.50",
+          "month": "October 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $966.11 (15.0% of $6,440.74), got $0.15",
+          "month": "October 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First opex allocation",
+          "detail": "Expected $1,932.22 (30.0% of $6,440.74), got $0.30",
+          "month": "October 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "October 2025"
+        }
+      ]
+    },
+    {
+      "month": "November 2025",
+      "design": "62/64",
+      "template": "41/42",
+      "math": "13/18",
+      "total": "116/124",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "November 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "November 2025"
+        },
+        {
+          "category": "template",
+          "check": "Dashboard has MVA business line",
+          "detail": "No MVA business line found",
+          "month": "November 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $253.54 (5.0% of $5,070.80), got $-253.54",
+          "month": "November 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $2,535.40 (50.0% of $5,070.80), got $0.50",
+          "month": "November 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $760.62 (15.0% of $5,070.80), got $-760.62",
+          "month": "November 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First opex allocation",
+          "detail": "Expected $1,521.24 (30.0% of $5,070.80), got $513.27",
+          "month": "November 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "November 2025"
+        }
+      ]
+    },
+    {
+      "month": "December 2025",
+      "design": "62/66",
+      "template": "41/42",
+      "math": "14/18",
+      "total": "117/126",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "December 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 1 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "December 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 125 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "December 2025"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 125 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "December 2025"
+        },
+        {
+          "category": "template",
+          "check": "Dashboard has MVA business line",
+          "detail": "No MVA business line found",
+          "month": "December 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First profit allocation",
+          "detail": "Expected $316.28 (5.0% of $6,325.59), got $-316.28",
+          "month": "December 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First owner allocation",
+          "detail": "Expected $3,162.80 (50.0% of $6,325.59), got $-1,092.80",
+          "month": "December 2025"
+        },
+        {
+          "category": "math",
+          "check": "Profit First tax allocation",
+          "detail": "Expected $948.84 (15.0% of $6,325.59), got $-948.84",
+          "month": "December 2025"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "December 2025"
+        }
+      ]
+    },
+    {
+      "month": "January 2026",
+      "design": "62/128",
+      "template": "42/42",
+      "math": "11/14",
+      "total": "115/184",
+      "issues": [
+        {
+          "category": "design",
+          "check": "Dashboard row 15 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 15 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 25 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 25 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 27 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 27 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 28 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 28 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 29 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 29 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 30 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 30 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 41 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 41 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 62 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 62 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 68 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 68 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 78 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 78 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 81 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 81 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 85 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 85 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 90 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 90 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 91 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 91 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 92 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 92 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 105 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 105 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 110 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 110 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 116 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 116 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 119 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 119 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 122 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 122 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 132 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 132 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 139 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 139 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 140 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 140 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 146 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 146 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 149 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 149 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 154 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 154 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 155 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 155 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 170 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 170 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 171 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 171 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 175 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 175 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 176 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 176 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 185 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 185 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 191 header text white",
+          "detail": "Navy header text not white: {}",
+          "month": "January 2026"
+        },
+        {
+          "category": "design",
+          "check": "Dashboard row 191 header font size",
+          "detail": "Section header font size: 10pt, expected >=11pt",
+          "month": "January 2026"
+        },
+        {
+          "category": "math",
+          "check": "\ud83d\udcbc Business 4991 total amount ($396.10 expected)",
+          "detail": "Sheet total: $-3,803.90, CSV total: $396.10 (diff: $4,200.00)",
+          "month": "January 2026"
+        },
+        {
+          "category": "math",
+          "check": "Profit First revenue found",
+          "detail": "Could not find revenue value in Profit First tab",
+          "month": "January 2026"
+        },
+        {
+          "category": "math",
+          "check": "Pareto cumulative % column found",
+          "detail": "Could not identify cumulative % column",
+          "month": "January 2026"
+        }
+      ]
+    }
+  ]
+}

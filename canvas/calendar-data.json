@@ -1,24 +1,6 @@
 {
   "events": [
     {
-      "id": "3jc8b06nh6cer9eg0uau8lt65g",
-      "title": "follow up - Meeting with Scott Poisson",
-      "start": "2026-02-03T15:00:00-05:00",
-      "end": "2026-02-03T15:30:00-05:00",
-      "location": "",
-      "description": "This will be a phone call",
-      "allDay": false
-    },
-    {
-      "id": "5f4pqn7augrdqf2ic9uue05e14",
-      "title": "Pre-call video",
-      "start": "2026-02-04",
-      "end": "2026-02-04",
-      "location": "",
-      "description": "",
-      "allDay": true
-    },
-    {
       "id": "0u2gcclh4gb2vdijbn9qhh1ura",
       "title": "Go to cusco and fly to lima",
       "start": "2026-02-04T12:00:00-05:00",
@@ -55,15 +37,15 @@
       "allDay": false
     },
     {
-      "id": "7n3sfilovsfs91nij7jk33gm6v",
-      "title": "Follow up call with Joan Suh",
-      "start": "2026-02-09T16:00:00-05:00",
-      "end": "2026-02-09T16:45:00-05:00",
+      "id": "247485kodpaqjbnqeuq64q6i9p",
+      "title": "Follow up Call with Cases on Demand <> Michael rmdlaw",
+      "start": "2026-02-10T11:00:00-05:00",
+      "end": "2026-02-10T11:30:00-05:00",
       "location": "",
-      "description": "",
+      "description": "Follow Up Call with\u00a0<br><table dir=\"ltr\"><colgroup><col /><col /><col /><col /><col /><col /><col /></colgroup><tbody><tr><td>Michael</td><td>Schulz</td><td><br><br></td><td><br>.\u00a0 \u00a0(949) 501-4622</td><td>\u00a0.\u00a0\u00a0</td><td><u></u></td><td></td></tr></tbody></table><table dir=\"ltr\"><tbody><tr><td>michaels@rmdlaw.com</td><td><u><a href=\"http://rmdlaw.com/\" target=\"_blank\"><u>rmdlaw.com</u></a></u></td></tr></tbody></table><br><br><br>First-touch meeting was on Wednesday, January 28, 2026 2:30 PM",
       "allDay": false
     }
   ],
-  "count": 7,
-  "updated": "2026-02-03T06:45:39.098964Z"
+  "count": 5,
+  "updated": "2026-02-04T10:19:42.774397Z"
 }

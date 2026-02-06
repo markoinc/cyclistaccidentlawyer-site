@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-04T04:17:20.421567",
+  "payload": {
+    "event": "visitor.identified",
+    "timestamp": "2026-02-04T04:17:00.000Z",
+    "organizationId": "test-org",
+    "trigger": "test",
+    "data": {
+      "email": "test.verify@example.com",
+      "firstName": "Verify",
+      "lastName": "Switch",
+      "jobTitle": "Test",
+      "companyName": "Switch Test Inc",
+      "businessEmails": [
+        "test.verify@example.com"
+      ],
+      "phones": [
+        "+15551111111"
+      ],
+      "industry": "Technology",
+      "city": "Test City",
+      "state": "TX"
+    }
+  }
+}

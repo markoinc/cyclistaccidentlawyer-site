@@ -4,12 +4,13 @@
 
 ### Accounts & Access
 - **sierra@kuriosbrand.com** — My Google Workspace account
-- **Google OAuth** — Proper API access set up (no passwords stored)
-  - ✅ Calendar API
-  - ✅ Gmail API
-  - ✅ Drive API
-- Token location: `~/.config/gcal-pro/token.json`
-- Can access mark@kuriosbrand.com calendar (shared)
+- **Google OAuth** — Full access (token: ~/.config/gcal-pro/token.json)
+  - ✅ Calendar + Events
+  - ✅ Gmail (send, read, modify, labels, settings) — both sierra@ and mark@
+  - ✅ Drive + Docs
+  - ✅ Tasks
+- Can access mark@kuriosbrand.com email + calendar via delegation
+- Gmail labels created: Sierra/Prospects, Sierra/Partners, Sierra/Calls-Transcripts, Sierra/Important, Sierra/Junk-Deleted
 - **Slack** — ✅ Configured (Socket Mode, DM pairing enabled)
 - **Telegram** — configured and working
 
@@ -25,8 +26,15 @@
 - **Kurios MVA Appointments** — Main CRM/pipeline tracker
   - ID: `1iu8lHRKAt_eDoHr6SreDktQhwT8l0R-VFpfvObKHtMQ`
   - Tracks: contacts, appointment dates, call outcomes, Patrick handoffs, deal status
-- **November 2025 Accounting** — `1DmOeIoWJ-K6P4vST4-Sdbf35cZqiuej7AjS0facCsA0` (empty)
-- **December 2025 Accounting** — `1sGg3SHDLKAmDz0V79MvF-ZVCHcaxjCYMTDV-fZlLWOo` (empty)
+- **📊 KuriosBrand Accounting Folder** — https://drive.google.com/drive/folders/1XlNibgutZc0eVrI6tkgexTA3RusGepwX
+  - June-Sep 2025, Nov-Dec 2025, Jan 2026 (no October exists)
+  - All redesigned with Dashboard tabs, categorized transactions
+- **January 2026 Sheet** — `1EMYwVZVoAGUMAlM-G2C1NunZ_RZOvDmgJxdBaKqUriE` (Profit First + Pareto tabs)
+- **November 2025 Accounting** — `1DmOeIoWJ-K6P4vST4-Sdbf35cZqiuej7AjS0facCsA0`
+- **December 2025 Accounting** — `1sGg3SHDLKAmDz0V79MvF-ZVCHcaxjCYMTDV-fZlLWOo`
+- **Stripe API** — `~/.config/stripe/credentials.json` (read-only, acct_1MYcAaCzRJgQ28gJ)
+  - Stripe Capital Loan: $4,200 received 01/23, $5,035 total to repay, $4,705 remaining
+  - 20% of Stripe deposits after 01/23 go to repayment
 - **MVA Carlos & Mark Partnership** folder — `1qshu4wTkayK-3C_h8nPEy_YWtWoaPAUX`
 - **MVA Sales Process - COD** doc — `1pJ3l9grF0ed_y-eJ5Mt5-CnLfRbtt8Qas880_s3Wts0` (needs Docs API enabled)
 
@@ -87,11 +95,14 @@
 - Marko prefers voice messages over typing
 - Wants bedtime reminders 9 hours before morning calendar events
 - Direct communication style
+- **ALWAYS ONE-UP:** When Marko or Carlos ask for something, don't just build what they asked — research and think of a BETTER way to do it. Challenge their approach, suggest improvements, find what they didn't think of. They want Sierra to elevate their ideas, not just execute them.
+- **CROSS-CHECK EVERYTHING:** When Marko or Carlos asks me to build/do something, ALWAYS cross-reference with what the other person is building or has built. Check for conflicts, redundancies, and overlap. If something could clash with the other person's work, flag it immediately. Keep both updated on what the other is doing. Monitor ALL channels (#mark-sierra, #carlos-sierra, #all-kurios, #humans-of-kurios, #leadpipe-notifications) for this.
 - **Tasks → Calendar:** When Marko says "update my tasks" with action items, ADD THEM TO CALENDAR (not just memory)
 - **NEVER move/reschedule booked appointments** (especially sales calls with law firms) unless explicitly asked
 - **Sales calls = #1 priority** — never deprioritize for tasks
 - **Simulate 1000 scenarios** — Before deploying anything, stress test with 1000 simulated users/conversations/scenarios. Report what breaks.
 - **Simulation budget:** $200/day TOTAL for large-scale simulations (100K scenarios)
+- **⚠️ NEVER send external emails** to prospects/clients without Marko's explicit approval. Always DRAFT → show him → he approves → send. Learned this the hard way 2026-02-03.
 
 ### Tools & Resources
 - **crowdreply.io** — Reddit comments and upvotes

@@ -1,46 +1,38 @@
 import { useState } from 'react';
-import { Plus, Download, Search, Phone, Eye } from 'lucide-react';
-import { useDashboard } from '../context/DashboardContext';
-import { Button, Badge } from '../components/UI';
+import { Plus, Download, Search, Phone, Eye, Mail, UserCircle } from 'lucide-react';
+import useStore from '../stores/useStore';
+import { filterBySearch } from '../utils/helpers';
 
 const typeConfig = {
-  partners: { label: 'Partner', color: 'bg-[#3366FF]/15 text-[#3366FF]' },
-  vendors: { label: 'Key Vendor', color: 'bg-[#00E676]/15 text-[#00E676]' },
-  clients: { label: 'Client', color: 'bg-[#a855f7]/15 text-[#a855f7]' },
+  partner: { label: 'Partner', color: 'bg-kurios-primary/12 text-kurios-primary' },
+  prospect: { label: 'Prospect', color: 'bg-amber-500/12 text-amber-400' },
+  client: { label: 'Client', color: 'bg-kurios-secondary/12 text-kurios-secondary' },
 };
 
-export function Contacts() {
-  const { state, dispatch, showToast } = useDashboard();
+export default function Contacts() {
+  const { contacts, addToast, openModal } = useStore();
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
-  const [selectedIds, setSelectedIds] = useState([]);
 
-  const filteredContacts = state.contacts.filter(contact => {
-    const matchesFilter = filter === 'all' || contact.type === filter;
-    const matchesSearch = search === '' || 
-      contact.name.toLowerCase().includes(search.toLowerCase()) ||
-      contact.company.toLowerCase().includes(search.toLowerCase()) ||
-      contact.email.toLowerCase().includes(search.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
+  const types = ['all', 'partner', 'prospect', 'client'];
 
-  const toggleSelect = (id) => {
-    setSelectedIds(prev => 
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
-    );
-  };
+  const filteredContacts = filterBySearch(
+    filter === 'all' ? contacts : contacts.filter((c) => c.type === filter),
+    search,
+    ['name', 'company', 'email']
+  );
 
   const handleExport = () => {
-    const data = filteredContacts.map(c => ({
+    const data = filteredContacts.map((c) => ({
       name: c.name,
       email: c.email,
       company: c.company,
       type: c.type,
-      tags: c.tags.join(', '),
+      role: c.role,
     }));
-    const headers = ['Name', 'Email', 'Company', 'Type', 'Tags'];
-    const rows = data.map(c => [c.name, c.email, c.company, c.type, c.tags]);
-    const content = [headers, ...rows].map(r => r.join(',')).join('\n');
+    const headers = ['Name', 'Email', 'Company', 'Type', 'Role'];
+    const rows = data.map((c) => Object.values(c));
+    const content = [headers, ...rows].map((r) => r.join(',')).join('\n');
     const blob = new Blob([content], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -48,140 +40,128 @@ export function Contacts() {
     a.download = 'contacts-export.csv';
     a.click();
     URL.revokeObjectURL(url);
-    showToast(`Exported ${filteredContacts.length} contacts`, 'success');
+    addToast(`Exported ${filteredContacts.length} contacts`, 'success');
   };
 
   return (
-    <div className="p-6 animate-fadeIn">
+    <div className="space-y-6 animate-fadeIn">
       {/* Actions */}
-      <div className="flex flex-wrap gap-3 mb-6">
-        <Button onClick={() => dispatch({ type: 'OPEN_MODAL', payload: { type: 'addContact' } })}>
-          <Plus size={16} /> Add Contact
-        </Button>
-        <Button variant="secondary" onClick={handleExport}>
-          <Download size={16} /> Export
-        </Button>
+      <div className="flex flex-wrap items-center gap-3">
+        <button
+          onClick={() => openModal('addContact')}
+          className="flex items-center gap-2 px-4 py-2.5 bg-kurios-primary text-white text-sm font-medium rounded-lg hover:bg-kurios-primary/90 transition-all shadow-lg shadow-kurios-primary/20"
+        >
+          <Plus className="w-4 h-4" />
+          Add Contact
+        </button>
+        <button
+          onClick={handleExport}
+          className="flex items-center gap-2 px-4 py-2.5 bg-white/[0.06] text-gray-300 text-sm font-medium rounded-lg hover:bg-white/[0.1] border border-kurios-border transition-colors"
+        >
+          <Download className="w-4 h-4" />
+          Export
+        </button>
       </div>
 
-      {/* Table */}
-      <div className="bg-[#242930] border border-[#2d333b] rounded-xl overflow-hidden">
-        {/* Toolbar */}
-        <div className="p-4 border-b border-[#2d333b] flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2 bg-[#21262c] border border-[#444d56] rounded-lg px-4 py-2 min-w-[300px] focus-within:border-[#3366FF]">
-            <Search size={16} className="text-[#6e7681]" />
-            <input
-              type="text"
-              placeholder="Search contacts..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 bg-transparent text-sm text-[#f0f6fc] placeholder-[#6e7681] outline-none"
-            />
-          </div>
-          <div className="flex gap-2">
-            {['all', 'partners', 'vendors', 'clients'].map(f => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`
-                  px-3 py-1.5 rounded-full text-xs font-medium border transition-all
-                  ${filter === f 
-                    ? 'bg-[#3366FF] border-[#3366FF] text-white' 
-                    : 'bg-transparent border-[#444d56] text-[#8b949e] hover:text-white hover:border-[#3366FF]'}
-                `}
+      {/* Toolbar */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        {/* Search */}
+        <div className="relative w-full sm:w-72">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+          <input
+            type="text"
+            placeholder="Search contacts…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-9 pr-4 py-2.5 rounded-lg bg-white/[0.04] border border-kurios-border text-sm text-white placeholder-gray-500 focus:outline-none focus:border-kurios-primary/50 transition-all"
+          />
+        </div>
+        {/* Filter tabs */}
+        <div className="flex gap-1.5 p-1 rounded-lg bg-white/[0.04]">
+          {types.map((t) => (
+            <button
+              key={t}
+              onClick={() => setFilter(t)}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                filter === t
+                  ? 'bg-kurios-primary text-white shadow-sm'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              {t.charAt(0).toUpperCase() + t.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Cards */}
+      {filteredContacts.length === 0 ? (
+        <div className="text-center py-16 text-gray-500">
+          <UserCircle className="w-12 h-12 mx-auto mb-3 opacity-40" />
+          <p className="text-sm">No contacts found</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 stagger-children">
+          {filteredContacts.map((contact) => {
+            const cfg = typeConfig[contact.type] || typeConfig.prospect;
+            return (
+              <div
+                key={contact.id}
+                className="group p-4 rounded-xl border border-kurios-border bg-kurios-card hover:border-kurios-border-hover hover:bg-kurios-card-hover transition-all duration-200 card-glow"
               >
-                {f === 'all' ? 'All' : f.charAt(0).toUpperCase() + f.slice(1)}
-              </button>
-            ))}
-          </div>
-        </div>
+                <div className="flex items-start gap-3">
+                  {/* Avatar */}
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-kurios-primary/30 to-kurios-accent/20 flex items-center justify-center text-sm font-semibold text-white shrink-0">
+                    {contact.name?.charAt(0) || '?'}
+                  </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-[#21262c] text-[11px] font-semibold text-[#6e7681] uppercase tracking-wider">
-                <th className="w-12 px-4 py-3"></th>
-                <th className="text-left px-5 py-3">Contact</th>
-                <th className="text-left px-5 py-3">Company</th>
-                <th className="text-left px-5 py-3">Type</th>
-                <th className="text-left px-5 py-3">Tags</th>
-                <th className="text-left px-5 py-3">Actions</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#2d333b]">
-              {filteredContacts.map(contact => (
-                <tr key={contact.id} className="hover:bg-[#353d47] transition-colors">
-                  <td className="px-4 py-3">
-                    <button
-                      onClick={() => toggleSelect(contact.id)}
-                      className={`
-                        w-5 h-5 rounded border-2 flex items-center justify-center transition-all
-                        ${selectedIds.includes(contact.id) 
-                          ? 'bg-[#3366FF] border-[#3366FF] text-white' 
-                          : 'border-[#444d56] hover:border-[#3366FF]'}
-                      `}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <h3 className="font-semibold text-sm text-white truncate">
+                        {contact.name}
+                      </h3>
+                      <span className={`shrink-0 text-[10px] font-medium px-2 py-0.5 rounded-full ${cfg.color}`}>
+                        {cfg.label}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 truncate">{contact.company} {contact.role ? `• ${contact.role}` : ''}</p>
+                    {contact.notes && (
+                      <p className="text-[11px] text-gray-600 mt-1.5 line-clamp-2">{contact.notes}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex items-center gap-2 mt-3 pt-3 border-t border-kurios-border">
+                  {contact.email && (
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="flex items-center gap-1.5 text-[11px] text-gray-500 hover:text-kurios-primary transition-colors"
                     >
-                      {selectedIds.includes(contact.id) && '✓'}
+                      <Mail className="w-3.5 h-3.5" />
+                      {contact.email}
+                    </a>
+                  )}
+                  <div className="ml-auto flex gap-1">
+                    <button
+                      onClick={() => openModal('viewDetails', contact)}
+                      className="p-1.5 rounded-md text-gray-500 hover:text-white hover:bg-white/[0.06] transition-colors"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
                     </button>
-                  </td>
-                  <td className="px-5 py-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full gradient-brand flex items-center justify-center text-sm font-semibold text-white">
-                        {contact.avatar}
-                      </div>
-                      <div>
-                        <div className="font-semibold">{contact.name}</div>
-                        <div className="text-xs text-[#6e7681]">{contact.email}</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-5 py-3 text-sm">{contact.company}</td>
-                  <td className="px-5 py-3">
-                    <span className={`px-2.5 py-1 rounded text-xs font-medium ${typeConfig[contact.type]?.color}`}>
-                      {typeConfig[contact.type]?.label}
-                    </span>
-                  </td>
-                  <td className="px-5 py-3">
-                    <div className="flex gap-1">
-                      {contact.tags.map(tag => (
-                        <span key={tag} className="px-2 py-0.5 bg-[#353d47] rounded text-xs text-[#8b949e]">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="px-5 py-3">
-                    <div className="flex gap-2">
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => dispatch({ type: 'OPEN_MODAL', payload: { type: 'viewContact', data: contact } })}
-                      >
-                        <Eye size={14} />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant={contact.type === 'vendors' ? 'primary' : 'ghost'}
-                        onClick={() => showToast(`Calling ${contact.name}...`, 'info')}
-                      >
-                        <Phone size={14} />
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <button
+                      onClick={() => addToast(`Calling ${contact.name}...`, 'info')}
+                      className="p-1.5 rounded-md text-gray-500 hover:text-kurios-primary hover:bg-kurios-primary/10 transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
-        {filteredContacts.length === 0 && (
-          <div className="text-center py-12 text-[#6e7681]">
-            No contacts found matching your criteria
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }
-
-export default Contacts;

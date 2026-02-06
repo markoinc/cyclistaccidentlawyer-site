@@ -1,39 +1,39 @@
-import { Plus, Copy, Download, Trophy } from 'lucide-react';
-import { useDashboard } from '../context/DashboardContext';
-import { Button, Badge } from '../components/UI';
+import { Plus, Copy, Download, Trophy, MapPin, TrendingUp, DollarSign } from 'lucide-react';
+import useStore from '../stores/useStore';
+import { formatCurrency } from '../utils/helpers';
+import { stateData } from '../data/sampleData';
 
 const healthColors = {
-  excellent: 'bg-[#00E676]/15 text-[#00E676]',
-  good: 'bg-[#3366FF]/15 text-[#3366FF]',
-  'at-risk': 'bg-[#ffb347]/15 text-[#ffb347]',
-  critical: 'bg-[#ff6b6b]/15 text-[#ff6b6b]',
+  excellent: 'text-kurios-secondary',
+  good: 'text-kurios-primary',
+  'at-risk': 'text-amber-400',
+  critical: 'text-red-400',
 };
 
 const gradients = [
-  'from-[#3366FF] to-[#00E676]',
-  'from-[#ff6b6b] to-[#ffb347]',
-  'from-[#a855f7] to-[#3366FF]',
-  'from-[#00E676] to-[#3366FF]',
+  'from-kurios-primary to-blue-400',
+  'from-kurios-secondary to-emerald-400',
+  'from-kurios-accent to-pink-400',
+  'from-amber-500 to-orange-400',
+  'from-cyan-500 to-teal-400',
 ];
 
-export function Clients() {
-  const { state, dispatch, showToast } = useDashboard();
+export default function Clients() {
+  const { clients, addToast, openModal } = useStore();
 
   const copyPortfolioSummary = () => {
-    const summary = '24 Active Clients • $10M+ Total Spend • 5,000+ Cases Signed • 15 States • 5+ Years';
+    const summary = `${clients.length} Active Clients • ${stateData.length} States • ${stateData.reduce((s, st) => s + st.casesPerMonth, 0)}+ Cases/Mo`;
     navigator.clipboard.writeText(summary);
-    showToast('Portfolio summary copied!', 'success');
+    addToast('Portfolio summary copied!', 'success');
   };
 
   const handleExport = () => {
-    const data = state.clients.map(c => ({
-      state: c.state,
+    const data = clients.map((c) => ({
       name: c.name,
-      clients: c.clients,
-      roi: c.roi,
-      leadCost: c.leadCost,
-      caseCost: c.caseCost,
+      state: c.state,
+      revenue: c.revenue,
       conversion: c.conversion,
+      casesPerMonth: c.casesPerMonth,
     }));
     const content = JSON.stringify(data, null, 2);
     const blob = new Blob([content], { type: 'application/json' });
@@ -43,95 +43,112 @@ export function Clients() {
     a.download = 'clients-export.json';
     a.click();
     URL.revokeObjectURL(url);
-    showToast('Clients exported!', 'success');
+    addToast('Clients exported!', 'success');
   };
 
+  // Group clients by state for summary
+  const stateGroups = {};
+  clients.forEach((c) => {
+    if (!stateGroups[c.state]) stateGroups[c.state] = [];
+    stateGroups[c.state].push(c);
+  });
+
   return (
-    <div className="p-6 animate-fadeIn">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-[#242930] to-[#21262c] border border-[#00E676] rounded-2xl p-6 mb-6">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+    <div className="space-y-6 animate-fadeIn">
+      {/* Hero */}
+      <div className="p-6 rounded-2xl bg-gradient-to-br from-kurios-card to-kurios-darker border border-kurios-secondary/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-kurios-secondary/5 via-transparent to-transparent pointer-events-none" />
+
+        <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-3">
-            <Trophy size={24} className="text-[#00E676]" />
-            <h2 className="text-xl font-bold">Client Portfolio — 15+ States Covered</h2>
+            <div className="p-2.5 rounded-xl bg-kurios-secondary/15">
+              <Trophy className="w-6 h-6 text-kurios-secondary" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold text-white">Client Portfolio</h2>
+              <p className="text-sm text-gray-400">{stateData.length} states covered</p>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Button onClick={() => dispatch({ type: 'OPEN_MODAL', payload: { type: 'addClient' } })}>
-              <Plus size={16} /> Add Client
-            </Button>
-            <Button variant="secondary" onClick={copyPortfolioSummary}>
-              <Copy size={16} /> Copy Summary
-            </Button>
-            <Button variant="outline" onClick={handleExport}>
-              <Download size={16} /> Export
-            </Button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => openModal('addClient')}
+              className="flex items-center gap-2 px-4 py-2 bg-kurios-primary text-white text-sm font-medium rounded-lg hover:bg-kurios-primary/90 transition-all"
+            >
+              <Plus className="w-4 h-4" />
+              Add Client
+            </button>
+            <button
+              onClick={copyPortfolioSummary}
+              className="flex items-center gap-2 px-4 py-2 bg-white/[0.06] text-gray-300 text-sm rounded-lg hover:bg-white/[0.1] border border-kurios-border transition-colors"
+            >
+              <Copy className="w-4 h-4" />
+              Copy
+            </button>
+            <button
+              onClick={handleExport}
+              className="flex items-center gap-2 px-4 py-2 bg-white/[0.06] text-gray-300 text-sm rounded-lg hover:bg-white/[0.1] border border-kurios-border transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              Export
+            </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {/* Summary stats */}
+        <div className="relative grid grid-cols-2 md:grid-cols-5 gap-3">
           {[
-            { value: '24', label: 'Active Clients', positive: true },
-            { value: '$10M+', label: 'Total Spend', positive: true },
-            { value: '5,000+', label: 'Cases Signed', positive: true },
-            { value: '2.6x', label: 'Avg Client ROI', positive: true },
-            { value: '5+ Years', label: 'Track Record', positive: false },
+            { value: clients.length, label: 'Active Clients', icon: TrendingUp },
+            { value: `${stateData.reduce((s, st) => s + st.casesPerMonth, 0)}+`, label: 'Cases/Month', icon: TrendingUp },
+            { value: stateData.length, label: 'States', icon: MapPin },
+            { value: '2.6x', label: 'Avg ROI', icon: TrendingUp },
+            { value: formatCurrency(stateData.reduce((s, st) => s + st.totalSpend, 0)), label: 'Total Spend', icon: DollarSign },
           ].map((stat, i) => (
-            <div key={i} className="text-center p-4 bg-[#14171A] rounded-lg">
-              <div className={`text-2xl font-extrabold ${stat.positive ? 'text-[#00E676]' : 'text-[#f0f6fc]'}`}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-[#6e7681] uppercase tracking-wide">{stat.label}</div>
+            <div key={i} className="p-3.5 rounded-xl bg-white/[0.04] border border-white/[0.06] text-center">
+              <p className="text-xl font-bold text-white">{stat.value}</p>
+              <p className="text-[11px] text-gray-500 uppercase tracking-wider mt-0.5">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Client Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {state.clients.map((client, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 stagger-children">
+        {clients.map((client, i) => (
           <div
             key={client.id}
-            className={`
-              bg-[#242930] border rounded-xl p-5 cursor-pointer
-              transition-all duration-150 hover:border-[#3366FF] hover:shadow-lg hover:shadow-[#3366FF]/10 hover:-translate-y-0.5
-              ${client.favorite ? 'border-[#3366FF]' : 'border-[#2d333b]'}
-            `}
-            onClick={() => dispatch({ type: 'OPEN_MODAL', payload: { type: 'viewClient', data: client } })}
+            onClick={() => openModal('viewDetails', client)}
+            className="group p-5 rounded-xl border border-kurios-border bg-kurios-card hover:border-kurios-border-hover hover:bg-kurios-card-hover cursor-pointer transition-all duration-200 card-glow"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className={`
-                w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg text-white
-                bg-gradient-to-br ${gradients[i % gradients.length]}
-              `}>
+              <div
+                className={`w-11 h-11 rounded-lg flex items-center justify-center font-bold text-base text-white bg-gradient-to-br ${
+                  gradients[i % gradients.length]
+                } shadow-lg`}
+              >
                 {client.state}
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold truncate">{client.name}</div>
-                <div className="text-xs text-[#6e7681]">
-                  {client.favorite ? '⭐ FAVORITE - 100+ cases/mo' : `${client.clients} Active Clients`}
-                </div>
+                <p className="font-semibold text-sm text-white truncate group-hover:text-kurios-primary transition-colors">
+                  {client.name}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {client.casesPerMonth} cases/mo • {client.industry}
+                </p>
               </div>
-              <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${healthColors[client.health]}`}>
-                {client.roi} ROI
-              </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-[#2d333b]">
+            <div className="grid grid-cols-3 gap-3 pt-3 border-t border-kurios-border">
               <div className="text-center">
-                <div className="text-base font-bold text-[#3366FF]">${client.leadCost}</div>
-                <div className="text-[10px] text-[#6e7681] uppercase">Lead Cost</div>
+                <p className="text-sm font-bold text-kurios-primary">${client.revenue}</p>
+                <p className="text-[10px] text-gray-600 uppercase">Case $</p>
               </div>
               <div className="text-center">
-                <div className="text-base font-bold text-[#ffb347]">${client.caseCost.toLocaleString()}</div>
-                <div className="text-[10px] text-[#6e7681] uppercase">Case Cost</div>
+                <p className="text-sm font-bold text-amber-400">{client.conversion}%</p>
+                <p className="text-[10px] text-gray-600 uppercase">Conv.</p>
               </div>
               <div className="text-center">
-                <div className="text-base font-bold text-[#00E676]">
-                  {typeof client.conversion === 'number' && client.conversion > 50 ? '100+' : `${client.conversion}%`}
-                </div>
-                <div className="text-[10px] text-[#6e7681] uppercase">
-                  {typeof client.conversion === 'number' && client.conversion > 50 ? 'Cases/Mo' : 'Conversion'}
-                </div>
+                <p className="text-sm font-bold text-kurios-secondary">{client.casesPerMonth}</p>
+                <p className="text-[10px] text-gray-600 uppercase">Cases/Mo</p>
               </div>
             </div>
           </div>
@@ -140,5 +157,3 @@ export function Clients() {
     </div>
   );
 }
-
-export default Clients;

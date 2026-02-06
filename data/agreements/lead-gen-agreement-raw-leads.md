@@ -3,7 +3,7 @@
 
 ---
 
-**This Lead Generation & Delivery Agreement ("Agreement")** is entered into as of **[_______________]** ("Effective Date"), by and between:
+**This Lead Generation & Delivery Agreement ("Agreement")** is entered into as of **{{current_date}}** ("Effective Date"), by and between:
 
 ---
 
@@ -12,21 +12,21 @@
 **KuriosBrand LLC**  
 361 Falls Rd  
 Grafton, WI 53024  
-Phone: (262) 893-7717  
+Phone: {{location.phone}}  
 Email: mark@kuriosbrand.com
 
 ---
 
 ### CLIENT
 
-**[____________________________________]** ("Law Firm")  
-Address: [____________________________________]  
-City, State, ZIP: [____________________________________]  
-Primary Contact: [____________________________________]  
-Title: [____________________________________]  
-Phone: [____________________________________]  
-Email: [____________________________________]  
-State Bar Number: [____________________________________]
+**{{contact.company_name}}** ("Law Firm")  
+Address: {{contact.address1}}  
+City, State, ZIP: {{contact.city}}, {{contact.state}} {{contact.postal_code}}  
+Primary Contact: {{contact.first_name}} {{contact.last_name}}  
+Title: {{contact.quiz_position}}  
+Phone: {{contact.phone}}  
+Email: {{contact.email}}  
+Website: {{contact.quiz_firmwebsite}}
 
 ---
 
@@ -34,31 +34,23 @@ State Bar Number: [____________________________________]
 
 ### 1. SCOPE OF SERVICES
 
-Provider shall generate and deliver exclusive Motor Vehicle Accident (MVA) leads to Client through dedicated digital advertising campaigns. All leads are generated through TCPA-compliant methods and are exclusive to Client—they will not be sold, shared, or delivered to any other party.
+Provider shall generate and deliver exclusive Motor Vehicle Accident (MVA) leads to Client through dedicated digital advertising campaigns in the following state(s): **{{contact.proposal_state}}**.
+
+All leads are generated through TCPA-compliant methods and are exclusive to Client—they will not be sold, shared, or delivered to any other party.
 
 ---
 
 ### 2. SERVICE PACKAGE
 
-**Service Type:** ☐ Exclusive Raw Leads
+**Service Type:** Exclusive Guaranteed Raw Leads
 
-**Geographic Coverage:**
-| State(s) | ☐ Check All That Apply |
-|----------|------------------------|
-| California | ☐ |
-| Texas | ☐ |
-| Georgia | ☐ |
-| Michigan | ☐ |
-| Other: [____________] | ☐ |
+**Geographic Coverage:** {{contact.proposal_state}}
 
-**Campaign Budget:** $[____________________]
+**Campaign Budget:** {{contact.proposal_budget}}
 
-**Estimated Lead Volume:** [________] to [________] leads  
-*(Based on current market conditions and historical performance)*
+**Guaranteed Lead Volume:** {{contact.proposal_guaranteed_leads}} leads
 
-**Cost Per Lead:** $[________] per qualified lead
-
-**Estimated Delivery Timeline:** [________] weeks from campaign launch
+**Estimated Delivery Timeline:** {{contact.proposal_delivery_timeline}} from campaign launch
 
 ---
 
@@ -70,122 +62,99 @@ A "Qualified Lead" is defined as a unique consumer submission that meets ALL of 
 - Valid, working phone number
 - Valid email address (when provided)
 - Full legal name
-- Complete mailing address
 
 **b) Case Eligibility**
-- Motor vehicle accident within past [____] months
-- Accident occurred within Client's licensed state(s)
+- Motor vehicle accident within approved timeframe
+- Accident occurred within {{contact.proposal_state}}
 - Not currently represented by another attorney
-- Claimant was not at fault (or liability is contested)
 - Reports physical injury (not property damage only)
 
 **c) Data Fields Included**
-- Accident date and location
-- Vehicle type involved
-- Injury description
-- Treatment status
-- Insurance information (when available)
-- TCPA consent timestamp and IP address
+- Consumer full name, phone number, email address
+- State/ZIP code within approved geography
+- Incident type (Auto, Truck, Uber/Lyft, Pedestrian, Motorcycle)
+- Incident timing (consumer-selected)
+- TCPA consent text, timestamp, and IP address
+
+**d) TCPA Compliance**
+All Leads are captured via TCPA-compliant web forms with verifiable one-to-one consent specific to Client, as required by FCC regulations effective January 27, 2025.
 
 ---
 
-### 4. PRICING & PAYMENT TERMS
+### 4. GUARANTEE TERMS
 
-**a) Pricing by State**
+Provider guarantees delivery of **{{contact.proposal_guaranteed_leads}} qualified leads** within the delivery timeline specified above.
 
-| State | Cost Per Lead | Expected Conversion to Signed Case |
-|-------|---------------|-----------------------------------|
-| California | $350-400 | ~10% |
-| Texas | $250-300 | ~15% |
-| Georgia | $275-325 | ~15% |
-| Michigan | $200-250 | ~15% |
-| Nationwide | $100-150 | ~15% |
+**If the guaranteed volume is not met** within the stated timeline, Provider will:
+- Continue delivering leads at no additional cost until the guarantee is fulfilled, OR
+- Issue a pro-rata refund for undelivered leads at Client's election
 
-**b) Payment Terms**
-
-☐ **Option A: Prepaid Campaign**  
-Full payment of $[__________] due before campaign launch.
-
-☐ **Option B: Bi-Weekly Billing**  
-50% deposit ($[__________]) due before launch.  
-Remaining balance invoiced bi-weekly based on leads delivered.  
-Net 7 payment terms.
-
-**Accepted Payment Methods:** ACH, Wire Transfer, Credit Card (+3% processing fee)
+**Lead Guarantee Conditions:**
+- Leads must meet the quality standards defined in Section 3
+- Client must maintain active intake during delivery period
+- Client must report disqualified leads per Section 5
 
 ---
 
-### 5. LEAD DELIVERY
+### 5. LEAD DISQUALIFICATION
 
-**Delivery Method(s):**  
-☐ Email (real-time)  
-☐ SMS notification  
-☐ CRM integration: [________________________]  
-☐ API: [________________________]
+**a) Disqualification Window**
+Client must report any Lead that meets the disqualification criteria within **twenty-four (24) hours** of Lead delivery for it to be reviewed.
 
-**Delivery Recipients:**
-
-| Name | Email | Phone |
-|------|-------|-------|
-| [____________] | [____________] | [____________] |
-| [____________] | [____________] | [____________] |
-
-**Intake Hours:**  
-[________] AM to [________] PM, [________] Time Zone  
-☐ Weekdays only ☐ Including weekends
-
----
-
-### 6. REFUND & REPLACEMENT POLICY
-
-Provider stands behind lead quality. Client may request a replacement or credit for leads that meet the following disqualification criteria:
-
-**a) Eligible for Replacement/Credit:**
+**b) Eligible for Replacement:**
 - Wrong or disconnected phone number (verified after 3 attempts)
-- Duplicate lead (same person submitted within 30 days)
+- Duplicate submission (same lead previously delivered under this Agreement)
 - Already represented by an attorney
 - No injury reported (property damage only)
-- Accident outside Client's approved geography
-- Accident occurred outside the agreed recency window
-- Non-responsive after 7 contact attempts over 5 business days
-- Bot/spam submission (verified by Provider)
+- Accident outside Client's approved geography ({{contact.proposal_state}})
 
-**b) NOT Eligible for Replacement:**
+**c) NOT Eligible for Replacement:**
 - Lead does not retain Client after consultation
 - Lead retains another attorney after speaking with Client
 - Lead becomes unresponsive after initial contact
-- Case does not meet Client's internal criteria (beyond agreed qualifications)
-- Lead changes mind about pursuing claim
+- Case does not meet Client's internal criteria beyond agreed qualifications
 
-**c) Process:**
-- Client must submit replacement requests within **seven (7) business days** of lead delivery
-- Requests submitted via email to leads@kuriosbrand.com
+**d) Process:**
+- Submit replacement requests via email to sierra@kuriosbrand.com
 - Include lead ID, contact date(s), and reason for disqualification
 - Provider will investigate and respond within 3 business days
 
-**d) Replacement Cap:**
-Total replacements and credits shall not exceed **thirty percent (30%)** of the applicable invoice amount. If this threshold is reached, parties agree to review campaign parameters and make adjustments.
+**e) Replacement Cap:**
+Total replacements shall not exceed **thirty percent (30%)** of the guaranteed volume. If this threshold is reached, parties agree to review campaign parameters.
+
+---
+
+### 6. DELIVERY
+
+**Delivery Method:** Via method agreed upon during onboarding (email, CRM injection, API, webhook, or other mutually agreed method).
+
+Every Lead will include:
+- Consumer contact information (name, phone, email)
+- State/ZIP and incident type
+- TCPA consent text, timestamp, and IP address
+
+Delivery begins within **5-7 business days** of payment receipt.
+
+Leads will be delivered 24/7 unless otherwise specified during onboarding.
 
 ---
 
 ### 7. PERFORMANCE EXPECTATIONS
 
-**a) No Guaranteed Outcomes**
-
-Provider does not guarantee any specific conversion rate, case signings, or revenue outcomes. Historical data suggests:
+**a) Conversion Context**
+Based on current {{contact.proposal_state}} campaign performance:
 - Contact rate: 70-85%
 - Qualification rate: 40-60%
-- Signed case rate: 10-15% of raw leads
+- Approximately 10-15% of qualified Leads convert to signed cases
+- Approximately 15% involve commercial vehicle or catastrophic injury cases
 
-These are estimates based on industry data and may vary based on Client's intake process, response time, and case acceptance criteria.
+These metrics are provided for context only and do not constitute a guarantee of conversion rates or case value.
 
 **b) Performance Reviews**
+After approximately twenty (20) delivered leads, both parties agree to review quality, contact rates, and optimization opportunities.
 
-After approximately twenty (20) delivered leads, both parties agree to review:
-- Contact rate
-- Qualification rate
-- Any quality concerns
-- Campaign optimization opportunities
+**c) Ongoing Optimization**
+Provider will continuously optimize ad creative, targeting, and delivery based on campaign data.
 
 ---
 
@@ -201,189 +170,133 @@ Client agrees to:
 **b) Reporting**
 - Provide lead disposition updates at least bi-weekly
 - Report includes: Contact status, Outcome (signed/not signed), Reason for non-conversion
-- Format: ☐ Email ☐ Shared spreadsheet ☐ CRM access
 
 **c) Communication**
 - Respond to Provider communications within 2 business days
 - Notify Provider of intake hour changes at least 48 hours in advance
-- Provide feedback on lead quality issues promptly
 
 ---
 
-### 9. ADVERTISING COMPLIANCE
+### 9. PAYMENT TERMS
 
-**a) Provider Responsibilities**
-- All advertising materials comply with applicable state bar rules
-- TCPA and CAN-SPAM compliance for all lead generation activities
-- California SB37 compliance (when applicable)
+**Campaign Budget:** {{contact.proposal_budget}}
 
-**b) Creative Approval**
-- Provider will submit ad copy for Client approval before launch
-- Client shall respond within 3 business days
-- Failure to respond constitutes approval
+Payment is due in full prior to campaign launch. This Agreement constitutes authorization to charge the stated amount to the payment method provided.
 
-**c) Branding Permission**
-☐ Client authorizes Provider to use Client's firm name in advertising  
-☐ Client authorizes use of attorney name(s): [________________________]  
-☐ Client does NOT authorize use of firm/attorney name (anonymous lead gen)
+**Accepted Payment Methods:** ACH, Wire Transfer, Credit Card (+3% processing fee)
+
+Late payments shall accrue interest at 1.5% per month or the maximum rate permitted by law, whichever is less.
 
 ---
 
-### 10. TERM & TERMINATION
+### 10. ADVERTISING COMPLIANCE
+
+All advertising materials comply with applicable state bar rules and relevant marketing regulations.
+
+Provider will not use Client's branding, logos, or likeness without prior written consent. Client may request review of ad creative prior to launch. Provider will accommodate reasonable requests within 48 hours.
+
+---
+
+### 11. EXCLUSIVITY
+
+All Leads delivered under this Agreement are exclusive to {{contact.company_name}} and will not be resold, shared, or redistributed to any third party.
+
+---
+
+### 12. TERM & TERMINATION
 
 **a) Initial Term**
-This Agreement begins on the Effective Date and continues until:
-- All prepaid leads are delivered, OR
-- Forty-five (45) calendar days, whichever occurs first
+This Agreement begins on the Effective Date and continues until all guaranteed leads have been delivered.
 
-**b) Continuation**
-After the initial campaign, this Agreement converts to month-to-month.  
-**There is NO automatic renewal of prepaid campaigns.** Client must affirmatively order additional campaigns.
-
-**c) Termination**
-- Either party may pause delivery with 48 hours written notice
-- Either party may terminate for material breach not cured within 5 business days
-- Upon termination, Provider will deliver any remaining paid-for leads within 14 days or issue a pro-rata refund
-
-**d) Refund on Termination**
-If Client terminates before all leads are delivered, Provider will:
-- Deliver remaining leads within 14 days, OR
-- Issue a refund for undelivered leads minus a 15% administrative fee
+**b) Termination**
+- Either party may terminate for material breach not cured within five (5) business days after written notice
+- If Client terminates prior to full delivery, Provider will refund unspent budget minus advertising costs already committed or spent, less a 15% administrative fee
 
 ---
 
-### 11. CONFIDENTIALITY
+### 13. CONFIDENTIALITY & DATA PROTECTION
 
-Both parties agree to maintain strict confidentiality of:
-- Pricing and campaign terms
-- Lead data and consumer information
-- Business strategies and methodologies
-- All information marked confidential
+Both Parties agree to maintain strict confidentiality of all shared data, pricing, and campaign information. This obligation survives termination for two (2) years.
 
-This obligation survives termination of this Agreement for a period of two (2) years.
+Both Parties agree to comply with TCPA, CAN-SPAM, and all applicable privacy and data protection laws.
 
----
-
-### 12. DATA PROTECTION
-
-**a) Provider Obligations**
-- Maintain industry-standard security for all lead data
-- Process data only as necessary for lead generation services
-- Provide TCPA consent records upon request
-- Delete lead data upon Client request (after contract completion)
-
-**b) Client Obligations**
-- Use lead data only for legal consultation purposes
-- Maintain appropriate security for received lead data
-- Comply with all applicable privacy laws
-
----
-
-### 13. LIMITATION OF LIABILITY
-
-**a) No Warranty**  
-Services are provided "as is." Provider makes no warranties regarding conversion rates, case quality, or revenue outcomes.
-
-**b) Liability Cap**  
-Provider's total liability shall not exceed the amount paid by Client in the thirty (30) days preceding any claim.
-
-**c) Exclusions**  
-Neither party shall be liable for indirect, incidental, consequential, special, or punitive damages, including lost profits.
+Provider will retain Lead data for 24 months following delivery. Upon request, Provider will delete Client-specific campaign data within 30 days of Agreement termination.
 
 ---
 
 ### 14. INDEMNIFICATION
 
-Client agrees to indemnify and hold Provider harmless from any claims arising from:
-- Client's use of lead data
-- Client's advertising materials (if approved by Client)
-- Client's legal services or malpractice claims
-- Violation of bar rules by Client
+Client agrees to indemnify and hold harmless Provider against any claims, damages, or expenses arising from Client's use of Leads, intake practices, or advertising.
 
-Provider agrees to indemnify Client from claims arising from:
-- Provider's violation of TCPA or advertising laws
-- Provider's breach of this Agreement
-- Provider's negligence in lead generation activities
+Provider agrees to indemnify and hold harmless Client against any claims, damages, or expenses arising from Provider's lead generation practices, including any TCPA violations caused by Provider.
 
 ---
 
-### 15. DISPUTE RESOLUTION
+### 15. LIMITATION OF LIABILITY
 
-**a) Good Faith Resolution**  
-Before initiating any legal action, parties agree to attempt resolution through good faith negotiation for at least 30 days.
+Provider's total aggregate liability shall be limited to the total amount paid by Client under this Agreement.
 
-**b) Mediation**  
-If negotiation fails, parties agree to non-binding mediation before arbitration or litigation.
-
-**c) Governing Law**  
-This Agreement shall be governed by the laws of the State of Wisconsin, without regard to conflict of law principles.
+Neither Party shall be liable for indirect, consequential, special, or punitive damages, including lost profits.
 
 ---
 
-### 16. MISCELLANEOUS
+### 16. DISPUTE RESOLUTION
 
-**a) Entire Agreement**  
-This Agreement constitutes the entire understanding between the parties.
+Any dispute arising under this Agreement shall first be submitted to good-faith mediation. If mediation fails within thirty (30) days, disputes shall be resolved by binding arbitration in Wisconsin under AAA Commercial Arbitration Rules.
 
-**b) Amendments**  
-Modifications must be in writing and signed by both parties.
+---
 
-**c) Severability**  
-If any provision is unenforceable, remaining provisions remain in effect.
+### 17. FORCE MAJEURE
 
-**d) Notices**  
-All notices shall be in writing and sent to the addresses listed above.
+Neither Party shall be liable for delays or failure to perform due to circumstances beyond reasonable control.
+
+---
+
+### 18. GOVERNING LAW
+
+This Agreement shall be governed by the laws of the State of Wisconsin, without regard to conflicts of law principles.
 
 ---
 
 ## SIGNATURES
 
-By signing below, both parties agree to the terms of this Agreement.
-
----
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
 
 **PROVIDER: KuriosBrand LLC**
 
-Signature: ________________________________
-
-Name: ________________________________
-
-Title: ________________________________
-
+Signature: ________________________________  
+Name: Mark Gundrum  
+Title: Managing Member  
 Date: ________________________________
 
 ---
 
-**CLIENT: [Law Firm Name]**
+**CLIENT: {{contact.company_name}}**
 
-Signature: ________________________________
-
-Name: ________________________________
-
-Title: ________________________________
-
+Signature: ________________________________  
+Name: {{contact.first_name}} {{contact.last_name}}  
+Title: {{contact.quiz_position}}  
 Date: ________________________________
 
 ---
 
 ## EXHIBIT B: CAMPAIGN SUMMARY
 
-*To be completed after onboarding call*
-
 | Field | Value |
 |-------|-------|
-| **Campaign Start Date** | |
-| **Target State(s)** | |
-| **Campaign Budget** | $ |
-| **Cost Per Lead** | $ |
-| **Estimated Lead Volume** | |
-| **Delivery Method** | |
-| **Primary Contact** | |
-| **Backup Contact** | |
-| **Intake Hours** | |
-| **Special Requirements** | |
+| **Client** | {{contact.company_name}} |
+| **Primary Contact** | {{contact.first_name}} {{contact.last_name}} |
+| **Email** | {{contact.email}} |
+| **Phone** | {{contact.phone}} |
+| **Target State(s)** | {{contact.proposal_state}} |
+| **Campaign Budget** | {{contact.proposal_budget}} |
+| **Guaranteed Leads** | {{contact.proposal_guaranteed_leads}} |
+| **Delivery Timeline** | {{contact.proposal_delivery_timeline}} |
+| **Intake Setup** | {{contact.quiz_intaketeam}} |
+| **Firm Size** | {{contact.quiz_current_volume}} |
+| **Target Cost/Case** | {{contact.quiz_costpersignedcase}} |
 
 ---
 
-*Document Version: 1.0 | Created: February 2026*  
+*Document Version: 2.0 | Updated: February 3, 2026*  
 *© 2026 KuriosBrand LLC. All rights reserved.*

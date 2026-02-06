@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: '/tmp/goals-dashboard',
+    outDir: 'dist',
     emptyOutDir: true,
   },
 })

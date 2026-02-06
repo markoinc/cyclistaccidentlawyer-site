@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-04T04:32:06.480108",
+  "payload": {
+    "event": "visitor.identified",
+    "data": {
+      "firstName": "Test",
+      "lastName": "Attorney",
+      "jobTitle": "Managing Partner",
+      "companyName": "Smith Injury Law",
+      "industry": "Legal Services",
+      "city": "Houston",
+      "state": "TX",
+      "intentScore": "high",
+      "sessions": 5,
+      "pageviews": 12
+    }
+  }
+}

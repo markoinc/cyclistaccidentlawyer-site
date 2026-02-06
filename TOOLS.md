@@ -148,6 +148,28 @@ This keeps history while surfacing only current/relevant docs.
 - `QtNRYpA6MqH8HPcncxs2` = Firm Size
 - `g5kONh6i8fwXT84iRNnx` = Target Cost Per Case
 
+## RB2B (Website Visitor Identification)
+- **Dashboard:** https://app.rb2b.com
+- **Pixel:** Install on MVA landing pages
+- **Webhook URL:** `https://webhook.kuriosbrand.com/rb2b/webhook`
+- **Slack Channel:** #rb2b-notifications (C0A7RNYC6CF)
+- **Match Rate:** 15-20% (free), 35-45% (Pro+)
+- **Use for:** Identifying anonymous website visitors → enrich → outreach
+- **Flow:** RB2B → Webhook → Qualify → BetterContact enrich → Slack → Lemlist/GHL
+- **Note:** Replaces Leadpipe (2026-02-06) — Leadpipe had broken webhooks and no support
+
+## BetterContact (Waterfall Lead Enrichment)
+- **API Key:** `~/.config/bettercontact/credentials.json`
+- **API Base:** https://app.bettercontact.rocks/api
+- **Integrated with:** Lemlist (via BetterContact dashboard)
+- **Use for:** Waterfall enrichment across 20+ providers for verified emails/phones
+- **Added:** 2026-02-04
+
+## Apollo.io (Sales Intelligence)
+- **API Key:** t_j7hexbGUqksRuWZWi9hw
+- **Use for:** Finding contacts, company info, lead enrichment
+- **API Docs:** https://apolloio.github.io/apollo-api-docs/
+
 ## What Goes Here
 
 Things like:
@@ -161,3 +183,24 @@ Things like:
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## Lemlist (Email Outreach)
+- **API Key:** `~/.config/lemlist/credentials.json`
+- **API Base:** https://api.lemlist.com/api
+- **Auth:** Basic auth with empty username, API key as password
+- **Campaigns:** MVA Outreach Sequence, LinkedIn Messages, Mark's campaign
+- **Limitations:** Leads endpoint returns 403 (may need plan upgrade or API permission)
+- **Use for:** Campaign management, activity tracking, LinkedIn connection tracking
+
+## Stripe API (KuriosBrand LLC)
+- **Account ID:** acct_1MYcAaCzRJgQ28gJ
+- **API Key:** ~/.config/stripe/credentials.json
+- **Key type:** Restricted (read-only: balance, charges, customers, payouts, invoices, subscriptions)
+- **Use for:** Revenue tracking, invoice history, loan repayment monitoring
+- **Added:** 2026-02-04
+
+### Stripe Capital Loan
+- **Disbursed:** $4,200 on 01/23/2026
+- **Total to repay:** $5,035 ($4,200 + $835 fee, 19.9% effective rate)
+- **Remaining:** $4,705
+- **Repayment:** 20% of every Stripe deposit (automatic, only affects deposits AFTER 01/23)

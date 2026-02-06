@@ -1,0 +1,813 @@
+{
+  "stats": {
+    "total_urls": 25,
+    "successful": 25,
+    "failed": 0,
+    "success_rate": 100.0,
+    "total_time_seconds": 20.7,
+    "avg_time_per_site": 0.83,
+    "timestamp": "20260206_134411",
+    "score_avg": 36.5,
+    "score_min": 0,
+    "score_max": 111,
+    "ai_avg": 16.3,
+    "local_avg": 20.2,
+    "grade_distribution": {
+      "C+": 2,
+      "D": 4,
+      "C": 2,
+      "F": 17
+    }
+  },
+  "results": [
+    {
+      "url": "https://forthepeople.com",
+      "success": true,
+      "business_name": "Morgan & Morgan Lawyers",
+      "grade": "D",
+      "ai_score": 31,
+      "local_score": 40,
+      "total_score": 71,
+      "elapsed_seconds": 0.55,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 6,
+        "Structured Data Quality": 0,
+        "Content Structure": 5,
+        "E-E-A-T Signals": 7,
+        "Brand Presence": 0,
+        "Content Freshness": 2,
+        "Question-Based Content": 3,
+        "Citations & Sources": 3,
+        "Technical Performance": 3,
+        "AI Platform Presence": 2
+      },
+      "local_breakdown": {
+        "GBP Basics": 6,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 5,
+        "NAP Consistency": 4,
+        "Location Pages": 6,
+        "Citations & Directories": 0,
+        "Reviews": 1,
+        "Local Content": 5,
+        "Local Link Building": 3
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add LocalBusiness schema with full NAP and hours",
+        "[Brand Presence] Add links to active social media profiles",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 0/10",
+        "Brand Presence: 0/10",
+        "Content Freshness: 2/10"
+      ]
+    },
+    {
+      "url": "https://johnfoy.com",
+      "success": true,
+      "business_name": "Atlanta Personal Injury Lawyer",
+      "grade": "C+",
+      "ai_score": 52,
+      "local_score": 59,
+      "total_score": 111,
+      "elapsed_seconds": 0.9,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 8,
+        "Content Structure": 7,
+        "E-E-A-T Signals": 5,
+        "Brand Presence": 1,
+        "Content Freshness": 2,
+        "Question-Based Content": 10,
+        "Citations & Sources": 5,
+        "Technical Performance": 2,
+        "AI Platform Presence": 4
+      },
+      "local_breakdown": {
+        "GBP Basics": 7,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 7,
+        "NAP Consistency": 6,
+        "Location Pages": 9,
+        "Citations & Directories": 2,
+        "Reviews": 4,
+        "Local Content": 9,
+        "Local Link Building": 5
+      },
+      "quick_wins": [
+        "[Brand Presence] Add links to active social media profiles",
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Technical Performance] Add security headers (HSTS, CSP, X-Frame-Options)"
+      ],
+      "priority_fixes": [
+        "Brand Presence: 1/10",
+        "Content Freshness: 2/10",
+        "Technical Performance: 2/10"
+      ]
+    },
+    {
+      "url": "https://weitzlux.com",
+      "success": true,
+      "business_name": "Top US Injury Attorneys: Asbestos, Drugs & Devices, Environmental",
+      "grade": "D",
+      "ai_score": 33,
+      "local_score": 45,
+      "total_score": 78,
+      "elapsed_seconds": 1.09,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 1,
+        "Content Structure": 5,
+        "E-E-A-T Signals": 6,
+        "Brand Presence": 3,
+        "Content Freshness": 0,
+        "Question-Based Content": 0,
+        "Citations & Sources": 3,
+        "Technical Performance": 3,
+        "AI Platform Presence": 4
+      },
+      "local_breakdown": {
+        "GBP Basics": 7,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 6,
+        "NAP Consistency": 6,
+        "Location Pages": 6,
+        "Citations & Directories": 0,
+        "Reviews": 1,
+        "Local Content": 6,
+        "Local Link Building": 3
+      },
+      "quick_wins": [
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Question-Based Content] Add an FAQ section answering common client questions",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 1/10",
+        "Brand Presence: 3/10",
+        "Content Freshness: 0/10"
+      ]
+    },
+    {
+      "url": "https://herrmanandherrman.com",
+      "success": true,
+      "business_name": "Corpus Christi Personal Injury Lawyers",
+      "grade": "C+",
+      "ai_score": 46,
+      "local_score": 58,
+      "total_score": 104,
+      "elapsed_seconds": 0.9,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 6,
+        "Content Structure": 8,
+        "E-E-A-T Signals": 4,
+        "Brand Presence": 3,
+        "Content Freshness": 4,
+        "Question-Based Content": 2,
+        "Citations & Sources": 2,
+        "Technical Performance": 2,
+        "AI Platform Presence": 7
+      },
+      "local_breakdown": {
+        "GBP Basics": 7,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 7,
+        "NAP Consistency": 6,
+        "Location Pages": 8,
+        "Citations & Directories": 0,
+        "Reviews": 6,
+        "Local Content": 9,
+        "Local Link Building": 5
+      },
+      "quick_wins": [
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia",
+        "[Question-Based Content] Add an FAQ section answering common client questions",
+        "[Citations & Sources] Cite government and educational sources for credibility"
+      ],
+      "priority_fixes": [
+        "E-E-A-T Signals: 4/10",
+        "Brand Presence: 3/10",
+        "Content Freshness: 4/10"
+      ]
+    },
+    {
+      "url": "https://1800lawfirm.com",
+      "success": true,
+      "business_name": "Trusted Law Firm for Family Law, Injury Claims & Legal Help",
+      "grade": "F",
+      "ai_score": 22,
+      "local_score": 30,
+      "total_score": 52,
+      "elapsed_seconds": 2.12,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 6,
+        "Structured Data Quality": 1,
+        "Content Structure": 4,
+        "E-E-A-T Signals": 3,
+        "Brand Presence": 1,
+        "Content Freshness": 0,
+        "Question-Based Content": 2,
+        "Citations & Sources": 1,
+        "Technical Performance": 2,
+        "AI Platform Presence": 2
+      },
+      "local_breakdown": {
+        "GBP Basics": 5,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 4,
+        "NAP Consistency": 4,
+        "Location Pages": 0,
+        "Citations & Directories": 0,
+        "Reviews": 0,
+        "Local Content": 2,
+        "Local Link Building": 5
+      },
+      "quick_wins": [
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Location Pages] Create city-specific landing pages for each service area",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 1/10",
+        "Content Structure: 4/10",
+        "E-E-A-T Signals: 3/10"
+      ]
+    },
+    {
+      "url": "https://joyelawfirm.com",
+      "success": true,
+      "business_name": "Joye Law Firm Injury Lawyers",
+      "grade": "C",
+      "ai_score": 43,
+      "local_score": 51,
+      "total_score": 94,
+      "elapsed_seconds": 1.28,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 0,
+        "Content Structure": 8,
+        "E-E-A-T Signals": 8,
+        "Brand Presence": 3,
+        "Content Freshness": 2,
+        "Question-Based Content": 2,
+        "Citations & Sources": 3,
+        "Technical Performance": 2,
+        "AI Platform Presence": 7
+      },
+      "local_breakdown": {
+        "GBP Basics": 7,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 5,
+        "NAP Consistency": 4,
+        "Location Pages": 8,
+        "Citations & Directories": 2,
+        "Reviews": 1,
+        "Local Content": 9,
+        "Local Link Building": 5
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add LocalBusiness schema with full NAP and hours",
+        "[Reviews] Add AggregateRating schema for star ratings in search",
+        "[Content Freshness] Add datePublished and dateModified to schema markup"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 0/10",
+        "Brand Presence: 3/10",
+        "Content Freshness: 2/10"
+      ]
+    },
+    {
+      "url": "https://injurytriallawyers.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 12,
+      "local_score": 13,
+      "total_score": 25,
+      "elapsed_seconds": 0.1,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 0,
+        "Content Structure": 0,
+        "E-E-A-T Signals": 0,
+        "Brand Presence": 0,
+        "Content Freshness": 0,
+        "Question-Based Content": 0,
+        "Citations & Sources": 0,
+        "Technical Performance": 2,
+        "AI Platform Presence": 2
+      },
+      "local_breakdown": {
+        "GBP Basics": 0,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 0,
+        "NAP Consistency": 1,
+        "Location Pages": 0,
+        "Citations & Directories": 0,
+        "Reviews": 0,
+        "Local Content": 0,
+        "Local Link Building": 2
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add JSON-LD structured data - this is critical for AI visibility",
+        "[Content Structure] Add a single, keyword-rich H1 tag",
+        "[E-E-A-T Signals] Add specific experience metrics (years, case count)"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 0/10",
+        "Content Structure: 0/10",
+        "E-E-A-T Signals: 0/10"
+      ]
+    },
+    {
+      "url": "https://legalfinders.com",
+      "success": true,
+      "business_name": "Connect To Top",
+      "grade": "D",
+      "ai_score": 26,
+      "local_score": 40,
+      "total_score": 66,
+      "elapsed_seconds": 1.02,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 6,
+        "Structured Data Quality": 0,
+        "Content Structure": 5,
+        "E-E-A-T Signals": 5,
+        "Brand Presence": 0,
+        "Content Freshness": 0,
+        "Question-Based Content": 4,
+        "Citations & Sources": 2,
+        "Technical Performance": 2,
+        "AI Platform Presence": 2
+      },
+      "local_breakdown": {
+        "GBP Basics": 3,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 7,
+        "NAP Consistency": 4,
+        "Location Pages": 4,
+        "Citations & Directories": 2,
+        "Reviews": 1,
+        "Local Content": 4,
+        "Local Link Building": 5
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add LocalBusiness schema with full NAP and hours",
+        "[Brand Presence] Add links to active social media profiles",
+        "[Content Freshness] Add datePublished and dateModified to schema markup"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 0/10",
+        "Brand Presence: 0/10",
+        "Content Freshness: 0/10"
+      ]
+    },
+    {
+      "url": "https://freeadvice.com",
+      "success": true,
+      "business_name": "Free Advice",
+      "grade": "F",
+      "ai_score": 32,
+      "local_score": 27,
+      "total_score": 59,
+      "elapsed_seconds": 1.74,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 0,
+        "Content Structure": 6,
+        "E-E-A-T Signals": 2,
+        "Brand Presence": 2,
+        "Content Freshness": 0,
+        "Question-Based Content": 2,
+        "Citations & Sources": 2,
+        "Technical Performance": 3,
+        "AI Platform Presence": 7
+      },
+      "local_breakdown": {
+        "GBP Basics": 4,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 6,
+        "NAP Consistency": 2,
+        "Location Pages": 2,
+        "Citations & Directories": 0,
+        "Reviews": 1,
+        "Local Content": 0,
+        "Local Link Building": 2
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add LocalBusiness schema with full NAP and hours",
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 0/10",
+        "E-E-A-T Signals: 2/10",
+        "Brand Presence: 2/10"
+      ]
+    },
+    {
+      "url": "https://nolo.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.18,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://justia.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.19,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://findlaw.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.2,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://avvo.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.09,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://lawinfo.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.12,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://lawyers.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.13,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://martindale.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.06,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://millerandzois.com",
+      "success": true,
+      "business_name": "Maryland Personal Injury Lawyer",
+      "grade": "C",
+      "ai_score": 43,
+      "local_score": 55,
+      "total_score": 98,
+      "elapsed_seconds": 0.79,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 6,
+        "Structured Data Quality": 3,
+        "Content Structure": 5,
+        "E-E-A-T Signals": 5,
+        "Brand Presence": 5,
+        "Content Freshness": 2,
+        "Question-Based Content": 4,
+        "Citations & Sources": 5,
+        "Technical Performance": 3,
+        "AI Platform Presence": 5
+      },
+      "local_breakdown": {
+        "GBP Basics": 7,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 6,
+        "NAP Consistency": 4,
+        "Location Pages": 8,
+        "Citations & Directories": 2,
+        "Reviews": 6,
+        "Local Content": 9,
+        "Local Link Building": 3
+      },
+      "quick_wins": [
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia",
+        "[Structured Data Quality] Add LocalBusiness schema with full NAP and hours"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 3/10",
+        "Content Freshness: 2/10",
+        "Question-Based Content: 4/10"
+      ]
+    },
+    {
+      "url": "https://edgarlitigation.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 0.02,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://injuryclaimcoach.com",
+      "success": true,
+      "business_name": "Free Legal Advice for Personal Injury Claims\u200b",
+      "grade": "D",
+      "ai_score": 36,
+      "local_score": 37,
+      "total_score": 73,
+      "elapsed_seconds": 2.82,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 8,
+        "Structured Data Quality": 3,
+        "Content Structure": 5,
+        "E-E-A-T Signals": 2,
+        "Brand Presence": 1,
+        "Content Freshness": 0,
+        "Question-Based Content": 8,
+        "Citations & Sources": 2,
+        "Technical Performance": 3,
+        "AI Platform Presence": 4
+      },
+      "local_breakdown": {
+        "GBP Basics": 3,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 5,
+        "NAP Consistency": 4,
+        "Location Pages": 8,
+        "Citations & Directories": 0,
+        "Reviews": 1,
+        "Local Content": 4,
+        "Local Link Building": 2
+      },
+      "quick_wins": [
+        "[Content Freshness] Add datePublished and dateModified to schema markup",
+        "[Citations & Directories] Claim/verify: Google, Yelp, Avvo, FindLaw, Justia",
+        "[Brand Presence] Add links to active social media profiles"
+      ],
+      "priority_fixes": [
+        "Structured Data Quality: 3/10",
+        "E-E-A-T Signals: 2/10",
+        "Brand Presence: 1/10"
+      ]
+    },
+    {
+      "url": "https://accidentclaimlawyers.com",
+      "success": true,
+      "business_name": "accidentclaimlawyers.com",
+      "grade": "F",
+      "ai_score": 9,
+      "local_score": 19,
+      "total_score": 28,
+      "elapsed_seconds": 1.13,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 2,
+        "Structured Data Quality": 0,
+        "Content Structure": 0,
+        "E-E-A-T Signals": 0,
+        "Brand Presence": 2,
+        "Content Freshness": 0,
+        "Question-Based Content": 0,
+        "Citations & Sources": 0,
+        "Technical Performance": 3,
+        "AI Platform Presence": 2
+      },
+      "local_breakdown": {
+        "GBP Basics": 0,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 4,
+        "NAP Consistency": 1,
+        "Location Pages": 0,
+        "Citations & Directories": 2,
+        "Reviews": 0,
+        "Local Content": 0,
+        "Local Link Building": 2
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add JSON-LD structured data - this is critical for AI visibility",
+        "[Content Structure] Add a single, keyword-rich H1 tag",
+        "[E-E-A-T Signals] Add specific experience metrics (years, case count)"
+      ],
+      "priority_fixes": [
+        "AI Crawler Access: 2/10",
+        "Structured Data Quality: 0/10",
+        "Content Structure: 0/10"
+      ]
+    },
+    {
+      "url": "https://tlsslaw.com",
+      "success": true,
+      "business_name": "Traub Lieberman",
+      "grade": "F",
+      "ai_score": 22,
+      "local_score": 32,
+      "total_score": 54,
+      "elapsed_seconds": 10.11,
+      "error": null,
+      "ai_breakdown": {
+        "AI Crawler Access": 4,
+        "Structured Data Quality": 0,
+        "Content Structure": 4,
+        "E-E-A-T Signals": 5,
+        "Brand Presence": 0,
+        "Content Freshness": 4,
+        "Question-Based Content": 0,
+        "Citations & Sources": 2,
+        "Technical Performance": 3,
+        "AI Platform Presence": 0
+      },
+      "local_breakdown": {
+        "GBP Basics": 2,
+        "GBP Optimization": 5,
+        "GBP Engagement": 5,
+        "Website Local Signals": 3,
+        "NAP Consistency": 1,
+        "Location Pages": 6,
+        "Citations & Directories": 2,
+        "Reviews": 2,
+        "Local Content": 4,
+        "Local Link Building": 2
+      },
+      "quick_wins": [
+        "[Structured Data Quality] Add JSON-LD structured data - this is critical for AI visibility",
+        "[Brand Presence] Add links to active social media profiles",
+        "[Question-Based Content] Add an FAQ section answering common client questions"
+      ],
+      "priority_fixes": [
+        "AI Crawler Access: 4/10",
+        "Structured Data Quality: 0/10",
+        "Content Structure: 4/10"
+      ]
+    },
+    {
+      "url": "https://bfrlaw.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 15.03,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://cellino.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 15.19,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://rosenfeldinjurylawyers.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 15.03,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    },
+    {
+      "url": "https://personalinjurylawyers.com",
+      "success": true,
+      "business_name": null,
+      "grade": "F",
+      "ai_score": 0,
+      "local_score": 0,
+      "total_score": 0,
+      "elapsed_seconds": 10.01,
+      "error": null,
+      "ai_breakdown": {
+        "Error": 0
+      },
+      "local_breakdown": {},
+      "quick_wins": [],
+      "priority_fixes": []
+    }
+  ]
+}

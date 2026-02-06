@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-04T04:17:20.539002",
+  "channel": "C0A7RNYC6CF",
+  "message": "\ud83d\udd34 *NEW WEBSITE VISITOR \u2014 DISQUALIFIED*\n\n*Verify Switch*\nTest\n\ud83c\udfe2 Switch Test Inc\n\ud83d\udccd Test City, TX\n\n\ud83d\udce7 test.verify@example.com\n\ud83d\udcf1 +15551111111\n\n\n*Qualification:*\n  Not a legal firm",
+  "qualification": "disqualified",
+  "contact": {
+    "name": "Verify Switch",
+    "email": "test.verify@example.com",
+    "phone": "+15551111111",
+    "company": "Switch Test Inc",
+    "title": "Test",
+    "linkedin": "",
+    "location": "Test City, TX"
+  }
+}

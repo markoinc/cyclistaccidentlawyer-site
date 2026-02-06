@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-02-04T04:19:05.334424",
+  "payload": {
+    "event": "visitor.identified",
+    "timestamp": "2026-02-04T04:19:05.075Z",
+    "organizationId": "3ccc00d1-4421-4e40-bac0-71f11f44f48a",
+    "segment": {
+      "id": null,
+      "name": null
+    },
+    "trigger": "test",
+    "data": {
+      "email": "john.smith@acmecorp.com",
+      "emailHash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+      "emails": [
+        "john.smith@acmecorp.com",
+        "john.smith@gmail.com"
+      ],
+      "businessEmails": [
+        "john.smith@acmecorp.com"
+      ],
+      "personalEmails": [
+        "john.smith@gmail.com"
+      ],
+      "phones": [
+        "+14155551234",
+        "+14155559876"
+      ],
+      "phonesDnc": false,
+      "firstName": "John",
+      "lastName": "Smith",
+      "middleName": "Robert",
+      "fullName": "John Robert Smith",
+      "emailDomain": "acmecorp.com",
+      "ageRange": "35-44",
+      "gender": "Male",
+      "hasChildren": true,
+      "isHomeowner": true,
+      "isMarried": true,
+      "personalAddress": "123 Market Street",
+      "personalZip": "94103",
+      "city": "San Francisco",
+      "state": "California",
+      "country": "United States",
+      "countryCode": "US",
+      "personalTimezone": "America/Los_Angeles",
+      "companyName": "Acme Corporation",
+      "companyDomain": "acmecorp.com",
+      "companyAddress": "456 Corporate Plaza",
+      "companyCity": "San Francisco",
+      "companyState": "CA",
+      "companyCountry": "United States",
+      "companyZipCode": "94105",
+      "companyEmployeeCount": 2500,
+      "companySize": "1000+",
+      "companyTotalRevenue": 500000000,
+      "jobTitle": "VP of Engineering",
+      "headline": "Technology Executive | Engineering Leader | Innovation Advocate",
+      "seniority": "VP",
+      "seniorityLevel2": "VP",
+      "seniorityLevelRaw": "Vice President",
+      "department": "Engineering",
+      "department2": "Technology",
+      "departmentRaw": "Engineering & Product",
+      "industry": "Technology",
+      "linkedinUrl": "https://linkedin.com/in/johnsmith",
+      "photoUrl": "https://cdn.example.com/photos/john-smith.jpg",
+      "sessions": 8,
+      "pageviews": 47,
+      "pricingPageViews": 3,
+      "demoPageViews": 2,
+      "checkoutPageViews": 1,
+      "intentScore": "high",
+      "enrichmentLevel": "full",
+      "landingPage": "https://www.acmecorp.com/pricing",
+      "visitedPages": [
+        "https://www.acmecorp.com/pricing"
+      ],
+      "referrer": "https://www.google.com/search?q=visitor+identification",
+      "referrerDomain": "google.com",
+      "utmSource": "google",
+      "utmMedium": "cpc",
+      "utmCampaign": "enterprise-2024-q4",
+      "utmTerm": "visitor identification software",
+      "utmContent": "ad-variant-a",
+      "gclid": "EAIaIQobChMI7qiRg8vQ8wIVBjizAB0OXQDLEAAYASAAEgKxvPD_BwE",
+      "fbclid": "IwAR3xKj9Y0mLqH2bN4vW7cZ1xF5tG8hP2mD6wT9sU3nR5cL4aE1yQ0vX7pK",
+      "googleGbraid": "1.1.abcd1234efgh5678",
+      "googleWbraid": "1.1.wxyz9876klmn5432",
+      "googleGadSource": "1",
+      "googleCampaignId": "12345678901",
+      "bingClickId": "1a2b3c4d5e6f7g8h9i0j",
+      "linkedinClickId": "li_abc123xyz456",
+      "klaviyoTrackingId": "klav_xyz789abc123",
+      "hubspotAccountId": "hs_acc_12345",
+      "hubspotCampaignId": "hs_camp_67890",
+      "hubspotNetwork": "organic_search",
+      "lastSeenAt": "2026-02-04T04:19:05.075Z",
+      "pixelId": "550e8400-e29b-41d4-a716-446655440000"
+    }
+  }
+}

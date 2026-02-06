@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import { 
-  User, 
-  Bell, 
-  Palette, 
-  Link as LinkIcon, 
-  Shield, 
-  Download, 
+import {
+  User,
+  Bell,
+  Palette,
+  Link as LinkIcon,
+  Shield,
+  Download,
   RotateCcw,
   Sun,
   Moon,
   Music,
-  Target
 } from 'lucide-react';
 import useStore from '../stores/useStore';
 import { GOAL } from '../data/sampleData';
@@ -29,24 +28,13 @@ export default function Settings() {
     { id: 'data', label: 'Data', icon: Shield },
   ];
 
-  const handleProfileChange = (key, value) => {
-    updateSettings('profile', { [key]: value });
-  };
-
-  const handleNotificationChange = (key, value) => {
-    updateSettings('notifications', { [key]: value });
-  };
-
-  const handleAppearanceChange = (key, value) => {
-    updateSettings('appearance', { [key]: value });
-  };
+  const handleProfileChange = (key, value) => updateSettings('profile', { [key]: value });
+  const handleNotificationChange = (key, value) => updateSettings('notifications', { [key]: value });
+  const handleAppearanceChange = (key, value) => updateSettings('appearance', { [key]: value });
 
   const handleIntegrationToggle = (key) => {
     updateSettings('integrations', { [key]: !settings.integrations[key] });
-    addToast({ 
-      type: 'success', 
-      message: `${key} ${settings.integrations[key] ? 'disabled' : 'enabled'}` 
-    });
+    addToast({ type: 'success', message: `${key} ${settings.integrations[key] ? 'disabled' : 'enabled'}` });
   };
 
   const handleExportData = (type) => {
@@ -62,124 +50,86 @@ export default function Settings() {
     }
   };
 
+  const inputClass =
+    'w-full px-4 py-2.5 rounded-lg bg-white/[0.04] border border-kurios-border text-sm text-white placeholder-gray-500 focus:outline-none focus:border-kurios-primary/50 focus:ring-1 focus:ring-kurios-primary/20 transition-all';
+
+  const Toggle = ({ checked, onChange }) => (
+    <button
+      onClick={onChange}
+      className={`relative w-11 h-6 rounded-full transition-colors ${
+        checked ? 'bg-kurios-primary' : 'bg-white/[0.08]'
+      }`}
+    >
+      <span
+        className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${
+          checked ? 'translate-x-6' : 'translate-x-1'
+        }`}
+      />
+    </button>
+  );
+
   return (
     <div className="animate-fadeIn">
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
-        <div className={`md:w-64 p-4 rounded-xl border ${
-          darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
-        }`}>
-          <nav className="space-y-1">
+        <div className="md:w-56 shrink-0">
+          <nav className="p-2 rounded-xl border border-kurios-border bg-kurios-card space-y-0.5">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all text-sm ${
                   activeTab === tab.id
-                    ? 'bg-kurios-primary text-white'
-                    : darkMode
-                    ? 'text-gray-400 hover:text-white hover:bg-gray-700'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'bg-kurios-primary/15 text-kurios-primary font-medium'
+                    : 'text-gray-400 hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
-                <tab.icon className="w-5 h-5" />
-                <span className="font-medium">{tab.label}</span>
+                <tab.icon className="w-[18px] h-[18px]" />
+                {tab.label}
               </button>
             ))}
           </nav>
         </div>
 
         {/* Content */}
-        <div className={`flex-1 p-6 rounded-xl border ${
-          darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
-        }`}>
+        <div className="flex-1 p-6 rounded-xl border border-kurios-border bg-kurios-card">
           {/* Profile */}
           {activeTab === 'profile' && (
             <div className="space-y-6">
-              <div>
-                <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Profile Settings
-                </h2>
-                
-                {/* Goal reminder */}
-                <div className={`p-4 rounded-lg mb-6 ${
-                  darkMode ? 'bg-kurios-primary/10 border border-kurios-primary/30' : 'bg-kurios-primary/5 border border-kurios-primary/20'
-                }`}>
-                  <div className="flex items-center gap-3">
-                    <Music className="w-6 h-6 text-kurios-primary" />
-                    <div>
-                      <p className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        Goal: {formatCurrency(GOAL.total)} → Retire to Music 🎵
-                      </p>
-                      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        Deadline: December 2026
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <h2 className="text-lg font-semibold text-white">Profile Settings</h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Goal reminder */}
+              <div className="p-4 rounded-lg bg-kurios-primary/[0.06] border border-kurios-primary/20">
+                <div className="flex items-center gap-3">
+                  <Music className="w-5 h-5 text-kurios-primary" />
                   <div>
-                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      value={settings.profile.name}
-                      onChange={(e) => handleProfileChange('name', e.target.value)}
-                      className={`w-full px-4 py-2 rounded-lg border ${
-                        darkMode
-                          ? 'bg-gray-700 border-gray-600 text-white'
-                          : 'bg-white border-gray-300 text-gray-900'
-                      } focus:outline-none focus:ring-2 focus:ring-kurios-primary/20 focus:border-kurios-primary`}
-                    />
-                  </div>
-                  <div>
-                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Stage Name
-                    </label>
-                    <input
-                      type="text"
-                      value={settings.profile.stageName || ''}
-                      onChange={(e) => handleProfileChange('stageName', e.target.value)}
-                      className={`w-full px-4 py-2 rounded-lg border ${
-                        darkMode
-                          ? 'bg-gray-700 border-gray-600 text-white'
-                          : 'bg-white border-gray-300 text-gray-900'
-                      } focus:outline-none focus:ring-2 focus:ring-kurios-primary/20 focus:border-kurios-primary`}
-                    />
-                  </div>
-                  <div>
-                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      value={settings.profile.email}
-                      onChange={(e) => handleProfileChange('email', e.target.value)}
-                      className={`w-full px-4 py-2 rounded-lg border ${
-                        darkMode
-                          ? 'bg-gray-700 border-gray-600 text-white'
-                          : 'bg-white border-gray-300 text-gray-900'
-                      } focus:outline-none focus:ring-2 focus:ring-kurios-primary/20 focus:border-kurios-primary`}
-                    />
-                  </div>
-                  <div>
-                    <label className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Role
-                    </label>
-                    <input
-                      type="text"
-                      value={settings.profile.role}
-                      onChange={(e) => handleProfileChange('role', e.target.value)}
-                      className={`w-full px-4 py-2 rounded-lg border ${
-                        darkMode
-                          ? 'bg-gray-700 border-gray-600 text-white'
-                          : 'bg-white border-gray-300 text-gray-900'
-                      } focus:outline-none focus:ring-2 focus:ring-kurios-primary/20 focus:border-kurios-primary`}
-                    />
+                    <p className="font-medium text-sm text-white">
+                      Goal: {formatCurrency(GOAL.total)} → Retire to Music 🎵
+                    </p>
+                    <p className="text-xs text-gray-500">Deadline: December 2026</p>
                   </div>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { key: 'name', label: 'Name' },
+                  { key: 'stageName', label: 'Stage Name' },
+                  { key: 'email', label: 'Email', type: 'email' },
+                  { key: 'role', label: 'Role' },
+                ].map((field) => (
+                  <div key={field.key}>
+                    <label className="block text-xs font-medium text-gray-400 mb-1.5">
+                      {field.label}
+                    </label>
+                    <input
+                      type={field.type || 'text'}
+                      value={settings.profile[field.key] || ''}
+                      onChange={(e) => handleProfileChange(field.key, e.target.value)}
+                      className={inputClass}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -187,43 +137,27 @@ export default function Settings() {
           {/* Notifications */}
           {activeTab === 'notifications' && (
             <div className="space-y-6">
-              <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Notification Preferences
-              </h2>
-              
-              <div className="space-y-4">
-                {Object.entries(settings.notifications).map(([key, value]) => (
-                  <div 
-                    key={key}
-                    className={`flex items-center justify-between p-4 rounded-lg ${
-                      darkMode ? 'bg-gray-700' : 'bg-gray-50'
-                    }`}
-                  >
-                    <div>
-                      <p className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                      </p>
-                      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        {key === 'email' && 'Receive email notifications'}
-                        {key === 'push' && 'Receive push notifications'}
-                        {key === 'dealUpdates' && 'Get notified when deals move'}
-                        {key === 'callReminders' && 'Remind me about scheduled calls'}
-                      </p>
+              <h2 className="text-lg font-semibold text-white">Notification Preferences</h2>
+              <div className="space-y-3">
+                {Object.entries(settings.notifications).map(([key, value]) => {
+                  const descriptions = {
+                    email: 'Receive email notifications',
+                    push: 'Receive push notifications',
+                    dealUpdates: 'Get notified when deals move',
+                    callReminders: 'Remind me about scheduled calls',
+                  };
+                  return (
+                    <div key={key} className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-kurios-border">
+                      <div>
+                        <p className="text-sm font-medium text-white">
+                          {key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase())}
+                        </p>
+                        <p className="text-xs text-gray-500">{descriptions[key]}</p>
+                      </div>
+                      <Toggle checked={value} onChange={() => handleNotificationChange(key, !value)} />
                     </div>
-                    <button
-                      onClick={() => handleNotificationChange(key, !value)}
-                      className={`relative w-12 h-6 rounded-full transition-colors ${
-                        value ? 'bg-kurios-primary' : darkMode ? 'bg-gray-600' : 'bg-gray-300'
-                      }`}
-                    >
-                      <span 
-                        className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${
-                          value ? 'translate-x-7' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -231,64 +165,36 @@ export default function Settings() {
           {/* Appearance */}
           {activeTab === 'appearance' && (
             <div className="space-y-6">
-              <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Appearance
-              </h2>
-              
-              <div className="space-y-4">
-                {/* Dark mode toggle */}
-                <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      {darkMode ? <Moon className="w-5 h-5 text-kurios-primary" /> : <Sun className="w-5 h-5 text-orange-500" />}
-                      <div>
-                        <p className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                          Dark Mode
-                        </p>
-                        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                          Perfect for late night work sessions 🌙
-                        </p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => handleAppearanceChange('darkMode', !darkMode)}
-                      className={`relative w-12 h-6 rounded-full transition-colors ${
-                        darkMode ? 'bg-kurios-primary' : 'bg-gray-300'
-                      }`}
-                    >
-                      <span 
-                        className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${
-                          darkMode ? 'translate-x-7' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Compact mode */}
-                <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-                  <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-white">Appearance</h2>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-kurios-border">
+                  <div className="flex items-center gap-3">
+                    {darkMode ? (
+                      <Moon className="w-5 h-5 text-kurios-primary" />
+                    ) : (
+                      <Sun className="w-5 h-5 text-amber-400" />
+                    )}
                     <div>
-                      <p className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        Compact Mode
-                      </p>
-                      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                        Denser layout, more data on screen
-                      </p>
+                      <p className="text-sm font-medium text-white">Dark Mode</p>
+                      <p className="text-xs text-gray-500">Perfect for late night sessions 🌙</p>
                     </div>
-                    <button
-                      onClick={() => handleAppearanceChange('compactMode', !settings.appearance.compactMode)}
-                      className={`relative w-12 h-6 rounded-full transition-colors ${
-                        settings.appearance.compactMode ? 'bg-kurios-primary' : darkMode ? 'bg-gray-600' : 'bg-gray-300'
-                      }`}
-                    >
-                      <span 
-                        className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${
-                          settings.appearance.compactMode ? 'translate-x-7' : 'translate-x-1'
-                        }`}
-                      />
-                    </button>
                   </div>
+                  <Toggle
+                    checked={darkMode}
+                    onChange={() => handleAppearanceChange('darkMode', !darkMode)}
+                  />
+                </div>
+                <div className="flex items-center justify-between p-4 rounded-lg bg-white/[0.02] border border-kurios-border">
+                  <div>
+                    <p className="text-sm font-medium text-white">Compact Mode</p>
+                    <p className="text-xs text-gray-500">Denser layout, more data on screen</p>
+                  </div>
+                  <Toggle
+                    checked={settings.appearance.compactMode}
+                    onChange={() =>
+                      handleAppearanceChange('compactMode', !settings.appearance.compactMode)
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -297,47 +203,46 @@ export default function Settings() {
           {/* Integrations */}
           {activeTab === 'integrations' && (
             <div className="space-y-6">
-              <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Integrations
-              </h2>
-              
-              <div className="space-y-4">
-                {Object.entries(settings.integrations).map(([key, value]) => (
-                  <div 
-                    key={key}
-                    className={`p-4 rounded-lg border ${
-                      value 
-                        ? 'border-kurios-secondary/50 bg-kurios-secondary/5' 
-                        : darkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                          {key === 'patrick' ? 'Patrick Pipeline' : 
-                           key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                        </p>
-                        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                          {key === 'googleCalendar' && 'Sync with Google Calendar'}
-                          {key === 'slack' && 'Send notifications to Slack'}
-                          {key === 'patrick' && 'Route deals through Patrick intake'}
-                        </p>
+              <h2 className="text-lg font-semibold text-white">Integrations</h2>
+              <div className="space-y-3">
+                {Object.entries(settings.integrations).map(([key, value]) => {
+                  const descriptions = {
+                    googleCalendar: 'Sync with Google Calendar',
+                    slack: 'Send notifications to Slack',
+                    patrick: 'Route deals through Patrick intake',
+                  };
+                  return (
+                    <div
+                      key={key}
+                      className={`p-4 rounded-lg border transition-colors ${
+                        value
+                          ? 'border-kurios-secondary/30 bg-kurios-secondary/[0.04]'
+                          : 'border-kurios-border bg-white/[0.02]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-sm font-medium text-white">
+                            {key === 'patrick'
+                              ? 'Patrick Pipeline'
+                              : key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase())}
+                          </p>
+                          <p className="text-xs text-gray-500">{descriptions[key]}</p>
+                        </div>
+                        <button
+                          onClick={() => handleIntegrationToggle(key)}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                            value
+                              ? 'bg-kurios-secondary text-white'
+                              : 'bg-white/[0.06] text-gray-400 hover:bg-white/[0.1]'
+                          }`}
+                        >
+                          {value ? 'Connected' : 'Connect'}
+                        </button>
                       </div>
-                      <button
-                        onClick={() => handleIntegrationToggle(key)}
-                        className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                          value
-                            ? 'bg-kurios-secondary text-white'
-                            : darkMode
-                            ? 'bg-gray-600 text-gray-300 hover:bg-gray-500'
-                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                      >
-                        {value ? 'Connected' : 'Connect'}
-                      </button>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
@@ -345,63 +250,34 @@ export default function Settings() {
           {/* Data */}
           {activeTab === 'data' && (
             <div className="space-y-6">
-              <h2 className={`text-xl font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Data Management
-              </h2>
-              
+              <h2 className="text-lg font-semibold text-white">Data Management</h2>
+
               {/* Export */}
               <div>
-                <h3 className={`font-medium mb-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Export Data
-                </h3>
+                <h3 className="text-sm font-medium text-gray-400 mb-3">Export Data</h3>
                 <div className="flex flex-wrap gap-3">
-                  <button
-                    onClick={() => handleExportData('deals')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
-                      darkMode
-                        ? 'border-gray-600 text-gray-300 hover:bg-gray-700'
-                        : 'border-gray-200 text-gray-700 hover:bg-gray-50'
-                    } transition-colors`}
-                  >
-                    <Download className="w-4 h-4" />
-                    Export Deals
-                  </button>
-                  <button
-                    onClick={() => handleExportData('clients')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
-                      darkMode
-                        ? 'border-gray-600 text-gray-300 hover:bg-gray-700'
-                        : 'border-gray-200 text-gray-700 hover:bg-gray-50'
-                    } transition-colors`}
-                  >
-                    <Download className="w-4 h-4" />
-                    Export Clients
-                  </button>
-                  <button
-                    onClick={() => handleExportData('contacts')}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg border ${
-                      darkMode
-                        ? 'border-gray-600 text-gray-300 hover:bg-gray-700'
-                        : 'border-gray-200 text-gray-700 hover:bg-gray-50'
-                    } transition-colors`}
-                  >
-                    <Download className="w-4 h-4" />
-                    Export Contacts
-                  </button>
+                  {['deals', 'clients', 'contacts'].map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => handleExportData(type)}
+                      className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-kurios-border text-sm text-gray-300 hover:bg-white/[0.04] transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Export {type.charAt(0).toUpperCase() + type.slice(1)}
+                    </button>
+                  ))}
                 </div>
               </div>
 
               {/* Reset */}
-              <div className={`p-4 rounded-lg border border-red-500/30 ${
-                darkMode ? 'bg-red-900/10' : 'bg-red-50'
-              }`}>
-                <h3 className="font-medium text-red-500 mb-2">Danger Zone</h3>
-                <p className={`text-sm mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              <div className="p-4 rounded-lg border border-red-500/20 bg-red-500/[0.04]">
+                <h3 className="text-sm font-medium text-red-400 mb-1">Danger Zone</h3>
+                <p className="text-xs text-gray-500 mb-3">
                   Reset all data to defaults. This cannot be undone.
                 </p>
                 <button
                   onClick={handleReset}
-                  className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-red-500/20 text-red-400 border border-red-500/30 rounded-lg text-sm hover:bg-red-500/30 transition-colors"
                 >
                   <RotateCcw className="w-4 h-4" />
                   Reset All Data

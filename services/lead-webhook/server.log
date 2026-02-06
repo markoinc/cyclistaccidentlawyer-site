@@ -1,0 +1,3 @@
+[RB2B Webhook] Running on port 9100
+[RB2B Webhook] Endpoint: POST /rb2b/webhook
+[RB2B Webhook] Health: GET /health

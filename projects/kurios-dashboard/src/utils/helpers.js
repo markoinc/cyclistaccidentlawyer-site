@@ -1,6 +1,6 @@
 // Format currency
 export function formatCurrency(amount) {
-  if (typeof amount !== 'number') return '$0';
+  if (typeof amount !== 'number' || isNaN(amount)) return '$0';
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -44,25 +44,27 @@ export function filterBySearch(items, query, keys = ['name', 'title']) {
   return items.filter(item =>
     keys.some(key => {
       const value = item[key];
-      return value && value.toLowerCase().includes(lower);
+      return value && String(value).toLowerCase().includes(lower);
     })
   );
 }
 
 // Export data to CSV
-export function exportToCSV(data, filename = 'export.csv') {
+export function exportToCSV(data, filename = 'export') {
   if (!data || !data.length) return;
-  
+
   const headers = Object.keys(data[0]);
   const csv = [
     headers.join(','),
     ...data.map(row =>
       headers.map(h => {
         const val = row[h];
-        if (typeof val === 'string' && val.includes(',')) {
-          return `"${val}"`;
+        if (val == null) return '';
+        const str = String(val);
+        if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+          return `"${str.replace(/"/g, '""')}"`;
         }
-        return val ?? '';
+        return str;
       }).join(',')
     ),
   ].join('\n');
@@ -70,8 +72,9 @@ export function exportToCSV(data, filename = 'export.csv') {
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = filename;
+  link.download = `${filename}.csv`;
   link.click();
+  URL.revokeObjectURL(link.href);
 }
 
 // Generate unique ID
@@ -103,23 +106,30 @@ export function getInitials(name) {
     .join('');
 }
 
-// Get avatar color based on name/string
+// Get avatar background color (returns a solid hex color)
 export function getAvatarColor(name) {
   const colors = [
-    'from-[#3366FF] to-[#00E676]',
-    'from-[#ff6b6b] to-[#ffb347]',
-    'from-[#a855f7] to-[#3366FF]',
-    'from-[#00E676] to-[#3366FF]',
-    'from-[#ffb347] to-[#ff6b6b]',
+    '#4F7BFF',
+    '#A855F7',
+    '#00E676',
+    '#F59E0B',
+    '#EF4444',
+    '#EC4899',
+    '#06B6D4',
+    '#8B5CF6',
   ];
-  
+
   if (!name) return colors[0];
-  
-  // Simple hash to get consistent color for same name
+
   let hash = 0;
   for (let i = 0; i < name.length; i++) {
     hash = name.charCodeAt(i) + ((hash << 5) - hash);
   }
-  
+
   return colors[Math.abs(hash) % colors.length];
+}
+
+// Clamp a number between min and max
+export function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
 }

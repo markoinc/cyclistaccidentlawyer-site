@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-02-04T04:21:04.922872",
+  "payload": {
+    "event": "visitor.identified",
+    "data": {
+      "email": "john.smith@acmecorp.com",
+      "businessEmails": [
+        "john.smith@acmecorp.com"
+      ],
+      "phones": [
+        "+14155551234"
+      ],
+      "firstName": "John",
+      "lastName": "Smith",
+      "jobTitle": "VP of Engineering",
+      "companyName": "Acme Corporation",
+      "industry": "Technology",
+      "city": "San Francisco",
+      "state": "California",
+      "intentScore": "high",
+      "sessions": 8,
+      "pageviews": 47,
+      "pricingPageViews": 3,
+      "linkedinUrl": "https://linkedin.com/in/johnsmith"
+    }
+  }
+}

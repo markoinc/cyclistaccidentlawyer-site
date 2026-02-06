@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-02-03T19:54:25.285610",
+    "qualified": true,
+    "reason": "PI/MVA keyword match",
+    "visitor": {
+      "firstName": "John",
+      "lastName": "Smith",
+      "companyName": "Smith PI Law",
+      "title": "Partner",
+      "companyIndustry": "Legal",
+      "linkedInHeadline": "Personal Injury Attorney"
+    },
+    "enriched": {},
+    "added_to_lemlist": false
+  }
+]

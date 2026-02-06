@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-04T04:33:32.742341",
+  "payload": {
+    "event": "visitor.identified",
+    "data": {
+      "firstName": "Test",
+      "lastName": "Attorney",
+      "jobTitle": "Managing Partner",
+      "companyName": "Morgan & Morgan",
+      "companyDomain": "forthepeople.com",
+      "industry": "Legal Services",
+      "city": "Orlando",
+      "state": "FL",
+      "intentScore": "high",
+      "sessions": 5,
+      "pageviews": 12,
+      "businessEmails": [
+        "test@forthepeople.com"
+      ],
+      "phones": [
+        "+14075551234"
+      ],
+      "linkedinUrl": "https://linkedin.com/in/testattorney"
+    }
+  }
+}

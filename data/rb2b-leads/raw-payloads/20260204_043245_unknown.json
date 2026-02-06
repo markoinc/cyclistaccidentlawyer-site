@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-04T04:32:45.367786",
+  "payload": {
+    "event": "visitor.identified",
+    "data": {
+      "firstName": "Bob",
+      "lastName": "Developer",
+      "jobTitle": "Software Engineer",
+      "companyName": "Google",
+      "industry": "Technology",
+      "city": "Mountain View",
+      "state": "CA",
+      "intentScore": "low",
+      "sessions": 1,
+      "pageviews": 1
+    }
+  }
+}
