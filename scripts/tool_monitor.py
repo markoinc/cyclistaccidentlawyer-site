@@ -553,7 +553,8 @@ def check_webshare_proxy():
         proxies = {"http": proxy_url, "https": proxy_url}
 
         start = time.time()
-        resp = requests.get("http://httpbin.org/ip", proxies=proxies, timeout=REQUEST_TIMEOUT)
+        # Use ipify.org — httpbin.org is blocked by Webshare
+        resp = requests.get("https://api.ipify.org?format=json", proxies=proxies, timeout=REQUEST_TIMEOUT)
         elapsed_ms = int((time.time() - start) * 1000)
 
         details = {
@@ -564,9 +565,10 @@ def check_webshare_proxy():
 
         if resp.status_code == 200:
             data = resp.json()
-            details["proxy_ip"] = data.get("origin", "unknown")
+            proxy_ip = data.get("ip", "unknown")
+            details["proxy_ip"] = proxy_ip
             return CheckResult(service, "healthy",
-                             f"Working - IP: {data.get('origin', '?')} ({elapsed_ms}ms)",
+                             f"Working - IP: {proxy_ip} ({elapsed_ms}ms)",
                              "info", details=details)
         else:
             return CheckResult(service, "warning", f"HTTP {resp.status_code}",
