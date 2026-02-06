@@ -5,9 +5,9 @@ const path = require('path');
 
 const PORT = 9100;
 const LOG_DIR = path.join(__dirname, 'logs');
-const SLACK_CHANNEL = 'C0A7RNYC6CF'; // #leadpipe-notifications
+const SLACK_CHANNEL = 'C0A7RNYC6CF'; // #rb2b-notifications
 
-// Load Slack bot token
+// Load credentials
 let SLACK_BOT_TOKEN;
 try {
   SLACK_BOT_TOKEN = fs.readFileSync(path.join(require('os').homedir(), '.config/slack/bot_token'), 'utf8').trim();
@@ -15,386 +15,373 @@ try {
   SLACK_BOT_TOKEN = process.env.SLACK_BOT_TOKEN || '';
 }
 
-// Load Leadpipe webhook secret
-let WEBHOOK_SECRET;
+let BETTERCONTACT_API_KEY;
 try {
-  const creds = JSON.parse(fs.readFileSync(path.join(require('os').homedir(), '.config/leadpipe/credentials.json'), 'utf8'));
-  WEBHOOK_SECRET = creds.webhook_secret;
+  const creds = JSON.parse(fs.readFileSync(path.join(require('os').homedir(), '.config/bettercontact/credentials.json'), 'utf8'));
+  BETTERCONTACT_API_KEY = creds.api_key;
 } catch(e) {
-  WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || 'T5v9hc5rP64wwhNE0FKsUNYj2p3l-FfH';
+  BETTERCONTACT_API_KEY = process.env.BETTERCONTACT_API_KEY || '';
 }
-const MAX_BODY_SIZE = 512 * 1024; // 512KB max payload
 
-// Ensure log directory exists
+const MAX_BODY_SIZE = 512 * 1024;
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
 
-// --- Rate Limiting ---
-const rateLimiter = {
-  requests: new Map(), // ip -> { count, resetAt }
-  failedAuth: new Map(), // ip -> { count, resetAt }
-  
-  check(ip, type = 'requests') {
-    const map = type === 'auth' ? this.failedAuth : this.requests;
-    const limit = type === 'auth' ? 10 : 120; // 10 failed auth/min, 120 req/min
-    const now = Date.now();
-    const entry = map.get(ip);
-    
-    if (!entry || now > entry.resetAt) {
-      map.set(ip, { count: 1, resetAt: now + 60000 });
-      return true;
-    }
-    
-    entry.count++;
-    if (entry.count > limit) return false;
-    return true;
-  },
-  
-  // Cleanup old entries every 5 min
-  cleanup() {
-    const now = Date.now();
-    for (const [ip, entry] of this.requests) {
-      if (now > entry.resetAt) this.requests.delete(ip);
-    }
-    for (const [ip, entry] of this.failedAuth) {
-      if (now > entry.resetAt) this.failedAuth.delete(ip);
-    }
-  }
-};
+// =============================================================================
+// RB2B PAYLOAD NORMALIZATION
+// Convert RB2B format to our internal format
+// =============================================================================
 
-setInterval(() => rateLimiter.cleanup(), 300000);
-
-// --- Sanitize strings for log safety ---
-function sanitize(str) {
-  if (typeof str !== 'string') return String(str || '');
-  // Strip HTML tags and control characters
-  return str.replace(/<[^>]*>/g, '').replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '').slice(0, 500);
+function normalizeRB2BPayload(payload) {
+  return {
+    firstName: payload['First Name'] || '',
+    lastName: payload['Last Name'] || '',
+    fullName: `${payload['First Name'] || ''} ${payload['Last Name'] || ''}`.trim(),
+    jobTitle: payload['Title'] || '',
+    companyName: payload['Company Name'] || '',
+    businessEmail: payload['Business Email'] || '',
+    website: payload['Website'] || '',
+    linkedinUrl: payload['LinkedIn URL'] || '',
+    industry: payload['Industry'] || '',
+    employeeCount: payload['Employee Count'] || '',
+    estimatedRevenue: payload['Estimate Revenue'] || '',
+    city: payload['City'] || '',
+    state: payload['State'] || '',
+    zipcode: payload['Zipcode'] || '',
+    seenAt: payload['Seen At'] || '',
+    referrer: payload['Referrer'] || '',
+    capturedUrl: payload['Captured URL'] || '',
+    tags: payload['Tags'] || '',
+    // For repeat visitors
+    visitHistory: payload['Visit History'] || null,
+    // Original payload for logging
+    _raw: payload
+  };
 }
 
 // =============================================================================
-// ICP SCORING - Kurios MVA Lead Gen
-// Target: Law firms, personal injury attorneys, managing partners
+// WEBSITE VERIFICATION - Check if it's a law firm
 // =============================================================================
 
-const ICP_KEYWORDS = {
-  // Legal professional titles (highest value)
-  legalTitles: [
-    'managing partner', 'founding partner', 'named partner', 'senior partner',
-    'partner', 'attorney', 'lawyer', 'trial lawyer', 'litigator',
-    'of counsel', 'counsel', 'associate attorney', 'staff attorney',
-    'general counsel', 'legal director'
+const LAW_FIRM_INDICATORS = {
+  // Strong indicators (in page content)
+  strongKeywords: [
+    'personal injury', 'car accident attorney', 'truck accident', 'motorcycle accident',
+    'slip and fall', 'wrongful death', 'medical malpractice', 'workers compensation',
+    'injury lawyer', 'injury attorney', 'accident lawyer', 'accident attorney',
+    'law firm', 'attorneys at law', 'legal services', 'free consultation',
+    'case evaluation', 'no fee unless we win', 'contingency fee',
+    'practice areas', 'our attorneys', 'attorney profiles', 'meet our lawyers'
   ],
-  // Legal support staff (moderate value)
-  legalStaff: [
-    'paralegal', 'legal assistant', 'legal secretary', 'intake manager',
-    'intake coordinator', 'intake specialist', 'case manager', 'legal nurse',
-    'office manager', 'legal administrator', 'law clerk', 'legal intern'
+  // Moderate indicators
+  moderateKeywords: [
+    'attorney', 'lawyer', 'legal', 'law office', 'esquire', 'esq.',
+    'litigation', 'trial attorney', 'courtroom', 'verdict', 'settlement',
+    'bar association', 'admitted to practice'
   ],
-  // General decision maker titles
-  decisionMakers: [
-    'ceo', 'president', 'owner', 'founder', 'co-founder', 'principal',
-    'managing director', 'executive director', 'vice president', 'vp',
-    'director', 'head of', 'chief'
+  // Domain patterns that indicate law firms
+  domainPatterns: [
+    /law\.com$/i, /legal\.com$/i, /attorney/i, /lawyer/i,
+    /lawfirm/i, /lawoffice/i, /esq/i, /legal/i
   ],
-  // Legal industry keywords
-  legalIndustry: [
-    'law firm', 'legal services', 'legal', 'law practice', 'law office',
-    'attorney', 'lawyer', 'litigation', 'trial', 'judicial', 'law'
+  // Title patterns for decision makers
+  decisionMakerTitles: [
+    'partner', 'managing partner', 'founding partner', 'senior partner',
+    'owner', 'founder', 'principal', 'of counsel',
+    'marketing director', 'cmo', 'chief marketing', 'director of marketing',
+    'business development', 'intake director', 'intake manager'
   ],
-  // Personal injury / MVA specific (bonus points)
-  piKeywords: [
-    'personal injury', 'injury', 'mva', 'motor vehicle accident', 'accident',
-    'tort', 'plaintiff', 'negligence', 'wrongful death', 'slip and fall',
-    'medical malpractice', 'workers comp', 'workers compensation',
-    'catastrophic injury', 'brain injury', 'spinal cord', 'car accident',
-    'truck accident', 'motorcycle accident', 'pedestrian accident'
-  ],
-  // Adjacent industries
-  adjacentIndustry: ['insurance', 'healthcare', 'medical', 'chiropractic',
-                     'rehabilitation', 'claims'],
-  // Excluded titles
-  excludeTitles: ['student', 'intern', 'retired', 'professor', 'teacher',
-                  'researcher', 'academic', 'unemployed'],
-  // Competitor/vendor signals (penalty)
-  competitors: ['seo agency', 'seo', 'marketing agency', 'lead generation', 'lead gen',
-                'leadgen', 'digital marketing', 'advertising agency', 'web design agency',
-                'saas', 'marketing software', 'crm vendor', 'backlink', 'ppc agency',
-                'digital agency', 'growth agency', 'web agency']
+  // Titles to exclude
+  excludeTitles: [
+    'paralegal', 'legal assistant', 'secretary', 'receptionist',
+    'associate attorney', 'associate', 'intern', 'clerk', 'student'
+  ]
 };
 
-function scoreVisitor(data) {
-  let score = 0;
-  const reasons = [];
-
-  const title = sanitize(data.jobTitle || '').toLowerCase();
-  const industry = sanitize(data.industry || '').toLowerCase();
-  const company = sanitize(data.companyName || '').toLowerCase();
-  const department = sanitize(data.department || '').toLowerCase();
-  const seniority = sanitize(data.seniority || '').toLowerCase();
-  const landingPage = sanitize(data.landingPage || '').toLowerCase();
-  const visitedPages = (Array.isArray(data.visitedPages) ? data.visitedPages : [])
-    .map(p => sanitize(p).toLowerCase());
-  const allPages = [landingPage, ...visitedPages].filter(Boolean);
-
-  // Helper: word-boundary-aware keyword match to avoid "partnership" matching "partner"
-  function wordMatch(text, keyword) {
-    return new RegExp('\\b' + keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i').test(text);
-  }
-
-  // =============================================
-  // 1. TITLE SCORING (max ~40)
-  // =============================================
-  let titleMatched = false;
-
-  // Legal professional titles (highest value: 35-40 pts)
-  for (const kw of ICP_KEYWORDS.legalTitles) {
-    if (wordMatch(title, kw)) {
-      const pts = kw.includes('partner') ? 40 : 35;
-      score += pts;
-      reasons.push(`Legal title: "${data.jobTitle}" (+${pts})`);
-      titleMatched = true;
-      break;
-    }
-  }
-
-  // Legal staff (moderate value: 12 pts)
-  if (!titleMatched) {
-    for (const kw of ICP_KEYWORDS.legalStaff) {
-      if (wordMatch(title, kw)) {
-        score += 12;
-        reasons.push(`Legal staff: "${data.jobTitle}" (+12)`);
-        titleMatched = true;
-        break;
+async function fetchWebsite(url, timeout = 5000) {
+  return new Promise((resolve, reject) => {
+    const urlObj = new URL(url);
+    const protocol = urlObj.protocol === 'https:' ? https : http;
+    
+    const req = protocol.get(url, { 
+      timeout,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; KuriosBot/1.0; +https://kuriosbrand.com)'
       }
-    }
-  }
-
-  // General decision makers (some value: 10 pts)
-  if (!titleMatched) {
-    for (const kw of ICP_KEYWORDS.decisionMakers) {
-      if (title.includes(kw)) {
-        score += 10;
-        reasons.push(`Decision maker: "${data.jobTitle}" (+10)`);
-        titleMatched = true;
-        break;
+    }, (res) => {
+      // Follow redirects
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        fetchWebsite(res.headers.location, timeout).then(resolve).catch(reject);
+        return;
       }
-    }
+      
+      let body = '';
+      res.on('data', chunk => {
+        body += chunk;
+        if (body.length > 500000) { // Max 500KB
+          res.destroy();
+          resolve(body);
+        }
+      });
+      res.on('end', () => resolve(body));
+    });
+    
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error('timeout'));
+    });
+    req.on('error', reject);
+  });
+}
+
+async function verifyLawFirm(data) {
+  const result = {
+    isLawFirm: false,
+    isDecisionMaker: false,
+    confidence: 0,
+    reasons: [],
+    websiteChecked: false
+  };
+
+  const title = (data.jobTitle || '').toLowerCase();
+  const industry = (data.industry || '').toLowerCase();
+  const company = (data.companyName || '').toLowerCase();
+  const website = data.website || '';
+
+  // 1. Check Industry field (quick win)
+  if (industry.includes('legal') || industry.includes('law')) {
+    result.confidence += 40;
+    result.reasons.push(`Industry: "${data.industry}"`);
   }
 
-  // Excluded titles penalty
-  for (const kw of ICP_KEYWORDS.excludeTitles) {
-    if (title.includes(kw)) {
-      score -= 50;
-      reasons.push(`Excluded title: "${data.jobTitle}" (-50)`);
-      break;
-    }
+  // 2. Check company name for law firm patterns
+  if (company.includes('law') || company.includes('legal') || 
+      company.includes('attorney') || company.includes('lawyer') ||
+      company.includes('& associates') || company.includes('llp') ||
+      company.includes('pllc') || /\b(pc|pa|plc)\b/i.test(company)) {
+    result.confidence += 30;
+    result.reasons.push(`Company name suggests law firm`);
   }
 
-  // =============================================
-  // 2. SENIORITY BONUS (max 8)
-  // =============================================
-  if (seniority) {
-    const seniorityMap = {
-      'c-level': 8, 'c-suite': 8, 'owner': 8, 'founder': 8,
-      'vp': 6, 'vice president': 6,
-      'director': 5,
-      'manager': 3, 'senior': 2
-    };
-    for (const [level, pts] of Object.entries(seniorityMap)) {
-      if (seniority.includes(level)) {
-        score += pts;
-        reasons.push(`Seniority: ${data.seniority} (+${pts})`);
-        break;
+  // 3. Check title for legal role
+  if (LAW_FIRM_INDICATORS.decisionMakerTitles.some(t => title.includes(t))) {
+    result.isDecisionMaker = true;
+    result.confidence += 20;
+    result.reasons.push(`Decision maker title: "${data.jobTitle}"`);
+  }
+  
+  // Check for attorney/lawyer in title
+  if (title.includes('attorney') || title.includes('lawyer') || title.includes('partner')) {
+    result.confidence += 15;
+    result.reasons.push(`Legal professional title`);
+  }
+
+  // 4. Check for excluded titles
+  if (LAW_FIRM_INDICATORS.excludeTitles.some(t => title.includes(t))) {
+    result.confidence -= 30;
+    result.reasons.push(`Non-decision maker title: "${data.jobTitle}"`);
+  }
+
+  // 5. Check website domain patterns
+  if (website) {
+    try {
+      const domain = new URL(website.startsWith('http') ? website : `https://${website}`).hostname;
+      if (LAW_FIRM_INDICATORS.domainPatterns.some(p => p.test(domain))) {
+        result.confidence += 20;
+        result.reasons.push(`Domain suggests law firm: ${domain}`);
       }
-    }
+    } catch(e) {}
   }
 
-  // =============================================
-  // 3. INDUSTRY / COMPANY (max 35)
-  // =============================================
-  const industryCompanyText = `${industry} ${company} ${department}`;
-  let industryMatched = false;
-
-  // Legal industry (25 pts)
-  for (const kw of ICP_KEYWORDS.legalIndustry) {
-    if (industryCompanyText.includes(kw)) {
-      score += 25;
-      reasons.push(`Legal industry/company (+25)`);
-      industryMatched = true;
-      break;
-    }
-  }
-
-  // Personal injury / MVA specialty bonus (10 pts)
-  for (const kw of ICP_KEYWORDS.piKeywords) {
-    if (industryCompanyText.includes(kw) || title.includes(kw)) {
-      score += 10;
-      reasons.push(`PI/MVA specialty (+10)`);
-      break;
-    }
-  }
-
-  // Adjacent industries (5 pts, only if no legal match)
-  if (!industryMatched) {
-    for (const kw of ICP_KEYWORDS.adjacentIndustry) {
-      if (industryCompanyText.includes(kw)) {
-        score += 5;
-        reasons.push(`Adjacent industry: ${data.industry || data.companyName} (+5)`);
-        break;
+  // 6. Scrape website if we're not confident enough
+  if (result.confidence < 60 && website) {
+    try {
+      const fullUrl = website.startsWith('http') ? website : `https://${website}`;
+      console.log(`[VERIFY] Fetching website: ${fullUrl}`);
+      
+      const html = await fetchWebsite(fullUrl);
+      result.websiteChecked = true;
+      
+      const lowerHtml = html.toLowerCase();
+      
+      // Check for strong indicators
+      const strongMatches = LAW_FIRM_INDICATORS.strongKeywords.filter(kw => lowerHtml.includes(kw));
+      if (strongMatches.length >= 2) {
+        result.confidence += 40;
+        result.reasons.push(`Website has law firm content: ${strongMatches.slice(0, 3).join(', ')}`);
+      } else if (strongMatches.length === 1) {
+        result.confidence += 20;
+        result.reasons.push(`Website mentions: ${strongMatches[0]}`);
       }
+      
+      // Check for moderate indicators
+      const moderateMatches = LAW_FIRM_INDICATORS.moderateKeywords.filter(kw => lowerHtml.includes(kw));
+      if (moderateMatches.length >= 3) {
+        result.confidence += 20;
+        result.reasons.push(`Website legal terms: ${moderateMatches.slice(0, 3).join(', ')}`);
+      }
+      
+    } catch(err) {
+      result.reasons.push(`Website check failed: ${err.message}`);
     }
   }
 
-  // Competitor/vendor penalty (-20 pts)
-  for (const kw of ICP_KEYWORDS.competitors) {
-    if (industryCompanyText.includes(kw) || title.includes(kw)) {
-      score -= 20;
-      reasons.push(`Competitor/vendor signal (-20)`);
-      break;
+  // Final determination
+  result.isLawFirm = result.confidence >= 50;
+  
+  // Must be decision maker for final qualification
+  if (!result.isDecisionMaker && result.isLawFirm) {
+    // Check if title suggests any decision-making capacity
+    const hasSomeAuthority = title.includes('director') || title.includes('manager') ||
+      title.includes('head') || title.includes('chief') || title.includes('vp') ||
+      title.includes('president') || title.includes('owner');
+    
+    if (!hasSomeAuthority) {
+      result.reasons.push(`Not a decision maker - may not have authority`);
+    } else {
+      result.isDecisionMaker = true;
     }
   }
 
-  // =============================================
-  // 4. LEADPIPE INTENT SCORE (max 12)
-  // =============================================
-  const intentLevel = sanitize(data.intentScore || '').toLowerCase();
-  const intentScores = { 'high': 12, 'medium': 6, 'low': 2 };
-  if (intentScores[intentLevel]) {
-    score += intentScores[intentLevel];
-    reasons.push(`Intent: ${data.intentScore} (+${intentScores[intentLevel]})`);
-  }
-
-  // =============================================
-  // 5. BEHAVIORAL SIGNALS (max 10)
-  // =============================================
-  let behavioralPts = 0;
-  const pricingViews = Number(data.pricingPageViews) || 0;
-  const demoViews = Number(data.demoPageViews) || 0;
-  const checkoutViews = Number(data.checkoutPageViews) || 0;
-  const sessions = Number(data.sessions) || 0;
-  const pageviews = Number(data.pageviews) || 0;
-
-  if (pricingViews > 0) behavioralPts += Math.min(pricingViews * 2, 4);
-  if (demoViews > 0) behavioralPts += Math.min(demoViews * 2, 4);
-  if (checkoutViews > 0) behavioralPts += Math.min(checkoutViews * 3, 6);
-  if (sessions >= 3) behavioralPts += 3;
-  if (pageviews >= 10) behavioralPts += 2;
-
-  behavioralPts = Math.min(behavioralPts, 10);
-  if (behavioralPts > 0) {
-    score += behavioralPts;
-    reasons.push(`Behavioral: ${sessions}s/${pageviews}pv, pricing:${pricingViews} demo:${demoViews} checkout:${checkoutViews} (+${behavioralPts})`);
-  }
-
-  // High-intent page bonus (5 pts)
-  const highIntentPage = allPages.some(p =>
-    p.includes('pricing') || p.includes('contact') || p.includes('demo') ||
-    p.includes('schedule') || p.includes('book') || p.includes('start') ||
-    p.includes('get-started') || p.includes('consultation') || p.includes('free-trial')
-  );
-  if (highIntentPage) {
-    score += 5;
-    reasons.push(`High-intent page visited (+5)`);
-  }
-
-  // =============================================
-  // 6. CONTACT QUALITY (max 8)
-  // =============================================
-  const businessEmail = (Array.isArray(data.businessEmails) && data.businessEmails[0]) || '';
-  const freeEmailDomains = ['gmail', 'yahoo', 'hotmail', 'outlook', 'aol', 'icloud', 'protonmail'];
-  if (businessEmail && !freeEmailDomains.some(d => businessEmail.toLowerCase().includes(d))) {
-    score += 4;
-    reasons.push(`Business email (+4)`);
-  }
-  if (data.linkedinUrl) {
-    score += 2;
-    reasons.push(`LinkedIn profile (+2)`);
-  }
-  if (Array.isArray(data.phones) && data.phones.length > 0) {
-    score += 2;
-    reasons.push(`Phone available (+2)`);
-  }
-
-  // =============================================
-  // 7. COMPANY FIT (max 6)
-  // =============================================
-  const empCount = Number(data.companyEmployeeCount) || 0;
-  if (empCount === 1) {
-    score += 3;
-    reasons.push(`Solo practitioner (+3)`);
-  } else if (empCount >= 2 && empCount <= 100) {
-    score += 4;
-    reasons.push(`Company size ${empCount} — law firm sweet spot (+4)`);
-  } else if (empCount > 100 && empCount <= 500) {
-    score += 2;
-    reasons.push(`Mid-size company ${empCount} (+2)`);
-  } else if (empCount > 500) {
-    score += 1;
-    reasons.push(`Large company ${empCount} (+1)`);
-  }
-
-  const revenue = Number(data.companyTotalRevenue) || 0;
-  if (revenue >= 500000 && revenue <= 50000000) {
-    score += 2;
-    reasons.push(`Revenue fit ($${(revenue / 1000000).toFixed(1)}M) (+2)`);
-  }
-
-  // =============================================
-  // 8. UTM / TRAFFIC SOURCE (max 4)
-  // =============================================
-  const utmMedium = sanitize(data.utmMedium || '').toLowerCase();
-  const referrer = sanitize(data.referrer || '').toLowerCase();
-
-  if (['cpc', 'ppc', 'paid', 'paidsearch', 'paid_search'].includes(utmMedium)) {
-    score += 4;
-    reasons.push(`Paid traffic (+4)`);
-  } else if (referrer.includes('google') || referrer.includes('bing') || referrer.includes('yahoo')) {
-    score += 2;
-    reasons.push(`Search traffic (+2)`);
-  }
-
-  // =============================================
-  // 9. LOCATION BONUS (max 3)
-  // =============================================
-  const state = sanitize(data.state || '').toLowerCase();
-  if (state === 'texas' || state === 'tx') {
-    score += 3;
-    reasons.push(`Texas location (+3)`);
-  }
-
-  // =============================================
-  // QUALIFICATION THRESHOLD: 50
-  // =============================================
-  return { score, reasons, qualified: score >= 50 };
+  return result;
 }
 
 // =============================================================================
-// SLACK MESSAGE FORMATTING (Leadpipe fields)
+// BETTERCONTACT ENRICHMENT
 // =============================================================================
 
-function formatSlackMessage(data, scoreResult) {
-  const fireEmoji = scoreResult.score >= 80 ? '🔥🔥🔥' :
-                    scoreResult.score >= 60 ? '🔥🔥' : '🔥';
-  const intentEmoji = { 'high': '🔴', 'medium': '🟡', 'low': '🟢' };
-  const intentIcon = intentEmoji[(data.intentScore || '').toLowerCase()] || '⚪';
+async function enrichWithBetterContact(data) {
+  if (!BETTERCONTACT_API_KEY) {
+    console.log('[ENRICH] No BetterContact API key, skipping enrichment');
+    return null;
+  }
 
-  const name = [data.firstName, data.lastName].filter(Boolean).map(s => sanitize(s)).join(' ') || 'Unknown';
-  const email = sanitize((Array.isArray(data.businessEmails) && data.businessEmails[0]) || data.email || 'N/A');
-  const phone = (Array.isArray(data.phones) && data.phones[0]) ? sanitize(data.phones[0]) : 'N/A';
-  const title = sanitize(data.jobTitle || 'N/A');
-  const company = sanitize(data.companyName || 'N/A');
-  const industryStr = sanitize(data.industry || 'N/A');
-  const location = [data.city, data.state].filter(Boolean).map(s => sanitize(s)).join(', ') || 'N/A';
-  const empCount = data.companyEmployeeCount ? `${data.companyEmployeeCount} employees` : 'N/A';
-  const revenue = data.companyTotalRevenue
-    ? `$${(Number(data.companyTotalRevenue) / 1000000).toFixed(1)}M`
-    : 'N/A';
+  const enrichRequest = {
+    data: [{
+      first_name: data.firstName,
+      last_name: data.lastName,
+      company: data.companyName,
+      company_domain: data.website ? new URL(data.website.startsWith('http') ? data.website : `https://${data.website}`).hostname : '',
+      linkedin_url: data.linkedinUrl
+    }],
+    enrich_email_address: true,
+    enrich_phone_number: true
+  };
 
+  console.log(`[ENRICH] Calling BetterContact for ${data.fullName}...`);
+
+  return new Promise((resolve, reject) => {
+    const postData = JSON.stringify(enrichRequest);
+    
+    const req = https.request({
+      hostname: 'app.bettercontact.rocks',
+      path: '/api/v2/async',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': BETTERCONTACT_API_KEY,
+        'Content-Length': Buffer.byteLength(postData)
+      }
+    }, (res) => {
+      let body = '';
+      res.on('data', chunk => body += chunk);
+      res.on('end', () => {
+        try {
+          const result = JSON.parse(body);
+          if (result.success && result.id) {
+            console.log(`[ENRICH] Request queued: ${result.id}`);
+            // Now poll for results
+            pollEnrichmentResults(result.id, resolve, reject);
+          } else {
+            console.log(`[ENRICH] API response: ${body}`);
+            resolve(null);
+          }
+        } catch(e) {
+          console.log(`[ENRICH] Parse error: ${body}`);
+          resolve(null);
+        }
+      });
+    });
+    
+    req.on('error', (err) => {
+      console.error('[ENRICH] Request error:', err.message);
+      resolve(null);
+    });
+    
+    req.write(postData);
+    req.end();
+  });
+}
+
+function pollEnrichmentResults(requestId, resolve, reject, attempts = 0) {
+  const maxAttempts = 36; // 3 minutes with 5-second intervals
+  
+  if (attempts >= maxAttempts) {
+    console.log(`[ENRICH] Timeout waiting for results: ${requestId}`);
+    resolve(null);
+    return;
+  }
+
+  setTimeout(() => {
+    https.get({
+      hostname: 'app.bettercontact.rocks',
+      path: `/api/v2/async/${requestId}`,
+      headers: { 'X-API-Key': BETTERCONTACT_API_KEY }
+    }, (res) => {
+      let body = '';
+      res.on('data', chunk => body += chunk);
+      res.on('end', () => {
+        try {
+          const result = JSON.parse(body);
+          
+          if (result.status === 'terminated' && result.data && result.data.length > 0) {
+            const enriched = result.data[0];
+            console.log(`[ENRICH] ✅ Got results: email=${enriched.contact_email_address || 'N/A'}, phone=${enriched.contact_phone_number || 'N/A'}`);
+            resolve({
+              email: enriched.contact_email_address,
+              emailStatus: enriched.contact_email_address_status,
+              phone: enriched.contact_phone_number,
+              provider: enriched.email_provider
+            });
+          } else if (result.status === 'processing' || result.status === 'pending') {
+            console.log(`[ENRICH] Still processing (attempt ${attempts + 1}/${maxAttempts})...`);
+            pollEnrichmentResults(requestId, resolve, reject, attempts + 1);
+          } else {
+            console.log(`[ENRICH] Unexpected status: ${result.status}`);
+            resolve(null);
+          }
+        } catch(e) {
+          console.log(`[ENRICH] Poll parse error: ${body}`);
+          pollEnrichmentResults(requestId, resolve, reject, attempts + 1);
+        }
+      });
+    }).on('error', (err) => {
+      console.error('[ENRICH] Poll error:', err.message);
+      pollEnrichmentResults(requestId, resolve, reject, attempts + 1);
+    });
+  }, 5000); // Poll every 5 seconds
+}
+
+// =============================================================================
+// SLACK MESSAGE FORMATTING
+// =============================================================================
+
+function formatSlackMessage(data, verification, enrichment) {
+  const name = data.fullName || 'Unknown';
+  const title = data.jobTitle || 'N/A';
+  const company = data.companyName || 'N/A';
+  const location = [data.city, data.state].filter(Boolean).join(', ') || 'N/A';
+  
+  // Use enriched data if available, fall back to RB2B data
+  const email = enrichment?.email || data.businessEmail || 'N/A';
+  const phone = enrichment?.phone || 'N/A';
+  const emailStatus = enrichment?.emailStatus ? ` (${enrichment.emailStatus})` : '';
+  
   const blocks = [
     {
       type: 'header',
       text: {
         type: 'plain_text',
-        text: `${fireEmoji} Qualified Lead — Score: ${scoreResult.score}`,
+        text: `🎯 QUALIFIED LAW FIRM LEAD`,
         emoji: true
       }
     },
@@ -404,69 +391,59 @@ function formatSlackMessage(data, scoreResult) {
         { type: 'mrkdwn', text: `*👤 Name:*\n${name}` },
         { type: 'mrkdwn', text: `*💼 Title:*\n${title}` },
         { type: 'mrkdwn', text: `*🏢 Company:*\n${company}` },
-        { type: 'mrkdwn', text: `*🏭 Industry:*\n${industryStr}` },
-        { type: 'mrkdwn', text: `*📧 Email:*\n${email}` },
-        { type: 'mrkdwn', text: `*📱 Phone:*\n${phone}` },
-        { type: 'mrkdwn', text: `*📍 Location:*\n${location}` },
-        { type: 'mrkdwn', text: `*👥 Size:*\n${empCount}` }
+        { type: 'mrkdwn', text: `*🏭 Industry:*\n${data.industry || 'N/A'}` }
       ]
     },
     {
       type: 'section',
       fields: [
-        { type: 'mrkdwn', text: `*${intentIcon} Intent:*\n${sanitize(data.intentScore || 'N/A')} | ${data.sessions || 0} sessions, ${data.pageviews || 0} pageviews` },
-        { type: 'mrkdwn', text: `*💰 Revenue:*\n${revenue}` }
+        { type: 'mrkdwn', text: `*📧 Email:*\n${email}${emailStatus}` },
+        { type: 'mrkdwn', text: `*📱 Phone:*\n${phone}` },
+        { type: 'mrkdwn', text: `*📍 Location:*\n${location}` },
+        { type: 'mrkdwn', text: `*👥 Size:*\n${data.employeeCount || 'N/A'}` }
       ]
     }
   ];
 
-  // Behavioral signals section
-  const behaviorParts = [];
-  if (data.pricingPageViews) behaviorParts.push(`Pricing: ${data.pricingPageViews}x`);
-  if (data.demoPageViews) behaviorParts.push(`Demo: ${data.demoPageViews}x`);
-  if (data.checkoutPageViews) behaviorParts.push(`Checkout: ${data.checkoutPageViews}x`);
-  if (data.landingPage) behaviorParts.push(`Landing: ${sanitize(data.landingPage)}`);
+  // Website & LinkedIn
+  const links = [];
+  if (data.website) links.push(`<${data.website}|🌐 Website>`);
+  if (data.linkedinUrl) links.push(`<${data.linkedinUrl}|🔗 LinkedIn>`);
+  
+  if (links.length > 0) {
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn', text: `*Links:* ${links.join(' • ')}` }
+    });
+  }
 
+  // Visitor behavior
+  const behaviorParts = [];
+  if (data.capturedUrl) behaviorParts.push(`Page: ${data.capturedUrl}`);
+  if (data.referrer) behaviorParts.push(`From: ${data.referrer}`);
+  if (data.tags) behaviorParts.push(`Tags: ${data.tags}`);
+  
   if (behaviorParts.length > 0) {
     blocks.push({
       type: 'section',
-      text: { type: 'mrkdwn', text: `*📊 Behavior:* ${behaviorParts.join(' • ')}` }
+      text: { type: 'mrkdwn', text: `*📊 Visit:* ${behaviorParts.join(' • ')}` }
     });
   }
 
-  // UTM / Referrer
-  const trafficParts = [];
-  if (data.utmSource) trafficParts.push(`Source: ${sanitize(data.utmSource)}`);
-  if (data.utmMedium) trafficParts.push(`Medium: ${sanitize(data.utmMedium)}`);
-  if (data.utmCampaign) trafficParts.push(`Campaign: ${sanitize(data.utmCampaign)}`);
-  if (data.referrer) trafficParts.push(`Referrer: ${sanitize(data.referrer).slice(0, 80)}`);
-
-  if (trafficParts.length > 0) {
-    blocks.push({
-      type: 'section',
-      text: { type: 'mrkdwn', text: `*🔍 Traffic:* ${trafficParts.join(' • ')}` }
-    });
-  }
-
-  // Score breakdown
+  // Verification details
   blocks.push({
     type: 'context',
     elements: [
-      { type: 'mrkdwn', text: `*Score Breakdown:* ${scoreResult.reasons.join(' · ')}` }
+      { type: 'mrkdwn', text: `*Verification (${verification.confidence}% confidence):* ${verification.reasons.join(' · ')}` }
     ]
   });
 
-  // LinkedIn button
-  if (data.linkedinUrl) {
+  // Enrichment source
+  if (enrichment) {
     blocks.push({
-      type: 'actions',
+      type: 'context',
       elements: [
-        {
-          type: 'button',
-          text: { type: 'plain_text', text: '🔗 LinkedIn Profile', emoji: true },
-          url: sanitize(data.linkedinUrl),
-          action_id: 'linkedin_profile'
-        }
+        { type: 'mrkdwn', text: `*Enriched via:* BetterContact${enrichment.provider ? ` (${enrichment.provider})` : ''}` }
       ]
     });
   }
@@ -475,23 +452,23 @@ function formatSlackMessage(data, scoreResult) {
 }
 
 // =============================================================================
-// SLACK DELIVERY (via Bot Token + chat.postMessage)
+// SLACK DELIVERY
 // =============================================================================
 
 async function sendToSlack(payload, channelId = SLACK_CHANNEL) {
   if (!SLACK_BOT_TOKEN) {
-    console.log('[SLACK] No bot token configured, skipping notification');
+    console.log('[SLACK] No bot token, skipping');
     return;
   }
 
-  try {
-    const postData = JSON.stringify({
-      channel: channelId,
-      blocks: payload.blocks,
-      text: payload.text || 'New qualified lead'
-    });
+  const postData = JSON.stringify({
+    channel: channelId,
+    blocks: payload.blocks,
+    text: 'New qualified law firm lead'
+  });
 
-    const options = {
+  return new Promise((resolve) => {
+    const req = https.request({
       hostname: 'slack.com',
       path: '/api/chat.postMessage',
       method: 'POST',
@@ -500,37 +477,32 @@ async function sendToSlack(payload, channelId = SLACK_CHANNEL) {
         'Authorization': `Bearer ${SLACK_BOT_TOKEN}`,
         'Content-Length': Buffer.byteLength(postData)
       }
-    };
-
-    return new Promise((resolve, reject) => {
-      const req = https.request(options, (res) => {
-        let body = '';
-        res.on('data', chunk => body += chunk);
-        res.on('end', () => {
-          try {
-            const result = JSON.parse(body);
-            if (result.ok) {
-              console.log(`[SLACK] ✅ Posted to ${channelId}: ${res.statusCode}`);
-            } else {
-              console.error(`[SLACK] ❌ Error: ${result.error}`);
-            }
-            resolve(result);
-          } catch(e) {
-            console.log(`[SLACK] Response: ${body}`);
-            resolve(body);
+    }, (res) => {
+      let body = '';
+      res.on('data', chunk => body += chunk);
+      res.on('end', () => {
+        try {
+          const result = JSON.parse(body);
+          if (result.ok) {
+            console.log(`[SLACK] ✅ Posted to ${channelId}`);
+          } else {
+            console.error(`[SLACK] ❌ Error: ${result.error}`);
           }
-        });
+          resolve(result);
+        } catch(e) {
+          resolve(body);
+        }
       });
-      req.on('error', (err) => {
-        console.error('[SLACK] Request error:', err.message);
-        reject(err);
-      });
-      req.write(postData);
-      req.end();
     });
-  } catch (err) {
-    console.error('[SLACK] Error:', err.message);
-  }
+    
+    req.on('error', (err) => {
+      console.error('[SLACK] Error:', err.message);
+      resolve(null);
+    });
+    
+    req.write(postData);
+    req.end();
+  });
 }
 
 // =============================================================================
@@ -538,169 +510,128 @@ async function sendToSlack(payload, channelId = SLACK_CHANNEL) {
 // =============================================================================
 
 const server = http.createServer(async (req, res) => {
-  const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
-                   req.headers['x-real-ip'] ||
-                   req.socket.remoteAddress;
+  const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress;
 
-  // Debug: log ALL incoming requests
-  console.log(`[REQUEST] ${req.method} ${req.url} from ${clientIp} | Headers: ${JSON.stringify(req.headers)}`);
-
-  // Rate limit check (exempt localhost for testing/health checks)
-  const isLocalhost = clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === '::ffff:127.0.0.1';
-  if (!isLocalhost && !rateLimiter.check(clientIp)) {
-    res.writeHead(429, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ error: 'rate_limited' }));
-    return;
-  }
+  console.log(`[REQUEST] ${req.method} ${req.url} from ${clientIp}`);
 
   // Health check
   if (req.method === 'GET' && req.url === '/health') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ status: 'ok', service: 'lead-webhook', version: 'leadpipe-v2' }));
+    res.end(JSON.stringify({ status: 'ok', service: 'rb2b-webhook', version: '1.0' }));
     return;
   }
 
-  // Webhook endpoint
-  const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
-  const urlPath = parsedUrl.pathname;
-  const urlKey = parsedUrl.searchParams.get('key');
-
-  if (req.method === 'POST' && (urlPath === '/webhook' || urlPath === '/rb2b' || urlPath === '/rb2b/webhook' || urlPath === '/leadpipe')) {
-    // Verify auth - support multiple methods
-    const authHeader = req.headers['authorization'] || '';
-    const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
-
-    const isAuthValid =
-      urlKey === WEBHOOK_SECRET ||                     // query param
-      bearerToken === WEBHOOK_SECRET ||                // bearer token
-      req.headers['x-webhook-event'] ||                // Leadpipe header present
-      req.headers['webhook-id'] ||                     // Svix header
-      req.headers['webhook-signature'];                // Svix signature
-
-    if (!isAuthValid) {
-      rateLimiter.check(clientIp, 'auth');
-      if (!rateLimiter.check(clientIp, 'auth')) {
-        res.writeHead(429, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'too_many_auth_failures' }));
-        return;
-      }
-      res.writeHead(401, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'unauthorized' }));
-      return;
-    }
-
+  // RB2B Webhook endpoint
+  if (req.method === 'POST' && (req.url === '/rb2b/webhook' || req.url === '/rb2b' || req.url === '/webhook')) {
     let body = '';
-    let bodySize = 0;
-
+    
     req.on('data', chunk => {
-      bodySize += chunk.length;
-      if (bodySize > MAX_BODY_SIZE) {
-        res.writeHead(413, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'payload_too_large' }));
-        req.destroy();
-        return;
-      }
-      body += chunk;
+      if (body.length < MAX_BODY_SIZE) body += chunk;
     });
 
     req.on('end', async () => {
-      if (bodySize > MAX_BODY_SIZE) return;
-
+      const timestamp = new Date().toISOString();
+      
       try {
         const payload = JSON.parse(body);
+        
+        // Log raw payload
+        const rawLog = path.join(LOG_DIR, `rb2b-raw-${new Date().toISOString().slice(0, 10)}.jsonl`);
+        fs.appendFileSync(rawLog, JSON.stringify({ timestamp, payload }) + '\n');
 
-        // Reject non-object payloads
-        if (typeof payload !== 'object' || payload === null || Array.isArray(payload)) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'invalid_payload' }));
+        // Normalize RB2B payload
+        const data = normalizeRB2BPayload(payload);
+        
+        console.log(`[RB2B] Visitor: ${data.fullName} | ${data.jobTitle} @ ${data.companyName} | Industry: ${data.industry}`);
+
+        // Skip test payloads
+        if (data.firstName === 'RB2B' && data.lastName === 'Test Payload') {
+          console.log('[RB2B] ✓ Test payload received successfully');
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ received: true, test: true }));
           return;
         }
 
-        const timestamp = new Date().toISOString();
+        // STEP 1: Verify this is a law firm + decision maker
+        const verification = await verifyLawFirm(data);
+        
+        console.log(`[VERIFY] ${data.fullName}: isLawFirm=${verification.isLawFirm}, isDecisionMaker=${verification.isDecisionMaker}, confidence=${verification.confidence}`);
+        console.log(`[VERIFY] Reasons: ${verification.reasons.join(' | ')}`);
 
-        // Extract visitor data from Leadpipe format: { event, data: {...} }
-        // Falls back to top-level if no .data wrapper (backwards compat)
-        const data = payload.data || payload;
-        const eventType = payload.event || 'unknown';
-
-        // Log raw payload for debugging
-        const rawLogFile = path.join(LOG_DIR, `raw-${new Date().toISOString().slice(0, 10)}.jsonl`);
-        fs.appendFileSync(rawLogFile, JSON.stringify({ timestamp, event: eventType, payload }) + '\n');
-
-        // Log ALL visitors to file
-        const logFile = path.join(LOG_DIR, `visitors-${new Date().toISOString().slice(0, 10)}.jsonl`);
-        fs.appendFileSync(logFile, JSON.stringify({ timestamp, event: eventType, ...data }) + '\n');
-
-        // Score the visitor
-        const scoreResult = scoreVisitor(data);
-
-        console.log(`[VISITOR] ${timestamp} | ${sanitize(data.firstName || '')} ${sanitize(data.lastName || '')} | ${sanitize(data.jobTitle || 'N/A')} @ ${sanitize(data.companyName || 'N/A')} | Intent: ${sanitize(data.intentScore || 'N/A')} | Score: ${scoreResult.score} | Qualified: ${scoreResult.qualified}`);
-
-        // Log to all-visitors file
-        const allLog = path.join(LOG_DIR, 'all-visitors.jsonl');
+        // Log all visitors
+        const allLog = path.join(LOG_DIR, `rb2b-all-${new Date().toISOString().slice(0, 10)}.jsonl`);
         fs.appendFileSync(allLog, JSON.stringify({
-          timestamp, event: eventType,
-          score: scoreResult.score, qualified: scoreResult.qualified,
-          name: `${data.firstName || ''} ${data.lastName || ''}`.trim(),
-          jobTitle: data.jobTitle, companyName: data.companyName,
-          industry: data.industry, intentScore: data.intentScore,
-          ...data
+          timestamp, ...data,
+          verification: {
+            isLawFirm: verification.isLawFirm,
+            isDecisionMaker: verification.isDecisionMaker,
+            confidence: verification.confidence,
+            reasons: verification.reasons
+          }
         }) + '\n');
 
-        // If qualified, log and alert
-        if (scoreResult.qualified) {
-          const qualifiedLog = path.join(LOG_DIR, 'qualified-leads.jsonl');
-          fs.appendFileSync(qualifiedLog, JSON.stringify({
-            timestamp, event: eventType,
-            score: scoreResult.score, reasons: scoreResult.reasons,
-            name: `${data.firstName || ''} ${data.lastName || ''}`.trim(),
-            jobTitle: data.jobTitle, companyName: data.companyName,
-            industry: data.industry, intentScore: data.intentScore,
-            email: data.email, phones: data.phones, linkedinUrl: data.linkedinUrl,
-            ...data
-          }) + '\n');
-
-          console.log(`[QUALIFIED] 🔥 ${sanitize(data.firstName || '')} ${sanitize(data.lastName || '')} — ${sanitize(data.jobTitle || 'N/A')} @ ${sanitize(data.companyName || 'N/A')} | Score: ${scoreResult.score} | Reasons: ${scoreResult.reasons.join(', ')}`);
-
-          // Send Slack notification
-          if (SLACK_BOT_TOKEN) {
-            const slackMsg = formatSlackMessage(data, scoreResult);
-            sendToSlack(slackMsg).catch(err =>
-              console.error('[SLACK] Failed:', err.message)
-            );
-          }
+        // Not qualified - respond and exit
+        if (!verification.isLawFirm || !verification.isDecisionMaker) {
+          console.log(`[RB2B] ❌ Not qualified: ${data.fullName} - ${verification.reasons.join(', ')}`);
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ 
+            received: true, 
+            qualified: false, 
+            reason: !verification.isLawFirm ? 'not_law_firm' : 'not_decision_maker'
+          }));
+          return;
         }
 
+        // QUALIFIED! 
+        console.log(`[RB2B] ✅ QUALIFIED: ${data.fullName} @ ${data.companyName}`);
+
+        // STEP 2: Enrich with BetterContact
+        let enrichment = null;
+        if (!data.businessEmail || data.businessEmail === 'N/A') {
+          enrichment = await enrichWithBetterContact(data);
+        } else {
+          console.log(`[ENRICH] Already have email: ${data.businessEmail}, skipping enrichment`);
+          enrichment = { email: data.businessEmail };
+        }
+
+        // STEP 3: Post to Slack
+        const slackMsg = formatSlackMessage(data, verification, enrichment);
+        await sendToSlack(slackMsg);
+
+        // Log qualified lead
+        const qualifiedLog = path.join(LOG_DIR, 'rb2b-qualified.jsonl');
+        fs.appendFileSync(qualifiedLog, JSON.stringify({
+          timestamp, ...data,
+          verification,
+          enrichment
+        }) + '\n');
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({
-          received: true,
-          score: scoreResult.score,
-          qualified: scoreResult.qualified
+        res.end(JSON.stringify({ 
+          received: true, 
+          qualified: true,
+          confidence: verification.confidence,
+          enriched: !!enrichment
         }));
+
       } catch (err) {
-        console.error('[ERROR]', err.message);
+        console.error('[ERROR]', err.message, err.stack);
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ received: true, error: 'parse_error' }));
+        res.end(JSON.stringify({ received: true, error: err.message }));
       }
     });
     return;
   }
 
-  // 404 for everything else
+  // 404
   res.writeHead(404, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({ error: 'not_found' }));
 });
 
-// Server timeout for slow clients
-server.timeout = 30000;
-server.keepAliveTimeout = 5000;
-
 server.listen(PORT, () => {
-  console.log(`[Webhook Server] Leadpipe v2 — Running on port ${PORT}`);
-  console.log(`[Webhook Server] Endpoints: POST /webhook, /leadpipe, /rb2b/webhook`);
-  console.log(`[Webhook Server] Health: GET /health`);
-  console.log(`[Webhook Server] ICP: Law firms, PI attorneys, managing partners`);
-  console.log(`[Webhook Server] Qualification threshold: 50 points`);
-  console.log(`[Webhook Server] Max payload: ${MAX_BODY_SIZE / 1024}KB`);
-  console.log(`[Webhook Server] Rate limit: 120 req/min, 10 failed auth/min`);
+  console.log(`[RB2B Webhook] Running on port ${PORT}`);
+  console.log(`[RB2B Webhook] Endpoint: POST /rb2b/webhook`);
+  console.log(`[RB2B Webhook] Health: GET /health`);
+  console.log(`[RB2B Webhook] BetterContact: ${BETTERCONTACT_API_KEY ? 'configured' : 'NOT configured'}`);
+  console.log(`[RB2B Webhook] Slack: ${SLACK_BOT_TOKEN ? 'configured' : 'NOT configured'}`);
 });

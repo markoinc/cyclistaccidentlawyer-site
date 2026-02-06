@@ -15,6 +15,7 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 
 from analyzer import WebsiteAnalyzer, AuditResult
+from enhanced_audit import EnhancedAuditor, EnhancedAuditResult
 from pdf_generator import generate_pdf
 from email_sender import send_audit_report
 
@@ -66,22 +67,39 @@ class AuditResponse(BaseModel):
     ai_visibility_score: Optional[int] = None
     local_seo_score: Optional[int] = None
     total_score: Optional[int] = None
+    ai_categories: Optional[list] = None
+    local_categories: Optional[list] = None
     quick_wins: Optional[list] = None
+    priority_fixes: Optional[list] = None
 
 
-def run_audit_sync(url: str, email: str, name: Optional[str] = None) -> dict:
-    """Run the audit synchronously (for thread pool)"""
+def run_audit_sync(url: str, email: str, name: Optional[str] = None, full_mode: bool = True) -> dict:
+    """Run the audit synchronously (for thread pool)
+    
+    Args:
+        url: Website URL to audit
+        email: Email to send report to
+        name: Optional business name override
+        full_mode: If True, run full DataForSEO analysis for PDF (slower but comprehensive)
+    """
     try:
-        logger.info(f"Starting audit for {url}")
+        logger.info(f"Starting audit for {url} (full_mode={full_mode})")
         
-        # Run analysis
-        analyzer = WebsiteAnalyzer(url)
-        result = analyzer.run_full_audit()
+        # Use enhanced auditor with DataForSEO
+        auditor = EnhancedAuditor(url)
         
-        logger.info(f"Audit complete: AI={result.ai_visibility_score}, Local={result.local_seo_score}")
+        if full_mode:
+            # Full mode: comprehensive data for PDF (~30-60 sec)
+            enhanced_result = auditor.run_full_audit()
+        else:
+            # Fast mode: quick results for web display (~5 sec)
+            enhanced_result = auditor.run_fast_audit()
+            
+        result = enhanced_result.basic_result
+        logger.info(f"Audit complete: AI={result.ai_visibility_score}, Local={result.local_seo_score}, API cost=${enhanced_result.api_cost:.4f}")
         
-        # Generate PDF
-        pdf_bytes = generate_pdf(result)
+        # Generate PDF with enhanced data
+        pdf_bytes = generate_pdf(result, enhanced_result if full_mode else None)
         logger.info(f"PDF generated: {len(pdf_bytes)} bytes")
         
         # Send email
@@ -99,11 +117,15 @@ def run_audit_sync(url: str, email: str, name: Optional[str] = None) -> dict:
         return {
             "success": True,
             "email_sent": email_sent,
-            "result": result
+            "result": result,
+            "enhanced_result": enhanced_result,
+            "api_cost": enhanced_result.api_cost
         }
         
     except Exception as e:
         logger.error(f"Audit failed: {e}")
+        import traceback
+        traceback.print_exc()
         return {
             "success": False,
             "error": str(e)
@@ -124,11 +146,24 @@ async def health():
     return {"status": "healthy"}
 
 
+def run_full_audit_background(url: str, email: str, name: Optional[str] = None):
+    """Run full audit in background and send email with comprehensive PDF"""
+    try:
+        logger.info(f"Background: Starting FULL audit for {url}")
+        run_audit_sync(url, email, name, full_mode=True)
+        logger.info(f"Background: Full audit complete, email sent to {email}")
+    except Exception as e:
+        logger.error(f"Background audit failed: {e}")
+
+
 @app.post("/audit", response_model=AuditResponse)
 async def request_audit(request: AuditRequest, background_tasks: BackgroundTasks):
     """
     Request an audit for a website.
-    Runs analysis in background and emails results.
+    
+    Two-tier approach:
+    1. FAST: Returns results to web in <10 seconds
+    2. FULL: Sends comprehensive PDF via email (runs in background)
     """
     url = request.url
     if not url.startswith('http'):
@@ -140,33 +175,44 @@ async def request_audit(request: AuditRequest, background_tasks: BackgroundTasks
     if not parsed.netloc:
         raise HTTPException(status_code=400, detail="Invalid URL")
     
-    # Run audit in background
     loop = asyncio.get_event_loop()
     
-    # For immediate response, we'll run synchronously but could background it
     try:
-        result = await loop.run_in_executor(
-            executor,
-            run_audit_sync,
-            url,
-            request.email,
-            request.name
-        )
+        # FAST MODE: Quick results for web display (<10 sec)
+        logger.info(f"Running FAST audit for {url}")
         
-        if result["success"]:
-            audit_result = result["result"]
-            return AuditResponse(
-                success=True,
-                message="Audit complete! Check your email for the detailed PDF report.",
-                url=url,
-                business_name=audit_result.business_name,
-                ai_visibility_score=audit_result.ai_visibility_score,
-                local_seo_score=audit_result.local_seo_score,
-                total_score=audit_result.total_score,
-                quick_wins=audit_result.quick_wins[:5]
-            )
-        else:
-            raise HTTPException(status_code=500, detail=result.get("error", "Audit failed"))
+        # Run fast audit (no email)
+        auditor = EnhancedAuditor(url)
+        enhanced_result = await loop.run_in_executor(
+            executor,
+            auditor.run_fast_audit
+        )
+        audit_result = enhanced_result.basic_result
+        
+        logger.info(f"FAST audit complete in {enhanced_result.fast_mode_time:.1f}s: AI={audit_result.ai_visibility_score}, Local={audit_result.local_seo_score}")
+        
+        # FULL MODE: Schedule comprehensive audit + email in background
+        background_tasks.add_task(run_full_audit_background, url, request.email, request.name)
+        
+        return AuditResponse(
+            success=True,
+            message="Audit complete! A detailed PDF report is being sent to your email.",
+            url=url,
+            business_name=audit_result.business_name,
+            ai_visibility_score=audit_result.ai_visibility_score,
+            local_seo_score=audit_result.local_seo_score,
+            total_score=audit_result.total_score,
+            ai_categories=[
+                {"name": c.name, "score": c.score, "findings": c.findings, "recommendations": c.recommendations}
+                for c in audit_result.ai_categories
+            ],
+            local_categories=[
+                {"name": c.name, "score": c.score, "findings": c.findings, "recommendations": c.recommendations}
+                for c in audit_result.local_categories
+            ],
+            quick_wins=audit_result.quick_wins,
+            priority_fixes=audit_result.priority_fixes
+        )
             
     except Exception as e:
         logger.exception("Audit request failed")

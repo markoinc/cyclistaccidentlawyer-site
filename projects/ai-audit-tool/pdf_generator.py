@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 PDF Report Generator for AI & Local Visibility Audit
+
+Note: ReportLab has limited Unicode/emoji support. 
+We use ASCII-safe alternatives for reliability.
 """
 
 from reportlab.lib.pagesizes import letter
@@ -22,6 +25,37 @@ try:
 except ImportError:
     from analyzer import AuditResult, CategoryScore
 import os
+import re
+
+
+def sanitize_for_pdf(text: str) -> str:
+    """Replace emojis and special chars with ASCII-safe alternatives for PDF rendering"""
+    replacements = {
+        '✅': '[OK]',
+        '❌': '[X]',
+        '⚠️': '[!]',
+        'ℹ️': '[i]',
+        '💡': '[TIP]',
+        '🏆': '[#1]',
+        '📊': '',
+        '🔍': '',
+        '🔴': '',
+        '🟡': '',
+        '🟢': '',
+        '💰': '',
+        '✓': '[OK]',
+        '☐': '[ ]',
+        '🤖': '',
+        '📍': '',
+        '⚡': '',
+        '🚨': '',
+        '📋': '',
+        '📞': '',
+        '📧': '',
+    }
+    for emoji, replacement in replacements.items():
+        text = text.replace(emoji, replacement)
+    return text
 
 
 # Brand colors
@@ -78,8 +112,14 @@ def create_score_badge(score: int, max_score: int, label: str) -> Drawing:
     return d
 
 
-def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
-    """Generate PDF report from audit result"""
+def generate_pdf(result: AuditResult, enhanced_result = None, output_path: str = None) -> bytes:
+    """Generate PDF report from audit result
+    
+    Args:
+        result: Basic audit result
+        enhanced_result: Optional EnhancedAuditResult with DataForSEO data
+        output_path: Optional file path to save PDF
+    """
     
     buffer = BytesIO()
     doc = SimpleDocTemplate(
@@ -179,15 +219,21 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
     story.append(Paragraph(f"<b>Generated:</b> {datetime.now().strftime('%B %d, %Y')}", styles['Normal']))
     story.append(Spacer(1, 0.5*inch))
     
-    # Overall scores
+    # Overall scores - use text ratings instead of emojis
+    def get_rating(score, max_score):
+        pct = score / max_score
+        if pct >= 0.7:
+            return 'Good'
+        elif pct >= 0.4:
+            return 'Needs Work'
+        else:
+            return 'Critical'
+    
     score_data = [
         ['Category', 'Score', 'Rating'],
-        ['AI Visibility', f"{result.ai_visibility_score}/100", 
-         '🟢 Good' if result.ai_visibility_score >= 70 else ('🟡 Needs Work' if result.ai_visibility_score >= 40 else '🔴 Critical')],
-        ['Local SEO', f"{result.local_seo_score}/100",
-         '🟢 Good' if result.local_seo_score >= 70 else ('🟡 Needs Work' if result.local_seo_score >= 40 else '🔴 Critical')],
-        ['TOTAL', f"{result.total_score}/200",
-         '🟢 Good' if result.total_score >= 140 else ('🟡 Needs Work' if result.total_score >= 80 else '🔴 Critical')],
+        ['AI Visibility', f"{result.ai_visibility_score}/100", get_rating(result.ai_visibility_score, 100)],
+        ['Local SEO', f"{result.local_seo_score}/100", get_rating(result.local_seo_score, 100)],
+        ['TOTAL', f"{result.total_score}/200", get_rating(result.total_score, 200)],
     ]
     
     score_table = Table(score_data, colWidths=[2.5*inch, 1.5*inch, 1.5*inch])
@@ -220,86 +266,96 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
     story.append(PageBreak())
     
     # === QUICK WINS ===
-    story.append(Paragraph("⚡ QUICK WINS", styles['SectionHeader']))
+    story.append(Paragraph("QUICK WINS", styles['SectionHeader']))
     story.append(Paragraph("High-impact, low-effort improvements you can make today:", styles['Normal']))
     story.append(Spacer(1, 10))
     
     for qw in result.quick_wins[:7]:
-        story.append(Paragraph(f"✓ {qw}", styles['QuickWin']))
+        story.append(Paragraph(f"* {sanitize_for_pdf(qw)}", styles['QuickWin']))
     
     story.append(Spacer(1, 20))
     
     # === PRIORITY FIXES ===
     if result.priority_fixes:
-        story.append(Paragraph("🚨 PRIORITY FIXES", styles['SectionHeader']))
+        story.append(Paragraph("PRIORITY FIXES", styles['SectionHeader']))
         story.append(Paragraph("Categories scoring below 50% that need immediate attention:", styles['Normal']))
         story.append(Spacer(1, 10))
         
         for pf in result.priority_fixes:
-            story.append(Paragraph(f"• {pf}", styles['Finding']))
+            story.append(Paragraph(f"- {sanitize_for_pdf(pf)}", styles['Finding']))
     
     story.append(PageBreak())
     
     # === AI VISIBILITY DETAILED ===
-    story.append(Paragraph("🤖 AI VISIBILITY AUDIT", styles['SectionHeader']))
+    story.append(Paragraph("AI VISIBILITY AUDIT", styles['SectionHeader']))
     story.append(Paragraph(
-        f"Score: <b>{result.ai_visibility_score}/100</b> — "
+        f"Score: <b>{result.ai_visibility_score}/100</b> - "
         "AI visibility determines how likely your business appears in ChatGPT, Claude, Perplexity, and AI-powered search.",
         styles['Normal']
     ))
     story.append(Spacer(1, 10))
     
     for cat in result.ai_categories:
-        color = get_score_color(cat.score)
+        color = get_score_color(cat.score, cat.max_score if cat.max_score > 0 else 10)
         color_hex = f"#{color.hexval()[2:]}"
+        max_display = cat.max_score if cat.max_score > 0 else 10
         story.append(Paragraph(
-            f"<font color='{color_hex}'>●</font> <b>{cat.name}</b>: {cat.score}/{cat.max_score}",
+            f"<font color='{color_hex}'>[{cat.score}/{max_display}]</font> <b>{cat.name}</b>",
             styles['CategoryHeader']
         ))
         
         for finding in cat.findings[:4]:
-            story.append(Paragraph(finding, styles['Finding']))
+            story.append(Paragraph(sanitize_for_pdf(finding), styles['Finding']))
             
         if cat.recommendations:
             story.append(Paragraph("<b>Recommendations:</b>", styles['Finding']))
             for rec in cat.recommendations[:3]:
-                story.append(Paragraph(f"→ {rec}", styles['Recommendation']))
+                story.append(Paragraph(f"  > {sanitize_for_pdf(rec)}", styles['Recommendation']))
         
         story.append(Spacer(1, 10))
     
     story.append(PageBreak())
     
     # === LOCAL SEO DETAILED ===
-    story.append(Paragraph("📍 LOCAL SEO AUDIT", styles['SectionHeader']))
+    story.append(Paragraph("LOCAL SEO AUDIT", styles['SectionHeader']))
     story.append(Paragraph(
-        f"Score: <b>{result.local_seo_score}/100</b> — "
+        f"Score: <b>{result.local_seo_score}/100</b> - "
         "Local SEO determines your visibility in Google Maps, local search, and 'near me' queries.",
         styles['Normal']
     ))
     story.append(Spacer(1, 10))
     
     for cat in result.local_categories:
-        color = get_score_color(cat.score)
+        # Skip informational-only categories (max_score=0) in detailed breakdown if no findings
+        if cat.max_score == 0 and not cat.findings:
+            continue
+            
+        color = get_score_color(cat.score, cat.max_score if cat.max_score > 0 else 10)
         color_hex = f"#{color.hexval()[2:]}"
-        story.append(Paragraph(
-            f"<font color='{color_hex}'>●</font> <b>{cat.name}</b>: {cat.score}/{cat.max_score}",
-            styles['CategoryHeader']
-        ))
+        
+        # For informational categories, show differently
+        if cat.max_score == 0:
+            story.append(Paragraph(f"<b>{cat.name}</b> (Informational)", styles['CategoryHeader']))
+        else:
+            story.append(Paragraph(
+                f"<font color='{color_hex}'>[{cat.score}/{cat.max_score}]</font> <b>{cat.name}</b>",
+                styles['CategoryHeader']
+            ))
         
         for finding in cat.findings[:4]:
-            story.append(Paragraph(finding, styles['Finding']))
+            story.append(Paragraph(sanitize_for_pdf(finding), styles['Finding']))
             
         if cat.recommendations:
             story.append(Paragraph("<b>Recommendations:</b>", styles['Finding']))
             for rec in cat.recommendations[:3]:
-                story.append(Paragraph(f"→ {rec}", styles['Recommendation']))
+                story.append(Paragraph(f"  > {sanitize_for_pdf(rec)}", styles['Recommendation']))
         
         story.append(Spacer(1, 10))
     
     story.append(PageBreak())
     
     # === ACTION PLAN ===
-    story.append(Paragraph("📋 30-DAY ACTION PLAN", styles['SectionHeader']))
+    story.append(Paragraph("30-DAY ACTION PLAN", styles['SectionHeader']))
     
     # Week 1
     story.append(Paragraph("<b>Week 1: Foundation</b>", styles['CategoryHeader']))
@@ -310,12 +366,12 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
         "Ensure NAP consistency across site",
     ]
     for action in week1_actions:
-        story.append(Paragraph(f"☐ {action}", styles['Finding']))
+        story.append(Paragraph(f"[ ] {action}", styles['Finding']))
     
     story.append(Spacer(1, 10))
     
     # Week 2
-    story.append(Paragraph("<b>Week 2: Content & Structure</b>", styles['CategoryHeader']))
+    story.append(Paragraph("<b>Week 2: Content and Structure</b>", styles['CategoryHeader']))
     week2_actions = [
         "Add FAQ section with schema markup",
         "Create/update city-specific landing pages",
@@ -323,12 +379,12 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
         "Optimize heading structure (H1, H2, H3)",
     ]
     for action in week2_actions:
-        story.append(Paragraph(f"☐ {action}", styles['Finding']))
+        story.append(Paragraph(f"[ ] {action}", styles['Finding']))
     
     story.append(Spacer(1, 10))
     
     # Week 3
-    story.append(Paragraph("<b>Week 3: Authority & Trust</b>", styles['CategoryHeader']))
+    story.append(Paragraph("<b>Week 3: Authority and Trust</b>", styles['CategoryHeader']))
     week3_actions = [
         "Add author bios with credentials",
         "Display case results and testimonials",
@@ -336,12 +392,12 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
         "Add trust badges (Avvo, BBB, etc.)",
     ]
     for action in week3_actions:
-        story.append(Paragraph(f"☐ {action}", styles['Finding']))
+        story.append(Paragraph(f"[ ] {action}", styles['Finding']))
     
     story.append(Spacer(1, 10))
     
     # Week 4
-    story.append(Paragraph("<b>Week 4: Engagement & Reviews</b>", styles['CategoryHeader']))
+    story.append(Paragraph("<b>Week 4: Engagement and Reviews</b>", styles['CategoryHeader']))
     week4_actions = [
         "Launch review generation campaign",
         "Post weekly to Google Business Profile",
@@ -349,12 +405,92 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
         "Set up ongoing content calendar",
     ]
     for action in week4_actions:
-        story.append(Paragraph(f"☐ {action}", styles['Finding']))
+        story.append(Paragraph(f"[ ] {action}", styles['Finding']))
     
     story.append(Spacer(1, 0.5*inch))
     
+    # === ENHANCED DATA (DataForSEO) ===
+    if enhanced_result:
+        story.append(PageBreak())
+        story.append(Paragraph("LIVE SEARCH DATA (via DataForSEO)", styles['SectionHeader']))
+        story.append(Paragraph(
+            f"Real-time Google ranking data - API cost: ${enhanced_result.api_cost:.4f}",
+            styles['CustomSubtitle']
+        ))
+        story.append(Spacer(1, 10))
+        
+        # Ranked Keywords
+        if enhanced_result.ranked_keywords:
+            story.append(Paragraph("<b>Your Top Ranked Keywords</b>", styles['CategoryHeader']))
+            for i, kw in enumerate(enhanced_result.ranked_keywords[:15], 1):
+                vol = kw.get('volume')
+                vol_str = f" ({vol:,} searches/mo)" if vol else ""
+                pos = kw.get('position', '?')
+                keyword = kw.get('keyword', 'Unknown')
+                story.append(Paragraph(
+                    f"#{pos}: {keyword}{vol_str}",
+                    styles['Finding']
+                ))
+            story.append(Spacer(1, 15))
+        
+        # Competitors - only show if we have meaningful data
+        competitors_with_data = [c for c in enhanced_result.competitors if c.get('keywords_count') and c.get('keywords_count') != 'None']
+        if competitors_with_data:
+            story.append(Paragraph("<b>Your Top Organic Competitors</b>", styles['CategoryHeader']))
+            for comp in competitors_with_data[:10]:
+                kw_count = comp.get('keywords_count', 0)
+                domain = comp.get('domain', 'Unknown')
+                if kw_count and int(kw_count) > 0:
+                    story.append(Paragraph(
+                        f"- {domain} ({kw_count} overlapping keywords)",
+                        styles['Finding']
+                    ))
+            story.append(Spacer(1, 15))
+        
+        # SERP Rankings
+        if enhanced_result.serp_rankings:
+            story.append(Paragraph("<b>Your Google Rankings (Live Check)</b>", styles['CategoryHeader']))
+            for r in enhanced_result.serp_rankings:
+                pos = r.get('position', '?')
+                kw = r.get('keyword', '')
+                story.append(Paragraph(
+                    f"Position #{pos} for \"{kw}\"",
+                    styles['Finding']
+                ))
+            story.append(Spacer(1, 15))
+        
+        # On-Page Issues - translate to human-readable
+        if enhanced_result.onpage_issues:
+            story.append(Paragraph("<b>Technical SEO Issues Detected</b>", styles['CategoryHeader']))
+            
+            # Translate cryptic issue names to human-readable
+            issue_translations = {
+                'no content encoding': 'No compression enabled (gzip/brotli)',
+                'high loading time': 'Slow page load time',
+                'high waiting time': 'Slow server response time',
+                'is redirect': 'Page has redirects',
+                'is 4xx code': 'Page returns 4xx error',
+                'is 5xx code': 'Page returns server error',
+                'is broken': 'Page has broken elements',
+                'is http': 'Page uses insecure HTTP',
+                'from sitemap': 'Not in sitemap',
+                'has micromarkup': 'Missing structured data',
+                'no content encoding': 'No gzip/brotli compression',
+            }
+            
+            for issue in enhanced_result.onpage_issues[:10]:
+                issue_text = issue.get('issue', 'Unknown issue').lower()
+                human_readable = issue_translations.get(issue_text, issue.get('issue', 'Unknown issue'))
+                severity = issue.get('severity', 'warning')
+                marker = '[!]' if severity == 'critical' else '[-]'
+                story.append(Paragraph(
+                    f"{marker} {human_readable}",
+                    styles['Finding']
+                ))
+            story.append(Spacer(1, 15))
+    
     # === FOOTER / CTA ===
-    story.append(Paragraph("—" * 50, styles['Normal']))
+    story.append(Paragraph("-" * 70, styles['Normal']))
     story.append(Spacer(1, 10))
     story.append(Paragraph(
         "<b>Need help implementing these recommendations?</b>",
@@ -366,12 +502,12 @@ def generate_pdf(result: AuditResult, output_path: str = None) -> bytes:
     ))
     story.append(Spacer(1, 10))
     story.append(Paragraph(
-        "<b>📞 Book a Call: kuriosbrand.com/call</b>",
+        "<b>Book a Call: kuriosbrand.com/call</b>",
         ParagraphStyle('CTALink', parent=styles['Normal'], fontSize=14, alignment=TA_CENTER, textColor=HIGHLIGHT)
     ))
     story.append(Spacer(1, 20))
     story.append(Paragraph(
-        f"<i>Report generated by KuriosBrand AI Audit Tool • {datetime.now().strftime('%Y')}</i>",
+        f"<i>Report generated by Kurios AI Audit Tool - {datetime.now().strftime('%Y')}</i>",
         ParagraphStyle('Footer', parent=styles['Normal'], fontSize=9, alignment=TA_CENTER, textColor=ACCENT)
     ))
     

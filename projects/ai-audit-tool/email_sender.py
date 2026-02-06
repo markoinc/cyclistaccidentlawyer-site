@@ -70,89 +70,49 @@ def send_audit_report(
         interpretation = "needs urgent attention"
         emoji = "🔴"
     
-    # HTML body
-    html_body = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <style>
-            body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
-            .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
-            .header {{ background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #ffffff !important; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }}
-            .header h1 {{ color: #ffffff !important; margin: 0 0 10px 0; }}
-            .header p {{ color: #e0e0e0 !important; margin: 0; }}
-            .content {{ background: #f8f9fa; padding: 30px; border-radius: 0 0 10px 10px; }}
-            .score-box {{ background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }}
-            .score-row {{ display: flex; justify-content: space-between; margin: 10px 0; padding: 10px; border-bottom: 1px solid #eee; }}
-            .score-label {{ font-weight: bold; }}
-            .cta-button {{ display: inline-block; background: #e94560; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }}
-            .footer {{ text-align: center; padding: 20px; color: #666; font-size: 12px; }}
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-                <h1 style="color: #ffffff; margin: 0 0 10px 0; font-size: 24px;">🔍 Your AI & Local Visibility Audit</h1>
-                <p style="color: #e0e0e0; margin: 0;">Comprehensive analysis for {url}</p>
-            </div>
-            
-            <div class="content">
-                <p>Hi there,</p>
-                
-                <p>Your comprehensive AI & Local Visibility audit is ready! We've analyzed your website across <strong>20 critical factors</strong> that determine your visibility in both AI search (ChatGPT, Claude, Perplexity) and traditional local search (Google Maps, local results).</p>
-                
-                <div class="score-box">
-                    <h2 style="margin-top: 0;">📊 Your Scores</h2>
-                    
-                    <div class="score-row">
-                        <span class="score-label">🤖 AI Visibility</span>
-                        <span><strong>{ai_score}/100</strong></span>
-                    </div>
-                    
-                    <div class="score-row">
-                        <span class="score-label">📍 Local SEO</span>
-                        <span><strong>{local_score}/100</strong></span>
-                    </div>
-                    
-                    <div class="score-row" style="border-bottom: none; font-size: 1.2em;">
-                        <span class="score-label">{emoji} Overall Grade</span>
-                        <span><strong>{grade} ({total_score}/200)</strong></span>
-                    </div>
-                </div>
-                
-                <p>Your website is <strong>{interpretation}</strong>. The attached PDF contains:</p>
-                
-                <ul>
-                    <li>✅ Detailed breakdown of all 20 scoring categories</li>
-                    <li>⚡ Quick wins you can implement today</li>
-                    <li>🚨 Priority fixes that need immediate attention</li>
-                    <li>📋 A 30-day action plan to improve your visibility</li>
-                </ul>
-                
-                <p><strong>What's next?</strong></p>
-                
-                <p>Want help implementing these recommendations? Schedule a free strategy call to discuss your personalized roadmap for AI visibility and local SEO dominance.</p>
-                
-                <p style="text-align: center;">
-                    <a href="https://kuriosbrand.com/call" class="cta-button">
-                        📞 Book Your Free Strategy Call
-                    </a>
-                </p>
-                
-                <p>Questions? Just reply to this email.</p>
-                
-                <p>Best,<br>
-                <strong>The Kurios Team</strong></p>
-            </div>
-            
-            <div class="footer">
-                <p>Kurios • AI-Powered Marketing</p>
-                <p>You received this email because you requested an audit at kuriosbrand.com</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    """
+    # HTML body - minimal, clean for deliverability
+    html_body = f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+
+<h2>Your AI & Local Visibility Audit</h2>
+<p><strong>Website:</strong> {url}</p>
+
+<p>Hi there,</p>
+
+<p>Your audit is ready! We analyzed your website across 20 factors that determine visibility in AI search (ChatGPT, Claude, Perplexity) and local search (Google Maps).</p>
+
+<h3>Your Scores</h3>
+<ul>
+<li><strong>AI Visibility:</strong> {ai_score}/100</li>
+<li><strong>Local SEO:</strong> {local_score}/100</li>
+<li><strong>Overall:</strong> {total_score}/200 (Grade: {grade}) - {interpretation}</li>
+</ul>
+
+<p>The attached PDF contains:</p>
+<ul>
+<li>Detailed breakdown of all 20 categories</li>
+<li>Quick wins you can implement today</li>
+<li>Priority fixes that need attention</li>
+</ul>
+
+<h3>What's next?</h3>
+<p>Want help implementing these recommendations? Book a free strategy call:</p>
+<p><a href="https://kuriosbrand.com/call">https://kuriosbrand.com/call</a></p>
+
+<p>Questions? Just reply to this email.</p>
+
+<p>Best,<br>
+The Kurios Team</p>
+
+<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+<p style="font-size: 12px; color: #666;">You received this email because you requested an audit at kuriosbrand.com</p>
+
+</body>
+</html>"""
     
     # Plain text alternative
     text_body = f"""

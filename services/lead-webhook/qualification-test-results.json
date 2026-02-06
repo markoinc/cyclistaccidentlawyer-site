@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "total": 1000,
+    "correct": 1000,
+    "accuracy": "100.0%",
+    "falsePositives": 0,
+    "falseNegatives": 0
+  },
+  "categories": {
+    "law_firm_decision_maker": {
+      "total": 300,
+      "matches": 300,
+      "falsePositives": [],
+      "falseNegatives": []
+    },
+    "law_firm_non_decision_maker": {
+      "total": 200,
+      "matches": 200,
+      "falsePositives": [],
+      "falseNegatives": []
+    },
+    "non_law_company": {
+      "total": 300,
+      "matches": 300,
+      "falsePositives": [],
+      "falseNegatives": []
+    },
+    "edge_attorney_non_law": {
+      "total": 100,
+      "matches": 100,
+      "falsePositives": [],
+      "falseNegatives": []
+    },
+    "minimal_data": {
+      "total": 100,
+      "matches": 100,
+      "falsePositives": [],
+      "falseNegatives": []
+    }
+  },
+  "failures": {
+    "falsePositives": [],
+    "falseNegatives": []
+  }
+}

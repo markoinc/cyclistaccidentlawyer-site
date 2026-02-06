@@ -13,6 +13,13 @@ from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any
 import time
 
+# DataForSEO integration
+try:
+    from dataforseo_client import DataForSEOClient
+    DATAFORSEO_AVAILABLE = True
+except ImportError:
+    DATAFORSEO_AVAILABLE = False
+
 @dataclass
 class CategoryScore:
     name: str
@@ -649,6 +656,9 @@ class WebsiteAnalyzer:
         points = 0
         
         if self.soup:
+            text = self.soup.get_text().lower()
+            html = str(self.soup).lower()
+            
             # Check for YouTube embeds/links
             youtube_found = False
             for link in self.soup.find_all('a', href=True):
@@ -661,22 +671,39 @@ class WebsiteAnalyzer:
                     break
                     
             if youtube_found:
-                findings.append("✅ YouTube presence detected")
+                findings.append("✅ YouTube content embedded/linked")
                 points += 3
             else:
-                recommendations.append("Create YouTube content and embed on site")
+                recommendations.append("Create YouTube videos and embed on site")
                 
-        # Note: Checking actual ChatGPT/Claude citations requires API calls
-        findings.append("ℹ️ ChatGPT/Claude citation check requires manual verification")
-        findings.append("ℹ️ Ask ChatGPT: 'What law firms handle car accidents in [city]?'")
-        
-        recommendations.append("Test your visibility: Ask ChatGPT about your practice area + location")
-        recommendations.append("Enable YouTube transcripts for AI training")
-        recommendations.append("Build presence on platforms AI trains on (Reddit, Wikipedia)")
-        
-        # Give baseline points for having a website that's crawlable
-        if self.robots_txt is not None:
-            points += 2
+            # Check for podcast mentions
+            if 'podcast' in text:
+                findings.append("✅ Podcast presence mentioned")
+                points += 2
+                
+            # Check for Wikipedia/edu links (authority signals for AI)
+            for link in self.soup.find_all('a', href=True):
+                href = link['href']
+                if '.edu' in href or 'wikipedia.org' in href:
+                    findings.append("✅ Links to authoritative sources (.edu/Wikipedia)")
+                    points += 2
+                    break
+                    
+            # Check for Reddit mentions
+            if 'reddit' in html:
+                findings.append("✅ Reddit presence/link found")
+                points += 2
+                
+            # Check for llms.txt (we already have this in crawler check but mention if found)
+            if hasattr(self, 'llms_txt') and self.llms_txt:
+                findings.append("✅ llms.txt present - excellent for AI discoverability")
+                points += 3
+                
+        if points == 0:
+            findings.append("⚠️ Limited AI platform presence detected")
+            
+        recommendations.append("Create content on platforms AI trains on (YouTube, Reddit)")
+        recommendations.append("Add llms.txt file to help AI understand your site")
             
         score.score = min(points, 10)
         score.findings = findings
@@ -763,20 +790,43 @@ class WebsiteAnalyzer:
         score = CategoryScore(name="GBP Optimization")
         findings = []
         recommendations = []
+        points = 0
         
-        # This requires Google API or manual check
-        findings.append("ℹ️ GBP optimization requires manual review")
-        findings.append("Check: Secondary categories, business description, photos, services list, hours")
+        # Check what we CAN verify from the website
+        if self.soup:
+            text = self.soup.get_text().lower()
+            
+            # Check for services listed
+            service_indicators = ['services', 'practice areas', 'what we do', 'areas of practice']
+            if any(s in text for s in service_indicators):
+                findings.append("✅ Services/practice areas listed on website")
+                points += 3
+            else:
+                recommendations.append("Add a clear services/practice areas section")
+                
+            # Check for team/about section
+            team_indicators = ['our team', 'our attorneys', 'about us', 'meet the team', 'our lawyers']
+            if any(t in text for t in team_indicators):
+                findings.append("✅ Team/about section found")
+                points += 2
+            else:
+                recommendations.append("Add team bios and photos")
+                
+            # Check for business hours mentioned
+            hour_indicators = ['hours', 'open', 'monday', 'available 24']
+            if any(h in text for h in hour_indicators):
+                findings.append("✅ Business hours mentioned")
+                points += 2
+            else:
+                recommendations.append("Display business hours on website")
         
-        recommendations.append("Add 3-5 secondary categories (e.g., 'Personal Injury Attorney')")
-        recommendations.append("Upload 10+ high-quality photos (office, team, logo)")
-        recommendations.append("List all services offered")
-        recommendations.append("Set accurate business hours")
-        recommendations.append("Write compelling 750-character business description")
+        # Note what requires manual GBP check
+        findings.append("💡 Full GBP audit requires checking business.google.com")
+        recommendations.append("Verify GBP has 10+ photos, complete description, all categories")
         
-        score.score = 5  # Middle score since we can't verify
+        score.score = min(points, 10)
         score.findings = findings
-        score.recommendations = recommendations
+        score.recommendations = recommendations[:3]
         return score
         
     def check_gbp_engagement(self) -> CategoryScore:
@@ -784,18 +834,39 @@ class WebsiteAnalyzer:
         score = CategoryScore(name="GBP Engagement")
         findings = []
         recommendations = []
+        points = 0
         
-        findings.append("ℹ️ GBP engagement requires manual review or API")
+        # Check what we CAN verify from website
+        if self.soup:
+            text = self.soup.get_text().lower()
+            
+            # Check for review mentions/widgets
+            if 'review' in text and ('google' in text or 'client' in text):
+                findings.append("✅ Reviews referenced on website")
+                points += 3
+            else:
+                recommendations.append("Display Google reviews on your website")
+                
+            # Check for blog/news (indicates active business)
+            blog_indicators = ['blog', 'news', 'articles', 'resources', 'recent posts']
+            if any(b in text for b in blog_indicators):
+                findings.append("✅ Blog/news section indicates active updates")
+                points += 3
+            else:
+                recommendations.append("Add a blog for regular content updates")
+                
+            # Check for contact options
+            contact_indicators = ['contact', 'call us', 'email', 'message', 'chat']
+            if sum(1 for c in contact_indicators if c in text) >= 2:
+                findings.append("✅ Multiple contact options available")
+                points += 2
         
-        recommendations.append("Post weekly updates to GBP (events, offers, news)")
-        recommendations.append("Enable and respond to messaging")
-        recommendations.append("Answer all Q&A questions")
-        recommendations.append("Add relevant attributes (wheelchair accessible, etc.)")
-        recommendations.append("Respond to all reviews within 24 hours")
+        findings.append("💡 GBP post frequency & Q&A require manual review")
+        recommendations.append("Post weekly updates to Google Business Profile")
         
-        score.score = 5  # Middle score
+        score.score = min(points, 10)
         score.findings = findings
-        score.recommendations = recommendations
+        score.recommendations = recommendations[:3]
         return score
         
     def check_website_local_signals(self) -> CategoryScore:
@@ -962,27 +1033,49 @@ class WebsiteAnalyzer:
         score = CategoryScore(name="Citations & Directories")
         findings = []
         recommendations = []
+        points = 0
         
-        # This requires external lookups
-        findings.append("ℹ️ Directory presence requires external verification")
-        
-        recommendations.append("Claim/update listings on: Yelp, Avvo, FindLaw, Lawyers.com")
-        recommendations.append("Submit to local chamber of commerce")
-        recommendations.append("Get listed on legal-specific directories")
-        recommendations.append("Check/claim listing on Apple Maps and Bing Places")
-        recommendations.append("Use a citation building service for consistency")
-        
-        # Check if site links to any directories
         if self.soup:
-            dir_mentions = ['yelp', 'avvo', 'findlaw', 'martindale', 'super lawyers']
             text = self.soup.get_text().lower()
-            found_dirs = [d for d in dir_mentions if d in text]
+            html = str(self.soup).lower()
+            
+            # Check for directory badges/links on site
+            directories = {
+                'avvo': 3,
+                'findlaw': 2, 
+                'martindale': 3,
+                'super lawyers': 3,
+                'yelp': 2,
+                'lawyers.com': 2,
+                'justia': 2,
+                'nolo': 1,
+                'bbb': 2,
+            }
+            
+            found_dirs = []
+            for dir_name, pts in directories.items():
+                if dir_name in text or dir_name in html:
+                    found_dirs.append(dir_name)
+                    points += pts
+                    
             if found_dirs:
-                findings.append(f"✅ References to: {', '.join(found_dirs)}")
+                findings.append(f"✅ Directory presence indicated: {', '.join(found_dirs)}")
+            else:
+                findings.append("⚠️ No directory badges or links found on site")
+                recommendations.append("Add badges from Avvo, Super Lawyers, Martindale-Hubbell")
+            
+            # Check for award/recognition mentions
+            award_terms = ['award', 'recognized', 'best lawyers', 'top rated', 'rising star']
+            if any(a in text for a in award_terms):
+                findings.append("✅ Awards/recognition mentioned")
+                points += 2
                 
-        score.score = 5  # Middle score
+        recommendations.append("Claim listings on Avvo, FindLaw, Justia, Lawyers.com")
+        recommendations.append("Ensure NAP consistency across all directories")
+        
+        score.score = min(points, 10)
         score.findings = findings
-        score.recommendations = recommendations
+        score.recommendations = recommendations[:3]
         return score
         
     def check_reviews(self) -> CategoryScore:
@@ -1078,29 +1171,190 @@ class WebsiteAnalyzer:
         score = CategoryScore(name="Local Link Building")
         findings = []
         recommendations = []
-        
-        # This requires backlink analysis tools
-        findings.append("ℹ️ Backlink analysis requires external tools (Ahrefs, Moz)")
+        points = 0
         
         if self.soup:
-            # Check for partnership/sponsor mentions
             text = self.soup.get_text().lower()
-            if 'partner' in text or 'sponsor' in text or 'affiliate' in text:
-                findings.append("✅ Partnership/sponsor mentions found")
+            
+            # Check for partnership/sponsor mentions
+            if 'partner' in text or 'sponsor' in text:
+                findings.append("✅ Partnership/sponsorship mentions found")
+                points += 3
                 
-        recommendations.append("Get links from local news sites")
+            # Check for affiliate/association memberships
+            assoc_terms = ['bar association', 'member of', 'association', 'chamber of commerce', 'affiliated']
+            if any(a in text for a in assoc_terms):
+                findings.append("✅ Professional associations mentioned")
+                points += 3
+                
+            # Check for news/press mentions
+            press_terms = ['featured in', 'as seen on', 'news', 'press', 'media coverage']
+            if any(p in text for p in press_terms):
+                findings.append("✅ Press/media coverage mentioned")
+                points += 2
+                
+            # Check for local event involvement
+            event_terms = ['event', 'seminar', 'workshop', 'webinar', 'speaking']
+            if any(e in text for e in event_terms):
+                findings.append("✅ Events/speaking engagements mentioned")
+                points += 2
+                
+        if points == 0:
+            findings.append("⚠️ No link-building signals found on site")
+            
+        findings.append("💡 Full backlink audit requires tools like Ahrefs or DataForSEO Backlinks API")
+        recommendations.append("Get featured in local news and legal publications")
         recommendations.append("Sponsor local events for backlinks")
-        recommendations.append("Partner with complementary businesses")
-        recommendations.append("Submit to local business associations")
-        recommendations.append("Create linkable local resources (guides, statistics)")
+        recommendations.append("Join and get listed by bar associations")
         
         score.score = 5  # Middle score
         score.findings = findings
         score.recommendations = recommendations
         return score
+    
+    # ============ DATAFORSEO-POWERED CHECKS ============
+    
+    def check_serp_rankings(self, keywords: List[str] = None) -> CategoryScore:
+        """Check actual Google SERP rankings using DataForSEO API"""
+        score = CategoryScore(name="SERP Rankings (Live)")
+        findings = []
+        recommendations = []
+        points = 0
+        
+        if not DATAFORSEO_AVAILABLE:
+            findings.append("⚠️ DataForSEO client not available")
+            score.score = 5
+            score.findings = findings
+            return score
+            
+        try:
+            client = DataForSEOClient()
+            
+            # Generate keywords if not provided
+            if not keywords:
+                # Try to detect business type from page content
+                business_type = "personal injury lawyer"  # Default
+                if self.soup:
+                    text = self.soup.get_text().lower()
+                    if "car accident" in text:
+                        business_type = "car accident lawyer"
+                    elif "truck accident" in text:
+                        business_type = "truck accident lawyer"
+                    elif "medical malpractice" in text:
+                        business_type = "medical malpractice lawyer"
+                        
+                # Try to detect city
+                city = None
+                if self.soup:
+                    # Look for city in schema or content
+                    text = self.soup.get_text()
+                    # Common Texas cities for MVA
+                    cities = ["Houston", "Dallas", "Austin", "San Antonio", "Fort Worth"]
+                    for c in cities:
+                        if c.lower() in text.lower():
+                            city = c
+                            break
+                            
+                keywords = client.generate_local_keywords(business_type, city)
+            
+            # Check rankings
+            results = client.check_serp_rankings(self.domain, keywords[:5])
+            
+            findings.append(f"📊 Checked {results['keywords_checked']} keywords (live Google data)")
+            
+            if results['rankings_found'] > 0:
+                findings.append(f"✅ Found {results['rankings_found']} ranking(s)")
+                if results['top_3_count'] > 0:
+                    findings.append(f"🏆 {results['top_3_count']} keyword(s) in top 3!")
+                    points += results['top_3_count'] * 3
+                if results['top_10_count'] > 0:
+                    findings.append(f"✅ {results['top_10_count']} keyword(s) in top 10")
+                    points += results['top_10_count'] * 2
+                if results['top_20_count'] > 0:
+                    findings.append(f"⚠️ {results['top_20_count'] - results['top_10_count']} keyword(s) in positions 11-20")
+                    points += 1
+                    
+                # Show specific rankings
+                for r in results['rankings'][:3]:
+                    findings.append(f"  #{r['position']} for '{r['keyword']}'")
+            else:
+                findings.append("❌ No rankings found for target keywords")
+                recommendations.append("Focus on ranking for your primary keywords")
+                recommendations.append("Build more backlinks and optimize content")
+                
+            if results.get('cost'):
+                findings.append(f"💰 API cost: ${results['cost']:.4f}")
+                
+        except Exception as e:
+            findings.append(f"⚠️ Could not fetch SERP data: {str(e)[:50]}")
+            points = 5  # Neutral score on error
+            
+        score.score = min(points, 10)
+        score.findings = findings
+        score.recommendations = recommendations
+        return score
+    
+    def check_competitors(self, keyword: str = None) -> CategoryScore:
+        """Analyze top competitors for primary keyword"""
+        score = CategoryScore(name="Competitor Analysis")
+        findings = []
+        recommendations = []
+        points = 5  # Neutral starting point
+        
+        if not DATAFORSEO_AVAILABLE:
+            findings.append("⚠️ DataForSEO client not available")
+            score.score = 5
+            score.findings = findings
+            return score
+            
+        try:
+            client = DataForSEOClient()
+            
+            # Default keyword if not provided
+            if not keyword:
+                keyword = "personal injury lawyer"
+                if self.soup:
+                    text = self.soup.get_text().lower()
+                    # Try to detect city
+                    cities = ["houston", "dallas", "austin", "san antonio"]
+                    for city in cities:
+                        if city in text:
+                            keyword = f"personal injury lawyer {city}"
+                            break
+            
+            competitors = client.get_serp_competitors(keyword)
+            
+            if competitors:
+                findings.append(f"📊 Top 5 competitors for '{keyword}':")
+                for c in competitors[:5]:
+                    findings.append(f"  #{c['position']}: {c['domain']}")
+                    
+                # Check if target domain is in top 10
+                is_ranking = any(self.domain in c['domain'] for c in competitors)
+                if is_ranking:
+                    findings.append(f"✅ {self.domain} is ranking in top 10!")
+                    points = 8
+                else:
+                    findings.append(f"❌ {self.domain} not in top 10")
+                    recommendations.append("Analyze top competitors' content and backlinks")
+                    recommendations.append("Create better, more comprehensive content")
+                    points = 3
+                    
+        except Exception as e:
+            findings.append(f"⚠️ Could not fetch competitor data")
+            
+        score.score = min(points, 10)
+        score.findings = findings
+        score.recommendations = recommendations
+        return score
 
-    def run_full_audit(self) -> AuditResult:
-        """Run complete audit across all 20 categories"""
+    def run_full_audit(self, include_serp_check: bool = True) -> AuditResult:
+        """Run complete audit across all 20 categories
+        
+        Args:
+            include_serp_check: If True, includes live Google SERP ranking check via DataForSEO
+                               (adds ~$0.01 to API costs but gives real ranking data)
+        """
         result = AuditResult(url=self.url)
         
         # Fetch the page
@@ -1129,7 +1383,7 @@ class WebsiteAnalyzer:
         ]
         
         # Local SEO Checks (10 categories)
-        result.local_categories = [
+        local_checks = [
             self.check_gbp_basics(),
             self.check_gbp_optimization(),
             self.check_gbp_engagement(),
@@ -1142,34 +1396,58 @@ class WebsiteAnalyzer:
             self.check_local_links(),
         ]
         
+        # Add live SERP check if enabled and DataForSEO is available
+        if include_serp_check and DATAFORSEO_AVAILABLE:
+            serp_check = self.check_serp_rankings()
+            local_checks.append(serp_check)
+            
+        result.local_categories = local_checks
+        
         # Calculate scores
         result.ai_visibility_score = sum(c.score for c in result.ai_categories)
         result.local_seo_score = sum(c.score for c in result.local_categories)
         result.total_score = result.ai_visibility_score + result.local_seo_score
         
-        # Identify quick wins (high impact, low effort)
-        all_recommendations = []
+        # Quick wins: Top recommendations from ALL categories, prioritized by impact
+        # Focus on diverse, actionable items (not just from lowest scores)
+        all_recs = []
         for cat in result.ai_categories + result.local_categories:
-            for rec in cat.recommendations:
-                all_recommendations.append((cat.name, rec))
-                
-        # Quick wins are usually the first recommendations from low-scoring categories
-        low_score_cats = sorted(
-            result.ai_categories + result.local_categories,
-            key=lambda c: c.score
-        )[:5]
+            if cat.recommendations and cat.max_score > 0:  # Skip informational categories
+                # Weight by potential improvement (10 - current score)
+                potential = cat.max_score - cat.score
+                all_recs.append((potential, cat.name, cat.recommendations[0]))
         
+        # Sort by potential improvement, take top unique categories
+        all_recs.sort(key=lambda x: x[0], reverse=True)
+        seen_cats = set()
         result.quick_wins = []
-        for cat in low_score_cats:
-            if cat.recommendations:
-                result.quick_wins.append(f"{cat.name}: {cat.recommendations[0]}")
+        for potential, cat_name, rec in all_recs:
+            if cat_name not in seen_cats:
+                result.quick_wins.append(rec)  # Just the recommendation, no category prefix
+                seen_cats.add(cat_name)
+            if len(result.quick_wins) >= 6:
+                break
                 
-        # Priority fixes (categories scoring below 5)
-        result.priority_fixes = [
-            f"{cat.name} ({cat.score}/10)"
-            for cat in result.ai_categories + result.local_categories
-            if cat.score < 5
+        # Priority fixes: Categories scoring below 50% (5/10)
+        # Show what's broken, not what to do (that's in quick wins)
+        priority_cats = [
+            cat for cat in result.ai_categories + result.local_categories
+            if cat.score < 5 and cat.max_score > 0
         ]
+        priority_cats.sort(key=lambda c: c.score)
+        
+        result.priority_fixes = []
+        for cat in priority_cats[:8]:
+            # Show score and main issue
+            main_issue = ""
+            for f in cat.findings:
+                if f.startswith("❌") or f.startswith("⚠️"):
+                    main_issue = f.replace("❌ ", "").replace("⚠️ ", "")
+                    break
+            if main_issue:
+                result.priority_fixes.append(f"{cat.name}: {main_issue}")
+            else:
+                result.priority_fixes.append(f"{cat.name} ({cat.score}/{cat.max_score})")
         
         return result
 
