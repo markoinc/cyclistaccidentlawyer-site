@@ -2,32 +2,69 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { caseTypes } from '../../data/caseTypes';
 
-const title = "Pedestrian Accident Case Types";
-const description = "Learn about different types of pedestrian accident cases including crosswalk accidents, hit-and-run, parking lot crashes, and more.";
+const title = "Types of Bicycle Accident Cases";
+const description = "Learn about different types of bicycle accidents including dooring, right-hook, left-cross, and road hazard crashes. Find legal help for your case.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Case Types", url: "/case-types" }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
     <div class="container-wide">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Pedestrian Accident Case Types</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">
-        We handle all types of pedestrian accident cases. Learn about specific accident types and what compensation you may deserve.
-      </p>
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Types of Bicycle Accident Cases
+        </h1>
+        <p class="text-xl text-gray-300">
+          Understanding the type of accident you experienced is crucial for your case. Our attorneys have experience with all types of bicycle crashes.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-16 md:py-20">
     <div class="container-wide">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {caseTypes.map(caseType => (
-          <a href={`/case-types/${caseType.slug}`} class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition group">
-            <div class="text-4xl mb-4">{caseType.icon}</div>
-            <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition">{caseType.name}</h2>
-            <p class="text-gray-600 mt-2 text-sm">{caseType.shortDescription}</p>
-            <div class="mt-4 text-sm text-primary-600 font-semibold">Average: {caseType.averageSettlement}</div>
+          <a 
+            href={`/case-types/${caseType.slug}`}
+            class="bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-lg hover:border-primary-500 transition group"
+          >
+            <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition">
+              {caseType.name}
+            </h2>
+            <p class="text-gray-600 mb-4">
+              {caseType.shortDescription}
+            </p>
+            <div class="text-sm text-gray-500">
+              Average Settlement: <span class="font-semibold text-gray-700">{caseType.averageSettlement}</span>
+            </div>
+            <div class="mt-4 text-primary-600 font-medium flex items-center gap-2">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="bg-primary-600 py-12">
+    <div class="container-wide text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+        Not Sure What Type of Accident You Had?
+      </h2>
+      <p class="text-primary-100 mb-6 max-w-2xl mx-auto">
+        Our attorneys can help determine the best approach for your case. Get a free consultation.
+      </p>
+      <a href="/free-consultation" class="btn bg-white hover:bg-gray-100 text-primary-600 font-bold text-lg px-8 py-4">
+        Get Free Case Review
+      </a>
     </div>
   </section>
 </BaseLayout>

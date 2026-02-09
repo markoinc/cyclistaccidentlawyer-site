@@ -2,89 +2,157 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { states } from '../data/states';
 
-const title = "Free Consultation - Pedestrian Accident Lawyer";
-const description = "Get a free pedestrian accident case evaluation. No fees unless you win. Experienced attorneys available 24/7 nationwide.";
+const title = "Free Bicycle Accident Case Review";
+const description = "Get a free case evaluation from experienced bicycle accident attorneys. No fees unless you win. Available 24/7 nationwide.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Free Consultation", url: "/free-consultation" }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
-    <div class="container-wide text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Free Case Evaluation</h1>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        Find out what your pedestrian accident case is worth. No fees unless you win.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-12">
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
     <div class="container-wide">
-      <div class="max-w-2xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-xl p-8">
-          <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-6">
-            <input type="hidden" name="source" value="pedestrianaccidentlawyer-free-consultation" />
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+            Free Bicycle Accident Case Review
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            Injured in a bicycle accident? Find out what your case is worth. Our experienced attorneys are ready to help—at no cost to you unless we win.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-lg">100% Free Consultation</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-lg">No Fees Unless You Win</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-lg">Attorneys Available 24/7</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-lg">Nationwide Coverage</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Form -->
+        <div id="free-case-review" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Start Your Free Evaluation</h2>
+            <p class="text-gray-600">Takes less than 2 minutes</p>
+          </div>
+          
+          <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
+            <input type="hidden" name="source" value="cyclistaccidentlawyer-free-consultation" />
             
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
-                <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" required />
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
-                <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" required />
               </div>
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" required />
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" required />
             </div>
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">State Where Accident Occurred *</label>
-              <select name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required>
+              <select name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" required>
                 <option value="">Select State</option>
-                {states.map(state => <option value={state.slug}>{state.name}</option>)}
+                {states.map(state => (
+                  <option value={state.slug}>{state.name}</option>
+                ))}
               </select>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">When Did the Accident Occur?</label>
-              <select name="accidentTime" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                <option value="">Select timeframe</option>
-                <option value="within-week">Within the last week</option>
-                <option value="within-month">Within the last month</option>
-                <option value="within-6months">Within the last 6 months</option>
-                <option value="within-year">Within the last year</option>
-                <option value="over-year">Over a year ago</option>
+              <label class="block text-sm font-medium text-gray-700 mb-1">What Type of Accident?</label>
+              <select name="accidentType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500">
+                <option value="">Select Type</option>
+                <option value="dooring">Dooring (car door opened into me)</option>
+                <option value="right-hook">Right-Hook (vehicle turned right into me)</option>
+                <option value="left-cross">Left-Cross (vehicle turned left into me)</option>
+                <option value="rear-end">Rear-End (hit from behind)</option>
+                <option value="hit-and-run">Hit-and-Run</option>
+                <option value="intersection">Intersection Crash</option>
+                <option value="road-hazard">Road Hazard (pothole, grate, etc.)</option>
+                <option value="other">Other</option>
               </select>
             </div>
             
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Describe Your Accident</label>
-              <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none" placeholder="What happened? Where were you? What injuries did you sustain?"></textarea>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Describe What Happened</label>
+              <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 resize-none" placeholder="Please describe your bicycle accident and injuries..."></textarea>
             </div>
             
-            <button type="submit" class="w-full btn btn-cta text-xl py-5">
-              Get My Free Evaluation →
+            <button type="submit" class="w-full btn btn-cta text-lg py-4">
+              Get My Free Case Review
             </button>
-            
-            <p class="text-center text-sm text-gray-500">
-              🔒 Your information is confidential and protected. By submitting, you agree to our Privacy Policy.
-            </p>
           </form>
-        </div>
-
-        <div class="mt-8 text-center">
-          <p class="text-gray-600 mb-4">Prefer to talk to someone?</p>
-          <a href="tel:1-800-555-0123" class="text-2xl font-bold text-primary-600 hover:text-primary-700">Call 1-800-555-0123</a>
-          <p class="text-gray-500 mt-2">Available 24 hours a day, 7 days a week</p>
+          
+          <p class="text-xs text-gray-500 text-center mt-4">
+            🔒 Your information is 100% confidential. By submitting, you agree to our Privacy Policy.
+          </p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">What Happens Next?</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-600">1</div>
+          <h3 class="font-bold text-gray-900 mb-2">We Review Your Case</h3>
+          <p class="text-gray-600">Our team reviews your information and identifies the best attorney for your situation.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-600">2</div>
+          <h3 class="font-bold text-gray-900 mb-2">Free Attorney Consultation</h3>
+          <p class="text-gray-600">An experienced bicycle accident attorney contacts you to discuss your case and options.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary-600">3</div>
+          <h3 class="font-bold text-gray-900 mb-2">We Fight for You</h3>
+          <p class="text-gray-600">If you have a case, your attorney handles everything while you focus on recovery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-16">
+    <div class="container-wide text-center">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Prefer to Call?</h2>
+      <p class="text-gray-600 mb-6">Speak with someone right now—we're available 24/7.</p>
+      </div>
   </section>
 </BaseLayout>

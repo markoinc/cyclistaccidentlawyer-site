@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { cities, getCityBySlug, getCitiesByState, type CityData } from '../../data/cities';
+import { cities, getCitiesByState, type CityData } from '../../data/cities';
 import { states } from '../../data/states';
 
 export function getStaticPaths() {
@@ -16,21 +16,22 @@ interface Props {
 
 const { cityData } = Astro.props;
 
-const stateSlug = cityData.state.toLowerCase().replace(/\s+/g, '-');
+const stateSlug = cityData.stateSlug || cityData.state.toLowerCase().replace(/\s+/g, '-');
 const stateData = states.find(s => s.slug === stateSlug);
+const stateAbbr = stateData?.abbreviation || cityData.state.substring(0, 2).toUpperCase();
 
-const fullTitle = `${cityData.name}, ${cityData.stateAbbr} Pedestrian Accident Lawyer`;
+const fullTitle = `${cityData.name}, ${stateAbbr} Bicycle Accident Lawyer`;
 const title = fullTitle.length > 60 ? fullTitle.substring(0, 57) + '...' : fullTitle;
-const description = `Hit by a car in ${cityData.name}? Get a free case evaluation. ${cityData.annualPedestrianCrashes} crashes annually. Walkability: ${cityData.walkabilityScore}.`;
+const description = `Injured in a cycling accident in ${cityData.name}? Get a free case evaluation. ${cityData.annualCyclistDeaths} cyclist deaths annually. Bike Score: ${cityData.bikeScore}/100.`;
 
 const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": `${cityData.name} Pedestrian Accident Lawyers`,
+  "name": `${cityData.name} Bicycle Accident Lawyers`,
   "description": description,
-  "url": `https://pedestrianaccidentlawyer.net/cities/${cityData.slug}`,
+  "url": `https://cyclistaccidentlawyer.com/cities/${cityData.slug}`,
   "areaServed": { "@type": "City", "name": cityData.name },
-  "serviceType": ["Pedestrian Accident Law", "Personal Injury Law"],
+  "serviceType": ["Bicycle Accident Law", "Personal Injury Law"],
   "priceRange": "Free Consultation"
 };
 
@@ -40,14 +41,16 @@ const breadcrumbs = [
   { name: cityData.name, url: `/cities/${cityData.slug}` }
 ];
 
-const stateCities = getCitiesByState(cityData.stateAbbr).filter(c => c.slug !== cityData.slug).slice(0, 5);
+const stateCities = getCitiesByState(stateSlug).filter(c => c.slug !== cityData.slug).slice(0, 5);
 
-const trafficColors = {
+// Determine risk level based on bike score (lower = more dangerous)
+const bikeScoreRisk = cityData.bikeScore < 40 ? 'high' : cityData.bikeScore < 60 ? 'moderate' : 'low';
+const riskColors = {
   high: { bg: "bg-red-100", text: "text-red-800", label: "High Risk Zone" },
   moderate: { bg: "bg-yellow-100", text: "text-yellow-800", label: "Moderate Risk" },
   low: { bg: "bg-green-100", text: "text-green-800", label: "Lower Risk" }
 };
-const trafficStyle = trafficColors[cityData.trafficDensity];
+const riskStyle = riskColors[bikeScoreRisk];
 ---
 
 <BaseLayout title={title} description={description} schemaMarkup={schemaMarkup} breadcrumbs={breadcrumbs}>
@@ -63,17 +66,17 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
         </div>
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-          {cityData.name}, {cityData.stateAbbr} Pedestrian Accident Lawyer
+          {cityData.name}, {stateAbbr} Bicycle Accident Lawyer
         </h1>
         
         <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Hit by a car in {cityData.name}? With <strong class="text-primary-400">{cityData.annualPedestrianCrashes}</strong> pedestrian crashes annually, you need legal representation that understands the unique challenges walkers face.
+          Injured while cycling in {cityData.name}? With <strong class="text-primary-400">{cityData.annualCyclistDeaths}</strong> cyclist deaths annually, you need legal representation that understands the unique challenges cyclists face.
         </p>
 
         <div class="flex flex-wrap gap-4 mb-8">
-          <span class={`${trafficStyle.bg} ${trafficStyle.text} px-4 py-2 rounded-full font-semibold`}>🚦 {trafficStyle.label}</span>
+          <span class={`${riskStyle.bg} ${riskStyle.text} px-4 py-2 rounded-full font-semibold`}>🚦 {riskStyle.label}</span>
           <span class="bg-gray-700 text-white px-4 py-2 rounded-full">📊 Population: {cityData.population}</span>
-          <span class="bg-primary-600 text-white px-4 py-2 rounded-full">🚶 {cityData.walkabilityScore}</span>
+          <span class="bg-primary-600 text-white px-4 py-2 rounded-full">🚴 Bike Score: {cityData.bikeScore}/100</span>
         </div>
         
         <div id="free-case-review" class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -81,7 +84,7 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
           <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
             <input type="hidden" name="city" value={cityData.name} />
             <input type="hidden" name="state" value={cityData.state} />
-            <input type="hidden" name="source" value={`pedestrianaccidentlawyer.net/cities/${cityData.slug}`} />
+            <input type="hidden" name="source" value={`cyclistaccidentlawyer.com/cities/${cityData.slug}`} />
             
             <div class="grid md:grid-cols-2 gap-4">
               <input type="text" name="name" placeholder="Your Name *" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-gray-400" />
@@ -101,8 +104,8 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
 
   <section class="py-16 bg-gray-100">
     <div class="container-wide">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">⚠️ Most Dangerous Intersections in {cityData.name}</h2>
-      <p class="text-lg text-gray-600 mb-8">These locations see the highest concentration of pedestrian accidents. Extra caution is advised.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">⚠️ Most Dangerous Areas for Cyclists in {cityData.name}</h2>
+      <p class="text-lg text-gray-600 mb-8">These intersections and routes see the highest concentration of cycling accidents. Extra caution is advised.</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cityData.dangerousIntersections.map((intersection, index) => (
           <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-500">
@@ -121,23 +124,26 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
 
   <section class="py-16 bg-white">
     <div class="container-wide">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">🚶 Pedestrian Infrastructure in {cityData.name}</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">🚴 Cycling Infrastructure in {cityData.name}</h2>
+      <div class="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 border border-primary-200 mb-6">
+        <p class="text-gray-800">{cityData.bikeInfrastructure}</p>
+      </div>
       <div class="grid md:grid-cols-2 gap-6">
-        {cityData.pedestrianInfrastructure.map((item) => (
-          <div class="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-6 border border-primary-200">
-            <div class="flex items-center gap-3">
-              <span class="text-2xl">✓</span>
-              <h3 class="font-semibold text-gray-900 text-lg">{item}</h3>
-            </div>
-          </div>
-        ))}
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
+          <h3 class="font-bold text-gray-900 mb-3">🛡️ Protected Lanes</h3>
+          <p class="text-gray-700">{cityData.protectedLanes}</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
+          <h3 class="font-bold text-gray-900 mb-3">🚲 Bike Share</h3>
+          <p class="text-gray-700">{cityData.bikeShareSystem}</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="py-16 bg-gray-900 text-white">
     <div class="container-wide">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8">📍 What Makes {cityData.name} Unique for Pedestrians</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">📍 What Makes {cityData.name} Unique for Cyclists</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cityData.uniqueFactors.map((factor) => (
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
@@ -148,11 +154,30 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
     </div>
   </section>
 
-  {stateData && (
-    <section class="py-16 bg-primary-50">
-      <div class="container-wide">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">⚖️ {cityData.state} Pedestrian Laws</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <section class="py-16 bg-white">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">⚠️ Common Accident Types in {cityData.name}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {cityData.commonAccidentTypes.map((accidentType) => (
+          <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500">⚠️</span>
+              <span class="font-medium text-gray-800">{accidentType}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary-50">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">⚖️ Local Cycling Laws</h2>
+      <div class="bg-white rounded-xl p-6 shadow-lg">
+        <p class="text-gray-800 text-lg">{cityData.localLaws}</p>
+      </div>
+      {stateData && (
+        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl p-6 shadow-lg">
             <h3 class="font-bold text-gray-900 mb-2">⏱️ Statute of Limitations</h3>
             <p class="text-3xl font-extrabold text-primary-500">{stateData.statuteOfLimitations}</p>
@@ -163,32 +188,30 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
             <p class="text-lg font-semibold text-gray-800">{stateData.faultSystem}</p>
           </div>
           <div class="bg-white rounded-xl p-6 shadow-lg">
-            <h3 class="font-bold text-gray-900 mb-2">🚶 Crosswalk Law</h3>
-            <p class="text-lg font-semibold text-gray-800 capitalize">{stateData.crosswalkLaw}</p>
-          </div>
-          <div class="bg-white rounded-xl p-6 shadow-lg">
-            <h3 class="font-bold text-gray-900 mb-2">📊 Death Rate</h3>
-            <p class="text-lg font-semibold text-gray-800">{stateData.pedestrianDeathRate}</p>
+            <h3 class="font-bold text-gray-900 mb-2">🚴 Passing Distance</h3>
+            <p class="text-lg font-semibold text-gray-800">{stateData.passingDistance || '3 feet minimum'}</p>
           </div>
         </div>
+      )}
+      {stateData && (
         <div class="mt-8 text-center">
           <a href={`/states/${stateSlug}`} class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold">
-            View full {cityData.state} pedestrian accident law guide →
+            View full {cityData.state} bicycle accident law guide →
           </a>
         </div>
-      </div>
-    </section>
-  )}
+      )}
+    </div>
+  </section>
 
   <section class="py-16 bg-white">
     <div class="container-wide">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">🏥 Major Trauma Centers in {cityData.name}</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">🛣️ Dangerous Routes in {cityData.name}</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {cityData.majorHospitals.map((hospital) => (
+        {cityData.dangerousRoutes.map((route) => (
           <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
             <div class="flex items-center gap-2">
-              <span class="text-red-500">🏥</span>
-              <span class="font-medium text-gray-800">{hospital}</span>
+              <span class="text-orange-500">🛣️</span>
+              <span class="font-medium text-gray-800">{route}</span>
             </div>
           </div>
         ))}
@@ -213,10 +236,10 @@ const trafficStyle = trafficColors[cityData.trafficDensity];
 
   <section class="py-16 bg-gradient-to-r from-primary-500 to-primary-600 text-white">
     <div class="container-wide text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Hit by a Car in {cityData.name}?</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Injured While Cycling in {cityData.name}?</h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Don't let insurance companies take advantage of you. Get the compensation you deserve.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:1-800-555-0123" class="bg-white text-primary-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition">📞 Call Now: 1-800-555-0123</a>
+        
         <a href="#free-case-review" class="bg-gray-900 text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-800 transition">Start Free Case Review</a>
       </div>
     </div>

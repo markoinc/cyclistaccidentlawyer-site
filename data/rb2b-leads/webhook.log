@@ -2173,3 +2173,142 @@
 2026-02-07 05:02:35,395 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
 2026-02-07 16:29:25,585 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
 2026-02-09 16:03:50,226 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 16:06:39,688 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:06:39,690 - INFO -   Normalized: Test Fixed @ Test PI Law
+2026-02-09 16:06:39,690 - INFO - 📍 New visitor: Test Fixed from Test PI Law
+2026-02-09 16:06:39,690 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:06:39,690 - INFO -   [Step 2/4] Brave search: 'Test PI Law personal injury law firm'
+2026-02-09 16:06:40,511 - INFO -   Brave search OK: 3 results for 'Test PI Law personal injury law firm'
+2026-02-09 16:06:40,511 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:06:40,511 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:06:44,020 - INFO -   Gemini raw: {"qualified": true, "confidence": 95, "reasons": ["The company name 'Test PI Law' and search results explicitly identify the firm as specializing in Personal Injury law.", "The individual holds the title of Partner, which is a senior decision-making position within a law firm."]}
+2026-02-09 16:06:44,020 - INFO -   Gemini OK: qualified=True, confidence=95
+2026-02-09 16:06:44,021 - INFO -    Qualification: qualified — ✅ Legal signals in Leadpipe data, ✅ Decision-maker title detected, 🔍 Brave: 3 results found
+2026-02-09 16:06:44,021 - INFO -    💰 BetterContact waterfall enrichment (qualified/review lead)
+2026-02-09 16:06:44,416 - INFO -    BetterContact: submitted (id: 2dcd9e7a9ec477f96714), polling...
+2026-02-09 16:06:59,467 - ERROR -    BetterContact error: HTTPSConnectionPool(host='app.bettercontact.rocks', port=443): Read timed out. (read timeout=10)
+2026-02-09 16:06:59,719 - INFO - Apollo enriched (name): email=, phone=
+2026-02-09 16:06:59,841 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:06:59,842 - INFO - 📬 Slack message posted: Test Fixed (qualified)
+2026-02-09 16:06:59,842 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:08:12,281 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:08:12,282 - INFO -   Normalized:   @ 
+2026-02-09 16:08:12,282 - INFO - 📍 New visitor:   from 
+2026-02-09 16:08:12,282 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:08:12,282 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:08:12,282 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:08:12,282 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:08:17,046 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided to evaluate practice areas", "No job title provided to determine decision-making authority", "Insufficient data to verify PI/MVA focus"]}
+2026-02-09 16:08:17,047 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:08:17,048 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:08:17,049 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:08:17,321 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:08:17,323 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:08:17,324 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:09:56,558 - INFO - HTTP: code 501, message Unsupported method ('HEAD')
+2026-02-09 16:09:56,558 - INFO - HTTP: "HEAD /health HTTP/1.1" 501 -
+2026-02-09 16:10:08,243 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-09 16:15:05,873 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 16:30:15,309 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:30:15,314 - INFO -   Normalized:   @ 
+2026-02-09 16:30:15,314 - INFO - 📍 New visitor:   from 
+2026-02-09 16:30:15,314 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:30:15,314 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:30:15,314 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:30:15,314 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:30:19,225 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided", "No person title provided", "Insufficient data to determine practice area or role"]}
+2026-02-09 16:30:19,226 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:30:19,226 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:30:19,226 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:30:19,398 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:30:19,398 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:30:19,399 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:30:19,400 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 16:30:33,405 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:30:33,406 - INFO -   Normalized:   @ 
+2026-02-09 16:30:33,406 - INFO - 📍 New visitor:   from 
+2026-02-09 16:30:33,406 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:30:33,406 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:30:33,406 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:30:33,406 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:30:39,497 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided", "No person's title provided", "Insufficient data to determine PI/MVA focus or decision-maker status"]}
+2026-02-09 16:30:39,498 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:30:39,498 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:30:39,498 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:30:39,635 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:30:39,635 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:30:39,637 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:30:51,298 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:30:51,299 - INFO -   Normalized:   @ 
+2026-02-09 16:30:51,299 - INFO - 📍 New visitor:   from 
+2026-02-09 16:30:51,299 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:30:51,299 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:30:51,299 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:30:51,299 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:30:57,133 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided", "No person title provided", "Insufficient data to determine if the company is a PI/MVA law firm", "Insufficient data to determine if the person is a decision-maker"]}
+2026-02-09 16:30:57,134 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:30:57,134 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:30:57,134 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:30:57,247 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:30:57,248 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:30:57,249 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:31:09,575 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:31:09,575 - INFO -   Normalized:   @ 
+2026-02-09 16:31:09,575 - INFO - 📍 New visitor:   from 
+2026-02-09 16:31:09,575 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:31:09,575 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:31:09,575 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:31:09,575 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:31:16,092 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["Company name is missing", "Person's title is missing", "Insufficient data to determine practice area or seniority"]}
+2026-02-09 16:31:16,092 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:31:16,092 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:31:16,092 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:31:16,197 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:31:16,197 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:31:16,198 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:32:05,413 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:32:05,414 - INFO -   Normalized:   @ 
+2026-02-09 16:32:05,414 - INFO - 📍 New visitor:   from 
+2026-02-09 16:32:05,414 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:32:05,414 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:32:05,414 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:32:05,414 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:32:13,062 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided", "No person title provided", "Insufficient data to determine practice area or role"]}
+2026-02-09 16:32:13,062 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:32:13,062 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:32:13,062 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:32:13,181 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:32:13,181 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:32:13,182 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:32:18,226 - INFO - HTTP: "GET /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:32:18,544 - INFO - HTTP: "GET /favicon.ico HTTP/1.1" 404 -
+2026-02-09 16:34:43,514 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:34:43,515 - INFO -   Normalized:   @ 
+2026-02-09 16:34:43,515 - INFO - 📍 New visitor:   from 
+2026-02-09 16:34:43,515 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:34:43,515 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:34:43,515 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:34:43,515 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:34:53,542 - WARNING -   Gemini failed: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Read timed out. (read timeout=10)
+2026-02-09 16:34:53,543 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:34:53,543 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:34:53,658 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:34:53,659 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:34:53,660 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:41:17,940 - INFO - 📨 Visitor webhook received on /rb2b/webhook
+2026-02-09 16:41:17,940 - INFO -   Normalized:   @ 
+2026-02-09 16:41:17,941 - INFO - 📍 New visitor:   from 
+2026-02-09 16:41:17,941 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-09 16:41:17,941 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-09 16:41:17,941 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-09 16:41:17,941 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-09 16:41:26,363 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name provided", "No person title provided", "Insufficient data to determine PI/MVA focus or decision-maker status"]}
+2026-02-09 16:41:26,363 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-09 16:41:26,363 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-09 16:41:26,363 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-09 16:41:26,475 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-09 16:41:26,475 - INFO - 📬 Slack message posted:   (disqualified)
+2026-02-09 16:41:26,476 - INFO - HTTP: "POST /rb2b/webhook HTTP/1.1" 200 -
+2026-02-09 16:45:05,824 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 16:45:05,847 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 17:01:59,087 - INFO - HTTP: "GET /health HTTP/1.1" 200 -

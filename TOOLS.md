@@ -3,11 +3,13 @@
 ## 🚨 CRITICAL: TOKEN DISCIPLINE (2026-02-09)
 **NEVER use tokens from memory.** Marko has rolled them 5+ times because I keep forgetting.
 
+**THE BIG OFFENDERS:** GitHub, Cloudflare, Notion — I've burned these multiple times.
+
 **BEFORE ANY API CALL:**
 ```bash
-cat ~/.config/github/credentials.json   # GitHub
-cat ~/.config/cloudflare/credentials.json   # Cloudflare
-cat ~/.config/notion/api_key   # Notion
+cat ~/.config/github/credentials.json   # GitHub - ALWAYS READ FIRST
+cat ~/.config/cloudflare/credentials.json   # Cloudflare - ALWAYS READ FIRST  
+cat ~/.config/notion/api_key   # Notion - ALWAYS READ FIRST
 ```
 Read the file. Use that value. Every. Single. Time.
 
@@ -213,6 +215,15 @@ Add whatever helps you do your job. This is your cheat sheet.
 - **Campaigns:** MVA Outreach Sequence, LinkedIn Messages, Mark's campaign
 - **Limitations:** Leads endpoint returns 403 (may need plan upgrade or API permission)
 - **Use for:** Campaign management, activity tracking, LinkedIn connection tracking
+
+## Meta Ads API (Kurios)
+- **Ad Account ID:** act_1940929156491998
+- **System User ID:** 122093100021269724
+- **Credentials:** `~/.config/meta-ads/credentials.json`
+- **API Version:** v21.0
+- **Permissions:** ads_read, ads_management
+- **Use for:** Campaign analysis, ad creation, performance tracking
+- **Added:** 2026-02-09
 
 ## Stripe API (KuriosBrand LLC)
 - **Account ID:** acct_1MYcAaCzRJgQ28gJ

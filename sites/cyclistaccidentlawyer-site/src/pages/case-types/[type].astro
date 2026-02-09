@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { caseTypes, type CaseTypeData } from '../../data/caseTypes';
+import { caseTypes, type CaseType } from '../../data/caseTypes';
 
 export function getStaticPaths() {
   return caseTypes.map((caseType) => ({
@@ -10,108 +10,147 @@ export function getStaticPaths() {
 }
 
 interface Props {
-  caseType: CaseTypeData;
+  caseType: CaseType;
 }
 
 const { caseType } = Astro.props;
 
-// Truncate title to fit within 60 chars after BaseLayout adds site suffix
-// BaseLayout adds " | Pedestrian Accident Lawyer" (29 chars) if site name not present
-const siteName = 'Pedestrian Accident Lawyer';
-const rawTitle = `${caseType.name} - Pedestrian Accident Claims`;
-const maxTitleLength = rawTitle.includes(siteName) ? 60 : 60 - 29; // Account for suffix
-const title = rawTitle.length > maxTitleLength ? rawTitle.substring(0, maxTitleLength - 3) + '...' : rawTitle;
-const description = caseType.shortDescription;
+const title = `${caseType.name} Lawyer - Free Consultation`;
+const description = caseType.shortDescription + " Get a free case evaluation from experienced bicycle accident attorneys.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Case Types", url: "/case-types" },
+  { name: caseType.name, url: `/case-types/${caseType.slug}` }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
     <div class="container-wide">
-      <div class="flex items-center gap-2 text-gray-400 mb-4">
-        <a href="/" class="hover:text-white">Home</a>
-        <span>/</span>
-        <a href="/case-types" class="hover:text-white">Case Types</a>
-        <span>/</span>
-        <span class="text-white">{caseType.name}</span>
+      <div class="max-w-3xl">
+        <span class="bg-primary-500/20 text-primary-300 px-3 py-1 rounded-full text-sm font-medium">
+          Bicycle Accident Case Type
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 mt-4">
+          {caseType.name}
+        </h1>
+        <p class="text-xl text-gray-300">
+          {caseType.description}
+        </p>
       </div>
-      <div class="text-6xl mb-4">{caseType.icon}</div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{caseType.name}</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">{caseType.shortDescription}</p>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-16">
     <div class="container-wide">
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-xl shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">About {caseType.name}</h2>
-            <p class="text-gray-600 text-lg leading-relaxed">{caseType.fullDescription}</p>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Common Injuries</h2>
-            <div class="grid md:grid-cols-2 gap-3">
-              {caseType.commonInjuries.map(injury => (
-                <div class="flex items-center gap-2 p-3 bg-red-50 rounded-lg">
-                  <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-12">
+          
+          <!-- Common Causes -->
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Common Causes</h2>
+            <ul class="space-y-3">
+              {caseType.commonCauses.map(cause => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-red-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                   </svg>
-                  <span class="text-gray-800">{injury}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl shadow-md p-8 mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Unique Factors in These Cases</h2>
-            <ul class="space-y-3">
-              {caseType.uniqueFactors.map(factor => (
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span class="text-gray-600">{factor}</span>
+                  <span class="text-gray-700">{cause}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div class="bg-white rounded-xl shadow-md p-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Evidence Needed</h2>
-            <div class="grid md:grid-cols-2 gap-3">
-              {caseType.proofRequired.map(proof => (
-                <div class="flex items-center gap-2 p-3 bg-primary-50 rounded-lg">
-                  <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          <!-- Typical Injuries -->
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Typical Injuries</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {caseType.typicalInjuries.map(injury => (
+                <div class="bg-gray-50 rounded-lg p-4 flex items-center gap-3">
+                  <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span class="text-gray-800">{proof}</span>
+                  <span class="text-gray-700">{injury}</span>
                 </div>
               ))}
             </div>
           </div>
+
+          <!-- Liability Factors -->
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Liability Factors</h2>
+            <p class="text-gray-600 mb-4">
+              When building your case, attorneys will consider these key factors:
+            </p>
+            <ul class="space-y-3">
+              {caseType.liabilityFactors.map(factor => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-gray-700">{factor}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Key Legal Points -->
+          <div class="bg-primary-50 border border-primary-100 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Key Legal Points</h2>
+            <ul class="space-y-4">
+              {caseType.keyLegalPoints.map(point => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-gray-700">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
 
+        <!-- Sidebar -->
         <div class="lg:col-span-1">
-          <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl shadow-lg p-8 sticky top-24">
-            <div class="text-center text-white mb-6">
-              <div class="text-3xl font-bold">{caseType.averageSettlement}</div>
-              <div class="text-primary-100">Average Settlement Range</div>
+          <div class="sticky top-24 space-y-6">
+            <!-- Settlement Range -->
+            <div class="bg-gray-100 rounded-xl p-6">
+              <h3 class="font-bold text-gray-900 mb-2">Average Settlement Range</h3>
+              <p class="text-2xl font-bold text-primary-600">{caseType.averageSettlement}</p>
+              <p class="text-sm text-gray-500 mt-2">Actual values depend on injury severity and case specifics</p>
             </div>
-            
-            <h3 class="text-xl font-bold text-white mb-4">Free Case Evaluation</h3>
-            <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
-              <input type="hidden" name="caseType" value={caseType.slug} />
-              <input type="hidden" name="source" value={`pedestrianaccidentlawyer-casetype-${caseType.slug}`} />
-              <input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <input type="email" name="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <textarea name="description" placeholder="Describe your accident..." rows="3" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900 resize-none"></textarea>
-              <button type="submit" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-6 rounded-lg transition">
-                Get My Free Evaluation
-              </button>
-            </form>
-            <p class="text-primary-100 text-sm text-center mt-4">No fees unless you win</p>
+
+            <!-- CTA Form -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Free Case Review</h3>
+              
+              <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
+                <input type="hidden" name="source" value={`cyclistaccidentlawyer-${caseType.slug}`} />
+                <input type="hidden" name="caseType" value={caseType.slug} />
+                
+                <input type="text" name="firstName" placeholder="First Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <input type="text" name="lastName" placeholder="Last Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <input type="tel" name="phone" placeholder="Phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <input type="email" name="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required />
+                <textarea name="description" placeholder="Describe your accident..." rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none"></textarea>
+                
+                <button type="submit" class="w-full btn btn-cta py-4">
+                  Get Free Evaluation
+                </button>
+              </form>
+              
+              <p class="text-xs text-gray-500 text-center mt-4">
+                🔒 Confidential • No fees unless you win
+              </p>
+            </div>
+
+            <!-- Call CTA -->
+            <div class="bg-gray-900 text-white rounded-xl p-6 text-center">
+              <p class="mb-3">Speak to an attorney now</p>
+              <p class="text-sm text-gray-400 mt-2">Available 24/7</p>
+            </div>
           </div>
         </div>
       </div>

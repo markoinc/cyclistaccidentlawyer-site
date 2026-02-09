@@ -1,1849 +1,1414 @@
-// Resources data for pedestrian accident law site
-
-export interface ResourceData {
+// Resources for bicycle accident law
+export interface Resource {
   title: string;
   slug: string;
+  category: string;
   description: string;
-  category: "guide" | "checklist" | "legal" | "safety";
-  icon: string;
   content: string;
-  keyTakeaways: string[];
-  relatedTopics: string[];
 }
 
-export const resources: ResourceData[] = [
+export const resources: Resource[] = [
+  // SAFETY RESOURCES
   {
-    title: "Pedestrian Accident Checklist",
-    slug: "pedestrian-accident-checklist",
-    description: "A step-by-step checklist of what to do immediately after being hit as a pedestrian to protect your health and legal rights.",
-    category: "checklist",
-    icon: "✅",
-    content: `
-## Immediate Actions (At the Scene)
+    title: "Bicycle Safety Checklist",
+    slug: "bicycle-safety-checklist",
+    category: "Safety",
+    description: "Essential safety checks and equipment for every cyclist to reduce accident risk.",
+    content: `## Pre-Ride Safety Checks
 
-### 1. Safety First
-- Stay where you are if seriously injured - don't try to move
-- If able to move, get to a safe location away from traffic
-- Call 911 immediately
-- Accept medical attention even if injuries seem minor
+### Bicycle Condition
+- [ ] Tires properly inflated
+- [ ] Brakes working on both wheels
+- [ ] Chain clean and lubricated
+- [ ] All bolts tight (handlebars, seat, wheels)
+- [ ] Quick releases secure
+- [ ] Lights and reflectors in place
 
-### 2. Document Everything
-- Take photos of the scene from multiple angles
-- Photograph the vehicle that hit you, including license plate
-- Capture traffic signals, crosswalks, signs, and road conditions
-- Take photos of your injuries and any damage to personal items
+### Personal Equipment
+- [ ] Properly fitted helmet
+- [ ] Bright or reflective clothing
+- [ ] Front white light
+- [ ] Rear red light
+- [ ] Eye protection
+- [ ] Appropriate footwear
 
-### 3. Gather Information
-- Get the driver's license, insurance, and contact information
-- Collect names and phone numbers of all witnesses
-- Note the exact location (intersection, address, landmarks)
-- Record the time of the accident
+### Route Planning
+- [ ] Know your route
+- [ ] Check weather conditions
+- [ ] Identify high-risk areas
+- [ ] Plan for darkness if applicable
+- [ ] Share your route with someone
 
-### 4. What NOT to Do
-- Don't apologize or admit any fault
-- Don't give statements to the driver's insurance
-- Don't sign anything at the scene
-- Don't refuse medical attention
-- Don't leave the scene before police arrive
+## The ABC Quick Check
 
-## Within 24-48 Hours
+**A - Air:** Check tire pressure before every ride
+**B - Brakes:** Squeeze both brake levers to ensure they engage
+**C - Chain:** Ensure chain is clean and runs smoothly
 
-### Medical Care
-- Get a complete medical examination (ER if needed)
-- Follow all treatment recommendations
-- Tell doctors all symptoms, no matter how minor
-- Keep all medical records and bills
+## Visibility Equipment
 
-### Legal Protection
-- Contact a pedestrian accident attorney
-- Don't give recorded statements to any insurance company
-- Request a copy of the police report
-- Continue documenting your injuries daily
+### Daytime
+- Bright colors (fluorescent yellow, orange, or green)
+- Reflective accents on clothing
+- Consider daytime running lights
 
-### Documentation
-- Write down everything you remember while fresh
-- Continue photographing your injuries as they develop
-- Keep a recovery journal noting pain levels
-- Save all receipts related to the accident
-`,
-    keyTakeaways: [
-      "Call 911 and get medical attention immediately",
-      "Document everything with photos and notes",
-      "Never admit fault or apologize",
-      "Contact an attorney before talking to insurance",
-      "Get medical care even if you feel 'fine'"
-    ],
-    relatedTopics: ["what-to-do-after-hit", "evidence-preservation", "dealing-with-insurance"]
+### Nighttime
+- Required: Front white light, rear red light
+- Recommended: Additional side visibility
+- Reflective clothing and accessories
+- Wheel and pedal reflectors
+
+## Defensive Cycling Techniques
+
+1. **Ride predictably** - Maintain a steady line
+2. **Be visible** - Use lights and bright clothing
+3. **Communicate** - Use hand signals
+4. **Stay alert** - Watch for hazards
+5. **Assume invisibility** - Don't assume drivers see you
+
+## What to Carry
+
+- Identification
+- Phone
+- Emergency contact information
+- Basic tools
+- Flat repair kit
+- Water
+- Insurance information`
   },
   {
-    title: "What to Do After Being Hit by a Car",
-    slug: "what-to-do-after-hit",
-    description: "Comprehensive guide on the immediate steps to take after being hit by a car as a pedestrian.",
-    category: "guide",
-    icon: "🚨",
-    content: `
-## The First Minutes After Being Hit
-
-The moments after being struck by a vehicle are critical for both your health and any future legal claim. Here's what you need to know.
-
-### Step 1: Stay Calm and Assess
-
-If you're conscious after being hit:
-- Don't try to get up immediately
-- Check yourself for obvious injuries
-- Be aware that adrenaline may mask serious injuries
-- Wait for emergency responders if seriously hurt
-
-**Warning:** Many pedestrian accident victims have walked around with broken bones, internal bleeding, or head injuries they couldn't feel due to shock.
-
-### Step 2: Get to Safety (If Possible)
-
-If you can safely move:
-- Get to the sidewalk or out of traffic
-- Don't try to chase the vehicle if they flee
-- Find a safe spot to wait for help
-
-### Step 3: Call 911
-
-Always call police, even for "minor" accidents:
-- Creates official documentation
-- EMTs can identify hidden injuries
-- Police report crucial for insurance claims
-- Driver cannot later deny the accident
-
-### Step 4: Gather Evidence
-
-If physically able:
-- Photograph everything at the scene
-- Get the driver's information
-- Ask witnesses to stay or get their contact info
-- Note traffic signals, weather, lighting
-
-### Step 5: Seek Medical Attention
-
-Even if you feel okay:
-- Adrenaline masks pain
-- Internal injuries may not be immediately apparent
-- Head injuries often have delayed symptoms
-- Medical records link injuries to accident
-
-## Days After the Accident
-
-### Follow Up With Doctors
-- See your primary care physician within 48 hours
-- Follow all recommended treatments
-- Don't skip appointments
-
-### Protect Your Rights
-- Don't give statements to the other driver's insurance
-- Contact a pedestrian accident attorney
-- Keep a daily journal of your recovery
-- Save every receipt and document
-
-### Avoid These Mistakes
-- Posting about the accident on social media
-- Accepting quick settlement offers
-- Signing medical authorization forms from insurance
-- Missing medical appointments
-`,
-    keyTakeaways: [
-      "Stay calm and don't move if seriously injured",
-      "Always call 911 and wait for police",
-      "Get medical attention even if you feel fine",
-      "Document everything you can at the scene",
-      "Don't give statements to the other driver's insurance"
-    ],
-    relatedTopics: ["pedestrian-accident-checklist", "evidence-preservation", "medical-treatment-guide"]
-  },
-  {
-    title: "Crosswalk Laws by State",
-    slug: "crosswalk-laws-by-state",
-    description: "State-by-state breakdown of pedestrian crosswalk laws and how they affect your right-of-way and legal case.",
-    category: "legal",
-    icon: "🚶",
-    content: `
-## Understanding Crosswalk Laws
-
-Crosswalk laws determine who has the right-of-way and can significantly affect liability in pedestrian accident cases.
-
-## Key Crosswalk Concepts
-
-### Marked vs. Unmarked Crosswalks
-In most states, crosswalks exist at every intersection, whether marked with paint or not. An "unmarked crosswalk" is the natural extension of the sidewalk across the intersection.
-
-### States Where Every Intersection is a Crosswalk
-- California
-- Oregon
-- Washington
-- And most other states
-
-### Driver Duties at Crosswalks
-In virtually all states, drivers must:
-- Yield or stop for pedestrians in crosswalks
-- Not overtake vehicles stopped for pedestrians
-- Exercise due care to avoid hitting pedestrians
-
-## Strong Crosswalk Law States
-
-These states have particularly strong pedestrian protections:
-
-**California** - Every intersection is a crosswalk. Drivers must yield to pedestrians in any crosswalk, marked or unmarked.
-
-**New York** - Drivers must yield to pedestrians in crosswalks. NYC has additional local protections.
-
-**Oregon** - Every intersection is a crosswalk. Drivers must stop, not just slow down.
-
-**New Jersey** - Drivers must stop and remain stopped for pedestrians. Heavy fines for violations.
-
-**Maine** - Strong crosswalk laws with significant fines for failure to yield.
-
-## Pedestrian Duties
-
-Even with right-of-way, pedestrians typically must:
-- Not suddenly leave a curb into the path of a vehicle
-- Obey traffic signals where present
-- Use crosswalks where available within reasonable distance
-- Exercise due care for their own safety
-
-## How Crosswalk Laws Affect Your Case
-
-### If You Were in a Crosswalk
-- Clear right-of-way supports your claim
-- Driver has duty to yield
-- Liability usually favorable to pedestrian
-
-### If You Were Outside a Crosswalk
-- May need to prove driver still was negligent
-- Comparative fault may reduce your recovery
-- Driver still has duty of due care
-
-### Jaywalking
-- Crossing outside a crosswalk doesn't automatically bar your claim
-- Driver still must exercise reasonable care
-- Comparative negligence may apply
-`,
-    keyTakeaways: [
-      "Most states consider every intersection a crosswalk",
-      "Drivers must yield to pedestrians in crosswalks",
-      "Crossing outside a crosswalk doesn't eliminate your rights",
-      "Strong crosswalk states include CA, NJ, OR, ME",
-      "Pedestrians still have duties even with right-of-way"
-    ],
-    relatedTopics: ["pedestrian-right-of-way", "comparative-fault", "proving-fault"]
-  },
-  {
-    title: "Pedestrian Safety Tips",
-    slug: "pedestrian-safety-tips",
-    description: "Essential safety tips for pedestrians to reduce accident risk and stay safe while walking.",
-    category: "safety",
-    icon: "⚠️",
-    content: `
-## Staying Safe as a Pedestrian
-
-With pedestrian fatalities at 40-year highs, following safety practices is more important than ever.
-
-## Crossing Streets Safely
-
-### At Intersections
-- Always use crosswalks when available
-- Wait for the walk signal before crossing
-- Look left, right, and left again before stepping off the curb
-- Make eye contact with drivers before crossing
-- Continue watching for vehicles while crossing
-
-### Mid-Block Crossings
-- Only cross at designated crosswalks or corners
-- If you must cross mid-block, yield to all vehicles
-- Never assume drivers see you
-
-## Visibility Matters
-
-### During Day
-- Wear bright, visible clothing
-- Make eye contact with drivers
-- Stay alert and aware of your surroundings
-
-### At Night
-- Wear reflective clothing or accessories
-- Carry a flashlight
-- Avoid dark clothing
-- Walk in well-lit areas
-- Be extra cautious - you're much harder to see
-
-## Distraction Dangers
-
-### Avoid
-- Texting while walking
-- Wearing headphones that block traffic sounds
-- Talking on the phone in crosswalks
-- Looking at your phone instead of traffic
-
-**Hawaii is the first state to ban distracted walking.**
-
-## Alcohol and Pedestrians
-
-Nearly half of fatal pedestrian crashes involve alcohol - either the driver, pedestrian, or both.
-
-- Don't walk along roads while intoxicated
-- Use rideshare services instead
-- Stay on sidewalks
-- Be extra careful at night
-
-## Special Situations
-
-### Parking Lots
-- Walk in designated pedestrian lanes
-- Be visible and make eye contact with drivers
-- Watch for backing vehicles
-- Stay alert - drivers are distracted
-
-### School Zones
-- Use crossing guards when available
-- Cross only at designated crossings
-- Watch for turning vehicles
-
-### Construction Zones
-- Follow temporary pedestrian routes
-- Don't take shortcuts through work areas
-- Be alert for construction vehicles
-
-## Teaching Children
-
-- Hold hands with young children
-- Teach them to stop at curbs
-- Practice looking both ways
-- Explain that cars can't stop quickly
-- Never let children play near streets
-`,
-    keyTakeaways: [
-      "Always use crosswalks and obey signals",
-      "Make eye contact with drivers before crossing",
-      "Wear bright or reflective clothing, especially at night",
-      "Put away your phone when crossing streets",
-      "Never assume a driver sees you"
-    ],
-    relatedTopics: ["crosswalk-laws-by-state", "child-pedestrian-safety", "night-walking-safety"]
-  },
-  {
-    title: "Pedestrian Insurance Guide",
-    slug: "insurance-guide",
-    description: "Understanding insurance coverage for pedestrian accidents, including what policies may cover your injuries.",
-    category: "guide",
-    icon: "📋",
-    content: `
-## Insurance Coverage for Pedestrian Accidents
-
-Understanding what insurance covers pedestrian accidents can be complex. Multiple policies may apply to your injuries.
-
-## Driver's Liability Insurance
-
-### What It Covers
-The at-fault driver's liability insurance should cover:
-- Medical expenses
-- Lost wages
-- Pain and suffering
-- Property damage (phone, clothes, etc.)
-
-### Typical Limits
-Minimum liability limits vary by state, typically ranging from $15,000 to $50,000 per person. These minimums are often inadequate for serious injuries.
-
-## Your Own Coverage Options
-
-### Health Insurance
-- Covers your medical treatment
-- May seek reimbursement from accident settlement
-- Provides immediate coverage while claim is pending
-
-### Uninsured Motorist (UM) Coverage
-- Applies if you're hit by a driver with no insurance
-- Applies to hit-and-run accidents
-- Usually part of your auto insurance policy
-- **Critical coverage for pedestrians**
-
-### Underinsured Motorist (UIM) Coverage
-- Applies when driver's insurance is insufficient
-- Kicks in after driver's limits exhausted
-- Usually part of your auto policy
-
-### Medical Payments Coverage (MedPay)
-- Pays your medical expenses regardless of fault
-- No deductible typically
-- Part of your auto policy
-- Quick payment while claim proceeds
-
-### Personal Injury Protection (PIP)
-- Required in "no-fault" states
-- Covers medical expenses and lost wages
-- Part of your auto policy
-- Pays regardless of who caused the accident
-
-## No-Fault States
-
-In no-fault states (Florida, Michigan, New York, etc.), your own PIP insurance may be primary:
-- Covers your injuries first
-- Regardless of who was at fault
-- May limit your ability to sue driver
-
-## Umbrella Policies
-
-Some drivers carry umbrella policies that provide additional coverage:
-- Extra liability above standard limits
-- Often $1,000,000 or more
-- Important for serious injury cases
-
-## Steps to Take
-
-1. **Identify all applicable policies**
-   - Driver's liability insurance
-   - Your health insurance
-   - Your auto insurance (UM/UIM, MedPay, PIP)
-   - Any umbrella policies
-
-2. **File claims appropriately**
-   - Report to driver's insurance
-   - Notify your own insurance
-   - Consult attorney before recorded statements
-
-3. **Don't accept quick settlements**
-   - Full extent of injuries may not be known
-   - Initial offers typically too low
-   - Consult attorney first
-`,
-    keyTakeaways: [
-      "Multiple insurance policies may cover your injuries",
-      "Uninsured motorist coverage is critical for pedestrians",
-      "Your own auto insurance may apply even on foot",
-      "No-fault states have special rules",
-      "Never accept a quick settlement without legal advice"
-    ],
-    relatedTopics: ["dealing-with-insurance", "uninsured-motorist-claims", "what-to-do-after-hit"]
-  },
-  {
-    title: "Evidence Preservation Guide",
-    slug: "evidence-preservation",
-    description: "How to preserve critical evidence after a pedestrian accident to strengthen your legal case.",
-    category: "guide",
-    icon: "📸",
-    content: `
-## Why Evidence Matters
-
-Evidence is the foundation of your pedestrian accident case. Strong evidence:
-- Proves who was at fault
-- Documents injury severity
-- Establishes your damages
-- Prevents disputes about what happened
-
-## At the Accident Scene
-
-### Photographs to Take
-- The vehicle from all angles
-- License plate clearly visible
-- Vehicle damage
-- Crosswalk and traffic signals
-- Any skid marks or debris
-- Road conditions and lighting
-- Your injuries
-- Your damaged belongings
-
-### Video Documentation
-- Walk around recording the scene
-- Capture traffic light timing
-- Note conditions verbally
-- Include date/time stamp
-
-### Witness Information
-- Full names and phone numbers
-- Email addresses
-- Brief description of what they saw
-- Where they were standing
-
-## Physical Evidence to Preserve
-
-### Your Belongings
-- Damaged clothing (don't wash)
-- Damaged shoes
-- Broken phone or electronics
-- Damaged bags or personal items
-- Keep everything in original condition
-
-### Medical Evidence
-- All hospital records
-- Imaging (X-rays, CT scans, MRIs)
-- Surgery reports
-- Physical therapy records
-- Prescriptions and medications
-- All medical bills
-
-## Digital Evidence
-
-### Request These Records
-- Police accident report
-- 911 call recordings
-- Traffic camera footage
-- Nearby business surveillance video
-- Cell phone records of driver
-
-### Act Quickly
-- Video footage may be overwritten quickly
-- Business surveillance often erased after 30 days
-- Traffic camera footage may not be kept long
-- Preserve requests must be made promptly
-
-## Ongoing Documentation
-
-### Keep a Recovery Journal
-- Daily pain levels (1-10)
-- Activities you can't do
-- Sleep quality
-- Emotional and mental effects
-- Medication effects
-
-### Financial Records
-- All medical bills
-- Lost wage documentation
-- Transportation costs for treatment
-- Home care expenses
-- Any accident-related expenses
-`,
-    keyTakeaways: [
-      "Photograph everything at the scene",
-      "Preserve damaged clothing and belongings without washing",
-      "Request surveillance footage immediately",
-      "Keep a daily recovery journal",
-      "Store all evidence securely with backups"
-    ],
-    relatedTopics: ["pedestrian-accident-checklist", "what-to-do-after-hit", "dealing-with-insurance"]
-  },
-  {
-    title: "Dealing with Insurance Companies",
-    slug: "dealing-with-insurance",
-    description: "What to expect from insurance companies after a pedestrian accident and how to protect yourself.",
-    category: "guide",
-    icon: "🏦",
-    content: `
-## The Truth About Insurance Companies
-
-Insurance companies are businesses focused on profit. Their goal is to:
-- Pay as little as possible
-- Settle quickly before you know full damages
-- Find reasons to deny or reduce claims
-- Shift blame to you
-
-## Common Insurance Tactics
-
-### Quick Settlement Offers
-**The Tactic:** Offering fast cash before you know injury extent.
-
-**Your Protection:** Never accept early settlement offers. Many injuries take weeks to fully manifest.
-
-### Recorded Statements
-**The Tactic:** Asking for recorded statements to find inconsistencies.
-
-**Your Protection:** Politely decline until you speak with an attorney. You're not required to give one.
-
-### Blame Shifting
-**The Tactic:** Suggesting you were at fault (jaywalking, distraction, etc.).
-
-**Your Protection:** Don't admit any fault. Let evidence speak.
-
-### Surveillance
-**The Tactic:** Watching your social media and activities.
-
-**Your Protection:** Stay off social media. Don't post about your accident or activities.
-
-### Delaying Tactics
-**The Tactic:** Dragging out the process hoping you'll give up.
-
-**Your Protection:** An attorney can apply pressure and file suit if needed.
-
-## What to Do
-
-### DO:
+    title: "What to Do After a Bicycle Accident",
+    slug: "what-to-do-after-accident",
+    category: "Legal",
+    description: "Step-by-step guide for cyclists on what to do immediately following a crash.",
+    content: `## Immediate Steps After a Bicycle Crash
+
+### 1. Check for Injuries
+- Assess yourself for injuries
+- Don't move if you suspect spinal injury
+- Call 911 if you or anyone is seriously hurt
+
+### 2. Get to Safety
+- If possible, move out of traffic
+- Don't move your bicycle yet if documenting
+
+### 3. Call 911
 - Report the accident to police
-- Get medical attention immediately
-- Document everything
-- Consult an attorney before negotiating
-- Be patient - good settlements take time
+- Request medical assistance if needed
+- An official report is crucial for claims
 
-### DON'T:
-- Give recorded statements without an attorney
-- Accept the first offer
-- Sign broad medical releases
-- Post about your accident on social media
-- Admit fault to anyone
-- Guess about facts you don't remember
+### 4. Exchange Information
+Get from the driver:
+- Name and contact information
+- Driver's license number
+- Insurance company and policy number
+- Vehicle make, model, and license plate
+- Names of any passengers
 
-## When to Get an Attorney
+### 5. Document Everything
+- Photograph the scene from multiple angles
+- Photo your injuries (all of them)
+- Photo damage to your bicycle
+- Photo the vehicle involved
+- Photo road conditions, signs, signals
+- Note exact time and location
 
-Consider hiring a pedestrian accident attorney if:
-- You have serious injuries
-- Fault is disputed
-- Insurance is delaying or denying
-- You're being offered a low settlement
-- You're unsure of your claim's value
+### 6. Get Witness Information
+- Names and phone numbers
+- What they observed
+- Ask if they'll provide a statement
 
-**Most pedestrian accident attorneys work on contingency - no fee unless you win.**
-`,
-    keyTakeaways: [
-      "Insurance companies prioritize profit over fair settlements",
-      "Never accept quick settlements before knowing full injuries",
-      "Don't give recorded statements without an attorney",
-      "Stay off social media during your claim",
-      "Most attorneys work on contingency - no upfront cost"
-    ],
-    relatedTopics: ["insurance-guide", "evidence-preservation", "what-to-do-after-hit"]
+### 7. Seek Medical Attention
+- Even if injuries seem minor
+- Document all symptoms
+- Keep all medical records
+
+### 8. Preserve Evidence
+- Don't repair your bicycle yet
+- Keep damaged clothing and helmet
+- Save all documentation
+
+### 9. Notify Your Insurance
+- Report the accident promptly
+- Don't give recorded statements to other insurers
+- Be factual but brief
+
+### 10. Consult an Attorney
+- Before accepting any settlement
+- Especially for significant injuries
+- Most consultations are free
+
+## What NOT to Do
+
+❌ Don't admit fault or apologize
+❌ Don't give recorded statements without legal advice
+❌ Don't accept quick settlement offers
+❌ Don't post on social media about the accident
+❌ Don't sign medical authorizations for insurers
+❌ Don't delay medical treatment`
   },
   {
-    title: "Medical Treatment After Being Hit",
-    slug: "medical-treatment-guide",
-    description: "Guide to getting proper medical care after being hit by a car as a pedestrian.",
-    category: "guide",
-    icon: "🏥",
-    content: `
-## Why Medical Treatment Matters
+    title: "Cyclist Rights and Responsibilities",
+    slug: "cyclist-rights-responsibilities",
+    category: "Legal",
+    description: "Understanding your legal rights and duties as a cyclist on public roads.",
+    content: `## Cyclist Rights on the Road
 
-Proper medical treatment after being hit by a car is crucial for:
-1. Your health and recovery
-2. Your legal case
+### Equal Road Rights
+In all 50 states, bicycles are legally considered vehicles with the same rights as motor vehicles. This means:
 
-Gaps in treatment or refusing care can be used against you.
+- Right to use public roads
+- Right to full lane use when necessary
+- Right to travel at your own safe speed
+- Right to be yielded to when you have right-of-way
+- Right to not be harassed or endangered
 
-## Immediate Medical Care
+### When You Can Take the Full Lane
 
-### Emergency Room
-Go to the ER if you experience:
-- Loss of consciousness
-- Head injury of any kind
-- Severe pain
-- Difficulty breathing
-- Numbness or tingling
-- Visible injuries or bleeding
-- Confusion
-- Abdominal pain
+You may generally use the full lane when:
+- The lane is too narrow to share safely
+- Avoiding road hazards
+- Preparing for a left turn
+- Passing other vehicles
+- Lane is marked for straight-through at intersection where you're going straight
 
-### What to Tell Medical Staff
-- You were hit by a car as a pedestrian
-- Describe ALL symptoms, even minor ones
-- Mention any pain, no matter how slight
-- Be honest about how you feel
+### Protected by Law
 
-## Common Pedestrian Accident Injuries
+Most states have laws specifically protecting cyclists:
+- Safe passing distance laws (3+ feet)
+- Anti-harassment laws
+- Protected bike lane regulations
+- Right-of-way protections
 
-### Head Injuries
-- Concussions
-- Traumatic brain injury (TBI)
-- Skull fractures
-- Cognitive impairment
+## Cyclist Responsibilities
 
-### Spinal Injuries
-- Herniated discs
-- Vertebral fractures
-- Spinal cord damage
-- Paralysis
+### Follow Traffic Laws
+- Obey traffic signals and signs
+- Ride in the same direction as traffic
+- Use hand signals for turns
+- Yield when required
 
-### Orthopedic Injuries
-- Broken legs, arms, pelvis
-- Knee injuries
-- Hip fractures
-- Ankle and foot injuries
+### Ride Predictably
+- Maintain a steady line
+- Don't weave between cars
+- Signal your intentions
+- Be consistent
 
-### Soft Tissue
-- Internal organ damage
-- Internal bleeding
-- Muscle and ligament tears
-- Severe bruising
+### Use Proper Equipment
+- Lights at night (front white, rear red)
+- Working brakes
+- Helmet (required in some states/ages)
 
-### Psychological
-- PTSD
-- Anxiety about crossing streets
-- Depression
-- Sleep disorders
+### Exercise Due Care
+- Watch for hazards
+- Ride at appropriate speeds
+- Give pedestrians right-of-way
+- Be alert at intersections
 
-## Follow-Up Care
+## Common Misconceptions
 
-### Within 24-48 Hours
-- See your primary care doctor
-- Follow all ER recommendations
-- Start recommended treatments
+### Myth: Cyclists Must Ride as Far Right as Possible
+**Reality:** Laws say "practicable," which includes exceptions for safety, hazards, and lane width.
 
-### Ongoing Treatment
-- Attend ALL appointments
-- Follow treatment plans exactly
-- Don't skip or reschedule
-- Document everything
+### Myth: Cyclists Must Use Bike Lanes When Available
+**Reality:** Many states allow lane choice. Bike lanes may be unsafe due to debris, doors, or turns.
 
-### Specialists You May Need
-- Orthopedic surgeon
-- Neurologist
-- Physical therapist
-- Pain management specialist
-- Psychologist or psychiatrist
+### Myth: Cyclists Can't Use Roads with Bike Paths Nearby
+**Reality:** Cyclists generally have the right to use roads even when paths exist.
 
-## Medical Documentation
-
-**Critical Records to Keep:**
-- ER admission and discharge papers
-- All imaging results
-- Surgery reports
-- Doctor's notes from every visit
-- Physical therapy records
-- Prescription records
-- All billing statements
-
-**Organize Chronologically** and make copies of everything.
-`,
-    keyTakeaways: [
-      "Always get medical attention after being hit - adrenaline masks injuries",
-      "Tell doctors ALL symptoms, even minor ones",
-      "Follow all treatment plans without gaps",
-      "Keep copies of all medical records",
-      "Mental health treatment is valid and important"
-    ],
-    relatedTopics: ["what-to-do-after-hit", "evidence-preservation", "dealing-with-insurance"]
+### Myth: Cars Always Have Right-of-Way Over Bicycles
+**Reality:** Bicycles have equal right-of-way rights. Often, the cyclist has priority.`
   },
   {
-    title: "Pedestrian Right-of-Way Laws",
-    slug: "pedestrian-right-of-way",
-    description: "Understanding when pedestrians have the right-of-way and how it affects accident liability.",
-    category: "legal",
-    icon: "⚖️",
-    content: `
-## Understanding Right-of-Way
+    title: "Understanding Safe Passing Laws",
+    slug: "safe-passing-laws",
+    category: "Legal",
+    description: "State-by-state overview of safe passing distance requirements for motorists.",
+    content: `## Safe Passing Laws Explained
 
-Right-of-way determines who has the legal priority to proceed. For pedestrians, this varies by situation and location.
+### What Are Safe Passing Laws?
 
-## When Pedestrians Have Right-of-Way
+These laws require motorists to maintain a minimum distance when passing cyclists. Most states require at least 3 feet of clearance.
 
-### In Crosswalks
-- Marked crosswalks: YES
-- Unmarked crosswalks (at intersections): Usually YES
-- Mid-block crossings: Usually NO
+### Why These Laws Matter
 
-### At Traffic Signals
-- Walk signal: YES
-- Don't Walk signal: NO
-- Steady yellow/red: Generally NO
+- Prevent sideswipe accidents
+- Give cyclists buffer space
+- Create awareness of cyclist vulnerability
+- Establish clear legal standards
 
-### Outside Crosswalks
-- Pedestrians generally must yield to vehicles
-- BUT drivers must still exercise due care
+## State Requirements
 
-## Driver Duties
+### Three-Foot Minimum States
+Most states require at least 3 feet:
+Alabama, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Illinois, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Mexico, New York, North Dakota, Ohio, Oklahoma, Oregon, Rhode Island, South Carolina, South Dakota, Tennessee, Texas (varies by speed), Utah, Virginia, Washington, West Virginia, Wisconsin, Wyoming
 
-Regardless of right-of-way, drivers must:
-- Exercise due care to avoid hitting pedestrians
-- Yield to pedestrians in crosswalks
-- Stop for pedestrians with white canes or guide dogs
-- Reduce speed in school zones and residential areas
-- Watch for pedestrians when turning
+### Four-Foot Minimum
+- Pennsylvania
+- New Hampshire
+- Vermont
 
-## How Right-of-Way Affects Your Case
+### Five-Foot Minimum
+- New Mexico (strongest in nation)
 
-### You Had Right-of-Way
-- Establishes driver negligence
-- Strengthens your claim
-- May still need to prove driver was negligent
+### Variable Requirements
+- Texas: 3 feet under 25 mph, 6 feet over 25 mph
+- Colorado: 3 feet under 40 mph, 5 feet over 40 mph
 
-### You Did NOT Have Right-of-Way
-- Doesn't automatically bar your claim
-- Driver may still have been negligent
-- Comparative fault may reduce your recovery
-- You may still recover damages
+### Only "Safe Distance" Language
+Some states lack specific distance requirements but require passing at a "safe distance."
 
-## Comparative Negligence
+## What Drivers Must Do
 
-Most states use comparative negligence:
-- Your damages reduced by your percentage of fault
-- Example: If you're 20% at fault, you recover 80%
+1. Wait for safe opportunity to pass
+2. Move to adjacent lane when possible
+3. Slow down when lane change isn't possible
+4. Maintain required distance while passing
+5. Not return to lane until safely past cyclist
 
-### Contributory Negligence States
-(Alabama, Maryland, North Carolina, Virginia, DC)
-- ANY fault may bar your entire recovery
-- Need experienced attorney in these states
+## If a Driver Passes Too Closely
 
-## Special Right-of-Way Rules
+- Note the vehicle description and plate
+- Report to police if safe to do so
+- Document time and location
+- Close passes are ticketable offenses
+- Can be evidence if an accident occurs
 
-### Blind Pedestrians
-- Have right-of-way everywhere
-- White cane signals right-of-way
+## Advocating for Better Laws
 
-### School Zones
-- Enhanced pedestrian protections
-- Reduced speed limits
-- Crossing guards have authority
-
-### Emergency Vehicles
-- Pedestrians must yield to emergency vehicles
-`,
-    keyTakeaways: [
-      "Pedestrians in crosswalks generally have right-of-way",
-      "Drivers must always exercise due care",
-      "Lack of right-of-way doesn't eliminate your claim",
-      "Comparative fault may reduce but not eliminate recovery",
-      "Contributory negligence states have strict rules"
-    ],
-    relatedTopics: ["crosswalk-laws-by-state", "proving-fault", "comparative-fault-explained"]
+If your state lacks strong passing laws:
+- Support cycling advocacy organizations
+- Contact your legislators
+- Share your experiences
+- Testify at hearings`
   },
   {
-    title: "Pedestrian Accident Settlement Calculator Guide",
-    slug: "settlement-calculator-guide",
-    description: "Learn how pedestrian accident settlements are calculated and what factors affect your compensation amount.",
-    category: "legal",
-    icon: "🧮",
-    content: `
-## How Settlements Are Calculated
+    title: "Bicycle Accident Compensation Guide",
+    slug: "bicycle-accident-compensation-guide",
+    category: "Legal",
+    description: "Understanding what compensation you may be entitled to after a bicycle accident.",
+    content: `## Types of Damages in Bicycle Accident Cases
 
-Pedestrian accident settlements consider multiple factors to determine fair compensation.
+### Economic Damages
+Measurable financial losses with documentation:
 
-## Economic Damages
-
-### Medical Expenses
-- Emergency room costs
+**Medical Expenses**
+- Emergency room visits
 - Hospital stays
 - Surgery costs
+- Doctor visits
 - Physical therapy
-- Future medical needs
-- Prescription medications
-- Medical equipment
-
-### Lost Wages
-- Time missed from work
-- Reduced earning capacity
-- Future lost earnings
-- Lost benefits and bonuses
-
-### Property Damage
-- Personal belongings damaged
-- Electronics (phone, watch, etc.)
-- Clothing
-
-## Non-Economic Damages
-
-### Pain and Suffering
-- Physical pain experienced
-- Ongoing chronic pain
-- Severity and duration of suffering
-
-### Emotional Distress
-- PTSD from the accident
-- Anxiety and depression
-- Fear of walking/crossing streets
-
-### Loss of Enjoyment
-- Inability to pursue hobbies
-- Reduced quality of life
-- Loss of consortium
-
-## Multiplier Method
-
-Many settlements use a multiplier:
-1. Add up all economic damages
-2. Multiply by 1.5 to 5 based on severity
-3. Add economic damages back
-
-### Multiplier Factors
-- 1.5-2x: Minor injuries, quick recovery
-- 2-3x: Moderate injuries, some ongoing effects
-- 3-4x: Serious injuries, significant impact
-- 4-5x: Catastrophic injuries, permanent disability
-
-## Per Diem Method
-
-Calculate daily compensation for pain:
-1. Determine a reasonable daily rate
-2. Multiply by days of recovery
-3. Add economic damages
-
-## Factors That Increase Value
-
-- Clear driver liability
-- Multiple witnesses
-- Dash cam or surveillance footage
-- Severe or permanent injuries
-- Impact on career
-- Young victim with long-term needs
-`,
-    keyTakeaways: [
-      "Economic damages include all financial losses",
-      "Non-economic damages cover pain and suffering",
-      "Multiplier method commonly used for calculation",
-      "Severity of injuries significantly impacts value",
-      "Documentation is essential for maximum recovery"
-    ],
-    relatedTopics: ["calculating-pedestrian-accident-damages", "medical-expense-documentation", "negotiating-pedestrian-accident-settlement"]
-  },
-  {
-    title: "Choosing a Pedestrian Accident Lawyer",
-    slug: "choosing-pedestrian-lawyer",
-    description: "Key factors to consider when selecting an attorney for your pedestrian accident case.",
-    category: "legal",
-    icon: "👨‍⚖️",
-    content: `
-## Why You Need a Specialized Attorney
-
-Pedestrian accidents have unique legal considerations:
-- Specific traffic laws for pedestrians
-- Complex liability determinations
-- Higher injury severity typically
-- Different insurance coverage issues
-
-## What to Look For
-
-### Experience
-- Years handling pedestrian cases
-- Track record of settlements/verdicts
-- Familiarity with local courts
-- Knowledge of pedestrian-specific laws
-
-### Resources
-- Ability to fund investigation
-- Access to expert witnesses
-- Staff to handle your case
-- Technology for case management
-
-### Communication
-- Responsive to calls/emails
-- Explains legal process clearly
-- Keeps you updated regularly
-- Available to answer questions
-
-### Reputation
-- Client reviews and testimonials
-- Peer ratings (Martindale, Avvo)
-- Professional memberships
-- Awards and recognition
-
-## Questions to Ask
-
-### About Their Experience
-1. How many pedestrian accident cases have you handled?
-2. What were the outcomes?
-3. Have you tried cases in court?
-4. Are you familiar with our local courts?
-
-### About Your Case
-5. What do you think my case is worth?
-6. What challenges do you foresee?
-7. How long might this take?
-8. What is your strategy?
-
-### About Fees
-9. What is your contingency fee percentage?
-10. What costs will I be responsible for?
-11. Do you advance case costs?
-12. What happens if we lose?
-
-## Red Flags
-
-- Guarantees specific results
-- Pressures you to sign immediately
-- Won't explain the fee agreement
-- Doesn't return calls promptly
-- Sends a non-attorney to meet you
-- Handles too many different case types
-
-## Free Consultations
-
-Most pedestrian accident attorneys offer:
-- Free initial case evaluation
-- No obligation to hire
-- Assessment of case strength
-- Explanation of legal options
-`,
-    keyTakeaways: [
-      "Choose an attorney experienced in pedestrian cases",
-      "Ask about their track record and resources",
-      "Understand the fee structure completely",
-      "Look for good communication skills",
-      "Avoid attorneys who guarantee results"
-    ],
-    relatedTopics: ["when-to-hire-pedestrian-accident-attorney", "contingency-fee-arrangements", "what-to-expect-from-attorney"]
-  },
-  {
-    title: "Understanding No-Fault Insurance and Pedestrians",
-    slug: "no-fault-insurance-pedestrians",
-    description: "How no-fault insurance laws affect pedestrian accident claims in different states.",
-    category: "legal",
-    icon: "📋",
-    content: `
-## What Is No-Fault Insurance?
-
-No-fault insurance means your own insurance pays for your injuries regardless of who caused the accident.
-
-## No-Fault States
-
-The following states have no-fault insurance:
-- Florida
-- Hawaii
-- Kansas
-- Kentucky (choice)
-- Massachusetts
-- Michigan
-- Minnesota
-- New Jersey (choice)
-- New York
-- North Dakota
-- Pennsylvania (choice)
-- Utah
-
-## How It Works for Pedestrians
-
-### Your Own Coverage
-- If you have auto insurance, your PIP covers you
-- If hit by a car, driver's insurance may cover you
-- Health insurance as secondary coverage
-
-### What PIP Covers
-- Medical expenses
-- Lost wages (percentage)
-- Replacement services
-- Funeral expenses
-
-### Limits on Lawsuits
-In no-fault states, you can only sue if:
-- Injuries exceed a threshold (serious/permanent)
-- Medical expenses exceed monetary threshold
-- Death occurred
-
-## Verbal vs Monetary Thresholds
-
-### Verbal Threshold States
-Must prove serious injury:
-- Significant disfigurement
-- Permanent injury
-- Bone fracture
-- Loss of body function
-
-### Monetary Threshold States
-Medical expenses must exceed amount:
-- Varies by state ($2,000-$5,000+)
-- Once exceeded, can sue for all damages
-
-## Pedestrian-Specific Rules
-
-### New York
-- Pedestrians can get PIP from driver's insurance
-- Can sue if serious injury threshold met
-
-### Michigan
-- Unlimited PIP benefits available
-- Strong pedestrian protections
-
-### Florida
-- Must have your own PIP or health insurance
-- Can sue for permanent injury
-`,
-    keyTakeaways: [
-      "No-fault affects 12 states plus some choice states",
-      "PIP covers your injuries regardless of fault",
-      "Thresholds limit when you can file a lawsuit",
-      "Pedestrians have some special protections",
-      "An attorney can navigate these complex rules"
-    ],
-    relatedTopics: ["no-fault-states-pedestrian-claims", "uninsured-motorist-coverage-pedestrians", "dealing-with-insurance"]
-  },
-  {
-    title: "Long-Term Effects of Pedestrian Accident Injuries",
-    slug: "long-term-injury-effects",
-    description: "Understanding the lasting physical, emotional, and financial impacts of pedestrian accident injuries.",
-    category: "guide",
-    icon: "🩺",
-    content: `
-## Physical Long-Term Effects
-
-### Traumatic Brain Injury (TBI)
-- Cognitive difficulties
-- Memory problems
-- Personality changes
-- Seizure disorders
-- Chronic headaches
-
-### Spinal Cord Injuries
-- Paralysis (partial or complete)
-- Chronic pain
-- Loss of sensation
-- Bladder/bowel dysfunction
-- Respiratory issues
-
-### Orthopedic Injuries
-- Chronic joint pain
-- Limited range of motion
-- Arthritis development
-- Need for future surgeries
-- Hardware complications
-
-### Soft Tissue Injuries
-- Chronic pain syndromes
-- Fibromyalgia development
-- Reduced flexibility
-- Ongoing treatment needs
-
-## Emotional & Psychological Effects
-
-### Post-Traumatic Stress Disorder
-- Flashbacks to the accident
-- Nightmares
-- Avoidance of crossing streets
-- Hypervigilance around traffic
-- Panic attacks
-
-### Depression and Anxiety
-- Social isolation
-- Changes in relationships
-- Difficulty working
-- Loss of independence
-- Grief over lost abilities
-
-## Financial Long-Term Impacts
-
-### Medical Costs
-- Ongoing treatment
 - Medications
 - Medical equipment
-- Home modifications
-- Future surgeries
+- Future medical needs
 
-### Career Impact
+**Lost Income**
+- Wages lost during recovery
 - Reduced earning capacity
-- Career change required
-- Early retirement
-- Lost promotions
-- Retraining costs
+- Lost business opportunities
+- Used vacation or sick time
 
-### Life Care Costs
-- Home healthcare
-- Assisted living
-- Transportation needs
-- Personal care assistance
+**Property Damage**
+- Bicycle repair or replacement
+- Helmet replacement
+- Damaged clothing and gear
+- Phone or electronics
 
-## Documenting Future Damages
+**Other Expenses**
+- Transportation for medical care
+- Home modifications
+- Household help
+- Child care during recovery
 
-### Life Care Plan
-- Comprehensive needs assessment
-- Projected lifetime costs
-- Expert medical input
+### Non-Economic Damages
+Subjective losses without receipts:
 
-### Vocational Expert
-- Lost earning capacity
-- Career limitations
-- Retraining needs
+**Pain and Suffering**
+- Physical pain from injuries
+- Discomfort during treatment
+- Chronic pain conditions
 
-### Economist
-- Present value calculations
-- Inflation adjustments
-- Lost benefits value
-`,
-    keyTakeaways: [
-      "Pedestrian accidents often cause life-altering injuries",
-      "TBI and spinal injuries have extensive long-term effects",
-      "Psychological impacts require professional treatment",
-      "Future damages must be carefully documented",
-      "Life care plans help ensure full compensation"
-    ],
-    relatedTopics: ["traumatic-brain-injury-pedestrian-accidents", "spinal-cord-injuries-pedestrians", "calculating-pedestrian-accident-damages"]
+**Emotional Distress**
+- Anxiety and depression
+- PTSD symptoms
+- Fear of cycling again
+
+**Loss of Enjoyment**
+- Inability to cycle
+- Giving up hobbies
+- Missing activities
+
+**Disfigurement**
+- Visible scars
+- Permanent physical changes
+
+**Loss of Consortium**
+- Impact on relationships
+- Available to spouses
+
+### Punitive Damages
+Punishment for egregious conduct:
+- Drunk driving
+- Extreme recklessness
+- Intentional harm
+
+## Factors Affecting Compensation
+
+1. **Injury Severity** - Most important factor
+2. **Liability Clarity** - How clear is fault?
+3. **Documentation Quality** - Evidence matters
+4. **Insurance Available** - Coverage limits
+5. **Long-term Impact** - Permanent effects
+6. **Comparative Fault** - Your share, if any
+
+## What's Your Claim Worth?
+
+### Minor Injuries
+Sprains, road rash, minor cuts
+Range: $5,000 - $25,000
+
+### Moderate Injuries
+Fractures, concussions, significant lacerations
+Range: $25,000 - $100,000
+
+### Serious Injuries
+Multiple fractures, TBI, surgery required
+Range: $100,000 - $500,000
+
+### Catastrophic Injuries
+Paralysis, amputation, severe TBI
+Range: $500,000 - Several million
+
+*These are rough guides. Every case is unique.*`
   },
   {
-    title: "Hit-and-Run Pedestrian Accident Guide",
-    slug: "hit-and-run-guide",
-    description: "What to do if you're injured by a driver who flees the scene and how to pursue compensation.",
-    category: "guide",
-    icon: "🚗",
-    content: `
-## Immediate Steps After Hit-and-Run
+    title: "Bicycle Helmet Laws by State",
+    slug: "helmet-laws-by-state",
+    category: "Legal",
+    description: "State-by-state guide to bicycle helmet requirements and how they affect accident claims.",
+    content: `## State Helmet Law Overview
 
-### At the Scene
-1. Call 911 immediately
-2. Try to remember vehicle details:
-   - Make, model, color
-   - License plate (any part)
-   - Direction of travel
-   - Distinguishing features
-3. Look for witnesses
-4. Note any nearby cameras
-5. Get medical attention
+### No Statewide Helmet Law
+Most states don't require adult cyclists to wear helmets:
+- Arizona, Arkansas, Colorado, Idaho, Indiana, Iowa, Kansas, Kentucky, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Mexico, North Dakota, Ohio, Oklahoma, Oregon (adults), South Carolina, South Dakota, Texas, Utah, Vermont, Virginia (adults), Wisconsin, Wyoming
 
-### Information to Gather
-- Witness names and contacts
-- Security camera locations
-- Time and exact location
-- Weather conditions
-- Traffic signal status
+### Youth Helmet Requirements
 
-## How Hit-and-Run Drivers Get Caught
+**Under 12**
+- Pennsylvania
 
-### Investigation Methods
-- Surveillance camera footage
-- Witness statements
-- Vehicle debris analysis
-- Paint transfer evidence
-- License plate readers
-- Social media tips
+**Under 14**
+- New York
 
-### Timeline
-- Police prioritize serious injuries
-- Most solved within 48 hours if at all
-- Cold cases can still be solved later
+**Under 15**
+- Virginia, West Virginia
 
-## Getting Compensation
+**Under 16**
+- Alabama, California, Connecticut, Delaware, Florida, Georgia, Hawaii, Maine, Maryland, Massachusetts, Michigan, New Hampshire, New Jersey, North Carolina, Oregon, Rhode Island, Tennessee
 
-### Uninsured Motorist Coverage
-- Your own auto insurance
-- Covers hit-and-run accidents
-- May include medical and lost wages
-- Check your policy limits
+**Under 17**
+- New Jersey
 
-### If You Don't Have UM Coverage
-- Health insurance for medical bills
-- Crime victim compensation funds
-- Civil lawsuit if driver found
+**Under 18**
+- Maryland (some counties), New Mexico (Albuquerque)
 
-### If Driver Is Found
-- Can sue driver directly
-- Their insurance (if any) pays
-- Criminal restitution possible
+### All-Ages Requirements
+- Washington (King County and others)
+- Various local ordinances
 
-## State Crime Victim Funds
+## Local Laws May Differ
 
-Most states have victim compensation funds:
-- Cover medical expenses
-- Lost wages assistance
-- Counseling costs
-- Application required
-- Income limits may apply
+Many cities and counties have their own helmet laws that may be stricter than state requirements. Check local ordinances.
 
-## Increasing Chances of Finding Driver
+## Helmet Use and Legal Claims
 
-- File police report immediately
-- Canvass for witnesses
-- Check for cameras yourself
-- Post on social media
-- Contact local media
-- Offer reward through attorney
-`,
-    keyTakeaways: [
-      "Act quickly to preserve evidence",
-      "Note any vehicle details you can remember",
-      "Your UM coverage may provide compensation",
-      "State victim funds can help with costs",
-      "Many hit-and-run drivers are eventually found"
-    ],
-    relatedTopics: ["hit-and-run-pedestrian-accidents", "uninsured-motorist-coverage-pedestrians", "evidence-collection-pedestrian-accidents"]
-  },
-  {
-    title: "Pedestrian Accidents Involving Children",
-    slug: "child-pedestrian-accident-guide",
-    description: "Special legal considerations and protections when a child is injured as a pedestrian.",
-    category: "guide",
-    icon: "👶",
-    content: `
-## Why Child Cases Are Different
+### Does Not Wearing a Helmet Affect My Case?
 
-### Legal Standards
-- Children held to lower standard of care
-- "What would a reasonable child do?"
-- Age and experience considered
-- Very young children may have no contributory fault
-
-### Higher Driver Duty
-- Drivers must anticipate children
-- Extra caution in:
-  - School zones
-  - Residential areas
-  - Parks and playgrounds
-  - Ice cream truck areas
-
-## Common Scenarios
-
-### School Zone Accidents
-- Crossing to/from school
-- School bus loading zones
-- Crossing guard present
-- Before/after school activities
-
-### Neighborhood Accidents
-- Playing in residential streets
-- Darting from between cars
-- Chasing balls or toys
-- Riding bikes on sidewalks
-
-### Parking Lot Accidents
-- Shopping centers
-- School parking lots
-- Events and activities
-- Backing accidents
-
-## Special Damages Considerations
-
-### Future Medical Care
-- Growing bones may need multiple surgeries
-- Psychological effects during development
-- Lifetime of care for serious injuries
-
-### Educational Impact
-- Special education needs
-- Tutoring during recovery
-- Delayed development
-- College planning adjustments
-
-### Future Lost Earnings
-- Career potential affected
-- Lifetime earning capacity
-- Earlier retirement age
-
-## Legal Process Differences
-
-### Court Approval Required
-- Settlement must be approved by judge
-- Guardian ad litem may be appointed
-- Funds often held in trust
-
-### Statute of Limitations
-- Usually tolled until age 18
-- Time to file starts at adulthood
+**Where No Law Exists**
 - Varies by state
+- Some prohibit helmet evidence
+- Others allow consideration
 
-### Who Can Sue
-- Parent or guardian files suit
-- Lawsuit in child's name
-- Parent may have separate claim for:
-  - Medical expenses paid
-  - Loss of child's services
+**Where Law Exists**
+- May establish some fault
+- Only relevant to head injuries
+- Doesn't eliminate driver fault
 
-## Protecting the Settlement
+### Helmet Evidence Rules
 
-### Structured Settlements
-- Payments over time
-- Protected from misuse
-- Tax advantages
+**States Limiting Helmet Evidence**
+California and some others limit or prohibit using helmet non-use against cyclists.
 
-### Trust Accounts
-- Court-supervised
-- Professional management
-- Disbursed at adulthood
-`,
-    keyTakeaways: [
-      "Children are held to lower standards of care",
-      "Drivers have heightened duty around children",
-      "Future damages are especially important",
-      "Court approval required for settlements",
-      "Settlements protected until adulthood"
-    ],
-    relatedTopics: ["child-pedestrian-accidents", "pedestrian-accidents-involving-minors", "school-zone-pedestrian-accidents"]
+**Defense Arguments**
+Insurers may argue:
+- You would have been less injured
+- You were negligent
+- Damages should be reduced
+
+**Countering These Arguments**
+- Helmet wouldn't prevent this injury
+- Driver caused the crash
+- State law doesn't require helmets
+
+## Why Wear a Helmet Anyway?
+
+Despite varying laws, helmets:
+- Reduce head injury risk by 60%+
+- Reduce fatality risk
+- Provide peace of mind
+- Don't affect most injury claims
+
+## Helmet Best Practices
+
+- Choose CPSC-certified helmet
+- Ensure proper fit
+- Replace after any impact
+- Replace every 3-5 years
+- Check for recalls`
   },
   {
-    title: "Pedestrian Accident Medical Treatment Guide",
-    slug: "pedestrian-medical-treatment",
-    description: "Understanding medical treatment after a pedestrian accident and how it affects your legal case.",
-    category: "guide",
-    icon: "🏥",
-    content: `
-## Immediate Medical Care
+    title: "How Insurance Claims Work After a Bicycle Accident",
+    slug: "insurance-claims-bicycle-accidents",
+    category: "Legal",
+    description: "Understanding the insurance claim process for bicycle accident victims.",
+    content: `## Insurance Coverage Sources
 
-### Emergency Room
-When to go to ER:
-- Any loss of consciousness
-- Head or neck pain
-- Difficulty breathing
-- Severe pain anywhere
-- Visible broken bones
-- Heavy bleeding
+### At-Fault Driver's Insurance
 
-### What Happens at ER
-- Triage assessment
-- Imaging (X-rays, CT scans)
-- Treatment of acute injuries
-- Pain management
-- Referrals for follow-up
+**Liability Coverage**
+- Pays for injuries you suffer
+- Pays for property damage (bike)
+- Limits vary by policy
+- May be insufficient for serious injuries
 
-## Follow-Up Care
+**Minimum Coverage by State**
+Varies from $15,000/$30,000 to $50,000/$100,000
+Many drivers carry only minimums.
 
-### Primary Care Doctor
-- Ongoing symptom monitoring
-- Referrals to specialists
-- Medication management
-- Work status documentation
+### Your Own Insurance
 
-### Specialists You May Need
-- Orthopedic surgeon
-- Neurologist
-- Physical therapist
-- Pain management doctor
-- Psychologist/psychiatrist
-- Chiropractor
+**Uninsured/Underinsured Motorist (UM/UIM)**
+- Covers you when driver has no insurance
+- Covers gap when their insurance is insufficient
+- Often applies even when you're on a bicycle
+- Check your auto policy
 
-## Treatment Documentation
+**Medical Payments Coverage**
+- Pays medical bills regardless of fault
+- Usually modest limits ($1,000-$10,000)
+- Helpful for immediate expenses
 
-### Why It Matters
-- Proves injury severity
-- Shows treatment necessity
-- Establishes medical costs
-- Documents recovery timeline
-- Supports future needs claims
+**Health Insurance**
+- Covers treatment
+- May seek reimbursement from settlement
+- Subject to deductibles and copays
 
-### What to Document
-- All appointments kept
-- Treatments received
-- Medications prescribed
-- Medical bills
-- Mileage to appointments
-- Time missed from work
+## The Claims Process
 
-## Gap in Treatment Problems
+### Step 1: Report to Police
+An official report documents the accident.
 
-### Why Gaps Hurt Your Case
-- Insurance claims you weren't injured
-- Suggests injuries weren't serious
-- Defense argues injuries unrelated to accident
-- Reduces credibility
+### Step 2: Report to Insurance
+- Notify your own insurance promptly
+- The driver's insurer will contact you
 
-### Valid Reasons for Gaps
-- Financial constraints (document this)
-- Doctor availability
-- COVID-19 delays
-- Other documented reasons
+### Step 3: Investigation
+- Adjuster reviews evidence
+- May request statements
+- May offer quick settlement
 
-## Treatment on a Lien
+### Step 4: Demand Package
+- Your attorney presents your claim
+- Includes medical records, bills, evidence
+- Requests specific compensation
 
-### Medical Liens Explained
-- Doctor treats now, gets paid from settlement
-- No out-of-pocket costs during treatment
-- Ensures continuous care
-- Common in personal injury cases
+### Step 5: Negotiation
+- Back and forth on value
+- May take weeks or months
+- Most cases settle here
 
-### Pros and Cons
-Pros:
-- No upfront costs
-- Access to specialists
-- Treatment documentation
+### Step 6: Resolution
+- Settlement agreement signed
+- Payment received
+- Release signed
 
-Cons:
-- Lien must be paid from settlement
-- May be reduced through negotiation
-- Some doctors don't accept liens
-`,
-    keyTakeaways: [
-      "Always seek immediate medical attention",
-      "Follow all treatment recommendations",
-      "Avoid gaps in medical treatment",
-      "Document everything thoroughly",
-      "Treatment on lien is available if needed"
-    ],
-    relatedTopics: ["medical-records-pedestrian-claims", "medical-expense-documentation", "medical-treatment-guide"]
+### Step 7: If No Settlement
+- Lawsuit filed
+- Discovery and depositions
+- Mediation or trial
+
+## Dealing with Insurance Adjusters
+
+### What They Want
+- Quick, cheap settlement
+- Recorded statement
+- Medical authorization
+- Reasons to deny or reduce claim
+
+### What You Should Do
+✅ Be polite but cautious
+✅ Provide basic facts only
+✅ Don't admit fault
+✅ Consult attorney before accepting offers
+✅ Don't sign broad authorizations
+
+### What You Shouldn't Do
+❌ Accept first offer
+❌ Give recorded statement without attorney
+❌ Sign blank medical authorizations
+❌ Discuss fault in detail
+❌ Accept quick settlement`
   },
   {
-    title: "Pedestrian Accidents and Rideshare Vehicles",
-    slug: "rideshare-pedestrian-guide",
-    description: "Understanding liability when pedestrians are hit by Uber, Lyft, or other rideshare drivers.",
-    category: "guide",
-    icon: "📱",
-    content: `
-## Rideshare Accident Complexity
+    title: "Statute of Limitations for Bicycle Accident Claims",
+    slug: "statute-of-limitations",
+    category: "Legal",
+    description: "Time limits for filing bicycle accident lawsuits in each state.",
+    content: `## What Is a Statute of Limitations?
 
-Accidents involving Uber, Lyft, and other rideshare services have unique liability issues.
+The statute of limitations is the deadline for filing a lawsuit. Miss it and you lose your right to sue forever.
 
-## Insurance Coverage Periods
+## State-by-State Deadlines
 
-### Period 0 - App Off
-- Driver's personal insurance only
-- Rideshare company not liable
-- Standard pedestrian accident case
+### 1 Year
+- Louisiana
+- Tennessee (for personal injury)
+- Kentucky (for injury, different for wrongful death)
 
-### Period 1 - App On, Waiting for Ride
-- Limited rideshare insurance kicks in
-- Uber/Lyft: $50K per person/$100K per accident
-- Covers liability if personal insurance denies
+### 2 Years
+- Alabama, Alaska, Arizona, California, Connecticut, Delaware, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Maryland, Massachusetts, Michigan, Minnesota, New Jersey, Nevada, Ohio, Oklahoma, Oregon, Pennsylvania, Texas, Virginia, West Virginia, Washington DC
 
-### Period 2 - En Route to Passenger
-- Full rideshare insurance active
-- Uber/Lyft: $1 million liability
-- Covers pedestrian injuries
+### 3 Years
+- Arkansas, Colorado, Florida, Montana, Nebraska, New Hampshire, New Mexico, New York, North Carolina, North Dakota, Rhode Island, South Carolina, South Dakota, Vermont, Wisconsin
 
-### Period 3 - Passenger in Vehicle
-- Full rideshare insurance active
-- $1 million liability coverage
-- Highest level of protection
+### 4 Years
+- Florida (for negligence claims)
+- Nebraska
+- Utah
+- Wyoming
 
-## Determining Which Period
+### 5 Years
+- Missouri
 
-### Evidence Needed
-- Driver's app status at time of accident
-- GPS records from rideshare company
-- Passenger testimony
-- Driver's statement
+### 6 Years
+- Maine
+- Minnesota (some claims)
+- North Dakota
 
-### Why It Matters
-- Determines available insurance
-- Affects total compensation
-- Identifies responsible parties
+## Important Exceptions
 
-## Filing Claims
+### Government Claims
+Claims against cities, states, or government agencies have much shorter deadlines:
+- Often 30-180 days to file notice
+- Different rules than private parties
+- Miss these and you can't sue
 
-### Multiple Potential Sources
-1. Driver's personal auto insurance
-2. Rideshare company's commercial policy
-3. Uninsured/underinsured motorist coverage
-4. Driver personally
+### Discovery Rule
+In some cases, the clock starts when you discover the injury, not when it occurred.
 
-### Steps to Take
-- Report accident to rideshare company
-- Get driver's personal insurance info
-- File claim with rideshare
-- Consult attorney for guidance
+### Minors
+Children often have extended deadlines:
+- May not start until age 18
+- Varies significantly by state
 
-## Common Challenges
+### Tolling
+Clock may pause for:
+- Defendant leaving the state
+- Plaintiff's mental incapacity
+- Other specific circumstances
 
-### Distracted Driving
-- Watching app for rides
-- Following GPS directions
-- Rushing to pick up passengers
+## Why Acting Quickly Matters
 
-### Proving Driver Status
-- Companies may resist disclosure
-- Legal process to obtain records
-- Attorney can subpoena data
+Even with longer deadlines:
+- Evidence disappears
+- Witnesses forget
+- Memories fade
+- Video is recorded over
+- Vehicles are repaired
 
-## Rideshare Company Policies
+## Critical Actions
 
-### Uber
-- James River Insurance Company
-- $1M coverage during trips
-- Limited coverage when app on
+1. **Note your accident date**
+2. **Know your state's deadline**
+3. **If government involved, act immediately**
+4. **Consult attorney promptly**
+5. **Don't wait until the last minute**
 
-### Lyft
-- Similar coverage structure
-- May vary by state
-- Policy limits same as Uber
-`,
-    keyTakeaways: [
-      "Coverage depends on driver's app status",
-      "Highest coverage when passenger in vehicle",
-      "Multiple insurance sources may apply",
-      "Legal help needed to navigate claims",
-      "Rideshare companies may resist providing data"
-    ],
-    relatedTopics: ["rideshare-pedestrian-accidents", "proving-fault-pedestrian-accident", "dealing-with-insurance"]
+## Filing Near the Deadline
+
+If approaching your deadline:
+- Seek legal help immediately
+- Some attorneys decline last-minute cases
+- Filing requires preparation time
+- Courts may be slow to process`
   },
   {
-    title: "Pedestrian Accident Witness Guide",
-    slug: "witness-guide",
-    description: "How witness testimony strengthens your pedestrian accident case and how to secure it.",
-    category: "guide",
-    icon: "👁️",
-    content: `
-## Importance of Witnesses
+    title: "Common Defense Arguments in Bicycle Accident Cases",
+    slug: "common-defense-arguments",
+    category: "Legal",
+    description: "How drivers and insurers try to avoid liability and how to counter their arguments.",
+    content: `## Defense Strategies and How to Counter Them
 
-Witness testimony can:
-- Corroborate your account
-- Establish driver negligence
-- Counter false claims
-- Describe injuries observed
-- Document scene conditions
+### "I Didn't See the Cyclist"
 
-## Types of Witnesses
+**Their Argument:**
+The cyclist appeared suddenly or was invisible.
 
-### Eyewitnesses
-- Saw the accident happen
-- Most valuable testimony
-- Can describe vehicle speed, signals, etc.
+**Counter-Arguments:**
+- Drivers have a duty to look carefully
+- "Looked but didn't see" is still negligent
+- Inattentional blindness doesn't excuse liability
+- Cyclists have rights to use the road
+- You must see what's there to be seen
 
-### Occurrence Witnesses
-- Arrived immediately after
-- Saw positions of vehicles/victims
-- Observed initial injuries
+### "The Cyclist Was Going Too Fast"
+
+**Their Argument:**
+The cyclist's speed caused or contributed to the crash.
+
+**Counter-Arguments:**
+- Cyclists can ride at any legal speed
+- Drivers must yield regardless of cyclist speed
+- Driver's duty exists at all cyclist speeds
+- Speed usually not the proximate cause
+
+### "The Cyclist Wasn't Visible Enough"
+
+**Their Argument:**
+Dark clothing, no lights, hard to see.
+
+**Counter-Arguments:**
+- Daytime visibility requirements are minimal
+- Driver's duty to look carefully still exists
+- Other traffic saw the cyclist
+- Meeting legal visibility requirements is sufficient
+
+### "The Cyclist Wasn't Wearing a Helmet"
+
+**Their Argument:**
+Injuries would have been less severe with a helmet.
+
+**Counter-Arguments:**
+- Only relevant to head injuries
+- Many states limit this evidence
+- Doesn't affect who caused the crash
+- Adult helmet use is usually optional
+
+### "The Cyclist Was in the Wrong Place"
+
+**Their Argument:**
+Not in bike lane, wrong side of road, etc.
+
+**Counter-Arguments:**
+- Cyclists have lane choice rights
+- Exceptions to "far right" rules exist
+- Position may have been proper for conditions
+- Driver's duty exists regardless
+
+### "The Cyclist Ran a Red Light/Stop Sign"
+
+**Their Argument:**
+Cyclist violated traffic law.
+
+**Counter-Arguments:**
+- Idaho Stop may be legal in your state
+- Driver may also have violated laws
+- Violation must be proximate cause
+- Comparative fault doesn't eliminate claim
+
+### "This Road Is Dangerous for Cyclists"
+
+**Their Argument:**
+Cyclist assumed the risk by riding there.
+
+**Counter-Arguments:**
+- Cyclists have right to use all roads
+- Drivers must expect cyclists
+- Assumption of risk rarely applies
+- Driver still had duties
+
+## Building Your Defense
+
+### Documentation
+- Photos showing your visibility
+- Witness statements about your riding
+- Evidence of proper equipment
+- Your position and actions
 
 ### Expert Witnesses
-- Accident reconstruction
-- Medical experts
-- Vocational specialists
-- Economic experts
+- Accident reconstructionists
+- Cycling safety experts
+- Human factors specialists
 
-## Finding Witnesses
+### Legal Strategy
+- Understand your state's laws
+- Know comparative fault rules
+- Prepare responses to common arguments
+- Work with experienced counsel`
+  },
+  {
+    title: "Bicycle Accident Witness Guide",
+    slug: "bicycle-accident-witness-guide",
+    category: "Legal",
+    description: "How witnesses can help bicycle accident victims and what information is most valuable.",
+    content: `## If You Witness a Bicycle Accident
 
-### At the Scene
-- Ask anyone nearby
-- Get names and phone numbers
-- Note where they were standing
-- Ask what they saw
+### Immediate Actions
 
-### After the Scene
-- Check nearby businesses
-- Review surveillance footage
-- Post on social media
-- Check with responding officers
+**1. Check for Safety**
+- Don't enter traffic
+- Call 911 if injuries are serious
+- Help secure the scene if safe
 
-### Canvassing
-- Return to scene at same time
-- Ask regular pedestrians/workers
-- Leave contact information
-- Check for regular witnesses
+**2. Render Aid if Qualified**
+- Don't move injured people unless in danger
+- Provide comfort and reassurance
+- Wait for professionals
 
-## Preserving Testimony
+**3. Stay at the Scene**
+- Your statement may be crucial
+- Police will want your account
+- The cyclist needs witnesses
 
-### Witness Statements
-- Get written statements quickly
-- Record video statements (with permission)
-- Note date, time, location of statement
-- Have attorney conduct formal interview
+### Information to Provide
 
-### Why Time Matters
+**What You Saw**
+- Where you were when you witnessed the crash
+- What caught your attention first
+- What each vehicle was doing before impact
+- Speeds (if you can estimate)
+- Traffic signals or signs
+- Who you think was at fault and why
+
+**Details That Matter**
+- Did the driver signal?
+- Was the cyclist in a bike lane?
+- Did the driver appear distracted?
+- What did the driver do after the crash?
+- Were there any statements made?
+
+### Documenting as a Witness
+
+**Photos/Videos**
+- Scene photos can help
+- Vehicle positions
+- Road conditions
+- Any skid marks or debris
+
+**Write It Down**
+- Document your observations promptly
 - Memories fade quickly
-- Witnesses may move away
-- Details become confused
-- Defense can challenge credibility
+- Note time, date, location
+- Your contact information
 
-## Witness Credibility Issues
+### Providing Your Statement
 
-### Strong Witnesses
-- No relationship to either party
-- Good vantage point
-- Consistent statements
-- No reason to lie
+**To Police**
+- Be factual and accurate
+- Don't speculate if unsure
+- Describe what you actually saw
+- Ask for the report number
 
-### Weak Witnesses
-- Friends/family of a party
-- Didn't actually see accident
-- Inconsistent statements
-- Potential bias
+**To the Injured Cyclist**
+- Offer your contact information
+- Tell them what you witnessed
+- Be willing to provide a statement
 
-## Working with Your Attorney
+**Later in the Case**
+- You may be contacted by attorneys
+- Insurers may want statements
+- You may be asked to testify
 
-### What Attorneys Do
-- Conduct formal interviews
-- Obtain signed declarations
-- Issue subpoenas if needed
-- Prepare witnesses for deposition/trial
+## Why Your Statement Matters
 
-### Protecting Witnesses
-- Keep contact info confidential
-- Don't coach their testimony
-- Let attorney handle contact
-- Preserve written statements
-`,
-    keyTakeaways: [
-      "Witnesses significantly strengthen cases",
-      "Gather contact information at the scene",
-      "Get written statements as soon as possible",
-      "Independent witnesses are most credible",
-      "Let your attorney handle formal witness preparation"
-    ],
-    relatedTopics: ["evidence-collection-pedestrian-accidents", "proving-fault-pedestrian-accident", "expert-witnesses-pedestrian-cases"]
+- Independent witnesses are credible
+- You have no stake in the outcome
+- Your account can counter false claims
+- You may be the only neutral observer
+- Your testimony could be decisive
+
+## Common Witness Mistakes
+
+❌ Assuming someone else will help
+❌ Leaving before providing information
+❌ Waiting too long to write things down
+❌ Speculating about things not witnessed
+❌ Refusing to get involved
+
+## Thank You for Helping
+
+Witness testimony often makes the difference between justice and injustice for injured cyclists. Your willingness to help is appreciated.`
   },
   {
-    title: "Pedestrian Accidents and Surveillance Footage",
-    slug: "surveillance-footage-guide",
-    description: "How to locate and preserve video evidence that can prove your pedestrian accident case.",
-    category: "guide",
-    icon: "📹",
-    content: `
-## Why Video Evidence Matters
+    title: "Bicycle Accident Medical Treatment FAQ",
+    slug: "medical-treatment-faq",
+    category: "Medical",
+    description: "Answers to common questions about medical treatment after a bicycle crash.",
+    content: `## Medical Treatment Questions
 
-Surveillance footage can:
-- Show exactly what happened
-- Prove driver negligence
-- Counter false accusations
-- Establish timing and speed
-- Demonstrate injuries
+### Should I Go to the Hospital Even If I Feel Fine?
 
-## Types of Video Evidence
+**Yes.** Several reasons:
+- Adrenaline masks pain
+- Some injuries have delayed symptoms
+- Concussions may not be immediately obvious
+- Documentation begins immediately
+- Early treatment improves outcomes
 
-### Traffic Cameras
-- Red light cameras
-- Speed cameras
-- Department of Transportation cameras
-- Often publicly accessible
+### What If I Don't Have Health Insurance?
 
-### Business Surveillance
-- Store security cameras
-- Bank ATM cameras
-- Gas station cameras
-- Restaurant outdoor cameras
+**Options:**
+- Emergency rooms must treat regardless of insurance
+- Medical payments coverage on auto policy
+- Attorney may arrange lien-based treatment
+- Community health centers
+- Payment plans
 
-### Private Cameras
-- Ring doorbells
-- Home security systems
-- Dash cams from other vehicles
-- Building security systems
+### What Types of Doctors Should I See?
 
-### Vehicle Cameras
-- Dash cams
-- Rideshare vehicle cameras
-- Commercial vehicle cameras
-- Bus cameras
+**Depending on injuries:**
+- Emergency physician (initial care)
+- Primary care (follow-up)
+- Orthopedic (bones, joints)
+- Neurologist (head injuries)
+- Physical therapist (rehabilitation)
+- Pain management (chronic pain)
 
-## Finding Footage
+### How Important Is Follow-Up Care?
 
-### Where to Look
-- Businesses facing the intersection
-- Traffic camera locations
-- Residential Ring/Nest cameras
-- Parking lot cameras
-- ATMs
+**Critical.** Reasons:
+- Shows injuries are real and serious
+- Documents ongoing problems
+- Gaps in treatment hurt your case
+- Insurers argue gaps mean you weren't hurt
 
-### Time Is Critical
-- Most systems overwrite in 7-30 days
-- Some delete after 72 hours
-- Act immediately to preserve
+### What Should I Tell My Doctors?
 
-## Preserving Footage
+**Be Complete:**
+- How the crash happened
+- All symptoms, even minor ones
+- How symptoms affect daily life
+- All prior medical history
+- Don't minimize or exaggerate
 
-### Preservation Letters
-- Send written request to retain footage
-- Creates legal obligation to preserve
-- Include specific date, time, location
-- Send certified mail
+### Should I See My Regular Doctor or Specialists?
 
-### Attorney Subpoenas
-- Legal demand for footage
-- Prevents deletion
-- Forces compliance
+**Both.**
+- Regular doctor for overall care
+- Specialists as needed
+- Get referrals when appropriate
+- Follow your doctor's recommendations
 
-### What Your Attorney Does
-- Identifies potential sources
-- Sends preservation letters
-- Issues subpoenas
-- Obtains and analyzes footage
-- Works with video experts
+### How Long Should I Continue Treatment?
 
-## Using Footage in Your Case
+**Until:**
+- You reach maximum medical improvement
+- Your doctors say you can stop
+- All symptoms have resolved
+- Don't stop early even if you feel better
 
-### Analysis
-- Frame-by-frame review
-- Speed calculations
-- Timeline establishment
-- Enhancement of poor quality
+### What About Mental Health Treatment?
 
-### Challenges
-- Poor camera angles
-- Obstructions
-- Quality issues
-- Gaps in coverage
+**Very Important:**
+- PTSD after accidents is common
+- Anxiety about cycling again
+- Depression from injuries
+- This is part of your damages
+- Treatment helps and documents
 
-## Privacy Considerations
+### Who Pays for Treatment?
 
-### Whose Permission Needed
-- Property owner for private cameras
-- Business owner for store footage
-- Homeowner for Ring cameras
-- Government for public cameras
-`,
-    keyTakeaways: [
-      "Video evidence can prove your entire case",
-      "Act within 72 hours to preserve footage",
-      "Send preservation letters immediately",
-      "Multiple sources of footage may exist",
-      "An attorney can subpoena reluctant parties"
-    ],
-    relatedTopics: ["evidence-collection-pedestrian-accidents", "proving-fault-pedestrian-accident", "witness-guide"]
+**During the Case:**
+- Your health insurance
+- Medical payments coverage
+- Lien arrangements
+- Out of pocket (reimbursed later)
+
+**After Settlement:**
+- Settlement pays you back
+- Health insurance may have subrogation rights
+- Attorney helps navigate this
+
+### What Medical Records Do I Need?
+
+**All of Them:**
+- Emergency room records
+- Hospital records
+- Doctor's notes
+- Imaging studies
+- Bills and receipts
+- Pharmacy records`
   },
   {
-    title: "Social Media and Your Pedestrian Accident Case",
-    slug: "social-media-accident-case",
-    description: "How social media can help or hurt your pedestrian accident claim and best practices to follow.",
-    category: "legal",
-    icon: "📱",
-    content: `
-## How Social Media Can Hurt Your Case
+    title: "E-Bike Laws and Regulations",
+    slug: "e-bike-laws-regulations",
+    category: "E-Bike",
+    description: "Understanding electric bicycle classifications, laws, and how they affect accident claims.",
+    content: `## E-Bike Classification System
 
-### Posts Used Against You
-- Photos showing physical activity
-- Check-ins at locations
-- Comments about feeling fine
-- Vacation or party photos
-- Employment updates
+### Class 1 E-Bikes
+- **Pedal-assist only** (no throttle)
+- **Maximum assisted speed:** 20 mph
+- **Treatment:** Generally same as regular bicycles
+- **Where allowed:** Most bike lanes, paths, roads
 
-### Defense Tactics
-- Monitor your accounts
-- Subpoena deleted content
-- Friend your friends
-- Take screenshots
-- Hire investigators
+### Class 2 E-Bikes
+- **Throttle-assisted** (motor without pedaling)
+- **Maximum assisted speed:** 20 mph
+- **Treatment:** Varies by jurisdiction
+- **Where allowed:** Roads, some paths (check local laws)
 
-### Real Examples
-- Claimed couldn't walk, posted hiking photo
-- Said too depressed to work, posted party pics
-- Claimed severe pain, checked in at gym
+### Class 3 E-Bikes
+- **Pedal-assist only**
+- **Maximum assisted speed:** 28 mph
+- **Treatment:** More regulated
+- **Where allowed:** Roads; often prohibited on paths
 
-## Best Practices During Case
+## State E-Bike Regulations
 
-### What NOT to Do
-- Don't post about the accident
-- Don't discuss your injuries
-- Don't post physical activities
-- Don't discuss your lawsuit
-- Don't friend strangers
+### Common Regulations
+- Minimum age requirements (varies)
+- Helmet requirements (often for Class 3)
+- Where e-bikes can operate
+- Motor power limits
+- Speed limitations
 
-### Privacy Settings
-- Set everything to private
-- Review friend requests carefully
-- Audit existing friends
-- Check tagged photos settings
-- Review location sharing
+### Path Access
+- Class 1: Usually allowed
+- Class 2: Often allowed
+- Class 3: Usually restricted to roads
 
-### What's Safe
-- Keep posting ordinary updates
-- Share neutral content
-- Don't go completely dark (looks suspicious)
-- Don't delete old posts (spoliation)
+### Age Requirements
+Many states require riders to be:
+- 14+ for any e-bike
+- 16+ for Class 3
+- Check your specific state
 
-## Using Social Media Positively
+## E-Bikes and Accident Claims
 
-### Finding Witnesses
-- Post asking for witnesses
-- Share in local groups
-- Community members may help
+### How Classification Affects Your Claim
 
-### Documenting Driver
-- Check if driver posted about accident
-- Screenshots of admissions
-- Evidence of prior bad behavior
-- Posts showing impairment
+**Where You Were Riding**
+- Legal to ride there? Affects liability
+- Class 3 on prohibited path could affect claim
 
-## Legal Discovery Issues
+**Your Speed**
+- Higher e-bike speeds may be raised
+- But legal speed is still legal
+- Driver still had duties
 
-### What They Can Access
-- Anything public
-- Deleted content through subpoena
-- Private messages potentially
-- Account metadata
+### Insurance Considerations
 
-### What's Protected
-- Attorney-client communications
-- Truly private posts (sometimes)
-- Content clearly unrelated to case
+**Auto Insurance**
+- May or may not cover e-bikes
+- Check your policy
+- Some exclude motorized vehicles
 
-## Special Considerations
+**E-Bike Specific Insurance**
+- Now available
+- Covers theft, damage, liability
+- Worth considering
 
-### Don't Delete
-- Deletion = spoliation of evidence
-- Can result in sanctions
-- Looks like hiding something
-- Courts can force recovery
+**Health Insurance**
+- Generally covers e-bike injuries
+- Same as regular bicycle
 
-### Don't Make New Accounts
-- Can be discovered
-- Suggests consciousness of guilt
-- Complicates your case
-`,
-    keyTakeaways: [
-      "Assume everything you post will be seen",
-      "Don't post about your accident or injuries",
-      "Make all accounts private immediately",
-      "Don't delete posts - it can hurt your case",
-      "Social media can help find witnesses"
-    ],
-    relatedTopics: ["evidence-collection-pedestrian-accidents", "dealing-with-insurance", "protecting-your-settlement"]
+### Product Liability Issues
+
+E-bike specific concerns:
+- Battery fires or explosions
+- Motor failures
+- Brake inadequacy for weight
+- Frame failures
+- Software glitches
+
+If equipment failure caused your crash, the manufacturer may be liable.
+
+## E-Bike Safety Considerations
+
+### Higher Speeds
+- Longer stopping distances
+- More severe impacts
+- Less reaction time
+
+### Heavier Weight
+- Harder to maneuver
+- More impact force
+- Affects braking
+
+### Driver Expectations
+- Drivers may not expect e-bike speed
+- SMIDSY more common
+- Be extra visible
+
+### Best Practices
+- Ride appropriate speeds
+- Use extra caution
+- Ensure brakes adequate
+- Maintain battery properly`
+  },
+  {
+    title: "Bicycle Accident Glossary",
+    slug: "bicycle-accident-glossary",
+    category: "Reference",
+    description: "Definitions of legal and medical terms commonly used in bicycle accident cases.",
+    content: `## Legal Terms
+
+**Comparative Fault/Negligence**
+System where damages are reduced by the injured party's percentage of fault.
+
+**Contributory Negligence**
+System where any fault by injured party bars all recovery. Used in Alabama, Maryland, North Carolina, Virginia, DC.
+
+**Damages**
+Monetary compensation for injuries and losses.
+
+**Defendant**
+The party being sued (usually the driver).
+
+**Deposition**
+Sworn out-of-court testimony recorded for use in litigation.
+
+**Discovery**
+Pre-trial process of exchanging evidence and information.
+
+**Duty of Care**
+Legal obligation to act reasonably to prevent harm.
+
+**Liability**
+Legal responsibility for harm caused.
+
+**Negligence**
+Failure to exercise reasonable care, causing harm.
+
+**Negligence Per Se**
+Automatic negligence from violating a safety statute.
+
+**Plaintiff**
+The party bringing the lawsuit (the injured cyclist).
+
+**Proximate Cause**
+Direct connection between negligence and injury.
+
+**Settlement**
+Resolution of claim without trial.
+
+**Statute of Limitations**
+Deadline for filing a lawsuit.
+
+**Subrogation**
+Insurance company's right to seek reimbursement from settlement.
+
+**Tort**
+Civil wrong causing harm, basis for lawsuit.
+
+## Accident Terms
+
+**Dooring**
+Collision when vehicle door opens into cyclist's path.
+
+**Left Cross**
+Oncoming vehicle turns left across cyclist's path.
+
+**Right Hook**
+Same-direction vehicle turns right across cyclist's path.
+
+**SMIDSY**
+"Sorry Mate I Didn't See You" - common driver excuse.
+
+**Door Zone**
+Area alongside parked cars where doors swing.
+
+## Medical Terms
+
+**Concussion**
+Mild traumatic brain injury from impact.
+
+**Contusion**
+Bruise from impact.
+
+**Fracture**
+Broken bone.
+
+**Hematoma**
+Collection of blood outside blood vessels.
+
+**Laceration**
+Cut or tear in skin.
+
+**Road Rash**
+Abrasion injuries from sliding on pavement.
+
+**Soft Tissue Injury**
+Damage to muscles, ligaments, or tendons.
+
+**TBI (Traumatic Brain Injury)**
+Brain damage from trauma.
+
+## Insurance Terms
+
+**Bodily Injury Liability**
+Coverage for injuries you cause to others.
+
+**Claim**
+Request for payment under insurance policy.
+
+**Deductible**
+Amount you pay before insurance coverage kicks in.
+
+**Medical Payments Coverage (MedPay)**
+Coverage for your medical bills regardless of fault.
+
+**Policy Limits**
+Maximum amount insurance will pay.
+
+**Premium**
+Payment for insurance coverage.
+
+**UM/UIM**
+Uninsured/Underinsured Motorist coverage.`
+  },
+  {
+    title: "Cycling Advocacy Organizations",
+    slug: "cycling-advocacy-organizations",
+    category: "Resources",
+    description: "National and local organizations working to make cycling safer and protect cyclist rights.",
+    content: `## National Organizations
+
+### League of American Bicyclists
+**Focus:** Promoting bicycling through advocacy, education, and outreach
+**Programs:** Bicycle Friendly Community designations, education programs
+**Website:** bikeleague.org
+
+### People for Bikes
+**Focus:** Making biking better for everyone
+**Programs:** Infrastructure funding, industry partnerships
+**Website:** peopleforbikes.org
+
+### Adventure Cycling Association
+**Focus:** Inspiring and empowering people to travel by bicycle
+**Programs:** Routes, tours, advocacy
+**Website:** adventurecycling.org
+
+### National Bike Law Project
+**Focus:** Legal advocacy for cyclists
+**Programs:** Lawyer referrals, legal resources
+**Website:** bikeleague.org/bikelaw
+
+### Safe Routes to School National Partnership
+**Focus:** Safe walking and biking for kids
+**Programs:** School programs, policy advocacy
+**Website:** saferoutespartnership.org
+
+## Major City Organizations
+
+### New York
+- Transportation Alternatives
+- Bike New York
+
+### Los Angeles
+- Los Angeles County Bicycle Coalition
+
+### Chicago
+- Active Transportation Alliance
+
+### San Francisco
+- San Francisco Bicycle Coalition
+
+### Portland
+- Bicycle Transportation Alliance
+- Oregon Bicycle Racing Association
+
+### Seattle
+- Cascade Bicycle Club
+- Seattle Bike Blog
+
+### Boston
+- Boston Cyclists Union
+- MassBike
+
+### Denver
+- Bicycle Colorado
+
+### Austin
+- Bike Austin
+
+### Washington DC
+- Washington Area Bicyclist Association (WABA)
+
+## What Advocacy Organizations Do
+
+### Policy Advocacy
+- Lobby for safer laws
+- Support infrastructure funding
+- Fight anti-bike legislation
+
+### Safety Programs
+- Education classes
+- Helmet distribution
+- Safe routes advocacy
+
+### Community Building
+- Group rides
+- Volunteer opportunities
+- Social events
+
+### Legal Support
+- Lawyer referral networks
+- Legal education
+- Crash assistance
+
+## How You Can Help
+
+### Join
+Membership supports their work.
+
+### Volunteer
+Time makes a difference.
+
+### Donate
+Funding enables programs.
+
+### Participate
+Show up at rides and events.
+
+### Advocate
+Contact elected officials.
+
+### Report
+Document dangerous conditions.`
+  },
+  {
+    title: "Filing a Police Report After a Bicycle Accident",
+    slug: "filing-police-report",
+    category: "Legal",
+    description: "Why police reports matter and how to ensure you get an accurate report.",
+    content: `## Why the Police Report Matters
+
+### Documentation
+- Official record of the crash
+- Documents driver and witness information
+- Captures initial statements
+- Notes road conditions
+
+### Legal Significance
+- May contain fault determination
+- Insurance companies rely on it
+- Can be used as evidence
+- Establishes timeline
+
+### Practical Benefits
+- Forces information exchange
+- Creates accountability
+- May result in citations
+- Starts investigation
+
+## Calling 911 After a Bicycle Crash
+
+### When to Call
+Always call 911 if:
+- Anyone is injured
+- Significant property damage
+- Driver is uncooperative
+- You want the crash documented
+
+### What to Say
+- Location of the crash
+- Number of people involved
+- Injuries (describe briefly)
+- Request police and ambulance if needed
+
+### While Waiting
+- Stay at the scene
+- Move to safety if possible
+- Don't discuss fault
+- Start documenting
+
+## Interacting with Police
+
+### Providing Your Account
+- Be calm and factual
+- Describe what happened
+- Don't speculate
+- Be honest about what you're unsure of
+
+### Getting Driver Information
+Police will collect:
+- Driver's license
+- Insurance information
+- Vehicle information
+- Contact details
+
+### Witnesses
+- Point out witnesses to officers
+- Ask police to get their statements
+- Get contact info yourself too
+
+## Reviewing the Police Report
+
+### Obtaining the Report
+- May take days to weeks
+- Request from the department
+- May be online
+- Small fee usually required
+
+### What to Look For
+- Accuracy of your account
+- Diagram of the crash
+- Driver's statements
+- Witness information
+- Officer's conclusions
+
+### If There Are Errors
+
+**Minor Errors:**
+- Note them for your records
+- May not need correction
+
+**Significant Errors:**
+- Request amendment
+- Provide correct information
+- May need attorney help
+
+## When Police Won't Respond
+
+Some jurisdictions don't respond to minor crashes:
+- Still exchange information
+- Document everything yourself
+- Consider filing a report at station
+- Your attorney can help navigate
+
+## Using the Report in Your Case
+
+### As Evidence
+- Supports your version
+- Documents conditions
+- Contains admissions
+
+### With Insurance
+- Insurance will obtain it
+- Review before they do
+- Know what it says
+
+### In Litigation
+- Admissible as business record
+- Officers may testify
+- Can be supplemented with your evidence`
   }
 ];
 
-// Helper functions
-export function getResourceBySlug(slug: string): ResourceData | undefined {
+export function getResourceBySlug(slug: string): Resource | undefined {
   return resources.find(r => r.slug === slug);
 }
 
-export function getResourcesByCategory(category: ResourceData["category"]): ResourceData[] {
+export function getResourcesByCategory(category: string): Resource[] {
   return resources.filter(r => r.category === category);
 }
 
-export function getAllResourceSlugs(): string[] {
-  return resources.map(r => r.slug);
+export function getResourceCategories(): string[] {
+  return [...new Set(resources.map(r => r.category))];
+}
+
+export function getResourceCount(): number {
+  return resources.length;
 }

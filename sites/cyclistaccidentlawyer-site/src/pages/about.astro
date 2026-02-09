@@ -1,45 +1,110 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "About Us - Pedestrian Accident Lawyer";
-const description = "Learn about our mission to help pedestrian accident victims get the compensation they deserve. Free consultations nationwide.";
+const title = "About Us - Bicycle Accident Lawyers";
+const description = "Learn about our mission to connect bicycle accident victims with experienced attorneys nationwide. Free consultations, no fees unless you win.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "About Us", url: "/about" }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
     <div class="container-wide">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">About Pedestrian Accident Lawyer</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">
-        Dedicated to helping pedestrian accident victims get justice and fair compensation.
-      </p>
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Fighting for Cyclists' Rights
+        </h1>
+        <p class="text-xl text-gray-300">
+          We connect bicycle accident victims with experienced attorneys who understand the unique challenges cyclists face on American roads.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-16 md:py-20">
     <div class="container-narrow">
       <div class="prose prose-lg max-w-none">
         <h2>Our Mission</h2>
-        <p>Pedestrian accidents are devastating. Victims often face catastrophic injuries, mounting medical bills, and a long road to recovery—all while insurance companies try to minimize their claims.</p>
-        
-        <p>We created Pedestrian Accident Lawyer to connect victims with experienced attorneys who understand the unique challenges pedestrians face. Our nationwide network of attorneys specializes in pedestrian accident cases and works on contingency—meaning you pay nothing unless you win.</p>
+        <p>
+          Every year, over 1,000 cyclists are killed and more than 130,000 are injured in crashes with motor vehicles in the United States. Behind each statistic is a person—a commuter, a recreational rider, a child learning to ride, or an athlete training for their next event.
+        </p>
+        <p>
+          Cyclist Accident Lawyer was created to help these victims find justice. We connect injured cyclists with experienced attorneys who understand bicycle law, fight against insurance company tactics, and work tirelessly to secure fair compensation.
+        </p>
 
-        <h2>Why Pedestrians Need Specialized Help</h2>
+        <h2>Why Bicycle Accident Cases Are Different</h2>
+        <p>
+          Bicycle accident cases require specialized legal knowledge that many personal injury attorneys lack:
+        </p>
         <ul>
-          <li><strong>No Protection:</strong> Unlike car accident victims, pedestrians have no vehicle frame, airbags, or seatbelts. Injuries are almost always severe.</li>
-          <li><strong>Blame Shifting:</strong> Insurance companies often try to blame pedestrians—claiming jaywalking, distraction, or failure to yield.</li>
-          <li><strong>Complex Laws:</strong> Crosswalk laws, right-of-way rules, and fault systems vary dramatically by state.</li>
-          <li><strong>High Stakes:</strong> Medical bills for pedestrian accidents often reach hundreds of thousands of dollars.</li>
+          <li><strong>Cyclist Rights:</strong> Bicycles are vehicles with equal rights to the road, but many drivers and even some attorneys don't understand this.</li>
+          <li><strong>Specialized Laws:</strong> Helmet requirements, safe passing laws, and bike lane regulations vary by state and affect case outcomes.</li>
+          <li><strong>Blame-Shifting Tactics:</strong> Insurance companies frequently blame cyclists—even when drivers are clearly at fault.</li>
+          <li><strong>Severe Injuries:</strong> Without the protection of a vehicle, cyclists often suffer catastrophic injuries requiring significant compensation.</li>
         </ul>
 
-        <h2>Our Commitment</h2>
-        <p>We believe every pedestrian accident victim deserves access to quality legal representation, regardless of their financial situation. That's why our network attorneys work on contingency—no fees unless you win your case.</p>
+        <h2>Our Attorney Network</h2>
+        <p>
+          We've built a nationwide network of attorneys who specialize in bicycle accident cases. Our network includes:
+        </p>
+        <ul>
+          <li>Board-certified personal injury specialists</li>
+          <li>Million Dollar Advocates Forum members</li>
+          <li>Super Lawyers® recognized attorneys</li>
+          <li>Active cyclists who understand the community</li>
+          <li>Attorneys with proven trial experience</li>
+        </ul>
 
-        <h2>Get Your Free Case Review</h2>
-        <p>If you or a loved one was hit by a car while walking, we're here to help. Contact us for a free, no-obligation case evaluation.</p>
+        <h2>How We Help</h2>
+        <p>
+          When you contact us, here's what happens:
+        </p>
+        <ol>
+          <li><strong>Free Evaluation:</strong> We review your case details at no cost to you.</li>
+          <li><strong>Attorney Matching:</strong> We connect you with an experienced bicycle accident attorney in your area.</li>
+          <li><strong>No Upfront Costs:</strong> Our attorneys work on contingency—you pay nothing unless you win.</li>
+          <li><strong>Ongoing Support:</strong> We're here to answer questions throughout your case.</li>
+        </ol>
+
+        <h2>Our Commitment</h2>
+        <p>
+          We believe every cyclist deserves access to quality legal representation, regardless of their financial situation. That's why every consultation is free, and our attorneys only get paid if they win your case.
+        </p>
+        <p>
+          If you've been injured in a bicycle accident, don't face the insurance companies alone. Let us help you find an attorney who will fight for your rights and the compensation you deserve.
+        </p>
       </div>
 
-      <div class="mt-8">
-        <a href="/free-consultation" class="btn btn-cta">Get Your Free Case Review →</a>
+      <div class="mt-12 text-center">
+        <a href="/free-consultation" class="btn btn-cta text-lg px-8 py-4">
+          Get Your Free Case Review
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-16">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold text-primary-600 mb-2">500+</div>
+          <div class="text-gray-600">Attorneys Nationwide</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-600 mb-2">50</div>
+          <div class="text-gray-600">States Covered</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-600 mb-2">24/7</div>
+          <div class="text-gray-600">Free Consultations</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-600 mb-2">$0</div>
+          <div class="text-gray-600">Upfront Cost</div>
+        </div>
       </div>
     </div>
   </section>

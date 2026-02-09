@@ -1,19 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { states, getCriticalFatalityStates, getStrongCrosswalkStates } from '../data/states';
+import { states } from '../data/states';
 
-const title = "Pedestrian Accident Lawyers - Free Case Review";
-const description = "Hit by a car while walking? Get a free case evaluation from experienced pedestrian accident attorneys. No fees unless you win. Available 24/7 nationwide.";
+const title = "Bicycle Accident Lawyers - Free Case Review";
+const description = "Injured in a bicycle accident? Get a free case evaluation from experienced cyclist accident attorneys. No fees unless you win. Available 24/7 nationwide.";
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Pedestrian Accident Lawyer",
-  "url": "https://pedestrianaccidentlawyer.net",
+  "name": "Cyclist Accident Lawyer",
+  "url": "https://cyclistaccidentlawyer.com",
   "description": description,
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://pedestrianaccidentlawyer.net/search?q={search_term_string}",
+    "target": "https://cyclistaccidentlawyer.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -24,7 +24,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How much does it cost to hire a pedestrian accident lawyer?",
+      "name": "How much does it cost to hire a bicycle accident lawyer?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Nothing upfront. Our attorneys work on contingency, meaning they only get paid if you win. The initial consultation is always free."
@@ -32,26 +32,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "What if I was jaywalking when I was hit?",
+      "name": "What if I wasn't wearing a helmet when I was hit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You may still be able to recover compensation. Drivers have a duty of care to watch for pedestrians at all times. Most states use comparative fault, meaning you can still recover damages minus your percentage of fault."
+        "text": "You may still be able to recover compensation. Most states don't require adult cyclists to wear helmets. Even in states with helmet laws, not wearing a helmet doesn't excuse the driver's negligence."
       }
     },
     {
       "@type": "Question",
-      "name": "How long do I have to file a pedestrian accident claim?",
+      "name": "How long do I have to file a bicycle accident claim?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This varies by state—from 1 year (Kentucky, Louisiana, Tennessee) to 6 years (Maine, Minnesota, North Dakota). Check your state's page for specific deadlines and don't delay."
+        "text": "This varies by state—from 1 year (Louisiana, Tennessee) to 6 years (Maine, Minnesota, North Dakota). Check your state's page for specific deadlines and don't delay."
       }
     },
     {
       "@type": "Question",
-      "name": "What compensation can I receive for a pedestrian accident?",
+      "name": "What compensation can I receive for a bicycle accident?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You may be entitled to medical expenses, lost wages, pain and suffering, permanent disability compensation, and in wrongful death cases, funeral expenses and loss of companionship."
+        "text": "You may be entitled to medical expenses, lost wages, pain and suffering, bike replacement, permanent disability compensation, and in wrongful death cases, funeral expenses and loss of companionship."
       }
     },
     {
@@ -67,13 +67,13 @@ const faqSchema = {
 
 const schemaMarkup = [websiteSchema, faqSchema];
 
-// Featured states (highest pedestrian fatalities)
+// Featured states (most cycling fatalities or best infrastructure)
 const featuredStates = states.filter(s => 
-  ["california", "texas", "florida", "new-york", "arizona", "georgia"].includes(s.slug)
+  ["california", "florida", "texas", "new-york", "colorado", "oregon"].includes(s.slug)
 );
 
-const criticalStates = getCriticalFatalityStates();
-const strongCrosswalkStates = getStrongCrosswalkStates();
+// Critical fatality states
+const criticalStates = states.filter(s => s.fatalityTrend === "Critical" || s.fatalityTrend === "Increasing").slice(0, 6);
 ---
 
 <BaseLayout 
@@ -92,25 +92,19 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
           </div>
           
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-            Hit by a Car 
-            <span class="text-primary-400">While Walking?</span>
+            Injured in a 
+            <span class="text-primary-400">Bicycle Accident?</span>
           </h1>
           
           <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Pedestrian accidents cause devastating injuries. Get the compensation you deserve from attorneys who fight for walkers' rights.
+            Cyclists face devastating injuries when hit by cars. Get the compensation you deserve from attorneys who fight for riders' rights.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#free-case-review" class="btn btn-cta text-lg px-8 py-4">
               Get Your Free Case Review
             </a>
-            <a href="tel:1-800-555-0123" class="btn bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg px-8 py-4">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call Now: 1-800-555-0123
-            </a>
-          </div>
+            </div>
           
           <div class="flex items-center gap-6 text-gray-300">
             <div class="flex items-center gap-2">
@@ -132,11 +126,11 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
         <div id="free-case-review" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
           <div class="text-center mb-6">
             <h2 class="text-2xl font-bold text-gray-900 mb-2">Free Case Evaluation</h2>
-            <p class="text-gray-600">Find out what your pedestrian accident case is worth</p>
+            <p class="text-gray-600">Find out what your bicycle accident case is worth</p>
           </div>
           
           <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
-            <input type="hidden" name="source" value="pedestrianaccidentlawyer-home" />
+            <input type="hidden" name="source" value="cyclistaccidentlawyer-home" />
             <div class="grid md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
@@ -166,7 +160,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-1">Brief Description</label>
-              <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none" placeholder="What happened?"></textarea>
+              <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none" placeholder="What happened in your bicycle accident?"></textarea>
             </div>
             <button type="submit" class="w-full btn btn-cta text-lg py-4">
               Get My Free Evaluation
@@ -186,12 +180,12 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     <div class="container-wide">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-3xl md:text-4xl font-bold">7,500+</div>
-          <div class="text-primary-100">Pedestrian Deaths/Year</div>
+          <div class="text-3xl md:text-4xl font-bold">1,000+</div>
+          <div class="text-primary-100">Cyclist Deaths/Year</div>
         </div>
         <div>
-          <div class="text-3xl md:text-4xl font-bold">40-Year</div>
-          <div class="text-primary-100">High in Fatalities</div>
+          <div class="text-3xl md:text-4xl font-bold">130,000+</div>
+          <div class="text-primary-100">Cyclist Injuries/Year</div>
         </div>
         <div>
           <div class="text-3xl md:text-4xl font-bold">50</div>
@@ -205,15 +199,15 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     </div>
   </section>
 
-  <!-- Why Pedestrian Accidents Are Different -->
+  <!-- Why Bicycle Accidents Are Different -->
   <section class="py-16 md:py-20">
     <div class="container-wide">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Why Pedestrian Accidents Are So Devastating
+          Why Bicycle Accidents Are So Devastating
         </h2>
         <p class="text-xl text-gray-600">
-          When a vehicle hits a pedestrian, the injuries are almost always severe. You need attorneys who understand pedestrian law.
+          When a vehicle hits a cyclist, the injuries are almost always severe. You need attorneys who understand bicycle law.
         </p>
       </div>
       
@@ -224,9 +218,9 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">No Protection From Impact</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Minimal Protection</h3>
           <p class="text-gray-600">
-            Unlike car accident victims, pedestrians have no vehicle frame, airbags, or seatbelts. The human body absorbs the full force of the collision.
+            Unlike car accident victims, cyclists have no vehicle frame, airbags, or seatbelts. A helmet only protects the head—the body absorbs the full force.
           </p>
         </div>
         
@@ -239,7 +233,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Blame Shifting Tactics</h3>
           <p class="text-gray-600">
-            Insurance companies often try to blame pedestrians—claiming jaywalking or distraction. You need attorneys who fight back against these tactics.
+            Insurance companies often try to blame cyclists—claiming no helmet, riding too fast, or being in the wrong place. You need attorneys who fight back.
           </p>
         </div>
         
@@ -249,9 +243,9 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Complex Right-of-Way Laws</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Complex Cycling Laws</h3>
           <p class="text-gray-600">
-            Crosswalk laws, right-of-way rules, and fault systems vary by state. Your attorney must know these laws to maximize your claim.
+            Bike lane laws, helmet requirements, safe passing distances, and fault systems vary by state. Your attorney must know these laws.
           </p>
         </div>
       </div>
@@ -263,10 +257,10 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     <div class="container-wide">
       <div class="text-center max-w-3xl mx-auto mb-8">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          ⚠️ Deadliest States for Pedestrians
+          ⚠️ States with Rising Cyclist Fatalities
         </h2>
         <p class="text-lg text-gray-600">
-          These states have the highest pedestrian fatality rates. If you were hit in one of these states, your case needs experienced representation.
+          These states have critical or increasing cyclist fatality rates. If you were hit in one of these states, your case needs experienced representation.
         </p>
       </div>
       
@@ -276,7 +270,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
             href={`/states/${state.slug}`}
             class="bg-red-100 hover:bg-red-200 px-4 py-2 rounded-full text-red-800 font-medium transition"
           >
-            {state.name} ({state.pedestrianDeathRate})
+            {state.name} ({state.cyclistDeathRate})
           </a>
         ))}
       </div>
@@ -288,10 +282,10 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     <div class="container-wide">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Find a Pedestrian Accident Lawyer in Your State
+          Find a Bicycle Accident Lawyer in Your State
         </h2>
         <p class="text-xl text-gray-600">
-          Click your state to learn about crosswalk laws, statute of limitations, and connect with local attorneys.
+          Click your state to learn about bike laws, helmet requirements, and connect with local attorneys.
         </p>
       </div>
       
@@ -306,8 +300,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
             </div>
             <div class="font-semibold text-gray-900 mt-2">{state.name}</div>
             <div class="text-xs text-gray-500 mt-1">
-              {state.crosswalkLaw === "strong" ? "🚶 Strong Crosswalk Laws" : 
-               state.crosswalkLaw === "moderate" ? "Moderate Protection" : "Basic Laws"}
+              {state.threeFootLaw ? "🚴 3-Foot Passing Law" : "Basic Passing Laws"}
             </div>
           </a>
         ))}
@@ -326,29 +319,29 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     <div class="container-wide">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Types of Pedestrian Accidents We Handle
+          Types of Bicycle Accidents We Handle
         </h2>
         <p class="text-xl text-gray-300">
-          Our attorneys have experience with all types of pedestrian crashes.
+          Our attorneys have experience with all types of bicycle crashes.
         </p>
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { title: "Crosswalk Accidents", icon: "🚶", desc: "Drivers failing to yield at crosswalks" },
-          { title: "Hit-and-Run", icon: "🚗💨", desc: "Drivers fleeing after striking pedestrians" },
-          { title: "Intersection Crashes", icon: "🚦", desc: "Red lights, right turns, and signals" },
-          { title: "Parking Lot Accidents", icon: "🅿️", desc: "Struck in shopping centers and lots" },
-          { title: "Sidewalk Accidents", icon: "🛤️", desc: "Vehicles jumping curbs onto sidewalks" },
-          { title: "School Zone Accidents", icon: "🏫", desc: "Children struck near schools" },
-          { title: "DUI Pedestrian Crashes", icon: "🍺", desc: "Drunk drivers hitting walkers" },
-          { title: "Distracted Drivers", icon: "📱", desc: "Texting drivers striking pedestrians" },
+          { title: "Dooring Accidents", icon: "🚗", desc: "Car doors opening into cyclists' paths" },
+          { title: "Right-Hook Crashes", icon: "➡️", desc: "Vehicles turning right into cyclists" },
+          { title: "Left-Cross Accidents", icon: "⬅️", desc: "Oncoming vehicles turning left" },
+          { title: "Rear-End Collisions", icon: "💥", desc: "Vehicles striking cyclists from behind" },
+          { title: "Hit-and-Run", icon: "🚗💨", desc: "Drivers fleeing after striking cyclists" },
+          { title: "Intersection Crashes", icon: "🚦", desc: "Red lights, stop signs, and signals" },
+          { title: "Road Hazard Crashes", icon: "🕳️", desc: "Potholes, grates, and debris" },
+          { title: "Commercial Vehicles", icon: "🚛", desc: "Trucks and delivery vehicles" },
         ].map(type => (
-          <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition">
+          <a href={`/case-types/${type.title.toLowerCase().replace(/\s+/g, '-')}`} class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition block">
             <div class="text-4xl mb-4">{type.icon}</div>
             <h3 class="font-bold text-white mb-2">{type.title}</h3>
             <p class="text-gray-400 text-sm">{type.desc}</p>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -382,7 +375,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Free Consultation</h3>
           <p class="text-gray-600">
-            An experienced pedestrian accident attorney reviews your case and explains your options—completely free.
+            An experienced bicycle accident attorney reviews your case and explains your options—completely free.
           </p>
         </div>
         <div class="text-center">
@@ -404,156 +397,6 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
     </div>
   </section>
 
-  <!-- E-E-A-T: Attorney Credentials & Testimonials -->
-  <section class="py-16 md:py-20 bg-white">
-    <div class="container-wide">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Trusted by Thousands of Pedestrian Accident Victims
-        </h2>
-        <p class="text-xl text-gray-600">
-          Our network of attorneys has decades of combined experience fighting for pedestrian rights.
-        </p>
-      </div>
-      
-      <!-- Attorney Credentials -->
-      <div class="grid md:grid-cols-4 gap-6 mb-16">
-        <div class="text-center">
-          <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">500+</div>
-          <div class="text-gray-600">Attorneys in Network</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">$2.5B+</div>
-          <div class="text-gray-600">Recovered for Clients</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">98%</div>
-          <div class="text-gray-600">Success Rate</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">25+</div>
-          <div class="text-gray-600">Years Average Experience</div>
-        </div>
-      </div>
-      
-      <!-- Qualifications -->
-      <div class="bg-gray-50 rounded-xl p-8 mb-12">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Our Attorney Network Qualifications</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Board Certified Specialists</div>
-              <div class="text-sm text-gray-600">Personal injury & trial law certifications</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Super Lawyers® Recognition</div>
-              <div class="text-sm text-gray-600">Top-rated by peers & clients</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">State Bar Associations</div>
-              <div class="text-sm text-gray-600">Licensed & in good standing</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Million Dollar Advocates Forum®</div>
-              <div class="text-sm text-gray-600">Proven multi-million dollar verdicts</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">AV Preeminent® Rating</div>
-              <div class="text-sm text-gray-600">Martindale-Hubbell highest rating</div>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">ATLA/AAJ Members</div>
-              <div class="text-sm text-gray-600">American Association for Justice</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Testimonials -->
-      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">What Our Clients Say</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-50 rounded-xl p-6">
-          <div class="flex items-center mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <p class="text-gray-600 mb-4 italic">"After I was hit in a crosswalk, I didn't know where to turn. The attorney they connected me with fought the insurance company and got me $450,000. I couldn't have done it alone."</p>
-          <div class="font-semibold text-gray-900">— Maria S.</div>
-          <div class="text-sm text-gray-500">Crosswalk accident, Los Angeles, CA</div>
-        </div>
-        
-        <div class="bg-gray-50 rounded-xl p-6">
-          <div class="flex items-center mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <p class="text-gray-600 mb-4 italic">"The insurance company offered me $15,000 initially. My attorney got me $285,000 after proving the driver was texting. These lawyers know what they're doing."</p>
-          <div class="font-semibold text-gray-900">— James T.</div>
-          <div class="text-sm text-gray-500">Hit by distracted driver, Houston, TX</div>
-        </div>
-        
-        <div class="bg-gray-50 rounded-xl p-6">
-          <div class="flex items-center mb-4">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <p class="text-gray-600 mb-4 italic">"My daughter was hit by a car walking home from school. The attorney handled everything while we focused on her recovery. Compassionate, professional, and effective."</p>
-          <div class="font-semibold text-gray-900">— Robert M.</div>
-          <div class="text-sm text-gray-500">School zone accident, Phoenix, AZ</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ Section -->
   <section class="bg-gray-100 py-16 md:py-20">
     <div class="container-wide">
@@ -566,7 +409,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
       <div class="max-w-3xl mx-auto space-y-4">
         <details class="bg-white rounded-lg shadow-sm border border-gray-200">
           <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-primary-600">
-            How much does it cost to hire a pedestrian accident lawyer?
+            How much does it cost to hire a bicycle accident lawyer?
           </summary>
           <div class="px-6 pb-4 text-gray-600">
             Nothing upfront. Our attorneys work on contingency, meaning they only get paid if you win. The initial consultation is always free.
@@ -575,28 +418,28 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
         
         <details class="bg-white rounded-lg shadow-sm border border-gray-200">
           <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-primary-600">
-            What if I was jaywalking when I was hit?
+            What if I wasn't wearing a helmet when I was hit?
           </summary>
           <div class="px-6 pb-4 text-gray-600">
-            You may still be able to recover compensation. Drivers have a duty of care to watch for pedestrians at all times. Most states use comparative fault, meaning you can still recover damages minus your percentage of fault.
+            You may still be able to recover compensation. Most states don't require adult cyclists to wear helmets. Even where helmet laws exist, not wearing one doesn't excuse the driver's negligence in causing the crash.
           </div>
         </details>
         
         <details class="bg-white rounded-lg shadow-sm border border-gray-200">
           <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-primary-600">
-            How long do I have to file a pedestrian accident claim?
+            How long do I have to file a bicycle accident claim?
           </summary>
           <div class="px-6 pb-4 text-gray-600">
-            This varies by state—from 1 year (Kentucky, Louisiana, Tennessee) to 6 years (Maine, Minnesota, North Dakota). Check your state's page for specific deadlines and don't delay.
+            This varies by state—from 1 year (Louisiana, Tennessee) to 6 years (Maine, Minnesota, North Dakota). Check your state's page for specific deadlines and don't delay.
           </div>
         </details>
         
         <details class="bg-white rounded-lg shadow-sm border border-gray-200">
           <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-primary-600">
-            What compensation can I receive for a pedestrian accident?
+            What compensation can I receive for a bicycle accident?
           </summary>
           <div class="px-6 pb-4 text-gray-600">
-            You may be entitled to medical expenses, lost wages, pain and suffering, permanent disability compensation, and in wrongful death cases, funeral expenses and loss of companionship.
+            You may be entitled to medical expenses, lost wages, bike repair/replacement, pain and suffering, permanent disability compensation, and in wrongful death cases, funeral expenses and loss of companionship.
           </div>
         </details>
         
@@ -625,10 +468,7 @@ const strongCrosswalkStates = getStrongCrosswalkStates();
         <a href="#free-case-review" class="btn bg-white hover:bg-gray-100 text-primary-600 font-bold text-lg px-8 py-4">
           Get My Free Case Review
         </a>
-        <a href="tel:1-800-555-0123" class="btn bg-primary-800 hover:bg-primary-900 text-white font-bold text-lg px-8 py-4">
-          Call 1-800-555-0123
-        </a>
-      </div>
+        </div>
     </div>
   </section>
 </BaseLayout>

@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { states } from '../../data/states';
 
-const title = "Pedestrian Accident Lawyers by State";
-const description = "Find experienced pedestrian accident attorneys in your state. Learn about crosswalk laws, statutes of limitations, and get a free case evaluation.";
+const title = "Find Bicycle Accident Lawyers by State";
+const description = "Find bicycle accident attorneys in all 50 states. Learn about bike laws, helmet requirements, and safe passing laws in your state.";
 
 const breadcrumbs = [
   { name: "Home", url: "/" },
@@ -12,37 +12,96 @@ const breadcrumbs = [
 ---
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
     <div class="container-wide">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Find a Pedestrian Accident Lawyer by State</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">
-        Pedestrian laws vary dramatically by state. Select your state to learn about crosswalk laws, filing deadlines, and connect with local attorneys.
-      </p>
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Bicycle Accident Lawyers by State
+        </h1>
+        <p class="text-xl text-gray-300">
+          Select your state to learn about bicycle laws, helmet requirements, safe passing distances, and connect with experienced attorneys in your area.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-16">
     <div class="container-wide">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {states.map(state => (
           <a 
             href={`/states/${state.slug}`}
-            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:border-primary-500 border-2 border-transparent transition group"
+            class="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg hover:border-primary-500 border-2 border-transparent transition group"
           >
-            <div class="flex items-center gap-4">
-              <div class="text-2xl font-bold text-primary-600 group-hover:text-primary-700 w-12">
-                {state.abbreviation}
-              </div>
-              <div>
-                <div class="font-semibold text-gray-900">{state.name}</div>
-                <div class="text-sm text-gray-500">
-                  {state.statuteOfLimitations} SOL • {state.crosswalkLaw === "strong" ? "Strong Laws" : state.crosswalkLaw === "moderate" ? "Moderate" : "Basic"}
-                </div>
-              </div>
+            <div class="text-2xl font-bold text-primary-600 group-hover:text-primary-700">
+              {state.abbreviation}
+            </div>
+            <div class="font-medium text-gray-900 mt-1 text-sm">{state.name}</div>
+            <div class="text-xs text-gray-500 mt-1">
+              {state.threeFootLaw ? "🚴 3ft Law" : ""}
             </div>
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 py-12">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Key Information by State</h2>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-xl shadow-md">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">State</th>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">Statute of Limitations</th>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">3-Foot Law</th>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">Helmet Law</th>
+              <th class="px-4 py-3 text-left font-semibold text-gray-900">Fault System</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {states.slice(0, 15).map(state => (
+              <tr class="hover:bg-gray-50">
+                <td class="px-4 py-3">
+                  <a href={`/states/${state.slug}`} class="text-primary-600 hover:underline font-medium">
+                    {state.name}
+                  </a>
+                </td>
+                <td class="px-4 py-3 text-gray-600">{state.statuteOfLimitations}</td>
+                <td class="px-4 py-3">
+                  {state.threeFootLaw ? (
+                    <span class="text-green-600">✓ Yes</span>
+                  ) : (
+                    <span class="text-gray-400">No</span>
+                  )}
+                </td>
+                <td class="px-4 py-3 text-gray-600 capitalize">{state.helmetLaw}</td>
+                <td class="px-4 py-3 text-gray-600 text-sm">{state.faultSystem}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      
+      <p class="text-center text-gray-600 mt-4">
+        Click on a state above to see complete details and connect with local attorneys.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-primary-600 py-12">
+    <div class="container-wide text-center">
+      <h2 class="text-2xl font-bold text-white mb-4">
+        Injured in a Bicycle Accident?
+      </h2>
+      <p class="text-primary-100 mb-6">
+        Get a free case evaluation from experienced bicycle accident attorneys in your state.
+      </p>
+      <a href="/free-consultation" class="btn bg-white hover:bg-gray-100 text-primary-600 font-bold px-8 py-4">
+        Get Free Case Review
+      </a>
     </div>
   </section>
 </BaseLayout>

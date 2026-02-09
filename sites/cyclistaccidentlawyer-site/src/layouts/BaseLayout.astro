@@ -21,7 +21,7 @@ const {
   ogImage = '/images/og-default.jpg'
 } = Astro.props;
 
-const siteName = 'Pedestrian Accident Lawyer';
+const siteName = 'Cyclist Accident Lawyer';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 
 // Generate BreadcrumbList schema
@@ -32,7 +32,7 @@ const breadcrumbSchema = breadcrumbs ? {
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": `https://pedestrianaccidentlawyer.net${item.url}`
+    "item": `https://cyclistaccidentlawyer.com${item.url}`
   }))
 } : null;
 
@@ -40,15 +40,15 @@ const breadcrumbSchema = breadcrumbs ? {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": "Pedestrian Accident Lawyer",
-  "description": "Free case evaluations for pedestrian accident victims nationwide. Connect with experienced pedestrian accident attorneys.",
-  "url": "https://pedestrianaccidentlawyer.net",
-  "logo": "https://pedestrianaccidentlawyer.net/images/logo.png",
+  "name": "Cyclist Accident Lawyer",
+  "description": "Free case evaluations for bicycle accident victims nationwide. Connect with experienced cyclist and bicycle accident attorneys.",
+  "url": "https://cyclistaccidentlawyer.com",
+  "logo": "https://cyclistaccidentlawyer.com/images/logo.png",
   "areaServed": {
     "@type": "Country",
     "name": "United States"
   },
-  "serviceType": ["Pedestrian Accident Law", "Personal Injury Law", "Wrongful Death"],
+  "serviceType": ["Bicycle Accident Law", "Cyclist Injury Law", "Personal Injury Law", "Wrongful Death"],
   "priceRange": "Free Consultation"
 };
 

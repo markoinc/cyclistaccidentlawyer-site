@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { resources, type ResourceData } from '../../data/resources';
+import { resources, type Resource, getResourcesByCategory } from '../../data/resources';
 
 export function getStaticPaths() {
   return resources.map((resource) => ({
@@ -10,70 +10,90 @@ export function getStaticPaths() {
 }
 
 interface Props {
-  resource: ResourceData;
+  resource: Resource;
 }
 
 const { resource } = Astro.props;
+const relatedResources = getResourcesByCategory(resource.category).filter(r => r.slug !== resource.slug).slice(0, 3);
 
-// Title already includes site name, just truncate to 60 chars for SEO
-const fullTitle = `${resource.title} | Pedestrian Accident Lawyer`;
-const title = fullTitle.length > 60 ? fullTitle.substring(0, 57) + '...' : fullTitle;
+const title = resource.title;
 const description = resource.description;
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Resources", url: "/resources" },
+  { name: resource.title, url: `/resources/${resource.slug}` }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
-    <div class="container-wide">
-      <div class="flex items-center gap-2 text-gray-400 mb-4">
-        <a href="/" class="hover:text-white">Home</a>
-        <span>/</span>
-        <a href="/resources" class="hover:text-white">Resources</a>
-        <span>/</span>
-        <span class="text-white">{resource.title}</span>
-      </div>
-      <div class="text-6xl mb-4">{resource.icon}</div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{resource.title}</h1>
-      <p class="text-xl text-gray-300 max-w-3xl">{resource.description}</p>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-20">
+    <div class="container-narrow">
+      <span class="bg-primary-500/20 text-primary-300 px-3 py-1 rounded-full text-sm font-medium">
+        {resource.category}
+      </span>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mt-4 leading-tight">
+        {resource.title}
+      </h1>
+      <p class="text-xl text-gray-300 mt-4">
+        {resource.description}
+      </p>
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-12 md:py-16">
     <div class="container-wide">
-      <div class="grid lg:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <div class="bg-white rounded-xl shadow-md p-8">
-            <div class="prose prose-lg max-w-none" set:html={resource.content.replace(/\n/g, '<br/>').replace(/## /g, '<h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">').replace(/### /g, '<h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">')} />
-          </div>
-
-          <div class="bg-primary-50 rounded-xl p-8 mt-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Takeaways</h2>
-            <ul class="space-y-3">
-              {resource.keyTakeaways.map(takeaway => (
-                <li class="flex items-start gap-2">
-                  <svg class="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span class="text-gray-700">{takeaway}</span>
-                </li>
-              ))}
-            </ul>
+          <div class="prose prose-lg max-w-none" set:html={resource.content.replace(/\n/g, '<br/>')} />
+          
+          <!-- CTA After Content -->
+          <div class="mt-12 bg-primary-50 border border-primary-100 rounded-xl p-8 text-center">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Need Help With Your Bicycle Accident Case?
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Get a free case evaluation from experienced bicycle accident attorneys.
+            </p>
+            <a href="/free-consultation" class="btn btn-cta px-8 py-4">
+              Get Free Case Review
+            </a>
           </div>
         </div>
 
         <div class="lg:col-span-1">
-          <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl shadow-lg p-8 sticky top-24">
-            <h3 class="text-xl font-bold text-white mb-4">Need Legal Help?</h3>
-            <p class="text-primary-100 mb-6">Get a free case evaluation from an experienced pedestrian accident attorney.</p>
-            <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
-              <input type="hidden" name="source" value={`pedestrianaccidentlawyer-resource-${resource.slug}`} />
-              <input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <input type="email" name="email" placeholder="Email" class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900" required />
-              <button type="submit" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-6 rounded-lg transition">
-                Get My Free Evaluation
-              </button>
-            </form>
-            <p class="text-primary-100 text-sm text-center mt-4">No fees unless you win</p>
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+              <h3 class="font-bold text-gray-900 mb-4">Free Case Evaluation</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Injured in a bicycle accident? Get help from experienced attorneys.
+              </p>
+              <a href="/free-consultation" class="btn btn-cta w-full py-3">
+                Start Free Review
+              </a>
+              <p class="text-xs text-gray-500 text-center mt-3">No fees unless you win</p>
+            </div>
+
+            {relatedResources.length > 0 && (
+              <div class="bg-gray-100 rounded-xl p-6">
+                <h3 class="font-bold text-gray-900 mb-4">Related Resources</h3>
+                <div class="space-y-3">
+                  {relatedResources.map(related => (
+                    <a 
+                      href={`/resources/${related.slug}`}
+                      class="block text-gray-700 hover:text-primary-600 transition"
+                    >
+                      {related.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div class="bg-gray-900 text-white rounded-xl p-6 text-center">
+              <p class="text-sm mb-2">Speak to an attorney now</p>
+              <p class="text-xs text-gray-400 mt-2">Available 24/7</p>
+            </div>
           </div>
         </div>
       </div>
