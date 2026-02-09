@@ -134,10 +134,16 @@ This keeps history while surfacing only current/relevant docs.
 ## Slack Channels
 - **#mark-sierra (main DM):** `C0ACS689MT4`
 - **#carlos-sierra (Carlos LLM/bot help):** `C0ADD7QNU8Y`
-- **#niche-sites (site builds):** `C0ACW4BH1AR`
+- **#marko-side-projects (site builds):** `C0ACW4BH1AR`
 - **#mark-carlos (partnership):** `C0AC84MR6TX`
 - **#sops-training:** `C0A80QLJHEF`
 - **#alerts-tokens:** `C0ACD6JPK9D`
+
+## Cloudflare
+- **Account ID:** 1c06f86d52670b83af5704d99f40dfb5
+- **Credentials:** `~/.config/cloudflare/credentials.json`
+- **API Token:** Has Pages permission (can deploy, manage Pages projects)
+- **Use for:** Deploying static sites, MVA landing pages
 
 ## Go High Level (GHL)
 - **Location ID:** OsNgWuy8oZzLbp5BXbnD (Kurios subaccount - both Mark & Carlos)
