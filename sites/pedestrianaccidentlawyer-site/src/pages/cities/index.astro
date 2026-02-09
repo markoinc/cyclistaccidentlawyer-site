@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { cities, getCitiesByState } from '../../data/cities';
+
+const title = "Pedestrian Accident Lawyers by City";
+const description = "Find experienced pedestrian accident attorneys in your city. Local knowledge, dangerous intersections, and free case evaluations.";
+
+// Group cities by state abbreviation
+const stateGroups = cities.reduce((acc, city) => {
+  if (!acc[city.stateAbbr]) {
+    acc[city.stateAbbr] = { state: city.state, cities: [] };
+  }
+  acc[city.stateAbbr].cities.push(city);
+  return acc;
+}, {} as Record<string, { state: string; cities: typeof cities }>);
+
+// Sort states alphabetically
+const sortedStates = Object.entries(stateGroups).sort((a, b) => a[1].state.localeCompare(b[1].state));
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Pedestrian Accident Lawyers by City</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Find local attorneys who know your city's dangerous intersections, traffic patterns, and pedestrian laws.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      {sortedStates.map(([stateAbbr, { state, cities }]) => (
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">{state}</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {cities.map(city => (
+              <a 
+                href={`/cities/${city.slug}`}
+                class="bg-white rounded-lg shadow-sm p-3 hover:shadow-md hover:border-primary-500 border-2 border-transparent transition text-center"
+              >
+                <div class="font-medium text-gray-900 hover:text-primary-600">{city.name}</div>
+                <div class="text-xs text-gray-500">{city.stateAbbr}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

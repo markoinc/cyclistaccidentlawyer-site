@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { states } from '../../data/states';
+
+const title = "Pedestrian Accident Lawyers by State";
+const description = "Find experienced pedestrian accident attorneys in your state. Learn about crosswalk laws, statutes of limitations, and get a free case evaluation.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "States", url: "/states" }
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Find a Pedestrian Accident Lawyer by State</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Pedestrian laws vary dramatically by state. Select your state to learn about crosswalk laws, filing deadlines, and connect with local attorneys.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {states.map(state => (
+          <a 
+            href={`/states/${state.slug}`}
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:border-primary-500 border-2 border-transparent transition group"
+          >
+            <div class="flex items-center gap-4">
+              <div class="text-2xl font-bold text-primary-600 group-hover:text-primary-700 w-12">
+                {state.abbreviation}
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">{state.name}</div>
+                <div class="text-sm text-gray-500">
+                  {state.statuteOfLimitations} SOL • {state.crosswalkLaw === "strong" ? "Strong Laws" : state.crosswalkLaw === "moderate" ? "Moderate" : "Basic"}
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

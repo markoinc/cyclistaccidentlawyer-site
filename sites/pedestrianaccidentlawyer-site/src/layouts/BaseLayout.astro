@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  schemaMarkup?: object | object[];
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  ogImage?: string;
+}
+
+const { 
+  title, 
+  description, 
+  canonical = Astro.url.href,
+  schemaMarkup,
+  breadcrumbs,
+  ogImage = '/images/og-default.jpg'
+} = Astro.props;
+
+const siteName = 'Pedestrian Accident Lawyer';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+
+// Generate BreadcrumbList schema
+const breadcrumbSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": `https://pedestrianaccidentlawyer.net${item.url}`
+  }))
+} : null;
+
+// Base organization schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Pedestrian Accident Lawyer",
+  "description": "Free case evaluations for pedestrian accident victims nationwide. Connect with experienced pedestrian accident attorneys.",
+  "url": "https://pedestrianaccidentlawyer.net",
+  "logo": "https://pedestrianaccidentlawyer.net/images/logo.png",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": ["Pedestrian Accident Law", "Personal Injury Law", "Wrongful Death"],
+  "priceRange": "Free Consultation"
+};
+
+// Combine all schemas
+const allSchemas = [
+  organizationSchema,
+  ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+  ...(schemaMarkup ? (Array.isArray(schemaMarkup) ? schemaMarkup : [schemaMarkup]) : [])
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{fullTitle}</title>
+  
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={siteName} />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+  
+  <!-- Schema.org JSON-LD -->
+  {allSchemas.map(schema => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

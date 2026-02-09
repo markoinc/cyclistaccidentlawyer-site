@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseTypes } from '../../data/caseTypes';
+
+const title = "Motorcycle Accident Case Types - Find Your Legal Help";
+const description = "Different types of motorcycle accidents require different legal strategies. From cruiser and sportbike crashes to hit-and-run and drunk driver accidents, find specialized help for your case.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Case Types", url: "/case-types" }
+];
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
+    <div class="container-wide">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          Motorcycle Accident <span class="text-primary-400">Case Types</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Not all motorcycle accidents are the same. The type of bike you ride, the circumstances of the crash, 
+          and who caused it all affect your legal options. Find the specialized help you need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Types Grid -->
+  <section class="py-16 md:py-20">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {caseTypes.map((caseType) => (
+          <a href={`/case-types/${caseType.slug}`} class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-primary-200">
+            <div class="p-6">
+              <div class="text-4xl mb-4">{caseType.icon}</div>
+              <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition mb-3">
+                {caseType.name}
+              </h2>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {caseType.shortDescription}
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-semibold text-primary-600">
+                  Avg. Settlement: {caseType.averageSettlement}
+                </span>
+                <span class="text-primary-600 group-hover:translate-x-2 transition-transform">
+                  →
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Case Type Matters -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+          Why Your Case Type Matters
+        </h2>
+        <div class="prose prose-lg max-w-none">
+          <p>
+            Different types of motorcycle accidents present unique legal challenges. A sportbike accident at highway speeds involves different injury patterns and defense strategies than a cruiser accident in city traffic. Hit-and-run cases require different evidence collection than drunk driver cases.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8 mt-8 not-prose">
+            <div class="bg-white p-6 rounded-xl shadow">
+              <h3 class="font-bold text-lg mb-3">🏍️ Bike-Specific Factors</h3>
+              <p class="text-gray-600">The type of motorcycle affects injury patterns, accident dynamics, and even jury perception. Sportbike riders face different biases than cruiser riders.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow">
+              <h3 class="font-bold text-lg mb-3">⚖️ Liability Differences</h3>
+              <p class="text-gray-600">Commercial vehicle accidents involve federal regulations and multiple liable parties. Drunk driver cases may include punitive damages.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow">
+              <h3 class="font-bold text-lg mb-3">💰 Settlement Ranges</h3>
+              <p class="text-gray-600">Average settlements vary significantly by case type based on injury severity, liability clarity, and available insurance coverage.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow">
+              <h3 class="font-bold text-lg mb-3">📋 Evidence Requirements</h3>
+              <p class="text-gray-600">Each case type requires different evidence. Distracted driver cases need cell phone records; hit-and-runs need surveillance footage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-wide text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Not Sure What Type of Case You Have?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Get a free case evaluation from experienced motorcycle accident attorneys who can analyze your situation and explain your options.
+      </p>
+      <a href="/free-consultation" class="inline-block bg-white text-primary-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition text-lg">
+        Get Your Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resources, getResourcesByCategory } from '../../data/resources';
+
+const title = "Motorcycle Accident Resources & Guides";
+const description = "Free resources and guides for motorcycle accident victims. Checklists, legal guides, insurance information, and safety tips from experienced motorcycle accident attorneys.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Resources", url: "/resources" }
+];
+
+const categories = [
+  { id: "guide", name: "Guides", icon: "📖" },
+  { id: "checklist", name: "Checklists", icon: "✅" },
+  { id: "legal", name: "Legal Info", icon: "⚖️" },
+  { id: "safety", name: "Safety", icon: "🦺" }
+] as const;
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
+    <div class="container-wide">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          Motorcycle Accident <span class="text-primary-400">Resources</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Free guides, checklists, and information to help you navigate the aftermath of a motorcycle accident. 
+          Knowledge is power when dealing with injuries, insurance, and legal claims.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Resources -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-wide">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Most Important Resources</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/resources/motorcycle-accident-checklist" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border-l-4 border-primary-500">
+          <div class="text-3xl mb-3">✅</div>
+          <h3 class="font-bold text-lg text-gray-900 group-hover:text-primary-600">Accident Checklist</h3>
+          <p class="text-gray-600 mt-2">Step-by-step guide for what to do immediately after a crash.</p>
+        </a>
+        <a href="/resources/what-to-do-after-crash" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border-l-4 border-red-500">
+          <div class="text-3xl mb-3">🚨</div>
+          <h3 class="font-bold text-lg text-gray-900 group-hover:text-primary-600">After a Crash Guide</h3>
+          <p class="text-gray-600 mt-2">Comprehensive guide to the critical first hours and days.</p>
+        </a>
+        <a href="/resources/dealing-with-insurance" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition border-l-4 border-yellow-500">
+          <div class="text-3xl mb-3">🏦</div>
+          <h3 class="font-bold text-lg text-gray-900 group-hover:text-primary-600">Insurance Tactics</h3>
+          <p class="text-gray-600 mt-2">How to deal with insurance companies and protect yourself.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Resources by Category -->
+  <section class="py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">All Resources</h2>
+      
+      <div class="space-y-12">
+        {categories.map((category) => {
+          const categoryResources = getResourcesByCategory(category.id);
+          return (
+            <div>
+              <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <span>{category.icon}</span>
+                {category.name}
+              </h3>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categoryResources.map((resource) => (
+                  <a href={`/resources/${resource.slug}`} class="group bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                    <div class="flex items-start gap-3">
+                      <span class="text-2xl">{resource.icon}</span>
+                      <div>
+                        <h4 class="font-bold text-gray-900 group-hover:text-primary-600 transition">{resource.title}</h4>
+                        <p class="text-sm text-gray-600 mt-1 line-clamp-2">{resource.description}</p>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Reference Cards -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container-wide">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Quick Facts You Should Know</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white/10 p-6 rounded-xl">
+          <div class="text-4xl font-bold text-primary-400 mb-2">6,218</div>
+          <div class="text-gray-300">Motorcycle deaths in 2022</div>
+        </div>
+        <div class="bg-white/10 p-6 rounded-xl">
+          <div class="text-4xl font-bold text-primary-400 mb-2">29x</div>
+          <div class="text-gray-300">More likely to die than car occupants</div>
+        </div>
+        <div class="bg-white/10 p-6 rounded-xl">
+          <div class="text-4xl font-bold text-primary-400 mb-2">37%</div>
+          <div class="text-gray-300">Reduction in fatal head injuries with helmets</div>
+        </div>
+        <div class="bg-white/10 p-6 rounded-xl">
+          <div class="text-4xl font-bold text-primary-400 mb-2">14%</div>
+          <div class="text-gray-300">Of motorcycle crashes involve uninsured drivers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-wide text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Need Help With Your Case?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        These resources are helpful, but nothing replaces personalized legal advice. Get a free consultation with an experienced motorcycle accident attorney.
+      </p>
+      <a href="/free-consultation" class="inline-block bg-white text-primary-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition text-lg">
+        Get Your Free Case Evaluation
+      </a>
+    </div>
+  </section>
+</BaseLayout>

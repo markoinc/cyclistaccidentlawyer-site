@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseTypes } from '../../data/caseTypes';
+
+const title = "Pedestrian Accident Case Types";
+const description = "Learn about different types of pedestrian accident cases including crosswalk accidents, hit-and-run, parking lot crashes, and more.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Pedestrian Accident Case Types</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        We handle all types of pedestrian accident cases. Learn about specific accident types and what compensation you may deserve.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {caseTypes.map(caseType => (
+          <a href={`/case-types/${caseType.slug}`} class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition group">
+            <div class="text-4xl mb-4">{caseType.icon}</div>
+            <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition">{caseType.name}</h2>
+            <p class="text-gray-600 mt-2 text-sm">{caseType.shortDescription}</p>
+            <div class="mt-4 text-sm text-primary-600 font-semibold">Average: {caseType.averageSettlement}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

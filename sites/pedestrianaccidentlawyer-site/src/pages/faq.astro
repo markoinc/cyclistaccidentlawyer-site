@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "FAQ - Pedestrian Accident Lawyer";
+const description = "Frequently asked questions about pedestrian accident claims, legal rights, compensation, and working with an attorney.";
+
+const faqs: Array<{question: string; answer: string}> = [
+  {
+    question: "How much does it cost to hire a pedestrian accident lawyer?",
+    answer: "Nothing upfront. Our network attorneys work on contingency, meaning they only get paid if you win your case. The initial consultation is always free."
+  },
+  {
+    question: "What if I was jaywalking when I was hit?",
+    answer: "You may still recover compensation. Most states use comparative fault, meaning you can recover damages minus your percentage of fault. Even if you were partially at fault, the driver still had a duty of care. Contact us for a free evaluation of your specific situation."
+  },
+  {
+    question: "How long do I have to file a pedestrian accident claim?",
+    answer: "This varies by state—from 1 year in Kentucky, Louisiana, and Tennessee to 6 years in Maine, Minnesota, and North Dakota. It's crucial to act quickly, as evidence deteriorates and witnesses forget. Contact us immediately to ensure you don't miss your deadline."
+  },
+  {
+    question: "What compensation can I receive?",
+    answer: "You may be entitled to: medical expenses (past and future), lost wages and loss of earning capacity, pain and suffering, permanent disability compensation, disfigurement damages, and in wrongful death cases, funeral expenses and loss of companionship."
+  },
+  {
+    question: "What if the driver who hit me fled (hit-and-run)?",
+    answer: "You may still have options. Your own uninsured motorist coverage may apply. Police investigation, surveillance footage, and witnesses may help identify the driver. Crime victim compensation funds may also be available. Contact us for a free evaluation."
+  },
+  {
+    question: "How long does a pedestrian accident case take?",
+    answer: "Cases vary widely. Simple cases may settle in a few months, while complex cases requiring litigation can take 1-3 years. Factors include injury severity, disputed liability, insurance company cooperation, and whether trial is necessary."
+  },
+  {
+    question: "Do I need a lawyer for a pedestrian accident?",
+    answer: "While not required, having an experienced attorney typically results in significantly higher compensation. Insurance companies have teams of adjusters and lawyers working against you—you deserve someone on your side."
+  },
+  {
+    question: "What should I do right after being hit by a car?",
+    answer: "Seek medical attention immediately, call 911, document the scene with photos if able, get witness information, don't admit fault, don't give statements to the driver's insurance, and contact an attorney before signing anything."
+  },
+  {
+    question: "What if I didn't go to the hospital right away?",
+    answer: "See a doctor as soon as possible. Delayed symptoms are common in pedestrian accidents due to adrenaline. While gaps in treatment can complicate claims, an experienced attorney can still help. Contact us for a free evaluation."
+  },
+  {
+    question: "Can I sue if I was hit in a crosswalk?",
+    answer: "Absolutely. Pedestrians in crosswalks typically have clear right-of-way, making liability more straightforward. Drivers who fail to yield in crosswalks are negligent. Your case may be particularly strong."
+  }
+];
+
+// FAQPage structured data for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} schemaMarkup={faqSchema}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Answers to common questions about pedestrian accident claims and your legal rights.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-narrow">
+      <div class="space-y-4">
+        {faqs.map((faq, i) => (
+          <details class="bg-white rounded-lg shadow-md border border-gray-200 group">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-primary-600 flex justify-between items-center">
+              {faq.question}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 text-gray-600">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-primary-50 rounded-xl p-8 text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Still Have Questions?</h2>
+        <p class="text-gray-600 mb-6">Get answers specific to your situation with a free case evaluation.</p>
+        <a href="/free-consultation" class="btn btn-cta">Get Your Free Consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

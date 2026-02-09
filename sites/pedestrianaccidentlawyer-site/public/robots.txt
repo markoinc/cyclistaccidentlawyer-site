@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pedestrianaccidentlawyer.net/sitemap-index.xml
+
+# Crawl-delay: 1
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /_astro/

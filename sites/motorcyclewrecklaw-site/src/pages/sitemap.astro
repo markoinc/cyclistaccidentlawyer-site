@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { states } from '../data/states';
+import { cities } from '../data/cities';
+import { caseTypes } from '../data/caseTypes';
+import { resources } from '../data/resources';
+
+const title = "Sitemap - Motorcycle Wreck Law";
+const description = "Complete sitemap of Motorcycle Wreck Law. Find all our pages including state guides, city pages, case types, and resources.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Sitemap", url: "/sitemap" }
+];
+
+// Group cities by state
+const citiesByState = cities.reduce((acc, city) => {
+  if (!acc[city.stateAbbr]) {
+    acc[city.stateAbbr] = [];
+  }
+  acc[city.stateAbbr].push(city);
+  return acc;
+}, {} as Record<string, typeof cities>);
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl font-bold text-gray-900 mb-8">Sitemap</h1>
+      
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Main Pages -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Main Pages</h2>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-primary-600 hover:underline">Home</a></li>
+            <li><a href="/about" class="text-primary-600 hover:underline">About Us</a></li>
+            <li><a href="/contact" class="text-primary-600 hover:underline">Contact</a></li>
+            <li><a href="/free-consultation" class="text-primary-600 hover:underline">Free Consultation</a></li>
+            <li><a href="/faq" class="text-primary-600 hover:underline">FAQ</a></li>
+            <li><a href="/privacy-policy" class="text-primary-600 hover:underline">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" class="text-primary-600 hover:underline">Terms of Service</a></li>
+            <li><a href="/disclaimer" class="text-primary-600 hover:underline">Disclaimer</a></li>
+          </ul>
+
+          <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200 mt-8">Case Types</h2>
+          <ul class="space-y-2">
+            <li><a href="/case-types" class="text-primary-600 hover:underline">All Case Types</a></li>
+            {caseTypes.map(caseType => (
+              <li>
+                <a href={`/case-types/${caseType.slug}`} class="text-primary-600 hover:underline">
+                  {caseType.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200 mt-8">Resources</h2>
+          <ul class="space-y-2">
+            <li><a href="/resources" class="text-primary-600 hover:underline">All Resources</a></li>
+            {resources.map(resource => (
+              <li>
+                <a href={`/resources/${resource.slug}`} class="text-primary-600 hover:underline">
+                  {resource.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- States -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">States ({states.length})</h2>
+          <ul class="space-y-1 text-sm">
+            {states.map(state => (
+              <li>
+                <a href={`/states/${state.slug}`} class="text-primary-600 hover:underline">
+                  {state.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Cities -->
+        <div>
+          <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Cities ({cities.length})</h2>
+          <div class="max-h-[600px] overflow-y-auto pr-4">
+            {Object.entries(citiesByState).sort().map(([stateAbbr, stateCities]) => (
+              <div class="mb-4">
+                <h3 class="font-semibold text-gray-800 text-sm mb-1">{stateAbbr}</h3>
+                <ul class="space-y-0.5 text-sm ml-2">
+                  {stateCities.sort((a, b) => a.name.localeCompare(b.name)).map(city => (
+                    <li>
+                      <a href={`/cities/${city.slug}`} class="text-primary-600 hover:underline">
+                        {city.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Site Statistics</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-primary-600">{states.length}</div>
+            <div class="text-gray-600">States</div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-primary-600">{cities.length}</div>
+            <div class="text-gray-600">Cities</div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-primary-600">{caseTypes.length}</div>
+            <div class="text-gray-600">Case Types</div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-primary-600">{resources.length}</div>
+            <div class="text-gray-600">Resources</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articles, getArticlesByCategory, getFeaturedArticles } from '../../data/articles';
+
+const title = "Pedestrian Accident Blog & Resources";
+const description = "Expert articles on pedestrian accident claims, safety tips, legal rights, and injury information. Free resources for pedestrian accident victims.";
+
+const featuredArticles = getFeaturedArticles();
+const categories = [
+  { key: 'accident-types', label: 'Accident Types', icon: '🚗' },
+  { key: 'injuries', label: 'Injuries', icon: '🏥' },
+  { key: 'legal', label: 'Legal', icon: '⚖️' },
+  { key: 'safety', label: 'Safety', icon: '⚠️' },
+  { key: 'claims', label: 'Claims', icon: '📋' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Pedestrian Accident Resources</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Expert articles on pedestrian rights, accident claims, safety tips, and legal information. Everything you need to know after being hit by a car.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-primary-50">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Featured Articles</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredArticles.slice(0, 6).map(article => (
+          <a href={`/blog/${article.slug}`} class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition group">
+            <span class="text-xs font-semibold text-primary-600 uppercase">{article.categoryLabel}</span>
+            <h3 class="text-xl font-bold text-gray-900 mt-2 group-hover:text-primary-600 transition">{article.title}</h3>
+            <p class="text-gray-600 mt-2 text-sm">{article.excerpt}</p>
+            <div class="text-sm text-gray-500 mt-4">{article.readTime} min read</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      {categories.map(cat => {
+        const categoryArticles = getArticlesByCategory(cat.key as any).slice(0, 4);
+        return (
+          <div class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-2xl font-bold text-gray-900">{cat.icon} {cat.label}</h2>
+              <a href={`/blog/category/${cat.key}`} class="text-primary-600 hover:text-primary-700 font-semibold">View All →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {categoryArticles.map(article => (
+                <a href={`/blog/${article.slug}`} class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition group">
+                  <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition text-sm">{article.title}</h3>
+                  <div class="text-xs text-gray-500 mt-2">{article.readTime} min read</div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

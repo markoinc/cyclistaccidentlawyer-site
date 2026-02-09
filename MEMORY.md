@@ -93,6 +93,7 @@
 
 ### Preferences
 - Marko prefers voice messages over typing
+- **Site build updates → #niche-sites ONLY** (never #mark-sierra)
 - Wants bedtime reminders 9 hours before morning calendar events
 - Direct communication style
 - **ALWAYS ONE-UP:** When Marko or Carlos ask for something, don't just build what they asked — research and think of a BETTER way to do it. Challenge their approach, suggest improvements, find what they didn't think of. They want Sierra to elevate their ideas, not just execute them.

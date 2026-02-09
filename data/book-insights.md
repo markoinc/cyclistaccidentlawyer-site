@@ -2,7 +2,7 @@
 
 **Purpose:** Actionable business insights from key books, applied to MVA lead gen and the $9.6M exit goal.
 
-**Last Updated:** 2026-02-05
+**Last Updated:** 2026-02-09
 
 ---
 
@@ -18,6 +18,8 @@
 | Never Split the Difference | Chris Voss | Negotiation, Sales | ⭐⭐⭐⭐⭐ |
 | Influence | Robert Cialdini | Persuasion Psychology | ⭐⭐⭐⭐ |
 | The E-Myth Revisited | Michael Gerber | Systemization, Operations | ⭐⭐⭐⭐⭐ |
+| Predictable Revenue | Aaron Ross | Sales Systems, Outbound | ⭐⭐⭐⭐⭐ |
+| The Automatic Customer | John Warrillow | Recurring Revenue, Subscriptions | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -414,34 +416,168 @@ Value = (Dream Outcome × Perceived Likelihood of Achievement)
 
 ---
 
+### Predictable Revenue by Aaron Ross
+
+**Core Thesis:** Separate prospecting from closing. The system that generated $100M at Salesforce.
+
+**The Cold Calling 2.0 Framework:**
+
+Never cold call. Email first, then call warm referrals.
+
+**Three Specialized Roles:**
+1. **Sales Development Reps (SDRs)** - Prospecting ONLY
+2. **Market Response Reps** - Qualify inbound leads
+3. **Account Executives** - Close deals (NEVER prospect)
+
+**The 5-Step Outbound System:**
+1. Build Ideal Customer Profile (3-5 criteria)
+2. Build targeted list of decision-makers
+3. Run email campaigns (50-100 emails, 3x/week)
+4. Get referrals ("Who's the best person to talk to?")
+5. Qualify via discovery call → hand to AE
+
+**Key Metrics:**
+- Qualified opportunities per month
+- Cost per qualified lead
+- Pipeline growth rate
+- Stage-to-stage conversion rates
+
+**Apply to KuriosBrand:**
+- Patrick = Account Executive (closer only)
+- Need: SDR function for prospecting (outsource or automate)
+- Process: SDR books qualified call → Patrick closes
+- Result: Patrick focuses 100% on high-value closing activities
+
+---
+
+### The Automatic Customer by John Warrillow
+
+**Core Thesis:** Subscription businesses command 3-8x higher valuations than project-based businesses.
+
+**The 9 Subscription Models:**
+1. **Membership Website** - Gated content access
+2. **All-You-Can-Eat Library** - Unlimited access (Netflix)
+3. **Private Club** - Exclusive, scarcity-driven
+4. **Front-of-the-Line** - Priority access premium
+5. **Consumables** - Regular delivery (Dollar Shave Club)
+6. **Surprise Box** - Curated subscriptions
+7. **Simplifier** - Handle complex tasks for them
+8. **Network** - Value increases with members
+9. **Peace-of-Mind** - Insurance/protection model
+
+**Subscription Health Metrics:**
+- MRR (Monthly Recurring Revenue)
+- Churn Rate (<5% monthly = healthy)
+- LTV:CAC Ratio (3:1 minimum)
+- Net Revenue Retention (>100% = growth)
+
+**Apply to KuriosBrand:**
+- Best fit: **Simplifier** + **Peace-of-Mind** hybrid
+- Pitch: "We handle everything. You just sign the cases."
+- Structure: Monthly retainer + performance bonus (NOT per-lead)
+- Goal: 80%+ recurring revenue for premium exit multiple
+
+---
+
+## 📊 2026 AGENCY VALUATION BENCHMARKS (NEW)
+
+### EBITDA Multiples by Agency Type:
+| Agency Type | Range | Average |
+|-------------|-------|---------|
+| Digital Marketing | 4.9x - 9x | 6.7x |
+| Growth Marketing | 5.2x - 10.2x | 7.5x |
+| Performance Marketing | 5x - 9.3x | 6.9x |
+| Creative Marketing | 4.6x - 8.1x | 6.5x |
+
+### Multiples by EBITDA Size:
+| EBITDA | Multiple Range |
+|--------|----------------|
+| $1-3M | 3-5x |
+| $3-5M | 5-7x |
+| $5-10M+ | 7-10x+ |
+
+### Exit Math for $9.6M Target:
+- At 4x multiple: Need $2.4M EBITDA
+- At 5x multiple: Need $1.92M EBITDA
+- At 6x multiple: Need $1.6M EBITDA
+
+### Premium Valuation Drivers:
+1. ✅ Recurring revenue (retainers > projects)
+2. ✅ Low owner dependency (<30% of relationships)
+3. ✅ Documented processes (SOPs, playbooks)
+4. ✅ Stable leadership team
+5. ✅ Client diversification (no client >15%)
+6. ✅ 2+ years clean financials
+
+**Key Insight:** PE-backed consolidators are actively acquiring agencies that combine automation with human expertise. AI-ready agencies command premium multiples.
+
+*Source: Agencies.co M&A Guide 2026, Breakwater M&A*
+
+---
+
+## 💰 LEGAL LEAD GENERATION BENCHMARKS (NEW)
+
+### Personal Injury Lead Costs:
+| Lead Type | Cost | Conversion Rate |
+|-----------|------|-----------------|
+| Exclusive MVA Lead | $200-$350 | 10-30% |
+| Shared Lead | $50-$300 | 5-15% |
+| Cold Lead | $10-$100 | <5% |
+| Live Transfer | Premium | Highest |
+
+### PPC Cost Benchmarks:
+- "Car accident lawyer" keywords: $200-$300 per click
+- Personal injury terms: $50-$200 per click
+- Conversion rate on landing pages: 3-8%
+
+### Cost Reduction Strategies:
+1. **AI-Powered Optimization** - 25% lower acquisition costs (McKinsey)
+2. **Niche Specialization** - Less competition = lower CPL
+3. **Content/SEO** - 6-12 months investment, lowest long-term CPL
+4. **Referral Networks** - Highest quality, lowest cost
+5. **Speed-to-Lead** - Contact within 5 mins = dramatically higher retention
+
+### KuriosBrand Positioning:
+- **Differentiator:** End-to-end (ads → qualification → signed retainer)
+- **Strategy:** Exclusive leads only, never shared
+- **Target:** Reduce cost per signed case by 30% through intake optimization
+
+*Source: LegalBrandMarketing, ENX2 Marketing, Industry Research 2026*
+
+---
+
 ## 🎯 IMPLEMENTATION PRIORITY
 
-**This Week:**
-1. [ ] Create discovery question script for sales calls
-2. [ ] Draft Grand Slam Offer for next proposals
-3. [ ] Start documenting processes in Operations Manual
+**This Week (Feb 9-15):**
+1. [ ] **Restructure Patrick's role** - Stop prospecting, closing only (Predictable Revenue)
+2. [ ] **Draft subscription pricing model** - Monthly retainer + performance bonus structure
+3. [ ] **Calculate current cost per signed case** - Establish baseline for optimization
+4. [ ] **Implement 5-minute speed-to-lead** - Automate instant notification system
+5. [ ] Create discovery question script for sales calls
 
-**This Month:**
-1. [ ] Complete 1-Page Marketing Plan
-2. [ ] Implement 3 persuasion principles on website
-3. [ ] Test one new traction channel
-4. [ ] Create client diversification plan (no client >15%)
+**This Month (Feb 2026):**
+1. [ ] **Set up SDR function** - Outsource or automate prospecting emails
+2. [ ] **Move to 80%+ recurring revenue** - Convert per-lead clients to retainers
+3. [ ] Complete 1-Page Marketing Plan
+4. [ ] Implement 3 persuasion principles on website
+5. [ ] Create client diversification plan (no client >15%)
 
-**This Quarter:**
+**This Quarter (Q1 2026):**
 1. [ ] Full Operations Manual complete
-2. [ ] 2 salespeople trained on system
-3. [ ] Financial tracking for sellable business
-4. [ ] Prove model works without Marko on calls
+2. [ ] Patrick closing without Marko involvement
+3. [ ] Financial tracking for sellable business (EBITDA focus)
+4. [ ] Target: 5x EBITDA trajectory ($1.92M for $9.6M exit)
+5. [ ] Reduce cost per signed case by 30%
 
 ---
 
 ## 📚 READING LIST (Future)
 
 **High Priority:**
-- "The Automatic Customer" by John Warrillow (recurring revenue)
-- "Profit First" by Mike Michalowicz (cash flow)
-- "Blue Ocean Strategy" (differentiation)
-- "Predictable Revenue" by Aaron Ross (sales systems)
+- ~~"The Automatic Customer" by John Warrillow~~ ✅ ANALYZED
+- ~~"Predictable Revenue" by Aaron Ross~~ ✅ ANALYZED
+- "Profit First" by Mike Michalowicz (cash flow management)
+- "Blue Ocean Strategy" (differentiation, uncontested markets)
 
 **Medium Priority:**
 - "The Lean Startup" by Eric Ries

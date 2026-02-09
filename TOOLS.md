@@ -1,5 +1,16 @@
 # TOOLS.md - Local Notes
 
+## 🚨 CRITICAL: TOKEN DISCIPLINE (2026-02-09)
+**NEVER use tokens from memory.** Marko has rolled them 5+ times because I keep forgetting.
+
+**BEFORE ANY API CALL:**
+```bash
+cat ~/.config/github/credentials.json   # GitHub
+cat ~/.config/cloudflare/credentials.json   # Cloudflare
+cat ~/.config/notion/api_key   # Notion
+```
+Read the file. Use that value. Every. Single. Time.
+
 ## Model Architecture (Token Optimization)
 
 **Full routing config:** `/home/ec2-user/clawd/data/model-routing-config.json`

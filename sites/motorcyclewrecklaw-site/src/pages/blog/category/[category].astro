@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { articles, categoryInfo, getArticlesByCategory } from '../../../data/articles';
+
+export function getStaticPaths() {
+  return Object.keys(categoryInfo).map((category) => ({
+    params: { category },
+    props: { 
+      categoryKey: category,
+      info: categoryInfo[category as keyof typeof categoryInfo],
+      categoryArticles: getArticlesByCategory(category)
+    },
+  }));
+}
+
+interface Props {
+  categoryKey: string;
+  info: { name: string; description: string; icon: string };
+  categoryArticles: typeof articles;
+}
+
+const { categoryKey, info, categoryArticles } = Astro.props;
+
+const title = `${info.name} - Motorcycle Accident Articles & Legal Guides`;
+const description = `${info.description} Browse ${categoryArticles.length} expert articles on motorcycle accident ${info.name.toLowerCase()}.`;
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${info.name} - Motorcycle Wreck Law Blog`,
+  "description": description,
+  "url": `https://motorcyclewrecklaw.com/blog/category/${categoryKey}`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": categoryArticles.length,
+    "itemListElement": categoryArticles.slice(0, 10).map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://motorcyclewrecklaw.com/blog/${article.slug}`
+    }))
+  }
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: info.name, url: `/blog/category/${categoryKey}` }
+];
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  schemaMarkup={schemaMarkup}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-20">
+    <div class="container-wide">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-gray-400 mb-4">
+          <a href="/" class="hover:text-white transition">Home</a>
+          <span>/</span>
+          <a href="/blog" class="hover:text-white transition">Blog</a>
+          <span>/</span>
+          <span class="text-white">{info.name}</span>
+        </div>
+        
+        <div class="text-5xl mb-4">{info.icon}</div>
+        
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          {info.name}
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+          {info.description}
+        </p>
+        
+        <p class="text-gray-400">
+          {categoryArticles.length} articles in this category
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured in Category -->
+  {categoryArticles.filter(a => a.featured).length > 0 && (
+    <section class="py-12 bg-primary-50">
+      <div class="container-wide">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">⭐ Featured Articles</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categoryArticles.filter(a => a.featured).map(article => (
+            <a 
+              href={`/blog/${article.slug}`}
+              class="group bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition"
+            >
+              <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition">
+                {article.title}
+              </h3>
+              <p class="text-gray-600 mt-2 line-clamp-3">
+                {article.excerpt}
+              </p>
+              <div class="mt-4 flex items-center justify-between text-sm">
+                <span class="text-primary-600 font-medium">Read Article →</span>
+                <span class="text-gray-400">{article.readTime} min</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- All Articles -->
+  <section class="py-12 md:py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">All {info.name} Articles</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categoryArticles.map(article => (
+          <a 
+            href={`/blog/${article.slug}`}
+            class="group bg-white rounded-xl shadow-md hover:shadow-lg transition p-6"
+          >
+            <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary-600 transition line-clamp-2">
+              {article.title}
+            </h3>
+            <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+              {article.excerpt}
+            </p>
+            <div class="mt-4 flex items-center justify-between text-sm">
+              <span class="text-primary-600 font-medium group-hover:underline">
+                Read More →
+              </span>
+              <span class="text-gray-400">{article.readTime} min read</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Categories -->
+  <section class="py-12 bg-gray-50">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Explore Other Topics</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {Object.entries(categoryInfo).filter(([key]) => key !== categoryKey).map(([key, catInfo]) => (
+          <a 
+            href={`/blog/category/${key}`}
+            class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition group"
+          >
+            <div class="text-3xl mb-2">{catInfo.icon}</div>
+            <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition">
+              {catInfo.name}
+            </h3>
+            <p class="text-sm text-gray-500 mt-1">
+              {getArticlesByCategory(key).length} articles
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-700 text-white py-12">
+    <div class="container-wide">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Need Legal Help?</h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Get a free case evaluation from experienced motorcycle accident attorneys.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/#free-case-review" class="btn bg-white text-primary-700 hover:bg-gray-100 text-lg px-8 py-4">
+            Free Case Review
+          </a>
+          <a href="/blog" class="btn bg-white/10 hover:bg-white/20 border border-white/30 text-white text-lg px-8 py-4">
+            ← Back to All Articles
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

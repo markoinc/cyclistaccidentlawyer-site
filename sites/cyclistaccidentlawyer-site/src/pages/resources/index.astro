@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resources, getResourcesByCategory } from '../../data/resources';
+
+const title = "Pedestrian Accident Resources & Guides";
+const description = "Free resources for pedestrian accident victims. Checklists, guides, legal information, and safety tips.";
+
+const categories = [
+  { key: 'guide', label: 'Guides', icon: '📖' },
+  { key: 'checklist', label: 'Checklists', icon: '✅' },
+  { key: 'legal', label: 'Legal', icon: '⚖️' },
+  { key: 'safety', label: 'Safety', icon: '⚠️' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Resources & Guides</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Free resources to help you understand your rights and navigate the aftermath of a pedestrian accident.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      {categories.map(cat => {
+        const categoryResources = getResourcesByCategory(cat.key as any);
+        return categoryResources.length > 0 && (
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">{cat.icon} {cat.label}</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {categoryResources.map(resource => (
+                <a href={`/resources/${resource.slug}`} class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition group">
+                  <div class="text-4xl mb-4">{resource.icon}</div>
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition">{resource.title}</h3>
+                  <p class="text-gray-600 mt-2 text-sm">{resource.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

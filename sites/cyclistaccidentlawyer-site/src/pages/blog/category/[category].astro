@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { articles, getArticlesByCategory } from '../../../data/articles';
+
+export function getStaticPaths() {
+  const cats = ['accident-types', 'injuries', 'legal', 'safety', 'claims'];
+  const labels: Record<string, string> = {
+    'accident-types': 'Accident Types',
+    'injuries': 'Injuries',
+    'legal': 'Legal',
+    'safety': 'Safety',
+    'claims': 'Claims'
+  };
+  return cats.map(cat => ({
+    params: { category: cat },
+    props: { category: cat, label: labels[cat] }
+  }));
+}
+
+interface Props {
+  category: string;
+  label: string;
+}
+
+const { category, label } = Astro.props;
+const categoryArticles = getArticlesByCategory(category as any);
+
+// Truncate title to fit within 60 chars after BaseLayout adds site suffix
+// BaseLayout adds " | Pedestrian Accident Lawyer" (29 chars) if site name not present
+const siteName = 'Pedestrian Accident Lawyer';
+const rawTitle = `${label} - Pedestrian Accident Articles`;
+const maxTitleLength = rawTitle.includes(siteName) ? 60 : 60 - 29; // Account for suffix
+const title = rawTitle.length > maxTitleLength ? rawTitle.substring(0, maxTitleLength - 3) + '...' : rawTitle;
+const description = `Expert articles about pedestrian accident ${label.toLowerCase()}. Free resources for pedestrian accident victims.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-16">
+    <div class="container-wide">
+      <div class="flex items-center gap-2 text-gray-400 mb-4">
+        <a href="/" class="hover:text-white">Home</a>
+        <span>/</span>
+        <a href="/blog" class="hover:text-white">Blog</a>
+        <span>/</span>
+        <span class="text-white">{label}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{label} Articles</h1>
+      <p class="text-xl text-gray-300">{categoryArticles.length} articles about pedestrian accident {label.toLowerCase()}</p>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categoryArticles.map(article => (
+          <a href={`/blog/${article.slug}`} class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition group">
+            <h2 class="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition">{article.title}</h2>
+            <p class="text-gray-600 mt-2 text-sm">{article.excerpt}</p>
+            <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+              <span>{article.readTime} min read</span>
+              <span>{article.publishDate}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

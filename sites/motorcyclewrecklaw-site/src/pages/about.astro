@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "About Motorcycle Wreck Law - Dedicated to Riders' Rights";
+const description = "Motorcycle Wreck Law connects injured riders with experienced motorcycle accident attorneys who understand the unique challenges riders face. Free consultations nationwide.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "About", url: "/about" }
+];
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
+    <div class="container-wide">
+      <div class="max-w-4xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          Dedicated to <span class="text-primary-400">Riders' Rights</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+          Motorcycle Wreck Law exists to help injured riders get the legal representation they deserve. 
+          We connect accident victims with experienced motorcycle accident attorneys who understand the road.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Motorcyclists face unique dangers on the road—and unique challenges when seeking compensation after an accident. 
+            We believe every rider deserves access to attorneys who:
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-primary-600 text-2xl">✓</span>
+              <span class="text-gray-700"><strong>Understand motorcycle dynamics</strong> and how they differ from car accidents</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-primary-600 text-2xl">✓</span>
+              <span class="text-gray-700"><strong>Fight the bias</strong> that riders often face from insurance companies and juries</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-primary-600 text-2xl">✓</span>
+              <span class="text-gray-700"><strong>Know the specific laws</strong> in your state that affect motorcycle accident claims</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-primary-600 text-2xl">✓</span>
+              <span class="text-gray-700"><strong>Work on contingency</strong> so you pay nothing unless you win</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-2xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">The Numbers Tell the Story</h3>
+          <div class="space-y-6">
+            <div>
+              <div class="text-4xl font-bold text-primary-600">6,218</div>
+              <div class="text-gray-600">Motorcyclists killed in 2022</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-primary-600">29x</div>
+              <div class="text-gray-600">More likely to die in a crash than car occupants</div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-primary-600">83,000+</div>
+              <div class="text-gray-600">Motorcyclists injured annually</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why We Exist -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why We Exist</h2>
+        <div class="prose prose-lg max-w-none text-left">
+          <p>
+            After a motorcycle accident, injured riders often find themselves fighting on two fronts: recovering from their injuries 
+            while battling insurance companies who don't want to pay fair compensation.
+          </p>
+          <p>
+            Too often, riders are blamed for accidents that weren't their fault. Insurance adjusters use tactics designed to minimize 
+            payouts. And general practice attorneys may not understand the specific challenges of motorcycle accident cases.
+          </p>
+          <p>
+            <strong>Motorcycle Wreck Law was created to change that.</strong>
+          </p>
+          <p>
+            We provide free resources to help riders understand their rights and connect them with attorneys who specialize in 
+            motorcycle accident cases—lawyers who ride, who understand the road, and who know how to fight for maximum compensation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Help -->
+  <section class="py-16">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">How We Help</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary-500">
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Free Resources</h3>
+          <p class="text-gray-600">
+            Our guides, checklists, and legal information help you understand your rights and make informed decisions.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary-500">
+          <div class="text-4xl mb-4">⚖️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Attorney Matching</h3>
+          <p class="text-gray-600">
+            We connect you with experienced motorcycle accident attorneys in your area who offer free consultations.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary-500">
+          <div class="text-4xl mb-4">🏍️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Rider Advocacy</h3>
+          <p class="text-gray-600">
+            We fight the stereotype that riders are reckless. Most motorcycle accidents are caused by other drivers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with Form -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-wide">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Injured in a Motorcycle Accident?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Get a free, no-obligation case evaluation from an experienced motorcycle accident attorney in your area.
+        </p>
+        
+        <!-- Lead Capture Form -->
+        <div class="bg-white rounded-xl p-6 md:p-8 text-left">
+          <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Free Case Evaluation</h3>
+          <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
+            <input type="hidden" name="source" value="motorcyclewrecklaw-about" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" name="fullName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900" required />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900" required />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">What Happened?</label>
+              <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 resize-none" placeholder="Briefly describe your accident..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg transition text-lg">
+              Get My Free Evaluation →
+            </button>
+          </form>
+          <p class="text-xs text-gray-500 text-center mt-4">
+            🔒 Your information is confidential. No fees unless you win.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

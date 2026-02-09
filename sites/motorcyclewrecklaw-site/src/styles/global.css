@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Orange/Red motorcycle-themed color scheme */
+  --color-primary-50: #fef7ee;
+  --color-primary-100: #fdead7;
+  --color-primary-200: #fad2ae;
+  --color-primary-300: #f6b27a;
+  --color-primary-400: #f18743;
+  --color-primary-500: #ed6b1f;
+  --color-primary-600: #de5115;
+  --color-primary-700: #b83c13;
+  --color-primary-800: #933118;
+  --color-primary-900: #772b16;
+  
+  /* Black/charcoal accent */
+  --color-accent-50: #f8fafc;
+  --color-accent-100: #f1f5f9;
+  --color-accent-200: #e2e8f0;
+  --color-accent-300: #cbd5e1;
+  --color-accent-400: #94a3b8;
+  --color-accent-500: #1e293b;
+  --color-accent-600: #0f172a;
+  --color-accent-700: #020617;
+  
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  
+  --color-success-50: #f0fdf4;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+}
+
+/* Custom utilities */
+.container-narrow {
+  @apply max-w-4xl mx-auto px-4;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Form focus styles */
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-2 ring-primary-500;
+}
+
+/* Button base */
+.btn {
+  @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-primary-700 border-2 border-primary-600 px-6 py-3;
+}
+
+.btn-cta {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl;
+}

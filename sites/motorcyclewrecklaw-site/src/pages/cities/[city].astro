@@ -1,0 +1,458 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { cities, getCityBySlug, getCitiesByState, type CityData } from '../../data/cities';
+import { states, getStateBySlug } from '../../data/states';
+
+export function getStaticPaths() {
+  return cities.map((city) => ({
+    params: { city: city.slug },
+    props: { cityData: city },
+  }));
+}
+
+interface Props {
+  cityData: CityData;
+}
+
+const { cityData } = Astro.props;
+
+// Get state data
+const stateSlug = cityData.state.toLowerCase().replace(/\s+/g, '-');
+const stateData = states.find(s => s.slug === stateSlug);
+
+// SEO - Title truncated to 60 chars for optimal SEO
+const fullTitle = `${cityData.name}, ${cityData.stateAbbr} Motorcycle Accident Lawyer`;
+const title = fullTitle.length > 60 ? fullTitle.substring(0, 57) + '...' : fullTitle;
+const description = `Injured in a motorcycle accident in ${cityData.name}? Get a free case evaluation. ${cityData.annualMotorcycleCrashes} crashes annually. ${cityData.trafficDensity === "high" ? "High traffic area - increased risk." : "Know your rights after a crash."}`;
+
+// Schema markup
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${cityData.name} Motorcycle Accident Lawyers`,
+  "description": description,
+  "url": `https://motorcyclewrecklaw.com/cities/${cityData.slug}`,
+  "areaServed": {
+    "@type": "City",
+    "name": cityData.name,
+    "containedInPlace": {
+      "@type": "State",
+      "name": cityData.state
+    }
+  },
+  "serviceType": ["Motorcycle Accident Law", "Personal Injury Law"],
+  "priceRange": "Free Consultation"
+};
+
+// Breadcrumbs
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Cities", url: "/cities" },
+  { name: cityData.name, url: `/cities/${cityData.slug}` }
+];
+
+// Get other cities in same state
+const stateCities = getCitiesByState(cityData.stateAbbr).filter(c => c.slug !== cityData.slug).slice(0, 5);
+
+// Traffic density colors
+const trafficColors = {
+  high: { bg: "bg-red-100", text: "text-red-800", label: "High Risk Zone" },
+  moderate: { bg: "bg-yellow-100", text: "text-yellow-800", label: "Moderate Risk" },
+  low: { bg: "bg-green-100", text: "text-green-800", label: "Lower Risk" }
+};
+const trafficStyle = trafficColors[cityData.trafficDensity];
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  schemaMarkup={schemaMarkup}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
+    <div class="container-wide">
+      <div class="max-w-4xl">
+        <div class="flex items-center gap-2 text-gray-400 mb-4">
+          <a href="/" class="hover:text-white transition">Home</a>
+          <span>/</span>
+          <a href="/cities" class="hover:text-white transition">Cities</a>
+          <span>/</span>
+          <span class="text-white">{cityData.name}</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          {cityData.name}, {cityData.stateAbbr} Motorcycle Accident Lawyer
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Injured in a motorcycle crash in {cityData.name}? Our experienced attorneys fight for riders' rights. 
+          With <strong class="text-orange-400">{cityData.annualMotorcycleCrashes}</strong> motorcycle crashes annually in the area, 
+          you need legal representation that understands the unique challenges riders face.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-8">
+          <span class={`${trafficStyle.bg} ${trafficStyle.text} px-4 py-2 rounded-full font-semibold`}>
+            🚦 {trafficStyle.label}
+          </span>
+          <span class="bg-gray-700 text-white px-4 py-2 rounded-full">
+            📊 Population: {cityData.population}
+          </span>
+          {stateData && (
+            <span class={`px-4 py-2 rounded-full ${stateData.helmetLaw === "universal" ? "bg-blue-600" : stateData.helmetLaw === "none" ? "bg-green-600" : "bg-yellow-600"} text-white`}>
+              🪖 {stateData.helmetLaw === "universal" ? "Helmet Required" : stateData.helmetLaw === "none" ? "No Helmet Law" : "Partial Helmet Law"}
+            </span>
+          )}
+        </div>
+        
+        <!-- Lead Capture Form -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <h2 class="text-2xl font-bold mb-4 text-orange-400">Free Case Evaluation</h2>
+          <form action="https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/mwl-city" method="POST" class="space-y-4">
+            <input type="hidden" name="city" value={cityData.name} />
+            <input type="hidden" name="state" value={cityData.state} />
+            <input type="hidden" name="source" value={`motorcyclewrecklaw.com/cities/${cityData.slug}`} />
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <input 
+                type="text" 
+                name="name" 
+                placeholder="Your Name *" 
+                required 
+                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+              <input 
+                type="tel" 
+                name="phone" 
+                placeholder="Phone Number *" 
+                required 
+                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              />
+            </div>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="Email Address *" 
+              required 
+              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            <textarea 
+              name="description" 
+              placeholder="Briefly describe your accident..." 
+              rows="3"
+              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            ></textarea>
+            <button 
+              type="submit" 
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105"
+            >
+              Get Your Free Consultation →
+            </button>
+            <p class="text-sm text-gray-400 text-center">No fees unless we win your case</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dangerous Intersections Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+        ⚠️ Most Dangerous Intersections for Motorcyclists in {cityData.name}
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        These locations see the highest concentration of motorcycle accidents. Extra caution is advised when riding through these areas.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cityData.dangerousIntersections.map((intersection, index) => (
+          <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-500">
+            <div class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold">
+                {index + 1}
+              </span>
+              <div>
+                <h3 class="font-semibold text-gray-900">{intersection}</h3>
+                <p class="text-sm text-gray-500 mt-1">High accident frequency</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Riding Routes Section -->
+  <section class="py-16 bg-white">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+        🏍️ Popular Motorcycle Routes Near {cityData.name}
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        While these routes attract riders for their scenery and curves, they also see motorcycle accidents. Know your legal rights if injured.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {cityData.popularRidingRoutes.map((route) => (
+          <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-6 border border-orange-200">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🛣️</span>
+              <h3 class="font-semibold text-gray-900 text-lg">{route}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique Factors Section -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        📍 What Makes {cityData.name} Unique for Motorcyclists
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cityData.uniqueFactors.map((factor) => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <p class="text-gray-200">{factor}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- State Law Info (if available) -->
+  {stateData && (
+    <section class="py-16 bg-orange-50">
+      <div class="container-wide">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+          ⚖️ {cityData.state} Motorcycle Laws That Affect Your Case
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="font-bold text-gray-900 mb-2">⏱️ Statute of Limitations</h3>
+            <p class="text-3xl font-extrabold text-orange-500">{stateData.statuteOfLimitations}</p>
+            <p class="text-sm text-gray-500 mt-2">Time limit to file your claim</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="font-bold text-gray-900 mb-2">⚖️ Fault System</h3>
+            <p class="text-lg font-semibold text-gray-800">{stateData.faultSystem}</p>
+            <p class="text-sm text-gray-500 mt-2">How damages are calculated</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="font-bold text-gray-900 mb-2">🪖 Helmet Law</h3>
+            <p class="text-lg font-semibold text-gray-800 capitalize">{stateData.helmetLaw}</p>
+            <p class="text-sm text-gray-500 mt-2">{stateData.helmetLawDetails}</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-lg">
+            <h3 class="font-bold text-gray-900 mb-2">🚗 Lane Splitting</h3>
+            <p class="text-lg font-semibold text-gray-800 capitalize">{stateData.laneSplitting}</p>
+            <p class="text-sm text-gray-500 mt-2">{stateData.laneSplittingDetails}</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href={`/states/${stateSlug}`} class="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold">
+            View full {cityData.state} motorcycle accident law guide →
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Local Hospitals Section -->
+  <section class="py-16 bg-white">
+    <div class="container-wide">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+        🏥 Major Trauma Centers in {cityData.name}
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        If you've been in a motorcycle accident, these hospitals provide emergency and trauma care in the {cityData.name} area.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {cityData.majorHospitals.map((hospital) => (
+          <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500">🏥</span>
+              <span class="font-medium text-gray-800">{hospital}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Motorcycle Events Section -->
+  {cityData.motorcycleEvents.length > 0 && (
+    <section class="py-16 bg-gray-100">
+      <div class="container-wide">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+          🎉 Motorcycle Events Near {cityData.name}
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Local rallies and events bring riders together — but also increase accident risk during event periods.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          {cityData.motorcycleEvents.map((event) => (
+            <span class="bg-orange-100 text-orange-800 px-6 py-3 rounded-full font-medium">
+              🏍️ {event}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Other Cities in State -->
+  {stateCities.length > 0 && (
+    <section class="py-16 bg-white">
+      <div class="container-wide">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
+          Other {cityData.state} Cities We Serve
+        </h2>
+        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {stateCities.map((city) => (
+            <a 
+              href={`/cities/${city.slug}`}
+              class="bg-gray-50 hover:bg-orange-50 rounded-lg p-4 border border-gray-200 hover:border-orange-300 transition text-center"
+            >
+              <span class="font-medium text-gray-800 hover:text-orange-600">{city.name}</span>
+            </a>
+          ))}
+        </div>
+        <div class="mt-8 text-center">
+          <a href={`/states/${stateSlug}`} class="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold">
+            View all {cityData.state} motorcycle accident resources →
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-wide max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
+        Frequently Asked Questions
+      </h2>
+      
+      <div class="space-y-6">
+        <details class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50">
+            <span class="font-semibold text-lg text-gray-900">What should I do immediately after a motorcycle accident in {cityData.name}?</span>
+            <span class="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600">
+            <ol class="list-decimal list-inside space-y-2">
+              <li>Seek medical attention immediately, even if injuries seem minor</li>
+              <li>Call 911 and file a police report</li>
+              <li>Document the scene with photos and videos</li>
+              <li>Exchange information with all parties involved</li>
+              <li>Get witness contact information</li>
+              <li>Do NOT admit fault or sign anything from insurance companies</li>
+              <li>Contact an experienced motorcycle accident attorney</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50">
+            <span class="font-semibold text-lg text-gray-900">How much is my {cityData.name} motorcycle accident case worth?</span>
+            <span class="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600">
+            <p>Every case is unique, but factors that affect your settlement include:</p>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>Severity of injuries and long-term impact</li>
+              <li>Medical expenses (past and future)</li>
+              <li>Lost wages and earning capacity</li>
+              <li>Pain and suffering</li>
+              <li>Property damage to your motorcycle</li>
+              <li>Degree of fault assigned to each party</li>
+              <li>Insurance policy limits</li>
+            </ul>
+            <p class="mt-4">Contact us for a free case evaluation to discuss your specific situation.</p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50">
+            <span class="font-semibold text-lg text-gray-900">How long do I have to file a motorcycle accident lawsuit in {cityData.state}?</span>
+            <span class="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600">
+            <p>
+              {cityData.state} has a <strong>{stateData?.statuteOfLimitations || "limited"}</strong> statute of limitations 
+              for personal injury claims. This means you generally have {stateData?.statuteOfLimitations || "a limited time"} from 
+              the date of your accident to file a lawsuit. However, certain circumstances can affect this deadline. 
+              Don't wait — contact an attorney as soon as possible to protect your rights.
+            </p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50">
+            <span class="font-semibold text-lg text-gray-900">What if I wasn't wearing a helmet during my accident?</span>
+            <span class="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600">
+            <p>
+              {stateData?.helmetLaw === "universal" 
+                ? `${cityData.state} requires all riders to wear helmets. Not wearing one may affect your case, but you can still recover damages. The key question is whether the lack of helmet contributed to your specific injuries.`
+                : stateData?.helmetLaw === "none"
+                ? `${cityData.state} does not require adult riders to wear helmets. Your choice not to wear one generally cannot be used against you in court, though insurance companies may try to argue it.`
+                : `${cityData.state} has a partial helmet law. Whether helmet use affects your case depends on your age and the specific circumstances. An attorney can advise you on your situation.`
+              }
+            </p>
+          </div>
+        </details>
+
+        <details class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50">
+            <span class="font-semibold text-lg text-gray-900">Do I really need a motorcycle accident lawyer?</span>
+            <span class="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="p-6 pt-0 text-gray-600">
+            <p>
+              Insurance companies often try to blame motorcyclists or minimize settlements. An experienced motorcycle 
+              accident attorney understands the unique challenges riders face and can:
+            </p>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>Investigate the accident and gather evidence</li>
+              <li>Handle all communication with insurance companies</li>
+              <li>Calculate the full value of your claim</li>
+              <li>Negotiate a fair settlement</li>
+              <li>Take your case to trial if necessary</li>
+            </ul>
+            <p class="mt-4">We work on contingency — you pay nothing unless we win.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+    <div class="container-wide text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Injured in a Motorcycle Accident in {cityData.name}?
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+        Don't let insurance companies take advantage of you. Get the compensation you deserve.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="tel:1-800-MOTO-LAW" 
+          class="bg-white text-orange-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition"
+        >
+          📞 Call Now: 1-800-MOTO-LAW
+        </a>
+        <a 
+          href="#" 
+          class="bg-gray-900 text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-800 transition"
+          onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+        >
+          Start Free Case Review
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

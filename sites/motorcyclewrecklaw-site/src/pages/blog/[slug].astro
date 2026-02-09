@@ -1,0 +1,766 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articles, getArticleBySlug, getRelatedArticles, categoryInfo, type Article } from '../../data/articles';
+import { states } from '../../data/states';
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const related = getRelatedArticles(article.slug, 3);
+
+// Get random states to link to (for internal linking)
+const randomStates = [...states].sort(() => Math.random() - 0.5).slice(0, 6);
+
+// Schema markup
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.metaDescription,
+  "datePublished": article.publishDate,
+  "dateModified": article.updatedDate || article.publishDate,
+  "author": {
+    "@type": "Organization",
+    "name": "Motorcycle Wreck Law"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motorcycle Wreck Law",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://motorcyclewrecklaw.com/images/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://motorcyclewrecklaw.com/blog/${article.slug}`
+  }
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Blog", url: "/blog" },
+  { name: categoryInfo[article.category].name, url: `/blog/category/${article.category}` },
+  { name: article.title, url: `/blog/${article.slug}` }
+];
+
+// Content generation based on article category and slug
+// This generates unique, SEO-optimized content for each article
+
+function generateContent(article: Article): string {
+  const cat = article.category;
+  const slug = article.slug;
+  
+  // Build content blocks based on category patterns
+  // Each article gets unique content based on its topic
+  return article.slug; // Content is rendered in the template below
+}
+---
+
+<BaseLayout 
+  title={article.metaTitle.length > 60 ? article.metaTitle.substring(0, 57) + '...' : article.metaTitle} 
+  description={article.metaDescription}
+  schemaMarkup={schemaMarkup}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Article Header -->
+  <article class="bg-white">
+    <header class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12 md:py-16">
+      <div class="container-wide">
+        <div class="max-w-4xl mx-auto">
+          <!-- Breadcrumbs -->
+          <div class="flex flex-wrap items-center gap-2 text-gray-400 text-sm mb-6">
+            <a href="/" class="hover:text-white transition">Home</a>
+            <span>/</span>
+            <a href="/blog" class="hover:text-white transition">Blog</a>
+            <span>/</span>
+            <a href={`/blog#${article.category}`} class="hover:text-white transition">{categoryInfo[article.category].name}</a>
+          </div>
+          
+          <!-- Category Badge -->
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              {categoryInfo[article.category].icon} {article.categoryLabel}
+            </span>
+            <span class="text-gray-400 text-sm">{article.readTime} min read</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
+            {article.title}
+          </h1>
+          
+          <p class="text-xl text-gray-300 leading-relaxed mb-6">
+            {article.excerpt}
+          </p>
+          
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+            <span>Published: {new Date(article.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            {article.updatedDate && (
+              <span>Updated: {new Date(article.updatedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="py-12 md:py-16">
+      <div class="container-wide">
+        <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          
+          <!-- Article Content -->
+          <div class="lg:col-span-2">
+            <div class="prose prose-lg max-w-none">
+              
+              <!-- Dynamic content based on article category -->
+              {article.category === 'accident-types' && (
+                <>
+                  <h2>Understanding {article.title.replace(/:.*/g, '')}</h2>
+                  <p>
+                    {article.slug.includes('left-turn') ? 
+                      "Left-turn motorcycle accidents are the most common type of multi-vehicle motorcycle crash, accounting for approximately 42% of all motorcycle-car collisions. These accidents occur when a car turns left in front of an oncoming motorcycle, often because the driver failed to see the motorcyclist or misjudged their speed." :
+                    article.slug.includes('rear-end') ?
+                      "Rear-end motorcycle accidents occur when a following vehicle strikes a motorcycle from behind. Unlike rear-end car accidents, which are often minor fender-benders, rear-end motorcycle crashes frequently result in catastrophic injuries because riders have no protection from the impact." :
+                    article.slug.includes('lane-change') ?
+                      "Lane change accidents are a constant danger for motorcyclists. When drivers fail to check their blind spots or signal their intentions, motorcyclists riding alongside them face sudden, unavoidable collisions. These accidents are particularly frustrating because they're almost entirely preventable with basic driver attention." :
+                    article.slug.includes('dooring') ?
+                      "Dooring accidents occur when a vehicle occupant opens their door into the path of an oncoming motorcyclist. These sudden obstacles give riders almost no time to react, often resulting in direct impacts with the door or evasive maneuvers that cause crashes." :
+                    article.slug.includes('road-hazard') ?
+                      "Road hazards that pose minimal threat to cars can be devastating for motorcyclists. Potholes, loose gravel, wet leaves, oil slicks, and debris can cause a motorcycle to lose traction or stability, resulting in crashes that appear to be the rider's fault but actually stem from negligent road maintenance." :
+                    article.slug.includes('intersection') ?
+                      "Intersections are the most dangerous locations for motorcyclists. Multiple traffic streams, turning vehicles, pedestrians, and traffic signals create a complex environment where drivers frequently fail to see motorcycles. Understanding your rights and the common causes of intersection accidents is crucial for any rider." :
+                    article.slug.includes('highway') ?
+                      "Highway motorcycle accidents occur at higher speeds, leading to more severe injuries and fatalities. Merging errors, sudden lane changes, road debris, and fatigue-related crashes are common on highways where motorcyclists are most vulnerable to inattentive drivers." :
+                    article.slug.includes('head-on') ?
+                      "Head-on collisions are the deadliest type of motorcycle accident. When a vehicle crosses the center line into a motorcyclist's path, the combined speed of both vehicles creates devastating impact forces. These crashes often result from drunk driving, distracted driving, or driver fatigue." :
+                      `${article.excerpt} Understanding the causes, liability factors, and your legal rights is essential for protecting yourself and your claim.`
+                    }
+                  </p>
+
+                  <h2>Common Causes</h2>
+                  <p>
+                    These accidents typically result from one or more of the following factors:
+                  </p>
+                  <ul>
+                    <li><strong>Driver Inattention:</strong> Distracted driving, including phone use, eating, or adjusting controls, is a leading cause of motorcycle accidents.</li>
+                    <li><strong>Failure to Yield:</strong> Many drivers fail to properly yield the right of way to motorcyclists, especially at intersections and during lane changes.</li>
+                    <li><strong>Motorcycle Invisibility:</strong> Motorcycles are smaller and harder to see than cars, especially in mirrors and blind spots.</li>
+                    <li><strong>Speed Misjudgment:</strong> Drivers often misjudge the speed of approaching motorcycles, leading to dangerous turning or merging decisions.</li>
+                    <li><strong>Impaired Driving:</strong> Alcohol and drug impairment significantly increase the risk of causing motorcycle accidents.</li>
+                  </ul>
+
+                  <div class="bg-primary-50 border-l-4 border-primary-500 p-6 my-8 rounded-r-lg not-prose">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">💡 Did You Know?</h3>
+                    <p class="text-gray-700">
+                      {article.slug.includes('left-turn') ?
+                        "In left-turn accidents, the turning driver is found at fault approximately 85% of the time. However, without proper evidence collection, insurance companies may try to shift blame to the motorcyclist." :
+                      article.slug.includes('rear-end') ?
+                        "The rear driver is presumed at fault in nearly all rear-end accidents. However, proving the full extent of your injuries often requires expert testimony and thorough documentation." :
+                        "Motorcyclists are 29 times more likely to die in a crash than car occupants, per mile traveled. This vulnerability is why proving the other driver's negligence is so important for fair compensation."
+                      }
+                    </p>
+                  </div>
+
+                  <h2>Determining Fault and Liability</h2>
+                  <p>
+                    Liability in motorcycle accidents depends on proving negligence—that the other party had a duty of care, breached that duty, and caused your injuries. Key evidence includes:
+                  </p>
+                  <ul>
+                    <li>Police reports documenting the accident</li>
+                    <li>Witness statements from people who saw the crash</li>
+                    <li>Photos and videos from the scene</li>
+                    <li>Traffic camera footage if available</li>
+                    <li>Expert accident reconstruction analysis</li>
+                    <li>Vehicle damage patterns showing point of impact</li>
+                  </ul>
+                  <p>
+                    Even if you believe you were partially at fault, you may still be entitled to compensation. Most states use comparative fault systems that allow recovery even when the victim shares some blame.
+                  </p>
+
+                  <h2>Common Injuries</h2>
+                  <p>
+                    These accidents frequently cause severe injuries including:
+                  </p>
+                  <ul>
+                    <li><strong>Traumatic brain injuries (TBI)</strong> - Even with a helmet, the brain can suffer damage from rapid acceleration/deceleration</li>
+                    <li><strong>Spinal cord injuries</strong> - Can result in partial or complete paralysis</li>
+                    <li><strong>Broken bones</strong> - Legs, arms, pelvis, and ribs are commonly fractured</li>
+                    <li><strong>Road rash</strong> - Severe skin abrasions requiring grafts in serious cases</li>
+                    <li><strong>Internal injuries</strong> - Organ damage and internal bleeding may not be immediately apparent</li>
+                  </ul>
+                  <p>
+                    <a href="/blog/delayed-injury-symptoms">Delayed injury symptoms</a> are common after motorcycle accidents. Always seek medical attention immediately after a crash, even if you feel fine.
+                  </p>
+                </>
+              )}
+
+              {article.category === 'injuries' && (
+                <>
+                  <h2>Understanding {article.title.replace(/:.*/g, '').replace(' in Motorcycle Accidents', '').replace(' from Motorcycle Crashes', '').replace(' After Motorcycle Accidents', '')}</h2>
+                  <p>
+                    {article.slug.includes('road-rash') ?
+                      "Road rash is one of the most common motorcycle accident injuries, ranging from minor scrapes to life-threatening wounds. When skin contacts the road surface at speed, the friction can cause severe abrasion, tissue damage, and permanent scarring. Understanding the severity of your road rash is crucial for proper treatment and fair compensation." :
+                    article.slug.includes('traumatic-brain') ?
+                      "Traumatic brain injury (TBI) is the leading cause of death in motorcycle accidents and a major cause of long-term disability among survivors. Even with helmet use, the brain can suffer damage from the rapid acceleration and deceleration forces in a crash. TBI can affect every aspect of life, from cognitive function to personality." :
+                    article.slug.includes('spinal-cord') ?
+                      "Spinal cord injuries from motorcycle accidents can result in partial or complete paralysis, affecting everything from mobility to bodily functions. These catastrophic injuries require immediate medical attention and often lead to permanent life changes. The financial impact—including medical care, home modifications, and lost income—can reach millions of dollars over a lifetime." :
+                    article.slug.includes('broken-bones') ?
+                      "Broken bones are among the most common motorcycle accident injuries. The force of impact combined with the rider's exposure can fracture legs, arms, ribs, pelvis, and other bones. Compound fractures, where the bone breaks through the skin, are particularly serious and may require multiple surgeries." :
+                    article.slug.includes('internal') ?
+                      "Internal injuries are among the most dangerous motorcycle accident injuries because they may not be immediately apparent. Internal bleeding, organ damage, and ruptured spleens can be life-threatening if not treated promptly. This is why medical evaluation immediately after any crash is essential, even if you feel fine." :
+                    article.slug.includes('ptsd') ?
+                      "Post-traumatic stress disorder (PTSD) affects up to 40% of motorcycle accident survivors. The psychological trauma of a serious crash can cause flashbacks, nightmares, severe anxiety, and avoidance behaviors that significantly impact quality of life. Mental health injuries are compensable just like physical injuries." :
+                      `${article.excerpt} This guide covers causes, symptoms, treatment options, and how these injuries affect your legal claim.`
+                    }
+                  </p>
+
+                  <h2>Symptoms and Severity</h2>
+                  <p>
+                    {article.slug.includes('road-rash') ?
+                      "Road rash is classified in three degrees of severity:" :
+                    article.slug.includes('traumatic-brain') ?
+                      "TBI symptoms can range from mild to severe and may not appear immediately:" :
+                    article.slug.includes('ptsd') ?
+                      "PTSD symptoms typically fall into four categories:" :
+                      "Symptoms may include:"
+                    }
+                  </p>
+                  <ul>
+                    {article.slug.includes('road-rash') ? (
+                      <>
+                        <li><strong>First Degree:</strong> Redness and tenderness, similar to a rug burn. Typically heals without scarring.</li>
+                        <li><strong>Second Degree:</strong> Skin is broken, exposing inner layers. May require medical treatment and can leave scars.</li>
+                        <li><strong>Third Degree:</strong> All skin layers removed, exposing fat, muscle, or bone. Requires skin grafts and leaves permanent scarring.</li>
+                      </>
+                    ) : article.slug.includes('traumatic-brain') ? (
+                      <>
+                        <li><strong>Physical:</strong> Headaches, dizziness, nausea, fatigue, vision problems, sensitivity to light/sound</li>
+                        <li><strong>Cognitive:</strong> Memory problems, difficulty concentrating, confusion, slowed thinking</li>
+                        <li><strong>Emotional:</strong> Mood swings, irritability, depression, anxiety, personality changes</li>
+                        <li><strong>Sleep:</strong> Insomnia, sleeping more than usual, difficulty waking</li>
+                      </>
+                    ) : article.slug.includes('ptsd') ? (
+                      <>
+                        <li><strong>Intrusive Memories:</strong> Flashbacks, nightmares, distressing memories of the accident</li>
+                        <li><strong>Avoidance:</strong> Avoiding motorcycles, roads, or anything that triggers memories</li>
+                        <li><strong>Negative Changes:</strong> Feelings of hopelessness, emotional numbness, memory problems</li>
+                        <li><strong>Arousal Changes:</strong> Being easily startled, trouble sleeping, irritability, hypervigilance</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>Pain at the injury site</li>
+                        <li>Swelling, bruising, or visible deformity</li>
+                        <li>Limited range of motion</li>
+                        <li>Numbness or tingling</li>
+                        <li>Symptoms that worsen over time</li>
+                      </>
+                    )}
+                  </ul>
+
+                  <div class="bg-red-50 border-l-4 border-red-500 p-6 my-8 rounded-r-lg not-prose">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">⚠️ Important Warning</h3>
+                    <p class="text-gray-700">
+                      {article.slug.includes('internal') || article.slug.includes('traumatic-brain') ?
+                        "These injuries can be life-threatening and may not show immediate symptoms. If you've been in a motorcycle accident, seek emergency medical care immediately—even if you feel fine. Symptoms may take hours or days to appear." :
+                        "Always seek medical attention after a motorcycle accident. Documenting your injuries promptly is essential both for your health and your legal claim. Gaps in treatment can be used by insurance companies to question the severity of your injuries."
+                      }
+                    </p>
+                  </div>
+
+                  <h2>Treatment Options</h2>
+                  <p>
+                    Treatment depends on the severity of your injuries and may include:
+                  </p>
+                  <ul>
+                    <li>Emergency medical care and hospitalization</li>
+                    <li>Surgery and follow-up procedures</li>
+                    <li>Physical therapy and rehabilitation</li>
+                    <li>Pain management and medication</li>
+                    <li>Mental health treatment and counseling</li>
+                    <li>Assistive devices and home modifications</li>
+                    <li>Long-term care for permanent disabilities</li>
+                  </ul>
+
+                  <h2>Impact on Your Legal Claim</h2>
+                  <p>
+                    The severity of your injuries directly affects the value of your claim. Compensation typically covers:
+                  </p>
+                  <ul>
+                    <li><strong>Medical expenses:</strong> Past, current, and future treatment costs</li>
+                    <li><strong>Lost wages:</strong> Income lost during recovery and reduced earning capacity</li>
+                    <li><strong>Pain and suffering:</strong> Physical pain and emotional distress</li>
+                    <li><strong>Loss of enjoyment:</strong> Inability to participate in activities you once enjoyed</li>
+                    <li><strong>Disfigurement:</strong> Scarring and permanent physical changes</li>
+                    <li><strong>Life care costs:</strong> Ongoing care needs for permanent injuries</li>
+                  </ul>
+                </>
+              )}
+
+              {article.category === 'legal' && (
+                <>
+                  <h2>{article.title.replace(/:.*/g, '')}</h2>
+                  <p>
+                    {article.slug.includes('helmet-laws') ?
+                      "Helmet laws vary significantly by state, and whether you were wearing a helmet at the time of your accident can affect your legal claim—even in states without helmet requirements. Understanding how helmet use factors into liability and compensation is crucial for motorcycle accident victims." :
+                    article.slug.includes('lane-splitting') ?
+                      "Lane splitting—riding between lanes of slow or stopped traffic—is legal in some states, explicitly illegal in others, and exists in a gray area in many. Your state's laws on lane splitting can significantly impact liability if you're in an accident while filtering through traffic." :
+                    article.slug.includes('comparative-fault') ?
+                      "What happens if you were partially at fault for your motorcycle accident? In most states, you can still recover compensation even if you share some blame. Understanding your state's comparative fault rules is essential for knowing what compensation you're entitled to." :
+                    article.slug.includes('statute-of-limitations') ?
+                      "Every state imposes a deadline for filing motorcycle accident lawsuits called the statute of limitations. Miss this deadline, and you lose your right to sue forever—no matter how strong your case. Knowing your state's deadline and any exceptions that may apply is critical." :
+                    article.slug.includes('proving-fault') ?
+                      "Proving fault in a motorcycle accident requires gathering evidence and overcoming common biases against motorcyclists. Insurance companies often try to blame the rider, even when the driver was clearly at fault. Understanding what evidence you need and how to prove negligence is essential." :
+                      `${article.excerpt} This guide explains the law and how it applies to your situation.`
+                    }
+                  </p>
+
+                  <h2>Key Legal Principles</h2>
+                  <p>
+                    Understanding these legal concepts is essential for protecting your rights:
+                  </p>
+                  <ul>
+                    <li><strong>Negligence:</strong> The legal standard for most accident claims—proving the other party failed to exercise reasonable care</li>
+                    <li><strong>Duty of Care:</strong> All drivers have a legal obligation to operate their vehicles safely</li>
+                    <li><strong>Breach of Duty:</strong> Violating traffic laws or driving carelessly constitutes a breach</li>
+                    <li><strong>Causation:</strong> You must prove the breach directly caused your injuries</li>
+                    <li><strong>Damages:</strong> You must document the actual harm you suffered</li>
+                  </ul>
+
+                  <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg not-prose">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">📋 State-Specific Laws Apply</h3>
+                    <p class="text-gray-700 mb-4">
+                      Motorcycle accident laws vary significantly by state. Your rights and potential compensation depend on where your accident occurred.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      {randomStates.slice(0, 4).map(state => (
+                        <a href={`/states/${state.slug}`} class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200 transition">
+                          {state.name} Laws →
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
+                  <h2>How This Affects Your Claim</h2>
+                  <p>
+                    {article.slug.includes('helmet-laws') ?
+                      "Even in states without helmet laws, insurance companies may argue that not wearing a helmet contributed to head injuries, attempting to reduce your compensation. However, the 'eggshell plaintiff' doctrine protects victims—defendants must take plaintiffs as they find them. An experienced attorney can counter these arguments." :
+                    article.slug.includes('comparative-fault') ?
+                      "Most states use comparative fault systems. In pure comparative fault states, you can recover even if you're 99% at fault (though your award is reduced accordingly). In modified comparative fault states, you're typically barred from recovery if you're 50% or 51% or more at fault, depending on the state." :
+                    article.slug.includes('statute-of-limitations') ?
+                      "The clock typically starts running on the date of your accident. However, exceptions may apply: the discovery rule can extend deadlines when injuries aren't immediately apparent, and deadlines may be tolled for minors or those with mental incapacity. Government claims often have much shorter notice requirements." :
+                      "The specific facts of your case, combined with your state's laws, determine your legal options. Insurance companies have teams of lawyers working against you—having experienced legal representation ensures your rights are protected."
+                    }
+                  </p>
+
+                  <h2>Protecting Your Rights</h2>
+                  <p>
+                    To protect your legal rights after a motorcycle accident:
+                  </p>
+                  <ul>
+                    <li>Document everything—photos, witness information, medical records</li>
+                    <li>Don't give recorded statements to insurance companies without legal advice</li>
+                    <li>Don't accept quick settlement offers before understanding your injuries</li>
+                    <li>Be aware of filing deadlines in your state</li>
+                    <li>Consult with an experienced motorcycle accident attorney</li>
+                  </ul>
+                </>
+              )}
+
+              {article.category === 'safety' && (
+                <>
+                  <h2>Why {article.title.replace(/:.*/g, '')} Matters</h2>
+                  <p>
+                    {article.slug.includes('protective-gear') ?
+                      "The right protective gear is your last line of defense in a crash. While it won't prevent accidents, quality gear dramatically reduces injury severity. ATGATT—All The Gear, All The Time—is more than a slogan; it's a philosophy that saves lives and limbs." :
+                    article.slug.includes('defensive-riding') ?
+                      "Defensive riding means assuming every driver is about to do the worst possible thing. It's about constant awareness, planning escape routes, and positioning yourself to react to threats. These habits become second nature and prevent countless accidents." :
+                    article.slug.includes('visibility') ?
+                      "The most common excuse from drivers who hit motorcyclists is 'I didn't see them.' While this doesn't excuse their negligence, increasing your visibility gives drivers more opportunity to notice you. High-vis gear, auxiliary lights, and smart positioning help you stand out." :
+                    article.slug.includes('weather') ?
+                      "Riding in rain, wind, cold, or heat introduces hazards that don't exist in fair weather. Reduced traction, impaired visibility, and physical discomfort all increase crash risk. Knowing how to adapt your riding—or when to stay home—is essential safety knowledge." :
+                      `${article.excerpt} Smart riders prioritize safety without sacrificing the joy of riding.`
+                    }
+                  </p>
+
+                  <h2>Key Safety Strategies</h2>
+                  <p>
+                    Implement these proven safety measures:
+                  </p>
+                  <ul>
+                    {article.slug.includes('gear') || article.slug.includes('helmet') ? (
+                      <>
+                        <li><strong>Helmet:</strong> Choose a full-face helmet meeting DOT, ECE, or Snell standards. Your chin and face take 35% of impacts.</li>
+                        <li><strong>Jacket:</strong> Leather or textile with CE-rated armor at shoulders, elbows, and back</li>
+                        <li><strong>Pants:</strong> Riding-specific pants with knee and hip armor—jeans offer zero protection</li>
+                        <li><strong>Gloves:</strong> Full-finger gloves with palm sliders and knuckle protection</li>
+                        <li><strong>Boots:</strong> Over-the-ankle boots with oil-resistant soles and ankle protection</li>
+                      </>
+                    ) : article.slug.includes('defensive') || article.slug.includes('intersection') ? (
+                      <>
+                        <li><strong>Constantly scan:</strong> Check mirrors every 5-7 seconds and scan intersections before entering</li>
+                        <li><strong>Cover your controls:</strong> Keep fingers on the brake lever and foot near the brake pedal in traffic</li>
+                        <li><strong>Plan escape routes:</strong> Always know where you'll go if a car suddenly turns or changes lanes</li>
+                        <li><strong>Assume invisibility:</strong> Ride as if no one can see you—because they often can't</li>
+                        <li><strong>Create space cushions:</strong> Maintain extra following distance and avoid riding in blind spots</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>Start with proper training from certified instructors</li>
+                        <li>Always wear appropriate protective gear</li>
+                        <li>Keep your motorcycle well-maintained</li>
+                        <li>Ride within your skill level and adjust for conditions</li>
+                        <li>Never ride impaired by alcohol, drugs, or fatigue</li>
+                      </>
+                    )}
+                  </ul>
+
+                  <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8 rounded-r-lg not-prose">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">✓ Safety Checklist</h3>
+                    <p class="text-gray-700">
+                      {article.slug.includes('gear') ?
+                        "Before every ride: Helmet secured? Jacket zipped? Gloves on? Boots laced? Armor in place? If you can't say yes to all, you're not ready to ride." :
+                      article.slug.includes('visibility') ?
+                        "Visibility boosters: Bright or reflective helmet? High-vis vest or jacket? White or light-colored bike? Auxiliary lights on? Headlight modulator installed?" :
+                        "Pre-ride safety check: T-CLOCS inspection complete? Gear on? Phone charged? Route planned? Weather checked? If you're tired, impaired, or rushing—don't ride."
+                      }
+                    </p>
+                  </div>
+
+                  <h2>How Safety Affects Your Legal Claim</h2>
+                  <p>
+                    Your safety choices can impact a legal claim if you're in an accident:
+                  </p>
+                  <ul>
+                    <li><strong>Helmet use:</strong> Not wearing a helmet may reduce compensation for head injuries in some states</li>
+                    <li><strong>Protective gear:</strong> Wearing proper gear shows you took reasonable precautions and weren't reckless</li>
+                    <li><strong>Training:</strong> Safety course completion demonstrates competence and responsibility</li>
+                    <li><strong>Maintenance:</strong> A well-maintained bike helps counter claims that mechanical failure caused your crash</li>
+                  </ul>
+                  <p>
+                    Being a safe, responsible rider doesn't just protect you from accidents—it strengthens your position if someone else's negligence injures you.
+                  </p>
+                </>
+              )}
+
+              {article.category === 'claims' && (
+                <>
+                  <h2>Understanding {article.title.replace(/:.*/g, '').replace('How to ', '').replace('What to ', '')}</h2>
+                  <p>
+                    {article.slug.includes('what-to-do-after') ?
+                      "The moments and days after a motorcycle accident are critical—both for your health and your legal claim. What you do (and don't do) can significantly impact your ability to recover fair compensation. This guide walks you through the essential steps from the crash scene to your recovery." :
+                    article.slug.includes('gathering-evidence') ?
+                      "Evidence wins cases. The more documentation you have about your accident, injuries, and damages, the stronger your claim. Unfortunately, evidence disappears quickly—memories fade, witnesses move away, and physical evidence is cleaned up. Knowing what to collect and how to preserve it is essential." :
+                    article.slug.includes('insurance-adjusters') ?
+                      "Insurance adjusters seem friendly and helpful, but their job is to pay you as little as possible. They're trained negotiators who use psychological tactics to get recorded statements, quick settlements, and admissions against your interest. Understanding their strategies helps you protect your claim." :
+                    article.slug.includes('settlement-value') ?
+                      "The value of your motorcycle accident claim depends on many factors: injury severity, liability clarity, insurance limits, medical documentation, and more. Understanding how claims are valued helps you recognize lowball offers and negotiate effectively." :
+                      `${article.excerpt} This guide provides the information you need to protect your rights and maximize your compensation.`
+                    }
+                  </p>
+
+                  <h2>Step-by-Step Guide</h2>
+                  <p>
+                    Follow these essential steps:
+                  </p>
+                  <ol class="list-decimal pl-6 space-y-4">
+                    {article.slug.includes('what-to-do-after') ? (
+                      <>
+                        <li><strong>Check for injuries</strong> - Assess yourself and others. Don't move if you suspect spinal injury.</li>
+                        <li><strong>Call 911</strong> - Report the accident and request medical assistance if needed.</li>
+                        <li><strong>Move to safety</strong> - If possible and safe, move out of traffic to prevent secondary accidents.</li>
+                        <li><strong>Document everything</strong> - Take photos of vehicles, damage, road conditions, and your injuries.</li>
+                        <li><strong>Exchange information</strong> - Get driver's license, insurance, and contact info from all parties.</li>
+                        <li><strong>Gather witness information</strong> - Get names and numbers from anyone who saw the accident.</li>
+                        <li><strong>Don't admit fault</strong> - Even saying "I'm sorry" can be used against you.</li>
+                        <li><strong>Seek medical attention</strong> - Go to the ER or see a doctor immediately, even if you feel fine.</li>
+                        <li><strong>Notify your insurance</strong> - Report the accident, but don't give recorded statements yet.</li>
+                        <li><strong>Consult an attorney</strong> - Before negotiating with insurance, get legal advice.</li>
+                      </>
+                    ) : article.slug.includes('gathering-evidence') ? (
+                      <>
+                        <li><strong>Scene photos</strong> - Wide shots showing the entire scene and close-ups of damage, debris, and road conditions</li>
+                        <li><strong>Your injuries</strong> - Photograph all visible injuries immediately and as they develop over days</li>
+                        <li><strong>Witness information</strong> - Names, phone numbers, and brief statements from anyone who saw the crash</li>
+                        <li><strong>Police report</strong> - Request a copy of the official accident report</li>
+                        <li><strong>Medical records</strong> - All treatment records, bills, and diagnoses from day one</li>
+                        <li><strong>Income documentation</strong> - Pay stubs, tax returns, and employer verification of missed work</li>
+                        <li><strong>Property damage</strong> - Photos of your damaged motorcycle and gear, plus repair estimates</li>
+                        <li><strong>Your own notes</strong> - A journal of your pain, limitations, and recovery progress</li>
+                      </>
+                    ) : (
+                      <>
+                        <li><strong>Understand your rights</strong> - Know what you're entitled to before negotiating</li>
+                        <li><strong>Document everything</strong> - Keep records of all communication and expenses</li>
+                        <li><strong>Don't rush</strong> - Resist pressure to settle quickly before understanding your full damages</li>
+                        <li><strong>Get legal advice</strong> - Even a consultation can help you understand your claim's value</li>
+                        <li><strong>Negotiate strategically</strong> - Counter lowball offers with documented evidence of your damages</li>
+                      </>
+                    )}
+                  </ol>
+
+                  <div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg not-prose">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">⚠️ Common Mistakes to Avoid</h3>
+                    <ul class="text-gray-700 space-y-2">
+                      <li>❌ Accepting the first settlement offer without evaluation</li>
+                      <li>❌ Giving recorded statements without legal advice</li>
+                      <li>❌ Posting about your accident on social media</li>
+                      <li>❌ Gaps in medical treatment that insurers can use against you</li>
+                      <li>❌ Signing releases or waivers without understanding them</li>
+                      <li>❌ Missing the statute of limitations deadline</li>
+                    </ul>
+                  </div>
+
+                  <h2>Maximizing Your Compensation</h2>
+                  <p>
+                    To get fair compensation, you need to:
+                  </p>
+                  <ul>
+                    <li><strong>Document all damages:</strong> Medical bills, lost wages, property damage, and non-economic losses</li>
+                    <li><strong>Follow all treatment recommendations:</strong> Gaps or non-compliance hurt your claim</li>
+                    <li><strong>Keep detailed records:</strong> A pain journal, receipts, and communication logs</li>
+                    <li><strong>Don't minimize injuries:</strong> Be honest about your symptoms and limitations</li>
+                    <li><strong>Consider all damages:</strong> Future medical needs, reduced earning capacity, and quality of life impacts</li>
+                    <li><strong>Get legal representation:</strong> Studies show represented claimants receive significantly higher settlements</li>
+                  </ul>
+                </>
+              )}
+
+              <!-- State-Specific Information Section (appears in all articles) -->
+              <h2>State-Specific Laws Matter</h2>
+              <p>
+                Motorcycle accident laws—including helmet requirements, lane splitting rules, comparative fault standards, and statutes of limitations—vary significantly by state. Understanding your state's specific laws is crucial for protecting your legal rights.
+              </p>
+              <div class="grid grid-cols-2 md:grid-cols-3 gap-4 my-6 not-prose">
+                {randomStates.map(state => (
+                  <a 
+                    href={`/states/${state.slug}`}
+                    class="bg-gray-50 rounded-lg p-4 hover:bg-primary-50 hover:border-primary-200 border border-gray-200 transition group"
+                  >
+                    <div class="font-semibold text-gray-900 group-hover:text-primary-600">{state.name}</div>
+                    <div class="text-sm text-gray-500">{state.statuteOfLimitations} filing deadline</div>
+                  </a>
+                ))}
+              </div>
+              <p>
+                <a href="/states">View all 50 state motorcycle accident laws →</a>
+              </p>
+
+              <!-- Conclusion -->
+              <h2>Next Steps</h2>
+              <p>
+                If you've been injured in a motorcycle accident, understanding {article.categoryLabel.toLowerCase()} 
+                is just the beginning. Every case is unique, and the specific facts of your situation—combined with 
+                your state's laws—determine your legal options.
+              </p>
+              <p>
+                Don't let insurance companies take advantage of you. A free consultation with an experienced 
+                motorcycle accident attorney can help you understand your rights, evaluate your claim's worth, 
+                and decide on the best path forward.
+              </p>
+            </div>
+
+            <!-- Related Articles -->
+            {related.length > 0 && (
+              <div class="mt-12 pt-8 border-t border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                  {related.map(rel => (
+                    <a 
+                      href={`/blog/${rel.slug}`}
+                      class="group bg-gray-50 rounded-lg p-4 hover:bg-primary-50 transition"
+                    >
+                      <span class="text-xs font-semibold text-primary-600">{rel.categoryLabel}</span>
+                      <h3 class="font-semibold text-gray-900 group-hover:text-primary-600 transition mt-1 line-clamp-2">
+                        {rel.title}
+                      </h3>
+                      <span class="text-sm text-gray-500">{rel.readTime} min read</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <!-- Article Footer -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+              <div class="bg-gray-50 rounded-xl p-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">About This Article</h3>
+                <p class="text-gray-600 text-sm">
+                  This article provides general information about motorcycle accident {article.categoryLabel.toLowerCase()} 
+                  and is not legal advice. Laws vary by state and change over time. For advice about your specific 
+                  situation, consult with a licensed attorney in your state.
+                </p>
+                <p class="text-gray-500 text-sm mt-4">
+                  Last updated: {new Date(article.updatedDate || article.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="lg:col-span-1">
+            <!-- Lead Capture Form -->
+            <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl shadow-lg p-6 sticky top-24">
+              <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-14 h-14 bg-white/20 rounded-full mb-4">
+                  <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="5" cy="18" r="3" />
+                    <circle cx="19" cy="18" r="3" />
+                    <path d="M12 18h7M5 18h3M8 18l2-9h4l3 9" />
+                    <path d="M14 9l-2-4h-1" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Free Case Review</h3>
+                <p class="text-primary-100 text-sm">
+                  Find out what your motorcycle accident case is worth.
+                </p>
+              </div>
+              
+              <form class="space-y-3" action="https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/motolaw-blog" method="POST">
+                <input type="hidden" name="source" value={`motorcyclewrecklaw-blog-${article.slug}`} />
+                <input type="hidden" name="article" value={article.slug} />
+                <input type="hidden" name="category" value={article.category} />
+                <div>
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    placeholder="Full Name" 
+                    class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:outline-none text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    placeholder="Phone Number" 
+                    class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:outline-none text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Email Address" 
+                    class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-white focus:outline-none text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <select 
+                    name="accidentTime"
+                    class="w-full px-4 py-3 rounded-lg bg-white/95 text-gray-900 focus:ring-2 focus:ring-white focus:outline-none text-sm"
+                    required
+                  >
+                    <option value="">When did the accident occur?</option>
+                    <option value="within-week">Within the last week</option>
+                    <option value="within-month">Within the last month</option>
+                    <option value="within-6months">Within the last 6 months</option>
+                    <option value="within-year">Within the last year</option>
+                    <option value="over-year">Over a year ago</option>
+                  </select>
+                </div>
+                <button 
+                  type="submit" 
+                  class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition"
+                >
+                  Get My Free Evaluation
+                </button>
+              </form>
+              
+              <div class="mt-4 text-center">
+                <p class="text-primary-100 text-xs">
+                  🔒 Confidential & No Obligation
+                </p>
+                <p class="text-white font-semibold text-sm mt-2">
+                  Or call: <a href="tel:1-800-555-0123" class="underline">1-800-555-0123</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+              <h4 class="font-bold text-gray-900 mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a href="/blog" class="text-primary-600 hover:text-primary-700 text-sm">
+                    ← Back to All Articles
+                  </a>
+                </li>
+                <li>
+                  <a href={`/blog#${article.category}`} class="text-primary-600 hover:text-primary-700 text-sm">
+                    More {categoryInfo[article.category].name} Articles
+                  </a>
+                </li>
+                <li>
+                  <a href="/states" class="text-primary-600 hover:text-primary-700 text-sm">
+                    State-Specific Laws
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+              <h4 class="font-bold text-gray-900 mb-4">In This Article</h4>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-primary-600">
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-primary-600">
+                    Key Information
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-primary-600">
+                    State-Specific Laws
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-primary-600">
+                    Next Steps
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gray-900 text-white py-12 md:py-16">
+    <div class="container-wide">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Injured in a Motorcycle Accident?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Get a free case review from experienced motorcycle accident attorneys. 
+          No fees unless we win your case.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/#free-case-review" class="btn btn-cta text-lg px-8 py-4">
+            Get Your Free Case Review
+          </a>
+          <a href="tel:1-800-555-0123" class="btn bg-white/10 hover:bg-white/20 border border-white/20 text-white text-lg px-8 py-4">
+            Call 1-800-555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

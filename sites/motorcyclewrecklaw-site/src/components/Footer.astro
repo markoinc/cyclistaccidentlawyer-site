@@ -1,0 +1,114 @@
+---
+const currentYear = new Date().getFullYear();
+
+const stateLinks = [
+  { href: '/states/california', label: 'California' },
+  { href: '/states/texas', label: 'Texas' },
+  { href: '/states/florida', label: 'Florida' },
+  { href: '/states/georgia', label: 'Georgia' },
+  { href: '/states/pennsylvania', label: 'Pennsylvania' },
+  { href: '/states/ohio', label: 'Ohio' },
+];
+
+const resourceLinks = [
+  { href: '/free-consultation', label: 'Free Case Review' },
+  { href: '/helmet-laws', label: 'Helmet Laws by State' },
+  { href: '/lane-splitting', label: 'Lane Splitting Laws' },
+  { href: '/what-to-do', label: 'What to Do After a Crash' },
+];
+
+const legalLinks = [
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+  { href: '/terms-of-service', label: 'Terms of Service' },
+  { href: '/disclaimer', label: 'Legal Disclaimer' },
+];
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container-wide py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Brand Column -->
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="5" cy="18" r="3" />
+              <circle cx="19" cy="18" r="3" />
+              <path d="M12 18h7M5 18h3M8 18l2-9h4l3 9" />
+              <path d="M14 9l-2-4h-1" />
+            </svg>
+          </div>
+          <span class="font-bold text-xl text-white">Motorcycle Wreck Law</span>
+        </a>
+        <p class="text-sm text-gray-400 mb-4">
+          Connecting motorcycle accident victims with experienced attorneys for free case evaluations nationwide.
+        </p>
+        <a href="tel:1-800-555-0123" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:text-primary-300 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>24/7 Free Consultation</span>
+        </a>
+      </div>
+      
+      <!-- States Column -->
+      <div>
+        <h3 class="font-semibold text-white mb-4">Find Attorneys By State</h3>
+        <ul class="space-y-2">
+          {stateLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-white transition">{link.label}</a>
+            </li>
+          ))}
+          <li>
+            <a href="/states" class="text-primary-400 hover:text-primary-300 transition font-medium">View All States →</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Resources Column -->
+      <div>
+        <h3 class="font-semibold text-white mb-4">Resources</h3>
+        <ul class="space-y-2">
+          {resourceLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-white transition">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- CTA Column -->
+      <div class="bg-gray-800 rounded-lg p-6">
+        <h3 class="font-semibold text-white mb-2">Free Case Review</h3>
+        <p class="text-sm text-gray-400 mb-4">
+          Get a free, no-obligation case evaluation from an experienced motorcycle accident attorney.
+        </p>
+        <a href="#free-case-review" class="btn btn-cta w-full">
+          Start Your Free Review
+        </a>
+        <p class="text-xs text-gray-500 mt-3 text-center">No fees unless you win</p>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          {legalLinks.map(link => (
+            <a href={link.href} class="text-gray-400 hover:text-white transition">{link.label}</a>
+          ))}
+        </div>
+        <div class="text-sm text-gray-500 text-center">
+          <p>&copy; {currentYear} Motorcycle Wreck Law. All rights reserved.</p>
+          <p class="mt-1">Built by <a href="https://kuriosbrand.com" class="text-primary-400 hover:text-primary-300">Sierra</a>, an autonomous AI agent</p>
+        </div>
+      </div>
+      
+      <!-- Disclaimer -->
+      <p class="text-xs text-gray-600 mt-6 text-center max-w-3xl mx-auto">
+        This website is for informational purposes only and does not constitute legal advice. Contacting us does not create an attorney-client relationship. Past results do not guarantee future outcomes. Each case is unique.
+      </p>
+    </div>
+  </div>
+</footer>

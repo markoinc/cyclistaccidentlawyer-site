@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { states, getUniversalHelmetStates, getNoHelmetLawStates, getLaneSplittingStates, getContributoryNegligenceStates } from '../../data/states';
+
+const title = "Motorcycle Accident Lawyers by State - Find Local Attorneys";
+const description = "Find experienced motorcycle accident lawyers in all 50 states. Compare helmet laws, lane splitting rules, and statute of limitations. Free case evaluations.";
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Motorcycle Accident Lawyers by State",
+  "description": description,
+  "numberOfItems": 51,
+  "itemListElement": states.map((state, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": `${state.name} Motorcycle Accident Lawyers`,
+    "url": `https://motorcyclewrecklaw.com/states/${state.slug}`
+  }))
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "States", url: "/states" }
+];
+
+// Group states by region
+const regions = {
+  "Northeast": ["Connecticut", "Maine", "Massachusetts", "New Hampshire", "New Jersey", "New York", "Pennsylvania", "Rhode Island", "Vermont"],
+  "Southeast": ["Alabama", "Florida", "Georgia", "Kentucky", "Louisiana", "Maryland", "Mississippi", "North Carolina", "South Carolina", "Tennessee", "Virginia", "West Virginia"],
+  "Midwest": ["Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin"],
+  "Southwest": ["Arizona", "New Mexico", "Oklahoma", "Texas"],
+  "West": ["Alaska", "California", "Colorado", "Hawaii", "Idaho", "Montana", "Nevada", "Oregon", "Utah", "Washington", "Wyoming"]
+};
+
+const shortStatutes = states.filter(s => s.statuteOfLimitations === "1 year");
+const universalHelmetStates = getUniversalHelmetStates();
+const noHelmetStates = getNoHelmetLawStates();
+const laneSplittingStates = getLaneSplittingStates();
+const contributoryStates = getContributoryNegligenceStates();
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  schemaMarkup={schemaMarkup}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-20">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Find a Motorcycle Accident Lawyer in Your State
+        </h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Each state has unique laws affecting your motorcycle accident claim—helmet requirements, lane splitting rules, fault systems, and filing deadlines. Find attorneys who know your state.
+        </p>
+        
+        <!-- Quick State Search -->
+        <div class="max-w-xl mx-auto">
+          <label for="state-search" class="sr-only">Search for your state</label>
+          <div class="relative">
+            <input 
+              type="text" 
+              id="state-search"
+              placeholder="Search for your state..."
+              class="w-full px-6 py-4 rounded-lg text-gray-900 text-lg focus:ring-4 focus:ring-primary-300 focus:outline-none"
+            />
+            <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All States Grid -->
+  <section class="py-12 md:py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">All 50 States + DC</h2>
+      
+      <div id="states-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        {states.map(state => (
+          <a 
+            href={`/states/${state.slug}`}
+            class="state-card bg-white rounded-lg shadow-md p-4 hover:shadow-lg hover:border-primary-500 border-2 border-transparent transition group"
+            data-state={state.name.toLowerCase()}
+          >
+            <div class="font-bold text-gray-900 group-hover:text-primary-600 transition">
+              {state.name}
+            </div>
+            <div class="text-xs text-gray-500 mt-1">
+              {state.statuteOfLimitations} SOL
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              {state.helmetLaw === "universal" && (
+                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">🪖 Helmet</span>
+              )}
+              {state.helmetLaw === "none" && (
+                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">No Helmet</span>
+              )}
+              {(state.laneSplitting === "legal" || state.laneSplitting === "gray") && (
+                <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">Lane Split</span>
+              )}
+              {state.faultSystem.includes("Contributory") && (
+                <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded">Contrib.</span>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Important State Law Categories -->
+  <section class="bg-gray-100 py-12 md:py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Key State Law Differences</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Short Statute States -->
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-red-900">1-Year Filing Deadline</h3>
+          </div>
+          <p class="text-red-800 mb-4">
+            These states have the shortest statute of limitations. Act immediately:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {shortStatutes.map(state => (
+              <a 
+                href={`/states/${state.slug}`}
+                class="bg-white px-3 py-1 rounded-full text-red-700 font-medium hover:bg-red-100 transition"
+              >
+                {state.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Contributory Negligence States -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-amber-900">Contributory Negligence</h3>
+          </div>
+          <p class="text-amber-800 mb-4">
+            Even 1% fault can bar your entire recovery in these states:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {contributoryStates.map(state => (
+              <a 
+                href={`/states/${state.slug}`}
+                class="bg-white px-3 py-1 rounded-full text-amber-700 font-medium hover:bg-amber-100 transition"
+              >
+                {state.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Lane Splitting Legal -->
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-green-900">Lane Splitting/Filtering Legal</h3>
+          </div>
+          <p class="text-green-800 mb-4">
+            These states allow some form of lane splitting or filtering:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {laneSplittingStates.map(state => (
+              <a 
+                href={`/states/${state.slug}`}
+                class="bg-white px-3 py-1 rounded-full text-green-700 font-medium hover:bg-green-100 transition"
+              >
+                {state.name} {state.laneSplitting === "legal" ? "(Full)" : "(Filtering)"}
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <!-- No Helmet Law -->
+        <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+              <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-purple-900">No Helmet Law (Any Age)</h3>
+          </div>
+          <p class="text-purple-800 mb-4">
+            These states have no mandatory helmet law for adult riders:
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {noHelmetStates.map(state => (
+              <a 
+                href={`/states/${state.slug}`}
+                class="bg-white px-3 py-1 rounded-full text-purple-700 font-medium hover:bg-purple-100 transition"
+              >
+                {state.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- States by Region -->
+  <section class="py-12 md:py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Browse by Region</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {Object.entries(regions).map(([region, stateNames]) => (
+          <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{region}</h3>
+            <div class="space-y-2">
+              {stateNames.map(stateName => {
+                const stateData = states.find(s => s.name === stateName);
+                return stateData ? (
+                  <a 
+                    href={`/states/${stateData.slug}`}
+                    class="flex justify-between items-center py-2 px-3 rounded hover:bg-gray-50 transition group"
+                  >
+                    <span class="text-gray-700 group-hover:text-primary-600">{stateName}</span>
+                    <div class="flex items-center gap-2">
+                      <span class="text-xs text-gray-400">{stateData.abbreviation}</span>
+                      {stateData.helmetLaw === "universal" && <span class="text-xs">🪖</span>}
+                    </div>
+                  </a>
+                ) : null;
+              })}
+            </div>
+          </div>
+        ))}
+        <!-- DC Card -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">District of Columbia</h3>
+          <a 
+            href="/states/washington-dc"
+            class="flex justify-between items-center py-2 px-3 rounded hover:bg-gray-50 transition group"
+          >
+            <span class="text-gray-700 group-hover:text-primary-600">Washington DC</span>
+            <span class="text-xs text-gray-400">DC</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="bg-gray-100 py-12 md:py-16">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">State Law Comparison</h2>
+      
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th class="text-left px-6 py-4 font-semibold text-gray-900">State</th>
+                <th class="text-left px-6 py-4 font-semibold text-gray-900">SOL</th>
+                <th class="text-left px-6 py-4 font-semibold text-gray-900">Helmet Law</th>
+                <th class="text-left px-6 py-4 font-semibold text-gray-900">Lane Splitting</th>
+                <th class="text-left px-6 py-4 font-semibold text-gray-900">Fault System</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {states.slice(0, 15).map(state => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4">
+                    <a href={`/states/${state.slug}`} class="text-primary-600 hover:text-primary-700 font-medium">
+                      {state.name}
+                    </a>
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">{state.statuteOfLimitations}</td>
+                  <td class="px-6 py-4 text-gray-700">
+                    {state.helmetLaw === "universal" ? "🪖 All riders" : 
+                     state.helmetLaw === "none" ? "None" : "Under 18/21"}
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">
+                    {state.laneSplitting === "legal" ? "✅ Legal" : 
+                     state.laneSplitting === "gray" ? "⚠️ Filtering" : "❌ Illegal"}
+                  </td>
+                  <td class="px-6 py-4 text-gray-700 text-sm">{state.faultSystem}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-gray-50 px-6 py-3 text-center text-sm text-gray-500">
+          Showing 15 of 51 states. Click any state above to see full details.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-16">
+    <div class="container-wide">
+      <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Not Sure Which State's Laws Apply?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          If your accident occurred in a different state than where you live, or involved out-of-state parties, the legal picture gets complicated. Get expert help.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/#free-case-review" class="btn bg-white hover:bg-gray-100 text-primary-600 font-bold text-lg px-8 py-4">
+            Get Free Case Review
+          </a>
+          <a href="tel:1-800-555-0123" class="btn bg-primary-800 hover:bg-primary-900 text-white font-bold text-lg px-8 py-4">
+            Call 1-800-555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Simple client-side state search
+  const searchInput = document.getElementById('state-search') as HTMLInputElement;
+  const stateCards = document.querySelectorAll('.state-card');
+  
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase();
+    
+    stateCards.forEach(card => {
+      const stateName = card.getAttribute('data-state') || '';
+      if (stateName.includes(query)) {
+        (card as HTMLElement).style.display = '';
+      } else {
+        (card as HTMLElement).style.display = 'none';
+      }
+    });
+  });
+</script>

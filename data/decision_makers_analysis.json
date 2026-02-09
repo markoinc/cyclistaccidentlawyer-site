@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "total_ghl": 439,
+    "valid_emails": 392,
+    "no_email": 47,
+    "invalid_format": 0,
+    "duplicates_in_ghl": 0,
+    "lemlist_imported": 256,
+    "gap": 136
+  },
+  "no_email": [
+    {
+      "name": "John Nachazel",
+      "company": "",
+      "id": "elBtzY3TaCBNUOauaD14"
+    },
+    {
+      "name": "Adam Binder",
+      "company": "D. Miller & Associates, PLLC",
+      "id": "XzjfSQIsER3WawzJFnb2"
+    },
+    {
+      "name": "Jordan Lundy",
+      "company": "Lundy Law",
+      "id": "UG4tlcJlBgOni6kFB36t"
+    },
+    {
+      "name": "Kevin McCarron",
+      "company": "Morgan & Morgan, P.A.",
+      "id": "eCnK0agK0bsm7YzxDM0j"
+    },
+    {
+      "name": "Yassine Farhi",
+      "company": "CEO Lawyer Personal Injury Law Firm",
+      "id": "IWTy5dLxTVMaABocmpA2"
+    },
+    {
+      "name": "Kaddie Buice",
+      "company": "Brooks Law Partners, LLC",
+      "id": "IN17xcDBhUEfqkC0BSHj"
+    },
+    {
+      "name": "Craigtavius Moss",
+      "company": "Cambre & Associates LLC",
+      "id": "fNzUjP17l177CP8NgLS6"
+    },
+    {
+      "name": "Evelin Suarez",
+      "company": "Uriarte Law, P.A.",
+      "id": "JGMkqHcINboTI345b26W"
+    },
+    {
+      "name": "Karina Silva",
+      "company": "Berman Law Group",
+      "id": "0EMAL71FXqfE0sj1XtCC"
+    },
+    {
+      "name": "Gilda Vargas",
+      "company": "",
+      "id": "6CCXKpDSt4jwB2NqYarU"
+    },
+    {
+      "name": "Avery D'Orio",
+      "company": "Westwise Group",
+      "id": "dX79NC5jedgDpEk8MD1O"
+    },
+    {
+      "name": "Greg Coplan",
+      "company": "Coplan & Crane, Ltd.",
+      "id": "vPYuvpW3cBR7mqT8pFtg"
+    },
+    {
+      "name": "Caitlin Shields",
+      "company": "BD&J, PC",
+      "id": "E5NtSRF0Otukxzd4TSLy"
+    },
+    {
+      "name": "Alejandro Acosta",
+      "company": "Lawyers of Distinction",
+      "id": "i2BqVQTTRlHvdRVlSrka"
+    },
+    {
+      "name": "Dagoberto J. Rodriguez",
+      "company": "Rodriguez Law Firm, PLLC",
+      "id": "gzJ363XI20VXfS8ZFKvy"
+    },
+    {
+      "name": "Bert Parnall",
+      "company": "Parnall Law",
+      "id": "26bmFAdEN0KROS28bDAA"
+    },
+    {
+      "name": "Kimberly Camarena",
+      "company": "Finney Injury Law",
+      "id": "zHTP45Zadhk05D2V625w"
+    },
+    {
+      "name": "Steve Field",
+      "company": "Naulty, Scaricamazza & McDevitt, LLC",
+      "id": "7dxEnAXObWhXZfaFrlxn"
+    },
+    {
+      "name": "Michael Thomas",
+      "company": "The Sandbox Volleyball Club",
+      "id": "rts9I4FMGL6EkoJPPj6M"
+    },
+    {
+      "name": "Haley Ilgen",
+      "company": "Miller, Dawson, Sigal & Ward, LLC",
+      "id": "T5tn5GqOLqtUosPzYU1Q"
+    }
+  ],
+  "invalid_format": [],
+  "duplicates": [],
+  "valid_emails_sample": [
+    {
+      "name": "Ricky Willis",
+      "email": "rwillis@hostilolaw.com",
+      "company": "Clever conversations Podcast"
+    },
+    {
+      "name": "Andrew Snyder",
+      "email": "asnyder@edgarsnyder.com",
+      "company": "Edgar Snyder and Associates, LLC"
+    },
+    {
+      "name": "Tara Harris",
+      "email": "tharris@cooperhurley.com",
+      "company": "Cooper Hurley Injury Lawyers"
+    },
+    {
+      "name": "Lee Hawker",
+      "email": "lhawker@wkfirm.com",
+      "company": "Wettermark Keith Personal Injury Lawyers"
+    },
+    {
+      "name": "Danielle Conley",
+      "email": "dconley@nordenleacox.com",
+      "company": "Norden Leacox Accident & Injury Law"
+    },
+    {
+      "name": "Lindsey Tucker",
+      "email": "ltucker@tacinjurylaw.com",
+      "company": "Tawney, Acosta & Chaparro P.C. - Truck Crash & Injury Attorneys"
+    },
+    {
+      "name": "Almarie Rodriguez",
+      "email": "almarie@pacificworkers.com",
+      "company": "Pacific Workers'\u200b Compensation"
+    },
+    {
+      "name": "Cristian Castillo-Espinoza",
+      "email": "cristian@capfirm.com",
+      "company": "The Capital Law Firm, P.C."
+    },
+    {
+      "name": "Adrian Martinez",
+      "email": "adrianmartinez10@yahoo.com",
+      "company": "West Coast Trial Lawyers"
+    },
+    {
+      "name": "Erica M. Burzynski",
+      "email": "erica.burzynski@thebarnesfirm.com",
+      "company": "The Barnes Firm Injury Attorneys"
+    }
+  ]
+}

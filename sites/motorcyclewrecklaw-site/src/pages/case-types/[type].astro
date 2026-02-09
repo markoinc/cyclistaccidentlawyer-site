@@ -1,0 +1,231 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseTypes, getCaseTypeBySlug, type CaseTypeData } from '../../data/caseTypes';
+
+export function getStaticPaths() {
+  return caseTypes.map((caseType) => ({
+    params: { type: caseType.slug },
+    props: { caseTypeData: caseType },
+  }));
+}
+
+interface Props {
+  caseTypeData: CaseTypeData;
+}
+
+const { caseTypeData } = Astro.props;
+
+// Title truncated to 60 chars for optimal SEO
+const fullTitle = `${caseTypeData.name} - Motorcycle Accident Lawyers`;
+const title = fullTitle.length > 60 ? fullTitle.substring(0, 57) + '...' : fullTitle;
+const description = `${caseTypeData.shortDescription} Average settlements range from ${caseTypeData.averageSettlement}. Get a free case evaluation today.`;
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${caseTypeData.name} Attorneys`,
+  "description": description,
+  "url": `https://motorcyclewrecklaw.com/case-types/${caseTypeData.slug}`,
+  "serviceType": ["Motorcycle Accident Law", "Personal Injury Law", caseTypeData.name],
+  "priceRange": "Free Consultation"
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Case Types", url: "/case-types" },
+  { name: caseTypeData.name, url: `/case-types/${caseTypeData.slug}` }
+];
+
+// Get related case types
+const relatedCaseTypes = caseTypes.filter(ct => ct.slug !== caseTypeData.slug).slice(0, 4);
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  schemaMarkup={schemaMarkup}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-24">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-2 text-gray-400 mb-4">
+            <a href="/" class="hover:text-white transition">Home</a>
+            <span>/</span>
+            <a href="/case-types" class="hover:text-white transition">Case Types</a>
+            <span>/</span>
+            <span class="text-white">{caseTypeData.name}</span>
+          </div>
+          
+          <div class="text-6xl mb-6">{caseTypeData.icon}</div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+            {caseTypeData.name}
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            {caseTypeData.shortDescription}
+          </p>
+
+          <div class="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
+            <div class="text-sm text-gray-400 mb-2">Average Settlement Range</div>
+            <div class="text-3xl font-bold text-primary-400">{caseTypeData.averageSettlement}</div>
+          </div>
+
+          <a href="#free-case-review" class="btn btn-cta text-lg px-8 py-4">
+            Get Your Free Case Review →
+          </a>
+        </div>
+
+        <!-- Quick Form -->
+        <div id="free-case-review" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Free Case Evaluation</h2>
+            <p class="text-gray-600">Tell us about your {caseTypeData.name.toLowerCase()} case</p>
+          </div>
+          
+          <form action="https://services.leadconnectorhq.com/hooks/ASHRZ5ZFolSHXM3RyPvk/webhook-trigger/e1d4ee98-7b23-48e1-8f3b-2bf0aff93afc" method="POST" class="space-y-4">
+            <input type="hidden" name="source" value={`motorcyclewrecklaw-${caseTypeData.slug}`} />
+            <input type="hidden" name="caseType" value={caseTypeData.name} />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">What Happened?</label>
+              <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 resize-none" placeholder="Describe your accident..."></textarea>
+            </div>
+            <button type="submit" class="w-full btn btn-cta text-lg py-4">
+              Get My Free Evaluation
+            </button>
+          </form>
+          
+          <p class="text-xs text-gray-500 text-center mt-4">
+            🔒 Your information is confidential. No fees unless you win.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Description -->
+  <section class="py-16">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Understanding {caseTypeData.name}</h2>
+        <div class="prose prose-lg max-w-none">
+          <p>{caseTypeData.fullDescription}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Injuries -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-wide">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Common Injuries</h2>
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+        {caseTypeData.commonInjuries.map((injury) => (
+          <div class="bg-white p-4 rounded-xl shadow text-center">
+            <span class="text-2xl">🩹</span>
+            <p class="mt-2 font-medium text-gray-800">{injury}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique Factors -->
+  <section class="py-16">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">What Makes {caseTypeData.name} Unique</h2>
+        <div class="space-y-4">
+          {caseTypeData.uniqueFactors.map((factor) => (
+            <div class="flex items-start gap-4 bg-white p-5 rounded-xl shadow border-l-4 border-primary-500">
+              <span class="text-primary-600 text-2xl">⚠️</span>
+              <p class="text-gray-700">{factor}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof Required -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Evidence We'll Help You Gather</h2>
+        <p class="text-gray-300 text-center mb-8">
+          Building a strong {caseTypeData.name.toLowerCase()} case requires specific documentation. Our attorneys will help you collect:
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {caseTypeData.proofRequired.map((proof) => (
+            <div class="flex items-center gap-3 bg-white/10 p-4 rounded-lg">
+              <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{proof}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Case Types -->
+  <section class="py-16">
+    <div class="container-wide">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Related Case Types</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {relatedCaseTypes.map((related) => (
+          <a href={`/case-types/${related.slug}`} class="group bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+            <div class="text-3xl mb-3">{related.icon}</div>
+            <h3 class="font-bold text-gray-900 group-hover:text-primary-600 transition">{related.name}</h3>
+            <p class="text-sm text-gray-600 mt-2 line-clamp-2">{related.shortDescription}</p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/case-types" class="text-primary-600 font-semibold hover:underline">View All Case Types →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-wide text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Injured in a {caseTypeData.name.replace(" Accidents", "").replace(" Claims", "")} Accident?
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Don't wait to get the legal help you need. Our experienced motorcycle accident attorneys offer free case evaluations with no obligation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#free-case-review" class="inline-block bg-white text-primary-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition text-lg">
+          Get Your Free Case Review
+        </a>
+        <a href="tel:1-800-555-0123" class="inline-block bg-primary-700 text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-800 transition text-lg">
+          📞 Call Now: 1-800-555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
