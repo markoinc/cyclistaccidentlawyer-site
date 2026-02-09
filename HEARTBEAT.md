@@ -1,30 +1,15 @@
-# HEARTBEAT.md - Dashboard Build Mission
+# HEARTBEAT.md
 
-## Active Mission
-**Building the ultimate business dashboard for Marko**
+## 🚨 CRITICAL — SITE BUILD MISSION (DO NOT FORGET)
+**Status:** Check `/home/ec2-user/clawd/data/site-build-tracker.md`
+**Task:** Build 9 MVA sites, each needs 3x 1000-point audits before moving to next
 
-Read `DASHBOARD_MISSION.md` and `EXPLORATION_PLAN.md` for full context.
+On EVERY heartbeat:
+1. Check site-build-tracker.md for current progress
+2. If no blockers, continue working on current site
+3. Report progress to Marko if significant milestones hit
 
-## On Each Heartbeat
+**Current site:** commercialtrucklaw.com
+**Sites remaining:** 9/9
 
-1. Check exploration progress
-2. Continue building/improving dashboard
-3. Surface any blockers or questions
-4. Keep iterating until it's genuinely useful
-
-## Priority Order
-1. **Client acquisition** - Pipeline, prospects, next actions
-2. **Revenue tracking** - Money in, money out
-3. **Lead sources** - Where business comes from
-4. **Actionable insights** - What to do TODAY
-
-## Current Focus
-Deep exploration of all files, integrations, and resources to understand the business deeply.
-
-## Hourly Updates
-Cron job sends Marko updates on the hour. Keep building between updates.
-
-## Stop Conditions
-- Marko says stop
-- Dashboard is comprehensive AND actionable
-- No more meaningful improvements to make
+This task is NOT complete until ALL 9 sites are built AND each has passed 3x 1000-point audits.

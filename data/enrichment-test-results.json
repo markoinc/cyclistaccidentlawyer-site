@@ -1,0 +1,215 @@
+[
+  {
+    "lead": {
+      "timestamp": "2026-02-06T16:01:21.678Z",
+      "firstName": "Lisa",
+      "lastName": "Smith",
+      "fullName": "Lisa Smith",
+      "jobTitle": "Founding Partner",
+      "companyName": "Wilson Legal Services",
+      "businessEmail": "",
+      "website": "https://www.forthepeople.com",
+      "linkedinUrl": "https://linkedin.com/in/lisasmith",
+      "industry": "Litigation",
+      "employeeCount": "51-200",
+      "estimatedRevenue": "",
+      "city": "Austin",
+      "state": "Texas",
+      "zipcode": "",
+      "seenAt": "",
+      "referrer": "",
+      "capturedUrl": "https://kuriosbrand.com/pricing",
+      "tags": "",
+      "visitHistory": null,
+      "_raw": {
+        "First Name": "Lisa",
+        "Last Name": "Smith",
+        "Title": "Founding Partner",
+        "Company Name": "Wilson Legal Services",
+        "Industry": "Litigation",
+        "Website": "https://www.forthepeople.com",
+        "LinkedIn URL": "https://linkedin.com/in/lisasmith",
+        "State": "Texas",
+        "City": "Austin",
+        "Employee Count": "51-200",
+        "Captured URL": "https://kuriosbrand.com/pricing"
+      },
+      "verification": {
+        "isLawFirm": true,
+        "isDecisionMaker": true,
+        "confidence": 65,
+        "reasons": [
+          "Company name suggests law firm",
+          "Decision maker title: \"Founding Partner\"",
+          "Legal professional title"
+        ],
+        "websiteChecked": false
+      },
+      "enrichment": null
+    },
+    "enrichment": {
+      "error": 404,
+      "message": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>\ud83d\ude25 Page non trouv\u00e9e | BetterContact</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 53em;\n    margin: 10em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    border-top: #8b5cf6 solid 4px;\n    /* border-top-left-radius: 9px;\n    border-top-right-radius: 9px; */\n    background-color: #8b5cf6;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 120%;\n    color: #fff;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 2em;\n    background-color: #F7F7F7;\n    border: 1px solid #8b5cf6;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    /* border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px; */\n    border-top-color: #8b5cf6;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/500.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>\u26a0\ufe0f &nbsp;Sorry, it seems you're lost</h1>\n    </div>\n    <p>\u2b05\ufe0f &nbsp;&nbsp;<a  href=\"https://app.bettercontact.rocks\">Back to homepage</a>\n      </br>\n  </div>\n</body>\n\n<script>\n</html>\n"
+    }
+  },
+  {
+    "lead": {
+      "timestamp": "2026-02-06T16:01:21.669Z",
+      "firstName": "Emily",
+      "lastName": "Gonzalez",
+      "fullName": "Emily Gonzalez",
+      "jobTitle": "Director of Business Development",
+      "companyName": "Jacoby & Meyers",
+      "businessEmail": "",
+      "website": "https://www.morganandmorgan.com",
+      "linkedinUrl": "https://linkedin.com/in/emilygonzalez",
+      "industry": "Litigation",
+      "employeeCount": "51-200",
+      "estimatedRevenue": "",
+      "city": "Atlanta",
+      "state": "Georgia",
+      "zipcode": "",
+      "seenAt": "",
+      "referrer": "",
+      "capturedUrl": "https://kuriosbrand.com/pricing",
+      "tags": "",
+      "visitHistory": null,
+      "_raw": {
+        "First Name": "Emily",
+        "Last Name": "Gonzalez",
+        "Title": "Director of Business Development",
+        "Company Name": "Jacoby & Meyers",
+        "Industry": "Litigation",
+        "Website": "https://www.morganandmorgan.com",
+        "LinkedIn URL": "https://linkedin.com/in/emilygonzalez",
+        "State": "Georgia",
+        "City": "Atlanta",
+        "Employee Count": "51-200",
+        "Captured URL": "https://kuriosbrand.com/pricing"
+      },
+      "verification": {
+        "isLawFirm": true,
+        "isDecisionMaker": true,
+        "confidence": 80,
+        "reasons": [
+          "Decision maker title: \"Director of Business Development\"",
+          "Website has law firm content: personal injury, law firm, case evaluation",
+          "Website legal terms: attorney, legal, litigation"
+        ],
+        "websiteChecked": true
+      },
+      "enrichment": null
+    },
+    "enrichment": {
+      "error": 404,
+      "message": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>\ud83d\ude25 Page non trouv\u00e9e | BetterContact</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 53em;\n    margin: 10em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    border-top: #8b5cf6 solid 4px;\n    /* border-top-left-radius: 9px;\n    border-top-right-radius: 9px; */\n    background-color: #8b5cf6;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 120%;\n    color: #fff;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 2em;\n    background-color: #F7F7F7;\n    border: 1px solid #8b5cf6;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    /* border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px; */\n    border-top-color: #8b5cf6;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/500.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>\u26a0\ufe0f &nbsp;Sorry, it seems you're lost</h1>\n    </div>\n    <p>\u2b05\ufe0f &nbsp;&nbsp;<a  href=\"https://app.bettercontact.rocks\">Back to homepage</a>\n      </br>\n  </div>\n</body>\n\n<script>\n</html>\n"
+    }
+  },
+  {
+    "lead": {
+      "timestamp": "2026-02-06T16:01:21.666Z",
+      "firstName": "Betty",
+      "lastName": "Davis",
+      "fullName": "Betty Davis",
+      "jobTitle": "Co-Founder",
+      "companyName": "King Law Offices PLLC",
+      "businessEmail": "",
+      "website": "https://www.jacobymeyers.com",
+      "linkedinUrl": "https://linkedin.com/in/bettydavis",
+      "industry": "Litigation",
+      "employeeCount": "51-200",
+      "estimatedRevenue": "",
+      "city": "Springfield",
+      "state": "Illinois",
+      "zipcode": "",
+      "seenAt": "",
+      "referrer": "",
+      "capturedUrl": "https://kuriosbrand.com/pricing",
+      "tags": "",
+      "visitHistory": null,
+      "_raw": {
+        "First Name": "Betty",
+        "Last Name": "Davis",
+        "Title": "Co-Founder",
+        "Company Name": "King Law Offices PLLC",
+        "Industry": "Litigation",
+        "Website": "https://www.jacobymeyers.com",
+        "LinkedIn URL": "https://linkedin.com/in/bettydavis",
+        "State": "Illinois",
+        "City": "Springfield",
+        "Employee Count": "51-200",
+        "Captured URL": "https://kuriosbrand.com/pricing"
+      },
+      "verification": {
+        "isLawFirm": true,
+        "isDecisionMaker": true,
+        "confidence": 110,
+        "reasons": [
+          "Company name suggests law firm",
+          "Decision maker title: \"Co-Founder\"",
+          "Website has law firm content: personal injury, motorcycle accident, medical malpractice",
+          "Website legal terms: attorney, legal, law office"
+        ],
+        "websiteChecked": true
+      },
+      "enrichment": null
+    },
+    "enrichment": {
+      "error": 404,
+      "message": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>\ud83d\ude25 Page non trouv\u00e9e | BetterContact</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 53em;\n    margin: 10em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    border-top: #8b5cf6 solid 4px;\n    /* border-top-left-radius: 9px;\n    border-top-right-radius: 9px; */\n    background-color: #8b5cf6;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 120%;\n    color: #fff;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 2em;\n    background-color: #F7F7F7;\n    border: 1px solid #8b5cf6;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    /* border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px; */\n    border-top-color: #8b5cf6;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/500.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>\u26a0\ufe0f &nbsp;Sorry, it seems you're lost</h1>\n    </div>\n    <p>\u2b05\ufe0f &nbsp;&nbsp;<a  href=\"https://app.bettercontact.rocks\">Back to homepage</a>\n      </br>\n  </div>\n</body>\n\n<script>\n</html>\n"
+    }
+  },
+  {
+    "lead": {
+      "timestamp": "2026-02-06T16:01:21.675Z",
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "fullName": "Emily Brown",
+      "jobTitle": "Owner",
+      "companyName": "Davis & Partners LLP",
+      "businessEmail": "",
+      "website": "https://www.morganandmorgan.com",
+      "linkedinUrl": "https://linkedin.com/in/emilybrown",
+      "industry": "Legal",
+      "employeeCount": "51-200",
+      "estimatedRevenue": "",
+      "city": "Savannah",
+      "state": "Georgia",
+      "zipcode": "",
+      "seenAt": "",
+      "referrer": "",
+      "capturedUrl": "https://kuriosbrand.com/pricing",
+      "tags": "",
+      "visitHistory": null,
+      "_raw": {
+        "First Name": "Emily",
+        "Last Name": "Brown",
+        "Title": "Owner",
+        "Company Name": "Davis & Partners LLP",
+        "Industry": "Legal",
+        "Website": "https://www.morganandmorgan.com",
+        "LinkedIn URL": "https://linkedin.com/in/emilybrown",
+        "State": "Georgia",
+        "City": "Savannah",
+        "Employee Count": "51-200",
+        "Captured URL": "https://kuriosbrand.com/pricing"
+      },
+      "verification": {
+        "isLawFirm": true,
+        "isDecisionMaker": true,
+        "confidence": 90,
+        "reasons": [
+          "Industry: \"Legal\"",
+          "Company name suggests law firm",
+          "Decision maker title: \"Owner\""
+        ],
+        "websiteChecked": false
+      },
+      "enrichment": null
+    },
+    "enrichment": {
+      "error": 404,
+      "message": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>\ud83d\ude25 Page non trouv\u00e9e | BetterContact</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 53em;\n    margin: 10em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    border-top: #8b5cf6 solid 4px;\n    /* border-top-left-radius: 9px;\n    border-top-right-radius: 9px; */\n    background-color: #8b5cf6;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 120%;\n    color: #fff;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 2em;\n    background-color: #F7F7F7;\n    border: 1px solid #8b5cf6;\n    border-right-color: #8b5cf6;\n    border-left-color: #8b5cf6;\n    border-bottom-color: #8b5cf6;\n    /* border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px; */\n    border-top-color: #8b5cf6;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/500.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>\u26a0\ufe0f &nbsp;Sorry, it seems you're lost</h1>\n    </div>\n    <p>\u2b05\ufe0f &nbsp;&nbsp;<a  href=\"https://app.bettercontact.rocks\">Back to homepage</a>\n      </br>\n  </div>\n</body>\n\n<script>\n</html>\n"
+    }
+  }
+]

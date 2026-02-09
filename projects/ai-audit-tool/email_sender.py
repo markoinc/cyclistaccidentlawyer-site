@@ -50,6 +50,7 @@ def send_audit_report(
     msg = MIMEMultipart('mixed')
     msg['From'] = f"Kurios AI Audit <{from_email}>"
     msg['To'] = to_email
+    msg['Cc'] = "mark@kuriosbrand.com"  # CC Marko on all audit emails
     msg['Subject'] = f"Your AI & Local Visibility Audit Report - {business_name or url}"
     
     # Score interpretation
@@ -101,7 +102,7 @@ def send_audit_report(
 
 <h3>What's next?</h3>
 <p>Want help implementing these recommendations? Book a free strategy call:</p>
-<p><a href="https://kuriosbrand.com/call">https://kuriosbrand.com/call</a></p>
+<p><a href="https://lawyerseoaudit.com/book">https://lawyerseoaudit.com/book</a></p>
 
 <p>Questions? Just reply to this email.</p>
 
@@ -135,7 +136,7 @@ The Kurios Team</p>
     - A 30-day action plan
     
     NEXT STEPS:
-    Book a free strategy call: https://kuriosbrand.com/call
+    Book a free strategy call: https://lawyerseoaudit.com/book
     
     Questions? Reply to this email.
     
@@ -156,12 +157,15 @@ The Kurios Team</p>
     pdf_attachment.add_header('Content-Disposition', 'attachment', filename=filename)
     msg.attach(pdf_attachment)
     
-    # Send
+    # Send (include CC in recipients)
+    cc_email = "mark@kuriosbrand.com"
+    all_recipients = [to_email, cc_email]
+    
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(from_email, app_password)
-            server.send_message(msg)
-        print(f"✅ Email sent to {to_email}")
+            server.send_message(msg, to_addrs=all_recipients)
+        print(f"✅ Email sent to {to_email} (CC: {cc_email})")
         return True
     except Exception as e:
         print(f"❌ Failed to send email: {e}")

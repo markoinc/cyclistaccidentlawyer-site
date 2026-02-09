@@ -4,3 +4,241 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
 INFO:     127.0.0.1:57594 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:38058 - "GET /health HTTP/1.1" 200 OK
+INFO:     74.7.175.155:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     74.7.242.6:0 - "GET / HTTP/1.1" 200 OK
+INFO:     89.117.236.75:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:__main__:Running FAST audit for https://rmdlaw.com
+INFO:__main__:FAST audit complete in 7.0s: AI=62, Local=72
+INFO:     89.117.236.75:0 - "POST /audit HTTP/1.1" 200 OK
+INFO:__main__:Background: Starting FULL audit for https://rmdlaw.com
+INFO:__main__:Starting audit for https://rmdlaw.com (full_mode=True)
+INFO:__main__:Audit complete: AI=62, Local=72, API cost=$0.1133
+INFO:__main__:PDF generated: 14366 bytes
+INFO:__main__:Background: Full audit complete, email sent to mark.gundrum.jr@gmail.com
+✅ Email sent to mark.gundrum.jr@gmail.com
+INFO:     84.254.106.197:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET /js/lkk_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /js/twint_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /css/support_parent.css HTTP/1.1" 404 Not Found
+INFO:     162.142.125.118:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.142.125.118:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Started server process [549193]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:37928 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [551842]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59062 - "GET /health HTTP/1.1" 200 OK
+INFO:     54.83.113.36:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     38.250.154.139:0 - "OPTIONS /audit HTTP/1.1" 400 Bad Request
+INFO:     38.250.154.139:0 - "OPTIONS /audit HTTP/1.1" 400 Bad Request
+INFO:api:Running FAST audit for https://google.com
+INFO:api:FAST audit complete in 4.6s: AI=22, Local=15
+INFO:     54.83.113.36:0 - "POST /audit HTTP/1.1" 200 OK
+INFO:api:Background: Starting FULL audit for https://google.com
+INFO:api:Starting audit for https://google.com (full_mode=True)
+INFO:     Shutting down
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:api:Audit complete: AI=22, Local=15, API cost=$0.1133
+INFO:api:PDF generated: 13704 bytes
+INFO:api:Background: Full audit complete, email sent to test@test.com
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [551842]
+INFO:     Started server process [552433]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:39994 - "GET /health HTTP/1.1" 200 OK
+INFO:     54.83.113.36:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:     38.250.154.139:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:     35.93.120.201:0 - "GET / HTTP/1.1" 200 OK
+INFO:     35.93.120.201:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     35.93.120.201:0 - "GET / HTTP/1.1" 200 OK
+INFO:     35.93.120.201:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:api:Running FAST audit for https://google.com
+INFO:api:FAST audit complete in 11.2s: AI=22, Local=15
+INFO:     54.83.113.36:0 - "POST /audit HTTP/1.1" 200 OK
+INFO:api:Background: Starting FULL audit for https://google.com
+INFO:api:Starting audit for https://google.com (full_mode=True)
+INFO:api:Running FAST audit for https://google.com
+INFO:api:FAST audit complete in 5.5s: AI=22, Local=15
+INFO:     54.83.113.36:0 - "POST /audit HTTP/1.1" 200 OK
+INFO:api:Background: Starting FULL audit for https://google.com
+INFO:api:Starting audit for https://google.com (full_mode=True)
+INFO:api:Audit complete: AI=22, Local=15, API cost=$0.1133
+INFO:api:PDF generated: 13704 bytes
+INFO:api:Background: Full audit complete, email sent to test@test.com
+INFO:api:Audit complete: AI=22, Local=15, API cost=$0.1133
+INFO:api:PDF generated: 13704 bytes
+INFO:api:Background: Full audit complete, email sent to test@test.com
+✅ Email sent to test@test.com (CC: mark@kuriosbrand.com)
+✅ Email sent to test@test.com (CC: mark@kuriosbrand.com)
+INFO:     38.250.154.139:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48202 - "GET /health HTTP/1.1" 200 OK
+INFO:     54.83.113.36:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     54.83.113.36:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:api:Running FAST audit for https://example.com
+INFO:api:FAST audit complete in 9.8s: AI=15, Local=9
+INFO:     54.83.113.36:0 - "POST /audit HTTP/1.1" 200 OK
+INFO:api:Background: Starting FULL audit for https://example.com
+INFO:api:Starting audit for https://example.com (full_mode=True)
+INFO:api:Audit complete: AI=15, Local=9, API cost=$0.1133
+INFO:api:PDF generated: 13584 bytes
+INFO:api:Background: Full audit complete, email sent to test@test.com
+✅ Email sent to test@test.com (CC: mark@kuriosbrand.com)
+INFO:     145.14.135.224:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:     145.14.135.224:0 - "OPTIONS /audit HTTP/1.1" 200 OK
+INFO:     103.196.9.94:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.4.250.58:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.4.250.58:0 - "GET / HTTP/1.1" 200 OK
+INFO:     154.28.229.126:0 - "GET / HTTP/1.1" 200 OK
+INFO:     107.172.195.192:0 - "GET / HTTP/1.1" 200 OK
+INFO:     154.28.229.126:0 - "GET / HTTP/1.1" 200 OK
+INFO:     103.196.9.146:0 - "GET / HTTP/1.1" 200 OK
+INFO:     216.73.216.222:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     216.73.216.222:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     216.73.216.222:0 - "GET / HTTP/1.1" 200 OK
+INFO:     74.7.244.38:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     74.7.227.128:0 - "GET / HTTP/1.1" 200 OK
+INFO:     193.19.82.13:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     64.15.129.126:0 - "GET / HTTP/1.1" 200 OK
+INFO:     192.175.111.245:0 - "GET / HTTP/1.1" 200 OK
+INFO:     64.15.129.102:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     64.15.129.101:0 - "GET / HTTP/1.1" 200 OK
+INFO:     192.175.111.236:0 - "GET / HTTP/1.1" 200 OK
+INFO:     192.175.111.239:0 - "GET / HTTP/1.1" 200 OK
+INFO:     34.13.244.85:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET /css/support_parent.css HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /js/lkk_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /js/twint_ch.js HTTP/1.1" 404 Not Found
+INFO:     34.34.253.185:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET /js/lkk_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /css/support_parent.css HTTP/1.1" 404 Not Found
+INFO:     23.27.145.90:0 - "GET / HTTP/1.1" 200 OK
+INFO:     34.124.214.122:0 - "GET / HTTP/1.1" 200 OK
+INFO:     34.124.214.122:0 - "GET /wordpress/ HTTP/1.1" 404 Not Found
+INFO:     100.24.10.8:0 - "GET / HTTP/1.1" 200 OK
+INFO:     100.24.10.8:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.24.10.8:0 - "GET /favicon.png HTTP/1.1" 404 Not Found
+INFO:     100.24.10.8:0 - "GET / HTTP/1.1" 200 OK
+INFO:     100.24.10.8:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET /js/twint_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /js/lkk_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /css/support_parent.css HTTP/1.1" 404 Not Found
+INFO:     103.216.116.241:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     193.19.82.13:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     195.178.110.132:0 - "GET / HTTP/1.1" 200 OK
+INFO:     195.178.110.132:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.save HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.backup HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /backend/.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /admin/.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.old HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.save HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php~ HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php.old HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /configuration.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /configuration.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /includes/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /inc/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /lib/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /settings.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /db.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /connect.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /connection.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /credentials.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /api_config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /application/config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /application/config/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /app/config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /app/config/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.inc.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /phpmyadmin/config.inc.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /admin/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /backend/config.php HTTP/1.1" 404 Not Found
+INFO:     34.124.206.210:0 - "GET / HTTP/1.1" 200 OK
+INFO:     195.178.110.132:0 - "GET /config.js HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /aws-config.js HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /aws.config.js HTTP/1.1" 404 Not Found
+INFO:     34.124.206.210:0 - "GET /wordpress/ HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET / HTTP/1.1" 200 OK
+INFO:     195.178.110.132:0 - "GET /.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.save HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.env.backup HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /backend/.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /admin/.env HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.old HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php.save HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.php~ HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /wp-config.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.php.old HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /configuration.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /configuration.php.bak HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /includes/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /inc/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /lib/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /settings.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /db.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /connect.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /connection.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /credentials.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /api_config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /application/config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /application/config/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /app/config/database.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /app/config/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.inc.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /phpmyadmin/config.inc.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /admin/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /backend/config.php HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /config.js HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /aws-config.js HTTP/1.1" 404 Not Found
+INFO:     195.178.110.132:0 - "GET /aws.config.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET / HTTP/1.1" 200 OK
+INFO:     84.254.106.197:0 - "GET /js/lkk_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /js/twint_ch.js HTTP/1.1" 404 Not Found
+INFO:     84.254.106.197:0 - "GET /css/support_parent.css HTTP/1.1" 404 Not Found
+INFO:     195.178.110.54:0 - "GET / HTTP/1.1" 200 OK
+INFO:     195.178.110.54:0 - "GET / HTTP/1.1" 200 OK
+INFO:     3.81.233.23:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     3.81.233.23:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     176.65.148.161:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.161:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.161:0 - "GET / HTTP/1.1" 206 Partial Content
+INFO:     176.65.148.161:0 - "GET / HTTP/1.1" 206 Partial Content
+INFO:     176.65.148.161:0 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     176.65.148.161:0 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     176.65.148.161:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.161:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     176.65.148.161:0 - "GET / HTTP/1.1" 206 Partial Content
+INFO:     176.65.148.161:0 - "GET / HTTP/1.1" 206 Partial Content
+INFO:     176.65.148.161:0 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     176.65.148.161:0 - "HEAD /_next HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [552433]

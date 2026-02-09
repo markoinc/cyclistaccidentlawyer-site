@@ -83,19 +83,30 @@ const LAW_FIRM_INDICATORS = {
     /law\.com$/i, /legal\.com$/i, /attorney/i, /lawyer/i,
     /lawfirm/i, /lawoffice/i, /esq/i, /legal/i
   ],
-  // Title patterns for decision makers
+  // Title patterns for decision makers (broadened per Marko 2026-02-06)
   decisionMakerTitles: [
-    'partner', 'managing partner', 'founding partner', 'senior partner',
-    'owner', 'founder', 'principal', 'of counsel',
+    // Partners & Principals
+    'partner', 'managing partner', 'founding partner', 'senior partner', 'junior partner',
+    'owner', 'founder', 'co-founder', 'principal', 'of counsel', 'shareholder',
+    // C-Suite & Directors
     'ceo', 'president', 'chief executive', 'managing director', 'executive director',
+    'coo', 'cfo', 'general counsel',
     'marketing director', 'cmo', 'chief marketing', 'director of marketing',
     'vp', 'vice president', 'head of', 'director of',
-    'business development', 'intake director', 'intake manager'
+    // Attorneys (all levels)
+    'attorney', 'lawyer', 'associate attorney', 'senior associate', 'staff attorney',
+    'trial attorney', 'litigator', 'counsel',
+    // Business Development & Intake
+    'business development', 'intake director', 'intake manager', 'intake coordinator',
+    'case manager', 'client relations',
+    // Admin with authority
+    'office manager', 'legal secretary', 'executive secretary', 'legal administrator',
+    'firm administrator', 'operations manager'
   ],
-  // Titles to exclude
+  // Titles to exclude (only truly non-decision-makers)
   excludeTitles: [
-    'paralegal', 'legal assistant', 'secretary', 'receptionist',
-    'associate attorney', 'associate', 'intern', 'clerk', 'student'
+    'paralegal', 'legal assistant', 'receptionist',
+    'intern', 'clerk', 'student', 'extern'
   ]
 };
 

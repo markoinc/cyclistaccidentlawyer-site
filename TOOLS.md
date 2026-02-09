@@ -131,8 +131,13 @@ This keeps history while surfacing only current/relevant docs.
 - **Connection:** `postgresql://neondb_owner:***@ep-summer-silence-ahgxcxho-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require`
 - **Use for:** Dashboard backend, lead tracking, structured data
 
-## Discord Channels
-- **#general (agent squad):** `1467415347723501580`
+## Slack Channels
+- **#mark-sierra (main DM):** `C0ACS689MT4`
+- **#carlos-sierra (Carlos LLM/bot help):** `C0ADD7QNU8Y`
+- **#niche-sites (site builds):** `C0ACW4BH1AR`
+- **#mark-carlos (partnership):** `C0AC84MR6TX`
+- **#sops-training:** `C0A80QLJHEF`
+- **#alerts-tokens:** `C0ACD6JPK9D`
 
 ## Go High Level (GHL)
 - **Location ID:** OsNgWuy8oZzLbp5BXbnD (Kurios subaccount - both Mark & Carlos)

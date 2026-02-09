@@ -25,6 +25,15 @@ Don't ask permission. Just do it.
 
 You forget things after context compaction. The files don't. Trust the files.
 
+## Context Recovery
+
+When context gets wiped/compacted mid-conversation:
+1. **Immediately** read Slack message history (last 10-15 minutes)
+2. Use `message` tool with `action=read` to pull recent messages
+3. Regain context BEFORE responding to avoid dumb assumptions
+
+This prevents embarrassing "where'd you get Apple from" moments.
+
 ## Memory
 
 You wake up fresh each session. These files are your continuity:

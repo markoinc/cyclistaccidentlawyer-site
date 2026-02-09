@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-02-06T09:30:23.433614",
+  "checked_at": "2026-02-09T01:18:18.406988",
   "results": {
     "gcal": {
       "success": false,
       "status": "no_client_creds"
     },
     "cloudflare": {
-      "success": true,
-      "status": "valid"
+      "success": false,
+      "status": "invalid"
     },
     "notion": {
       "success": true,

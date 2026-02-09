@@ -29,10 +29,12 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS - allow kuriosbrand.com and localhost for development
+# CORS - allow all origins for the audit tool
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://lawyerseoaudit.com",
+        "https://www.lawyerseoaudit.com",
         "https://kuriosbrand.com",
         "https://www.kuriosbrand.com",
         "http://localhost:5173",
