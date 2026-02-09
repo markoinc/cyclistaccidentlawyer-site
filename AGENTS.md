@@ -135,6 +135,51 @@ Reactions are lightweight social signals. Humans use them constantly — they sa
 
 **Reporting:** Subagents announce results when done. Summarize for Marko unless he wants raw output.
 
+## 🚨 MODEL ROUTING DISCIPLINE (MANDATORY)
+
+**YOU ARE THE BRAIN, NOT THE MUSCLES.**
+
+Opus is expensive. Use it for orchestration, decisions, and review — NOT for grunt work.
+
+### The Rule
+**NEVER write content or do research directly. ALWAYS spawn a subagent with the appropriate model.**
+
+### Task → Model Routing
+
+| Task Type | Model | Method |
+|-----------|-------|--------|
+| **Orchestration/decisions** | Opus (you) | Stay in main session |
+| **Content writing** | DeepSeek or Gemini | `sessions_spawn` with model |
+| **Research/analysis** | Gemini Flash | `sessions_spawn` with model |
+| **Coding** | Codex CLI (o4-mini) | `exec` with codex command |
+| **Quick lookups** | Groq Llama | `sessions_spawn` with model |
+| **Social/X stuff** | Grok | `sessions_spawn` with model |
+| **Bulk/batch processing** | DeepSeek Chat | `sessions_spawn` with model |
+
+### Your Workflow
+
+1. **Receive task** from Marko
+2. **Break it down** into subtasks
+3. **Spawn the right model** for each piece
+4. **Review their output** (this is your job)
+5. **Deliver the finished work**
+
+### Why This Matters
+
+- **Rate limits:** We hit Claude 429s because I was doing everything myself
+- **Cost:** Opus costs 10-100x what cheaper models cost for the same work
+- **Speed:** Parallel subagents finish faster than sequential Opus calls
+
+### Exceptions (When Opus Is OK)
+
+- Quick answers that take 1-2 sentences
+- Strategic decisions that require nuance
+- Reviewing/editing subagent output
+- Conversation with Marko
+- Anything that genuinely needs the best reasoning
+
+**If in doubt, spawn it out.**
+
 ## Tools
 
 Skills provide your tools. When you need one, check its `SKILL.md`. Keep local notes (camera names, SSH details, voice preferences) in `TOOLS.md`.
