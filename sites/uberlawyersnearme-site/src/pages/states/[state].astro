@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { states } from '../../data/states';
+import { cities } from '../../data/cities';
+
+export function getStaticPaths() {
+  return states.map(state => ({
+    params: { state: state.slug },
+    props: { state }
+  }));
+}
+
+const { state } = Astro.props;
+
+// Get cities in this state
+const stateCities = cities.filter(c => c.stateSlug === state.slug);
+
+const title = `${state.name} Rideshare Accident Lawyers - Uber & Lyft Claims`;
+const description = `Find experienced rideshare accident attorneys in ${state.name}. ${state.statuteOfLimitations} statute of limitations. ${state.faultSystem} state. Free case evaluations for Uber and Lyft accidents.`;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'States', url: '/states' },
+  { name: state.name, url: `/states/${state.slug}` }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${state.name} Rideshare Accident Lawyers`,
+  "description": description,
+  "areaServed": {
+    "@type": "State",
+    "name": state.name,
+    "containedInPlace": { "@type": "Country", "name": "United States" }
+  },
+  "serviceType": ["Rideshare Accident Law", "Uber Accident Law", "Lyft Accident Law"]
+};
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} schemaMarkup={schemaMarkup}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <nav class="text-sm text-gray-400 mb-6">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/states" class="hover:text-white">States</a> / 
+        <span class="text-white">{state.name}</span>
+      </nav>
+      
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-5xl font-bold text-primary-400">{state.abbreviation}</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold">
+          {state.name} Rideshare Accident Lawyers
+        </h1>
+      </div>
+      
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Get a free case evaluation from attorneys who specialize in Uber and Lyft accidents in {state.name}. We understand {state.name}'s specific rideshare laws and insurance requirements.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-primary-600 text-white py-6">
+    <div class="container-wide">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl font-bold">{state.statuteOfLimitations}</div>
+          <div class="text-primary-100 text-sm">Statute of Limitations</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold">{state.faultSystem.split(' ')[0]}</div>
+          <div class="text-primary-100 text-sm">Fault System</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold">{state.annualRideshareTrips}</div>
+          <div class="text-primary-100 text-sm">Annual Rideshare Trips</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold">{state.averageSettlement.split(' - ')[0]}</div>
+          <div class="text-primary-100 text-sm">Avg. Settlement Start</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="py-16 md:py-24 bg-white">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- State Overview -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Rideshare Accidents in {state.name}</h2>
+            <p class="text-gray-600 mb-4">
+              {state.name} processes approximately {state.annualRideshareTrips} rideshare trips annually, with both Uber and Lyft operating extensively throughout the state. {state.rideshareRegulations}
+            </p>
+            <p class="text-gray-600">
+              {state.tncInsuranceRequirements}
+            </p>
+          </section>
+
+          <!-- Uber Coverage -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Uber Insurance Coverage in {state.name}</h2>
+            <div class="space-y-4">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">Period 1: App On, Waiting</h3>
+                <p class="text-gray-600">{state.uberCoverage.appOnWaiting}</p>
+              </div>
+              <div class="bg-primary-50 rounded-lg p-4 border-l-4 border-primary-500">
+                <h3 class="font-semibold text-gray-900 mb-2">Periods 2 & 3: En Route & During Trip</h3>
+                <p class="text-gray-600">{state.uberCoverage.enRouteAndTrip}</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Lyft Coverage -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Lyft Insurance Coverage in {state.name}</h2>
+            <div class="space-y-4">
+              <div class="bg-gray-50 rounded-lg p-4">
+                <h3 class="font-semibold text-gray-900 mb-2">Period 1: App On, Waiting</h3>
+                <p class="text-gray-600">{state.lyftCoverage.appOnWaiting}</p>
+              </div>
+              <div class="bg-primary-50 rounded-lg p-4 border-l-4 border-primary-500">
+                <h3 class="font-semibold text-gray-900 mb-2">Periods 2 & 3: En Route & During Trip</h3>
+                <p class="text-gray-600">{state.lyftCoverage.enRouteAndTrip}</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Unique Factors -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">{state.name} Rideshare Legal Considerations</h2>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <ul class="space-y-3">
+                {state.uniqueRideshareFactors.map(factor => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-gray-700">{factor}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <!-- Accident Hotspots -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">High-Risk Areas in {state.name}</h2>
+            <p class="text-gray-600 mb-4">These locations see higher rates of rideshare accidents:</p>
+            <div class="grid grid-cols-2 gap-3">
+              {state.rideshareAccidentHotspots.map(spot => (
+                <div class="bg-gray-50 rounded-lg p-3 text-sm text-gray-700">
+                  📍 {spot}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Cities -->
+          {stateCities.length > 0 && (
+            <section>
+              <h2 class="text-2xl font-bold text-gray-900 mb-4">Major Cities in {state.name}</h2>
+              <div class="grid md:grid-cols-2 gap-4">
+                {stateCities.slice(0, 6).map(city => (
+                  <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-900">{city.name}</h3>
+                    <p class="text-sm text-gray-500">Pop: {city.population} • {city.estimatedAnnualRideshareTrips} annual trips</p>
+                    <p class="text-sm text-gray-600 mt-2">{city.uniqueFactors[0]}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <!-- CTA Card -->
+            <div class="bg-dark-900 text-white rounded-xl p-6">
+              <h3 class="text-xl font-bold mb-4">Free {state.name} Case Review</h3>
+              <p class="text-gray-300 mb-6">Get a free evaluation from a rideshare accident attorney who knows {state.name} law.</p>
+              <a href="/#free-case-review" class="btn btn-cta w-full">
+                Start Free Review
+              </a>
+              <p class="text-xs text-gray-400 text-center mt-3">No fees unless you win</p>
+            </div>
+
+            <!-- Key Facts -->
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-gray-900 mb-4">Key Facts</h3>
+              <dl class="space-y-4 text-sm">
+                <div>
+                  <dt class="text-gray-500">Capital</dt>
+                  <dd class="font-medium text-gray-900">{state.capital}</dd>
+                </div>
+                <div>
+                  <dt class="text-gray-500">Minimum Auto Insurance</dt>
+                  <dd class="font-medium text-gray-900">{state.minAutoInsurance}</dd>
+                </div>
+                <div>
+                  <dt class="text-gray-500">Major Airports</dt>
+                  <dd class="font-medium text-gray-900">{state.majorAirports.join(', ')}</dd>
+                </div>
+                <div>
+                  <dt class="text-gray-500">Average Settlement Range</dt>
+                  <dd class="font-medium text-primary-600">{state.averageSettlement}</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl font-bold mb-4">Injured in a {state.name} Rideshare Accident?</h2>
+      <p class="text-xl text-primary-100 mb-8">Get your free case evaluation today. Remember, you have {state.statuteOfLimitations} to file in {state.name}.</p>
+      <a href="/#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

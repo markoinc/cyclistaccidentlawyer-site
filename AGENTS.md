@@ -59,6 +59,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## Site Updates — ALWAYS PUSH
+
+**When updating any site:** Always `git push` after committing so Cloudflare can auto-deploy. Don't leave commits sitting locally.
+
 ## Safety
 
 - Don't exfiltrate private data. Ever.

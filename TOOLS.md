@@ -165,6 +165,17 @@ This keeps history while surfacing only current/relevant docs.
 - **Credentials file:** ~/.config/ghl/credentials.json
 - **Use for:** Sales appointments (source of truth over Google Calendar)
 
+### GHL Users Reference:
+| User | ID | Use For |
+|------|-----|---------|
+| **Mark Gundrum** | oQw4JVZvHiUxJccAvgXm | ✅ All appointments (main user) |
+| Carlos Meza | tODremxt6hpMOnvv0cHf | Partner/collective calls |
+| Mark Gundrum personal | 5A7K8Qtzc1zVSXEQCbWk | ❌ NEVER USE - just a calendar, not for assignments |
+| Jeremy Casesondemand | xyzuxDdkwCrpyUKmgOX0 | COD partner |
+| Max Casesondemand | aLvkwlhr5mjdYi7sZuI7 | COD partner |
+| Patrick Toledo | Lo7l5tFXMMgiKFjQYwBN | Intake partner |
+| Sierra Bot | a18oKnxEvVRfaTwlgBpv | Automation/bot |
+
 ### GHL Custom Fields Reference:
 - `1ImINic5Ef3ntrFFkQgG` = Website
 - `NXbhfJYvzPwItFz45HJ2` = Role/Title

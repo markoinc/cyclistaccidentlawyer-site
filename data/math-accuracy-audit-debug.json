@@ -3541,1283 +3541,83 @@
           "balance_col": 4
         },
         "personal_0068": {
-          "count": 149,
-          "debits": -5835.4,
-          "credits": 6342.0,
-          "net": 506.6,
+          "count": 176,
+          "debits": -7559.91,
+          "credits": 7518.36,
+          "net": -41.55,
           "balance_errors": [
             {
-              "row": 3,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 828.46,
-              "amount": -8.78,
-              "expected_balance": 819.68,
-              "actual_balance": 859.84,
-              "difference": 40.16
-            },
-            {
-              "row": 4,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 859.84,
-              "amount": -30.0,
-              "expected_balance": 829.84,
-              "actual_balance": 889.56,
-              "difference": 59.72
-            },
-            {
               "row": 5,
-              "date": 45845,
+              "date": 45869,
               "description": "",
-              "prev_balance": 889.56,
-              "amount": -37.71,
-              "expected_balance": 851.85,
-              "actual_balance": 1220.57,
-              "difference": 368.72
+              "prev_balance": 1108.21,
+              "amount": -5.0,
+              "expected_balance": 1103.21,
+              "actual_balance": 608.98,
+              "difference": -494.23
             },
             {
               "row": 6,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1220.57,
-              "amount": -9.74,
-              "expected_balance": 1210.83,
-              "actual_balance": 1258.28,
-              "difference": 47.45
-            },
-            {
-              "row": 7,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1258.28,
-              "amount": -36.85,
-              "expected_balance": 1221.43,
-              "actual_balance": 1119.56,
-              "difference": -101.87
-            },
-            {
-              "row": 8,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1119.56,
-              "amount": -20.94,
-              "expected_balance": 1098.62,
-              "actual_balance": 868.62,
-              "difference": -230.0
-            },
-            {
-              "row": 9,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 868.62,
-              "amount": -200.0,
-              "expected_balance": 668.62,
-              "actual_balance": 919.56,
-              "difference": 250.94
-            },
-            {
-              "row": 10,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 919.56,
-              "amount": 100.0,
-              "expected_balance": 1019.56,
-              "actual_balance": 1268.02,
-              "difference": 248.46
-            },
-            {
-              "row": 11,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1268.02,
-              "amount": 200.0,
-              "expected_balance": 1468.02,
-              "actual_balance": 1168.02,
-              "difference": -300.0
-            },
-            {
-              "row": 12,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1168.02,
-              "amount": -25.0,
-              "expected_balance": 1143.02,
-              "actual_balance": 834.84,
-              "difference": -308.18
-            },
-            {
-              "row": 13,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 834.84,
-              "amount": -16.0,
-              "expected_balance": 818.84,
-              "actual_balance": 1156.41,
-              "difference": 337.57
-            },
-            {
-              "row": 14,
-              "date": 45845,
-              "description": "",
-              "prev_balance": 1156.41,
-              "amount": -48.16,
-              "expected_balance": 1108.25,
-              "actual_balance": 1172.41,
-              "difference": 64.16
-            },
-            {
-              "row": 15,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 1172.41,
-              "amount": 200.0,
-              "expected_balance": 1372.41,
-              "actual_balance": 1028.46,
-              "difference": -343.95
-            },
-            {
-              "row": 16,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 1028.46,
-              "amount": -16.0,
-              "expected_balance": 1012.46,
-              "actual_balance": 729.38,
-              "difference": -283.08
-            },
-            {
-              "row": 17,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 729.38,
-              "amount": -16.0,
-              "expected_balance": 713.38,
-              "actual_balance": 745.38,
-              "difference": 32.0
-            },
-            {
-              "row": 18,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 745.38,
-              "amount": -16.0,
-              "expected_balance": 729.38,
-              "actual_balance": 761.38,
-              "difference": 32.0
-            },
-            {
-              "row": 19,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 761.38,
-              "amount": -16.0,
-              "expected_balance": 745.38,
-              "actual_balance": 777.38,
-              "difference": 32.0
-            },
-            {
-              "row": 20,
-              "date": 45846,
-              "description": "",
-              "prev_balance": 777.38,
-              "amount": -213.26,
-              "expected_balance": 564.12,
-              "actual_balance": 815.2,
-              "difference": 251.08
-            },
-            {
-              "row": 22,
-              "date": 45847,
-              "description": "",
-              "prev_balance": 793.38,
-              "amount": -130.0,
-              "expected_balance": 663.38,
-              "actual_balance": 599.38,
-              "difference": -64.0
-            },
-            {
-              "row": 23,
-              "date": 45847,
-              "description": "",
-              "prev_balance": 599.38,
-              "amount": -200.0,
-              "expected_balance": 399.38,
-              "actual_balance": 729.38,
-              "difference": 330.0
-            },
-            {
-              "row": 25,
-              "date": 45847,
-              "description": "",
-              "prev_balance": 929.38,
-              "amount": -80.0,
-              "expected_balance": 849.38,
-              "actual_balance": 470.38,
-              "difference": -379.0
-            },
-            {
-              "row": 26,
-              "date": 45847,
-              "description": "",
-              "prev_balance": 470.38,
-              "amount": -19.0,
-              "expected_balance": 451.38,
-              "actual_balance": 550.38,
-              "difference": 99.0
-            },
-            {
-              "row": 27,
-              "date": 45847,
-              "description": "",
-              "prev_balance": 550.38,
-              "amount": -30.0,
-              "expected_balance": 520.38,
-              "actual_balance": 569.38,
-              "difference": 49.0
-            },
-            {
-              "row": 28,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 569.38,
-              "amount": -7.2,
-              "expected_balance": 562.18,
-              "actual_balance": 302.06,
-              "difference": -260.12
-            },
-            {
-              "row": 29,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 302.06,
-              "amount": -210.0,
-              "expected_balance": 92.06,
-              "actual_balance": 455.93,
-              "difference": 363.87
-            },
-            {
-              "row": 30,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 455.93,
-              "amount": -106.34,
-              "expected_balance": 349.59,
-              "actual_balance": 328.26,
-              "difference": -21.33
-            },
-            {
-              "row": 31,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 328.26,
-              "amount": -4.45,
-              "expected_balance": 323.81,
-              "actual_balance": 665.93,
-              "difference": 342.12
-            },
-            {
-              "row": 32,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 665.93,
-              "amount": 200.0,
-              "expected_balance": 865.93,
-              "actual_balance": 670.38,
-              "difference": -195.55
-            },
-            {
-              "row": 33,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 670.38,
-              "amount": -35.0,
-              "expected_balance": 635.38,
-              "actual_balance": 267.06,
-              "difference": -368.32
-            },
-            {
-              "row": 34,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 267.06,
-              "amount": -19.0,
-              "expected_balance": 248.06,
-              "actual_balance": 309.26,
-              "difference": 61.2
-            },
-            {
-              "row": 35,
-              "date": 45848,
-              "description": "",
-              "prev_balance": 309.26,
-              "amount": -21.33,
-              "expected_balance": 287.93,
-              "actual_balance": 434.6,
-              "difference": 146.67
-            },
-            {
-              "row": 36,
-              "date": 45849,
-              "description": "",
-              "prev_balance": 434.6,
-              "amount": -11.71,
-              "expected_balance": 422.89,
-              "actual_balance": 331.95,
-              "difference": -90.94
-            },
-            {
-              "row": 37,
-              "date": 45849,
-              "description": "",
-              "prev_balance": 331.95,
-              "amount": 100.0,
-              "expected_balance": 431.95,
-              "actual_balance": 343.66,
-              "difference": -88.29
-            },
-            {
-              "row": 38,
-              "date": 45849,
-              "description": "",
-              "prev_balance": 343.66,
-              "amount": -19.0,
-              "expected_balance": 324.66,
-              "actual_balance": 312.95,
-              "difference": -11.71
-            },
-            {
-              "row": 39,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 312.95,
-              "amount": -5.0,
-              "expected_balance": 307.95,
-              "actual_balance": 325.61,
-              "difference": 17.66
-            },
-            {
-              "row": 40,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 325.61,
-              "amount": -5.0,
-              "expected_balance": 320.61,
-              "actual_balance": 330.61,
-              "difference": 10.0
-            },
-            {
-              "row": 41,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 330.61,
-              "amount": -6.06,
-              "expected_balance": 324.55,
-              "actual_balance": 396.63,
-              "difference": 72.08
-            },
-            {
-              "row": 42,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 396.63,
-              "amount": -6.96,
-              "expected_balance": 389.67,
-              "actual_balance": 335.61,
-              "difference": -54.06
-            },
-            {
-              "row": 43,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 335.61,
-              "amount": -48.1,
-              "expected_balance": 287.51,
-              "actual_balance": 348.53,
-              "difference": 61.02
-            },
-            {
-              "row": 45,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 342.57,
-              "amount": -126.0,
-              "expected_balance": 216.57,
-              "actual_balance": 174.61,
-              "difference": -41.96
-            },
-            {
-              "row": 46,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 174.61,
-              "amount": -22.18,
-              "expected_balance": 152.43,
-              "actual_balance": 590.77,
-              "difference": 438.34
-            },
-            {
-              "row": 47,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 590.77,
-              "amount": 100.0,
-              "expected_balance": 690.77,
-              "actual_balance": 612.95,
-              "difference": -77.82
-            },
-            {
-              "row": 48,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 612.95,
-              "amount": 200.0,
-              "expected_balance": 812.95,
-              "actual_balance": 512.95,
-              "difference": -300.0
-            },
-            {
-              "row": 49,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 512.95,
-              "amount": -25.0,
-              "expected_balance": 487.95,
-              "actual_balance": 300.61,
-              "difference": -187.34
-            },
-            {
-              "row": 50,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 300.61,
-              "amount": -19.0,
-              "expected_balance": 281.61,
-              "actual_balance": 402.69,
-              "difference": 121.08
-            },
-            {
-              "row": 51,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 402.69,
-              "amount": -52.0,
-              "expected_balance": 350.69,
-              "actual_balance": 538.77,
-              "difference": 188.08
-            },
-            {
-              "row": 53,
-              "date": 45852,
-              "description": "",
-              "prev_balance": 421.69,
-              "amount": -58.8,
-              "expected_balance": 362.89,
-              "actual_balance": 115.81,
-              "difference": -247.08
-            },
-            {
-              "row": 54,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 115.81,
-              "amount": -5.0,
-              "expected_balance": 110.81,
-              "actual_balance": 232.92,
-              "difference": 122.11
-            },
-            {
-              "row": 55,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 232.92,
-              "amount": -10.89,
-              "expected_balance": 222.03,
-              "actual_balance": 304.92,
-              "difference": 82.89
-            },
-            {
-              "row": 56,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 304.92,
-              "amount": 200.0,
-              "expected_balance": 504.92,
-              "actual_balance": 315.81,
-              "difference": -189.11
-            },
-            {
-              "row": 57,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 315.81,
-              "amount": -19.0,
-              "expected_balance": 296.81,
-              "actual_balance": 237.92,
-              "difference": -58.89
-            },
-            {
-              "row": 58,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 237.92,
-              "amount": -24.0,
-              "expected_balance": 213.92,
-              "actual_balance": 256.92,
-              "difference": 43.0
-            },
-            {
-              "row": 59,
-              "date": 45853,
-              "description": "",
-              "prev_balance": 256.92,
-              "amount": -24.0,
-              "expected_balance": 232.92,
-              "actual_balance": 280.92,
-              "difference": 48.0
-            },
-            {
-              "row": 60,
-              "date": 45854,
-              "description": "",
-              "prev_balance": 280.92,
-              "amount": -5.0,
-              "expected_balance": 275.92,
-              "actual_balance": 203.92,
-              "difference": -72.0
-            },
-            {
-              "row": 62,
-              "date": 45854,
-              "description": "",
-              "prev_balance": 123.92,
-              "amount": -24.0,
-              "expected_balance": 99.92,
-              "actual_balance": 208.92,
-              "difference": 109.0
-            },
-            {
-              "row": 63,
-              "date": 45855,
-              "description": "",
-              "prev_balance": 208.92,
-              "amount": -5.0,
-              "expected_balance": 203.92,
-              "actual_balance": 473.78,
-              "difference": 269.86
-            },
-            {
-              "row": 64,
-              "date": 45855,
-              "description": "",
-              "prev_balance": 473.78,
-              "amount": -20.14,
-              "expected_balance": 453.64,
-              "actual_balance": 478.78,
-              "difference": 25.14
-            },
-            {
-              "row": 65,
-              "date": 45855,
-              "description": "",
-              "prev_balance": 478.78,
-              "amount": 300.0,
-              "expected_balance": 778.78,
-              "actual_balance": 423.92,
-              "difference": -354.86
-            },
-            {
-              "row": 67,
-              "date": 45855,
-              "description": "",
-              "prev_balance": 523.92,
-              "amount": -35.0,
-              "expected_balance": 488.92,
-              "actual_balance": 438.78,
-              "difference": -50.14
-            },
-            {
-              "row": 68,
-              "date": 45855,
-              "description": "",
-              "prev_balance": 438.78,
-              "amount": -25.0,
-              "expected_balance": 413.78,
-              "actual_balance": 498.92,
-              "difference": 85.14
-            },
-            {
-              "row": 69,
-              "date": 45856,
-              "description": "",
-              "prev_balance": 498.92,
-              "amount": -5.0,
-              "expected_balance": 493.92,
-              "actual_balance": 111.16,
-              "difference": -382.76
-            },
-            {
-              "row": 70,
-              "date": 45856,
-              "description": "",
-              "prev_balance": 111.16,
-              "amount": -10.89,
-              "expected_balance": 100.27,
-              "actual_balance": 141.16,
-              "difference": 40.89
-            },
-            {
-              "row": 72,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 116.16,
-              "amount": -5.0,
-              "expected_balance": 111.16,
-              "actual_balance": 383.97,
-              "difference": 272.81
-            },
-            {
-              "row": 73,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 383.97,
-              "amount": -5.0,
-              "expected_balance": 378.97,
-              "actual_balance": 388.97,
-              "difference": 10.0
-            },
-            {
-              "row": 74,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 388.97,
-              "amount": -5.0,
-              "expected_balance": 383.97,
-              "actual_balance": 378.97,
-              "difference": -5.0
-            },
-            {
-              "row": 75,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 378.97,
-              "amount": -5.8,
-              "expected_balance": 373.17,
-              "actual_balance": 393.97,
-              "difference": 20.8
-            },
-            {
-              "row": 76,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 393.97,
-              "amount": -38.36,
-              "expected_balance": 355.61,
-              "actual_balance": 570.48,
-              "difference": 214.87
-            },
-            {
-              "row": 77,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 570.48,
-              "amount": -10.78,
-              "expected_balance": 559.7,
-              "actual_balance": 608.84,
-              "difference": 49.14
-            },
-            {
-              "row": 78,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 608.84,
-              "amount": -9.71,
-              "expected_balance": 599.13,
-              "actual_balance": 341.26,
-              "difference": -257.87
-            },
-            {
-              "row": 79,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 341.26,
-              "amount": -32.36,
-              "expected_balance": 308.9,
-              "actual_balance": 517.7,
-              "difference": 208.8
-            },
-            {
-              "row": 80,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 517.7,
-              "amount": -8.63,
-              "expected_balance": 509.07,
-              "actual_balance": 471.04,
-              "difference": -38.03
-            },
-            {
-              "row": 81,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 471.04,
-              "amount": -9.31,
-              "expected_balance": 461.73,
-              "actual_balance": 651.85,
-              "difference": 190.12
-            },
-            {
-              "row": 82,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 651.85,
-              "amount": 350.0,
-              "expected_balance": 1001.85,
-              "actual_balance": 461.16,
-              "difference": -540.69
-            },
-            {
-              "row": 85,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 661.16,
-              "amount": -25.0,
-              "expected_balance": 636.16,
-              "actual_balance": 350.97,
-              "difference": -285.19
-            },
-            {
-              "row": 86,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 350.97,
-              "amount": -25.0,
-              "expected_balance": 325.97,
-              "actual_balance": 619.62,
-              "difference": 293.65
-            },
-            {
-              "row": 87,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 619.62,
-              "amount": -13.03,
-              "expected_balance": 606.59,
-              "actual_balance": 479.67,
-              "difference": -126.92
-            },
-            {
-              "row": 88,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 479.67,
-              "amount": -20.0,
-              "expected_balance": 459.67,
-              "actual_balance": 451.04,
-              "difference": -8.63
-            },
-            {
-              "row": 89,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 451.04,
-              "amount": -9.0,
-              "expected_balance": 442.04,
-              "actual_balance": 431.02,
-              "difference": -11.02
-            },
-            {
-              "row": 90,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 431.02,
-              "amount": -7.23,
-              "expected_balance": 423.79,
-              "actual_balance": 644.62,
-              "difference": 220.83
-            },
-            {
-              "row": 91,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 644.62,
-              "amount": -11.02,
-              "expected_balance": 633.6,
-              "actual_balance": 440.02,
-              "difference": -193.58
-            },
-            {
-              "row": 92,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 440.02,
-              "amount": -19.0,
-              "expected_balance": 421.02,
-              "actual_balance": 498.7,
-              "difference": 77.68
-            },
-            {
-              "row": 94,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 492.7,
-              "amount": -3.0,
-              "expected_balance": 489.7,
-              "actual_balance": 375.97,
-              "difference": -113.73
-            },
-            {
-              "row": 95,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 375.97,
-              "amount": -20.42,
-              "expected_balance": 355.55,
-              "actual_balance": 550.06,
-              "difference": 194.51
-            },
-            {
-              "row": 96,
-              "date": 45859,
-              "description": "",
-              "prev_balance": 550.06,
-              "amount": -31.25,
-              "expected_balance": 518.81,
-              "actual_balance": 399.77,
-              "difference": -119.04
-            },
-            {
-              "row": 97,
-              "date": 45860,
-              "description": "",
-              "prev_balance": 399.77,
-              "amount": -5.0,
-              "expected_balance": 394.77,
-              "actual_balance": 261.26,
-              "difference": -133.51
-            },
-            {
-              "row": 98,
-              "date": 45860,
-              "description": "",
-              "prev_balance": 261.26,
-              "amount": -25.0,
-              "expected_balance": 236.26,
-              "actual_balance": 266.26,
-              "difference": 30.0
-            },
-            {
-              "row": 99,
-              "date": 45860,
-              "description": "",
-              "prev_balance": 266.26,
-              "amount": -25.0,
-              "expected_balance": 241.26,
-              "actual_balance": 291.26,
-              "difference": 50.0
-            },
-            {
-              "row": 100,
-              "date": 45860,
-              "description": "",
-              "prev_balance": 291.26,
-              "amount": -25.0,
-              "expected_balance": 266.26,
-              "actual_balance": 316.26,
-              "difference": 50.0
-            },
-            {
-              "row": 101,
-              "date": 45861,
-              "description": "",
-              "prev_balance": 316.26,
-              "amount": -5.0,
-              "expected_balance": 311.26,
-              "actual_balance": 209.24,
-              "difference": -102.02
-            },
-            {
-              "row": 102,
-              "date": 45861,
-              "description": "",
-              "prev_balance": 209.24,
-              "amount": -22.02,
-              "expected_balance": 187.22,
-              "actual_balance": 214.24,
-              "difference": 27.02
-            },
-            {
-              "row": 103,
-              "date": 45861,
-              "description": "",
-              "prev_balance": 214.24,
-              "amount": -80.0,
-              "expected_balance": 134.24,
-              "actual_balance": 129.24,
-              "difference": -5.0
-            },
-            {
-              "row": 104,
-              "date": 45861,
-              "description": "",
-              "prev_balance": 129.24,
-              "amount": -25.0,
-              "expected_balance": 104.24,
-              "actual_balance": 236.26,
-              "difference": 132.02
-            },
-            {
-              "row": 105,
-              "date": 45861,
-              "description": "",
-              "prev_balance": 236.26,
-              "amount": -63.01,
-              "expected_balance": 173.25,
-              "actual_balance": 66.23,
-              "difference": -107.02
-            },
-            {
-              "row": 106,
-              "date": 45862,
-              "description": "",
-              "prev_balance": 66.23,
-              "amount": -5.0,
-              "expected_balance": 61.23,
-              "actual_balance": 436.23,
-              "difference": 375.0
-            },
-            {
-              "row": 108,
-              "date": 45862,
-              "description": "",
-              "prev_balance": 252.76,
-              "amount": 200.0,
-              "expected_balance": 452.76,
-              "actual_balance": 266.23,
-              "difference": -186.53
-            },
-            {
-              "row": 111,
-              "date": 45863,
-              "description": "",
-              "prev_balance": 441.23,
-              "amount": -100.0,
-              "expected_balance": 341.23,
-              "actual_balance": 310.8,
-              "difference": -30.43
-            },
-            {
-              "row": 112,
-              "date": 45863,
-              "description": "",
-              "prev_balance": 310.8,
-              "amount": -19.05,
-              "expected_balance": 291.75,
-              "actual_balance": 222.86,
-              "difference": -68.89
-            },
-            {
-              "row": 113,
-              "date": 45863,
-              "description": "",
-              "prev_balance": 222.86,
-              "amount": 200.0,
-              "expected_balance": 422.86,
-              "actual_balance": 410.8,
-              "difference": -12.06
-            },
-            {
-              "row": 114,
-              "date": 45863,
-              "description": "",
-              "prev_balance": 410.8,
-              "amount": -25.0,
-              "expected_balance": 385.8,
-              "actual_balance": 197.86,
-              "difference": -187.94
-            },
-            {
-              "row": 115,
-              "date": 45863,
-              "description": "",
-              "prev_balance": 197.86,
-              "amount": -68.89,
-              "expected_balance": 128.97,
-              "actual_balance": 241.91,
-              "difference": 112.94
-            },
-            {
-              "row": 116,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 241.91,
-              "amount": -5.0,
-              "expected_balance": 236.91,
-              "actual_balance": 114.1,
-              "difference": -122.81
-            },
-            {
-              "row": 117,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 114.1,
-              "amount": -6.26,
-              "expected_balance": 107.84,
-              "actual_balance": 119.1,
-              "difference": 11.26
-            },
-            {
-              "row": 118,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 119.1,
-              "amount": -37.69,
-              "expected_balance": 81.41,
-              "actual_balance": 308.61,
-              "difference": 227.2
-            },
-            {
-              "row": 119,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 308.61,
-              "amount": -3.78,
-              "expected_balance": 304.83,
-              "actual_balance": 1367.83,
-              "difference": 1063.0
-            },
-            {
-              "row": 120,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 1367.83,
-              "amount": -8.25,
-              "expected_balance": 1359.58,
-              "actual_balance": 300.36,
-              "difference": -1059.22
-            },
-            {
-              "row": 121,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 300.36,
-              "amount": -10.0,
-              "expected_balance": 290.36,
-              "actual_balance": 1357.83,
-              "difference": 1067.47
-            },
-            {
-              "row": 122,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 1357.83,
-              "amount": -175.0,
-              "expected_balance": 1182.83,
-              "actual_balance": 125.36,
-              "difference": -1057.47
-            },
-            {
-              "row": 123,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 125.36,
-              "amount": -1000.0,
-              "expected_balance": -874.64,
-              "actual_balance": 357.83,
-              "difference": 1232.47
-            },
-            {
-              "row": 124,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 357.83,
-              "amount": 92.0,
-              "expected_balance": 449.83,
-              "actual_balance": 1389.86,
-              "difference": 940.03
-            },
-            {
-              "row": 125,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 1389.86,
-              "amount": 100.0,
-              "expected_balance": 1489.86,
-              "actual_balance": 1297.86,
-              "difference": -192.0
-            },
-            {
-              "row": 126,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 1297.86,
-              "amount": 1000.0,
-              "expected_balance": 2297.86,
-              "actual_balance": 1197.86,
-              "difference": -1100.0
-            },
-            {
-              "row": 127,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 1197.86,
-              "amount": -25.0,
-              "expected_balance": 1172.86,
-              "actual_balance": 89.1,
-              "difference": -1083.76
-            },
-            {
-              "row": 128,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 89.1,
-              "amount": -11.53,
-              "expected_balance": 77.57,
-              "actual_balance": 346.3,
-              "difference": 268.73
-            },
-            {
-              "row": 129,
-              "date": 45866,
-              "description": "",
-              "prev_balance": 346.3,
-              "amount": -18.25,
-              "expected_balance": 328.05,
-              "actual_balance": 1371.61,
-              "difference": 1043.56
-            },
-            {
-              "row": 130,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1371.61,
-              "amount": -5.0,
-              "expected_balance": 1366.61,
-              "actual_balance": 1484.1,
-              "difference": 117.49
-            },
-            {
-              "row": 131,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1484.1,
-              "amount": 300.0,
-              "expected_balance": 1784.1,
-              "actual_balance": 1389.1,
-              "difference": -395.0
-            },
-            {
-              "row": 132,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1389.1,
-              "amount": 1000.0,
-              "expected_balance": 2389.1,
-              "actual_balance": 1089.1,
-              "difference": -1300.0
-            },
-            {
-              "row": 133,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1089.1,
-              "amount": 200.0,
-              "expected_balance": 1289.1,
-              "actual_balance": 1589.1,
-              "difference": 300.0
-            },
-            {
-              "row": 134,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1589.1,
-              "amount": -25.0,
-              "expected_balance": 1564.1,
-              "actual_balance": 1489.1,
-              "difference": -75.0
-            },
-            {
-              "row": 135,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1489.1,
-              "amount": -25.0,
-              "expected_balance": 1464.1,
-              "actual_balance": 1514.1,
-              "difference": 50.0
-            },
-            {
-              "row": 136,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1514.1,
-              "amount": -25.0,
-              "expected_balance": 1489.1,
-              "actual_balance": 1539.1,
-              "difference": 50.0
-            },
-            {
-              "row": 137,
-              "date": 45867,
-              "description": "",
-              "prev_balance": 1539.1,
-              "amount": -25.0,
-              "expected_balance": 1514.1,
-              "actual_balance": 1564.1,
-              "difference": 50.0
-            },
-            {
-              "row": 138,
-              "date": 45868,
-              "description": "",
-              "prev_balance": 1564.1,
-              "amount": -10.89,
-              "expected_balance": 1553.21,
-              "actual_balance": 613.21,
-              "difference": -940.0
-            },
-            {
-              "row": 139,
-              "date": 45868,
-              "description": "",
-              "prev_balance": 613.21,
-              "amount": -80.0,
-              "expected_balance": 533.21,
-              "actual_balance": 508.21,
-              "difference": -25.0
-            },
-            {
-              "row": 140,
-              "date": 45868,
-              "description": "",
-              "prev_balance": 508.21,
-              "amount": -25.0,
-              "expected_balance": 483.21,
-              "actual_balance": 588.21,
-              "difference": 105.0
-            },
-            {
-              "row": 141,
-              "date": 45869,
-              "description": "",
-              "prev_balance": 588.21,
-              "amount": -5.0,
-              "expected_balance": 583.21,
-              "actual_balance": 608.98,
-              "difference": 25.77
-            },
-            {
-              "row": 142,
               "date": 45869,
               "description": "",
               "prev_balance": 608.98,
-              "amount": -246.86,
-              "expected_balance": 362.12,
-              "actual_balance": 808.91,
-              "difference": 446.79
+              "amount": -25.0,
+              "expected_balance": 583.98,
+              "actual_balance": 613.98,
+              "difference": 30.0
             },
             {
-              "row": 143,
+              "row": 7,
+              "date": 45869,
+              "description": "",
+              "prev_balance": 613.98,
+              "amount": -52.44,
+              "expected_balance": 561.54,
+              "actual_balance": 1055.77,
+              "difference": 494.23
+            },
+            {
+              "row": 8,
+              "date": 45869,
+              "description": "",
+              "prev_balance": 1055.77,
+              "amount": -62.46,
+              "expected_balance": 993.31,
+              "actual_balance": 427.77,
+              "difference": -565.54
+            },
+            {
+              "row": 9,
+              "date": 45869,
+              "description": "",
+              "prev_balance": 427.77,
+              "amount": -118.75,
+              "expected_balance": 309.02,
+              "actual_balance": 490.23,
+              "difference": 181.21
+            },
+            {
+              "row": 10,
+              "date": 45869,
+              "description": "",
+              "prev_balance": 490.23,
+              "amount": -169.93,
+              "expected_balance": 320.3,
+              "actual_balance": 638.98,
+              "difference": 318.68
+            },
+            {
+              "row": 11,
+              "date": 45869,
+              "description": "",
+              "prev_balance": 638.98,
+              "amount": -246.86,
+              "expected_balance": 392.12,
+              "actual_balance": 808.91,
+              "difference": 416.79
+            },
+            {
+              "row": 12,
               "date": 45869,
               "description": "",
               "prev_balance": 808.91,
@@ -4827,64 +3627,1484 @@
               "difference": -381.14
             },
             {
-              "row": 144,
-              "date": 45869,
+              "row": 13,
+              "date": 45868,
               "description": "",
               "prev_balance": 143.78,
+              "amount": -10.89,
+              "expected_balance": 132.89,
+              "actual_balance": 613.21,
+              "difference": 480.32
+            },
+            {
+              "row": 16,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 508.21,
+              "amount": 1000.0,
+              "expected_balance": 1508.21,
+              "actual_balance": 1089.1,
+              "difference": -419.11
+            },
+            {
+              "row": 19,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1589.1,
+              "amount": -5.0,
+              "expected_balance": 1584.1,
+              "actual_balance": 1484.1,
+              "difference": -100.0
+            },
+            {
+              "row": 20,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1484.1,
+              "amount": -25.0,
+              "expected_balance": 1459.1,
+              "actual_balance": 1489.1,
+              "difference": 30.0
+            },
+            {
+              "row": 21,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1489.1,
+              "amount": -25.0,
+              "expected_balance": 1464.1,
+              "actual_balance": 1514.1,
+              "difference": 50.0
+            },
+            {
+              "row": 22,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1514.1,
+              "amount": -25.0,
+              "expected_balance": 1489.1,
+              "actual_balance": 1539.1,
+              "difference": 50.0
+            },
+            {
+              "row": 23,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1539.1,
+              "amount": -25.0,
+              "expected_balance": 1514.1,
+              "actual_balance": 1564.1,
+              "difference": 50.0
+            },
+            {
+              "row": 24,
+              "date": 45867,
+              "description": "",
+              "prev_balance": 1564.1,
+              "amount": -860.0,
+              "expected_balance": 704.1,
+              "actual_balance": 624.1,
+              "difference": -80.0
+            },
+            {
+              "row": 25,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 624.1,
+              "amount": 1000.0,
+              "expected_balance": 1624.1,
+              "actual_balance": 1197.86,
+              "difference": -426.24
+            },
+            {
+              "row": 28,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 1389.86,
+              "amount": -3.78,
+              "expected_balance": 1386.08,
+              "actual_balance": 1367.83,
+              "difference": -18.25
+            },
+            {
+              "row": 29,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 1367.83,
+              "amount": -5.0,
+              "expected_balance": 1362.83,
+              "actual_balance": 114.1,
+              "difference": -1248.73
+            },
+            {
+              "row": 30,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 114.1,
+              "amount": -6.26,
+              "expected_balance": 107.84,
+              "actual_balance": 119.1,
+              "difference": 11.26
+            },
+            {
+              "row": 31,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 119.1,
+              "amount": -8.25,
+              "expected_balance": 110.85,
+              "actual_balance": 300.36,
+              "difference": 189.51
+            },
+            {
+              "row": 32,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 300.36,
+              "amount": -10.0,
+              "expected_balance": 290.36,
+              "actual_balance": 1357.83,
+              "difference": 1067.47
+            },
+            {
+              "row": 33,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 1357.83,
+              "amount": -11.53,
+              "expected_balance": 1346.3,
+              "actual_balance": 346.3,
+              "difference": -1000.0
+            },
+            {
+              "row": 34,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 346.3,
+              "amount": -18.25,
+              "expected_balance": 328.05,
+              "actual_balance": 1371.61,
+              "difference": 1043.56
+            },
+            {
+              "row": 35,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 1371.61,
+              "amount": -25.0,
+              "expected_balance": 1346.61,
+              "actual_balance": 89.1,
+              "difference": -1257.51
+            },
+            {
+              "row": 36,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 89.1,
+              "amount": -37.69,
+              "expected_balance": 51.41,
+              "actual_balance": 308.61,
+              "difference": 257.2
+            },
+            {
+              "row": 37,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 308.61,
+              "amount": -175.0,
+              "expected_balance": 133.61,
+              "actual_balance": 125.36,
+              "difference": -8.25
+            },
+            {
+              "row": 38,
+              "date": 45866,
+              "description": "",
+              "prev_balance": 125.36,
+              "amount": -1000.0,
+              "expected_balance": -874.64,
+              "actual_balance": 357.83,
+              "difference": 1232.47
+            },
+            {
+              "row": 39,
+              "date": 45863,
+              "description": "",
+              "prev_balance": 357.83,
+              "amount": 200.0,
+              "expected_balance": 557.83,
+              "actual_balance": 410.8,
+              "difference": -147.03
+            },
+            {
+              "row": 40,
+              "date": 45863,
+              "description": "",
+              "prev_balance": 410.8,
+              "amount": -19.05,
+              "expected_balance": 391.75,
+              "actual_balance": 222.86,
+              "difference": -168.89
+            },
+            {
+              "row": 42,
+              "date": 45863,
+              "description": "",
+              "prev_balance": 197.86,
+              "amount": -68.89,
+              "expected_balance": 128.97,
+              "actual_balance": 241.91,
+              "difference": 112.94
+            },
+            {
+              "row": 43,
+              "date": 45863,
+              "description": "",
+              "prev_balance": 241.91,
+              "amount": -100.0,
+              "expected_balance": 141.91,
+              "actual_balance": 310.8,
+              "difference": 168.89
+            },
+            {
+              "row": 44,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 310.8,
+              "amount": 200.0,
+              "expected_balance": 510.8,
+              "actual_balance": 466.23,
+              "difference": -44.57
+            },
+            {
+              "row": 45,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 466.23,
+              "amount": 200.0,
+              "expected_balance": 666.23,
+              "actual_balance": 266.23,
+              "difference": -400.0
+            },
+            {
+              "row": 46,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 266.23,
+              "amount": -5.0,
+              "expected_balance": 261.23,
+              "actual_balance": 436.23,
+              "difference": 175.0
+            },
+            {
+              "row": 47,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 436.23,
+              "amount": -25.0,
+              "expected_balance": 411.23,
+              "actual_balance": 441.23,
+              "difference": 30.0
+            },
+            {
+              "row": 48,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 441.23,
+              "amount": -41.96,
+              "expected_balance": 399.27,
+              "actual_balance": 210.8,
+              "difference": -188.47
+            },
+            {
+              "row": 49,
+              "date": 45862,
+              "description": "",
+              "prev_balance": 210.8,
+              "amount": -183.47,
+              "expected_balance": 27.33,
+              "actual_balance": 252.76,
+              "difference": 225.43
+            },
+            {
+              "row": 50,
+              "date": 45861,
+              "description": "",
+              "prev_balance": 252.76,
+              "amount": -5.0,
+              "expected_balance": 247.76,
+              "actual_balance": 209.24,
+              "difference": -38.52
+            },
+            {
+              "row": 51,
+              "date": 45861,
+              "description": "",
+              "prev_balance": 209.24,
+              "amount": -22.02,
+              "expected_balance": 187.22,
+              "actual_balance": 214.24,
+              "difference": 27.02
+            },
+            {
+              "row": 52,
+              "date": 45861,
+              "description": "",
+              "prev_balance": 214.24,
+              "amount": -25.0,
+              "expected_balance": 189.24,
+              "actual_balance": 236.26,
+              "difference": 47.02
+            },
+            {
+              "row": 53,
+              "date": 45861,
+              "description": "",
+              "prev_balance": 236.26,
+              "amount": -63.01,
+              "expected_balance": 173.25,
+              "actual_balance": 66.23,
+              "difference": -107.02
+            },
+            {
+              "row": 54,
+              "date": 45861,
+              "description": "",
+              "prev_balance": 66.23,
+              "amount": -80.0,
+              "expected_balance": -13.77,
+              "actual_balance": 129.24,
+              "difference": 143.01
+            },
+            {
+              "row": 55,
+              "date": 45860,
+              "description": "",
+              "prev_balance": 129.24,
+              "amount": -5.0,
+              "expected_balance": 124.24,
+              "actual_balance": 261.26,
+              "difference": 137.02
+            },
+            {
+              "row": 56,
+              "date": 45860,
+              "description": "",
+              "prev_balance": 261.26,
+              "amount": -25.0,
+              "expected_balance": 236.26,
+              "actual_balance": 266.26,
+              "difference": 30.0
+            },
+            {
+              "row": 57,
+              "date": 45860,
+              "description": "",
+              "prev_balance": 266.26,
+              "amount": -25.0,
+              "expected_balance": 241.26,
+              "actual_balance": 291.26,
+              "difference": 50.0
+            },
+            {
+              "row": 58,
+              "date": 45860,
+              "description": "",
+              "prev_balance": 291.26,
+              "amount": -25.0,
+              "expected_balance": 266.26,
+              "actual_balance": 316.26,
+              "difference": 50.0
+            },
+            {
+              "row": 59,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 316.26,
+              "amount": 350.0,
+              "expected_balance": 666.26,
+              "actual_balance": 461.16,
+              "difference": -205.1
+            },
+            {
+              "row": 60,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 461.16,
+              "amount": 100.0,
+              "expected_balance": 561.16,
+              "actual_balance": 661.16,
+              "difference": 100.0
+            },
+            {
+              "row": 61,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 661.16,
+              "amount": 100.0,
+              "expected_balance": 761.16,
+              "actual_balance": 561.16,
+              "difference": -200.0
+            },
+            {
+              "row": 62,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 561.16,
+              "amount": -3.0,
+              "expected_balance": 558.16,
+              "actual_balance": 375.97,
+              "difference": -182.19
+            },
+            {
+              "row": 63,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 375.97,
+              "amount": -5.0,
+              "expected_balance": 370.97,
+              "actual_balance": 378.97,
+              "difference": 8.0
+            },
+            {
+              "row": 64,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 378.97,
+              "amount": -5.0,
+              "expected_balance": 373.97,
+              "actual_balance": 383.97,
+              "difference": 10.0
+            },
+            {
+              "row": 65,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 383.97,
+              "amount": -5.0,
+              "expected_balance": 378.97,
+              "actual_balance": 388.97,
+              "difference": 10.0
+            },
+            {
+              "row": 66,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 388.97,
+              "amount": -5.8,
+              "expected_balance": 383.17,
+              "actual_balance": 393.97,
+              "difference": 10.8
+            },
+            {
+              "row": 67,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 393.97,
+              "amount": -6.0,
+              "expected_balance": 387.97,
+              "actual_balance": 492.7,
+              "difference": 104.73
+            },
+            {
+              "row": 68,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 492.7,
+              "amount": -7.23,
+              "expected_balance": 485.47,
+              "actual_balance": 644.62,
+              "difference": 159.15
+            },
+            {
+              "row": 69,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 644.62,
+              "amount": -8.63,
+              "expected_balance": 635.99,
+              "actual_balance": 471.04,
+              "difference": -164.95
+            },
+            {
+              "row": 70,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 471.04,
+              "amount": -9.0,
+              "expected_balance": 462.04,
+              "actual_balance": 431.02,
+              "difference": -31.02
+            },
+            {
+              "row": 71,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 431.02,
+              "amount": -9.31,
+              "expected_balance": 421.71,
+              "actual_balance": 651.85,
+              "difference": 230.14
+            },
+            {
+              "row": 72,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 651.85,
+              "amount": -9.71,
+              "expected_balance": 642.14,
+              "actual_balance": 341.26,
+              "difference": -300.88
+            },
+            {
+              "row": 73,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 341.26,
+              "amount": -10.78,
+              "expected_balance": 330.48,
+              "actual_balance": 608.84,
+              "difference": 278.36
+            },
+            {
+              "row": 74,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 608.84,
+              "amount": -11.02,
+              "expected_balance": 597.82,
+              "actual_balance": 440.02,
+              "difference": -157.8
+            },
+            {
+              "row": 75,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 440.02,
+              "amount": -13.03,
+              "expected_balance": 426.99,
+              "actual_balance": 479.67,
+              "difference": 52.68
+            },
+            {
+              "row": 76,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 479.67,
+              "amount": -19.0,
+              "expected_balance": 460.67,
+              "actual_balance": 498.7,
+              "difference": 38.03
+            },
+            {
+              "row": 77,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 498.7,
+              "amount": -20.0,
+              "expected_balance": 478.7,
+              "actual_balance": 451.04,
+              "difference": -27.66
+            },
+            {
+              "row": 78,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 451.04,
+              "amount": -20.42,
+              "expected_balance": 430.62,
+              "actual_balance": 550.06,
+              "difference": 119.44
+            },
+            {
+              "row": 79,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 550.06,
+              "amount": -25.0,
+              "expected_balance": 525.06,
+              "actual_balance": 350.97,
+              "difference": -174.09
+            },
+            {
+              "row": 80,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 350.97,
+              "amount": -25.0,
+              "expected_balance": 325.97,
+              "actual_balance": 619.62,
+              "difference": 293.65
+            },
+            {
+              "row": 81,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 619.62,
+              "amount": -31.25,
+              "expected_balance": 588.37,
+              "actual_balance": 399.77,
+              "difference": -188.6
+            },
+            {
+              "row": 82,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 399.77,
+              "amount": -32.36,
+              "expected_balance": 367.41,
+              "actual_balance": 517.7,
+              "difference": 150.29
+            },
+            {
+              "row": 83,
+              "date": 45859,
+              "description": "",
+              "prev_balance": 517.7,
+              "amount": -38.36,
+              "expected_balance": 479.34,
+              "actual_balance": 570.48,
+              "difference": 91.14
+            },
+            {
+              "row": 84,
+              "date": 45856,
+              "description": "",
+              "prev_balance": 570.48,
+              "amount": -5.0,
+              "expected_balance": 565.48,
+              "actual_balance": 111.16,
+              "difference": -454.32
+            },
+            {
+              "row": 85,
+              "date": 45856,
+              "description": "",
+              "prev_balance": 111.16,
+              "amount": -10.89,
+              "expected_balance": 100.27,
+              "actual_balance": 141.16,
+              "difference": 40.89
+            },
+            {
+              "row": 87,
+              "date": 45855,
+              "description": "",
+              "prev_balance": 116.16,
               "amount": 300.0,
-              "expected_balance": 443.78,
-              "actual_balance": 808.21,
-              "difference": 364.43
+              "expected_balance": 416.16,
+              "actual_balance": 423.92,
+              "difference": 7.76
+            },
+            {
+              "row": 89,
+              "date": 45855,
+              "description": "",
+              "prev_balance": 523.92,
+              "amount": -5.0,
+              "expected_balance": 518.92,
+              "actual_balance": 473.78,
+              "difference": -45.14
+            },
+            {
+              "row": 90,
+              "date": 45855,
+              "description": "",
+              "prev_balance": 473.78,
+              "amount": -20.14,
+              "expected_balance": 453.64,
+              "actual_balance": 478.78,
+              "difference": 25.14
+            },
+            {
+              "row": 91,
+              "date": 45855,
+              "description": "",
+              "prev_balance": 478.78,
+              "amount": -25.0,
+              "expected_balance": 453.78,
+              "actual_balance": 498.92,
+              "difference": 45.14
+            },
+            {
+              "row": 92,
+              "date": 45855,
+              "description": "",
+              "prev_balance": 498.92,
+              "amount": -35.0,
+              "expected_balance": 463.92,
+              "actual_balance": 438.78,
+              "difference": -25.14
+            },
+            {
+              "row": 94,
+              "date": 45854,
+              "description": "",
+              "prev_balance": 152.05,
+              "amount": -5.0,
+              "expected_balance": 147.05,
+              "actual_balance": 203.92,
+              "difference": 56.87
+            },
+            {
+              "row": 95,
+              "date": 45854,
+              "description": "",
+              "prev_balance": 203.92,
+              "amount": -24.0,
+              "expected_balance": 179.92,
+              "actual_balance": 208.92,
+              "difference": 29.0
+            },
+            {
+              "row": 96,
+              "date": 45854,
+              "description": "",
+              "prev_balance": 208.92,
+              "amount": -80.0,
+              "expected_balance": 128.92,
+              "actual_balance": 123.92,
+              "difference": -5.0
+            },
+            {
+              "row": 97,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 123.92,
+              "amount": 200.0,
+              "expected_balance": 323.92,
+              "actual_balance": 315.81,
+              "difference": -8.11
+            },
+            {
+              "row": 98,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 315.81,
+              "amount": -5.0,
+              "expected_balance": 310.81,
+              "actual_balance": 232.92,
+              "difference": -77.89
+            },
+            {
+              "row": 99,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 232.92,
+              "amount": -10.89,
+              "expected_balance": 222.03,
+              "actual_balance": 304.92,
+              "difference": 82.89
+            },
+            {
+              "row": 100,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 304.92,
+              "amount": -19.0,
+              "expected_balance": 285.92,
+              "actual_balance": 237.92,
+              "difference": -48.0
+            },
+            {
+              "row": 101,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 237.92,
+              "amount": -24.0,
+              "expected_balance": 213.92,
+              "actual_balance": 256.92,
+              "difference": 43.0
+            },
+            {
+              "row": 102,
+              "date": 45853,
+              "description": "",
+              "prev_balance": 256.92,
+              "amount": -24.0,
+              "expected_balance": 232.92,
+              "actual_balance": 280.92,
+              "difference": 48.0
+            },
+            {
+              "row": 103,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 280.92,
+              "amount": 200.0,
+              "expected_balance": 480.92,
+              "actual_balance": 512.95,
+              "difference": 32.03
+            },
+            {
+              "row": 105,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 612.95,
+              "amount": -5.0,
+              "expected_balance": 607.95,
+              "actual_balance": 325.61,
+              "difference": -282.34
+            },
+            {
+              "row": 106,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 325.61,
+              "amount": -5.0,
+              "expected_balance": 320.61,
+              "actual_balance": 330.61,
+              "difference": 10.0
+            },
+            {
+              "row": 107,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 330.61,
+              "amount": -5.96,
+              "expected_balance": 324.65,
+              "actual_balance": 342.57,
+              "difference": 17.92
+            },
+            {
+              "row": 108,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 342.57,
+              "amount": -6.06,
+              "expected_balance": 336.51,
+              "actual_balance": 396.63,
+              "difference": 60.12
+            },
+            {
+              "row": 109,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 396.63,
+              "amount": -6.96,
+              "expected_balance": 389.67,
+              "actual_balance": 335.61,
+              "difference": -54.06
+            },
+            {
+              "row": 110,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 335.61,
+              "amount": -19.0,
+              "expected_balance": 316.61,
+              "actual_balance": 402.69,
+              "difference": 86.08
+            },
+            {
+              "row": 111,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 402.69,
+              "amount": -22.18,
+              "expected_balance": 380.51,
+              "actual_balance": 590.77,
+              "difference": 210.26
+            },
+            {
+              "row": 112,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 590.77,
+              "amount": -25.0,
+              "expected_balance": 565.77,
+              "actual_balance": 300.61,
+              "difference": -265.16
+            },
+            {
+              "row": 113,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 300.61,
+              "amount": -48.1,
+              "expected_balance": 252.51,
+              "actual_balance": 348.53,
+              "difference": 96.02
+            },
+            {
+              "row": 114,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 348.53,
+              "amount": -52.0,
+              "expected_balance": 296.53,
+              "actual_balance": 538.77,
+              "difference": 242.24
+            },
+            {
+              "row": 115,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 538.77,
+              "amount": -58.8,
+              "expected_balance": 479.97,
+              "actual_balance": 115.81,
+              "difference": -364.16
+            },
+            {
+              "row": 116,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 115.81,
+              "amount": -117.08,
+              "expected_balance": -1.27,
+              "actual_balance": 421.69,
+              "difference": 422.96
+            },
+            {
+              "row": 117,
+              "date": 45852,
+              "description": "",
+              "prev_balance": 421.69,
+              "amount": -126.0,
+              "expected_balance": 295.69,
+              "actual_balance": 174.61,
+              "difference": -121.08
+            },
+            {
+              "row": 118,
+              "date": 45849,
+              "description": "",
+              "prev_balance": 174.61,
+              "amount": 100.0,
+              "expected_balance": 274.61,
+              "actual_balance": 343.66,
+              "difference": 69.05
+            },
+            {
+              "row": 121,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 312.95,
+              "amount": 200.0,
+              "expected_balance": 512.95,
+              "actual_balance": 670.38,
+              "difference": 157.43
+            },
+            {
+              "row": 123,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 665.93,
+              "amount": -7.2,
+              "expected_balance": 658.73,
+              "actual_balance": 302.06,
+              "difference": -356.67
+            },
+            {
+              "row": 124,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 302.06,
+              "amount": -19.0,
+              "expected_balance": 283.06,
+              "actual_balance": 309.26,
+              "difference": 26.2
+            },
+            {
+              "row": 125,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 309.26,
+              "amount": -21.33,
+              "expected_balance": 287.93,
+              "actual_balance": 434.6,
+              "difference": 146.67
+            },
+            {
+              "row": 126,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 434.6,
+              "amount": -23.4,
+              "expected_balance": 411.2,
+              "actual_balance": 243.66,
+              "difference": -167.54
+            },
+            {
+              "row": 127,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 243.66,
+              "amount": -35.0,
+              "expected_balance": 208.66,
+              "actual_balance": 267.06,
+              "difference": 58.4
+            },
+            {
+              "row": 128,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 267.06,
+              "amount": -106.34,
+              "expected_balance": 160.72,
+              "actual_balance": 328.26,
+              "difference": 167.54
+            },
+            {
+              "row": 129,
+              "date": 45848,
+              "description": "",
+              "prev_balance": 328.26,
+              "amount": -210.0,
+              "expected_balance": 118.26,
+              "actual_balance": 455.93,
+              "difference": 337.67
+            },
+            {
+              "row": 130,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 455.93,
+              "amount": 200.0,
+              "expected_balance": 655.93,
+              "actual_balance": 929.38,
+              "difference": 273.45
+            },
+            {
+              "row": 131,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 929.38,
+              "amount": -19.0,
+              "expected_balance": 910.38,
+              "actual_balance": 550.38,
+              "difference": -360.0
+            },
+            {
+              "row": 132,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 550.38,
+              "amount": -30.0,
+              "expected_balance": 520.38,
+              "actual_balance": 569.38,
+              "difference": 49.0
+            },
+            {
+              "row": 133,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 569.38,
+              "amount": -80.0,
+              "expected_balance": 489.38,
+              "actual_balance": 470.38,
+              "difference": -19.0
+            },
+            {
+              "row": 134,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 470.38,
+              "amount": -130.0,
+              "expected_balance": 340.38,
+              "actual_balance": 599.38,
+              "difference": 259.0
+            },
+            {
+              "row": 135,
+              "date": 45847,
+              "description": "",
+              "prev_balance": 599.38,
+              "amount": -200.0,
+              "expected_balance": 399.38,
+              "actual_balance": 729.38,
+              "difference": 330.0
+            },
+            {
+              "row": 136,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 729.38,
+              "amount": 200.0,
+              "expected_balance": 929.38,
+              "actual_balance": 1028.46,
+              "difference": 99.08
+            },
+            {
+              "row": 137,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 1028.46,
+              "amount": -16.0,
+              "expected_balance": 1012.46,
+              "actual_balance": 729.38,
+              "difference": -283.08
+            },
+            {
+              "row": 138,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 729.38,
+              "amount": -16.0,
+              "expected_balance": 713.38,
+              "actual_balance": 745.38,
+              "difference": 32.0
+            },
+            {
+              "row": 139,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 745.38,
+              "amount": -16.0,
+              "expected_balance": 729.38,
+              "actual_balance": 761.38,
+              "difference": 32.0
+            },
+            {
+              "row": 140,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 761.38,
+              "amount": -16.0,
+              "expected_balance": 745.38,
+              "actual_balance": 777.38,
+              "difference": 32.0
+            },
+            {
+              "row": 141,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 777.38,
+              "amount": -21.82,
+              "expected_balance": 755.56,
+              "actual_balance": 793.38,
+              "difference": 37.82
+            },
+            {
+              "row": 142,
+              "date": 45846,
+              "description": "",
+              "prev_balance": 793.38,
+              "amount": -213.26,
+              "expected_balance": 580.12,
+              "actual_balance": 815.2,
+              "difference": 235.08
+            },
+            {
+              "row": 143,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 815.2,
+              "amount": 350.0,
+              "expected_balance": 1165.2,
+              "actual_balance": 541.66,
+              "difference": -623.54
+            },
+            {
+              "row": 145,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 768.02,
+              "amount": 200.0,
+              "expected_balance": 968.02,
+              "actual_balance": 1168.02,
+              "difference": 200.0
+            },
+            {
+              "row": 146,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 1168.02,
+              "amount": 200.0,
+              "expected_balance": 1368.02,
+              "actual_balance": 968.02,
+              "difference": -400.0
             },
             {
               "row": 147,
-              "date": 45869,
+              "date": 45845,
               "description": "",
-              "prev_balance": 1108.21,
-              "amount": -25.0,
-              "expected_balance": 1083.21,
-              "actual_balance": 613.98,
-              "difference": -469.23
+              "prev_balance": 968.02,
+              "amount": 100.0,
+              "expected_balance": 1068.02,
+              "actual_balance": 1268.02,
+              "difference": 200.0
             },
             {
               "row": 148,
-              "date": 45869,
+              "date": 45845,
               "description": "",
-              "prev_balance": 613.98,
-              "amount": -62.46,
-              "expected_balance": 551.52,
-              "actual_balance": 427.77,
-              "difference": -123.75
+              "prev_balance": 1268.02,
+              "amount": -6.38,
+              "expected_balance": 1261.64,
+              "actual_balance": 828.46,
+              "difference": -433.18
             },
             {
               "row": 149,
-              "date": 45869,
+              "date": 45845,
               "description": "",
-              "prev_balance": 427.77,
-              "amount": -52.44,
-              "expected_balance": 375.33,
-              "actual_balance": 1055.77,
-              "difference": 680.44
+              "prev_balance": 828.46,
+              "amount": -8.78,
+              "expected_balance": 819.68,
+              "actual_balance": 859.84,
+              "difference": 40.16
             },
             {
               "row": 150,
-              "date": 45869,
+              "date": 45845,
               "description": "",
-              "prev_balance": 1055.77,
-              "amount": -169.93,
-              "expected_balance": 885.84,
-              "actual_balance": 638.98,
-              "difference": -246.86
+              "prev_balance": 859.84,
+              "amount": -9.74,
+              "expected_balance": 850.1,
+              "actual_balance": 1258.28,
+              "difference": 408.18
+            },
+            {
+              "row": 151,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 1258.28,
+              "amount": -16.0,
+              "expected_balance": 1242.28,
+              "actual_balance": 1156.41,
+              "difference": -85.87
+            },
+            {
+              "row": 152,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 1156.41,
+              "amount": -20.94,
+              "expected_balance": 1135.47,
+              "actual_balance": 868.62,
+              "difference": -266.85
+            },
+            {
+              "row": 153,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 868.62,
+              "amount": -25.0,
+              "expected_balance": 843.62,
+              "actual_balance": 834.84,
+              "difference": -8.78
+            },
+            {
+              "row": 154,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 834.84,
+              "amount": -30.0,
+              "expected_balance": 804.84,
+              "actual_balance": 889.56,
+              "difference": 84.72
+            },
+            {
+              "row": 155,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 889.56,
+              "amount": -36.85,
+              "expected_balance": 852.71,
+              "actual_balance": 1119.56,
+              "difference": 266.85
+            },
+            {
+              "row": 156,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 1119.56,
+              "amount": -37.71,
+              "expected_balance": 1081.85,
+              "actual_balance": 1220.57,
+              "difference": 138.72
+            },
+            {
+              "row": 158,
+              "date": 45845,
+              "description": "",
+              "prev_balance": 1172.41,
+              "amount": -200.0,
+              "expected_balance": 972.41,
+              "actual_balance": 919.56,
+              "difference": -52.85
+            },
+            {
+              "row": 159,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 919.56,
+              "amount": -10.89,
+              "expected_balance": 908.67,
+              "actual_balance": 327.6,
+              "difference": -581.07
+            },
+            {
+              "row": 160,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 327.6,
+              "amount": -11.84,
+              "expected_balance": 315.76,
+              "actual_balance": 279.51,
+              "difference": -36.25
+            },
+            {
+              "row": 161,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 279.51,
+              "amount": -16.0,
+              "expected_balance": 263.51,
+              "actual_balance": 291.35,
+              "difference": 27.84
+            },
+            {
+              "row": 162,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 291.35,
+              "amount": -20.25,
+              "expected_balance": 271.1,
+              "actual_balance": 307.35,
+              "difference": 36.25
+            },
+            {
+              "row": 163,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 307.35,
+              "amount": -22.11,
+              "expected_balance": 285.24,
+              "actual_balance": 222.4,
+              "difference": -62.84
+            },
+            {
+              "row": 165,
+              "date": 45841,
+              "description": "",
+              "prev_balance": 191.66,
+              "amount": -35.0,
+              "expected_balance": 156.66,
+              "actual_balance": 244.51,
+              "difference": 87.85
+            },
+            {
+              "row": 166,
+              "date": 45840,
+              "description": "",
+              "prev_balance": 244.51,
+              "amount": -13.52,
+              "expected_balance": 230.99,
+              "actual_balance": 466.84,
+              "difference": 235.85
+            },
+            {
+              "row": 167,
+              "date": 45840,
+              "description": "",
+              "prev_balance": 466.84,
+              "amount": -16.0,
+              "expected_balance": 450.84,
+              "actual_balance": 418.49,
+              "difference": -32.35
+            },
+            {
+              "row": 168,
+              "date": 45840,
+              "description": "",
+              "prev_balance": 418.49,
+              "amount": -32.35,
+              "expected_balance": 386.14,
+              "actual_balance": 434.49,
+              "difference": 48.35
+            },
+            {
+              "row": 169,
+              "date": 45840,
+              "description": "",
+              "prev_balance": 434.49,
+              "amount": -80.0,
+              "expected_balance": 354.49,
+              "actual_balance": 338.49,
+              "difference": -16.0
+            },
+            {
+              "row": 170,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 338.49,
+              "amount": 200.0,
+              "expected_balance": 538.49,
+              "actual_balance": 585.33,
+              "difference": 46.84
+            },
+            {
+              "row": 171,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 585.33,
+              "amount": 200.0,
+              "expected_balance": 785.33,
+              "actual_balance": 385.33,
+              "difference": -400.0
+            },
+            {
+              "row": 172,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 385.33,
+              "amount": -8.94,
+              "expected_balance": 376.39,
+              "actual_balance": 576.39,
+              "difference": 200.0
+            },
+            {
+              "row": 173,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 576.39,
+              "amount": -16.0,
+              "expected_balance": 560.39,
+              "actual_balance": 480.36,
+              "difference": -80.03
+            },
+            {
+              "row": 174,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 480.36,
+              "amount": -16.0,
+              "expected_balance": 464.36,
+              "actual_balance": 496.36,
+              "difference": 32.0
+            },
+            {
+              "row": 175,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 496.36,
+              "amount": -16.0,
+              "expected_balance": 480.36,
+              "actual_balance": 512.36,
+              "difference": 32.0
+            },
+            {
+              "row": 176,
+              "date": 45839,
+              "description": "",
+              "prev_balance": 512.36,
+              "amount": -20.25,
+              "expected_balance": 492.11,
+              "actual_balance": 556.14,
+              "difference": 64.03
             }
           ],
           "amount_col": 3,
           "balance_col": 4
         },
         "bizcc_0678": {
-          "count": 21,
-          "debits": -941.99,
+          "count": 20,
+          "debits": -842.99,
           "credits": 2500.0,
-          "net": 1558.01,
+          "net": 1657.01,
           "balance_errors": [],
           "amount_col": 3,
           "balance_col": 4
@@ -4936,49 +5156,49 @@
           "account": "personal_0068",
           "check": "txn_count",
           "csv_value": 176,
-          "sheet_value": 149,
-          "match": false,
-          "difference": -27
+          "sheet_value": 176,
+          "match": true,
+          "difference": 0
         },
         {
           "account": "personal_0068",
           "check": "total_debits",
           "csv_value": -7559.91,
-          "sheet_value": -5835.4,
-          "match": false,
-          "difference": 1724.51
+          "sheet_value": -7559.91,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "personal_0068",
           "check": "total_credits",
           "csv_value": 7518.36,
-          "sheet_value": 6342.0,
-          "match": false,
-          "difference": -1176.36
+          "sheet_value": 7518.36,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "personal_0068",
           "check": "net_flow",
           "csv_value": -41.55,
-          "sheet_value": 506.6,
-          "match": false,
-          "difference": 548.15
+          "sheet_value": -41.55,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "bizcc_0678",
           "check": "txn_count",
           "csv_value": 21,
-          "sheet_value": 21,
-          "match": true,
-          "difference": 0
+          "sheet_value": 20,
+          "match": false,
+          "difference": -1
         },
         {
           "account": "bizcc_0678",
           "check": "total_debits",
           "csv_value": -941.99,
-          "sheet_value": -941.99,
-          "match": true,
-          "difference": 0.0
+          "sheet_value": -842.99,
+          "match": false,
+          "difference": 99.0
         },
         {
           "account": "bizcc_0678",
@@ -4992,9 +5212,9 @@
           "account": "bizcc_0678",
           "check": "net_flow",
           "csv_value": 1558.01,
-          "sheet_value": 1558.01,
-          "match": true,
-          "difference": 0.0
+          "sheet_value": 1657.01,
+          "match": false,
+          "difference": 99.0
         },
         {
           "account": "sapphire_4252",
@@ -5029,7 +5249,7 @@
           "difference": 0.0
         }
       ],
-      "discrepancy_count": 4,
+      "discrepancy_count": 3,
       "dashboard_keys": [
         "total_income",
         "total_biz_expenses",
@@ -7978,10 +8198,10 @@
           "balance_col": 4
         },
         "sapphire_4252": {
-          "count": 12,
-          "debits": -1086.9,
+          "count": 19,
+          "debits": -1854.08,
           "credits": 307.1,
-          "net": -779.8,
+          "net": -1546.98,
           "balance_errors": [],
           "amount_col": 3,
           "balance_col": 4
@@ -8088,17 +8308,17 @@
           "account": "sapphire_4252",
           "check": "txn_count",
           "csv_value": 19,
-          "sheet_value": 12,
-          "match": false,
-          "difference": -7
+          "sheet_value": 19,
+          "match": true,
+          "difference": 0
         },
         {
           "account": "sapphire_4252",
           "check": "total_debits",
           "csv_value": -1854.08,
-          "sheet_value": -1086.9,
-          "match": false,
-          "difference": 767.18
+          "sheet_value": -1854.08,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "sapphire_4252",
@@ -8112,12 +8332,12 @@
           "account": "sapphire_4252",
           "check": "net_flow",
           "csv_value": -1546.98,
-          "sheet_value": -779.8,
-          "match": false,
-          "difference": 767.18
+          "sheet_value": -1546.98,
+          "match": true,
+          "difference": 0.0
         }
       ],
-      "discrepancy_count": 3,
+      "discrepancy_count": 0,
       "dashboard_keys": [
         "total_income",
         "total_biz_expenses",
@@ -10086,10 +10306,10 @@
           "balance_col": 4
         },
         "sapphire_4252": {
-          "count": 0,
-          "debits": 0,
-          "credits": 0,
-          "net": 0,
+          "count": 2,
+          "debits": -172.42,
+          "credits": 250.0,
+          "net": 77.58,
           "balance_errors": [],
           "amount_col": 3,
           "balance_col": 4
@@ -10196,36 +10416,36 @@
           "account": "sapphire_4252",
           "check": "txn_count",
           "csv_value": 2,
-          "sheet_value": 0,
-          "match": false,
-          "difference": -2
+          "sheet_value": 2,
+          "match": true,
+          "difference": 0
         },
         {
           "account": "sapphire_4252",
           "check": "total_debits",
           "csv_value": -172.42,
-          "sheet_value": 0,
-          "match": false,
-          "difference": 172.42
+          "sheet_value": -172.42,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "sapphire_4252",
           "check": "total_credits",
           "csv_value": 250.0,
-          "sheet_value": 0,
-          "match": false,
-          "difference": -250.0
+          "sheet_value": 250.0,
+          "match": true,
+          "difference": 0.0
         },
         {
           "account": "sapphire_4252",
           "check": "net_flow",
           "csv_value": 77.58,
-          "sheet_value": 0,
-          "match": false,
-          "difference": -77.58
+          "sheet_value": 77.58,
+          "match": true,
+          "difference": 0.0
         }
       ],
-      "discrepancy_count": 4,
+      "discrepancy_count": 0,
       "dashboard_keys": [
         "total_income",
         "total_biz_expenses",
@@ -14253,6 +14473,7 @@
       ],
       "discrepancy_count": 0,
       "dashboard_keys": [
+        "total_income",
         "total_biz_expenses",
         "total_personal_expenses",
         "net_cash_flow"
@@ -16331,6 +16552,7 @@
       ],
       "discrepancy_count": 0,
       "dashboard_keys": [
+        "total_income",
         "total_biz_expenses",
         "total_personal_expenses",
         "net_cash_flow"
@@ -19189,6 +19411,7 @@
       ],
       "discrepancy_count": 3,
       "dashboard_keys": [
+        "total_income",
         "total_biz_expenses",
         "total_personal_expenses",
         "net_cash_flow"

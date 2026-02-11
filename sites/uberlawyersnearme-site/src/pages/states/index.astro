@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { states } from '../../data/states';
+
+const title = "Find Rideshare Accident Lawyers by State";
+const description = "Browse rideshare accident attorneys in all 50 states. Each state has unique laws, insurance requirements, and statutes of limitations for Uber and Lyft accident claims.";
+
+// Group states by first letter for easier navigation
+const statesByLetter = states.reduce((acc, state) => {
+  const letter = state.name[0];
+  if (!acc[letter]) acc[letter] = [];
+  acc[letter].push(state);
+  return acc;
+}, {} as Record<string, typeof states>);
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+        Find Rideshare Accident Lawyers <span class="text-primary-400">By State</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Rideshare accident laws vary significantly by state. Find attorneys who understand your state's specific regulations for Uber and Lyft claims.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-primary-600 text-white py-6">
+    <div class="container-wide">
+      <div class="flex flex-wrap justify-center gap-8 text-center">
+        <div>
+          <span class="text-2xl font-bold">50</span>
+          <span class="text-primary-100 ml-2">States + DC</span>
+        </div>
+        <div>
+          <span class="text-2xl font-bold">1-6</span>
+          <span class="text-primary-100 ml-2">Year Statutes of Limitations</span>
+        </div>
+        <div>
+          <span class="text-2xl font-bold">$1M</span>
+          <span class="text-primary-100 ml-2">Standard Coverage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- States Grid -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container-wide">
+      {Object.entries(statesByLetter).sort().map(([letter, letterStates]) => (
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-primary-500 inline-block">{letter}</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {letterStates.map(state => (
+              <a href={`/states/${state.slug}`} class="bg-white rounded-lg p-4 card-hover border border-gray-100 flex items-center justify-between">
+                <div>
+                  <h3 class="font-semibold text-gray-900">{state.name}</h3>
+                  <p class="text-sm text-gray-500">{state.statuteOfLimitations} statute</p>
+                </div>
+                <span class="text-gray-400 font-medium">{state.abbreviation}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl font-bold mb-4">Not Sure Where to Start?</h2>
+      <p class="text-xl text-primary-100 mb-8">Get a free case evaluation and we'll connect you with attorneys in your state.</p>
+      <a href="/#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

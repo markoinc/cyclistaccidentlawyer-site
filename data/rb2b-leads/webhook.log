@@ -2312,3 +2312,393 @@
 2026-02-09 16:45:05,824 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
 2026-02-09 16:45:05,847 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
 2026-02-09 17:01:59,087 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 17:17:50,987 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 18:00:08,231 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 18:15:04,167 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 18:30:04,408 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 18:45:04,468 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 19:00:05,247 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 19:15:07,144 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 19:34:00,864 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 19:48:39,602 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 20:00:08,914 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 20:15:04,397 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 20:30:04,202 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 20:45:03,732 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 21:00:03,722 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 21:15:05,709 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 21:30:05,136 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 21:45:05,635 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 22:00:08,504 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 22:15:04,888 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 22:30:05,593 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 22:48:35,733 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 23:00:05,769 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 23:15:05,225 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 23:30:05,785 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-09 23:45:04,611 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 00:00:28,499 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 00:15:05,299 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 00:30:06,131 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 00:45:06,418 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 01:00:06,852 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 01:08:09,417 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:08:09,418 - INFO -   Normalized: None None @ None
+2026-02-10 01:08:09,418 - INFO - 📍 New visitor: None None from None
+2026-02-10 01:08:09,418 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:08:09,418 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:08:09,418 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:08:09,418 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:08:12,410 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company information provided", "No person title or role provided", "Insufficient data to determine practice area or seniority"]}
+2026-02-10 01:08:12,410 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:08:12,410 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:08:12,410 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:08:12,522 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:08:12,522 - INFO - 📬 Slack message posted: None None (disqualified)
+2026-02-10 01:08:12,523 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:08:12,629 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:08:12,630 - INFO -   Normalized: Yotin Brikshavana @ Albertsons Companies
+2026-02-10 01:08:12,630 - INFO - 📍 New visitor: Yotin Brikshavana from Albertsons Companies
+2026-02-10 01:08:12,630 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:08:12,630 - INFO -   → Skipped at Step 1: ['❌ Non-legal industry: retail']
+2026-02-10 01:08:12,630 - INFO -    Qualification: disqualified — ❌ Non-legal industry: retail
+2026-02-10 01:08:12,630 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:08:12,773 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:08:12,773 - INFO - 📬 Slack message posted: Yotin Brikshavana (disqualified)
+2026-02-10 01:08:12,775 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:08:12,882 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:08:12,883 - INFO -   Normalized: None None @ None
+2026-02-10 01:08:12,884 - INFO - 📍 New visitor: None None from None
+2026-02-10 01:08:12,884 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:08:12,884 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:08:12,884 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:08:12,884 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:08:16,214 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company name or industry information provided", "No job title or person information provided", "Insufficient data to determine if the entity is a PI/MVA law firm", "Insufficient data to determine if the person is a decision-maker"]}
+2026-02-10 01:08:16,215 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:08:16,215 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:08:16,215 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:08:16,397 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:08:16,397 - INFO - 📬 Slack message posted: None None (disqualified)
+2026-02-10 01:08:16,398 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:08:16,504 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:08:16,505 - INFO -   Normalized: Yotin Brikshavana @ Albertsons Companies
+2026-02-10 01:08:16,505 - INFO - 📍 New visitor: Yotin Brikshavana from Albertsons Companies
+2026-02-10 01:08:16,505 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:08:16,505 - INFO -   → Skipped at Step 1: ['❌ Non-legal industry: retail']
+2026-02-10 01:08:16,505 - INFO -    Qualification: disqualified — ❌ Non-legal industry: retail
+2026-02-10 01:08:16,505 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:08:16,612 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:08:16,612 - INFO - 📬 Slack message posted: Yotin Brikshavana (disqualified)
+2026-02-10 01:08:16,613 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:08:16,720 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:08:16,722 - INFO -   Normalized: Ruby Fraire @ Cigna Healthcare Global Individuals
+2026-02-10 01:08:16,722 - INFO - 📍 New visitor: Ruby Fraire from Cigna Healthcare Global Individuals
+2026-02-10 01:08:16,722 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:08:16,722 - INFO -   [Step 2/4] Brave search: 'Cigna Healthcare Global Individuals personal injury law firm'
+2026-02-10 01:08:17,485 - INFO -   Brave search OK: 3 results for 'Cigna Healthcare Global Individuals personal injury law firm'
+2026-02-10 01:08:17,485 - INFO -   [Step 3/4] Fetching website: cignaglobal.com
+2026-02-10 01:08:18,214 - INFO -   Website fetch OK: 11772 chars from https://cignaglobal.com
+2026-02-10 01:08:18,214 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:08:21,616 - INFO -   Gemini raw: {"qualified": false, "confidence": 100, "reasons": ["The company is a global health insurance provider, not a Personal Injury or Motor Vehicle Accident law firm.", "The visitor's title is not provided, making it impossible to determine if they are a decision-maker."]}
+2026-02-10 01:08:21,616 - INFO -   Gemini OK: qualified=False, confidence=100
+2026-02-10 01:08:21,616 - INFO -    Qualification: review — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: 3 results found
+2026-02-10 01:08:21,616 - INFO -    💰 BetterContact waterfall enrichment (qualified/review lead)
+2026-02-10 01:08:21,970 - INFO -    BetterContact: submitted (id: 9e7db65b98d840f1cfe5), polling...
+2026-02-10 01:11:29,448 - INFO -    BetterContact: falling back to Apollo
+2026-02-10 01:11:30,026 - INFO - Apollo enriched (name): email=rubyf006@gmail.com, phone=
+2026-02-10 01:11:30,156 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:30,156 - INFO - 📬 Slack message posted: Ruby Fraire (review)
+2026-02-10 01:11:30,157 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:30,158 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:30,159 - INFO -   Normalized: None None @ None
+2026-02-10 01:11:30,159 - INFO - 📍 New visitor: None None from None
+2026-02-10 01:11:30,159 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:30,159 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:11:30,159 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:11:30,159 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:11:33,055 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company information provided", "No person title or role provided", "Insufficient data to determine industry or decision-making authority"]}
+2026-02-10 01:11:33,055 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:11:33,055 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:11:33,056 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:33,161 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:33,161 - INFO - 📬 Slack message posted: None None (disqualified)
+2026-02-10 01:11:33,162 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:33,163 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:33,163 - INFO -   Normalized: Bibby Varghese @ None
+2026-02-10 01:11:33,164 - INFO - 📍 New visitor: Bibby Varghese from None
+2026-02-10 01:11:33,164 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:33,164 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:11:33,164 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:11:33,164 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:11:36,074 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company information provided", "No person title or role provided", "Insufficient data to determine industry or decision-making authority"]}
+2026-02-10 01:11:36,075 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:11:36,075 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:11:36,075 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:36,185 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:36,185 - INFO - 📬 Slack message posted: Bibby Varghese (disqualified)
+2026-02-10 01:11:36,186 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:36,187 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:36,188 - INFO -   Normalized: Sal Khan @ Mixpanel
+2026-02-10 01:11:36,188 - INFO - 📍 New visitor: Sal Khan from Mixpanel
+2026-02-10 01:11:36,188 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:36,188 - INFO -   → Skipped at Step 1: ['❌ Non-legal industry: information technology & services']
+2026-02-10 01:11:36,188 - INFO -    Qualification: disqualified — ❌ Non-legal industry: information technology & services
+2026-02-10 01:11:36,188 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:36,303 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:36,303 - INFO - 📬 Slack message posted: Sal Khan (disqualified)
+2026-02-10 01:11:36,304 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:36,304 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:36,306 - INFO -   Normalized: None None @ None
+2026-02-10 01:11:36,306 - INFO - 📍 New visitor: None None from None
+2026-02-10 01:11:36,306 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:36,306 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:11:36,306 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:11:36,306 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:11:38,681 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company information provided", "No person title or role provided", "Insufficient data to determine qualification"]}
+2026-02-10 01:11:38,682 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:11:38,682 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:11:38,682 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:38,790 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:38,790 - INFO - 📬 Slack message posted: None None (disqualified)
+2026-02-10 01:11:38,791 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:38,792 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:38,793 - INFO -   Normalized: John Camacho @ El Paso Day Surgery
+2026-02-10 01:11:38,793 - INFO - 📍 New visitor: John Camacho from El Paso Day Surgery
+2026-02-10 01:11:38,793 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:38,793 - INFO -   → Skipped at Step 1: ['❌ Non-legal industry: hospitals and health care']
+2026-02-10 01:11:38,793 - INFO -    Qualification: disqualified — ❌ Non-legal industry: hospitals and health care
+2026-02-10 01:11:38,793 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:38,927 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:38,927 - INFO - 📬 Slack message posted: John Camacho (disqualified)
+2026-02-10 01:11:38,928 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:11:38,929 - INFO - 📨 Visitor webhook received on /webhook
+2026-02-10 01:11:38,931 - INFO -   Normalized: None None @ None
+2026-02-10 01:11:38,931 - INFO - 📍 New visitor: None None from None
+2026-02-10 01:11:38,931 - INFO -   [Step 1/4] Leadpipe data check
+2026-02-10 01:11:38,931 - INFO -   [Step 2/4] Brave search: skipped (no company name)
+2026-02-10 01:11:38,931 - INFO -   [Step 3/4] Website fetch: skipped (no URL)
+2026-02-10 01:11:38,931 - INFO -   [Step 4/4] Gemini Flash analysis
+2026-02-10 01:11:41,945 - INFO -   Gemini raw: {"qualified": false, "confidence": 0, "reasons": ["No company information provided", "No person title provided", "Insufficient data to determine industry or role"]}
+2026-02-10 01:11:41,945 - INFO -   Gemini OK: qualified=False, confidence=0
+2026-02-10 01:11:41,946 - INFO -    Qualification: disqualified — ⚠️ No title — needs verification, ⚠️ No legal/PI signals in Leadpipe data — will research, 🔍 Brave: skipped (no company)
+2026-02-10 01:11:41,946 - INFO -    ⏭️ Skipping enrichment (disqualified — saving credits)
+2026-02-10 01:11:42,047 - INFO -   ✅ Slack message sent to C0A7RNYC6CF
+2026-02-10 01:11:42,048 - INFO - 📬 Slack message posted: None None (disqualified)
+2026-02-10 01:11:42,049 - INFO - HTTP: "POST /webhook HTTP/1.1" 200 -
+2026-02-10 01:15:05,165 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 01:30:07,230 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 01:45:04,953 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 02:00:08,577 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 02:15:05,294 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 02:30:06,294 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 02:45:34,694 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 03:00:07,789 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 03:15:05,148 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 03:30:05,021 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 03:45:05,428 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 04:00:17,248 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 04:15:04,878 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 04:30:05,817 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 04:45:05,757 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 05:00:07,052 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 05:15:04,646 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 05:30:08,247 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 05:45:04,915 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 06:00:11,140 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 06:15:04,550 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 06:30:06,822 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 06:45:05,181 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 06:50:16,418 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-10 07:00:09,439 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 07:15:06,686 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 07:30:08,045 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 07:45:06,387 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 08:00:13,408 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 08:15:04,842 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 08:30:06,958 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 08:45:05,396 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 09:00:06,765 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 09:15:04,697 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 09:30:05,998 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 09:45:05,053 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 10:00:08,545 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 10:15:07,344 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 10:30:07,870 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 10:45:04,987 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 11:00:15,566 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 11:15:09,953 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 11:30:13,103 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 11:45:09,447 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 12:00:15,624 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 12:15:05,459 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 12:30:06,813 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 12:45:06,141 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 12:58:35,886 - INFO - HTTP: "GET /.git/config HTTP/1.1" 404 -
+2026-02-10 13:00:06,385 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 13:15:06,623 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 13:30:05,316 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 13:45:08,209 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 14:00:15,682 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 14:15:05,928 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 14:30:16,020 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 14:45:06,055 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 15:02:04,301 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 15:15:04,366 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 15:30:24,208 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 15:45:05,114 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 16:00:25,702 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 16:15:06,917 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 16:30:09,666 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 16:45:06,795 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 17:00:16,835 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 17:15:19,814 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 17:30:10,950 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 17:45:09,759 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 18:00:11,919 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 18:15:07,889 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 18:19:12,673 - INFO - HTTP: "GET /wp-login.php HTTP/1.1" 404 -
+2026-02-10 18:19:15,773 - INFO - HTTP: "GET /wp-login.php HTTP/1.1" 404 -
+2026-02-10 18:19:15,926 - INFO - HTTP: "GET /wp-admin/ HTTP/1.1" 404 -
+2026-02-10 18:30:10,213 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 18:45:07,722 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 19:00:21,751 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 19:15:12,576 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 19:30:08,502 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 19:45:10,596 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 20:00:24,326 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 20:15:07,344 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 20:30:09,647 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 21:00:16,175 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 21:15:11,007 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 21:30:20,739 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 21:45:33,586 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 22:01:44,087 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 22:15:06,683 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 22:30:06,984 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 22:45:07,532 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 23:00:21,686 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 23:15:07,095 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 23:30:08,311 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-10 23:45:07,939 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 00:00:37,088 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 00:15:07,223 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 00:30:12,895 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 00:45:06,828 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 01:00:15,364 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 01:12:41,015 - INFO - HTTP: "GET /robots.txt HTTP/1.1" 404 -
+2026-02-11 01:12:41,128 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 01:15:07,201 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 01:15:35,774 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 01:16:07,038 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 01:30:10,581 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 01:45:08,548 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 02:00:20,740 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 02:15:07,812 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 02:30:09,535 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 02:45:07,127 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 03:00:15,739 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 03:15:07,240 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 03:26:59,412 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 03:26:59,514 - INFO - HTTP: "GET /js/twint_ch.js HTTP/1.1" 404 -
+2026-02-11 03:26:59,612 - INFO - HTTP: "GET /js/lkk_ch.js HTTP/1.1" 404 -
+2026-02-11 03:26:59,716 - INFO - HTTP: "GET /css/support_parent.css HTTP/1.1" 404 -
+2026-02-11 03:30:09,564 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 03:45:08,090 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 04:00:11,337 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 04:15:05,580 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 04:29:06,134 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 04:30:04,301 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 04:36:18,209 - INFO - HTTP: "GET /.git/HEAD HTTP/1.1" 404 -
+2026-02-11 04:36:18,213 - INFO - HTTP: "GET /.git/ORIG_HEAD HTTP/1.1" 404 -
+2026-02-11 04:36:18,303 - INFO - HTTP: "GET /.git/objects/info/packs HTTP/1.1" 404 -
+2026-02-11 04:36:18,408 - INFO - HTTP: "GET /.git/index HTTP/1.1" 404 -
+2026-02-11 04:36:18,508 - INFO - HTTP: "GET /.git/logs/HEAD HTTP/1.1" 404 -
+2026-02-11 04:36:18,592 - INFO - HTTP: "GET /.git/info/exclude HTTP/1.1" 404 -
+2026-02-11 04:36:18,688 - INFO - HTTP: "GET /.git/packed-refs HTTP/1.1" 404 -
+2026-02-11 04:36:18,806 - INFO - HTTP: "GET /.git/FETCH_HEAD HTTP/1.1" 404 -
+2026-02-11 04:36:18,895 - INFO - HTTP: "GET /.git/refs/heads/master HTTP/1.1" 404 -
+2026-02-11 04:36:18,982 - INFO - HTTP: "GET /.git/refs/heads/main HTTP/1.1" 404 -
+2026-02-11 04:36:19,116 - INFO - HTTP: "GET /.git/refs/remotes/origin/HEAD HTTP/1.1" 404 -
+2026-02-11 04:45:05,113 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 05:00:05,908 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 05:15:04,950 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 05:30:06,305 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 05:45:05,900 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 06:00:05,219 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 06:15:04,059 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 06:30:03,772 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 06:45:03,704 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 07:00:05,400 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 07:14:01,695 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 07:15:03,849 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 07:30:04,449 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 07:45:03,872 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 08:00:08,433 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 08:15:04,086 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 08:30:04,419 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 08:45:04,126 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 09:00:03,904 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 09:15:03,829 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 09:30:04,062 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 09:45:03,797 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 10:00:04,201 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 10:15:04,983 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 10:30:04,553 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 10:45:04,052 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 11:00:04,173 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 11:15:03,813 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 11:30:04,144 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 11:45:04,100 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 12:00:08,630 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 12:15:04,545 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 12:30:04,243 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 12:45:03,920 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 13:00:04,447 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 13:15:03,913 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 13:30:05,318 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 13:45:04,722 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 14:00:04,277 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 14:15:05,058 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 14:30:04,186 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 14:45:06,169 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 15:00:04,678 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 15:15:04,385 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 15:30:05,875 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 15:45:04,462 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 16:00:18,103 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 16:01:03,732 - INFO - HTTP: "GET /robots.txt HTTP/1.1" 404 -
+2026-02-11 16:15:05,068 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 16:30:05,654 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 16:45:04,706 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 17:00:05,110 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 17:15:05,851 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 17:30:04,987 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 17:45:05,043 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 18:00:04,692 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 18:15:04,329 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 18:25:15,106 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 18:30:04,940 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 18:45:04,625 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 18:49:26,541 - INFO - HTTP: "GET / HTTP/1.1" 404 -
+2026-02-11 18:53:02,856 - INFO - HTTP: "POST / HTTP/1.1" 400 -
+2026-02-11 18:53:03,120 - INFO - HTTP: "POST / HTTP/1.1" 400 -
+2026-02-11 19:00:15,376 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 19:15:04,161 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 19:30:04,940 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 19:45:48,620 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 20:00:10,092 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 20:15:04,683 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 20:30:06,353 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 20:45:05,023 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 21:00:18,722 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 21:15:04,695 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 21:30:05,012 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 21:45:04,368 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 22:00:06,509 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 22:15:05,647 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 22:30:05,456 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 22:45:04,989 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 23:00:04,498 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 23:18:52,610 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 23:33:26,768 - INFO - HTTP: "GET /health HTTP/1.1" 200 -
+2026-02-11 23:45:04,729 - INFO - HTTP: "GET /health HTTP/1.1" 200 -

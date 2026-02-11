@@ -1,0 +1,18 @@
+{
+  "children": [
+    {"object": "block", "type": "divider", "divider": {}},
+    {"object": "block", "type": "heading_1", "heading_1": {"rich_text": [{"type": "text", "text": {"content": "NOTHING ADS (12-14) ⭐ TIER 1"}}]}},
+    {"object": "block", "type": "callout", "callout": {"rich_text": [{"type": "text", "text": {"content": "Minimal style — headline + URL only. No body copy. Currently performing at $78 CPA in live campaign. These outperform elaborate ads."}}], "icon": {"emoji": "🔥"}}},
+    {"object": "block", "type": "heading_3", "heading_3": {"rich_text": [{"type": "text", "text": {"content": "AD 12: Nothing A"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Headline: Stop Buying Leads. Start Receiving Cases.\n(No body — link to kuriosbrand.com only)"}}]}},
+    {"object": "block", "type": "heading_3", "heading_3": {"rich_text": [{"type": "text", "text": {"content": "AD 13: Nothing B"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Headline: PI Attorneys: Signed MVA Cases — $3k Avg\n(No body — link to kuriosbrand.com only)"}}]}},
+    {"object": "block", "type": "heading_3", "heading_3": {"rich_text": [{"type": "text", "text": {"content": "AD 14: Nothing C"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "Headline: Signed MVA Cases Delivered — 10+ Cases/Month Firms Only\n(No body — link to kuriosbrand.com only)"}}]}},
+    {"object": "block", "type": "callout", "callout": {"rich_text": [{"type": "text", "text": {"content": "NOTHING PROMPT: Near-black (#1A1A1A) background, extremely minimal. Single line of clean white sans-serif text perfectly centered: \"[HEADLINE]\". Thin #3399FF underline beneath text. Very subtle grid/data texture in background, barely visible. Nothing else. Extreme minimalism. Square format. DO NOT INCLUDE: logos, decorations, images, icons, any other text, any other elements."}}], "icon": {"emoji": "🎨"}}},
+    {"object": "block", "type": "divider", "divider": {}},
+    {"object": "block", "type": "heading_1", "heading_1": {"rich_text": [{"type": "text", "text": {"content": "📋 Quick Reference"}}]}},
+    {"object": "block", "type": "paragraph", "paragraph": {"rich_text": [{"type": "text", "text": {"content": "KEY UPDATES FROM PREVIOUS VERSIONS:\n• Pricing: $3,000 signed (was $2,000)\n• Qualifier: 10+ cases/month (new)\n• Team: MVA-trained (was PI-trained)\n• Stat: 87% partner retention (new)\n• Removed: 30-50% conversion rate\n\nSTYLE REQUIREMENTS (Ad #18b winner):\n• Near-black (#1A1A1A) backgrounds\n• #3399FF blue highlights/glow\n• Red ELIMINATED stamps for bad options\n• Data visualization aesthetic\n• Sharp corners ONLY\n• NO: rounded corners, warm colors, photos, soft gradients, emojis"}}]}},
+    {"object": "block", "type": "callout", "callout": {"rich_text": [{"type": "text", "text": {"content": "Landing page: kuriosbrand.com (updated Feb 11 with matching $3k pricing)"}}], "icon": {"emoji": "🔗"}}}
+  ]
+}

@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { states } from '../data/states';
+
+const title = "Free Rideshare Accident Case Review - No Obligation";
+const description = "Get a free, no-obligation case evaluation for your Uber or Lyft accident. Our network of experienced rideshare accident attorneys are available 24/7.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+            Get Your <span class="text-primary-400">Free</span> Case Review
+          </h1>
+          <p class="text-xl text-gray-300 mb-8">
+            Injured in an Uber, Lyft, or rideshare accident? Our network of experienced attorneys will evaluate your case at no cost. No obligation, no pressure.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-white/10 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-primary-400">$0</div>
+              <div class="text-sm text-gray-300">Upfront Cost</div>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-primary-400">24/7</div>
+              <div class="text-sm text-gray-300">Available</div>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-primary-400">50</div>
+              <div class="text-sm text-gray-300">States Covered</div>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4 text-center">
+              <div class="text-2xl font-bold text-primary-400">$1M</div>
+              <div class="text-sm text-gray-300">Policy Experts</div>
+            </div>
+          </div>
+
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>No fees unless you win your case</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Experienced in Uber & Lyft insurance claims</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>We handle all insurance negotiations</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Confidential and no-obligation review</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Form -->
+        <div id="free-case-review" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Start Your Free Evaluation</h2>
+            <p class="text-gray-600">Tell us about your rideshare accident</p>
+          </div>
+          
+          <form action="https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/uberlaw-consult" method="POST" class="space-y-4">
+            <input type="hidden" name="source" value="uberlawyersnearme-consultation" />
+            <input type="hidden" name="caseType" value="rideshare-accident" />
+            
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Type of Accident *</label>
+              <select name="accidentType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required>
+                <option value="">Select Type</option>
+                <option value="uber-passenger">I was a passenger in Uber</option>
+                <option value="lyft-passenger">I was a passenger in Lyft</option>
+                <option value="uber-driver">I was an Uber driver</option>
+                <option value="lyft-driver">I was a Lyft driver</option>
+                <option value="hit-by-uber">Hit by an Uber/Lyft vehicle</option>
+                <option value="pedestrian">Pedestrian hit by rideshare</option>
+                <option value="cyclist">Cyclist hit by rideshare</option>
+                <option value="other">Other rideshare accident</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">State Where Accident Occurred *</label>
+              <select name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required>
+                <option value="">Select State</option>
+                {states.map(state => (
+                  <option value={state.slug}>{state.name}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">When Did the Accident Happen?</label>
+              <input type="date" name="accidentDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" />
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Describe What Happened</label>
+              <textarea name="description" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white resize-none" placeholder="Please provide details about the accident and your injuries..."></textarea>
+            </div>
+            
+            <button type="submit" class="w-full btn btn-cta text-lg py-4">
+              Get My Free Evaluation
+            </button>
+          </form>
+          
+          <p class="text-xs text-gray-500 text-center mt-4">
+            🔒 Your information is confidential and protected. By submitting, you agree to our Privacy Policy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens Next -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-narrow">
+      <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">What Happens After You Submit?</h2>
+      
+      <div class="space-y-8">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">1</div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">We Review Your Case</h3>
+            <p class="text-gray-600">An attorney experienced in rideshare accidents reviews your submission within 24 hours (usually same day).</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">2</div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Free Consultation Call</h3>
+            <p class="text-gray-600">The attorney calls you to discuss your case, answer questions, and explain your options. No obligation.</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-primary-500 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">3</div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">If You Choose to Proceed</h3>
+            <p class="text-gray-600">If there's a case and you want to move forward, the attorney handles everything — insurance negotiations, paperwork, and fighting for your compensation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,29 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  /* Rideshare theme - Dark with green accents */
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-200: #bbf7d0;
-  --color-primary-300: #86efac;
-  --color-primary-400: #4ade80;
-  --color-primary-500: #22c55e;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
-  --color-primary-800: #166534;
-  --color-primary-900: #14532d;
+  /* Uber-inspired theme - Dark with electric blue accent */
+  /* Primary: Uber Blue */
+  --color-primary-50: #eff4ff;
+  --color-primary-100: #dbe6ff;
+  --color-primary-200: #bfd3ff;
+  --color-primary-300: #93b7ff;
+  --color-primary-400: #5f90ff;
+  --color-primary-500: #276ef1;
+  --color-primary-600: #1754d1;
+  --color-primary-700: #1343aa;
+  --color-primary-800: #163a8c;
+  --color-primary-900: #18336f;
   
-  /* Accent - Uber-inspired */
-  --color-accent-50: #fafafa;
-  --color-accent-100: #f4f4f5;
-  --color-accent-200: #e4e4e7;
-  --color-accent-300: #d4d4d8;
-  --color-accent-400: #a1a1aa;
-  --color-accent-500: #71717a;
-  --color-accent-600: #52525b;
-  --color-accent-700: #3f3f46;
-  --color-accent-800: #27272a;
-  --color-accent-900: #18181b;
+  /* Dark: Uber Black/Midnight */
+  --color-dark-50: #f4f4f5;
+  --color-dark-100: #e4e4e7;
+  --color-dark-200: #d4d4d8;
+  --color-dark-300: #a1a1aa;
+  --color-dark-400: #71717a;
+  --color-dark-500: #52525b;
+  --color-dark-600: #3f3f46;
+  --color-dark-700: #27272a;
+  --color-dark-800: #18181b;
+  --color-dark-900: #09091a;
+  
+  /* Accent: Electric Blue for CTAs */
+  --color-accent-50: #eff6ff;
+  --color-accent-100: #dbeafe;
+  --color-accent-200: #bfdbfe;
+  --color-accent-300: #93c5fd;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #276ef1;
+  --color-accent-700: #1d4ed8;
+  --color-accent-800: #1e40af;
+  --color-accent-900: #1e3a8a;
   
   --color-danger-50: #fef2f2;
   --color-danger-100: #fee2e2;
@@ -61,13 +74,23 @@ input:focus, select:focus, textarea:focus {
 }
 
 .btn-primary {
-  @apply bg-primary-600 hover:bg-primary-700 text-white px-6 py-3;
+  @apply bg-primary-500 hover:bg-primary-600 text-white px-6 py-3;
 }
 
 .btn-secondary {
-  @apply bg-white hover:bg-gray-50 text-primary-700 border-2 border-primary-600 px-6 py-3;
+  @apply bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-500 px-6 py-3;
 }
 
 .btn-cta {
-  @apply bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl;
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all;
+}
+
+/* Uber-style gradient */
+.uber-gradient {
+  background: linear-gradient(135deg, #000000 0%, #09091a 50%, #1a1a2e 100%);
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
 }

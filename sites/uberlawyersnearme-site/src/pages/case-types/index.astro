@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseTypes } from '../../data/caseTypes';
+
+const title = "Rideshare Accident Case Types - Uber & Lyft Claims";
+const description = "Learn about different types of rideshare accident cases: passenger injuries, driver claims, pedestrian accidents, and more. Find the right attorney for your case type.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+        Rideshare Accident <span class="text-primary-400">Case Types</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Every rideshare accident is different. Whether you were a passenger, driver, or hit by an Uber/Lyft, we connect you with attorneys who specialize in your specific case type.
+      </p>
+    </div>
+  </section>
+
+  <!-- Case Types Grid -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container-wide">
+      <div class="grid md:grid-cols-2 gap-8">
+        {caseTypes.map(caseType => (
+          <a href={`/case-types/${caseType.slug}`} class="bg-white rounded-xl p-8 card-hover border border-gray-100">
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">{caseType.name}</h2>
+            <p class="text-gray-600 mb-4">{caseType.shortDescription}</p>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                Avg: {caseType.averageSettlement}
+              </span>
+              <span class="text-xs font-medium text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                {caseType.insuranceCoverage.includes('1,000,000') ? '$1M Coverage' : 'Coverage Varies'}
+              </span>
+            </div>
+            
+            <div class="text-sm text-gray-500 mb-4">
+              <strong>Common causes:</strong> {caseType.commonCauses.slice(0, 3).join(', ')}
+            </div>
+            
+            <span class="text-primary-500 font-medium">Learn More →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl font-bold mb-4">Not Sure Which Category Fits?</h2>
+      <p class="text-xl text-primary-100 mb-8">Get a free case evaluation and we'll help determine the best approach for your situation.</p>
+      <a href="/#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

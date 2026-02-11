@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseTypes } from '../../data/caseTypes';
+import { states } from '../../data/states';
+
+export function getStaticPaths() {
+  return caseTypes.map(caseType => ({
+    params: { type: caseType.slug },
+    props: { caseType }
+  }));
+}
+
+const { caseType } = Astro.props;
+
+const title = `${caseType.name} - Rideshare Accident Lawyers`;
+const description = `${caseType.shortDescription} Average settlements: ${caseType.averageSettlement}. Free case evaluation from experienced attorneys.`;
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Case Types', url: '/case-types' },
+  { name: caseType.name, url: `/case-types/${caseType.slug}` }
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <nav class="text-sm text-gray-400 mb-6">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/case-types" class="hover:text-white">Case Types</a> / 
+        <span class="text-white">{caseType.name}</span>
+      </nav>
+      
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">{caseType.name}</h1>
+      <p class="text-xl text-gray-300 max-w-3xl">{caseType.shortDescription}</p>
+      
+      <div class="flex flex-wrap gap-4 mt-8">
+        <div class="bg-primary-500/20 text-primary-300 px-4 py-2 rounded-lg">
+          <span class="text-sm">Average Settlement:</span>
+          <span class="font-bold ml-1">{caseType.averageSettlement}</span>
+        </div>
+        <div class="bg-white/10 text-white px-4 py-2 rounded-lg">
+          <span class="text-sm">Coverage:</span>
+          <span class="font-bold ml-1">{caseType.insuranceCoverage.includes('1,000,000') ? '$1M' : 'Varies'}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="py-16 md:py-24 bg-white">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Description -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Understanding {caseType.name}</h2>
+            <p class="text-gray-600 whitespace-pre-line">{caseType.description}</p>
+          </section>
+
+          <!-- Common Causes -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Common Causes</h2>
+            <div class="grid md:grid-cols-2 gap-3">
+              {caseType.commonCauses.map(cause => (
+                <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
+                  <svg class="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span class="text-gray-700">{cause}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Typical Injuries -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Typical Injuries</h2>
+            <div class="grid md:grid-cols-2 gap-3">
+              {caseType.typicalInjuries.map(injury => (
+                <div class="bg-gray-50 rounded-lg p-4 flex items-start gap-3">
+                  <svg class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  <span class="text-gray-700">{injury}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Liability Factors -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Liability Factors</h2>
+            <div class="bg-primary-50 rounded-xl p-6 border-l-4 border-primary-500">
+              <ul class="space-y-3">
+                {caseType.liabilityFactors.map(factor => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-gray-700">{factor}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <!-- Potential Defendants -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Who Can Be Held Liable</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              {caseType.potentialDefendants.map(defendant => (
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <span class="text-gray-700">⚖️ {defendant}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Key Legal Points -->
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Key Legal Points</h2>
+            <div class="bg-dark-900 text-white rounded-xl p-6">
+              <ul class="space-y-4">
+                {caseType.keyLegalPoints.map(point => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-gray-200">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-6">
+            <!-- CTA Card -->
+            <div class="bg-dark-900 text-white rounded-xl p-6">
+              <h3 class="text-xl font-bold mb-4">Free Case Review</h3>
+              <p class="text-gray-300 mb-6">Get a free evaluation from an attorney who specializes in {caseType.name.toLowerCase()}.</p>
+              <a href="/#free-case-review" class="btn btn-cta w-full">
+                Start Free Review
+              </a>
+              <p class="text-xs text-gray-400 text-center mt-3">No fees unless you win</p>
+            </div>
+
+            <!-- Quick Facts -->
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-gray-900 mb-4">Quick Facts</h3>
+              <dl class="space-y-4 text-sm">
+                <div>
+                  <dt class="text-gray-500">Average Settlement</dt>
+                  <dd class="font-medium text-primary-600">{caseType.averageSettlement}</dd>
+                </div>
+                <div>
+                  <dt class="text-gray-500">Insurance Coverage</dt>
+                  <dd class="font-medium text-gray-900">{caseType.insuranceCoverage}</dd>
+                </div>
+                <div>
+                  <dt class="text-gray-500">Potential Defendants</dt>
+                  <dd class="font-medium text-gray-900">{caseType.potentialDefendants.length} possible parties</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- Related Case Types -->
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h3 class="font-bold text-gray-900 mb-4">Related Case Types</h3>
+              <ul class="space-y-2">
+                {caseTypes.filter(c => c.slug !== caseType.slug).slice(0, 4).map(related => (
+                  <li>
+                    <a href={`/case-types/${related.slug}`} class="text-primary-600 hover:text-primary-700 text-sm">
+                      → {related.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl font-bold mb-4">Were You Injured?</h2>
+      <p class="text-xl text-primary-100 mb-8">Don't wait to get help. Free case evaluations available 24/7.</p>
+      <a href="/#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

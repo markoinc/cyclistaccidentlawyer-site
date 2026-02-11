@@ -1,9 +1,10 @@
 # Math Accuracy Audit — KuriosBrand Accounting Sheets
 
-**Generated:** 2026-02-04  
-**Scope:** June 2025 through January 2026 (8 months, 8 Google Sheets)  
-**Source of Truth:** Chase CSV bank exports (all-time files)  
-**Methodology:** Parsed all 4 CSV files, filtered by month, compared against every transaction tab in each Google Sheet
+**Generated:** 2026-02-09 19:18:06 UTC
+
+**Scope:** June 2025 through January 2026 (8 months)
+
+**Source of Truth:** Chase CSV exports (all-time)
 
 ---
 
@@ -11,428 +12,2241 @@
 
 | Metric | Value |
 |--------|-------|
-| **Months audited** | 8 (Jun 2025 – Jan 2026) |
-| **Accounts per month** | 4 (Business 4991, Personal 0068, Biz CC 0678, Sapphire 4252) |
-| **Total account-months checked** | 32 |
-| **Account-months with PERFECT match** | 27 ✅ |
-| **Account-months with discrepancies** | 5 ❌ |
-| **Total missing transactions** | 37 |
-| **Total extra transactions** | 2 |
-| **Total discrepancy (absolute $)** | ~$7,167 |
-| **Months with ZERO errors** | 3 (Oct, Nov, Dec 2025) |
-| **Months with errors** | 5 (Jun, Jul, Aug, Sep 2025 + Jan 2026) |
-
-### Accuracy by Account
-| Account | Perfect Months | Error Months |
-|---------|---------------|--------------|
-| 💼 Business 4991 | **8/8** ✅ | None |
-| 👤 Personal 0068 | **7/8** | July 2025 (27 missing txns) |
-| 💳 Biz CC 0678 | **6/8** | June 2025 (1 missing), Jan 2026 (2 extra) |
-| 💎 Sapphire 4252 | **5/8** | Aug 2025 (7 missing amounts), Sep 2025 (2 missing amounts) |
-
-### Bottom Line
-**Business 4991 and Personal 0068 are almost flawless.** The two checking accounts match the CSV data perfectly in 15 of 16 account-months. The sole exception is July 2025 Personal, which is missing 27 transactions (likely a truncated CSV import at the time of sheet creation).
-
-**Sapphire 4252 has structural issues** in August and September 2025 — the rows exist but their Amount cells are empty. This is a sheet formatting bug, not missing data.
-
-**Biz CC 0678 has one missing Namecheap txn in June** and **two "extra" Facebook Ads txns in January** that are actually a txn-date vs post-date boundary issue.
+| Total checks performed | 128 |
+| Checks passed | 119 ✅ |
+| Checks failed | 9 ❌ |
+| Accuracy rate | 93.0% |
+| Months with zero errors | 5 of 8 |
+| Months with errors | 3 of 8 |
+| Error months | June 2025, July 2025, January 2026 |
+| Total discrepancy (absolute $) | $1,846.94 |
 
 ---
 
 ## 2. Per-Month Detail
 
-### ✅ June 2025
+
+### June 2025
 
 | Check | CSV Truth | Sheet Value | Match? | Difference |
 |-------|-----------|-------------|--------|------------|
-| 💼 Biz 4991 txn count | 87 | 87 | ✅ | — |
-| 💼 Biz 4991 total debits | -$8,705.20 | -$8,705.20 | ✅ | — |
-| 💼 Biz 4991 total credits | $9,222.51 | $9,222.51 | ✅ | — |
-| 💼 Biz 4991 net flow | $517.31 | $517.31 | ✅ | — |
-| 👤 Personal 0068 txn count | 154 | 154 | ✅ | — |
-| 👤 Personal 0068 total debits | -$5,576.87 | -$5,576.87 | ✅ | — |
-| 👤 Personal 0068 total credits | $5,622.71 | $5,622.71 | ✅ | — |
-| 👤 Personal 0068 net flow | $45.84 | $45.84 | ✅ | — |
-| 💳 Biz CC 0678 txn count | 21 | 20 | ❌ | **-1** |
-| 💳 Biz CC 0678 total debits | -$858.87 | -$841.71 | ❌ | **+$17.16** |
-| 💳 Biz CC 0678 total credits | $300.64 | $300.64 | ✅ | — |
-| 💎 Sapphire 4252 txn count | 3 | 3 | ✅ | — |
-| 💎 Sapphire 4252 total debits | -$339.41 | -$339.41 | ✅ | — |
-| 💎 Sapphire 4252 total credits | $218.00 | $218.00 | ✅ | — |
+| 💼 Business 4991 txn_count | 87 | 87 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-8,705.20 | $-8,705.20 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $9,222.51 | $9,222.51 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $517.31 | $517.31 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 154 | 154 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-5,576.87 | $-5,576.87 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $5,622.71 | $5,622.71 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $45.84 | $45.84 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 21 | 20 | ❌ | -1 |
+| 💳 Biz CC 0678 total_debits | $-858.87 | $-841.71 | ❌ | $+17.16 |
+| 💳 Biz CC 0678 total_credits | $300.64 | $300.64 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $-558.23 | $-541.07 | ❌ | $+17.16 |
+| 💎 Sapphire 4252 txn_count | 3 | 3 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-339.41 | $-339.41 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $218.00 | $218.00 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $-121.41 | $-121.41 | ✅ | $+0.00 |
 
-**Dashboard:** Reports $9,022.51 total income, detailed business expense breakdown present.
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
 
----
-
-### ❌ July 2025
-
-| Check | CSV Truth | Sheet Value | Match? | Difference |
-|-------|-----------|-------------|--------|------------|
-| 💼 Biz 4991 txn count | 106 | 106 | ✅ | — |
-| 💼 Biz 4991 total debits | -$12,300.94 | -$12,300.94 | ✅ | — |
-| 💼 Biz 4991 total credits | $12,688.32 | $12,688.32 | ✅ | — |
-| 💼 Biz 4991 net flow | $387.38 | $387.38 | ✅ | — |
-| 👤 Personal 0068 txn count | 176 | 149 | ❌ | **-27** |
-| 👤 Personal 0068 total debits | -$7,559.91 | -$5,835.40 | ❌ | **+$1,724.51** |
-| 👤 Personal 0068 total credits | $7,518.36 | $6,342.00 | ❌ | **-$1,176.36** |
-| 👤 Personal 0068 net flow | -$41.55 | $506.60 | ❌ | **+$548.15** |
-| 💳 Biz CC 0678 txn count | 21 | 21 | ✅ | — |
-| 💳 Biz CC 0678 total debits | -$941.99 | -$941.99 | ✅ | — |
-| 💳 Biz CC 0678 total credits | $2,500.00 | $2,500.00 | ✅ | — |
-| 💎 Sapphire 4252 txn count | 4 | 4 | ✅ | — |
-| 💎 Sapphire 4252 total debits | -$359.25 | -$359.25 | ✅ | — |
-| 💎 Sapphire 4252 total credits | $600.00 | $600.00 | ✅ | — |
-
-**Dashboard:** Reports $12,688.32 total income.
-
----
-
-### ❌ August 2025
+### July 2025
 
 | Check | CSV Truth | Sheet Value | Match? | Difference |
 |-------|-----------|-------------|--------|------------|
-| 💼 Biz 4991 txn count | 63 | 63 | ✅ | — |
-| 💼 Biz 4991 total debits | -$9,276.32 | -$9,276.32 | ✅ | — |
-| 💼 Biz 4991 total credits | $7,848.47 | $7,848.47 | ✅ | — |
-| 💼 Biz 4991 net flow | -$1,427.85 | -$1,427.85 | ✅ | — |
-| 👤 Personal 0068 txn count | 241 | 241 | ✅ | — |
-| 👤 Personal 0068 total debits | -$6,719.80 | -$6,719.80 | ✅ | — |
-| 👤 Personal 0068 total credits | $7,580.00 | $7,580.00 | ✅ | — |
-| 💳 Biz CC 0678 txn count | 15 | 15 | ✅ | — |
-| 💳 Biz CC 0678 total debits | -$983.76 | -$983.76 | ✅ | — |
-| 💎 Sapphire 4252 txn count | 19 | 12 | ❌ | **-7** |
-| 💎 Sapphire 4252 total debits | -$1,854.08 | -$1,086.90 | ❌ | **+$767.18** |
-| 💎 Sapphire 4252 total credits | $307.10 | $307.10 | ✅ | — |
+| 💼 Business 4991 txn_count | 106 | 106 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-12,300.94 | $-12,300.94 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $12,688.32 | $12,688.32 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $387.38 | $387.38 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 176 | 176 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-7,559.91 | $-7,559.91 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $7,518.36 | $7,518.36 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $-41.55 | $-41.55 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 21 | 20 | ❌ | -1 |
+| 💳 Biz CC 0678 total_debits | $-941.99 | $-842.99 | ❌ | $+99.00 |
+| 💳 Biz CC 0678 total_credits | $2,500.00 | $2,500.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $1,558.01 | $1,657.01 | ❌ | $+99.00 |
+| 💎 Sapphire 4252 txn_count | 4 | 4 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-359.25 | $-359.25 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $600.00 | $600.00 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $240.75 | $240.75 | ✅ | $+0.00 |
 
----
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
+- total_personal_expenses: $0.00
 
-### ❌ September 2025
-
-| Check | CSV Truth | Sheet Value | Match? | Difference |
-|-------|-----------|-------------|--------|------------|
-| 💼 Biz 4991 | All 4 checks | All match | ✅ | — |
-| 👤 Personal 0068 | All 4 checks | All match | ✅ | — |
-| 💳 Biz CC 0678 | All 4 checks | All match | ✅ | — |
-| 💎 Sapphire 4252 txn count | 2 | 0 | ❌ | **-2** |
-| 💎 Sapphire 4252 total debits | -$172.42 | $0.00 | ❌ | **+$172.42** |
-| 💎 Sapphire 4252 total credits | $250.00 | $0.00 | ❌ | **-$250.00** |
-
----
-
-### ✅ October 2025 — PERFECT
-
-All 16 checks pass. Every account matches CSV exactly.
-
-| Account | Txn Count | Debits | Credits | Net |
-|---------|-----------|--------|---------|-----|
-| 💼 Business 4991 | 66 ✅ | -$6,882.49 ✅ | $6,790.74 ✅ | -$91.75 ✅ |
-| 👤 Personal 0068 | 131 ✅ | -$4,617.49 ✅ | $5,551.72 ✅ | $934.23 ✅ |
-| 💳 Biz CC 0678 | 15 ✅ | -$735.75 ✅ | $193.00 ✅ | -$542.75 ✅ |
-| 💎 Sapphire 4252 | 2 ✅ | -$165.48 ✅ | $262.00 ✅ | $96.52 ✅ |
-
-**Dashboard:** Reports $6,440.74 total income, -$2,739.24 biz expenses, -$4,277.97 personal expenses.
-
----
-
-### ✅ November 2025 — PERFECT
-
-All 16 checks pass.
-
-| Account | Txn Count | Debits | Credits | Net |
-|---------|-----------|--------|---------|-----|
-| 💼 Business 4991 | 64 ✅ | -$5,776.51 ✅ | $5,370.80 ✅ | -$405.71 ✅ |
-| 👤 Personal 0068 | 136 ✅ | -$4,561.28 ✅ | $3,583.44 ✅ | -$977.84 ✅ |
-| 💳 Biz CC 0678 | 6 ✅ | -$297.78 ✅ | $0.00 ✅ | -$297.78 ✅ |
-| 💎 Sapphire 4252 | 5 ✅ | -$410.17 ✅ | $406.33 ✅ | -$3.84 ✅ |
-
----
-
-### ✅ December 2025 — PERFECT
-
-All 16 checks pass.
-
-| Account | Txn Count | Debits | Credits | Net |
-|---------|-----------|--------|---------|-----|
-| 💼 Business 4991 | 82 ✅ | -$7,361.83 ✅ | $7,737.73 ✅ | $375.90 ✅ |
-| 👤 Personal 0068 | 138 ✅ | -$5,407.78 ✅ | $5,504.80 ✅ | $97.02 ✅ |
-| 💳 Biz CC 0678 | 5 ✅ | -$117.01 ✅ | $178.00 ✅ | $60.99 ✅ |
-| 💎 Sapphire 4252 | 3 ✅ | -$159.81 ✅ | $259.38 ✅ | $99.57 ✅ |
-
----
-
-### ❌ January 2026
+### August 2025
 
 | Check | CSV Truth | Sheet Value | Match? | Difference |
 |-------|-----------|-------------|--------|------------|
-| 💼 Biz 4991 | All 4 checks | All match | ✅ | — |
-| 👤 Personal 0068 | All 4 checks | All match | ✅ | — |
-| 💳 Biz CC 0678 txn count | 14 | 16 | ❌ | **+2** |
-| 💳 Biz CC 0678 total debits | -$1,416.84 | -$2,222.15 | ❌ | **-$805.31** |
-| 💳 Biz CC 0678 total credits | $5,399.10 | $5,399.10 | ✅ | — |
-| 💎 Sapphire 4252 | All 4 checks | All match | ✅ | — |
+| 💼 Business 4991 txn_count | 63 | 63 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-9,276.32 | $-9,276.32 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $7,848.47 | $7,848.47 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $-1,427.85 | $-1,427.85 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 241 | 241 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-6,719.80 | $-6,719.80 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $7,580.00 | $7,580.00 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $860.20 | $860.20 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 15 | 15 | ✅ | +0 |
+| 💳 Biz CC 0678 total_debits | $-983.76 | $-983.76 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 total_credits | $0.00 | $0.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $-983.76 | $-983.76 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 txn_count | 19 | 19 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-1,854.08 | $-1,854.08 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $307.10 | $307.10 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $-1,546.98 | $-1,546.98 | ✅ | $+0.00 |
 
-**Dashboard:** Reports $9,321.79 total business income. Detailed Stripe breakdown present (gross $3,626.72, net $2,926.72 after refund/chargeback, $1,521.79 deposited). Zelle subtotal $7,700.00. Other $100.00.
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
+
+### September 2025
+
+| Check | CSV Truth | Sheet Value | Match? | Difference |
+|-------|-----------|-------------|--------|------------|
+| 💼 Business 4991 txn_count | 58 | 58 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-7,508.25 | $-7,508.25 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $8,159.64 | $8,159.64 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $651.39 | $651.39 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 146 | 146 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-7,354.82 | $-7,354.82 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $6,453.07 | $6,453.07 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $-901.75 | $-901.75 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 12 | 12 | ✅ | +0 |
+| 💳 Biz CC 0678 total_debits | $-641.73 | $-641.73 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 total_credits | $76.00 | $76.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $-565.73 | $-565.73 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 txn_count | 2 | 2 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-172.42 | $-172.42 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $250.00 | $250.00 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $77.58 | $77.58 | ✅ | $+0.00 |
+
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
+
+### October 2025
+
+| Check | CSV Truth | Sheet Value | Match? | Difference |
+|-------|-----------|-------------|--------|------------|
+| 💼 Business 4991 txn_count | 66 | 66 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-6,882.49 | $-6,882.49 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $6,790.74 | $6,790.74 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $-91.75 | $-91.75 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 131 | 131 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-4,617.49 | $-4,617.49 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $5,551.72 | $5,551.72 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $934.23 | $934.23 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 15 | 15 | ✅ | +0 |
+| 💳 Biz CC 0678 total_debits | $-735.75 | $-735.75 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 total_credits | $193.00 | $193.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $-542.75 | $-542.75 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 txn_count | 2 | 2 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-165.48 | $-165.48 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $262.00 | $262.00 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $96.52 | $96.52 | ✅ | $+0.00 |
+
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $-2,739.24
+- total_personal_expenses: $-4,277.97
+
+### November 2025
+
+| Check | CSV Truth | Sheet Value | Match? | Difference |
+|-------|-----------|-------------|--------|------------|
+| 💼 Business 4991 txn_count | 64 | 64 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-5,776.51 | $-5,776.51 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $5,370.80 | $5,370.80 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $-405.71 | $-405.71 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 136 | 136 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-4,561.28 | $-4,561.28 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $3,583.44 | $3,583.44 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $-977.84 | $-977.84 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 6 | 6 | ✅ | +0 |
+| 💳 Biz CC 0678 total_debits | $-297.78 | $-297.78 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 total_credits | $0.00 | $0.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $-297.78 | $-297.78 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 txn_count | 5 | 5 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-410.17 | $-410.17 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $406.33 | $406.33 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $-3.84 | $-3.84 | ✅ | $+0.00 |
+
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
+- net_cash_flow: $0.00
+
+### December 2025
+
+| Check | CSV Truth | Sheet Value | Match? | Difference |
+|-------|-----------|-------------|--------|------------|
+| 💼 Business 4991 txn_count | 82 | 82 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-7,361.83 | $-7,361.83 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $7,737.73 | $7,737.73 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $375.90 | $375.90 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 138 | 138 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-5,407.78 | $-5,407.78 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $5,504.80 | $5,504.80 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $97.02 | $97.02 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 5 | 5 | ✅ | +0 |
+| 💳 Biz CC 0678 total_debits | $-117.01 | $-117.01 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 total_credits | $178.00 | $178.00 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $60.99 | $60.99 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 txn_count | 3 | 3 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-159.81 | $-159.81 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $259.38 | $259.38 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $99.57 | $99.57 | ✅ | $+0.00 |
+
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $0.00
+- total_personal_expenses: $-3,610.59
+- net_cash_flow: $0.00
+
+### January 2026
+
+| Check | CSV Truth | Sheet Value | Match? | Difference |
+|-------|-----------|-------------|--------|------------|
+| 💼 Business 4991 txn_count | 135 | 135 | ✅ | +0 |
+| 💼 Business 4991 total_debits | $-16,580.69 | $-16,580.69 | ✅ | $+0.00 |
+| 💼 Business 4991 total_credits | $16,976.79 | $16,976.79 | ✅ | $+0.00 |
+| 💼 Business 4991 net_flow | $396.10 | $396.10 | ✅ | $+0.00 |
+| 👤 Personal 0068 txn_count | 132 | 132 | ✅ | +0 |
+| 👤 Personal 0068 total_debits | $-7,467.91 | $-7,467.91 | ✅ | $+0.00 |
+| 👤 Personal 0068 total_credits | $7,368.83 | $7,368.83 | ✅ | $+0.00 |
+| 👤 Personal 0068 net_flow | $-99.08 | $-99.08 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 txn_count | 14 | 16 | ❌ | +2 |
+| 💳 Biz CC 0678 total_debits | $-1,416.84 | $-2,222.15 | ❌ | $-805.31 |
+| 💳 Biz CC 0678 total_credits | $5,399.10 | $5,399.10 | ✅ | $+0.00 |
+| 💳 Biz CC 0678 net_flow | $3,982.26 | $3,176.95 | ❌ | $-805.31 |
+| 💎 Sapphire 4252 txn_count | 9 | 9 | ✅ | +0 |
+| 💎 Sapphire 4252 total_debits | $-1,091.09 | $-1,091.09 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 total_credits | $616.86 | $616.86 | ✅ | $+0.00 |
+| 💎 Sapphire 4252 net_flow | $-474.23 | $-474.23 | ✅ | $+0.00 |
+
+**Dashboard Metrics Found:**
+- total_income: $0.00
+- total_biz_expenses: $-9,419.74
+- total_personal_expenses: $-4,999.00
+- net_cash_flow: $0.00
 
 ---
 
-## 3. Discrepancy Log — Every Mismatch, Explained
+## 3. Discrepancy Log
 
-### Discrepancy #1: June 2025 — 💳 Biz CC 0678 — 1 Missing Transaction
-| Field | Value |
-|-------|-------|
-| **Missing Transaction** | NAME-CHEAP.COM* LFYNBT |
-| **Date** | 2025-06-01 (posted 2025-06-01) |
-| **Amount** | -$17.16 |
-| **Category** | Sale |
-| **Impact** | Debits understated by $17.16 |
-| **Likely Cause** | Transaction was omitted during sheet creation. Only 1 of the 3 Namecheap charges from this month made it in — the other two ($11.46 each on 06/11 and 06/19) are present. |
+**9 discrepancies found:**
 
-**Fix:** Add row: `06/01/2025 | NAME-CHEAP.COM* LFYNBT | Office & Shipping | -17.16`
+### Discrepancy #1
+- **Month:** January 2026
+- **Account:** 💳 Biz CC 0678
+- **Check:** total_debits
+- **CSV (Expected):** $-1,416.84
+- **Sheet (Actual):** $-2,222.15
+- **Difference:** $-805.31
 
----
+### Discrepancy #2
+- **Month:** January 2026
+- **Account:** 💳 Biz CC 0678
+- **Check:** net_flow
+- **CSV (Expected):** $3,982.26
+- **Sheet (Actual):** $3,176.95
+- **Difference:** $-805.31
 
-### Discrepancy #2: July 2025 — 👤 Personal 0068 — 27 Missing Transactions
-| Field | Value |
-|-------|-------|
-| **CSV count** | 176 |
-| **Sheet count** | 149 |
-| **Missing debits** | -$1,724.51 |
-| **Missing credits** | +$1,176.36 |
-| **Net impact** | Sheet overstates balance by $548.15 |
+### Discrepancy #3
+- **Month:** July 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** total_debits
+- **CSV (Expected):** $-941.99
+- **Sheet (Actual):** $-842.99
+- **Difference:** $+99.00
 
-**All 27 Missing Transactions:**
+### Discrepancy #4
+- **Month:** July 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** net_flow
+- **CSV (Expected):** $1,558.01
+- **Sheet (Actual):** $1,657.01
+- **Difference:** $+99.00
 
-| Date | Amount | Description | Category |
-|------|--------|-------------|----------|
-| 07/29 | -$860.00 | Zelle to Patrick Landlord | Rent |
-| 07/17 | -$286.73 | Whole Foods MLW 101 | Groceries |
-| 07/31 | -$118.75 | Zelle to Patrick Landlord | Rent |
-| 07/30 | -$80.00 | Transfer to SAV ...7036 | Transfer |
-| 07/24 | -$41.96 | Whole Foods MLW 101 | Groceries |
-| 07/17 | -$35.00 | Transfer to SAV ...7036 | Transfer |
-| 07/02 | -$32.35 | The Glasshouse Milwaukee | Dining |
-| 07/03 | -$30.74 | Speedway 46071 | Gas |
-| 07/01 | -$27.78 | Venmo Crypto | Investment |
-| 07/10 | -$23.40 | Whole Foods MLW 101 | Groceries |
-| 07/03 | -$22.11 | Pick N Save #882 | Groceries |
-| 07/03 | -$20.25 | Stone Creek Coffee | Dining |
-| 07/01 | -$20.25 | Stone Creek Coffee | Dining |
-| 07/08 | -$16.00 | Robinhood (×4) | Investment |
-| 07/07 | -$16.00 | Robinhood | Investment |
-| 07/02 | -$13.52 | Lime 2 Rides | Transport |
-| 07/03 | -$11.84 | Acorns Round-Ups | Investment |
-| 07/30 | -$10.89 | Closet Classics | Shopping |
-| 07/01 | -$8.94 | MB Smoke On | Dining |
-| 07/31 | +$200.00 | Transfer from CHK ...4991 | Transfer |
-| 07/29 | +$200.00 | Transfer from CHK ...4991 | Transfer |
-| 07/25 | +$200.00 | Transfer from CHK ...4991 | Transfer |
-| 07/07 | +$226.36 | Venmo Cashout | Transfer |
-| 07/21 | +$350.00 | Transfer from CHK ...4991 | Transfer |
+### Discrepancy #5
+- **Month:** June 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** total_debits
+- **CSV (Expected):** $-858.87
+- **Sheet (Actual):** $-841.71
+- **Difference:** $+17.16
 
-**Likely Cause:** The CSV export used when building the July 2025 sheet was incomplete — it appears to have been a partial download that captured only 149 of 176 transactions. The missing transactions span the entire month (July 1-31), suggesting a pagination/export issue rather than a date-range error. Many missing txns are small recurring charges (Robinhood, groceries, coffee) plus two rent payments totaling $978.75.
+### Discrepancy #6
+- **Month:** June 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** net_flow
+- **CSV (Expected):** $-558.23
+- **Sheet (Actual):** $-541.07
+- **Difference:** $+17.16
 
----
+### Discrepancy #7
+- **Month:** January 2026
+- **Account:** 💳 Biz CC 0678
+- **Check:** txn_count
+- **CSV (Expected):** 14
+- **Sheet (Actual):** 16
+- **Difference:** 2
 
-### Discrepancy #3: August 2025 — 💎 Sapphire 4252 — 7 Rows Missing Amounts
+### Discrepancy #8
+- **Month:** June 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** txn_count
+- **CSV (Expected):** 21
+- **Sheet (Actual):** 20
+- **Difference:** -1
 
-| Field | Value |
-|-------|-------|
-| **CSV count** | 19 |
-| **Sheet rows** | 19 (correct!) |
-| **Rows WITH amount** | 12 |
-| **Rows WITHOUT amount** | 7 |
-| **Missing debit total** | -$767.18 |
+### Discrepancy #9
+- **Month:** July 2025
+- **Account:** 💳 Biz CC 0678
+- **Check:** txn_count
+- **CSV (Expected):** 21
+- **Sheet (Actual):** 20
+- **Difference:** -1
 
-The sheet actually has all 19 rows with correct dates and categories, but **7 rows have empty Amount cells**. This is a sheet formatting/population bug, not missing transactions.
-
-**The 7 rows missing amounts (identified by cross-referencing dates):**
-
-| Date (Serial→Real) | CSV Amount | Description | Category |
-|---------------------|-----------|-------------|----------|
-| 45883 → 08/13 | -$450.62 | TURO INC.* TRIP AUG 12 | Travel |
-| 45879 → 08/09 | -$99.74 | MISSION SURF | Groceries |
-| 45879 → 08/09 | -$48.23 | BEACH BUNGALOW HOSTEL | Travel |
-| 45876 → 08/06 | -$36.72 | BEACH BUNGALOW HOSTEL | Travel |
-| 45881 → 08/11 | -$8.29 | GLAZED COFFEE & CREAMERY | Food & Drink |
-| 45879 → 08/09 | -$63.58 | BEACH BUNGALOW HOSTEL | Travel |
-| 45883 → 08/13 | -$60.00 | BEACH BUNGALOW HOSTEL | Travel |
-
-**Fix:** Fill in the 7 empty Amount cells in the Sapphire 4252 tab.
-
----
-
-### Discrepancy #4: September 2025 — 💎 Sapphire 4252 — 2 Rows Missing Amounts
-
-| Field | Value |
-|-------|-------|
-| **CSV count** | 2 |
-| **Sheet rows** | 2 (correct!) |
-| **Rows WITH amount** | 0 |
-
-The sheet has both rows with correct dates and categories, but **both Amount cells are empty**.
-
-| Date (Serial→Real) | CSV Amount | Description |
-|---------------------|-----------|-------------|
-| 45923 → 09/23 | -$172.42 | PURCHASE INTEREST CHARGE |
-| 45919 → 09/19 | +$250.00 | AUTOMATIC PAYMENT - THANK |
-
-**Fix:** Fill in both Amount cells.
-
----
-
-### Discrepancy #5: January 2026 — 💳 Biz CC 0678 — 2 Extra Transactions
-
-| Field | Value |
-|-------|-------|
-| **CSV count (by post date)** | 14 |
-| **Sheet count** | 16 |
-| **Extra debits** | -$805.31 |
-
-**Root Cause: Transaction Date vs Post Date Boundary**
-
-The sheet includes 2 Facebook Ads transactions with **January transaction dates** but **February post dates**:
-
-| Txn Date | Post Date | Amount | Description |
-|----------|-----------|--------|-------------|
-| 01/30/2026 | **02/01/2026** | -$399.00 | FACEBK *UXAK5FV8Z2 |
-| 01/31/2026 | **02/01/2026** | -$406.31 | FACEBK *7EUBWDH8Z2 |
-
-My audit filtered CSV by **post date** (standard for bank reconciliation). The sheet builder used **transaction date** to assign these to January. Both approaches are defensible, but they should be consistent.
-
-**Note:** These same 2 transactions will appear in the February CSV filter by post date. If February's sheet also includes them, they'd be double-counted. If not, they belong in January's sheet (txn-date basis) and this is not actually an error — just a different accounting convention.
 
 ---
 
 ## 4. Running Balance Verification
 
-### Methodology Note
-The balance column in checking account tabs shows the **actual Chase bank balance after each transaction**. Since transactions within the same posting date can appear in any order (and Chase may process them in a different sequence than shown), **row-by-row sequential balance checks produce false positives**. 
 
-The correct verification is: **Opening Balance + Sum(All Amounts) = Closing Balance**
+### June 2025 — 💼 Business 4991
+**86 balance errors found:**
 
-### Opening + Sum = Closing Check
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45838 |  | $1,954.41 | $-200.00 | $1,754.41 | $1,969.41 | $+215.00 |
+| 4 | 45838 |  | $1,969.41 | $-100.00 | $1,869.41 | $2,169.41 | $+300.00 |
+| 5 | 45838 |  | $2,169.41 | $-100.00 | $2,069.41 | $2,269.41 | $+200.00 |
+| 6 | 45835 |  | $2,269.41 | $-300.00 | $1,969.41 | $2,369.41 | $+400.00 |
+| 7 | 45835 |  | $2,369.41 | $-99.00 | $2,270.41 | $2,669.41 | $+399.00 |
+| 8 | 45835 |  | $2,669.41 | $1,000.00 | $3,669.41 | $2,768.41 | $-901.00 |
+| 9 | 45834 |  | $2,768.41 | $711.02 | $3,479.43 | $1,768.41 | $-1,711.02 |
+| 10 | 45833 |  | $1,768.41 | $-200.00 | $1,568.41 | $1,057.39 | $-511.02 |
+| 11 | 45833 |  | $1,057.39 | $-200.00 | $857.39 | $1,257.39 | $+400.00 |
+| 12 | 45832 |  | $1,257.39 | $-160.00 | $1,097.39 | $1,457.39 | $+360.00 |
+| 13 | 45832 |  | $1,457.39 | $-20.00 | $1,437.39 | $1,617.39 | $+180.00 |
+| 14 | 45832 |  | $1,617.39 | $-81.00 | $1,536.39 | $1,637.39 | $+101.00 |
+| 15 | 45832 |  | $1,637.39 | $577.25 | $2,214.64 | $1,718.39 | $-496.25 |
+| 16 | 45831 |  | $1,718.39 | $-600.00 | $1,118.39 | $1,141.14 | $+22.75 |
+| 17 | 45831 |  | $1,141.14 | $-350.00 | $791.14 | $1,741.14 | $+950.00 |
+| 18 | 45831 |  | $1,741.14 | $-90.00 | $1,651.14 | $2,091.14 | $+440.00 |
+| 19 | 45831 |  | $2,091.14 | $-33.00 | $2,058.14 | $2,181.14 | $+123.00 |
+| 20 | 45831 |  | $2,181.14 | $-79.00 | $2,102.14 | $2,214.14 | $+112.00 |
+| 21 | 45828 |  | $2,214.14 | $-300.00 | $1,914.14 | $2,293.14 | $+379.00 |
+| 22 | 45828 |  | $2,293.14 | $-350.00 | $1,943.14 | $2,593.14 | $+650.00 |
+| 23 | 45828 |  | $2,593.14 | $650.00 | $3,243.14 | $2,943.14 | $-300.00 |
+| 24 | 45828 |  | $2,943.14 | $709.14 | $3,652.28 | $2,293.14 | $-1,359.14 |
+| 25 | 45826 |  | $2,293.14 | $-100.00 | $2,193.14 | $1,584.00 | $-609.14 |
+| 26 | 45826 |  | $1,584.00 | $-100.00 | $1,484.00 | $1,684.00 | $+200.00 |
+| 27 | 45826 |  | $1,684.00 | $-350.00 | $1,334.00 | $1,784.00 | $+450.00 |
+| 28 | 45826 |  | $1,784.00 | $-350.00 | $1,434.00 | $2,134.00 | $+700.00 |
+| 29 | 45826 |  | $2,134.00 | $-89.60 | $2,044.40 | $2,484.00 | $+439.60 |
+| 30 | 45826 |  | $2,484.00 | $-5.24 | $2,478.76 | $2,573.60 | $+94.84 |
+| 31 | 45825 |  | $2,573.60 | $-50.00 | $2,523.60 | $2,578.84 | $+55.24 |
+| 32 | 45825 |  | $2,578.84 | $-100.00 | $2,478.84 | $2,628.84 | $+150.00 |
+| 33 | 45825 |  | $2,628.84 | $-10.79 | $2,618.05 | $2,728.84 | $+110.79 |
+| 34 | 45825 |  | $2,728.84 | $177.25 | $2,906.09 | $2,739.63 | $-166.46 |
+| 35 | 45825 |  | $2,739.63 | $1,000.00 | $3,739.63 | $2,562.38 | $-1,177.25 |
+| 36 | 45824 |  | $2,562.38 | $-99.00 | $2,463.38 | $1,562.38 | $-901.00 |
+| 37 | 45824 |  | $1,562.38 | $-9.99 | $1,552.39 | $1,661.38 | $+108.99 |
+| 38 | 45824 |  | $1,661.38 | $-200.00 | $1,461.38 | $1,671.37 | $+209.99 |
+| 39 | 45824 |  | $1,671.37 | $-300.00 | $1,371.37 | $1,871.37 | $+500.00 |
+| 40 | 45824 |  | $1,871.37 | $-55.36 | $1,816.01 | $2,171.37 | $+355.36 |
+| 41 | 45821 |  | $2,171.37 | $-100.00 | $2,071.37 | $2,226.73 | $+155.36 |
+| 42 | 45821 |  | $2,226.73 | $-100.00 | $2,126.73 | $2,326.73 | $+200.00 |
+| 43 | 45821 |  | $2,326.73 | $-89.60 | $2,237.13 | $2,426.73 | $+189.60 |
+| 44 | 45821 |  | $2,426.73 | $-89.60 | $2,337.13 | $2,516.33 | $+179.20 |
+| 45 | 45821 |  | $2,516.33 | $360.45 | $2,876.78 | $2,605.93 | $-270.85 |
+| 46 | 45820 |  | $2,605.93 | $-10.00 | $2,595.93 | $2,245.48 | $-350.45 |
+| 47 | 45820 |  | $2,245.48 | $-89.60 | $2,155.88 | $2,255.48 | $+99.60 |
+| 48 | 45820 |  | $2,255.48 | $347.20 | $2,602.68 | $2,345.08 | $-257.60 |
+| 49 | 45819 |  | $2,345.08 | $-200.00 | $2,145.08 | $1,997.88 | $-147.20 |
+| 50 | 45819 |  | $1,997.88 | $-7.00 | $1,990.88 | $2,197.88 | $+207.00 |
+| 51 | 45819 |  | $2,197.88 | $-10.00 | $2,187.88 | $2,204.88 | $+17.00 |
+| 52 | 45818 |  | $2,204.88 | $-48.00 | $2,156.88 | $2,214.88 | $+58.00 |
+| 53 | 45818 |  | $2,214.88 | $-7.00 | $2,207.88 | $2,262.88 | $+55.00 |
+| 54 | 45818 |  | $2,262.88 | $-20.00 | $2,242.88 | $2,269.88 | $+27.00 |
+| 55 | 45818 |  | $2,269.88 | $577.25 | $2,847.13 | $2,289.88 | $-557.25 |
+| 56 | 45817 |  | $2,289.88 | $-350.00 | $1,939.88 | $1,712.63 | $-227.25 |
+| 57 | 45817 |  | $1,712.63 | $-7.00 | $1,705.63 | $2,062.63 | $+357.00 |
+| 58 | 45817 |  | $2,062.63 | $-20.00 | $2,042.63 | $2,069.63 | $+27.00 |
+| 59 | 45817 |  | $2,069.63 | $-100.00 | $1,969.63 | $2,089.63 | $+120.00 |
+| 60 | 45817 |  | $2,089.63 | $-100.00 | $1,989.63 | $2,189.63 | $+200.00 |
+| 61 | 45817 |  | $2,189.63 | $-7.00 | $2,182.63 | $2,289.63 | $+107.00 |
+| 62 | 45817 |  | $2,289.63 | $-19.90 | $2,269.73 | $2,296.63 | $+26.90 |
+| 63 | 45817 |  | $2,296.63 | $-7.00 | $2,289.63 | $2,316.53 | $+26.90 |
+| 64 | 45817 |  | $2,316.53 | $-7.00 | $2,309.53 | $2,323.53 | $+14.00 |
+| 65 | 45817 |  | $2,323.53 | $880.00 | $3,203.53 | $2,330.53 | $-873.00 |
+| 66 | 45814 |  | $2,330.53 | $-100.00 | $2,230.53 | $1,450.53 | $-780.00 |
+| 67 | 45814 |  | $1,450.53 | $-7.00 | $1,443.53 | $1,550.53 | $+107.00 |
+| 68 | 45814 |  | $1,550.53 | $-33.70 | $1,516.83 | $1,557.53 | $+40.70 |
+| 69 | 45814 |  | $1,557.53 | $-297.00 | $1,260.53 | $1,591.23 | $+330.70 |
+| 70 | 45814 |  | $1,591.23 | $-81.00 | $1,510.23 | $1,888.23 | $+378.00 |
+| 71 | 45814 |  | $1,888.23 | $-7.00 | $1,881.23 | $1,969.23 | $+88.00 |
+| 72 | 45814 |  | $1,969.23 | $-100.00 | $1,869.23 | $1,976.23 | $+107.00 |
+| 73 | 45813 |  | $1,976.23 | $-33.70 | $1,942.53 | $2,076.23 | $+133.70 |
+| 74 | 45813 |  | $2,076.23 | $-400.00 | $1,676.23 | $2,109.93 | $+433.70 |
+| 75 | 45813 |  | $2,109.93 | $-300.00 | $1,809.93 | $2,509.93 | $+700.00 |
+| 76 | 45813 |  | $2,509.93 | $-100.00 | $2,409.93 | $2,809.93 | $+400.00 |
+| 77 | 45813 |  | $2,809.93 | $-81.00 | $2,728.93 | $2,909.93 | $+181.00 |
+| 78 | 45813 |  | $2,909.93 | $347.20 | $3,257.13 | $2,990.93 | $-266.20 |
+| 79 | 45812 |  | $2,990.93 | $96.30 | $3,087.23 | $2,643.73 | $-443.50 |
+| 80 | 45811 |  | $2,643.73 | $-200.00 | $2,443.73 | $2,547.43 | $+103.70 |
+| 81 | 45811 |  | $2,547.43 | $-300.00 | $2,247.43 | $2,747.43 | $+500.00 |
+| 82 | 45811 |  | $2,747.43 | $-66.62 | $2,680.81 | $3,047.43 | $+366.62 |
+| 83 | 45811 |  | $3,047.43 | $239.45 | $3,286.88 | $3,114.05 | $-172.83 |
+| 84 | 45811 |  | $3,114.05 | $1,000.00 | $4,114.05 | $2,874.60 | $-1,239.45 |
+| 85 | 45810 |  | $2,874.60 | $-100.00 | $2,774.60 | $1,874.60 | $-900.00 |
+| 86 | 45810 |  | $1,874.60 | $-12.50 | $1,862.10 | $1,974.60 | $+112.50 |
+| 87 | 45810 |  | $1,974.60 | $200.00 | $2,174.60 | $1,987.10 | $-187.50 |
+| 88 | 45810 |  | $1,987.10 | $350.00 | $2,337.10 | $1,787.10 | $-550.00 |
 
-| Month | Account | Opening | Sum of Amounts | Expected Closing | Actual Last Balance | Match? |
-|-------|---------|---------|---------------|-----------------|-------------------|--------|
-| June 2025 | 💼 Biz 4991 | $1,969.41† | $517.31 | $2,486.72 | $1,787.10 | ❌ |
-| June 2025 | 👤 Personal 0068 | $194.46† | $45.84 | $240.30 | $452.20 | ❌ |
-| Jan 2026 | 💼 Biz 4991 | $1,105.63† | $396.10 | $1,501.73 | $1,884.82 | ❌ |
-| Jan 2026 | 👤 Personal 0068 | $105.10† | -$99.08 | $6.02 | $61.56 | ❌ |
+### June 2025 — 👤 Personal 0068
+**153 balance errors found:**
 
-†*Opening derived from first row: first_balance - first_amount*
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45838 |  | $185.33 | $-25.00 | $160.33 | $194.46 | $+34.13 |
+| 4 | 45838 |  | $194.46 | $-7.22 | $187.24 | $219.46 | $+32.22 |
+| 5 | 45838 |  | $219.46 | $-7.30 | $212.16 | $226.68 | $+14.52 |
+| 6 | 45838 |  | $226.68 | $-46.57 | $180.11 | $233.98 | $+53.87 |
+| 7 | 45838 |  | $233.98 | $-68.86 | $165.12 | $280.55 | $+115.43 |
+| 8 | 45838 |  | $280.55 | $-36.80 | $243.75 | $349.41 | $+105.66 |
+| 9 | 45838 |  | $349.41 | $-56.36 | $293.05 | $386.21 | $+93.16 |
+| 10 | 45838 |  | $386.21 | $-19.55 | $366.66 | $442.57 | $+75.91 |
+| 11 | 45838 |  | $442.57 | $-16.00 | $426.57 | $462.12 | $+35.55 |
+| 12 | 45838 |  | $462.12 | $-11.29 | $450.83 | $478.12 | $+27.29 |
+| 13 | 45838 |  | $478.12 | $-23.97 | $454.15 | $489.41 | $+35.26 |
+| 14 | 45838 |  | $489.41 | $-100.00 | $389.41 | $513.38 | $+123.97 |
+| 15 | 45838 |  | $513.38 | $-8.05 | $505.33 | $613.38 | $+108.05 |
+| 16 | 45838 |  | $613.38 | $100.00 | $713.38 | $621.43 | $-91.95 |
+| 17 | 45838 |  | $621.43 | $200.00 | $821.43 | $521.43 | $-300.00 |
+| 18 | 45835 |  | $521.43 | $-16.00 | $505.43 | $321.43 | $-184.00 |
+| 19 | 45835 |  | $321.43 | $-14.54 | $306.89 | $337.43 | $+30.54 |
+| 20 | 45835 |  | $337.43 | $-14.12 | $323.31 | $351.97 | $+28.66 |
+| 21 | 45835 |  | $351.97 | $300.00 | $651.97 | $366.09 | $-285.88 |
+| 22 | 45834 |  | $366.09 | $-17.77 | $348.32 | $66.09 | $-282.23 |
+| 23 | 45834 |  | $66.09 | $-35.00 | $31.09 | $83.86 | $+52.77 |
+| 24 | 45834 |  | $83.86 | $-9.58 | $74.28 | $118.86 | $+44.58 |
+| 25 | 45834 |  | $118.86 | $-16.00 | $102.86 | $128.44 | $+25.58 |
+| 26 | 45834 |  | $128.44 | $-38.57 | $89.87 | $144.44 | $+54.57 |
+| 27 | 45834 |  | $144.44 | $-10.89 | $133.55 | $183.01 | $+49.46 |
+| 28 | 45833 |  | $183.01 | $-172.12 | $10.89 | $193.90 | $+183.01 |
+| 29 | 45833 |  | $193.90 | $-67.83 | $126.07 | $366.02 | $+239.95 |
+| 30 | 45833 |  | $366.02 | $-94.40 | $271.62 | $433.85 | $+162.23 |
+| 31 | 45833 |  | $433.85 | $-80.00 | $353.85 | $528.25 | $+174.40 |
+| 32 | 45833 |  | $528.25 | $-16.00 | $512.25 | $608.25 | $+96.00 |
+| 33 | 45833 |  | $608.25 | $200.00 | $808.25 | $624.25 | $-184.00 |
+| 34 | 45833 |  | $624.25 | $200.00 | $824.25 | $424.25 | $-400.00 |
+| 35 | 45832 |  | $424.25 | $-16.00 | $408.25 | $224.25 | $-184.00 |
+| 36 | 45832 |  | $224.25 | $-16.00 | $208.25 | $240.25 | $+32.00 |
+| 37 | 45832 |  | $240.25 | $-16.00 | $224.25 | $256.25 | $+32.00 |
+| 38 | 45832 |  | $256.25 | $160.00 | $416.25 | $272.25 | $-144.00 |
+| 39 | 45831 |  | $272.25 | $-11.42 | $260.83 | $112.25 | $-148.58 |
+| 40 | 45831 |  | $112.25 | $-1,100.00 | $-987.75 | $123.67 | $+1,111.42 |
+| 41 | 45831 |  | $123.67 | $-25.00 | $98.67 | $1,223.67 | $+1,125.00 |
+| 42 | 45831 |  | $1,223.67 | $-6.28 | $1,217.39 | $1,248.67 | $+31.28 |
+| 43 | 45831 |  | $1,248.67 | $-9.72 | $1,238.95 | $1,254.95 | $+16.00 |
+| 44 | 45831 |  | $1,254.95 | $-218.00 | $1,036.95 | $1,264.67 | $+227.72 |
+| 45 | 45831 |  | $1,264.67 | $-9.07 | $1,255.60 | $1,482.67 | $+227.07 |
+| 46 | 45831 |  | $1,482.67 | $-9.07 | $1,473.60 | $1,491.74 | $+18.14 |
+| 47 | 45831 |  | $1,491.74 | $-16.69 | $1,475.05 | $1,500.81 | $+25.76 |
+| 48 | 45831 |  | $1,500.81 | $-3.00 | $1,497.81 | $1,517.50 | $+19.69 |
+| 49 | 45831 |  | $1,517.50 | $-16.00 | $1,501.50 | $1,520.50 | $+19.00 |
+| 50 | 45831 |  | $1,520.50 | $-16.00 | $1,504.50 | $1,536.50 | $+32.00 |
+| 51 | 45831 |  | $1,536.50 | $-31.49 | $1,505.01 | $1,552.50 | $+47.49 |
+| 52 | 45831 |  | $1,552.50 | $-16.26 | $1,536.24 | $1,583.99 | $+47.75 |
+| 53 | 45831 |  | $1,583.99 | $-10.78 | $1,573.21 | $1,600.25 | $+27.04 |
+| 54 | 45831 |  | $1,600.25 | $100.00 | $1,700.25 | $1,611.03 | $-89.22 |
+| 55 | 45831 |  | $1,611.03 | $300.00 | $1,911.03 | $1,511.03 | $-400.00 |
+| 56 | 45831 |  | $1,511.03 | $350.00 | $1,861.03 | $1,211.03 | $-650.00 |
+| 57 | 45831 |  | $1,211.03 | $600.00 | $1,811.03 | $861.03 | $-950.00 |
+| 58 | 45828 |  | $861.03 | $-53.28 | $807.75 | $261.03 | $-546.72 |
+| 59 | 45828 |  | $261.03 | $-32.36 | $228.67 | $314.31 | $+85.64 |
+| 60 | 45828 |  | $314.31 | $-16.00 | $298.31 | $346.67 | $+48.36 |
+| 61 | 45828 |  | $346.67 | $-112.85 | $233.82 | $362.67 | $+128.85 |
+| 62 | 45828 |  | $362.67 | $-22.37 | $340.30 | $475.52 | $+135.22 |
+| 63 | 45828 |  | $475.52 | $300.00 | $775.52 | $497.89 | $-277.63 |
+| 64 | 45826 |  | $497.89 | $-37.42 | $460.47 | $197.89 | $-262.58 |
+| 65 | 45826 |  | $197.89 | $-35.00 | $162.89 | $235.31 | $+72.42 |
+| 66 | 45826 |  | $235.31 | $-16.00 | $219.31 | $270.31 | $+51.00 |
+| 67 | 45826 |  | $270.31 | $-18.12 | $252.19 | $286.31 | $+34.12 |
+| 68 | 45826 |  | $286.31 | $-18.70 | $267.61 | $304.43 | $+36.82 |
+| 69 | 45826 |  | $304.43 | $100.00 | $404.43 | $323.13 | $-81.30 |
+| 70 | 45826 |  | $323.13 | $100.00 | $423.13 | $223.13 | $-200.00 |
+| 71 | 45825 |  | $223.13 | $-16.00 | $207.13 | $123.13 | $-84.00 |
+| 72 | 45825 |  | $123.13 | $-16.00 | $107.13 | $139.13 | $+32.00 |
+| 73 | 45825 |  | $139.13 | $-16.00 | $123.13 | $155.13 | $+32.00 |
+| 74 | 45825 |  | $155.13 | $-13.39 | $141.74 | $171.13 | $+29.39 |
+| 75 | 45825 |  | $171.13 | $50.00 | $221.13 | $184.52 | $-36.61 |
+| 76 | 45824 |  | $184.52 | $-9.09 | $175.43 | $134.52 | $-40.91 |
+| 77 | 45824 |  | $134.52 | $-7.54 | $126.98 | $143.61 | $+16.63 |
+| 78 | 45824 |  | $143.61 | $-25.00 | $118.61 | $151.15 | $+32.54 |
+| 79 | 45824 |  | $151.15 | $-27.12 | $124.03 | $176.15 | $+52.12 |
+| 80 | 45824 |  | $176.15 | $-45.00 | $131.15 | $203.27 | $+72.12 |
+| 81 | 45824 |  | $203.27 | $-100.00 | $103.27 | $248.27 | $+145.00 |
+| 82 | 45824 |  | $248.27 | $-28.37 | $219.90 | $348.27 | $+128.37 |
+| 83 | 45824 |  | $348.27 | $-37.45 | $310.82 | $376.64 | $+65.82 |
+| 84 | 45824 |  | $376.64 | $-16.00 | $360.64 | $414.09 | $+53.45 |
+| 85 | 45824 |  | $414.09 | $-127.00 | $287.09 | $430.09 | $+143.00 |
+| 86 | 45824 |  | $430.09 | $-32.26 | $397.83 | $557.09 | $+159.26 |
+| 87 | 45824 |  | $557.09 | $-90.00 | $467.09 | $589.35 | $+122.26 |
+| 88 | 45824 |  | $589.35 | $-89.76 | $499.59 | $679.35 | $+179.76 |
+| 89 | 45824 |  | $679.35 | $200.00 | $879.35 | $769.11 | $-110.24 |
+| 90 | 45824 |  | $769.11 | $300.00 | $1,069.11 | $569.11 | $-500.00 |
+| 91 | 45821 |  | $569.11 | $-16.51 | $552.60 | $269.11 | $-283.49 |
+| 92 | 45821 |  | $269.11 | $-16.00 | $253.11 | $285.62 | $+32.51 |
+| 93 | 45821 |  | $285.62 | $-10.89 | $274.73 | $301.62 | $+26.89 |
+| 94 | 45821 |  | $301.62 | $100.00 | $401.62 | $312.51 | $-89.11 |
+| 95 | 45821 |  | $312.51 | $100.00 | $412.51 | $212.51 | $-200.00 |
+| 96 | 45820 |  | $212.51 | $-35.00 | $177.51 | $112.51 | $-65.00 |
+| 97 | 45820 |  | $112.51 | $-16.00 | $96.51 | $147.51 | $+51.00 |
+| 98 | 45820 |  | $147.51 | $-190.00 | $-42.49 | $163.51 | $+206.00 |
+| 99 | 45819 |  | $163.51 | $-80.00 | $83.51 | $353.51 | $+270.00 |
+| 100 | 45819 |  | $353.51 | $-6.66 | $346.85 | $433.51 | $+86.66 |
+| 101 | 45819 |  | $433.51 | $-16.00 | $417.51 | $440.17 | $+22.66 |
+| 102 | 45819 |  | $440.17 | $-2.76 | $437.41 | $456.17 | $+18.76 |
+| 103 | 45819 |  | $456.17 | $200.00 | $656.17 | $458.93 | $-197.24 |
+| 104 | 45818 |  | $458.93 | $-16.00 | $442.93 | $258.93 | $-184.00 |
+| 105 | 45818 |  | $258.93 | $-16.00 | $242.93 | $274.93 | $+32.00 |
+| 106 | 45818 |  | $274.93 | $-16.00 | $258.93 | $290.93 | $+32.00 |
+| 107 | 45818 |  | $290.93 | $-106.34 | $184.59 | $306.93 | $+122.34 |
+| 108 | 45817 |  | $306.93 | $-3.00 | $303.93 | $413.27 | $+109.34 |
+| 109 | 45817 |  | $413.27 | $-25.00 | $388.27 | $416.27 | $+28.00 |
+| 110 | 45817 |  | $416.27 | $-6.02 | $410.25 | $441.27 | $+31.02 |
+| 111 | 45817 |  | $441.27 | $-18.79 | $422.48 | $447.29 | $+24.81 |
+| 112 | 45817 |  | $447.29 | $-95.25 | $352.04 | $466.08 | $+114.04 |
+| 113 | 45817 |  | $466.08 | $-83.50 | $382.58 | $561.33 | $+178.75 |
+| 114 | 45817 |  | $561.33 | $-11.94 | $549.39 | $644.83 | $+95.44 |
+| 115 | 45817 |  | $644.83 | $-16.00 | $628.83 | $656.77 | $+27.94 |
+| 116 | 45817 |  | $656.77 | $-4.02 | $652.75 | $672.77 | $+20.02 |
+| 117 | 45817 |  | $672.77 | $-21.57 | $651.20 | $676.79 | $+25.59 |
+| 118 | 45817 |  | $676.79 | $-22.64 | $654.15 | $698.36 | $+44.21 |
+| 119 | 45817 |  | $698.36 | $100.00 | $798.36 | $721.00 | $-77.36 |
+| 120 | 45817 |  | $721.00 | $100.00 | $821.00 | $621.00 | $-200.00 |
+| 121 | 45817 |  | $621.00 | $350.00 | $971.00 | $521.00 | $-450.00 |
+| 122 | 45814 |  | $521.00 | $-45.58 | $475.42 | $171.00 | $-304.42 |
+| 123 | 45814 |  | $171.00 | $-16.00 | $155.00 | $216.58 | $+61.58 |
+| 124 | 45814 |  | $216.58 | $-11.71 | $204.87 | $232.58 | $+27.71 |
+| 125 | 45814 |  | $232.58 | $100.00 | $332.58 | $244.29 | $-88.29 |
+| 126 | 45813 |  | $244.29 | $-6.69 | $237.60 | $144.29 | $-93.31 |
+| 127 | 45813 |  | $144.29 | $-35.00 | $109.29 | $150.98 | $+41.69 |
+| 128 | 45813 |  | $150.98 | $-16.00 | $134.98 | $185.98 | $+51.00 |
+| 129 | 45813 |  | $185.98 | $-8.05 | $177.93 | $201.98 | $+24.05 |
+| 130 | 45813 |  | $201.98 | $-37.06 | $164.92 | $210.03 | $+45.11 |
+| 131 | 45813 |  | $210.03 | $100.00 | $310.03 | $247.09 | $-62.94 |
+| 132 | 45812 |  | $247.09 | $-80.00 | $167.09 | $147.09 | $-20.00 |
+| 133 | 45812 |  | $147.09 | $-16.00 | $131.09 | $227.09 | $+96.00 |
+| 134 | 45812 |  | $227.09 | $-115.43 | $111.66 | $243.09 | $+131.43 |
+| 135 | 45812 |  | $243.09 | $-37.62 | $205.47 | $358.52 | $+153.05 |
+| 136 | 45811 |  | $358.52 | $-31.86 | $326.66 | $396.14 | $+69.48 |
+| 137 | 45811 |  | $396.14 | $-24.00 | $372.14 | $428.00 | $+55.86 |
+| 138 | 45811 |  | $428.00 | $-24.00 | $404.00 | $452.00 | $+48.00 |
+| 139 | 45811 |  | $452.00 | $-24.00 | $428.00 | $476.00 | $+48.00 |
+| 140 | 45811 |  | $476.00 | $200.00 | $676.00 | $500.00 | $-176.00 |
+| 141 | 45811 |  | $500.00 | $300.00 | $800.00 | $300.00 | $-500.00 |
+| 142 | 45810 |  | $300.00 | $-5.79 | $294.21 | $0.00 | $-294.21 |
+| 143 | 45810 |  | $0.00 | $-237.23 | $-237.23 | $5.79 | $+243.02 |
+| 144 | 45810 |  | $5.79 | $-200.00 | $-194.21 | $243.02 | $+437.23 |
+| 145 | 45810 |  | $243.02 | $-6.56 | $236.46 | $443.02 | $+206.56 |
+| 146 | 45810 |  | $443.02 | $-30.78 | $412.24 | $449.58 | $+37.34 |
+| 147 | 45810 |  | $449.58 | $-25.00 | $424.58 | $480.36 | $+55.78 |
+| 148 | 45810 |  | $480.36 | $-5.56 | $474.80 | $505.36 | $+30.56 |
+| 149 | 45810 |  | $505.36 | $-24.00 | $481.36 | $510.92 | $+29.56 |
+| 150 | 45810 |  | $510.92 | $-1.80 | $509.12 | $534.92 | $+25.80 |
+| 151 | 45810 |  | $534.92 | $-4.50 | $530.42 | $536.72 | $+6.30 |
+| 152 | 45810 |  | $536.72 | $-7.80 | $528.92 | $541.22 | $+12.30 |
+| 153 | 45810 |  | $541.22 | $-3.18 | $538.04 | $549.02 | $+10.98 |
+| 154 | 45810 |  | $549.02 | $100.00 | $649.02 | $552.20 | $-96.82 |
+| 155 | 45810 |  | $552.20 | $312.71 | $864.91 | $452.20 | $-412.71 |
 
-**Analysis:** The opening+sum≠closing mismatches indicate the balance column is **NOT a calculated running total formula** — it's the **imported Chase balance values** from the CSV. Since Chase CSVs list transactions in reverse chronological order, the balance after the most recent transaction (top of CSV = top of sheet) is the closing balance, and going down reveals balances going backward in time. The "first row" balance is actually the **closing** balance and the "last row" balance is closest to the **opening** balance.
+### July 2025 — 💼 Business 4991
+**90 balance errors found:**
 
-**Reinterpreted check (reverse chronological):**
-- First row balance (closing) = $1,954.41 for June Biz 4991
-- Last row balance (near opening) = $1,787.10
-- Closing - Opening = $1,954.41 - $1,787.10 = $167.31 ≠ $517.31 (sum)
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45839 |  | $2,110.33 | $-6.75 | $2,103.58 | $3,523.03 | $+1,419.45 |
+| 4 | 45839 |  | $3,523.03 | $-200.00 | $3,323.03 | $3,310.53 | $-12.50 |
+| 5 | 45839 |  | $3,310.53 | $-200.00 | $3,110.53 | $2,110.53 | $-1,000.00 |
+| 6 | 45839 |  | $2,110.53 | $575.37 | $2,685.90 | $3,529.78 | $+843.88 |
+| 7 | 45839 |  | $3,529.78 | $-1,000.00 | $2,529.78 | $2,310.53 | $-219.25 |
+| 8 | 45839 |  | $2,310.53 | $1,000.00 | $3,310.53 | $2,954.41 | $-356.12 |
+| 9 | 45839 |  | $2,954.41 | $-12.50 | $2,941.91 | $3,510.53 | $+568.62 |
+| 10 | 45841 |  | $3,510.53 | $-66.62 | $3,443.91 | $2,754.73 | $-689.18 |
+| 11 | 45841 |  | $2,754.73 | $-162.00 | $2,592.73 | $2,461.73 | $-131.00 |
+| 12 | 45841 |  | $2,461.73 | $-81.00 | $2,380.73 | $2,673.73 | $+293.00 |
+| 14 | 45841 |  | $2,623.73 | $711.02 | $3,334.75 | $2,821.35 | $-513.40 |
+| 15 | 45845 |  | $2,821.35 | $-297.00 | $2,524.35 | $2,214.73 | $-309.62 |
+| 17 | 45845 |  | $1,864.73 | $-100.00 | $1,764.73 | $2,711.73 | $+947.00 |
+| 19 | 45845 |  | $2,511.73 | $-200.00 | $2,311.73 | $1,664.73 | $-647.00 |
+| 20 | 45845 |  | $1,664.73 | $350.00 | $2,014.73 | $2,811.73 | $+797.00 |
+| 21 | 45846 |  | $2,811.73 | $-19.90 | $2,791.83 | $1,713.11 | $-1,078.72 |
+| 22 | 45846 |  | $1,713.11 | $-20.99 | $1,692.12 | $1,733.01 | $+40.89 |
+| 23 | 45846 |  | $1,733.01 | $-200.00 | $1,533.01 | $1,513.11 | $-19.90 |
+| 24 | 45846 |  | $1,513.11 | $89.27 | $1,602.38 | $1,754.00 | $+151.62 |
+| 25 | 45847 |  | $1,754.00 | $-200.00 | $1,554.00 | $1,893.36 | $+339.36 |
+| 26 | 45847 |  | $1,893.36 | $580.25 | $2,473.61 | $2,093.36 | $-380.25 |
+| 27 | 45848 |  | $2,093.36 | $-7.00 | $2,086.36 | $2,956.88 | $+870.52 |
+| 29 | 45848 |  | $2,756.88 | $-48.00 | $2,708.88 | $2,208.88 | $-500.00 |
+| 30 | 45848 |  | $2,208.88 | $1,070.52 | $3,279.40 | $2,963.88 | $-315.52 |
+| 31 | 45848 |  | $2,963.88 | $-500.00 | $2,463.88 | $2,256.88 | $-207.00 |
+| 32 | 45849 |  | $2,256.88 | $-7.00 | $2,249.88 | $1,951.88 | $-298.00 |
+| 33 | 45849 |  | $1,951.88 | $-20.00 | $1,931.88 | $2,188.88 | $+257.00 |
+| 34 | 45849 |  | $2,188.88 | $-180.00 | $2,008.88 | $1,958.88 | $-50.00 |
+| 35 | 45849 |  | $1,958.88 | $-50.00 | $1,908.88 | $2,138.88 | $+230.00 |
+| 36 | 45849 |  | $2,138.88 | $-100.00 | $2,038.88 | $1,851.88 | $-187.00 |
+| 37 | 45852 |  | $1,851.88 | $-7.00 | $1,844.88 | $1,603.18 | $-241.70 |
+| 38 | 45852 |  | $1,603.18 | $-100.00 | $1,503.18 | $1,347.82 | $-155.36 |
+| 39 | 45852 |  | $1,347.82 | $-162.00 | $1,185.82 | $1,682.88 | $+497.06 |
+| 41 | 45852 |  | $1,632.88 | $-100.00 | $1,532.88 | $1,503.18 | $-29.70 |
+| 42 | 45852 |  | $1,503.18 | $-200.00 | $1,303.18 | $1,147.82 | $-155.36 |
+| 43 | 45852 |  | $1,147.82 | $-7.00 | $1,140.82 | $1,844.88 | $+704.06 |
+| 44 | 45852 |  | $1,844.88 | $-15.70 | $1,829.18 | $1,610.18 | $-219.00 |
+| 45 | 45852 |  | $1,610.18 | $-55.36 | $1,554.82 | $1,447.82 | $-107.00 |
+| 46 | 45852 |  | $1,447.82 | $-7.00 | $1,440.82 | $1,625.88 | $+185.06 |
+| 47 | 45853 |  | $1,625.88 | $-93.36 | $1,532.52 | $2,985.01 | $+1,452.49 |
+| 49 | 45853 |  | $2,975.02 | $-200.00 | $2,775.02 | $1,775.02 | $-1,000.00 |
+| 50 | 45853 |  | $1,775.02 | $930.55 | $2,705.57 | $3,078.37 | $+372.80 |
+| 51 | 45853 |  | $3,078.37 | $-1,000.00 | $2,078.37 | $1,975.02 | $-103.35 |
+| 52 | 45853 |  | $1,975.02 | $1,000.00 | $2,975.02 | $2,147.82 | $-827.20 |
+| 53 | 45854 |  | $2,147.82 | $-162.00 | $1,985.82 | $1,613.02 | $-372.80 |
+| 54 | 45855 |  | $1,613.02 | $-210.00 | $1,403.02 | $2,694.28 | $+1,291.26 |
+| 55 | 45855 |  | $2,694.28 | $-300.00 | $2,394.28 | $1,726.88 | $-667.40 |
+| 56 | 45855 |  | $1,726.88 | $-100.00 | $1,626.88 | $1,386.88 | $-240.00 |
+| 57 | 45855 |  | $1,386.88 | $-33.70 | $1,353.18 | $2,660.58 | $+1,307.40 |
+| 59 | 45855 |  | $2,626.88 | $347.20 | $2,974.08 | $2,960.22 | $-13.86 |
+| 60 | 45855 |  | $2,960.22 | $-600.00 | $2,360.22 | $2,026.88 | $-333.34 |
+| 61 | 45855 |  | $2,026.88 | $-6.99 | $2,019.89 | $2,904.28 | $+884.39 |
+| 62 | 45855 |  | $2,904.28 | $-20.98 | $2,883.30 | $2,911.27 | $+27.97 |
+| 63 | 45855 |  | $2,911.27 | $-6.99 | $2,904.28 | $2,932.25 | $+27.97 |
+| 64 | 45855 |  | $2,932.25 | $-20.98 | $2,911.27 | $2,939.24 | $+27.97 |
+| 65 | 45855 |  | $2,939.24 | $1,000.00 | $3,939.24 | $2,613.02 | $-1,326.22 |
+| 66 | 45855 |  | $2,613.02 | $-240.00 | $2,373.02 | $1,486.88 | $-886.14 |
+| 67 | 45856 |  | $1,486.88 | $-7.00 | $1,479.88 | $1,538.55 | $+58.67 |
+| 68 | 45856 |  | $1,538.55 | $-7.00 | $1,531.55 | $1,707.55 | $+176.00 |
+| 69 | 45856 |  | $1,707.55 | $-7.00 | $1,700.55 | $1,714.55 | $+14.00 |
+| 70 | 45856 |  | $1,714.55 | $-162.00 | $1,552.55 | $1,545.55 | $-7.00 |
+| 71 | 45856 |  | $1,545.55 | $361.95 | $1,907.50 | $1,748.83 | $-158.67 |
+| 72 | 45856 |  | $1,748.83 | $-7.00 | $1,741.83 | $1,531.55 | $-210.28 |
+| 73 | 45856 |  | $1,531.55 | $-27.28 | $1,504.27 | $1,721.55 | $+217.28 |
+| 74 | 45859 |  | $1,721.55 | $-7.00 | $1,714.55 | $1,524.55 | $-190.00 |
+| 75 | 45859 |  | $1,524.55 | $-7.00 | $1,517.55 | $868.55 | $-649.00 |
+| 76 | 45859 |  | $868.55 | $-7.00 | $861.55 | $875.55 | $+14.00 |
+| 77 | 45859 |  | $875.55 | $-79.00 | $796.55 | $1,245.55 | $+449.00 |
+| 78 | 45859 |  | $1,245.55 | $-350.00 | $895.55 | $882.55 | $-13.00 |
+| 79 | 45859 |  | $882.55 | $-100.00 | $782.55 | $1,424.55 | $+642.00 |
+| 81 | 45859 |  | $1,324.55 | $-13.00 | $1,311.55 | $1,232.55 | $-79.00 |
+| 82 | 45859 |  | $1,232.55 | $-7.00 | $1,225.55 | $861.55 | $-364.00 |
+| 83 | 45860 |  | $861.55 | $-7.00 | $854.55 | $1,805.57 | $+951.02 |
+| 84 | 45860 |  | $1,805.57 | $-7.00 | $1,798.57 | $1,812.57 | $+14.00 |
+| 85 | 45860 |  | $1,812.57 | $-90.00 | $1,722.57 | $1,715.57 | $-7.00 |
+| 86 | 45860 |  | $1,715.57 | $958.02 | $2,673.59 | $1,819.57 | $-854.02 |
+| 87 | 45861 |  | $1,819.57 | $-54.00 | $1,765.57 | $1,621.57 | $-144.00 |
+| 88 | 45861 |  | $1,621.57 | $-40.00 | $1,581.57 | $1,675.57 | $+94.00 |
+| 89 | 45862 |  | $1,675.57 | $-200.00 | $1,475.57 | $2,492.67 | $+1,017.10 |
+| 91 | 45862 |  | $2,292.67 | $1,071.10 | $3,363.77 | $2,692.67 | $-671.10 |
+| 92 | 45863 |  | $2,692.67 | $-200.00 | $2,492.67 | $2,092.67 | $-400.00 |
+| 95 | 45867 |  | $1,900.67 | $-300.00 | $1,600.67 | $3,170.77 | $+1,570.10 |
+| 97 | 45867 |  | $2,170.77 | $-200.00 | $1,970.77 | $1,920.77 | $-50.00 |
+| 98 | 45867 |  | $1,920.77 | $570.10 | $2,490.87 | $3,470.77 | $+979.90 |
+| 99 | 45867 |  | $3,470.77 | $1,000.00 | $4,470.77 | $2,900.67 | $-1,570.10 |
+| 100 | 45867 |  | $2,900.67 | $-50.00 | $2,850.67 | $2,120.77 | $-729.90 |
+| 101 | 45868 |  | $2,120.77 | $-29.95 | $2,090.82 | $1,890.82 | $-200.00 |
+| 102 | 45869 |  | $1,890.82 | $-15.00 | $1,875.82 | $2,341.79 | $+465.97 |
+| 103 | 45869 |  | $2,341.79 | $-300.00 | $2,041.79 | $2,656.79 | $+615.00 |
+| 106 | 45869 |  | $2,356.79 | $1,072.97 | $3,429.76 | $2,963.79 | $-465.97 |
 
-This still doesn't match, indicating the balance values within the sheet are from the CSV's own balance column but the **CSV balance column has gaps** (many recent transactions show empty balance). The sheets likely filled some values and left others, creating inconsistencies.
+### July 2025 — 👤 Personal 0068
+**155 balance errors found:**
 
-**Verdict:** The balance columns in checking tabs are cosmetic/informational but not formula-verified. Since the **amounts are correct** (verified against CSV), the balance column discrepancies are low priority. The amounts are what matter for accounting.
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 5 | 45869 |  | $1,108.21 | $-5.00 | $1,103.21 | $608.98 | $-494.23 |
+| 6 | 45869 |  | $608.98 | $-25.00 | $583.98 | $613.98 | $+30.00 |
+| 7 | 45869 |  | $613.98 | $-52.44 | $561.54 | $1,055.77 | $+494.23 |
+| 8 | 45869 |  | $1,055.77 | $-62.46 | $993.31 | $427.77 | $-565.54 |
+| 9 | 45869 |  | $427.77 | $-118.75 | $309.02 | $490.23 | $+181.21 |
+| 10 | 45869 |  | $490.23 | $-169.93 | $320.30 | $638.98 | $+318.68 |
+| 11 | 45869 |  | $638.98 | $-246.86 | $392.12 | $808.91 | $+416.79 |
+| 12 | 45869 |  | $808.91 | $-283.99 | $524.92 | $143.78 | $-381.14 |
+| 13 | 45868 |  | $143.78 | $-10.89 | $132.89 | $613.21 | $+480.32 |
+| 16 | 45867 |  | $508.21 | $1,000.00 | $1,508.21 | $1,089.10 | $-419.11 |
+| 19 | 45867 |  | $1,589.10 | $-5.00 | $1,584.10 | $1,484.10 | $-100.00 |
+| 20 | 45867 |  | $1,484.10 | $-25.00 | $1,459.10 | $1,489.10 | $+30.00 |
+| 21 | 45867 |  | $1,489.10 | $-25.00 | $1,464.10 | $1,514.10 | $+50.00 |
+| 22 | 45867 |  | $1,514.10 | $-25.00 | $1,489.10 | $1,539.10 | $+50.00 |
+| 23 | 45867 |  | $1,539.10 | $-25.00 | $1,514.10 | $1,564.10 | $+50.00 |
+| 24 | 45867 |  | $1,564.10 | $-860.00 | $704.10 | $624.10 | $-80.00 |
+| 25 | 45866 |  | $624.10 | $1,000.00 | $1,624.10 | $1,197.86 | $-426.24 |
+| 28 | 45866 |  | $1,389.86 | $-3.78 | $1,386.08 | $1,367.83 | $-18.25 |
+| 29 | 45866 |  | $1,367.83 | $-5.00 | $1,362.83 | $114.10 | $-1,248.73 |
+| 30 | 45866 |  | $114.10 | $-6.26 | $107.84 | $119.10 | $+11.26 |
+| 31 | 45866 |  | $119.10 | $-8.25 | $110.85 | $300.36 | $+189.51 |
+| 32 | 45866 |  | $300.36 | $-10.00 | $290.36 | $1,357.83 | $+1,067.47 |
+| 33 | 45866 |  | $1,357.83 | $-11.53 | $1,346.30 | $346.30 | $-1,000.00 |
+| 34 | 45866 |  | $346.30 | $-18.25 | $328.05 | $1,371.61 | $+1,043.56 |
+| 35 | 45866 |  | $1,371.61 | $-25.00 | $1,346.61 | $89.10 | $-1,257.51 |
+| 36 | 45866 |  | $89.10 | $-37.69 | $51.41 | $308.61 | $+257.20 |
+| 37 | 45866 |  | $308.61 | $-175.00 | $133.61 | $125.36 | $-8.25 |
+| 38 | 45866 |  | $125.36 | $-1,000.00 | $-874.64 | $357.83 | $+1,232.47 |
+| 39 | 45863 |  | $357.83 | $200.00 | $557.83 | $410.80 | $-147.03 |
+| 40 | 45863 |  | $410.80 | $-19.05 | $391.75 | $222.86 | $-168.89 |
+| 42 | 45863 |  | $197.86 | $-68.89 | $128.97 | $241.91 | $+112.94 |
+| 43 | 45863 |  | $241.91 | $-100.00 | $141.91 | $310.80 | $+168.89 |
+| 44 | 45862 |  | $310.80 | $200.00 | $510.80 | $466.23 | $-44.57 |
+| 45 | 45862 |  | $466.23 | $200.00 | $666.23 | $266.23 | $-400.00 |
+| 46 | 45862 |  | $266.23 | $-5.00 | $261.23 | $436.23 | $+175.00 |
+| 47 | 45862 |  | $436.23 | $-25.00 | $411.23 | $441.23 | $+30.00 |
+| 48 | 45862 |  | $441.23 | $-41.96 | $399.27 | $210.80 | $-188.47 |
+| 49 | 45862 |  | $210.80 | $-183.47 | $27.33 | $252.76 | $+225.43 |
+| 50 | 45861 |  | $252.76 | $-5.00 | $247.76 | $209.24 | $-38.52 |
+| 51 | 45861 |  | $209.24 | $-22.02 | $187.22 | $214.24 | $+27.02 |
+| 52 | 45861 |  | $214.24 | $-25.00 | $189.24 | $236.26 | $+47.02 |
+| 53 | 45861 |  | $236.26 | $-63.01 | $173.25 | $66.23 | $-107.02 |
+| 54 | 45861 |  | $66.23 | $-80.00 | $-13.77 | $129.24 | $+143.01 |
+| 55 | 45860 |  | $129.24 | $-5.00 | $124.24 | $261.26 | $+137.02 |
+| 56 | 45860 |  | $261.26 | $-25.00 | $236.26 | $266.26 | $+30.00 |
+| 57 | 45860 |  | $266.26 | $-25.00 | $241.26 | $291.26 | $+50.00 |
+| 58 | 45860 |  | $291.26 | $-25.00 | $266.26 | $316.26 | $+50.00 |
+| 59 | 45859 |  | $316.26 | $350.00 | $666.26 | $461.16 | $-205.10 |
+| 60 | 45859 |  | $461.16 | $100.00 | $561.16 | $661.16 | $+100.00 |
+| 61 | 45859 |  | $661.16 | $100.00 | $761.16 | $561.16 | $-200.00 |
+| 62 | 45859 |  | $561.16 | $-3.00 | $558.16 | $375.97 | $-182.19 |
+| 63 | 45859 |  | $375.97 | $-5.00 | $370.97 | $378.97 | $+8.00 |
+| 64 | 45859 |  | $378.97 | $-5.00 | $373.97 | $383.97 | $+10.00 |
+| 65 | 45859 |  | $383.97 | $-5.00 | $378.97 | $388.97 | $+10.00 |
+| 66 | 45859 |  | $388.97 | $-5.80 | $383.17 | $393.97 | $+10.80 |
+| 67 | 45859 |  | $393.97 | $-6.00 | $387.97 | $492.70 | $+104.73 |
+| 68 | 45859 |  | $492.70 | $-7.23 | $485.47 | $644.62 | $+159.15 |
+| 69 | 45859 |  | $644.62 | $-8.63 | $635.99 | $471.04 | $-164.95 |
+| 70 | 45859 |  | $471.04 | $-9.00 | $462.04 | $431.02 | $-31.02 |
+| 71 | 45859 |  | $431.02 | $-9.31 | $421.71 | $651.85 | $+230.14 |
+| 72 | 45859 |  | $651.85 | $-9.71 | $642.14 | $341.26 | $-300.88 |
+| 73 | 45859 |  | $341.26 | $-10.78 | $330.48 | $608.84 | $+278.36 |
+| 74 | 45859 |  | $608.84 | $-11.02 | $597.82 | $440.02 | $-157.80 |
+| 75 | 45859 |  | $440.02 | $-13.03 | $426.99 | $479.67 | $+52.68 |
+| 76 | 45859 |  | $479.67 | $-19.00 | $460.67 | $498.70 | $+38.03 |
+| 77 | 45859 |  | $498.70 | $-20.00 | $478.70 | $451.04 | $-27.66 |
+| 78 | 45859 |  | $451.04 | $-20.42 | $430.62 | $550.06 | $+119.44 |
+| 79 | 45859 |  | $550.06 | $-25.00 | $525.06 | $350.97 | $-174.09 |
+| 80 | 45859 |  | $350.97 | $-25.00 | $325.97 | $619.62 | $+293.65 |
+| 81 | 45859 |  | $619.62 | $-31.25 | $588.37 | $399.77 | $-188.60 |
+| 82 | 45859 |  | $399.77 | $-32.36 | $367.41 | $517.70 | $+150.29 |
+| 83 | 45859 |  | $517.70 | $-38.36 | $479.34 | $570.48 | $+91.14 |
+| 84 | 45856 |  | $570.48 | $-5.00 | $565.48 | $111.16 | $-454.32 |
+| 85 | 45856 |  | $111.16 | $-10.89 | $100.27 | $141.16 | $+40.89 |
+| 87 | 45855 |  | $116.16 | $300.00 | $416.16 | $423.92 | $+7.76 |
+| 89 | 45855 |  | $523.92 | $-5.00 | $518.92 | $473.78 | $-45.14 |
+| 90 | 45855 |  | $473.78 | $-20.14 | $453.64 | $478.78 | $+25.14 |
+| 91 | 45855 |  | $478.78 | $-25.00 | $453.78 | $498.92 | $+45.14 |
+| 92 | 45855 |  | $498.92 | $-35.00 | $463.92 | $438.78 | $-25.14 |
+| 94 | 45854 |  | $152.05 | $-5.00 | $147.05 | $203.92 | $+56.87 |
+| 95 | 45854 |  | $203.92 | $-24.00 | $179.92 | $208.92 | $+29.00 |
+| 96 | 45854 |  | $208.92 | $-80.00 | $128.92 | $123.92 | $-5.00 |
+| 97 | 45853 |  | $123.92 | $200.00 | $323.92 | $315.81 | $-8.11 |
+| 98 | 45853 |  | $315.81 | $-5.00 | $310.81 | $232.92 | $-77.89 |
+| 99 | 45853 |  | $232.92 | $-10.89 | $222.03 | $304.92 | $+82.89 |
+| 100 | 45853 |  | $304.92 | $-19.00 | $285.92 | $237.92 | $-48.00 |
+| 101 | 45853 |  | $237.92 | $-24.00 | $213.92 | $256.92 | $+43.00 |
+| 102 | 45853 |  | $256.92 | $-24.00 | $232.92 | $280.92 | $+48.00 |
+| 103 | 45852 |  | $280.92 | $200.00 | $480.92 | $512.95 | $+32.03 |
+| 105 | 45852 |  | $612.95 | $-5.00 | $607.95 | $325.61 | $-282.34 |
+| 106 | 45852 |  | $325.61 | $-5.00 | $320.61 | $330.61 | $+10.00 |
+| 107 | 45852 |  | $330.61 | $-5.96 | $324.65 | $342.57 | $+17.92 |
+| 108 | 45852 |  | $342.57 | $-6.06 | $336.51 | $396.63 | $+60.12 |
+| 109 | 45852 |  | $396.63 | $-6.96 | $389.67 | $335.61 | $-54.06 |
+| 110 | 45852 |  | $335.61 | $-19.00 | $316.61 | $402.69 | $+86.08 |
+| 111 | 45852 |  | $402.69 | $-22.18 | $380.51 | $590.77 | $+210.26 |
+| 112 | 45852 |  | $590.77 | $-25.00 | $565.77 | $300.61 | $-265.16 |
+| 113 | 45852 |  | $300.61 | $-48.10 | $252.51 | $348.53 | $+96.02 |
+| 114 | 45852 |  | $348.53 | $-52.00 | $296.53 | $538.77 | $+242.24 |
+| 115 | 45852 |  | $538.77 | $-58.80 | $479.97 | $115.81 | $-364.16 |
+| 116 | 45852 |  | $115.81 | $-117.08 | $-1.27 | $421.69 | $+422.96 |
+| 117 | 45852 |  | $421.69 | $-126.00 | $295.69 | $174.61 | $-121.08 |
+| 118 | 45849 |  | $174.61 | $100.00 | $274.61 | $343.66 | $+69.05 |
+| 121 | 45848 |  | $312.95 | $200.00 | $512.95 | $670.38 | $+157.43 |
+| 123 | 45848 |  | $665.93 | $-7.20 | $658.73 | $302.06 | $-356.67 |
+| 124 | 45848 |  | $302.06 | $-19.00 | $283.06 | $309.26 | $+26.20 |
+| 125 | 45848 |  | $309.26 | $-21.33 | $287.93 | $434.60 | $+146.67 |
+| 126 | 45848 |  | $434.60 | $-23.40 | $411.20 | $243.66 | $-167.54 |
+| 127 | 45848 |  | $243.66 | $-35.00 | $208.66 | $267.06 | $+58.40 |
+| 128 | 45848 |  | $267.06 | $-106.34 | $160.72 | $328.26 | $+167.54 |
+| 129 | 45848 |  | $328.26 | $-210.00 | $118.26 | $455.93 | $+337.67 |
+| 130 | 45847 |  | $455.93 | $200.00 | $655.93 | $929.38 | $+273.45 |
+| 131 | 45847 |  | $929.38 | $-19.00 | $910.38 | $550.38 | $-360.00 |
+| 132 | 45847 |  | $550.38 | $-30.00 | $520.38 | $569.38 | $+49.00 |
+| 133 | 45847 |  | $569.38 | $-80.00 | $489.38 | $470.38 | $-19.00 |
+| 134 | 45847 |  | $470.38 | $-130.00 | $340.38 | $599.38 | $+259.00 |
+| 135 | 45847 |  | $599.38 | $-200.00 | $399.38 | $729.38 | $+330.00 |
+| 136 | 45846 |  | $729.38 | $200.00 | $929.38 | $1,028.46 | $+99.08 |
+| 137 | 45846 |  | $1,028.46 | $-16.00 | $1,012.46 | $729.38 | $-283.08 |
+| 138 | 45846 |  | $729.38 | $-16.00 | $713.38 | $745.38 | $+32.00 |
+| 139 | 45846 |  | $745.38 | $-16.00 | $729.38 | $761.38 | $+32.00 |
+| 140 | 45846 |  | $761.38 | $-16.00 | $745.38 | $777.38 | $+32.00 |
+| 141 | 45846 |  | $777.38 | $-21.82 | $755.56 | $793.38 | $+37.82 |
+| 142 | 45846 |  | $793.38 | $-213.26 | $580.12 | $815.20 | $+235.08 |
+| 143 | 45845 |  | $815.20 | $350.00 | $1,165.20 | $541.66 | $-623.54 |
+| 145 | 45845 |  | $768.02 | $200.00 | $968.02 | $1,168.02 | $+200.00 |
+| 146 | 45845 |  | $1,168.02 | $200.00 | $1,368.02 | $968.02 | $-400.00 |
+| 147 | 45845 |  | $968.02 | $100.00 | $1,068.02 | $1,268.02 | $+200.00 |
+| 148 | 45845 |  | $1,268.02 | $-6.38 | $1,261.64 | $828.46 | $-433.18 |
+| 149 | 45845 |  | $828.46 | $-8.78 | $819.68 | $859.84 | $+40.16 |
+| 150 | 45845 |  | $859.84 | $-9.74 | $850.10 | $1,258.28 | $+408.18 |
+| 151 | 45845 |  | $1,258.28 | $-16.00 | $1,242.28 | $1,156.41 | $-85.87 |
+| 152 | 45845 |  | $1,156.41 | $-20.94 | $1,135.47 | $868.62 | $-266.85 |
+| 153 | 45845 |  | $868.62 | $-25.00 | $843.62 | $834.84 | $-8.78 |
+| 154 | 45845 |  | $834.84 | $-30.00 | $804.84 | $889.56 | $+84.72 |
+| 155 | 45845 |  | $889.56 | $-36.85 | $852.71 | $1,119.56 | $+266.85 |
+| 156 | 45845 |  | $1,119.56 | $-37.71 | $1,081.85 | $1,220.57 | $+138.72 |
+| 158 | 45845 |  | $1,172.41 | $-200.00 | $972.41 | $919.56 | $-52.85 |
+| 159 | 45841 |  | $919.56 | $-10.89 | $908.67 | $327.60 | $-581.07 |
+| 160 | 45841 |  | $327.60 | $-11.84 | $315.76 | $279.51 | $-36.25 |
+| 161 | 45841 |  | $279.51 | $-16.00 | $263.51 | $291.35 | $+27.84 |
+| 162 | 45841 |  | $291.35 | $-20.25 | $271.10 | $307.35 | $+36.25 |
+| 163 | 45841 |  | $307.35 | $-22.11 | $285.24 | $222.40 | $-62.84 |
+| 165 | 45841 |  | $191.66 | $-35.00 | $156.66 | $244.51 | $+87.85 |
+| 166 | 45840 |  | $244.51 | $-13.52 | $230.99 | $466.84 | $+235.85 |
+| 167 | 45840 |  | $466.84 | $-16.00 | $450.84 | $418.49 | $-32.35 |
+| 168 | 45840 |  | $418.49 | $-32.35 | $386.14 | $434.49 | $+48.35 |
+| 169 | 45840 |  | $434.49 | $-80.00 | $354.49 | $338.49 | $-16.00 |
+| 170 | 45839 |  | $338.49 | $200.00 | $538.49 | $585.33 | $+46.84 |
+| 171 | 45839 |  | $585.33 | $200.00 | $785.33 | $385.33 | $-400.00 |
+| 172 | 45839 |  | $385.33 | $-8.94 | $376.39 | $576.39 | $+200.00 |
+| 173 | 45839 |  | $576.39 | $-16.00 | $560.39 | $480.36 | $-80.03 |
+| 174 | 45839 |  | $480.36 | $-16.00 | $464.36 | $496.36 | $+32.00 |
+| 175 | 45839 |  | $496.36 | $-16.00 | $480.36 | $512.36 | $+32.00 |
+| 176 | 45839 |  | $512.36 | $-20.25 | $492.11 | $556.14 | $+64.03 |
+
+### August 2025 — 💼 Business 4991
+**54 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45887 |  | $1,230.53 | $-9.99 | $1,220.54 | $1,924.96 | $+704.42 |
+| 4 | 45873 |  | $1,924.96 | $-76.62 | $1,848.34 | $1,618.29 | $-230.05 |
+| 5 | 45880 |  | $1,618.29 | $-20.00 | $1,598.29 | $1,010.53 | $-587.76 |
+| 6 | 45875 |  | $1,010.53 | $-85.00 | $925.53 | $1,261.49 | $+335.96 |
+| 7 | 45877 |  | $1,261.49 | $-4.09 | $1,257.40 | $1,351.52 | $+94.12 |
+| 8 | 45877 |  | $1,351.52 | $-19.90 | $1,331.62 | $1,355.61 | $+23.99 |
+| 9 | 45875 |  | $1,355.61 | $-297.00 | $1,058.61 | $964.49 | $-94.12 |
+| 10 | 45870 |  | $964.49 | $-100.00 | $864.49 | $2,194.91 | $+1,330.42 |
+| 11 | 45890 |  | $2,194.91 | $-100.00 | $2,094.91 | $2,275.35 | $+180.44 |
+| 12 | 45874 |  | $2,275.35 | $-10.50 | $2,264.85 | $1,208.69 | $-1,056.16 |
+| 13 | 45898 |  | $1,208.69 | $-15.00 | $1,193.69 | $913.94 | $-279.75 |
+| 14 | 45870 |  | $913.94 | $-300.00 | $613.94 | $1,894.91 | $+1,280.97 |
+| 15 | 45874 |  | $1,894.91 | $-200.00 | $1,694.91 | $1,008.69 | $-686.22 |
+| 16 | 45896 |  | $1,008.69 | $-200.00 | $808.69 | $1,191.89 | $+383.20 |
+| 17 | 45873 |  | $1,191.89 | $-350.00 | $841.89 | $988.64 | $+146.75 |
+| 18 | 45887 |  | $988.64 | $-350.00 | $638.64 | $1,174.96 | $+536.32 |
+| 19 | 45898 |  | $1,174.96 | $-350.00 | $824.96 | $928.94 | $+103.98 |
+| 20 | 45870 |  | $928.94 | $-200.00 | $728.94 | $1,694.91 | $+965.97 |
+| 21 | 45873 |  | $1,694.91 | $-100.00 | $1,594.91 | $1,518.29 | $-76.62 |
+| 22 | 45875 |  | $1,518.29 | $-100.00 | $1,418.29 | $864.49 | $-553.80 |
+| 23 | 45876 |  | $864.49 | $-200.00 | $664.49 | $1,375.51 | $+711.02 |
+| 24 | 45877 |  | $1,375.51 | $-100.00 | $1,275.51 | $1,251.52 | $-23.99 |
+| 25 | 45880 |  | $1,251.52 | $-200.00 | $1,051.52 | $1,030.53 | $-20.99 |
+| 26 | 45880 |  | $1,030.53 | $-200.00 | $830.53 | $810.53 | $-20.00 |
+| 27 | 45881 |  | $810.53 | $-200.00 | $610.53 | $2,129.25 | $+1,518.72 |
+| 29 | 45883 |  | $1,529.25 | $-200.00 | $1,329.25 | $1,980.41 | $+651.16 |
+| 31 | 45887 |  | $1,580.41 | $-200.00 | $1,380.41 | $1,724.96 | $+344.55 |
+| 33 | 45890 |  | $1,524.96 | $-600.00 | $924.96 | $1,675.35 | $+750.39 |
+| 36 | 45894 |  | $1,275.35 | $-150.00 | $1,125.35 | $1,439.89 | $+314.54 |
+| 39 | 45895 |  | $1,009.89 | $-1,000.00 | $9.89 | $1,591.89 | $+1,582.00 |
+| 41 | 45897 |  | $1,391.89 | $-200.00 | $1,191.89 | $1,295.89 | $+104.00 |
+| 42 | 45873 |  | $1,295.89 | $-179.65 | $1,116.24 | $1,338.64 | $+222.40 |
+| 43 | 45890 |  | $1,338.64 | $-90.00 | $1,248.64 | $2,375.35 | $+1,126.71 |
+| 44 | 45880 |  | $2,375.35 | $-48.00 | $2,327.35 | $756.53 | $-1,570.82 |
+| 45 | 45874 |  | $756.53 | $230.55 | $987.08 | $1,219.19 | $+232.11 |
+| 46 | 45887 |  | $1,219.19 | $354.54 | $1,573.73 | $1,934.95 | $+361.22 |
+| 47 | 45894 |  | $1,934.95 | $354.54 | $2,289.49 | $1,629.89 | $-659.60 |
+| 48 | 45897 |  | $1,629.89 | $708.39 | $2,338.28 | $1,900.28 | $-438.00 |
+| 49 | 45876 |  | $1,900.28 | $711.02 | $2,611.30 | $1,575.51 | $-1,035.79 |
+| 50 | 45881 |  | $1,575.51 | $572.72 | $2,148.23 | $2,329.25 | $+181.02 |
+| 51 | 45895 |  | $2,329.25 | $582.00 | $2,911.25 | $2,591.89 | $-319.36 |
+| 52 | 45875 |  | $2,591.89 | $337.80 | $2,929.69 | $1,346.49 | $-1,583.20 |
+| 53 | 45883 |  | $1,346.49 | $706.52 | $2,053.01 | $2,180.41 | $+127.40 |
+| 54 | 45890 |  | $2,180.41 | $708.39 | $2,888.80 | $2,465.35 | $-423.45 |
+| 55 | 45888 |  | $2,465.35 | $582.00 | $3,047.35 | $1,756.96 | $-1,290.39 |
+| 56 | 45897 |  | $1,756.96 | $-404.39 | $1,352.57 | $1,495.89 | $+143.32 |
+| 57 | 45880 |  | $1,495.89 | $-6.00 | $1,489.89 | $804.53 | $-685.36 |
+| 58 | 45870 |  | $804.53 | $-21.88 | $782.65 | $2,319.91 | $+1,537.26 |
+| 59 | 45882 |  | $2,319.91 | $-55.36 | $2,264.55 | $1,473.89 | $-790.66 |
+| 60 | 45897 |  | $1,473.89 | $-16.95 | $1,456.94 | $1,278.94 | $-178.00 |
+| 61 | 45894 |  | $1,278.94 | $-40.00 | $1,238.94 | $1,589.89 | $+350.95 |
+| 62 | 45881 |  | $1,589.89 | $1,000.00 | $2,589.89 | $1,756.53 | $-833.36 |
+| 63 | 45895 |  | $1,756.53 | $1,000.00 | $2,756.53 | $2,009.89 | $-746.64 |
+| 64 | 45870 |  | $2,009.89 | $-25.00 | $1,984.89 | $2,294.91 | $+310.02 |
+
+### August 2025 — 👤 Personal 0068
+**234 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45890 |  | $787.29 | $-14.32 | $772.97 | $209.18 | $-563.79 |
+| 4 | 45894 |  | $209.18 | $-16.15 | $193.03 | $899.53 | $+706.50 |
+| 5 | 45884 |  | $899.53 | $-5.00 | $894.53 | $240.72 | $-653.81 |
+| 6 | 45890 |  | $240.72 | $-5.00 | $235.72 | $516.50 | $+280.78 |
+| 7 | 45881 |  | $516.50 | $-5.00 | $511.50 | $741.44 | $+229.94 |
+| 8 | 45887 |  | $741.44 | $-5.00 | $736.44 | $378.98 | $-357.46 |
+| 9 | 45898 |  | $378.98 | $-5.00 | $373.98 | $1,028.98 | $+655.00 |
+| 10 | 45888 |  | $1,028.98 | $-5.00 | $1,023.98 | $153.92 | $-870.06 |
+| 11 | 45889 |  | $153.92 | $-5.00 | $148.92 | $19.94 | $-128.98 |
+| 12 | 45873 |  | $19.94 | $-5.00 | $14.94 | $528.72 | $+513.78 |
+| 13 | 45882 |  | $528.72 | $-5.00 | $523.72 | $306.56 | $-217.16 |
+| 14 | 45894 |  | $306.56 | $-5.00 | $301.56 | $294.10 | $-7.46 |
+| 15 | 45873 |  | $294.10 | $-5.00 | $289.10 | $558.72 | $+269.62 |
+| 16 | 45887 |  | $558.72 | $-5.00 | $553.72 | $383.98 | $-169.74 |
+| 17 | 45896 |  | $383.98 | $-5.00 | $378.98 | $762.87 | $+383.89 |
+| 18 | 45875 |  | $762.87 | $-5.00 | $757.87 | $318.76 | $-439.11 |
+| 19 | 45880 |  | $318.76 | $-5.00 | $313.76 | $355.31 | $+41.55 |
+| 20 | 45874 |  | $355.31 | $-5.00 | $350.31 | $384.72 | $+34.41 |
+| 21 | 45880 |  | $384.72 | $-5.00 | $379.72 | $360.31 | $-19.41 |
+| 22 | 45880 |  | $360.31 | $-5.00 | $355.31 | $717.59 | $+362.28 |
+| 23 | 45876 |  | $717.59 | $-5.00 | $712.59 | $311.72 | $-400.87 |
+| 24 | 45897 |  | $311.72 | $-5.00 | $306.72 | $708.98 | $+402.26 |
+| 25 | 45891 |  | $708.98 | $-5.00 | $703.98 | $340.73 | $-363.25 |
+| 26 | 45877 |  | $340.73 | $-5.00 | $335.73 | $264.68 | $-71.05 |
+| 27 | 45873 |  | $264.68 | $-5.00 | $259.68 | $523.72 | $+264.04 |
+| 28 | 45875 |  | $523.72 | $-7.68 | $516.04 | $323.76 | $-192.28 |
+| 29 | 45880 |  | $323.76 | $-5.42 | $318.34 | $365.31 | $+46.97 |
+| 30 | 45887 |  | $365.31 | $-8.32 | $356.99 | $388.98 | $+31.99 |
+| 31 | 45884 |  | $388.98 | $-10.48 | $378.50 | $245.72 | $-132.78 |
+| 32 | 45880 |  | $245.72 | $-9.52 | $236.20 | $722.59 | $+486.39 |
+| 33 | 45894 |  | $722.59 | $-9.34 | $713.25 | $299.10 | $-414.15 |
+| 34 | 45889 |  | $299.10 | $-16.76 | $282.34 | $24.94 | $-257.40 |
+| 35 | 45876 |  | $24.94 | $-7.22 | $17.72 | $316.72 | $+299.00 |
+| 36 | 45873 |  | $316.72 | $-5.68 | $311.04 | $563.72 | $+252.68 |
+| 37 | 45896 |  | $563.72 | $-26.04 | $537.68 | $792.87 | $+255.19 |
+| 38 | 45891 |  | $792.87 | $-31.20 | $761.67 | $511.95 | $-249.72 |
+| 39 | 45874 |  | $511.95 | $-55.00 | $456.95 | $465.72 | $+8.77 |
+| 40 | 45887 |  | $465.72 | $-2.00 | $463.72 | $644.29 | $+180.57 |
+| 41 | 45877 |  | $644.29 | $-18.68 | $625.61 | $307.30 | $-318.31 |
+| 42 | 45880 |  | $307.30 | $-232.01 | $75.29 | $395.55 | $+320.26 |
+| 43 | 45884 |  | $395.55 | $-516.42 | $-120.87 | $281.20 | $+402.07 |
+| 44 | 45884 |  | $281.20 | $-65.09 | $216.11 | $139.84 | $-76.27 |
+| 45 | 45874 |  | $139.84 | $-40.24 | $99.60 | $327.33 | $+227.73 |
+| 46 | 45890 |  | $327.33 | $-218.00 | $109.33 | $298.50 | $+189.17 |
+| 47 | 45870 |  | $298.50 | $-11.71 | $286.79 | $332.07 | $+45.28 |
+| 48 | 45875 |  | $332.07 | $-10.89 | $321.18 | $416.44 | $+95.26 |
+| 49 | 45876 |  | $416.44 | $-10.89 | $405.55 | $414.77 | $+9.22 |
+| 50 | 45877 |  | $414.77 | $-11.71 | $403.06 | $325.98 | $-77.08 |
+| 51 | 45875 |  | $325.98 | $-60.00 | $265.98 | $356.44 | $+90.46 |
+| 52 | 45880 |  | $356.44 | $-9.24 | $347.20 | $701.97 | $+354.77 |
+| 53 | 45877 |  | $701.97 | $-61.79 | $640.18 | $202.89 | $-437.29 |
+| 54 | 45880 |  | $202.89 | $-41.80 | $161.09 | $160.01 | $-1.08 |
+| 55 | 45881 |  | $160.01 | $-106.34 | $53.67 | $821.44 | $+767.77 |
+| 56 | 45883 |  | $821.44 | $-14.38 | $807.06 | $755.63 | $-51.43 |
+| 57 | 45890 |  | $755.63 | $-13.80 | $741.83 | $546.50 | $-195.33 |
+| 58 | 45894 |  | $546.50 | $-32.71 | $513.79 | $1,032.98 | $+519.19 |
+| 59 | 45894 |  | $1,032.98 | $-11.23 | $1,021.75 | $1,065.69 | $+43.94 |
+| 60 | 45894 |  | $1,065.69 | $-15.20 | $1,050.49 | $1,076.92 | $+26.43 |
+| 61 | 45894 |  | $1,076.92 | $-15.20 | $1,061.72 | $1,092.12 | $+30.40 |
+| 62 | 45883 |  | $1,092.12 | $-15.63 | $1,076.49 | $770.01 | $-306.48 |
+| 63 | 45884 |  | $770.01 | $-31.17 | $738.84 | $797.62 | $+58.78 |
+| 64 | 45894 |  | $797.62 | $-4.46 | $793.16 | $1,012.35 | $+219.19 |
+| 65 | 45889 |  | $1,012.35 | $-32.36 | $979.99 | $66.70 | $-913.29 |
+| 66 | 45887 |  | $66.70 | $-44.62 | $22.08 | $486.44 | $+464.36 |
+| 67 | 45887 |  | $486.44 | $-1.50 | $484.94 | $430.91 | $-54.03 |
+| 68 | 45876 |  | $430.91 | $-13.10 | $417.81 | $425.66 | $+7.85 |
+| 69 | 45873 |  | $425.66 | $-15.87 | $409.79 | $741.20 | $+331.41 |
+| 70 | 45882 |  | $741.20 | $-10.98 | $730.22 | $321.56 | $-408.66 |
+| 71 | 45894 |  | $321.56 | $-224.37 | $97.19 | $490.59 | $+393.40 |
+| 72 | 45880 |  | $490.59 | $-2.50 | $488.09 | $627.56 | $+139.47 |
+| 73 | 45882 |  | $627.56 | $-2.50 | $625.06 | $539.48 | $-85.58 |
+| 74 | 45894 |  | $539.48 | $-19.05 | $520.43 | $367.21 | $-153.22 |
+| 75 | 45890 |  | $367.21 | $-3.00 | $364.21 | $143.15 | $-221.06 |
+| 76 | 45887 |  | $143.15 | $-3.00 | $140.15 | $294.11 | $+153.96 |
+| 77 | 45887 |  | $294.11 | $-3.00 | $291.11 | $297.11 | $+6.00 |
+| 78 | 45882 |  | $297.11 | $-3.00 | $294.11 | $185.64 | $-108.47 |
+| 79 | 45881 |  | $185.64 | $-3.00 | $182.64 | $541.98 | $+359.34 |
+| 80 | 45880 |  | $541.98 | $-3.00 | $538.98 | $157.01 | $-381.97 |
+| 81 | 45873 |  | $157.01 | $-3.00 | $154.01 | $520.72 | $+366.71 |
+| 82 | 45881 |  | $520.72 | $-122.99 | $397.73 | $544.98 | $+147.25 |
+| 83 | 45887 |  | $544.98 | $-23.00 | $521.98 | $300.11 | $-221.87 |
+| 84 | 45890 |  | $300.11 | $-43.00 | $257.11 | $166.18 | $-90.93 |
+| 85 | 45882 |  | $166.18 | $-63.00 | $103.18 | $357.54 | $+254.36 |
+| 86 | 45887 |  | $357.54 | $-23.00 | $334.54 | $531.06 | $+196.52 |
+| 87 | 45873 |  | $531.06 | $-78.99 | $452.07 | $603.22 | $+151.15 |
+| 88 | 45880 |  | $603.22 | $-128.50 | $474.72 | $201.81 | $-272.91 |
+| 89 | 45873 |  | $201.81 | $350.00 | $551.81 | $657.07 | $+105.26 |
+| 90 | 45887 |  | $657.07 | $350.00 | $1,007.07 | $376.53 | $-630.54 |
+| 91 | 45898 |  | $376.53 | $350.00 | $726.53 | $1,058.98 | $+332.45 |
+| 92 | 45870 |  | $1,058.98 | $200.00 | $1,258.98 | $343.78 | $-915.20 |
+| 93 | 45873 |  | $343.78 | $100.00 | $443.78 | $757.07 | $+313.29 |
+| 94 | 45875 |  | $757.07 | $100.00 | $857.07 | $427.33 | $-429.74 |
+| 95 | 45876 |  | $427.33 | $200.00 | $627.33 | $438.76 | $-188.57 |
+| 96 | 45877 |  | $438.76 | $100.00 | $538.76 | $337.69 | $-201.07 |
+| 97 | 45880 |  | $337.69 | $200.00 | $537.69 | $402.89 | $-134.80 |
+| 99 | 45881 |  | $602.89 | $200.00 | $802.89 | $957.01 | $+154.12 |
+| 100 | 45881 |  | $957.01 | $600.00 | $1,557.01 | $757.01 | $-800.00 |
+| 101 | 45883 |  | $757.01 | $200.00 | $957.01 | $785.64 | $-171.37 |
+| 102 | 45883 |  | $785.64 | $400.00 | $1,185.64 | $585.64 | $-600.00 |
+| 103 | 45887 |  | $585.64 | $200.00 | $785.64 | $576.53 | $-209.11 |
+| 105 | 45890 |  | $776.53 | $600.00 | $1,376.53 | $601.46 | $-775.07 |
+| 106 | 45891 |  | $601.46 | $200.00 | $801.46 | $343.15 | $-458.31 |
+| 108 | 45894 |  | $543.15 | $150.00 | $693.15 | $1,007.32 | $+314.17 |
+| 110 | 45894 |  | $1,107.32 | $330.00 | $1,437.32 | $657.32 | $-780.00 |
+| 111 | 45895 |  | $657.32 | $1,000.00 | $1,657.32 | $1,266.91 | $-390.41 |
+| 112 | 45896 |  | $1,266.91 | $200.00 | $1,466.91 | $818.91 | $-648.00 |
+| 113 | 45897 |  | $818.91 | $200.00 | $1,018.91 | $904.03 | $-114.88 |
+| 114 | 45880 |  | $904.03 | $200.00 | $1,104.03 | $802.89 | $-301.14 |
+| 115 | 45884 |  | $802.89 | $200.00 | $1,002.89 | $835.30 | $-167.59 |
+| 116 | 45894 |  | $835.30 | $200.00 | $1,035.30 | $857.32 | $-177.98 |
+| 117 | 45873 |  | $857.32 | $-25.00 | $832.32 | $533.72 | $-298.60 |
+| 118 | 45875 |  | $533.72 | $-80.00 | $453.72 | $238.76 | $-214.96 |
+| 119 | 45876 |  | $238.76 | $-35.00 | $203.76 | $276.72 | $+72.96 |
+| 120 | 45880 |  | $276.72 | $-25.00 | $251.72 | $330.31 | $+78.59 |
+| 121 | 45882 |  | $330.31 | $-80.00 | $250.31 | $226.56 | $-23.75 |
+| 122 | 45883 |  | $226.56 | $-35.00 | $191.56 | $644.58 | $+453.02 |
+| 123 | 45896 |  | $644.58 | $-80.00 | $564.58 | $682.87 | $+118.29 |
+| 124 | 45898 |  | $682.87 | $-25.00 | $657.87 | $1,003.98 | $+346.11 |
+| 125 | 45881 |  | $1,003.98 | $-15.24 | $988.74 | $927.78 | $-60.96 |
+| 126 | 45882 |  | $927.78 | $-15.24 | $912.54 | $469.42 | $-443.12 |
+| 127 | 45882 |  | $469.42 | $-37.92 | $431.50 | $188.64 | $-242.86 |
+| 128 | 45888 |  | $188.64 | $-13.94 | $174.70 | $233.92 | $+59.22 |
+| 129 | 45884 |  | $233.92 | $-40.49 | $193.43 | $26.53 | $-166.90 |
+| 130 | 45890 |  | $26.53 | $-20.03 | $6.50 | $146.15 | $+139.65 |
+| 131 | 45880 |  | $146.15 | $-24.82 | $121.33 | $370.73 | $+249.40 |
+| 132 | 45883 |  | $370.73 | $-9.28 | $361.45 | $635.30 | $+273.85 |
+| 133 | 45891 |  | $635.30 | $-13.41 | $621.89 | $327.32 | $-294.57 |
+| 134 | 45889 |  | $327.32 | $-15.48 | $311.84 | $1.46 | $-310.38 |
+| 135 | 45897 |  | $1.46 | $50.00 | $51.46 | $704.03 | $+652.57 |
+| 136 | 45898 |  | $704.03 | $-25.00 | $679.03 | $1,033.98 | $+354.95 |
+| 137 | 45897 |  | $1,033.98 | $-25.00 | $1,008.98 | $713.98 | $-295.00 |
+| 138 | 45896 |  | $713.98 | $-25.00 | $688.98 | $767.87 | $+78.89 |
+| 139 | 45895 |  | $767.87 | $-25.00 | $742.87 | $1,191.91 | $+449.04 |
+| 140 | 45895 |  | $1,191.91 | $-25.00 | $1,166.91 | $1,216.91 | $+50.00 |
+| 141 | 45895 |  | $1,216.91 | $-25.00 | $1,191.91 | $1,241.91 | $+50.00 |
+| 142 | 45894 |  | $1,241.91 | $-25.00 | $1,216.91 | $915.68 | $-301.23 |
+| 143 | 45891 |  | $915.68 | $-25.00 | $890.68 | $345.73 | $-544.95 |
+| 144 | 45890 |  | $345.73 | $-25.00 | $320.73 | $521.50 | $+200.77 |
+| 145 | 45889 |  | $521.50 | $-25.00 | $496.50 | $41.70 | $-454.80 |
+| 146 | 45888 |  | $41.70 | $-25.00 | $16.70 | $158.92 | $+142.22 |
+| 147 | 45888 |  | $158.92 | $-25.00 | $133.92 | $183.92 | $+50.00 |
+| 148 | 45888 |  | $183.92 | $-25.00 | $158.92 | $208.92 | $+50.00 |
+| 149 | 45887 |  | $208.92 | $-25.00 | $183.92 | $581.85 | $+397.93 |
+| 150 | 45884 |  | $581.85 | $-25.00 | $556.85 | $256.20 | $-300.65 |
+| 151 | 45883 |  | $256.20 | $-25.00 | $231.20 | $679.58 | $+448.38 |
+| 152 | 45882 |  | $679.58 | $-25.00 | $654.58 | $332.54 | $-322.04 |
+| 153 | 45881 |  | $332.54 | $-25.00 | $307.54 | $746.44 | $+438.90 |
+| 154 | 45881 |  | $746.44 | $-25.00 | $721.44 | $771.44 | $+50.00 |
+| 155 | 45881 |  | $771.44 | $-25.00 | $746.44 | $796.44 | $+50.00 |
+| 156 | 45880 |  | $796.44 | $-25.00 | $771.44 | $732.11 | $-39.33 |
+| 157 | 45877 |  | $732.11 | $-25.00 | $707.11 | $269.68 | $-437.43 |
+| 158 | 45876 |  | $269.68 | $-25.00 | $244.68 | $323.94 | $+79.26 |
+| 159 | 45875 |  | $323.94 | $-25.00 | $298.94 | $331.44 | $+32.50 |
+| 160 | 45874 |  | $331.44 | $-25.00 | $306.44 | $389.72 | $+83.28 |
+| 161 | 45874 |  | $389.72 | $-25.00 | $364.72 | $414.72 | $+50.00 |
+| 162 | 45874 |  | $414.72 | $-25.00 | $389.72 | $439.72 | $+50.00 |
+| 163 | 45873 |  | $439.72 | $-25.00 | $414.72 | $682.21 | $+267.49 |
+| 164 | 45870 |  | $682.21 | $-25.00 | $657.21 | $307.07 | $-350.14 |
+| 165 | 45884 |  | $307.07 | $-72.82 | $234.25 | $67.02 | $-167.23 |
+| 166 | 45894 |  | $67.02 | $-12.07 | $54.95 | $314.94 | $+259.99 |
+| 167 | 45881 |  | $314.94 | $-44.59 | $270.35 | $667.97 | $+397.62 |
+| 168 | 45873 |  | $667.97 | $-8.13 | $659.84 | $707.21 | $+47.37 |
+| 169 | 45894 |  | $707.21 | $-166.00 | $541.21 | $714.96 | $+173.75 |
+| 170 | 45881 |  | $714.96 | $-13.99 | $700.97 | $943.02 | $+242.05 |
+| 171 | 45887 |  | $943.02 | $-25.28 | $917.74 | $336.02 | $-581.72 |
+| 172 | 45882 |  | $336.02 | $-26.94 | $309.08 | $484.66 | $+175.58 |
+| 173 | 45882 |  | $484.66 | $-27.88 | $456.78 | $511.60 | $+54.82 |
+| 174 | 45883 |  | $511.60 | $-18.37 | $493.23 | $737.26 | $+244.03 |
+| 175 | 45887 |  | $737.26 | $-18.37 | $718.89 | $438.92 | $-279.97 |
+| 176 | 45890 |  | $438.92 | $-4.04 | $434.88 | $560.30 | $+125.42 |
+| 177 | 45890 |  | $560.30 | $-19.20 | $541.10 | $564.34 | $+23.24 |
+| 178 | 45884 |  | $564.34 | $-6.51 | $557.83 | $828.79 | $+270.96 |
+| 179 | 45887 |  | $828.79 | $-17.96 | $810.83 | $646.29 | $-164.54 |
+| 180 | 45887 |  | $646.29 | $-6.51 | $639.78 | $432.41 | $-207.37 |
+| 181 | 45888 |  | $432.41 | $-14.25 | $418.16 | $279.86 | $-138.30 |
+| 182 | 45889 |  | $279.86 | $-14.86 | $265.00 | $139.06 | $-125.94 |
+| 183 | 45891 |  | $139.06 | $-16.15 | $122.91 | $476.31 | $+353.40 |
+| 184 | 45891 |  | $476.31 | $-2.16 | $474.15 | $492.46 | $+18.31 |
+| 185 | 45891 |  | $492.46 | $-17.33 | $475.13 | $494.62 | $+19.49 |
+| 186 | 45894 |  | $494.62 | $-18.57 | $476.05 | $880.96 | $+404.91 |
+| 187 | 45873 |  | $880.96 | $-25.86 | $855.10 | $715.34 | $-139.76 |
+| 188 | 45874 |  | $715.34 | $-1.00 | $714.34 | $464.72 | $-249.62 |
+| 189 | 45874 |  | $464.72 | $-17.15 | $447.57 | $367.57 | $-80.00 |
+| 190 | 45880 |  | $367.57 | $-6.38 | $361.19 | $711.21 | $+350.02 |
+| 191 | 45889 |  | $711.21 | $-3.00 | $708.21 | $16.94 | $-691.27 |
+| 192 | 45889 |  | $16.94 | $-40.00 | $-23.06 | $99.06 | $+122.12 |
+| 193 | 45882 |  | $99.06 | $-48.88 | $50.18 | $420.54 | $+370.36 |
+| 194 | 45877 |  | $420.54 | $-12.62 | $407.92 | $294.68 | $-113.24 |
+| 195 | 45876 |  | $294.68 | $-65.83 | $228.85 | $348.94 | $+120.09 |
+| 196 | 45890 |  | $348.94 | $-17.92 | $331.02 | $583.54 | $+252.52 |
+| 197 | 45894 |  | $583.54 | $-16.17 | $567.37 | $1,016.81 | $+449.44 |
+| 198 | 45887 |  | $1,016.81 | $-13.81 | $1,003.00 | $620.05 | $-382.95 |
+| 199 | 45887 |  | $620.05 | $-10.43 | $609.62 | $633.86 | $+24.24 |
+| 200 | 45891 |  | $633.86 | $-55.89 | $577.97 | $370.73 | $-207.24 |
+| 201 | 45880 |  | $370.73 | $-26.40 | $344.33 | $630.06 | $+285.73 |
+| 202 | 45884 |  | $630.06 | $-8.50 | $621.56 | $204.93 | $-416.63 |
+| 203 | 45884 |  | $204.93 | $-21.00 | $183.93 | $213.43 | $+29.50 |
+| 204 | 45887 |  | $213.43 | $-13.20 | $200.23 | $606.85 | $+406.62 |
+| 205 | 45883 |  | $606.85 | $-21.01 | $585.84 | $704.58 | $+118.74 |
+| 206 | 45883 |  | $704.58 | $-11.67 | $692.91 | $725.59 | $+32.68 |
+| 207 | 45887 |  | $725.59 | $-17.68 | $707.91 | $361.30 | $-346.61 |
+| 208 | 45887 |  | $361.30 | $-14.65 | $346.65 | $731.70 | $+385.05 |
+| 209 | 45894 |  | $731.70 | $-13.51 | $718.19 | $417.20 | $-300.99 |
+| 210 | 45884 |  | $417.20 | $-6.29 | $410.91 | $234.43 | $-176.48 |
+| 211 | 45894 |  | $234.43 | $-28.92 | $205.51 | $940.68 | $+735.17 |
+| 212 | 45894 |  | $940.68 | $-42.75 | $897.93 | $969.60 | $+71.67 |
+| 213 | 45894 |  | $969.60 | $-6.50 | $963.10 | $308.44 | $-654.66 |
+| 214 | 45894 |  | $308.44 | $-21.39 | $287.05 | $430.71 | $+143.66 |
+| 215 | 45894 |  | $430.71 | $-21.39 | $409.32 | $452.10 | $+42.78 |
+| 216 | 45894 |  | $452.10 | $-17.10 | $435.00 | $473.49 | $+38.49 |
+| 217 | 45880 |  | $473.49 | $-30.18 | $443.31 | $757.11 | $+313.80 |
+| 218 | 45891 |  | $757.11 | $-49.69 | $707.42 | $426.62 | $-280.80 |
+| 219 | 45887 |  | $426.62 | $-27.79 | $398.83 | $554.06 | $+155.23 |
+| 220 | 45887 |  | $554.06 | $-29.15 | $524.91 | $457.29 | $-67.62 |
+| 221 | 45887 |  | $457.29 | $-67.45 | $389.84 | $664.25 | $+274.41 |
+| 222 | 45887 |  | $664.25 | $-30.18 | $634.07 | $746.35 | $+112.28 |
+| 223 | 45894 |  | $746.35 | $-4.64 | $741.71 | $362.57 | $-379.14 |
+| 224 | 45881 |  | $362.57 | $-28.88 | $333.69 | $712.56 | $+378.87 |
+| 225 | 45894 |  | $712.56 | $-30.94 | $681.62 | $386.26 | $-295.36 |
+| 226 | 45887 |  | $386.26 | $-12.91 | $373.35 | $323.11 | $-50.24 |
+| 227 | 45894 |  | $323.11 | $-27.19 | $295.92 | $266.91 | $-29.01 |
+| 228 | 45894 |  | $266.91 | $-35.56 | $231.35 | $327.01 | $+95.66 |
+| 229 | 45876 |  | $327.01 | $-39.03 | $287.98 | $237.69 | $-50.29 |
+| 230 | 45882 |  | $237.69 | $-10.00 | $227.69 | $311.56 | $+83.87 |
+| 231 | 45890 |  | $311.56 | $-55.00 | $256.56 | $243.50 | $-13.06 |
+| 233 | 45895 |  | $223.50 | $-6.00 | $217.50 | $1,168.91 | $+951.41 |
+| 234 | 45895 |  | $1,168.91 | $-10.00 | $1,158.91 | $1,181.91 | $+23.00 |
+| 236 | 45887 |  | $1,174.91 | $-33.61 | $1,141.30 | $397.30 | $-744.00 |
+| 237 | 45896 |  | $397.30 | $-28.84 | $368.46 | $654.03 | $+285.57 |
+| 238 | 45897 |  | $654.03 | $-165.05 | $488.98 | $738.98 | $+250.00 |
+| 239 | 45880 |  | $738.98 | $-45.51 | $693.47 | $656.46 | $-37.01 |
+| 240 | 45888 |  | $656.46 | $-32.00 | $624.46 | $247.86 | $-376.60 |
+| 241 | 45873 |  | $247.86 | $-33.82 | $214.04 | $569.40 | $+355.36 |
+| 242 | 45895 |  | $569.40 | $-550.00 | $19.40 | $618.91 | $+599.51 |
+
+### September 2025 — 💼 Business 4991
+**50 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45923 |  | $1,483.86 | $-17.84 | $1,466.02 | $1,580.63 | $+114.61 |
+| 4 | 45930 |  | $1,580.63 | $-94.49 | $1,486.14 | $1,590.33 | $+104.19 |
+| 5 | 45929 |  | $1,590.33 | $-16.78 | $1,573.55 | $907.02 | $-666.53 |
+| 6 | 45930 |  | $907.02 | $-10.00 | $897.02 | $1,580.33 | $+683.31 |
+| 7 | 45908 |  | $1,580.33 | $-85.00 | $1,495.33 | $2,411.14 | $+915.81 |
+| 8 | 45908 |  | $2,411.14 | $-19.90 | $2,391.24 | $2,094.24 | $-297.00 |
+| 9 | 45908 |  | $2,094.24 | $-297.00 | $1,797.24 | $2,114.14 | $+316.90 |
+| 10 | 45909 |  | $2,114.14 | $-100.00 | $2,014.14 | $2,680.94 | $+666.80 |
+| 11 | 45929 |  | $2,680.94 | $-10.00 | $2,670.94 | $1,690.75 | $-980.19 |
+| 12 | 45929 |  | $1,690.75 | $-100.00 | $1,590.75 | $807.02 | $-783.73 |
+| 13 | 45930 |  | $807.02 | $-15.00 | $792.02 | $1,565.33 | $+773.31 |
+| 14 | 45930 |  | $1,565.33 | $300.00 | $1,865.33 | $1,684.82 | $-180.51 |
+| 15 | 45904 |  | $1,684.82 | $200.00 | $1,884.82 | $1,421.14 | $-463.68 |
+| 16 | 45908 |  | $1,421.14 | $200.00 | $1,621.14 | $2,496.14 | $+875.00 |
+| 17 | 45915 |  | $2,496.14 | $-350.00 | $2,146.14 | $1,133.86 | $-1,012.28 |
+| 18 | 45929 |  | $1,133.86 | $-350.00 | $783.86 | $923.80 | $+139.94 |
+| 19 | 45904 |  | $923.80 | $-200.00 | $723.80 | $1,221.14 | $+497.34 |
+| 22 | 45908 |  | $921.14 | $-200.00 | $721.14 | $1,894.24 | $+1,173.10 |
+| 24 | 45909 |  | $1,594.24 | $-600.00 | $994.24 | $2,080.94 | $+1,086.70 |
+| 25 | 45910 |  | $2,080.94 | $-800.00 | $1,280.94 | $1,628.14 | $+347.20 |
+| 26 | 45911 |  | $1,628.14 | $-100.00 | $1,528.14 | $1,749.21 | $+221.07 |
+| 28 | 45918 |  | $1,549.21 | $-200.00 | $1,349.21 | $1,568.02 | $+218.81 |
+| 29 | 45922 |  | $1,568.02 | $-200.00 | $1,368.02 | $1,556.02 | $+188.00 |
+| 31 | 45923 |  | $1,356.02 | $-200.00 | $1,156.02 | $1,290.63 | $+134.61 |
+| 32 | 45924 |  | $1,290.63 | $-700.00 | $590.63 | $1,928.43 | $+1,337.80 |
+| 33 | 45926 |  | $1,928.43 | $-287.00 | $1,641.43 | $2,000.75 | $+359.32 |
+| 35 | 45929 |  | $1,700.75 | $-400.00 | $1,300.75 | $1,273.80 | $-26.95 |
+| 36 | 45902 |  | $1,273.80 | $-179.65 | $1,094.15 | $645.79 | $-448.36 |
+| 37 | 45902 |  | $645.79 | $-76.00 | $569.79 | $825.44 | $+255.65 |
+| 38 | 45923 |  | $825.44 | $-90.00 | $735.44 | $1,490.63 | $+755.19 |
+| 39 | 45910 |  | $1,490.63 | $-48.00 | $1,442.63 | $1,580.14 | $+137.51 |
+| 40 | 45910 |  | $1,580.14 | $347.20 | $1,927.34 | $2,428.14 | $+500.80 |
+| 41 | 45926 |  | $2,428.14 | $359.32 | $2,787.46 | $2,287.75 | $-499.71 |
+| 42 | 45916 |  | $2,287.75 | $572.72 | $2,860.47 | $1,406.07 | $-1,454.40 |
+| 44 | 45923 |  | $1,768.02 | $242.45 | $2,010.47 | $1,598.47 | $-412.00 |
+| 45 | 45922 |  | $1,598.47 | $188.00 | $1,786.47 | $1,756.02 | $-30.45 |
+| 46 | 45930 |  | $1,756.02 | $577.80 | $2,333.82 | $1,384.82 | $-949.00 |
+| 47 | 45924 |  | $1,384.82 | $337.80 | $1,722.62 | $2,628.43 | $+905.81 |
+| 48 | 45909 |  | $2,628.43 | $236.70 | $2,865.13 | $2,780.94 | $-84.19 |
+| 49 | 45903 |  | $2,780.94 | $575.35 | $3,356.29 | $1,221.14 | $-2,135.15 |
+| 50 | 45911 |  | $1,221.14 | $335.35 | $1,556.49 | $1,915.49 | $+359.00 |
+| 51 | 45909 |  | $1,915.49 | $950.00 | $2,865.49 | $2,544.24 | $-321.25 |
+| 52 | 45915 |  | $2,544.24 | $-300.51 | $2,243.73 | $833.35 | $-1,410.38 |
+| 53 | 45911 |  | $833.35 | $-66.28 | $767.07 | $1,849.21 | $+1,082.14 |
+| 54 | 45915 |  | $1,849.21 | $-55.36 | $1,793.85 | $1,493.85 | $-300.00 |
+| 55 | 45929 |  | $1,493.85 | $-16.95 | $1,476.90 | $1,673.80 | $+196.90 |
+| 56 | 45908 |  | $1,673.80 | $1,000.00 | $2,673.80 | $1,921.14 | $-752.66 |
+| 57 | 45924 |  | $1,921.14 | $1,000.00 | $2,921.14 | $2,290.63 | $-630.51 |
+| 58 | 45908 |  | $2,290.63 | $375.00 | $2,665.63 | $2,296.14 | $-369.49 |
+| 59 | 45902 |  | $2,296.14 | $-12.50 | $2,283.64 | $901.44 | $-1,382.20 |
+
+### September 2025 — 👤 Personal 0068
+**140 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45926 |  | $685.92 | $-5.00 | $680.92 | $246.50 | $-434.42 |
+| 4 | 45911 |  | $246.50 | $-5.00 | $241.50 | $903.53 | $+662.03 |
+| 5 | 45915 |  | $903.53 | $-5.00 | $898.53 | $569.01 | $-329.52 |
+| 6 | 45922 |  | $569.01 | $-5.00 | $564.01 | $280.14 | $-283.87 |
+| 7 | 45929 |  | $280.14 | $-5.00 | $275.14 | $1,609.50 | $+1,334.36 |
+| 8 | 45922 |  | $1,609.50 | $-5.00 | $1,604.50 | $543.14 | $-1,061.36 |
+| 9 | 45925 |  | $543.14 | $-5.00 | $538.14 | $335.00 | $-203.14 |
+| 10 | 45919 |  | $335.00 | $-5.00 | $330.00 | $173.14 | $-156.86 |
+| 11 | 45912 |  | $173.14 | $-5.00 | $168.14 | $1,036.60 | $+868.46 |
+| 12 | 45904 |  | $1,036.60 | $-5.00 | $1,031.60 | $574.85 | $-456.75 |
+| 13 | 45902 |  | $574.85 | $-5.00 | $569.85 | $424.29 | $-145.56 |
+| 14 | 45930 |  | $424.29 | $-5.00 | $419.29 | $102.23 | $-317.06 |
+| 15 | 45902 |  | $102.23 | $-5.00 | $97.23 | $419.29 | $+322.06 |
+| 16 | 45905 |  | $419.29 | $-5.00 | $414.29 | $145.85 | $-268.44 |
+| 17 | 45922 |  | $145.85 | $-5.00 | $140.85 | $285.14 | $+144.29 |
+| 18 | 45929 |  | $285.14 | $-5.00 | $280.14 | $1,249.00 | $+968.86 |
+| 19 | 45915 |  | $1,249.00 | $-5.00 | $1,244.00 | $602.36 | $-641.64 |
+| 20 | 45910 |  | $602.36 | $-5.00 | $597.36 | $991.03 | $+393.67 |
+| 21 | 45929 |  | $991.03 | $-5.00 | $986.03 | $1,254.00 | $+267.97 |
+| 22 | 45916 |  | $1,254.00 | $-5.00 | $1,249.00 | $183.64 | $-1,065.36 |
+| 23 | 45918 |  | $183.64 | $-5.00 | $178.64 | $243.64 | $+65.00 |
+| 24 | 45923 |  | $243.64 | $-5.00 | $238.64 | $159.25 | $-79.39 |
+| 25 | 45908 |  | $159.25 | $-5.00 | $154.25 | $615.85 | $+461.60 |
+| 26 | 45902 |  | $615.85 | $-5.00 | $610.85 | $414.29 | $-196.56 |
+| 27 | 45917 |  | $414.29 | $-5.00 | $409.29 | $153.64 | $-255.65 |
+| 28 | 45908 |  | $153.64 | $-5.00 | $148.64 | $589.85 | $+441.21 |
+| 29 | 45908 |  | $589.85 | $-5.00 | $584.85 | $594.85 | $+10.00 |
+| 30 | 45902 |  | $594.85 | $-5.00 | $589.85 | $409.29 | $-180.56 |
+| 31 | 45903 |  | $409.29 | $-5.00 | $404.29 | $149.33 | $-254.96 |
+| 32 | 45915 |  | $149.33 | $-5.00 | $144.33 | $564.01 | $+419.68 |
+| 33 | 45911 |  | $564.01 | $-12.84 | $551.17 | $908.53 | $+357.36 |
+| 34 | 45929 |  | $908.53 | $-5.00 | $903.53 | $1,259.00 | $+355.47 |
+| 35 | 45904 |  | $1,259.00 | $-9.48 | $1,249.52 | $579.85 | $-669.67 |
+| 36 | 45902 |  | $579.85 | $-6.54 | $573.31 | $429.29 | $-144.02 |
+| 37 | 45908 |  | $429.29 | $-5.00 | $424.29 | $599.85 | $+175.56 |
+| 38 | 45925 |  | $599.85 | $-5.32 | $594.53 | $340.00 | $-254.53 |
+| 39 | 45915 |  | $340.00 | $-6.34 | $333.66 | $607.36 | $+273.70 |
+| 40 | 45919 |  | $607.36 | $-5.50 | $601.86 | $178.14 | $-423.72 |
+| 41 | 45910 |  | $178.14 | $-23.80 | $154.34 | $1,431.12 | $+1,276.78 |
+| 42 | 45926 |  | $1,431.12 | $-10.50 | $1,420.62 | $276.50 | $-1,144.12 |
+| 43 | 45929 |  | $276.50 | $-10.00 | $266.50 | $1,646.50 | $+1,380.00 |
+| 44 | 45929 |  | $1,646.50 | $-40.00 | $1,606.50 | $1,656.50 | $+50.00 |
+| 45 | 45930 |  | $1,656.50 | $-60.00 | $1,596.50 | $1,164.00 | $-432.50 |
+| 46 | 45902 |  | $1,164.00 | $-9.73 | $1,154.27 | $468.96 | $-685.31 |
+| 47 | 45908 |  | $468.96 | $-11.00 | $457.96 | $604.85 | $+146.89 |
+| 48 | 45922 |  | $604.85 | $-250.00 | $354.85 | $290.14 | $-64.71 |
+| 49 | 45915 |  | $290.14 | $-747.90 | $-457.76 | $638.70 | $+1,096.46 |
+| 50 | 45910 |  | $638.70 | $-106.34 | $532.36 | $1,021.03 | $+488.67 |
+| 51 | 45915 |  | $1,021.03 | $-122.00 | $899.03 | $417.01 | $-482.02 |
+| 52 | 45911 |  | $417.01 | $-1.93 | $415.08 | $866.60 | $+451.52 |
+| 53 | 45929 |  | $866.60 | $-116.50 | $750.10 | $1,264.00 | $+513.90 |
+| 54 | 45929 |  | $1,264.00 | $-229.00 | $1,035.00 | $1,380.50 | $+345.50 |
+| 55 | 45909 |  | $1,380.50 | $-54.68 | $1,325.82 | $818.68 | $-507.14 |
+| 56 | 45911 |  | $818.68 | $-64.66 | $754.02 | $946.37 | $+192.35 |
+| 57 | 45902 |  | $946.37 | $-21.11 | $925.26 | $478.69 | $-446.57 |
+| 58 | 45922 |  | $478.69 | $-5.00 | $473.69 | $39.25 | $-434.44 |
+| 59 | 45915 |  | $39.25 | $-5.00 | $34.25 | $263.64 | $+229.39 |
+| 60 | 45908 |  | $263.64 | $-3.00 | $260.64 | $319.10 | $+58.46 |
+| 61 | 45908 |  | $319.10 | $-242.75 | $76.35 | $322.10 | $+245.75 |
+| 62 | 45915 |  | $322.10 | $-148.37 | $173.73 | $268.64 | $+94.91 |
+| 63 | 45922 |  | $268.64 | $-235.89 | $32.75 | $44.25 | $+11.50 |
+| 64 | 45925 |  | $44.25 | $166.07 | $210.32 | $370.32 | $+160.00 |
+| 65 | 45925 |  | $370.32 | $-300.00 | $70.32 | $0.00 | $-70.32 |
+| 66 | 45915 |  | $0.00 | $350.00 | $350.00 | $1,386.60 | $+1,036.60 |
+| 67 | 45929 |  | $1,386.60 | $350.00 | $1,736.60 | $1,396.50 | $-340.10 |
+| 68 | 45904 |  | $1,396.50 | $200.00 | $1,596.50 | $349.33 | $-1,247.17 |
+| 71 | 45908 |  | $649.33 | $200.00 | $849.33 | $645.85 | $-203.48 |
+| 72 | 45908 |  | $645.85 | $300.00 | $945.85 | $445.85 | $-500.00 |
+| 73 | 45909 |  | $445.85 | $600.00 | $1,045.85 | $919.10 | $-126.75 |
+| 74 | 45910 |  | $919.10 | $800.00 | $1,719.10 | $1,485.92 | $-233.18 |
+| 75 | 45911 |  | $1,485.92 | $100.00 | $1,585.92 | $1,011.03 | $-574.89 |
+| 76 | 45912 |  | $1,011.03 | $200.00 | $1,211.03 | $1,066.60 | $-144.43 |
+| 77 | 45918 |  | $1,066.60 | $200.00 | $1,266.60 | $273.64 | $-992.96 |
+| 78 | 45922 |  | $273.64 | $200.00 | $473.64 | $373.14 | $-100.50 |
+| 80 | 45923 |  | $573.14 | $200.00 | $773.14 | $239.25 | $-533.89 |
+| 81 | 45924 |  | $239.25 | $700.00 | $939.25 | $859.25 | $-80.00 |
+| 82 | 45926 |  | $859.25 | $287.00 | $1,146.25 | $287.00 | $-859.25 |
+| 83 | 45929 |  | $287.00 | $300.00 | $587.00 | $1,696.50 | $+1,109.50 |
+| 84 | 45929 |  | $1,696.50 | $400.00 | $2,096.50 | $646.50 | $-1,450.00 |
+| 86 | 45903 |  | $1,046.50 | $-80.00 | $966.50 | $154.33 | $-812.17 |
+| 87 | 45904 |  | $154.33 | $-35.00 | $119.33 | $589.33 | $+470.00 |
+| 88 | 45908 |  | $589.33 | $-25.00 | $564.33 | $564.85 | $+0.52 |
+| 89 | 45910 |  | $564.85 | $-80.00 | $484.85 | $911.03 | $+426.18 |
+| 90 | 45911 |  | $911.03 | $-35.00 | $876.03 | $868.53 | $-7.50 |
+| 91 | 45915 |  | $868.53 | $-25.00 | $843.53 | $539.01 | $-304.52 |
+| 92 | 45917 |  | $539.01 | $-80.00 | $459.01 | $73.64 | $-385.37 |
+| 93 | 45918 |  | $73.64 | $-35.00 | $38.64 | $208.64 | $+170.00 |
+| 94 | 45924 |  | $208.64 | $-80.00 | $128.64 | $754.25 | $+625.61 |
+| 95 | 45925 |  | $754.25 | $-35.00 | $719.25 | $300.00 | $-419.25 |
+| 96 | 45929 |  | $300.00 | $-25.00 | $275.00 | $1,224.00 | $+949.00 |
+| 97 | 45930 |  | $1,224.00 | $-300.00 | $924.00 | $703.23 | $-220.77 |
+| 99 | 45909 |  | $203.23 | $-16.00 | $187.23 | $887.57 | $+700.34 |
+| 100 | 45930 |  | $887.57 | $-32.00 | $855.57 | $107.23 | $-748.34 |
+| 101 | 45930 |  | $107.23 | $-32.00 | $75.23 | $139.23 | $+64.00 |
+| 102 | 45930 |  | $139.23 | $-32.00 | $107.23 | $171.23 | $+64.00 |
+| 103 | 45929 |  | $171.23 | $-32.00 | $139.23 | $1,614.50 | $+1,475.27 |
+| 104 | 45926 |  | $1,614.50 | $-25.00 | $1,589.50 | $251.50 | $-1,338.00 |
+| 105 | 45925 |  | $251.50 | $-25.00 | $226.50 | $345.32 | $+118.82 |
+| 106 | 45924 |  | $345.32 | $-25.00 | $320.32 | $834.25 | $+513.93 |
+| 107 | 45923 |  | $834.25 | $-25.00 | $809.25 | $164.25 | $-645.00 |
+| 108 | 45923 |  | $164.25 | $-25.00 | $139.25 | $189.25 | $+50.00 |
+| 109 | 45923 |  | $189.25 | $-25.00 | $164.25 | $214.25 | $+50.00 |
+| 110 | 45922 |  | $214.25 | $-25.00 | $189.25 | $548.14 | $+358.89 |
+| 111 | 45919 |  | $548.14 | $-25.00 | $523.14 | $183.64 | $-339.50 |
+| 112 | 45918 |  | $183.64 | $-25.00 | $158.64 | $248.64 | $+90.00 |
+| 113 | 45917 |  | $248.64 | $-25.00 | $223.64 | $158.64 | $-65.00 |
+| 114 | 45916 |  | $158.64 | $-25.00 | $133.64 | $188.64 | $+55.00 |
+| 115 | 45916 |  | $188.64 | $-25.00 | $163.64 | $213.64 | $+50.00 |
+| 116 | 45916 |  | $213.64 | $-25.00 | $188.64 | $238.64 | $+50.00 |
+| 117 | 45915 |  | $238.64 | $-25.00 | $213.64 | $613.70 | $+400.06 |
+| 118 | 45912 |  | $613.70 | $-25.00 | $588.70 | $1,041.60 | $+452.90 |
+| 119 | 45911 |  | $1,041.60 | $-25.00 | $1,016.60 | $921.37 | $-95.23 |
+| 120 | 45910 |  | $921.37 | $-25.00 | $896.37 | $996.03 | $+99.66 |
+| 121 | 45909 |  | $996.03 | $-25.00 | $971.03 | $690.92 | $-280.11 |
+| 122 | 45909 |  | $690.92 | $-25.00 | $665.92 | $715.92 | $+50.00 |
+| 123 | 45909 |  | $715.92 | $-25.00 | $690.92 | $740.92 | $+50.00 |
+| 124 | 45908 |  | $740.92 | $-25.00 | $715.92 | $620.85 | $-95.07 |
+| 125 | 45905 |  | $620.85 | $-25.00 | $595.85 | $150.85 | $-445.00 |
+| 126 | 45904 |  | $150.85 | $-25.00 | $125.85 | $624.33 | $+498.48 |
+| 127 | 45903 |  | $624.33 | $-25.00 | $599.33 | $234.33 | $-365.00 |
+| 128 | 45903 |  | $234.33 | $-25.00 | $209.33 | $259.33 | $+50.00 |
+| 129 | 45903 |  | $259.33 | $-25.00 | $234.33 | $284.33 | $+50.00 |
+| 130 | 45903 |  | $284.33 | $-25.00 | $259.33 | $309.33 | $+50.00 |
+| 131 | 45902 |  | $309.33 | $-25.00 | $284.33 | $443.96 | $+159.63 |
+| 132 | 45930 |  | $443.96 | $-160.77 | $283.19 | $1,003.23 | $+720.04 |
+| 133 | 45902 |  | $1,003.23 | $-8.13 | $995.10 | $435.83 | $-559.27 |
+| 134 | 45902 |  | $435.83 | $-469.18 | $-33.35 | $534.80 | $+568.15 |
+| 135 | 45909 |  | $534.80 | $-16.40 | $518.40 | $802.28 | $+283.88 |
+| 136 | 45922 |  | $802.28 | $-3.00 | $799.28 | $540.14 | $-259.14 |
+| 137 | 45902 |  | $540.14 | $-35.00 | $505.14 | $499.80 | $-5.34 |
+| 138 | 45902 |  | $499.80 | $-74.96 | $424.84 | $334.33 | $-90.51 |
+| 139 | 45905 |  | $334.33 | $-28.25 | $306.08 | $175.85 | $-130.23 |
+| 140 | 45909 |  | $175.85 | $-36.36 | $139.49 | $765.92 | $+626.43 |
+| 141 | 45905 |  | $765.92 | $-370.75 | $395.17 | $204.10 | $-191.07 |
+| 142 | 45910 |  | $204.10 | $-31.00 | $173.10 | $1,454.92 | $+1,281.82 |
+| 143 | 45910 |  | $1,454.92 | $-303.75 | $1,151.17 | $1,127.37 | $-23.80 |
+| 144 | 45909 |  | $1,127.37 | $-15.53 | $1,111.84 | $903.57 | $-208.27 |
+| 145 | 45909 |  | $903.57 | $-14.21 | $889.36 | $873.36 | $-16.00 |
+| 146 | 45915 |  | $873.36 | $-28.35 | $845.01 | $574.01 | $-271.00 |
+| 147 | 45924 |  | $574.01 | $-550.00 | $24.01 | $204.25 | $+180.24 |
+
+### October 2025 — 💼 Business 4991
+**65 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45961 |  | $1,473.58 | $-100.00 | $1,373.58 | $1,488.58 | $+115.00 |
+| 4 | 45961 |  | $1,488.58 | $-100.00 | $1,388.58 | $1,588.58 | $+200.00 |
+| 5 | 45961 |  | $1,588.58 | $-200.00 | $1,388.58 | $1,688.58 | $+300.00 |
+| 6 | 45961 |  | $1,688.58 | $-12.59 | $1,675.99 | $1,888.58 | $+212.59 |
+| 7 | 45961 |  | $1,888.58 | $150.00 | $2,038.58 | $1,901.17 | $-137.41 |
+| 8 | 45961 |  | $1,901.17 | $480.70 | $2,381.87 | $1,751.17 | $-630.70 |
+| 9 | 45960 |  | $1,751.17 | $-200.00 | $1,551.17 | $1,270.47 | $-280.70 |
+| 10 | 45960 |  | $1,270.47 | $-50.00 | $1,220.47 | $1,470.47 | $+250.00 |
+| 11 | 45960 |  | $1,470.47 | $180.45 | $1,650.92 | $1,520.47 | $-130.45 |
+| 12 | 45959 |  | $1,520.47 | $-200.00 | $1,320.47 | $1,340.02 | $+19.55 |
+| 13 | 45959 |  | $1,340.02 | $-208.80 | $1,131.22 | $1,540.02 | $+408.80 |
+| 14 | 45959 |  | $1,540.02 | $-16.95 | $1,523.07 | $1,748.82 | $+225.75 |
+| 15 | 45959 |  | $1,748.82 | $-10.00 | $1,738.82 | $1,765.77 | $+26.95 |
+| 16 | 45958 |  | $1,765.77 | $-10.00 | $1,755.77 | $1,775.77 | $+20.00 |
+| 17 | 45958 |  | $1,775.77 | $577.80 | $2,353.57 | $1,785.77 | $-567.80 |
+| 18 | 45957 |  | $1,785.77 | $-350.00 | $1,435.77 | $1,207.97 | $-227.80 |
+| 19 | 45957 |  | $1,207.97 | $-100.00 | $1,107.97 | $1,557.97 | $+450.00 |
+| 20 | 45957 |  | $1,557.97 | $-100.00 | $1,457.97 | $1,657.97 | $+200.00 |
+| 21 | 45957 |  | $1,657.97 | $-550.00 | $1,107.97 | $1,757.97 | $+650.00 |
+| 22 | 45953 |  | $1,757.97 | $-300.00 | $1,457.97 | $2,307.97 | $+850.00 |
+| 23 | 45953 |  | $2,307.97 | $475.20 | $2,783.17 | $2,607.97 | $-175.20 |
+| 24 | 45951 |  | $2,607.97 | $-0.19 | $2,607.78 | $2,132.77 | $-475.01 |
+| 25 | 45951 |  | $2,132.77 | $-400.00 | $1,732.77 | $2,132.96 | $+400.19 |
+| 26 | 45951 |  | $2,132.96 | $-90.00 | $2,042.96 | $2,532.96 | $+490.00 |
+| 27 | 45951 |  | $2,532.96 | $-6.57 | $2,526.39 | $2,622.96 | $+96.57 |
+| 28 | 45951 |  | $2,622.96 | $910.90 | $3,533.86 | $2,629.53 | $-904.33 |
+| 29 | 45951 |  | $2,629.53 | $1,000.00 | $3,629.53 | $1,718.63 | $-1,910.90 |
+| 30 | 45950 |  | $1,718.63 | $-100.00 | $1,618.63 | $718.63 | $-900.00 |
+| 31 | 45950 |  | $718.63 | $-200.00 | $518.63 | $818.63 | $+300.00 |
+| 32 | 45945 |  | $818.63 | $-200.00 | $618.63 | $1,018.63 | $+400.00 |
+| 33 | 45945 |  | $1,018.63 | $-9.99 | $1,008.64 | $1,218.63 | $+209.99 |
+| 34 | 45945 |  | $1,218.63 | $-1.05 | $1,217.58 | $1,228.62 | $+11.04 |
+| 35 | 45945 |  | $1,228.62 | $240.70 | $1,469.32 | $1,229.67 | $-239.65 |
+| 36 | 45944 |  | $1,229.67 | $-3.03 | $1,226.64 | $988.97 | $-237.67 |
+| 37 | 45944 |  | $988.97 | $-55.36 | $933.61 | $992.00 | $+58.39 |
+| 38 | 45944 |  | $992.00 | $-550.00 | $442.00 | $1,047.36 | $+605.36 |
+| 39 | 45944 |  | $1,047.36 | $-150.00 | $897.36 | $1,597.36 | $+700.00 |
+| 40 | 45944 |  | $1,597.36 | $-103.95 | $1,493.41 | $1,747.36 | $+253.95 |
+| 41 | 45944 |  | $1,747.36 | $-101.21 | $1,646.15 | $1,851.31 | $+205.16 |
+| 42 | 45940 |  | $1,851.31 | $-48.00 | $1,803.31 | $1,952.52 | $+149.21 |
+| 43 | 45940 |  | $1,952.52 | $-129.00 | $1,823.52 | $2,000.52 | $+177.00 |
+| 44 | 45940 |  | $2,000.52 | $-350.00 | $1,650.52 | $2,129.52 | $+479.00 |
+| 45 | 45939 |  | $2,129.52 | $361.19 | $2,490.71 | $2,479.52 | $-11.19 |
+| 46 | 45938 |  | $2,479.52 | $-200.00 | $2,279.52 | $2,118.33 | $-161.19 |
+| 47 | 45938 |  | $2,118.33 | $-19.90 | $2,098.43 | $2,318.33 | $+219.90 |
+| 48 | 45938 |  | $2,318.33 | $85.00 | $2,403.33 | $2,338.23 | $-65.10 |
+| 49 | 45937 |  | $2,338.23 | $-300.00 | $2,038.23 | $2,253.23 | $+215.00 |
+| 50 | 45937 |  | $2,253.23 | $-20.99 | $2,232.24 | $2,553.23 | $+320.99 |
+| 51 | 45937 |  | $2,553.23 | $577.80 | $3,131.03 | $2,574.22 | $-556.81 |
+| 52 | 45937 |  | $2,574.22 | $1,000.00 | $3,574.22 | $1,996.42 | $-1,577.80 |
+| 53 | 45936 |  | $1,996.42 | $-200.00 | $1,796.42 | $996.42 | $-800.00 |
+| 54 | 45936 |  | $996.42 | $-297.00 | $699.42 | $1,196.42 | $+497.00 |
+| 55 | 45936 |  | $1,196.42 | $-85.00 | $1,111.42 | $1,493.42 | $+382.00 |
+| 56 | 45936 |  | $1,493.42 | $-66.28 | $1,427.14 | $1,578.42 | $+151.28 |
+| 57 | 45936 |  | $1,578.42 | $-52.01 | $1,526.41 | $1,644.70 | $+118.29 |
+| 58 | 45936 |  | $1,644.70 | $-19.99 | $1,624.71 | $1,696.71 | $+72.00 |
+| 59 | 45936 |  | $1,696.71 | $200.00 | $1,896.71 | $1,716.70 | $-180.01 |
+| 60 | 45933 |  | $1,716.70 | $96.10 | $1,812.80 | $1,516.70 | $-296.10 |
+| 61 | 45933 |  | $1,516.70 | $93.71 | $1,610.41 | $1,420.60 | $-189.81 |
+| 62 | 45932 |  | $1,420.60 | $-179.65 | $1,240.95 | $1,326.89 | $+85.94 |
+| 63 | 45932 |  | $1,326.89 | $-91.00 | $1,235.89 | $1,506.54 | $+270.65 |
+| 64 | 45932 |  | $1,506.54 | $-12.99 | $1,493.55 | $1,597.54 | $+103.99 |
+| 65 | 45932 |  | $1,597.54 | $-115.99 | $1,481.55 | $1,610.53 | $+128.98 |
+| 66 | 45932 |  | $1,610.53 | $361.19 | $1,971.72 | $1,726.52 | $-245.20 |
+| 67 | 45931 |  | $1,726.52 | $-200.00 | $1,526.52 | $1,365.33 | $-161.19 |
+
+### October 2025 — 👤 Personal 0068
+**130 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45961 |  | $1,036.46 | $-6.06 | $1,030.40 | $1,041.46 | $+11.06 |
+| 4 | 45961 |  | $1,041.46 | $-20.00 | $1,021.46 | $1,047.52 | $+26.06 |
+| 5 | 45961 |  | $1,047.52 | $-29.00 | $1,018.52 | $1,067.52 | $+49.00 |
+| 6 | 45961 |  | $1,067.52 | $-13.89 | $1,053.63 | $1,096.52 | $+42.89 |
+| 7 | 45961 |  | $1,096.52 | $-15.50 | $1,081.02 | $1,110.41 | $+29.39 |
+| 8 | 45961 |  | $1,110.41 | $100.00 | $1,210.41 | $1,125.91 | $-84.50 |
+| 9 | 45961 |  | $1,125.91 | $100.00 | $1,225.91 | $1,025.91 | $-200.00 |
+| 10 | 45961 |  | $1,025.91 | $200.00 | $1,225.91 | $925.91 | $-300.00 |
+| 11 | 45960 |  | $925.91 | $-35.00 | $890.91 | $725.91 | $-165.00 |
+| 12 | 45960 |  | $725.91 | $-5.00 | $720.91 | $760.91 | $+40.00 |
+| 13 | 45960 |  | $760.91 | $-20.00 | $740.91 | $765.91 | $+25.00 |
+| 14 | 45960 |  | $765.91 | $200.00 | $965.91 | $785.91 | $-180.00 |
+| 15 | 45960 |  | $785.91 | $200.00 | $985.91 | $585.91 | $-400.00 |
+| 16 | 45959 |  | $585.91 | $-80.00 | $505.91 | $385.91 | $-120.00 |
+| 17 | 45959 |  | $385.91 | $-5.00 | $380.91 | $465.91 | $+85.00 |
+| 18 | 45959 |  | $465.91 | $-20.00 | $445.91 | $470.91 | $+25.00 |
+| 19 | 45959 |  | $470.91 | $200.00 | $670.91 | $490.91 | $-180.00 |
+| 20 | 45958 |  | $490.91 | $-5.00 | $485.91 | $290.91 | $-195.00 |
+| 21 | 45958 |  | $290.91 | $-20.00 | $270.91 | $295.91 | $+25.00 |
+| 22 | 45958 |  | $295.91 | $-20.00 | $275.91 | $315.91 | $+40.00 |
+| 23 | 45958 |  | $315.91 | $-20.00 | $295.91 | $335.91 | $+40.00 |
+| 24 | 45957 |  | $335.91 | $-5.00 | $330.91 | $355.91 | $+25.00 |
+| 25 | 45957 |  | $355.91 | $-6.39 | $349.52 | $360.91 | $+11.39 |
+| 26 | 45957 |  | $360.91 | $-5.00 | $355.91 | $367.30 | $+11.39 |
+| 27 | 45957 |  | $367.30 | $-5.00 | $362.30 | $372.30 | $+10.00 |
+| 28 | 45957 |  | $372.30 | $-25.00 | $347.30 | $377.30 | $+30.00 |
+| 29 | 45957 |  | $377.30 | $-14.99 | $362.31 | $402.30 | $+39.99 |
+| 30 | 45957 |  | $402.30 | $-0.99 | $401.31 | $417.29 | $+15.98 |
+| 31 | 45957 |  | $417.29 | $-44.99 | $372.30 | $418.28 | $+45.98 |
+| 32 | 45957 |  | $418.28 | $-213.05 | $205.23 | $463.27 | $+258.04 |
+| 33 | 45957 |  | $463.27 | $-550.00 | $-86.73 | $676.32 | $+763.05 |
+| 34 | 45957 |  | $676.32 | $-5.00 | $671.32 | $1,226.32 | $+555.00 |
+| 35 | 45957 |  | $1,226.32 | $-20.00 | $1,206.32 | $1,231.32 | $+25.00 |
+| 36 | 45957 |  | $1,231.32 | $100.00 | $1,331.32 | $1,251.32 | $-80.00 |
+| 37 | 45957 |  | $1,251.32 | $100.00 | $1,351.32 | $1,151.32 | $-200.00 |
+| 38 | 45957 |  | $1,151.32 | $350.00 | $1,501.32 | $1,051.32 | $-450.00 |
+| 39 | 45957 |  | $1,051.32 | $550.00 | $1,601.32 | $701.32 | $-900.00 |
+| 40 | 45954 |  | $701.32 | $-5.00 | $696.32 | $151.32 | $-545.00 |
+| 41 | 45954 |  | $151.32 | $-5.86 | $145.46 | $156.32 | $+10.86 |
+| 42 | 45954 |  | $156.32 | $-20.00 | $136.32 | $162.18 | $+25.86 |
+| 43 | 45953 |  | $162.18 | $-4.09 | $158.09 | $182.18 | $+24.09 |
+| 44 | 45953 |  | $182.18 | $-5.00 | $177.18 | $186.27 | $+9.09 |
+| 45 | 45953 |  | $186.27 | $-136.33 | $49.94 | $191.27 | $+141.33 |
+| 46 | 45953 |  | $191.27 | $-5.00 | $186.27 | $327.60 | $+141.33 |
+| 47 | 45953 |  | $327.60 | $-20.00 | $307.60 | $332.60 | $+25.00 |
+| 48 | 45953 |  | $332.60 | $300.00 | $632.60 | $352.60 | $-280.00 |
+| 49 | 45952 |  | $352.60 | $-5.00 | $347.60 | $52.60 | $-295.00 |
+| 50 | 45952 |  | $52.60 | $-20.00 | $32.60 | $57.60 | $+25.00 |
+| 51 | 45951 |  | $57.60 | $-5.00 | $52.60 | $77.60 | $+25.00 |
+| 52 | 45951 |  | $77.60 | $-262.00 | $-184.40 | $82.60 | $+267.00 |
+| 53 | 45951 |  | $82.60 | $-20.00 | $62.60 | $344.60 | $+282.00 |
+| 54 | 45951 |  | $344.60 | $-20.00 | $324.60 | $364.60 | $+40.00 |
+| 55 | 45951 |  | $364.60 | $-20.00 | $344.60 | $384.60 | $+40.00 |
+| 56 | 45951 |  | $384.60 | $400.00 | $784.60 | $404.60 | $-380.00 |
+| 57 | 45950 |  | $404.60 | $-4.09 | $400.51 | $4.60 | $-395.91 |
+| 58 | 45950 |  | $4.60 | $-5.00 | $-0.40 | $8.69 | $+9.09 |
+| 59 | 45950 |  | $8.69 | $-25.00 | $-16.31 | $13.69 | $+30.00 |
+| 60 | 45950 |  | $13.69 | $-5.00 | $8.69 | $38.69 | $+30.00 |
+| 61 | 45950 |  | $38.69 | $-136.31 | $-97.62 | $43.69 | $+141.31 |
+| 62 | 45950 |  | $43.69 | $-20.00 | $23.69 | $180.00 | $+156.31 |
+| 63 | 45950 |  | $180.00 | $200.00 | $380.00 | $200.00 | $-180.00 |
+| 64 | 45947 |  | $200.00 | $-5.00 | $195.00 | $0.00 | $-195.00 |
+| 65 | 45947 |  | $0.00 | $-20.00 | $-20.00 | $5.00 | $+25.00 |
+| 66 | 45947 |  | $5.00 | $25.00 | $30.00 | $25.00 | $-5.00 |
+| 67 | 45946 |  | $25.00 | $-5.00 | $20.00 | $0.00 | $-20.00 |
+| 68 | 45946 |  | $0.00 | $-7.28 | $-7.28 | $5.00 | $+12.28 |
+| 69 | 45946 |  | $5.00 | $-32.00 | $-27.00 | $12.28 | $+39.28 |
+| 70 | 45946 |  | $12.28 | $16.85 | $29.13 | $44.28 | $+15.15 |
+| 71 | 45945 |  | $44.28 | $-4.05 | $40.23 | $27.43 | $-12.80 |
+| 72 | 45945 |  | $27.43 | $-5.00 | $22.43 | $31.48 | $+9.05 |
+| 73 | 45945 |  | $31.48 | $-8.16 | $23.32 | $36.48 | $+13.16 |
+| 74 | 45945 |  | $36.48 | $-8.16 | $28.32 | $44.64 | $+16.32 |
+| 75 | 45945 |  | $44.64 | $-135.05 | $-90.41 | $52.80 | $+143.21 |
+| 76 | 45945 |  | $52.80 | $-5.00 | $47.80 | $187.85 | $+140.05 |
+| 77 | 45945 |  | $187.85 | $-5.00 | $182.85 | $192.85 | $+10.00 |
+| 78 | 45945 |  | $192.85 | $-32.00 | $160.85 | $197.85 | $+37.00 |
+| 79 | 45945 |  | $197.85 | $-32.00 | $165.85 | $229.85 | $+64.00 |
+| 80 | 45945 |  | $229.85 | $-32.00 | $197.85 | $261.85 | $+64.00 |
+| 81 | 45945 |  | $261.85 | $-32.00 | $229.85 | $293.85 | $+64.00 |
+| 82 | 45945 |  | $293.85 | $-122.00 | $171.85 | $325.85 | $+154.00 |
+| 83 | 45945 |  | $325.85 | $-272.14 | $53.71 | $447.85 | $+394.14 |
+| 84 | 45945 |  | $447.85 | $-272.14 | $175.71 | $719.99 | $+544.28 |
+| 85 | 45945 |  | $719.99 | $200.00 | $919.99 | $992.13 | $+72.14 |
+| 86 | 45944 |  | $992.13 | $-5.00 | $987.13 | $792.13 | $-195.00 |
+| 87 | 45944 |  | $792.13 | $-5.00 | $787.13 | $797.13 | $+10.00 |
+| 88 | 45944 |  | $797.13 | $-25.00 | $772.13 | $802.13 | $+30.00 |
+| 89 | 45944 |  | $802.13 | $-6.22 | $795.91 | $827.13 | $+31.22 |
+| 90 | 45944 |  | $827.13 | $-32.00 | $795.13 | $833.35 | $+38.22 |
+| 91 | 45944 |  | $833.35 | $150.00 | $983.35 | $865.35 | $-118.00 |
+| 92 | 45944 |  | $865.35 | $550.00 | $1,415.35 | $715.35 | $-700.00 |
+| 93 | 45940 |  | $715.35 | $-4.09 | $711.26 | $165.35 | $-545.91 |
+| 94 | 45940 |  | $165.35 | $-5.00 | $160.35 | $169.44 | $+9.09 |
+| 95 | 45940 |  | $169.44 | $-136.22 | $33.22 | $174.44 | $+141.22 |
+| 96 | 45940 |  | $174.44 | $-25.00 | $149.44 | $310.66 | $+161.22 |
+| 97 | 45940 |  | $310.66 | $-5.00 | $305.66 | $335.66 | $+30.00 |
+| 98 | 45940 |  | $335.66 | $-32.00 | $303.66 | $340.66 | $+37.00 |
+| 99 | 45940 |  | $340.66 | $-106.34 | $234.32 | $372.66 | $+138.34 |
+| 100 | 45940 |  | $372.66 | $129.00 | $501.66 | $479.00 | $-22.66 |
+| 101 | 45940 |  | $479.00 | $350.00 | $829.00 | $350.00 | $-479.00 |
+| 102 | 45939 |  | $350.00 | $-5.00 | $345.00 | $0.00 | $-345.00 |
+| 103 | 45939 |  | $0.00 | $-32.00 | $-32.00 | $5.00 | $+37.00 |
+| 104 | 45939 |  | $5.00 | $-200.00 | $-195.00 | $37.00 | $+232.00 |
+| 105 | 45939 |  | $37.00 | $180.44 | $217.44 | $237.00 | $+19.56 |
+| 106 | 45938 |  | $237.00 | $-200.00 | $37.00 | $56.56 | $+19.56 |
+| 107 | 45938 |  | $56.56 | $-80.00 | $-23.44 | $256.56 | $+280.00 |
+| 108 | 45938 |  | $256.56 | $-7.44 | $249.12 | $336.56 | $+87.44 |
+| 109 | 45938 |  | $336.56 | $-32.00 | $304.56 | $344.00 | $+39.44 |
+| 110 | 45938 |  | $344.00 | $-28.00 | $316.00 | $376.00 | $+60.00 |
+| 111 | 45938 |  | $376.00 | $200.00 | $576.00 | $404.00 | $-172.00 |
+| 112 | 45937 |  | $404.00 | $-32.00 | $372.00 | $204.00 | $-168.00 |
+| 113 | 45937 |  | $204.00 | $-32.00 | $172.00 | $236.00 | $+64.00 |
+| 114 | 45937 |  | $236.00 | $-32.00 | $204.00 | $268.00 | $+64.00 |
+| 115 | 45937 |  | $268.00 | $300.00 | $568.00 | $300.00 | $-268.00 |
+| 116 | 45936 |  | $300.00 | $-5.00 | $295.00 | $0.00 | $-295.00 |
+| 117 | 45936 |  | $0.00 | $-200.00 | $-200.00 | $5.00 | $+205.00 |
+| 118 | 45936 |  | $5.00 | $-32.00 | $-27.00 | $205.00 | $+232.00 |
+| 119 | 45936 |  | $205.00 | $237.00 | $442.00 | $237.00 | $-205.00 |
+| 120 | 45933 |  | $237.00 | $-5.00 | $232.00 | $0.00 | $-232.00 |
+| 121 | 45933 |  | $0.00 | $-148.99 | $-148.99 | $5.00 | $+153.99 |
+| 122 | 45933 |  | $5.00 | $-5.00 | $0.00 | $153.99 | $+153.99 |
+| 123 | 45933 |  | $153.99 | $-32.00 | $121.99 | $158.99 | $+37.00 |
+| 124 | 45933 |  | $158.99 | $13.43 | $172.42 | $190.99 | $+18.57 |
+| 125 | 45932 |  | $190.99 | $-35.00 | $155.99 | $177.56 | $+21.57 |
+| 126 | 45932 |  | $177.56 | $-5.00 | $172.56 | $212.56 | $+40.00 |
+| 127 | 45932 |  | $212.56 | $-32.00 | $180.56 | $217.56 | $+37.00 |
+| 128 | 45932 |  | $217.56 | $-8.13 | $209.43 | $249.56 | $+40.13 |
+| 129 | 45931 |  | $249.56 | $-5.00 | $244.56 | $257.69 | $+13.13 |
+| 130 | 45931 |  | $257.69 | $-7.54 | $250.15 | $262.69 | $+12.54 |
+| 131 | 45931 |  | $262.69 | $-32.00 | $230.69 | $270.23 | $+39.54 |
+| 132 | 45931 |  | $270.23 | $200.00 | $470.23 | $302.23 | $-168.00 |
+
+### November 2025 — 💼 Business 4991
+**46 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45964 |  | $1,174.86 | $-88.89 | $1,085.97 | $1,285.69 | $+199.72 |
+| 4 | 45964 |  | $1,285.69 | $-179.65 | $1,106.04 | $826.93 | $-279.11 |
+| 5 | 45964 |  | $826.93 | $-102.00 | $724.93 | $1,006.58 | $+281.65 |
+| 6 | 45964 |  | $1,006.58 | $-50.09 | $956.49 | $776.84 | $-179.65 |
+| 7 | 45964 |  | $776.84 | $-66.28 | $710.56 | $1,108.58 | $+398.02 |
+| 8 | 45964 |  | $1,108.58 | $-99.00 | $1,009.58 | $1,374.58 | $+365.00 |
+| 9 | 45965 |  | $1,374.58 | $335.09 | $1,709.67 | $1,111.93 | $-597.74 |
+| 16 | 45967 |  | $893.32 | $-100.00 | $793.32 | $743.23 | $-50.09 |
+| 17 | 45967 |  | $743.23 | $-50.09 | $693.14 | $843.23 | $+150.09 |
+| 18 | 45968 |  | $843.23 | $-36.74 | $806.49 | $2,185.69 | $+1,379.20 |
+| 21 | 45968 |  | $1,985.69 | $479.20 | $2,464.89 | $2,222.43 | $-242.46 |
+| 22 | 45968 |  | $2,222.43 | $-20.03 | $2,202.40 | $1,965.66 | $-236.74 |
+| 23 | 45968 |  | $1,965.66 | $1,000.00 | $2,965.66 | $1,743.23 | $-1,222.43 |
+| 24 | 45971 |  | $1,743.23 | $-19.90 | $1,723.33 | $1,945.76 | $+222.43 |
+| 25 | 45971 |  | $1,945.76 | $-1.02 | $1,944.74 | $1,012.32 | $-932.42 |
+| 26 | 45971 |  | $1,012.32 | $-34.33 | $977.99 | $1,911.43 | $+933.44 |
+| 27 | 45971 |  | $1,911.43 | $-350.00 | $1,561.43 | $1,111.43 | $-450.00 |
+| 28 | 45971 |  | $1,111.43 | $-450.00 | $661.43 | $1,461.43 | $+800.00 |
+| 29 | 45971 |  | $1,461.43 | $-48.00 | $1,413.43 | $1,013.34 | $-400.09 |
+| 30 | 45971 |  | $1,013.34 | $-50.09 | $963.25 | $1,061.34 | $+98.09 |
+| 31 | 45973 |  | $1,061.34 | $479.20 | $1,540.54 | $1,491.52 | $-49.02 |
+| 32 | 45975 |  | $1,491.52 | $-200.00 | $1,291.52 | $1,471.97 | $+180.45 |
+| 33 | 45975 |  | $1,471.97 | $-300.00 | $1,171.97 | $1,098.18 | $-73.79 |
+| 34 | 45975 |  | $1,098.18 | $180.45 | $1,278.63 | $1,671.97 | $+393.34 |
+| 35 | 45975 |  | $1,671.97 | $-88.15 | $1,583.82 | $1,010.03 | $-573.79 |
+| 37 | 45975 |  | $959.94 | $-73.79 | $886.15 | $1,398.18 | $+512.03 |
+| 38 | 45978 |  | $1,398.18 | $-9.99 | $1,388.19 | $1,430.40 | $+42.21 |
+| 39 | 45978 |  | $1,430.40 | $200.00 | $1,630.40 | $1,159.94 | $-470.46 |
+| 40 | 45978 |  | $1,159.94 | $100.00 | $1,259.94 | $1,440.39 | $+180.45 |
+| 41 | 45978 |  | $1,440.39 | $-70.00 | $1,370.39 | $809.46 | $-560.93 |
+| 42 | 45978 |  | $809.46 | $180.45 | $989.91 | $1,340.39 | $+350.48 |
+| 43 | 45978 |  | $1,340.39 | $-350.60 | $989.79 | $1,079.80 | $+90.01 |
+| 45 | 45980 |  | $879.46 | $479.20 | $1,358.66 | $1,288.66 | $-70.00 |
+| 46 | 45981 |  | $1,288.66 | $-100.00 | $1,188.66 | $1,369.11 | $+180.45 |
+| 47 | 45981 |  | $1,369.11 | $180.45 | $1,549.56 | $1,469.11 | $-80.45 |
+| 48 | 45981 |  | $1,469.11 | $-60.10 | $1,409.01 | $1,309.01 | $-100.00 |
+| 49 | 45982 |  | $1,309.01 | $-300.00 | $1,009.01 | $1,919.01 | $+910.00 |
+| 52 | 45982 |  | $1,639.01 | $-90.00 | $1,549.01 | $2,219.01 | $+670.00 |
+| 53 | 45982 |  | $2,219.01 | $1,000.00 | $3,219.01 | $2,309.01 | $-910.00 |
+| 54 | 45985 |  | $2,309.01 | $-18.68 | $2,290.33 | $1,250.30 | $-1,040.03 |
+| 55 | 45985 |  | $1,250.30 | $-350.00 | $900.30 | $1,289.01 | $+388.71 |
+| 57 | 45986 |  | $1,268.98 | $-200.00 | $1,068.98 | $1,528.50 | $+459.52 |
+| 59 | 45986 |  | $1,328.50 | $478.20 | $1,806.70 | $1,728.50 | $-78.20 |
+| 60 | 45987 |  | $1,728.50 | $-18.68 | $1,709.82 | $1,309.82 | $-400.00 |
+| 62 | 45989 |  | $1,209.82 | $-10.00 | $1,199.82 | $1,082.87 | $-116.95 |
+| 64 | 45989 |  | $1,067.87 | $-100.00 | $967.87 | $1,109.82 | $+141.95 |
+
+### November 2025 — 👤 Personal 0068
+**120 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 4 | 45964 |  | $242.34 | $-8.54 | $233.80 | $252.34 | $+18.54 |
+| 5 | 45964 |  | $252.34 | $-77.00 | $175.34 | $405.56 | $+230.22 |
+| 6 | 45964 |  | $405.56 | $-683.90 | $-278.34 | $502.56 | $+780.90 |
+| 7 | 45964 |  | $502.56 | $-20.51 | $482.05 | $196.83 | $-285.22 |
+| 8 | 45964 |  | $196.83 | $-2.31 | $194.52 | $185.42 | $-9.10 |
+| 9 | 45964 |  | $185.42 | $-4.10 | $181.32 | $187.73 | $+6.41 |
+| 10 | 45964 |  | $187.73 | $-5.00 | $182.73 | $191.83 | $+9.10 |
+| 11 | 45964 |  | $191.83 | $-136.55 | $55.28 | $260.88 | $+205.60 |
+| 12 | 45964 |  | $260.88 | $150.00 | $410.88 | $1,186.46 | $+775.58 |
+| 13 | 45964 |  | $1,186.46 | $-25.00 | $1,161.46 | $217.34 | $-944.12 |
+| 14 | 45964 |  | $217.34 | $-20.00 | $197.34 | $482.56 | $+285.22 |
+| 15 | 45964 |  | $482.56 | $-8.13 | $474.43 | $397.43 | $-77.00 |
+| 16 | 45965 |  | $397.43 | $-5.00 | $392.43 | $84.82 | $-307.61 |
+| 17 | 45965 |  | $84.82 | $-35.60 | $49.22 | $149.82 | $+100.60 |
+| 18 | 45965 |  | $149.82 | $-20.00 | $129.82 | $89.82 | $-40.00 |
+| 19 | 45965 |  | $89.82 | $-20.00 | $69.82 | $109.82 | $+40.00 |
+| 20 | 45965 |  | $109.82 | $-20.00 | $89.82 | $129.82 | $+40.00 |
+| 21 | 45966 |  | $129.82 | $-5.00 | $124.82 | $47.85 | $-76.97 |
+| 22 | 45966 |  | $47.85 | $-11.97 | $35.88 | $72.85 | $+36.97 |
+| 23 | 45966 |  | $72.85 | $-0.35 | $72.50 | $47.50 | $-25.00 |
+| 24 | 45966 |  | $47.50 | $-20.00 | $27.50 | $52.85 | $+25.35 |
+| 25 | 45967 |  | $52.85 | $-5.00 | $47.85 | $214.86 | $+167.01 |
+| 26 | 45967 |  | $214.86 | $-7.64 | $207.22 | $219.86 | $+12.64 |
+| 27 | 45967 |  | $219.86 | $-4.13 | $215.73 | $68.08 | $-147.65 |
+| 28 | 45967 |  | $68.08 | $-5.00 | $63.08 | $72.21 | $+9.13 |
+| 29 | 45967 |  | $72.21 | $-137.65 | $-65.44 | $77.21 | $+142.65 |
+| 30 | 45967 |  | $77.21 | $100.00 | $177.21 | $147.50 | $-29.71 |
+| 33 | 45968 |  | $227.50 | $-5.00 | $222.50 | $143.08 | $-79.42 |
+| 34 | 45968 |  | $143.08 | $100.00 | $243.08 | $168.08 | $-75.00 |
+| 36 | 45971 |  | $148.08 | $-5.00 | $143.08 | $585.44 | $+442.36 |
+| 37 | 45971 |  | $585.44 | $-5.00 | $580.44 | $568.06 | $-12.38 |
+| 38 | 45971 |  | $568.06 | $-5.00 | $563.06 | $573.06 | $+10.00 |
+| 39 | 45971 |  | $573.06 | $-7.38 | $565.68 | $578.06 | $+12.38 |
+| 40 | 45971 |  | $578.06 | $-1.87 | $576.19 | $528.09 | $-48.10 |
+| 41 | 45971 |  | $528.09 | $-8.10 | $519.99 | $534.96 | $+14.97 |
+| 43 | 45971 |  | $529.96 | $-270.16 | $259.80 | $590.44 | $+330.64 |
+| 44 | 45971 |  | $590.44 | $350.00 | $940.44 | $943.08 | $+2.64 |
+| 45 | 45971 |  | $943.08 | $450.00 | $1,393.08 | $593.08 | $-800.00 |
+| 46 | 45971 |  | $593.08 | $-25.00 | $568.08 | $543.06 | $-25.02 |
+| 47 | 45971 |  | $543.06 | $-20.00 | $523.06 | $860.60 | $+337.54 |
+| 48 | 45971 |  | $860.60 | $-62.48 | $798.12 | $880.60 | $+82.48 |
+| 49 | 45973 |  | $880.60 | $-5.00 | $875.60 | $356.75 | $-518.85 |
+| 50 | 45973 |  | $356.75 | $-106.34 | $250.41 | $421.75 | $+171.34 |
+| 51 | 45973 |  | $421.75 | $-80.00 | $341.75 | $276.75 | $-65.00 |
+| 52 | 45973 |  | $276.75 | $-20.00 | $256.75 | $361.75 | $+105.00 |
+| 53 | 45973 |  | $361.75 | $-20.00 | $341.75 | $381.75 | $+40.00 |
+| 54 | 45973 |  | $381.75 | $-20.00 | $361.75 | $401.75 | $+40.00 |
+| 55 | 45974 |  | $401.75 | $-5.00 | $396.75 | $191.75 | $-205.00 |
+| 56 | 45974 |  | $191.75 | $-5.00 | $186.75 | $196.75 | $+10.00 |
+| 57 | 45974 |  | $196.75 | $-35.00 | $161.75 | $201.75 | $+40.00 |
+| 58 | 45974 |  | $201.75 | $-20.00 | $181.75 | $236.75 | $+55.00 |
+| 59 | 45974 |  | $236.75 | $-20.00 | $216.75 | $256.75 | $+40.00 |
+| 60 | 45975 |  | $256.75 | $-5.00 | $251.75 | $345.75 | $+94.00 |
+| 61 | 45975 |  | $345.75 | $-121.00 | $224.75 | $370.75 | $+146.00 |
+| 62 | 45975 |  | $370.75 | $300.00 | $670.75 | $491.75 | $-179.00 |
+| 63 | 45975 |  | $491.75 | $-20.00 | $471.75 | $350.75 | $-121.00 |
+| 64 | 45978 |  | $350.75 | $-5.00 | $345.75 | $184.85 | $-160.90 |
+| 65 | 45978 |  | $184.85 | $-5.00 | $179.85 | $174.85 | $-5.00 |
+| 66 | 45978 |  | $174.85 | $-5.00 | $169.85 | $179.85 | $+10.00 |
+| 67 | 45978 |  | $179.85 | $-5.90 | $173.95 | $189.85 | $+15.90 |
+| 68 | 45978 |  | $189.85 | $70.00 | $259.85 | $415.75 | $+155.90 |
+| 69 | 45978 |  | $415.75 | $-25.00 | $390.75 | $149.85 | $-240.90 |
+| 70 | 45978 |  | $149.85 | $-200.00 | $-50.15 | $195.75 | $+245.90 |
+| 71 | 45978 |  | $195.75 | $-20.00 | $175.75 | $395.75 | $+220.00 |
+| 72 | 45979 |  | $395.75 | $-5.00 | $390.75 | $84.85 | $-305.90 |
+| 73 | 45979 |  | $84.85 | $-20.00 | $64.85 | $89.85 | $+25.00 |
+| 74 | 45979 |  | $89.85 | $-20.00 | $69.85 | $109.85 | $+40.00 |
+| 75 | 45979 |  | $109.85 | $-20.00 | $89.85 | $129.85 | $+40.00 |
+| 76 | 45979 |  | $129.85 | $-26.81 | $103.04 | $58.04 | $-45.00 |
+| 78 | 45980 |  | $358.04 | $-5.00 | $353.04 | $333.04 | $-20.00 |
+| 79 | 45980 |  | $333.04 | $-20.00 | $313.04 | $338.04 | $+25.00 |
+| 80 | 45981 |  | $338.04 | $-5.00 | $333.04 | $223.83 | $-109.21 |
+| 81 | 45981 |  | $223.83 | $-27.36 | $196.47 | $339.12 | $+142.65 |
+| 82 | 45981 |  | $339.12 | $-0.82 | $338.30 | $0.00 | $-338.30 |
+| 83 | 45981 |  | $0.00 | $-6.35 | $-6.35 | $5.82 | $+12.17 |
+| 85 | 45981 |  | $0.82 | $-211.66 | $-210.84 | $12.17 | $+223.01 |
+| 86 | 45981 |  | $12.17 | $33.44 | $45.61 | $366.48 | $+320.87 |
+| 87 | 45981 |  | $366.48 | $-35.00 | $331.48 | $228.83 | $-102.65 |
+| 88 | 45981 |  | $228.83 | $-16.00 | $212.83 | $323.12 | $+110.29 |
+| 89 | 45981 |  | $323.12 | $-20.00 | $303.12 | $266.83 | $-36.29 |
+| 91 | 45981 |  | $263.83 | $-36.29 | $227.54 | $286.83 | $+59.29 |
+| 92 | 45982 |  | $286.83 | $-5.00 | $281.83 | $295.56 | $+13.73 |
+| 93 | 45982 |  | $295.56 | $-5.44 | $290.12 | $300.56 | $+10.44 |
+| 94 | 45982 |  | $300.56 | $-28.53 | $272.03 | $267.03 | $-5.00 |
+| 95 | 45982 |  | $267.03 | $-254.00 | $13.03 | $306.00 | $+292.97 |
+| 96 | 45982 |  | $306.00 | $300.00 | $606.00 | $300.00 | $-306.00 |
+| 100 | 45985 |  | $560.00 | $-5.00 | $555.00 | $479.91 | $-75.09 |
+| 101 | 45985 |  | $479.91 | $-5.00 | $474.91 | $484.91 | $+10.00 |
+| 102 | 45985 |  | $484.91 | $-5.28 | $479.63 | $489.91 | $+10.28 |
+| 103 | 45985 |  | $489.91 | $-2.88 | $487.03 | $447.03 | $-40.00 |
+| 104 | 45985 |  | $447.03 | $-5.00 | $442.03 | $449.91 | $+7.88 |
+| 105 | 45985 |  | $449.91 | $-95.92 | $353.99 | $501.11 | $+147.12 |
+| 106 | 45985 |  | $501.11 | $350.00 | $851.11 | $617.03 | $-234.08 |
+| 107 | 45985 |  | $617.03 | $-25.00 | $592.03 | $454.91 | $-137.12 |
+| 108 | 45985 |  | $454.91 | $-20.00 | $434.91 | $597.03 | $+162.12 |
+| 109 | 45985 |  | $597.03 | $-5.92 | $591.11 | $495.19 | $-95.92 |
+| 110 | 45986 |  | $495.19 | $-5.00 | $490.19 | $882.03 | $+391.84 |
+| 111 | 45986 |  | $882.03 | $-1.90 | $880.13 | $261.65 | $-618.48 |
+| 112 | 45986 |  | $261.65 | $-5.00 | $256.65 | $263.55 | $+6.90 |
+| 113 | 45986 |  | $263.55 | $-63.48 | $200.07 | $268.55 | $+68.48 |
+| 114 | 45986 |  | $268.55 | $200.00 | $468.55 | $647.03 | $+178.48 |
+| 117 | 45986 |  | $947.03 | $-20.00 | $927.03 | $887.03 | $-40.00 |
+| 118 | 45986 |  | $887.03 | $-20.00 | $867.03 | $907.03 | $+40.00 |
+| 119 | 45986 |  | $907.03 | $-20.00 | $887.03 | $927.03 | $+40.00 |
+| 120 | 45986 |  | $927.03 | $-550.00 | $377.03 | $332.03 | $-45.00 |
+| 121 | 45987 |  | $332.03 | $-5.00 | $327.03 | $324.52 | $-2.51 |
+| 122 | 45987 |  | $324.52 | $-0.36 | $324.16 | $77.00 | $-247.16 |
+| 123 | 45987 |  | $77.00 | $-3.70 | $73.30 | $77.36 | $+4.06 |
+| 124 | 45987 |  | $77.36 | $-12.13 | $65.23 | $349.52 | $+284.29 |
+| 125 | 45987 |  | $349.52 | $-5.00 | $344.52 | $81.06 | $-263.46 |
+| 126 | 45987 |  | $81.06 | $-123.46 | $-42.40 | $86.06 | $+128.46 |
+| 127 | 45987 |  | $86.06 | $100.00 | $186.06 | $361.65 | $+175.59 |
+| 128 | 45987 |  | $361.65 | $-80.00 | $281.65 | $244.52 | $-37.13 |
+| 130 | 45987 |  | $209.52 | $-20.00 | $189.52 | $329.52 | $+140.00 |
+| 131 | 45989 |  | $329.52 | $-5.00 | $324.52 | $152.00 | $-172.52 |
+| 132 | 45989 |  | $152.00 | $-22.50 | $129.50 | $65.54 | $-63.96 |
+| 133 | 45989 |  | $65.54 | $-1.92 | $63.62 | $58.62 | $-5.00 |
+| 134 | 45989 |  | $58.62 | $-5.00 | $53.62 | $60.54 | $+6.92 |
+| 135 | 45989 |  | $60.54 | $-63.96 | $-3.42 | $88.04 | $+91.46 |
+| 136 | 45989 |  | $88.04 | $100.00 | $188.04 | $177.00 | $-11.04 |
+
+### December 2025 — 💼 Business 4991
+**69 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 4 | 45992 |  | $735.29 | $-29.95 | $705.34 | $837.92 | $+132.58 |
+| 5 | 45992 |  | $837.92 | $-200.00 | $637.92 | $867.87 | $+229.95 |
+| 6 | 45992 |  | $867.87 | $-50.09 | $817.78 | $685.20 | $-132.58 |
+| 7 | 45992 |  | $685.20 | $-66.28 | $618.92 | $771.64 | $+152.72 |
+| 8 | 45993 |  | $771.64 | $-142.30 | $629.34 | $2,009.80 | $+1,380.46 |
+| 11 | 45993 |  | $1,805.83 | $466.90 | $2,272.73 | $2,152.10 | $-120.63 |
+| 12 | 45993 |  | $2,152.10 | $1,000.00 | $3,152.10 | $1,685.20 | $-1,466.90 |
+| 13 | 45994 |  | $1,685.20 | $-300.00 | $1,385.20 | $1,422.28 | $+37.08 |
+| 14 | 45994 |  | $1,422.28 | $-179.65 | $1,242.63 | $1,722.28 | $+479.65 |
+| 15 | 45994 |  | $1,722.28 | $96.10 | $1,818.38 | $1,901.93 | $+83.55 |
+| 16 | 45995 |  | $1,901.93 | $-144.12 | $1,757.81 | $1,278.16 | $-479.65 |
+| 17 | 45999 |  | $1,278.16 | $-36.74 | $1,241.42 | $956.56 | $-284.86 |
+| 18 | 45999 |  | $956.56 | $-19.90 | $936.66 | $736.66 | $-200.00 |
+| 19 | 45999 |  | $736.66 | $12.14 | $748.80 | $1,290.30 | $+541.50 |
+| 21 | 45999 |  | $993.30 | $-350.00 | $643.30 | $386.66 | $-256.64 |
+| 22 | 45999 |  | $386.66 | $-200.00 | $186.66 | $756.56 | $+569.90 |
+| 23 | 46000 |  | $756.56 | $-19.99 | $736.57 | $1,008.82 | $+272.25 |
+| 24 | 46000 |  | $1,008.82 | $-100.00 | $908.82 | $848.82 | $-60.00 |
+| 25 | 46000 |  | $848.82 | $-20.00 | $828.82 | $1,028.81 | $+199.99 |
+| 26 | 46000 |  | $1,028.81 | $662.15 | $1,690.96 | $1,048.81 | $-642.15 |
+| 27 | 46000 |  | $1,048.81 | $-60.00 | $988.81 | $948.82 | $-39.99 |
+| 28 | 46001 |  | $948.82 | $-136.00 | $812.82 | $712.82 | $-100.00 |
+| 30 | 46001 |  | $692.83 | $-48.00 | $644.83 | $624.88 | $-19.95 |
+| 31 | 46001 |  | $624.88 | $-19.95 | $604.93 | $672.88 | $+67.95 |
+| 32 | 46003 |  | $672.88 | $-18.68 | $654.20 | $606.20 | $-48.00 |
+| 33 | 46006 |  | $606.20 | $-9.99 | $596.21 | $521.87 | $-74.34 |
+| 35 | 46006 |  | $421.87 | $-18.68 | $403.19 | $531.86 | $+128.67 |
+| 36 | 46006 |  | $531.86 | $-100.00 | $431.86 | $321.87 | $-109.99 |
+| 37 | 46006 |  | $321.87 | $-55.66 | $266.21 | $550.54 | $+284.33 |
+| 38 | 46007 |  | $550.54 | $-100.00 | $450.54 | $1,696.52 | $+1,245.98 |
+| 39 | 46007 |  | $1,696.52 | $474.65 | $2,171.17 | $1,796.52 | $-374.65 |
+| 40 | 46007 |  | $1,796.52 | $1,000.00 | $2,796.52 | $1,321.87 | $-1,474.65 |
+| 41 | 46008 |  | $1,321.87 | $-300.00 | $1,021.87 | $1,396.52 | $+374.65 |
+| 42 | 46009 |  | $1,396.52 | $-159.00 | $1,237.52 | $1,737.52 | $+500.00 |
+| 43 | 46009 |  | $1,737.52 | $-25.00 | $1,712.52 | $1,572.52 | $-140.00 |
+| 44 | 46009 |  | $1,572.52 | $400.00 | $1,972.52 | $1,796.52 | $-176.00 |
+| 46 | 46009 |  | $1,896.52 | $-100.00 | $1,796.52 | $1,597.52 | $-199.00 |
+| 47 | 46009 |  | $1,597.52 | $-40.00 | $1,557.52 | $1,697.52 | $+140.00 |
+| 48 | 46010 |  | $1,697.52 | $-816.67 | $880.85 | $755.85 | $-125.00 |
+| 49 | 46013 |  | $755.85 | $-39.00 | $716.85 | $680.79 | $-36.06 |
+| 50 | 46013 |  | $680.79 | $-1.06 | $679.73 | $754.79 | $+75.06 |
+| 52 | 46013 |  | $729.79 | $-350.00 | $379.79 | $280.79 | $-99.00 |
+| 53 | 46013 |  | $280.79 | $-50.00 | $230.79 | $630.79 | $+400.00 |
+| 54 | 46013 |  | $630.79 | $-10.00 | $620.79 | $719.79 | $+99.00 |
+| 55 | 46014 |  | $719.79 | $481.70 | $1,201.49 | $762.49 | $-439.00 |
+| 57 | 46015 |  | $712.49 | $-100.00 | $612.49 | $522.49 | $-90.00 |
+| 58 | 46015 |  | $522.49 | $-90.00 | $432.49 | $622.49 | $+190.00 |
+| 59 | 46015 |  | $622.49 | $-50.09 | $572.40 | $472.40 | $-100.00 |
+| 60 | 46017 |  | $472.40 | $-49.00 | $423.40 | $1,067.49 | $+644.09 |
+| 62 | 46017 |  | $597.49 | $394.09 | $991.58 | $866.49 | $-125.09 |
+| 64 | 46020 |  | $1,116.49 | $-35.00 | $1,081.49 | $1,962.49 | $+881.00 |
+| 65 | 46020 |  | $1,962.49 | $-10.00 | $1,952.49 | $1,886.21 | $-66.28 |
+| 67 | 46020 |  | $1,849.21 | $-52.00 | $1,797.21 | $1,758.21 | $-39.00 |
+| 68 | 46020 |  | $1,758.21 | $900.00 | $2,658.21 | $1,497.49 | $-1,160.72 |
+| 69 | 46020 |  | $1,497.49 | $-500.00 | $997.49 | $1,258.21 | $+260.72 |
+| 70 | 46020 |  | $1,258.21 | $-39.00 | $1,219.21 | $1,810.21 | $+591.00 |
+| 71 | 46020 |  | $1,810.21 | $-66.28 | $1,743.93 | $1,896.21 | $+152.28 |
+| 72 | 46020 |  | $1,896.21 | $500.00 | $2,396.21 | $1,997.49 | $-398.72 |
+| 73 | 46021 |  | $1,997.49 | $-29.95 | $1,967.54 | $2,228.26 | $+260.72 |
+| 74 | 46021 |  | $2,228.26 | $1,000.00 | $3,228.26 | $2,258.21 | $-970.05 |
+| 75 | 46022 |  | $2,258.21 | $-12.59 | $2,245.62 | $1,658.77 | $-586.85 |
+| 76 | 46022 |  | $1,658.77 | $-407.90 | $1,250.87 | $1,820.36 | $+569.49 |
+| 77 | 46022 |  | $1,820.36 | $-30.00 | $1,790.36 | $1,770.36 | $-20.00 |
+| 78 | 46022 |  | $1,770.36 | $-5.00 | $1,765.36 | $1,800.36 | $+35.00 |
+| 79 | 46022 |  | $1,800.36 | $-5.00 | $1,795.36 | $1,805.36 | $+10.00 |
+| 80 | 46022 |  | $1,805.36 | $-10.00 | $1,795.36 | $1,810.36 | $+15.00 |
+| 81 | 46022 |  | $1,810.36 | $-15.00 | $1,795.36 | $1,443.77 | $-351.59 |
+| 82 | 46022 |  | $1,443.77 | $-200.00 | $1,243.77 | $1,458.77 | $+215.00 |
+| 83 | 46022 |  | $1,458.77 | $-99.00 | $1,359.77 | $1,671.36 | $+311.59 |
+
+### December 2025 — 👤 Personal 0068
+**118 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 45992 |  | $362.29 | $-5.00 | $357.29 | $347.29 | $-10.00 |
+| 4 | 45992 |  | $347.29 | $-5.00 | $342.29 | $357.29 | $+15.00 |
+| 6 | 45992 |  | $352.29 | $-5.58 | $346.71 | $367.29 | $+20.58 |
+| 7 | 45992 |  | $367.29 | $-6.48 | $360.81 | $372.87 | $+12.06 |
+| 8 | 45992 |  | $372.87 | $-4.18 | $368.69 | $169.11 | $-199.58 |
+| 10 | 45992 |  | $164.94 | $-5.00 | $159.94 | $173.29 | $+13.35 |
+| 11 | 45992 |  | $173.29 | $-5.00 | $168.29 | $178.29 | $+10.00 |
+| 12 | 45992 |  | $178.29 | $-139.27 | $39.02 | $379.35 | $+340.33 |
+| 13 | 45992 |  | $379.35 | $-139.00 | $240.35 | $183.29 | $-57.06 |
+| 14 | 45992 |  | $183.29 | $200.00 | $383.29 | $258.62 | $-124.67 |
+| 15 | 45992 |  | $258.62 | $100.00 | $358.62 | $558.62 | $+200.00 |
+| 16 | 45992 |  | $558.62 | $200.00 | $758.62 | $458.62 | $-300.00 |
+| 17 | 45992 |  | $458.62 | $-25.00 | $433.62 | $322.29 | $-111.33 |
+| 18 | 45992 |  | $322.29 | $-20.00 | $302.29 | $518.62 | $+216.33 |
+| 19 | 45992 |  | $518.62 | $-20.00 | $498.62 | $538.62 | $+40.00 |
+| 20 | 45993 |  | $538.62 | $-5.00 | $533.62 | $91.81 | $-441.81 |
+| 21 | 45993 |  | $91.81 | $-20.00 | $71.81 | $96.81 | $+25.00 |
+| 22 | 45993 |  | $96.81 | $-20.00 | $76.81 | $116.81 | $+40.00 |
+| 23 | 45993 |  | $116.81 | $-20.00 | $96.81 | $136.81 | $+40.00 |
+| 24 | 45993 |  | $136.81 | $-8.13 | $128.68 | $156.81 | $+28.13 |
+| 25 | 45994 |  | $156.81 | $-5.00 | $151.81 | $366.81 | $+215.00 |
+| 26 | 45994 |  | $366.81 | $-7.26 | $359.55 | $81.86 | $-277.69 |
+| 27 | 45994 |  | $81.86 | $-35.60 | $46.26 | $89.12 | $+42.86 |
+| 28 | 45994 |  | $89.12 | $-5.00 | $84.12 | $76.86 | $-7.26 |
+| 29 | 45994 |  | $76.86 | $-242.09 | $-165.23 | $124.72 | $+289.95 |
+| 30 | 45994 |  | $124.72 | $300.00 | $424.72 | $391.81 | $-32.91 |
+| 32 | 45995 |  | $371.81 | $-5.00 | $366.81 | $51.86 | $-314.95 |
+| 34 | 45995 |  | $16.86 | $-20.00 | $-3.14 | $56.86 | $+60.00 |
+| 35 | 45996 |  | $56.86 | $-5.00 | $51.86 | $0.00 | $-51.86 |
+| 36 | 45996 |  | $0.00 | $-8.04 | $-8.04 | $5.00 | $+13.04 |
+| 37 | 45996 |  | $5.00 | $16.18 | $21.18 | $33.04 | $+11.86 |
+| 39 | 45999 |  | $13.04 | $-5.00 | $8.04 | $525.00 | $+516.96 |
+| 40 | 45999 |  | $525.00 | $350.00 | $875.00 | $350.00 | $-525.00 |
+| 42 | 45999 |  | $550.00 | $-25.00 | $525.00 | $500.00 | $-25.00 |
+| 43 | 45999 |  | $500.00 | $-20.00 | $480.00 | $530.00 | $+50.00 |
+| 44 | 46000 |  | $530.00 | $-5.00 | $525.00 | $482.50 | $-42.50 |
+| 45 | 46000 |  | $482.50 | $-5.49 | $477.01 | $294.10 | $-182.91 |
+| 46 | 46000 |  | $294.10 | $-52.50 | $241.60 | $487.50 | $+245.90 |
+| 47 | 46000 |  | $487.50 | $-5.00 | $482.50 | $289.10 | $-193.40 |
+| 48 | 46000 |  | $289.10 | $-182.91 | $106.19 | $299.59 | $+193.40 |
+| 49 | 46000 |  | $299.59 | $100.00 | $399.59 | $600.00 | $+200.41 |
+| 50 | 46000 |  | $600.00 | $-20.00 | $580.00 | $540.00 | $-40.00 |
+| 51 | 46000 |  | $540.00 | $-20.00 | $520.00 | $560.00 | $+40.00 |
+| 52 | 46000 |  | $560.00 | $-20.00 | $540.00 | $580.00 | $+40.00 |
+| 53 | 46001 |  | $580.00 | $-5.00 | $575.00 | $77.76 | $-497.24 |
+| 54 | 46001 |  | $77.76 | $-106.34 | $-28.58 | $182.76 | $+211.34 |
+| 55 | 46001 |  | $182.76 | $-80.00 | $102.76 | $82.76 | $-20.00 |
+| 56 | 46001 |  | $82.76 | $-20.00 | $62.76 | $162.76 | $+100.00 |
+| 57 | 46002 |  | $162.76 | $-5.00 | $157.76 | $17.76 | $-140.00 |
+| 58 | 46002 |  | $17.76 | $-35.00 | $-17.24 | $22.76 | $+40.00 |
+| 59 | 46002 |  | $22.76 | $-20.00 | $2.76 | $57.76 | $+55.00 |
+| 60 | 46003 |  | $57.76 | $-5.00 | $52.76 | $0.00 | $-52.76 |
+| 61 | 46003 |  | $0.00 | $-5.74 | $-5.74 | $5.00 | $+10.74 |
+| 62 | 46003 |  | $5.00 | $12.98 | $17.98 | $30.74 | $+12.76 |
+| 64 | 46006 |  | $10.74 | $-5.00 | $5.74 | $192.79 | $+187.05 |
+| 66 | 46006 |  | $70.79 | $-1.92 | $68.87 | $0.00 | $-68.87 |
+| 67 | 46006 |  | $0.00 | $-5.00 | $-5.00 | $1.92 | $+6.92 |
+| 68 | 46006 |  | $1.92 | $-63.87 | $-61.95 | $6.92 | $+68.87 |
+| 69 | 46006 |  | $6.92 | $17.79 | $24.71 | $17.79 | $-6.92 |
+| 73 | 46007 |  | $197.79 | $100.00 | $297.79 | $100.00 | $-197.79 |
+| 74 | 46007 |  | $100.00 | $-20.00 | $80.00 | $40.00 | $-40.00 |
+| 75 | 46007 |  | $40.00 | $-20.00 | $20.00 | $60.00 | $+40.00 |
+| 76 | 46007 |  | $60.00 | $-20.00 | $40.00 | $80.00 | $+40.00 |
+| 77 | 46008 |  | $80.00 | $-7.26 | $72.74 | $70.76 | $-1.98 |
+| 79 | 46008 |  | $65.76 | $-241.98 | $-176.22 | $78.02 | $+254.24 |
+| 80 | 46008 |  | $78.02 | $300.00 | $378.02 | $340.00 | $-38.02 |
+| 82 | 46009 |  | $320.00 | $-5.00 | $315.00 | $560.56 | $+245.56 |
+| 83 | 46009 |  | $560.56 | $100.00 | $660.56 | $620.56 | $-40.00 |
+| 84 | 46009 |  | $620.56 | $-35.00 | $585.56 | $565.56 | $-20.00 |
+| 85 | 46009 |  | $565.56 | $-400.00 | $165.56 | $160.56 | $-5.00 |
+| 86 | 46009 |  | $160.56 | $454.80 | $615.36 | $520.56 | $-94.80 |
+| 87 | 46009 |  | $520.56 | $-20.00 | $500.56 | $600.56 | $+100.00 |
+| 88 | 46010 |  | $600.56 | $-20.00 | $580.56 | $140.56 | $-440.00 |
+| 89 | 46013 |  | $140.56 | $-5.00 | $135.56 | $139.69 | $+4.13 |
+| 91 | 46013 |  | $134.69 | $-5.00 | $129.69 | $144.69 | $+15.00 |
+| 92 | 46013 |  | $144.69 | $-257.00 | $-112.31 | $149.69 | $+262.00 |
+| 93 | 46013 |  | $149.69 | $-1.92 | $147.77 | $102.77 | $-45.00 |
+| 94 | 46013 |  | $102.77 | $-5.00 | $97.77 | $104.69 | $+6.92 |
+| 95 | 46013 |  | $104.69 | $-63.87 | $40.82 | $406.69 | $+365.87 |
+| 96 | 46013 |  | $406.69 | $350.00 | $756.69 | $490.56 | $-266.13 |
+| 97 | 46013 |  | $490.56 | $-25.00 | $465.56 | $109.69 | $-355.87 |
+| 98 | 46013 |  | $109.69 | $-20.00 | $89.69 | $470.56 | $+380.87 |
+| 99 | 46014 |  | $470.56 | $-5.00 | $465.56 | $70.82 | $-394.74 |
+| 100 | 46014 |  | $70.82 | $-1.92 | $68.90 | $0.00 | $-68.90 |
+| 101 | 46014 |  | $0.00 | $-5.00 | $-5.00 | $1.92 | $+6.92 |
+| 102 | 46014 |  | $1.92 | $-63.90 | $-61.98 | $6.92 | $+68.90 |
+| 103 | 46014 |  | $6.92 | $33.05 | $39.97 | $135.82 | $+95.85 |
+| 104 | 46014 |  | $135.82 | $-20.00 | $115.82 | $75.82 | $-40.00 |
+| 105 | 46014 |  | $75.82 | $-20.00 | $55.82 | $95.82 | $+40.00 |
+| 106 | 46014 |  | $95.82 | $-20.00 | $75.82 | $115.82 | $+40.00 |
+| 107 | 46015 |  | $115.82 | $-5.00 | $110.82 | $63.46 | $-47.36 |
+| 108 | 46015 |  | $63.46 | $-11.54 | $51.92 | $68.46 | $+16.54 |
+| 109 | 46015 |  | $68.46 | $100.00 | $168.46 | $100.00 | $-68.46 |
+| 111 | 46017 |  | $80.00 | $-13.51 | $66.49 | $49.50 | $-16.99 |
+| 113 | 46017 |  | $44.50 | $-450.45 | $-405.95 | $63.01 | $+468.96 |
+| 114 | 46017 |  | $63.01 | $470.00 | $533.01 | $533.46 | $+0.45 |
+| 116 | 46020 |  | $513.46 | $1,200.00 | $1,713.46 | $1,244.50 | $-468.96 |
+| 117 | 46020 |  | $1,244.50 | $-5.00 | $1,239.50 | $1,694.50 | $+455.00 |
+| 118 | 46020 |  | $1,694.50 | $-5.00 | $1,689.50 | $1,699.50 | $+10.00 |
+| 119 | 46020 |  | $1,699.50 | $-13.49 | $1,686.01 | $306.19 | $-1,379.82 |
+| 121 | 46020 |  | $301.19 | $-449.82 | $-148.63 | $319.68 | $+468.31 |
+| 122 | 46020 |  | $319.68 | $500.00 | $819.68 | $1,744.50 | $+924.82 |
+| 123 | 46020 |  | $1,744.50 | $-25.00 | $1,719.50 | $1,669.50 | $-50.00 |
+| 125 | 46020 |  | $769.50 | $-20.00 | $749.50 | $1,704.50 | $+955.00 |
+| 126 | 46020 |  | $1,704.50 | $-20.00 | $1,684.50 | $1,724.50 | $+40.00 |
+| 127 | 46021 |  | $1,724.50 | $-5.00 | $1,719.50 | $236.19 | $-1,483.31 |
+| 128 | 46021 |  | $236.19 | $-20.00 | $216.19 | $241.19 | $+25.00 |
+| 129 | 46021 |  | $241.19 | $-20.00 | $221.19 | $261.19 | $+40.00 |
+| 130 | 46021 |  | $261.19 | $-20.00 | $241.19 | $281.19 | $+40.00 |
+| 131 | 46022 |  | $281.19 | $-5.00 | $276.19 | $368.75 | $+92.56 |
+| 132 | 46022 |  | $368.75 | $-7.44 | $361.31 | $373.75 | $+12.44 |
+| 133 | 46022 |  | $373.75 | $-3.73 | $370.02 | $155.64 | $-214.38 |
+| 134 | 46022 |  | $155.64 | $-5.00 | $150.64 | $159.37 | $+8.73 |
+| 135 | 46022 |  | $159.37 | $-124.38 | $34.99 | $164.37 | $+129.38 |
+| 136 | 46022 |  | $164.37 | $200.00 | $364.37 | $436.19 | $+71.82 |
+| 137 | 46022 |  | $436.19 | $-80.00 | $356.19 | $288.75 | $-67.44 |
+| 138 | 46022 |  | $288.75 | $-35.00 | $253.75 | $381.19 | $+127.44 |
+| 139 | 46022 |  | $381.19 | $-20.00 | $361.19 | $416.19 | $+55.00 |
+
+### January 2026 — 💼 Business 4991
+**134 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 46024 |  | $1,021.63 | $-6.00 | $1,015.63 | $1,105.63 | $+90.00 |
+| 4 | 46024 |  | $1,105.63 | $-6.00 | $1,099.63 | $1,111.63 | $+12.00 |
+| 5 | 46024 |  | $1,111.63 | $-6.00 | $1,105.63 | $1,117.63 | $+12.00 |
+| 6 | 46024 |  | $1,117.63 | $-6.00 | $1,111.63 | $1,123.63 | $+12.00 |
+| 7 | 46024 |  | $1,123.63 | $-5.00 | $1,118.63 | $1,129.63 | $+11.00 |
+| 8 | 46024 |  | $1,129.63 | $-5.00 | $1,124.63 | $1,134.63 | $+10.00 |
+| 9 | 46024 |  | $1,134.63 | $-5.00 | $1,129.63 | $1,139.63 | $+10.00 |
+| 10 | 46024 |  | $1,139.63 | $-3.00 | $1,136.63 | $1,144.63 | $+8.00 |
+| 11 | 46024 |  | $1,144.63 | $-61.00 | $1,083.63 | $1,147.63 | $+64.00 |
+| 12 | 46024 |  | $1,147.63 | $-3.00 | $1,144.63 | $1,208.63 | $+64.00 |
+| 13 | 46024 |  | $1,208.63 | $-2.00 | $1,206.63 | $1,211.63 | $+5.00 |
+| 14 | 46024 |  | $1,211.63 | $-100.00 | $1,111.63 | $1,213.63 | $+102.00 |
+| 15 | 46024 |  | $1,213.63 | $-4.01 | $1,209.62 | $1,313.63 | $+104.01 |
+| 16 | 46024 |  | $1,313.63 | $-217.20 | $1,096.43 | $1,317.64 | $+221.21 |
+| 17 | 46024 |  | $1,317.64 | $-21.67 | $1,295.97 | $1,534.84 | $+238.87 |
+| 18 | 46024 |  | $1,534.84 | $-26.40 | $1,508.44 | $1,556.51 | $+48.07 |
+| 19 | 46024 |  | $1,556.51 | $-136.00 | $1,420.51 | $1,582.91 | $+162.40 |
+| 20 | 46024 |  | $1,582.91 | $-54.06 | $1,528.85 | $1,718.91 | $+190.06 |
+| 21 | 46024 |  | $1,718.91 | $79.20 | $1,798.11 | $1,772.97 | $-25.14 |
+| 22 | 46024 |  | $1,772.97 | $250.00 | $2,022.97 | $1,693.77 | $-329.20 |
+| 23 | 46027 |  | $1,693.77 | $-179.67 | $1,514.10 | $1,216.73 | $-297.37 |
+| 24 | 46027 |  | $1,216.73 | $-350.00 | $866.73 | $1,396.40 | $+529.67 |
+| 25 | 46027 |  | $1,396.40 | $-27.00 | $1,369.40 | $1,746.40 | $+377.00 |
+| 26 | 46027 |  | $1,746.40 | $-28.00 | $1,718.40 | $1,773.40 | $+55.00 |
+| 27 | 46027 |  | $1,773.40 | $-20.00 | $1,753.40 | $1,801.40 | $+48.00 |
+| 28 | 46027 |  | $1,801.40 | $-20.00 | $1,781.40 | $1,821.40 | $+40.00 |
+| 29 | 46027 |  | $1,821.40 | $-12.00 | $1,809.40 | $1,841.40 | $+32.00 |
+| 30 | 46027 |  | $1,841.40 | $-12.00 | $1,829.40 | $1,853.40 | $+24.00 |
+| 31 | 46027 |  | $1,853.40 | $-12.00 | $1,841.40 | $1,865.40 | $+24.00 |
+| 32 | 46027 |  | $1,865.40 | $-16.00 | $1,849.40 | $1,877.40 | $+28.00 |
+| 33 | 46027 |  | $1,877.40 | $-15.00 | $1,862.40 | $1,893.40 | $+31.00 |
+| 34 | 46027 |  | $1,893.40 | $-10.00 | $1,883.40 | $1,908.40 | $+25.00 |
+| 35 | 46027 |  | $1,908.40 | $-11.00 | $1,897.40 | $1,918.40 | $+21.00 |
+| 36 | 46027 |  | $1,918.40 | $-10.00 | $1,908.40 | $1,929.40 | $+21.00 |
+| 37 | 46027 |  | $1,929.40 | $-7.00 | $1,922.40 | $1,939.40 | $+17.00 |
+| 38 | 46027 |  | $1,939.40 | $-7.00 | $1,932.40 | $1,946.40 | $+14.00 |
+| 39 | 46027 |  | $1,946.40 | $-7.00 | $1,939.40 | $1,953.40 | $+14.00 |
+| 40 | 46027 |  | $1,953.40 | $450.00 | $2,403.40 | $1,960.40 | $-443.00 |
+| 41 | 46027 |  | $1,960.40 | $488.77 | $2,449.17 | $1,510.40 | $-938.77 |
+| 42 | 46028 |  | $1,510.40 | $-36.74 | $1,473.66 | $740.99 | $-732.67 |
+| 43 | 46028 |  | $740.99 | $-43.00 | $697.99 | $777.73 | $+79.74 |
+| 44 | 46028 |  | $777.73 | $-297.00 | $480.73 | $820.73 | $+340.00 |
+| 45 | 46028 |  | $820.73 | $-30.00 | $790.73 | $1,117.73 | $+327.00 |
+| 46 | 46028 |  | $1,117.73 | $-69.00 | $1,048.73 | $1,147.73 | $+99.00 |
+| 47 | 46029 |  | $1,147.73 | $-43.00 | $1,104.73 | $677.99 | $-426.74 |
+| 48 | 46029 |  | $677.99 | $-20.00 | $657.99 | $720.99 | $+63.00 |
+| 49 | 46030 |  | $720.99 | $-54.00 | $666.99 | $829.00 | $+162.01 |
+| 50 | 46030 |  | $829.00 | $-43.00 | $786.00 | $883.00 | $+97.00 |
+| 51 | 46030 |  | $883.00 | $-1.99 | $881.01 | $926.00 | $+44.99 |
+| 52 | 46030 |  | $926.00 | $250.00 | $1,176.00 | $927.99 | $-248.01 |
+| 53 | 46031 |  | $927.99 | $-5.00 | $922.99 | $797.71 | $-125.28 |
+| 54 | 46031 |  | $797.71 | $-10.84 | $786.87 | $802.71 | $+15.84 |
+| 55 | 46031 |  | $802.71 | $-361.45 | $441.26 | $813.55 | $+372.29 |
+| 56 | 46031 |  | $813.55 | $-500.00 | $313.55 | $1,175.00 | $+861.45 |
+| 57 | 46031 |  | $1,175.00 | $-54.00 | $1,121.00 | $1,675.00 | $+554.00 |
+| 58 | 46031 |  | $1,675.00 | $400.00 | $2,075.00 | $1,729.00 | $-346.00 |
+| 59 | 46031 |  | $1,729.00 | $500.00 | $2,229.00 | $1,329.00 | $-900.00 |
+| 60 | 46034 |  | $1,329.00 | $-48.00 | $1,281.00 | $725.76 | $-555.24 |
+| 61 | 46034 |  | $725.76 | $-104.00 | $621.76 | $773.76 | $+152.00 |
+| 62 | 46034 |  | $773.76 | $-104.00 | $669.76 | $877.76 | $+208.00 |
+| 63 | 46034 |  | $877.76 | $-82.00 | $795.76 | $981.76 | $+186.00 |
+| 64 | 46034 |  | $981.76 | $-80.00 | $901.76 | $1,063.76 | $+162.00 |
+| 65 | 46034 |  | $1,063.76 | $-80.00 | $983.76 | $1,143.76 | $+160.00 |
+| 66 | 46034 |  | $1,143.76 | $-54.00 | $1,089.76 | $1,223.76 | $+134.00 |
+| 67 | 46034 |  | $1,223.76 | $-19.95 | $1,203.81 | $1,277.76 | $+73.95 |
+| 68 | 46034 |  | $1,277.76 | $500.00 | $1,777.76 | $1,297.71 | $-480.05 |
+| 69 | 46035 |  | $1,297.71 | $-20.03 | $1,277.68 | $990.73 | $-286.95 |
+| 70 | 46035 |  | $990.73 | $-115.00 | $875.73 | $1,010.76 | $+135.03 |
+| 71 | 46035 |  | $1,010.76 | $-105.00 | $905.76 | $1,125.76 | $+220.00 |
+| 72 | 46035 |  | $1,125.76 | $-100.00 | $1,025.76 | $1,230.76 | $+205.00 |
+| 73 | 46035 |  | $1,230.76 | $-50.00 | $1,180.76 | $1,330.76 | $+150.00 |
+| 74 | 46035 |  | $1,330.76 | $200.00 | $1,530.76 | $1,380.76 | $-150.00 |
+| 75 | 46035 |  | $1,380.76 | $455.00 | $1,835.76 | $1,180.76 | $-655.00 |
+| 76 | 46036 |  | $1,180.76 | $-122.00 | $1,058.76 | $1,698.07 | $+639.31 |
+| 77 | 46036 |  | $1,698.07 | $-55.66 | $1,642.41 | $1,820.07 | $+177.66 |
+| 78 | 46036 |  | $1,820.07 | $-115.00 | $1,705.07 | $1,875.73 | $+170.66 |
+| 79 | 46036 |  | $1,875.73 | $1,000.00 | $2,875.73 | $1,990.73 | $-885.00 |
+| 80 | 46037 |  | $1,990.73 | $-350.00 | $1,640.73 | $1,009.08 | $-631.65 |
+| 81 | 46037 |  | $1,009.08 | $-226.00 | $783.08 | $1,359.08 | $+576.00 |
+| 82 | 46037 |  | $1,359.08 | $-9.99 | $1,349.09 | $1,585.08 | $+235.99 |
+| 83 | 46037 |  | $1,585.08 | $-79.00 | $1,506.08 | $1,595.07 | $+88.99 |
+| 84 | 46037 |  | $1,595.07 | $-24.00 | $1,571.07 | $1,674.07 | $+103.00 |
+| 85 | 46038 |  | $1,674.07 | $-226.00 | $1,448.07 | $652.58 | $-795.49 |
+| 86 | 46038 |  | $652.58 | $-350.00 | $302.58 | $878.58 | $+576.00 |
+| 87 | 46038 |  | $878.58 | $-20.00 | $858.58 | $1,228.58 | $+370.00 |
+| 88 | 46038 |  | $1,228.58 | $-10.50 | $1,218.08 | $1,248.58 | $+30.50 |
+| 89 | 46038 |  | $1,248.58 | $250.00 | $1,498.58 | $1,259.08 | $-239.50 |
+| 90 | 46042 |  | $1,259.08 | $-100.00 | $1,159.08 | $419.17 | $-739.91 |
+| 91 | 46042 |  | $419.17 | $-20.00 | $399.17 | $519.17 | $+120.00 |
+| 92 | 46042 |  | $519.17 | $-25.00 | $494.17 | $539.17 | $+45.00 |
+| 93 | 46042 |  | $539.17 | $-278.00 | $261.17 | $564.17 | $+303.00 |
+| 94 | 46042 |  | $564.17 | $-5.00 | $559.17 | $842.17 | $+283.00 |
+| 95 | 46042 |  | $842.17 | $-278.00 | $564.17 | $847.17 | $+283.00 |
+| 96 | 46042 |  | $847.17 | $-52.02 | $795.15 | $1,125.17 | $+330.02 |
+| 97 | 46042 |  | $1,125.17 | $-100.00 | $1,025.17 | $1,177.19 | $+152.02 |
+| 98 | 46042 |  | $1,177.19 | $-20.00 | $1,157.19 | $1,277.19 | $+120.00 |
+| 99 | 46042 |  | $1,277.19 | $-226.00 | $1,051.19 | $1,297.19 | $+246.00 |
+| 100 | 46042 |  | $1,297.19 | $-11.86 | $1,285.33 | $1,523.19 | $+237.86 |
+| 101 | 46042 |  | $1,523.19 | $-80.65 | $1,442.54 | $1,535.05 | $+92.51 |
+| 102 | 46042 |  | $1,535.05 | $-59.00 | $1,476.05 | $1,615.70 | $+139.65 |
+| 103 | 46042 |  | $1,615.70 | $550.00 | $2,165.70 | $1,674.70 | $-491.00 |
+| 104 | 46042 |  | $1,674.70 | $472.12 | $2,146.82 | $1,124.70 | $-1,022.12 |
+| 105 | 46043 |  | $1,124.70 | $-50.00 | $1,074.70 | $122.17 | $-952.53 |
+| 106 | 46043 |  | $122.17 | $-150.00 | $-27.83 | $172.17 | $+200.00 |
+| 107 | 46043 |  | $172.17 | $-97.00 | $75.17 | $322.17 | $+247.00 |
+| 108 | 46044 |  | $322.17 | $-30.00 | $292.17 | $2,792.17 | $+2,500.00 |
+| 109 | 46044 |  | $2,792.17 | $-300.00 | $2,492.17 | $2,822.17 | $+330.00 |
+| 110 | 46044 |  | $2,822.17 | $3,000.00 | $5,822.17 | $3,122.17 | $-2,700.00 |
+| 111 | 46045 |  | $3,122.17 | $-4,200.00 | $-1,077.83 | $1,392.17 | $+2,470.00 |
+| 112 | 46045 |  | $1,392.17 | $-500.00 | $892.17 | $5,592.17 | $+4,700.00 |
+| 113 | 46045 |  | $5,592.17 | $-1,000.00 | $4,592.17 | $6,092.17 | $+1,500.00 |
+| 114 | 46045 |  | $6,092.17 | $100.00 | $6,192.17 | $7,092.17 | $+900.00 |
+| 115 | 46045 |  | $7,092.17 | $4,200.00 | $11,292.17 | $6,992.17 | $-4,300.00 |
+| 116 | 46048 |  | $6,992.17 | $-0.23 | $6,991.94 | $1,822.68 | $-5,169.26 |
+| 117 | 46048 |  | $1,822.68 | $-399.00 | $1,423.68 | $1,822.91 | $+399.23 |
+| 118 | 46048 |  | $1,822.91 | $-250.00 | $1,572.91 | $2,221.91 | $+649.00 |
+| 119 | 46048 |  | $2,221.91 | $-66.28 | $2,155.63 | $2,471.91 | $+316.28 |
+| 120 | 46048 |  | $2,471.91 | $-261.00 | $2,210.91 | $2,538.19 | $+327.28 |
+| 121 | 46048 |  | $2,538.19 | $-35.00 | $2,503.19 | $2,799.19 | $+296.00 |
+| 122 | 46048 |  | $2,799.19 | $-7.98 | $2,791.21 | $2,834.19 | $+42.98 |
+| 123 | 46048 |  | $2,834.19 | $250.00 | $3,084.19 | $2,842.17 | $-242.02 |
+| 124 | 46048 |  | $2,842.17 | $500.00 | $3,342.17 | $2,592.17 | $-750.00 |
+| 125 | 46048 |  | $2,592.17 | $700.00 | $3,292.17 | $2,092.17 | $-1,200.00 |
+| 126 | 46049 |  | $2,092.17 | $-1,000.00 | $1,092.17 | $2,004.38 | $+912.21 |
+| 127 | 46049 |  | $2,004.38 | $-300.00 | $1,704.38 | $3,004.38 | $+1,300.00 |
+| 128 | 46049 |  | $3,004.38 | $481.70 | $3,486.08 | $3,304.38 | $-181.70 |
+| 129 | 46049 |  | $3,304.38 | $1,000.00 | $4,304.38 | $2,822.68 | $-1,481.70 |
+| 130 | 46050 |  | $2,822.68 | $-10.00 | $2,812.68 | $2,081.82 | $-730.86 |
+| 131 | 46050 |  | $2,081.82 | $-812.56 | $1,269.26 | $2,091.82 | $+822.56 |
+| 132 | 46050 |  | $2,091.82 | $900.00 | $2,991.82 | $2,904.38 | $-87.44 |
+| 133 | 46051 |  | $2,904.38 | $-97.00 | $2,807.38 | $1,984.82 | $-822.56 |
+| 134 | 46052 |  | $1,984.82 | $-15.00 | $1,969.82 | $1,839.87 | $-129.95 |
+| 135 | 46052 |  | $1,839.87 | $-29.95 | $1,809.92 | $1,854.87 | $+44.95 |
+| 136 | 46052 |  | $1,854.87 | $-100.00 | $1,754.87 | $1,884.82 | $+129.95 |
+
+### January 2026 — 👤 Personal 0068
+**131 balance errors found:**
+
+| Row | Date | Description | Prev Balance | Amount | Expected | Actual | Diff |
+|-----|------|-------------|--------------|--------|----------|--------|------|
+| 3 | 46024 |  | $100.10 | $-5.49 | $94.61 | $105.10 | $+10.49 |
+| 4 | 46024 |  | $105.10 | $-182.94 | $-77.84 | $110.59 | $+188.43 |
+| 5 | 46024 |  | $110.59 | $-5.00 | $105.59 | $293.53 | $+187.94 |
+| 6 | 46024 |  | $293.53 | $-5.00 | $288.53 | $298.53 | $+10.00 |
+| 7 | 46024 |  | $298.53 | $-7.12 | $291.41 | $303.53 | $+12.12 |
+| 8 | 46024 |  | $303.53 | $-8.99 | $294.54 | $310.65 | $+16.11 |
+| 9 | 46024 |  | $310.65 | $-20.00 | $290.65 | $319.64 | $+28.99 |
+| 10 | 46024 |  | $319.64 | $84.00 | $403.64 | $339.64 | $-64.00 |
+| 11 | 46024 |  | $339.64 | $100.00 | $439.64 | $255.64 | $-184.00 |
+| 12 | 46027 |  | $255.64 | $-450.00 | $-194.36 | $313.18 | $+507.54 |
+| 13 | 46027 |  | $313.18 | $-25.00 | $288.18 | $763.18 | $+475.00 |
+| 14 | 46027 |  | $763.18 | $-5.00 | $758.18 | $788.18 | $+30.00 |
+| 15 | 46027 |  | $788.18 | $-5.00 | $783.18 | $793.18 | $+10.00 |
+| 16 | 46027 |  | $793.18 | $-5.00 | $788.18 | $798.18 | $+10.00 |
+| 17 | 46027 |  | $798.18 | $-19.34 | $778.84 | $803.18 | $+24.34 |
+| 18 | 46027 |  | $803.18 | $-35.60 | $767.58 | $822.52 | $+54.94 |
+| 19 | 46027 |  | $822.52 | $-20.00 | $802.52 | $858.12 | $+55.60 |
+| 20 | 46027 |  | $858.12 | $-20.00 | $838.12 | $878.12 | $+40.00 |
+| 21 | 46027 |  | $878.12 | $350.00 | $1,228.12 | $898.12 | $-330.00 |
+| 22 | 46027 |  | $898.12 | $448.02 | $1,346.14 | $548.12 | $-798.02 |
+| 23 | 46028 |  | $548.12 | $-3.73 | $544.39 | $215.06 | $-329.33 |
+| 24 | 46028 |  | $215.06 | $-5.00 | $210.06 | $218.79 | $+8.73 |
+| 25 | 46028 |  | $218.79 | $-124.39 | $94.40 | $223.79 | $+129.39 |
+| 26 | 46028 |  | $223.79 | $-5.00 | $218.79 | $348.18 | $+129.39 |
+| 27 | 46028 |  | $348.18 | $-20.00 | $328.18 | $353.18 | $+25.00 |
+| 28 | 46028 |  | $353.18 | $-20.00 | $333.18 | $373.18 | $+40.00 |
+| 29 | 46028 |  | $373.18 | $-20.00 | $353.18 | $393.18 | $+40.00 |
+| 30 | 46028 |  | $393.18 | $100.00 | $493.18 | $413.18 | $-80.00 |
+| 31 | 46029 |  | $413.18 | $-5.00 | $408.18 | $92.60 | $-315.58 |
+| 32 | 46029 |  | $92.60 | $-17.46 | $75.14 | $97.60 | $+22.46 |
+| 33 | 46029 |  | $97.60 | $-80.00 | $17.60 | $115.06 | $+97.46 |
+| 34 | 46029 |  | $115.06 | $-20.00 | $95.06 | $195.06 | $+100.00 |
+| 35 | 46030 |  | $195.06 | $-5.00 | $190.06 | $992.88 | $+802.82 |
+| 36 | 46030 |  | $992.88 | $-5.52 | $987.36 | $997.88 | $+10.52 |
+| 37 | 46030 |  | $997.88 | $-35.00 | $962.88 | $1,003.40 | $+40.52 |
+| 38 | 46030 |  | $1,003.40 | $-20.00 | $983.40 | $1,038.40 | $+55.00 |
+| 39 | 46030 |  | $1,038.40 | $965.80 | $2,004.20 | $1,058.40 | $-945.80 |
+| 40 | 46031 |  | $1,058.40 | $-5.00 | $1,053.40 | $1,046.55 | $-6.85 |
+| 41 | 46031 |  | $1,046.55 | $-10.84 | $1,035.71 | $1,051.55 | $+15.84 |
+| 42 | 46031 |  | $1,051.55 | $-400.00 | $651.55 | $1,062.39 | $+410.84 |
+| 43 | 46031 |  | $1,062.39 | $-361.45 | $700.94 | $1,462.39 | $+761.45 |
+| 44 | 46031 |  | $1,462.39 | $-5.00 | $1,457.39 | $1,823.84 | $+366.45 |
+| 45 | 46031 |  | $1,823.84 | $-11.50 | $1,812.34 | $1,828.84 | $+16.50 |
+| 46 | 46031 |  | $1,828.84 | $347.46 | $2,176.30 | $1,840.34 | $-335.96 |
+| 47 | 46031 |  | $1,840.34 | $500.00 | $2,340.34 | $1,492.88 | $-847.46 |
+| 48 | 46034 |  | $1,492.88 | $-500.00 | $992.88 | $206.04 | $-786.84 |
+| 49 | 46034 |  | $206.04 | $-5.00 | $201.04 | $706.04 | $+505.00 |
+| 50 | 46034 |  | $706.04 | $-6.02 | $700.02 | $711.04 | $+11.02 |
+| 51 | 46034 |  | $711.04 | $-11.50 | $699.54 | $717.06 | $+17.52 |
+| 52 | 46034 |  | $717.06 | $-106.34 | $610.72 | $728.56 | $+117.84 |
+| 53 | 46034 |  | $728.56 | $-928.04 | $-199.48 | $834.90 | $+1,034.38 |
+| 54 | 46034 |  | $834.90 | $707.40 | $1,542.30 | $1,762.94 | $+220.64 |
+| 55 | 46034 |  | $1,762.94 | $8.99 | $1,771.93 | $1,055.54 | $-716.39 |
+| 56 | 46035 |  | $1,055.54 | $-3.71 | $1,051.83 | $68.28 | $-983.55 |
+| 57 | 46035 |  | $68.28 | $-5.00 | $63.28 | $71.99 | $+8.71 |
+| 58 | 46035 |  | $71.99 | $-123.55 | $-51.56 | $76.99 | $+128.55 |
+| 59 | 46035 |  | $76.99 | $-455.00 | $-378.01 | $200.54 | $+578.55 |
+| 60 | 46035 |  | $200.54 | $-11.50 | $189.04 | $655.54 | $+466.50 |
+| 61 | 46035 |  | $655.54 | $-11.50 | $644.04 | $667.04 | $+23.00 |
+| 62 | 46035 |  | $667.04 | $-11.50 | $655.54 | $678.54 | $+23.00 |
+| 63 | 46035 |  | $678.54 | $-69.15 | $609.39 | $690.04 | $+80.65 |
+| 64 | 46035 |  | $690.04 | $553.15 | $1,243.19 | $759.19 | $-484.00 |
+| 65 | 46036 |  | $759.19 | $-0.43 | $758.76 | $24.43 | $-734.33 |
+| 66 | 46036 |  | $24.43 | $-5.00 | $19.43 | $24.86 | $+5.43 |
+| 67 | 46036 |  | $24.86 | $-12.34 | $12.52 | $29.86 | $+17.34 |
+| 68 | 46036 |  | $29.86 | $-11.50 | $18.36 | $42.20 | $+23.84 |
+| 69 | 46036 |  | $42.20 | $-14.58 | $27.62 | $53.70 | $+26.08 |
+| 70 | 46037 |  | $53.70 | $-5.00 | $48.70 | $351.23 | $+302.53 |
+| 71 | 46037 |  | $351.23 | $-6.70 | $344.53 | $356.23 | $+11.70 |
+| 72 | 46037 |  | $356.23 | $-11.50 | $344.73 | $362.93 | $+18.20 |
+| 73 | 46037 |  | $362.93 | $350.00 | $712.93 | $374.43 | $-338.50 |
+| 74 | 46038 |  | $374.43 | $-25.00 | $349.43 | $664.73 | $+315.30 |
+| 75 | 46038 |  | $664.73 | $-11.50 | $653.23 | $689.73 | $+36.50 |
+| 76 | 46038 |  | $689.73 | $350.00 | $1,039.73 | $701.23 | $-338.50 |
+| 77 | 46042 |  | $701.23 | $-5.00 | $696.23 | $111.53 | $-584.70 |
+| 78 | 46042 |  | $111.53 | $-9.06 | $102.47 | $116.53 | $+14.06 |
+| 79 | 46042 |  | $116.53 | $-3.00 | $113.53 | $125.59 | $+12.06 |
+| 80 | 46042 |  | $125.59 | $-5.00 | $120.59 | $128.59 | $+8.00 |
+| 81 | 46042 |  | $128.59 | $-5.00 | $123.59 | $133.59 | $+10.00 |
+| 82 | 46042 |  | $133.59 | $-5.00 | $128.59 | $138.59 | $+10.00 |
+| 83 | 46042 |  | $138.59 | $-8.54 | $130.05 | $143.59 | $+13.54 |
+| 84 | 46042 |  | $143.59 | $-302.10 | $-158.51 | $152.13 | $+310.64 |
+| 85 | 46042 |  | $152.13 | $-11.50 | $140.63 | $454.23 | $+313.60 |
+| 86 | 46042 |  | $454.23 | $-550.00 | $-95.77 | $465.73 | $+561.50 |
+| 87 | 46042 |  | $465.73 | $100.00 | $565.73 | $1,015.73 | $+450.00 |
+| 88 | 46042 |  | $1,015.73 | $100.00 | $1,115.73 | $915.73 | $-200.00 |
+| 89 | 46042 |  | $915.73 | $100.00 | $1,015.73 | $815.73 | $-200.00 |
+| 90 | 46042 |  | $815.73 | $51.00 | $866.73 | $715.73 | $-151.00 |
+| 91 | 46043 |  | $715.73 | $-247.00 | $468.73 | $18.53 | $-450.20 |
+| 92 | 46043 |  | $18.53 | $-11.50 | $7.03 | $265.53 | $+258.50 |
+| 93 | 46043 |  | $265.53 | $-11.50 | $254.03 | $277.03 | $+23.00 |
+| 94 | 46043 |  | $277.03 | $-11.50 | $265.53 | $288.53 | $+23.00 |
+| 95 | 46043 |  | $288.53 | $-11.50 | $277.03 | $300.03 | $+23.00 |
+| 96 | 46043 |  | $300.03 | $50.00 | $350.03 | $311.53 | $-38.50 |
+| 97 | 46043 |  | $311.53 | $150.00 | $461.53 | $261.53 | $-200.00 |
+| 98 | 46044 |  | $261.53 | $-11.50 | $250.03 | $307.03 | $+57.00 |
+| 99 | 46044 |  | $307.03 | $300.00 | $607.03 | $318.53 | $-288.50 |
+| 100 | 46045 |  | $318.53 | $-5.00 | $313.53 | $140.98 | $-172.55 |
+| 101 | 46045 |  | $140.98 | $-7.29 | $133.69 | $145.98 | $+12.29 |
+| 102 | 46045 |  | $145.98 | $-242.90 | $-96.92 | $153.27 | $+250.19 |
+| 103 | 46045 |  | $153.27 | $-11.50 | $141.77 | $396.17 | $+254.40 |
+| 104 | 46045 |  | $396.17 | $100.64 | $496.81 | $407.67 | $-89.14 |
+| 105 | 46048 |  | $407.67 | $-5.00 | $402.67 | $0.00 | $-402.67 |
+| 106 | 46048 |  | $0.00 | $-9.08 | $-9.08 | $5.00 | $+14.08 |
+| 107 | 46048 |  | $5.00 | $-25.00 | $-20.00 | $14.08 | $+34.08 |
+| 108 | 46048 |  | $14.08 | $-5.00 | $9.08 | $39.08 | $+30.00 |
+| 109 | 46048 |  | $39.08 | $-5.00 | $34.08 | $44.08 | $+10.00 |
+| 110 | 46048 |  | $44.08 | $-5.00 | $39.08 | $49.08 | $+10.00 |
+| 111 | 46048 |  | $49.08 | $-302.63 | $-253.55 | $54.08 | $+307.63 |
+| 112 | 46048 |  | $54.08 | $-25.14 | $28.94 | $356.71 | $+327.77 |
+| 113 | 46048 |  | $356.71 | $-11.50 | $345.21 | $381.85 | $+36.64 |
+| 114 | 46048 |  | $381.85 | $250.00 | $631.85 | $393.35 | $-238.50 |
+| 115 | 46048 |  | $393.35 | $2.37 | $395.72 | $143.35 | $-252.37 |
+| 116 | 46049 |  | $143.35 | $-3.81 | $139.54 | $1,129.84 | $+990.30 |
+| 117 | 46049 |  | $1,129.84 | $-5.00 | $1,124.84 | $1,133.65 | $+8.81 |
+| 118 | 46049 |  | $1,133.65 | $-126.85 | $1,006.80 | $1,138.65 | $+131.85 |
+| 119 | 46049 |  | $1,138.65 | $-11.50 | $1,127.15 | $1,265.50 | $+138.35 |
+| 120 | 46049 |  | $1,265.50 | $-11.50 | $1,254.00 | $1,277.00 | $+23.00 |
+| 121 | 46049 |  | $1,277.00 | $-11.50 | $1,265.50 | $1,288.50 | $+23.00 |
+| 122 | 46049 |  | $1,288.50 | $300.00 | $1,588.50 | $1,300.00 | $-288.50 |
+| 123 | 46049 |  | $1,300.00 | $1,000.00 | $2,300.00 | $1,000.00 | $-1,300.00 |
+| 124 | 46050 |  | $1,000.00 | $-80.00 | $920.00 | $129.84 | $-790.16 |
+| 125 | 46050 |  | $129.84 | $-11.50 | $118.34 | $209.84 | $+91.50 |
+| 126 | 46050 |  | $209.84 | $-900.00 | $-690.16 | $221.34 | $+911.50 |
+| 127 | 46050 |  | $221.34 | $-8.50 | $212.84 | $1,121.34 | $+908.50 |
+| 128 | 46051 |  | $1,121.34 | $-35.00 | $1,086.34 | $73.06 | $-1,013.28 |
+| 129 | 46051 |  | $73.06 | $-5.00 | $68.06 | $108.06 | $+40.00 |
+| 130 | 46051 |  | $108.06 | $-11.50 | $96.56 | $113.06 | $+16.50 |
+| 131 | 46051 |  | $113.06 | $-5.28 | $107.78 | $124.56 | $+16.78 |
+| 132 | 46052 |  | $124.56 | $-5.00 | $119.56 | $56.56 | $-63.00 |
+| 133 | 46052 |  | $56.56 | $-11.50 | $45.06 | $61.56 | $+16.50 |
+
+**Total balance formula errors found: 1775**
 
 ---
 
 ## 5. Cross-Account Transfer Reconciliation
 
-### Transfers Between Business 4991 ↔ Personal 0068
+**12 transfer mismatches found:**
 
-For each transfer from Business checking to Personal checking, verified both sides appear:
-
-| Month | Biz→Personal (debits in 4991) | Personal←Biz (credits in 0068) | Match? |
-|-------|------------------------------|-------------------------------|--------|
-| June 2025 | Checked | Matched | ✅ |
-| July 2025 | Checked | **27 txns missing from Personal** | ⚠️ |
-| Aug 2025 | Checked | Matched | ✅ |
-| Sep 2025 | Checked | Matched | ✅ |
-| Oct 2025 | Checked | Matched | ✅ |
-| Nov 2025 | Checked | Matched | ✅ |
-| Dec 2025 | Checked | Matched | ✅ |
-| Jan 2026 | Checked | Matched | ✅ |
-
-**July 2025 Note:** The missing Personal 0068 transactions include 4 transfers from Business (+$200×3, +$350). These transfers ARE correctly recorded as debits in Business 4991 but missing from Personal 0068's sheet. The Business side is accurate; only the Personal side is incomplete.
-
-### CC Payments (Business 4991 → Credit Cards)
-
-Credit card payments appear as debits in checking and credits in CC statements. These were verified to match in all months where both sides have complete data.
-
----
-
-## 6. Dashboard Verification
-
-Each monthly sheet has a 📊 Dashboard tab with income summaries and expense breakdowns. Here's what we found:
-
-| Month | Dashboard Income | Notes |
-|-------|-----------------|-------|
-| June 2025 | $9,022.51 | Detailed breakdown by business line (R&R $6,547.51, SEO $2,475.00) |
-| July 2025 | $12,688.32 | Matches Biz 4991 credits exactly ✅ |
-| October 2025 | $6,440.74 | Detailed Stripe deposits + Zelle ✅ |
-| January 2026 | $9,321.79 | Most detailed: Stripe $1,521.79 (net), Zelle $7,700, Other $100 |
-
-**Note:** Most dashboard income figures are derived from Business 4991 credits (Stripe deposits + Zelle) and represent cash-basis income. The dashboards generally match the underlying transaction data for their respective accounts.
-
----
-
-## 7. Priority Fix List
-
-Ranked by dollar impact:
-
-| # | Priority | Month | Account | Issue | $ Impact | Fix Effort |
-|---|----------|-------|---------|-------|----------|------------|
-| 1 | 🔴 HIGH | July 2025 | 👤 Personal 0068 | 27 missing transactions | $2,900.87 (gross) | Re-import from CSV |
-| 2 | 🟡 MEDIUM | Aug 2025 | 💎 Sapphire 4252 | 7 rows missing Amount values | $767.18 | Fill in 7 cells |
-| 3 | 🟡 MEDIUM | Jan 2026 | 💳 Biz CC 0678 | 2 txns from Feb post-date included | $805.31 | Decide date convention, adjust |
-| 4 | 🟢 LOW | Sep 2025 | 💎 Sapphire 4252 | 2 rows missing Amount values | $422.42 | Fill in 2 cells |
-| 5 | 🟢 LOW | June 2025 | 💳 Biz CC 0678 | 1 Namecheap txn missing | $17.16 | Add 1 row |
-
-### Recommended Actions
-
-1. **July 2025 Personal 0068** — Re-run the sheet builder for this month's Personal tab using the alltime CSV. This is the only month with significant transaction gaps.
-
-2. **August & September Sapphire 4252** — The rows exist but amounts are empty. This is likely a bug in the sheet builder where the Amount column wasn't populated for some rows. Fill in the values from the CSV.
-
-3. **January 2026 Biz CC 0678** — Decide on a consistent date convention (transaction date vs post date) for credit card entries that span month boundaries. Currently the sheet uses transaction date, while standard bank reconciliation uses post date.
-
-4. **June 2025 Biz CC 0678** — Add the missing NAME-CHEAP.COM* LFYNBT transaction (-$17.16, posted 06/01/2025).
-
-5. **Balance columns** — Consider whether the Balance column in checking tabs adds value. Currently it contains imported Chase values that don't form a clean running total due to same-day transaction ordering. Options: (a) remove it, (b) replace with a formula-based running balance, or (c) keep as-is with a note that it's informational.
+- **June 2025** — biz_to_sapphire: difference of $+218.00
+  - checking_side: $0.00
+  - sapphire_side: $218.00
+- **August 2025** — biz_to_sapphire: difference of $+218.00
+  - checking_side: $0.00
+  - sapphire_side: $218.00
+- **September 2025** — biz_to_cc_0678: difference of $+76.00
+  - biz_side: $0.00
+  - cc_side: $76.00
+- **September 2025** — biz_to_sapphire: difference of $+250.00
+  - checking_side: $0.00
+  - sapphire_side: $250.00
+- **October 2025** — biz_to_cc_0678: difference of $+193.00
+  - biz_side: $0.00
+  - cc_side: $193.00
+- **October 2025** — biz_to_sapphire: difference of $+262.00
+  - checking_side: $0.00
+  - sapphire_side: $262.00
+- **November 2025** — biz_to_sapphire: difference of $+254.00
+  - checking_side: $0.00
+  - sapphire_side: $254.00
+- **December 2025** — biz_to_personal: difference of $+454.80
+  - biz_side: $-3,370.00
+  - personal_side: $3,824.80
+- **December 2025** — biz_to_cc_0678: difference of $+118.00
+  - biz_side: $-60.00
+  - cc_side: $178.00
+- **December 2025** — biz_to_sapphire: difference of $+109.00
+  - checking_side: $-148.00
+  - sapphire_side: $257.00
+- **January 2026** — biz_to_cc_0678: difference of $+61.00
+  - biz_side: $-5,200.00
+  - cc_side: $5,261.00
+- **January 2026** — biz_to_sapphire: difference of $+247.00
+  - checking_side: $-261.00
+  - sapphire_side: $508.00
 
 ---
 
-## Appendix: CSV Statistics Summary
+## 6. Priority Fix List
 
-| Account | Month | Count | Debits | Credits | Net |
-|---------|-------|-------|--------|---------|-----|
-| 💼 Biz 4991 | Jun 2025 | 87 | -$8,705.20 | $9,222.51 | $517.31 |
-| 💼 Biz 4991 | Jul 2025 | 106 | -$12,300.94 | $12,688.32 | $387.38 |
-| 💼 Biz 4991 | Aug 2025 | 63 | -$9,276.32 | $7,848.47 | -$1,427.85 |
-| 💼 Biz 4991 | Sep 2025 | 58 | -$7,508.25 | $8,159.64 | $651.39 |
-| 💼 Biz 4991 | Oct 2025 | 66 | -$6,882.49 | $6,790.74 | -$91.75 |
-| 💼 Biz 4991 | Nov 2025 | 64 | -$5,776.51 | $5,370.80 | -$405.71 |
-| 💼 Biz 4991 | Dec 2025 | 82 | -$7,361.83 | $7,737.73 | $375.90 |
-| 💼 Biz 4991 | Jan 2026 | 135 | -$16,580.69 | $16,976.79 | $396.10 |
-| 👤 Personal 0068 | Jun 2025 | 154 | -$5,576.87 | $5,622.71 | $45.84 |
-| 👤 Personal 0068 | Jul 2025 | 176 | -$7,559.91 | $7,518.36 | -$41.55 |
-| 👤 Personal 0068 | Aug 2025 | 241 | -$6,719.80 | $7,580.00 | $860.20 |
-| 👤 Personal 0068 | Sep 2025 | 146 | -$7,354.82 | $6,453.07 | -$901.75 |
-| 👤 Personal 0068 | Oct 2025 | 131 | -$4,617.49 | $5,551.72 | $934.23 |
-| 👤 Personal 0068 | Nov 2025 | 136 | -$4,561.28 | $3,583.44 | -$977.84 |
-| 👤 Personal 0068 | Dec 2025 | 138 | -$5,407.78 | $5,504.80 | $97.02 |
-| 👤 Personal 0068 | Jan 2026 | 132 | -$7,467.91 | $7,368.83 | -$99.08 |
-| 💳 Biz CC 0678 | Jun 2025 | 21 | -$858.87 | $300.64 | -$558.23 |
-| 💳 Biz CC 0678 | Jul 2025 | 21 | -$941.99 | $2,500.00 | $1,558.01 |
-| 💳 Biz CC 0678 | Aug 2025 | 15 | -$983.76 | $0.00 | -$983.76 |
-| 💳 Biz CC 0678 | Sep 2025 | 12 | -$641.73 | $76.00 | -$565.73 |
-| 💳 Biz CC 0678 | Oct 2025 | 15 | -$735.75 | $193.00 | -$542.75 |
-| 💳 Biz CC 0678 | Nov 2025 | 6 | -$297.78 | $0.00 | -$297.78 |
-| 💳 Biz CC 0678 | Dec 2025 | 5 | -$117.01 | $178.00 | $60.99 |
-| 💳 Biz CC 0678 | Jan 2026 | 14 | -$1,416.84 | $5,399.10 | $3,982.26 |
-| 💎 Sapphire 4252 | Jun 2025 | 3 | -$339.41 | $218.00 | -$121.41 |
-| 💎 Sapphire 4252 | Jul 2025 | 4 | -$359.25 | $600.00 | $240.75 |
-| 💎 Sapphire 4252 | Aug 2025 | 19 | -$1,854.08 | $307.10 | -$1,546.98 |
-| 💎 Sapphire 4252 | Sep 2025 | 2 | -$172.42 | $250.00 | $77.58 |
-| 💎 Sapphire 4252 | Oct 2025 | 2 | -$165.48 | $262.00 | $96.52 |
-| 💎 Sapphire 4252 | Nov 2025 | 5 | -$410.17 | $406.33 | -$3.84 |
-| 💎 Sapphire 4252 | Dec 2025 | 3 | -$159.81 | $259.38 | $99.57 |
-| 💎 Sapphire 4252 | Jan 2026 | 9 | -$1,091.09 | $616.86 | -$474.23 |
+Ranked by absolute dollar amount of discrepancy:
+
+| Priority | Month | Account | Check | Difference |
+|----------|-------|---------|-------|------------|
+| 1 | January 2026 | 💳 Biz CC 0678 | total_debits | $805.31 |
+| 2 | January 2026 | 💳 Biz CC 0678 | net_flow | $805.31 |
+| 3 | July 2025 | 💳 Biz CC 0678 | total_debits | $99.00 |
+| 4 | July 2025 | 💳 Biz CC 0678 | net_flow | $99.00 |
+| 5 | June 2025 | 💳 Biz CC 0678 | total_debits | $17.16 |
+| 6 | June 2025 | 💳 Biz CC 0678 | net_flow | $17.16 |
+| 7 | January 2026 | 💳 Biz CC 0678 | txn_count | $2.00 |
+| 8 | June 2025 | 💳 Biz CC 0678 | txn_count | $1.00 |
+| 9 | July 2025 | 💳 Biz CC 0678 | txn_count | $1.00 |

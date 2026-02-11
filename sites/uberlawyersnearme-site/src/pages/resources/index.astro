@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resources } from '../../data/resources';
+
+const title = "Rideshare Accident Resources - Uber & Lyft Insurance Guide";
+const description = "Comprehensive guides about Uber and Lyft insurance coverage, what to do after an accident, and how to file claims. Expert rideshare accident resources.";
+
+// Group resources by category
+const categories = [...new Set(resources.map(r => r.category))];
+const resourcesByCategory = categories.reduce((acc, cat) => {
+  acc[cat] = resources.filter(r => r.category === cat);
+  return acc;
+}, {} as Record<string, typeof resources>);
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="uber-gradient text-white py-16 md:py-20">
+    <div class="container-wide">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+        Rideshare Accident <span class="text-primary-400">Resources</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl">
+        Everything you need to know about Uber and Lyft insurance, filing claims, and protecting your rights after a rideshare accident.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resources by Category -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container-wide">
+      {Object.entries(resourcesByCategory).map(([category, categoryResources]) => (
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">{category}</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categoryResources.map(resource => (
+              <a href={`/resources/${resource.slug}`} class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+                <span class="text-xs font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                  {resource.category}
+                </span>
+                <h3 class="text-lg font-bold text-gray-900 mt-4 mb-2">{resource.title}</h3>
+                <p class="text-gray-600 text-sm">{resource.description}</p>
+                <span class="text-primary-500 font-medium text-sm mt-4 inline-block">Read More →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl font-bold mb-4">Need Personal Help?</h2>
+      <p class="text-xl text-primary-100 mb-8">Get a free case evaluation from an experienced rideshare accident attorney.</p>
+      <a href="/#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

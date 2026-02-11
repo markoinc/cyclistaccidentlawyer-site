@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { cities } from '../../data/cities';
+import { states } from '../../data/states';
+
+const title = "Motorcycle Accident Lawyers by City";
+const description = "Find experienced motorcycle accident lawyers in your city. Local attorneys who understand your area's traffic patterns, roads, and courts.";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Cities", url: "/cities" }
+];
+
+// Group cities by state
+const citiesByState = cities.reduce((acc, city) => {
+  if (!acc[city.state]) {
+    acc[city.state] = [];
+  }
+  acc[city.state].push(city);
+  return acc;
+}, {} as Record<string, typeof cities>);
+
+// Sort states alphabetically
+const sortedStates = Object.keys(citiesByState).sort();
+
+// Get featured cities (high traffic density, high crash rates)
+const featuredCities = cities
+  .filter(c => c.trafficDensity === "high" && c.annualMotorcycleCrashes > 200)
+  .slice(0, 12);
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 md:py-20">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Find a <span class="text-primary-400">Local</span> Motorcycle Accident Lawyer
+        </h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Every city has unique road conditions, traffic patterns, and courts. Find attorneys who know your area and have experience with local motorcycle accident cases.
+        </p>
+        
+        <!-- Search -->
+        <div class="max-w-xl mx-auto">
+          <div class="relative">
+            <input 
+              type="text" 
+              id="city-search"
+              placeholder="Search for your city..."
+              class="w-full px-6 py-4 rounded-lg text-gray-900 text-lg focus:ring-4 focus:ring-primary-300 focus:outline-none"
+            />
+            <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Cities -->
+  {featuredCities.length > 0 && (
+    <section class="py-12 bg-gray-50">
+      <div class="container-wide">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">High-Traffic Cities</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          {featuredCities.map(city => (
+            <a 
+              href={`/cities/${city.slug}`}
+              class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center group"
+            >
+              <div class="font-bold text-gray-900 group-hover:text-primary-600">{city.name}</div>
+              <div class="text-sm text-gray-500">{city.stateAbbr}</div>
+              <div class="text-xs text-primary-600 mt-1">{city.annualMotorcycleCrashes}+ crashes/yr</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Cities by State -->
+  <section class="py-12">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">All Cities by State</h2>
+      
+      <div class="space-y-8" id="cities-list">
+        {sortedStates.map(stateName => {
+          const stateCities = citiesByState[stateName].sort((a, b) => a.name.localeCompare(b.name));
+          const stateData = states.find(s => s.name === stateName);
+          
+          return (
+            <div class="city-state-group" data-state={stateName.toLowerCase()}>
+              <div class="flex items-center gap-3 mb-4">
+                <h3 class="text-xl font-bold text-gray-900">{stateName}</h3>
+                {stateData && (
+                  <a href={`/states/${stateData.slug}`} class="text-sm text-primary-600 hover:underline">
+                    View State Laws →
+                  </a>
+                )}
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {stateCities.map(city => (
+                  <a 
+                    href={`/cities/${city.slug}`}
+                    class="city-card bg-gray-50 hover:bg-white px-3 py-2 rounded text-sm hover:shadow transition"
+                    data-city={city.name.toLowerCase()}
+                  >
+                    <span class="text-gray-900 hover:text-primary-600">{city.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 bg-primary-600 text-white">
+    <div class="container-wide">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold">{cities.length}</div>
+          <div class="text-primary-100">Cities Covered</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">{sortedStates.length}</div>
+          <div class="text-primary-100">States</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">24/7</div>
+          <div class="text-primary-100">Availability</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">$0</div>
+          <div class="text-primary-100">Upfront Cost</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="container-wide text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Don't See Your City?</h2>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        We work with motorcycle accident attorneys nationwide. Get your free case evaluation regardless of where your accident occurred.
+      </p>
+      <a href="/free-consultation" class="btn btn-cta text-lg">
+        Get Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('city-search');
+  const cityCards = document.querySelectorAll('.city-card');
+  const stateGroups = document.querySelectorAll('.city-state-group');
+  
+  searchInput?.addEventListener('input', (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase();
+    
+    if (!query) {
+      cityCards.forEach(card => card.classList.remove('hidden'));
+      stateGroups.forEach(group => group.classList.remove('hidden'));
+      return;
+    }
+    
+    stateGroups.forEach(group => {
+      const stateName = group.getAttribute('data-state') || '';
+      const cards = group.querySelectorAll('.city-card');
+      let hasVisibleCity = false;
+      
+      cards.forEach(card => {
+        const cityName = card.getAttribute('data-city') || '';
+        if (cityName.includes(query) || stateName.includes(query)) {
+          card.classList.remove('hidden');
+          hasVisibleCity = true;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      
+      if (hasVisibleCity) {
+        group.classList.remove('hidden');
+      } else {
+        group.classList.add('hidden');
+      }
+    });
+  });
+</script>

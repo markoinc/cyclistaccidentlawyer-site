@@ -1,27 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  /* Blue/Teal safety-themed color scheme */
-  --color-primary-50: #f0f9ff;
-  --color-primary-100: #e0f2fe;
-  --color-primary-200: #bae6fd;
-  --color-primary-300: #7dd3fc;
-  --color-primary-400: #38bdf8;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-700: #0369a1;
-  --color-primary-800: #075985;
-  --color-primary-900: #0c4a6e;
+  /* Warm Orange + Cream White color scheme for Pedestrian Accident Lawyers */
+  /* Approachable, human, caring - for pedestrian victims */
+  --color-primary-50: #fef7f3;
+  --color-primary-100: #fdeee6;
+  --color-primary-200: #fbd5c2;
+  --color-primary-300: #f5b593;
+  --color-primary-400: #ed9560;
+  --color-primary-500: #e07b39;
+  --color-primary-600: #d16828;
+  --color-primary-700: #ae5421;
+  --color-primary-800: #8c4420;
+  --color-primary-900: #723a1e;
   
-  /* Teal accent */
-  --color-accent-50: #f0fdfa;
-  --color-accent-100: #ccfbf1;
-  --color-accent-200: #99f6e4;
-  --color-accent-300: #5eead4;
-  --color-accent-400: #2dd4bf;
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
-  --color-accent-700: #0f766e;
+  /* Cream/Warm accent */
+  --color-accent-50: #fefdfb;
+  --color-accent-100: #faf8f5;
+  --color-accent-200: #f5f0e8;
+  --color-accent-300: #ebe3d5;
+  --color-accent-400: #d9cbb4;
+  --color-accent-500: #c7b394;
+  --color-accent-600: #a89574;
+  --color-accent-700: #8a7a5e;
+  
+  /* Cream background color */
+  --color-cream: #faf8f5;
   
   --color-danger-50: #fef2f2;
   --color-danger-100: #fee2e2;
@@ -46,6 +50,11 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Cream background utility */
+.bg-cream {
+  background-color: #faf8f5;
 }
 
 /* Form focus styles */

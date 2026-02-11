@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { states } from '../data/states';
+import { caseTypes } from '../data/caseTypes';
+
+const title = "Uber & Rideshare Accident Lawyers - Free Case Evaluation";
+const description = "Injured in an Uber, Lyft, or rideshare accident? Get a free case evaluation from experienced rideshare accident attorneys. No fees unless you win. Available 24/7 nationwide.";
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Uber Lawyers Near Me",
+  "url": "https://uberlawyersnearme.com",
+  "description": description,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://uberlawyersnearme.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+// Featured states (highest rideshare usage)
+const featuredStates = states.filter(s => 
+  ["california", "texas", "florida", "new-york", "illinois", "arizona"].includes(s.slug)
+);
+
+// Featured case types
+const featuredCases = caseTypes.slice(0, 6);
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  schemaMarkup={schemaMarkup}
+>
+  <!-- Hero Section -->
+  <section class="uber-gradient text-white py-20 md:py-28">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-primary-500/20 text-primary-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></span>
+            Free Consultations Available 24/7
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            Injured in an 
+            <span class="text-primary-400">Uber</span> or 
+            <span class="text-primary-400">Lyft</span> 
+            Accident?
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            Rideshare accidents are complex. Navigate Uber and Lyft's $1 million insurance policies with attorneys who specialize in rideshare claims.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#free-case-review" class="btn btn-cta text-lg px-8 py-4">
+              Get Your Free Case Review
+            </a>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-6 text-gray-300">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>No Upfront Fees</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>$1M Policy Experts</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Nationwide</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Form -->
+        <div id="free-case-review" class="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+          <div class="text-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Free Case Evaluation</h2>
+            <p class="text-gray-600">Find out what your rideshare accident case is worth</p>
+          </div>
+          
+          <form action="https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/uberlaw-home" method="POST" class="space-y-4">
+            <input type="hidden" name="source" value="uberlawyersnearme-home" />
+            <input type="hidden" name="caseType" value="rideshare-accident" />
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                <input type="text" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                <input type="text" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Type of Accident</label>
+              <select name="accidentType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required>
+                <option value="">Select Type</option>
+                <option value="uber-passenger">I was a passenger in Uber</option>
+                <option value="lyft-passenger">I was a passenger in Lyft</option>
+                <option value="uber-driver">I was an Uber driver</option>
+                <option value="lyft-driver">I was a Lyft driver</option>
+                <option value="hit-by-uber">Hit by an Uber/Lyft vehicle</option>
+                <option value="pedestrian">Pedestrian hit by rideshare</option>
+                <option value="cyclist">Cyclist hit by rideshare</option>
+                <option value="other">Other rideshare accident</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">State Where Accident Occurred</label>
+              <select name="state" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white" required>
+                <option value="">Select State</option>
+                {states.map(state => (
+                  <option value={state.slug}>{state.name}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Brief Description</label>
+              <textarea name="description" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-gray-900 bg-white resize-none" placeholder="What happened?"></textarea>
+            </div>
+            <button type="submit" class="w-full btn btn-cta text-lg py-4">
+              Get My Free Evaluation
+            </button>
+          </form>
+          
+          <p class="text-xs text-gray-500 text-center mt-4">
+            🔒 Your information is confidential. By submitting, you agree to our Privacy Policy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Bar -->
+  <section class="bg-primary-600 text-white py-8">
+    <div class="container-wide">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">10B+</div>
+          <div class="text-primary-100">Uber Rides Since 2009</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">$1M</div>
+          <div class="text-primary-100">Coverage Per Trip</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">50</div>
+          <div class="text-primary-100">States Covered</div>
+        </div>
+        <div>
+          <div class="text-3xl md:text-4xl font-bold">$0</div>
+          <div class="text-primary-100">Upfront Cost</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Rideshare Cases Are Different -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Why Rideshare Accidents Are Different
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Uber and Lyft accidents involve complex insurance layers that regular car accidents don't. Here's what makes them unique.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-xl p-8 card-hover">
+          <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Three-Tier Insurance System</h3>
+          <p class="text-gray-600">
+            Uber and Lyft coverage changes based on driver status: app off, waiting for request, or with passenger. Each phase has different limits—knowing which applies is crucial.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 card-hover">
+          <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Multiple Liable Parties</h3>
+          <p class="text-gray-600">
+            Claims can involve the rideshare company, the driver, third-party drivers, and multiple insurance carriers. Our attorneys know how to navigate all parties.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-8 card-hover">
+          <div class="w-14 h-14 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">$1 Million Policies</h3>
+          <p class="text-gray-600">
+            During active trips, Uber and Lyft carry $1M liability coverage. This means larger potential settlements—but insurance companies fight harder to deny claims.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Types -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Types of Rideshare Accident Cases We Handle
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Whether you were a passenger, driver, or hit by a rideshare vehicle, we connect you with attorneys who specialize in your type of case.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredCases.map(caseType => (
+          <a href={`/case-types/${caseType.slug}`} class="bg-white rounded-xl p-6 card-hover border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{caseType.name}</h3>
+            <p class="text-gray-600 text-sm mb-4">{caseType.shortDescription}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                {caseType.averageSettlement}
+              </span>
+              <span class="text-primary-500 font-medium text-sm">Learn More →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="/case-types" class="btn btn-secondary">
+          View All Case Types
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- States Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Find Rideshare Accident Attorneys By State
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Laws and insurance requirements vary by state. Get connected with attorneys who understand your state's specific rideshare regulations.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredStates.map(state => (
+          <a href={`/states/${state.slug}`} class="bg-gray-50 rounded-xl p-6 card-hover border border-gray-100">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">{state.name}</h3>
+              <span class="text-xs font-medium text-gray-500 bg-gray-200 px-2 py-1 rounded">
+                {state.abbreviation}
+              </span>
+            </div>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Statute of Limitations:</span>
+                <span class="font-medium text-gray-900">{state.statuteOfLimitations}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Fault System:</span>
+                <span class="font-medium text-gray-900">{state.faultSystem.split(' ')[0]}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Avg. Settlement:</span>
+                <span class="font-medium text-primary-600">{state.averageSettlement.split(' - ')[0]}</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-200">
+              <span class="text-primary-500 font-medium text-sm">View State Details →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="/states" class="btn btn-secondary">
+          View All 50 States
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-16 md:py-24 uber-gradient text-white">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          How Our Free Case Review Works
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Getting help for your rideshare accident case is simple and risk-free.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+          <h3 class="text-xl font-bold mb-2">Submit Your Info</h3>
+          <p class="text-gray-400">Fill out our quick form with basic accident details.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+          <h3 class="text-xl font-bold mb-2">Free Consultation</h3>
+          <p class="text-gray-400">A rideshare accident attorney reviews your case.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+          <h3 class="text-xl font-bold mb-2">Build Your Case</h3>
+          <p class="text-gray-400">Your attorney handles negotiations with insurers.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+          <h3 class="text-xl font-bold mb-2">Get Compensated</h3>
+          <p class="text-gray-400">Receive your settlement. No fees unless you win.</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#free-case-review" class="btn btn-cta text-lg">
+          Start Your Free Review Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+        </h2>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">What insurance covers me as an Uber/Lyft passenger?</h3>
+          <p class="text-gray-600">As a passenger during an active trip, you're covered by Uber or Lyft's $1 million commercial liability policy. This applies regardless of who caused the accident—the rideshare driver or another vehicle.</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">How much does it cost to hire a rideshare accident lawyer?</h3>
+          <p class="text-gray-600">Our network attorneys work on contingency—you pay nothing upfront and no fees unless you win. The attorney fee typically comes from the settlement, usually 33-40%.</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Can I sue Uber or Lyft directly?</h3>
+          <p class="text-gray-600">It's complicated. Uber and Lyft classify drivers as independent contractors, not employees. However, you can file claims against their insurance policies. An experienced attorney can help navigate this.</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">What if the Uber driver was at fault?</h3>
+          <p class="text-gray-600">If the rideshare driver caused the accident, their personal insurance and Uber/Lyft's commercial policy both may apply. The coverage depends on the driver's status in the app at the time of the crash.</p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-xl p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">How long do I have to file a claim?</h3>
+          <p class="text-gray-600">This varies by state—statutes of limitations range from 1 to 6 years. However, evidence disappears and memories fade, so it's best to consult an attorney as soon as possible after your accident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-20 bg-primary-600 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Don't Let Insurance Companies Lowball You
+      </h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Uber and Lyft's insurers are experienced at minimizing payouts. Get an attorney who knows how to fight for the compensation you deserve.
+      </p>
+      <a href="#free-case-review" class="btn bg-white text-primary-600 hover:bg-gray-100 font-bold px-8 py-4 text-lg shadow-lg">
+        Get Your Free Case Evaluation
+      </a>
+      <p class="text-sm text-primary-200 mt-4">No fees unless you win. Available 24/7.</p>
+    </div>
+  </section>
+</BaseLayout>

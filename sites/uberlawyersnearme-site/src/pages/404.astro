@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Page Not Found - Uber Lawyers Near Me";
+const description = "The page you're looking for doesn't exist. Find rideshare accident resources and legal help.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="uber-gradient text-white py-24 md:py-32">
+    <div class="container-narrow text-center">
+      <div class="text-8xl font-bold text-primary-400 mb-6">404</div>
+      <h1 class="text-4xl font-bold mb-4">Page Not Found</h1>
+      <p class="text-xl text-gray-300 mb-8">
+        Sorry, the page you're looking for doesn't exist or has been moved.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn btn-cta">
+          Go to Homepage
+        </a>
+        <a href="/free-consultation" class="btn btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-gray-900">
+          Get Free Case Review
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container-narrow">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Popular Pages</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/states" class="bg-white p-6 rounded-lg card-hover text-center">
+          <h3 class="font-semibold text-gray-900 mb-2">Find by State</h3>
+          <p class="text-sm text-gray-600">Browse attorneys in all 50 states</p>
+        </a>
+        <a href="/case-types" class="bg-white p-6 rounded-lg card-hover text-center">
+          <h3 class="font-semibold text-gray-900 mb-2">Case Types</h3>
+          <p class="text-sm text-gray-600">Learn about different accident types</p>
+        </a>
+        <a href="/resources" class="bg-white p-6 rounded-lg card-hover text-center">
+          <h3 class="font-semibold text-gray-900 mb-2">Resources</h3>
+          <p class="text-sm text-gray-600">Insurance guides and FAQs</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
