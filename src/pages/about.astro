@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const webhookUrl = "https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/mva-site-lead";
+---
+
+<BaseLayout 
+  title="About Us | Cyclist Accident Lawyer"
+  description="Learn about our mission to connect bicycle accident victims with experienced attorneys. Free case evaluations nationwide."
+>
+  <section class="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">About Cyclist Accident Lawyer</h1>
+      <p class="text-xl text-gray-200">
+        Connecting bicycle accident victims with experienced attorneys who understand cycling law.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+          <p class="text-gray-600 mb-4">
+            Every year, thousands of cyclists are injured or killed in accidents with motor vehicles. Many victims don't know their rights or how to find an attorney who truly understands bicycle law.
+          </p>
+          <p class="text-gray-600 mb-4">
+            We created Cyclist Accident Lawyer to bridge that gap. Our nationwide network connects injured cyclists with attorneys who specialize in bicycle accident cases — lawyers who understand helmet laws, bike lane regulations, and the unique challenges cyclists face.
+          </p>
+          <p class="text-gray-600">
+            <strong>Our promise:</strong> A free case evaluation, no upfront fees, and attorneys who fight for cyclists' rights.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="text-8xl mb-4">🚴‍♂️⚖️</div>
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <div class="text-3xl font-bold text-primary">500+</div>
+              <div class="text-gray-600">Partner Attorneys</div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <div class="text-3xl font-bold text-primary">50</div>
+              <div class="text-gray-600">States Covered</div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <div class="text-3xl font-bold text-primary">$100M+</div>
+              <div class="text-gray-600">Recovered</div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <div class="text-3xl font-bold text-primary">24/7</div>
+              <div class="text-gray-600">Availability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold mb-3">Cycling Specialists</h3>
+          <p class="text-gray-600">Our attorneys understand bike laws, cycling infrastructure, and the unique aspects of bicycle accident cases.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">💰</div>
+          <h3 class="text-xl font-bold mb-3">No Win, No Fee</h3>
+          <p class="text-gray-600">You pay nothing unless we win your case. Free consultations, no upfront costs, no hidden fees.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-3">Fast Response</h3>
+          <p class="text-gray-600">Get connected with a local attorney within 24 hours. Time matters in accident cases — act fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Get Your Free Case Evaluation</h2>
+      <LeadForm source="about-page" title="Injured While Cycling?" subtitle="Speak with an experienced bicycle accident attorney today. No fees unless you win." />
+    </div>
+  </section>
+</BaseLayout>

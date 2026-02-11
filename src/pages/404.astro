@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const popularStates = [
+  { name: 'California', slug: 'california' },
+  { name: 'Texas', slug: 'texas' },
+  { name: 'Florida', slug: 'florida' },
+  { name: 'New York', slug: 'new-york' },
+  { name: 'Illinois', slug: 'illinois' },
+  { name: 'Pennsylvania', slug: 'pennsylvania' },
+];
+
+const webhookUrl = "https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/mva-site-lead";
+---
+
+<BaseLayout 
+  title="Page Not Found - 404"
+  description="The page you're looking for doesn't exist. Find bicycle accident lawyers in your area or get a free case evaluation."
+>
+  <section class="py-20 bg-gradient-to-br from-primary to-primary-dark text-white min-h-[60vh]">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="text-8xl mb-6">🚴‍♂️💨</div>
+      <h1 class="text-5xl font-bold mb-4">404 - Page Not Found</h1>
+      <p class="text-xl text-gray-200 mb-8">
+        Looks like this page took a wrong turn! But don't worry, we'll help you get back on track.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="/" class="bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-3 px-6 rounded-lg transition">
+          🏠 Back to Home
+        </a>
+        <a href="/states/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 rounded-lg transition">
+          🗺️ Find by State
+        </a>
+        <a href="/free-consultation/" class="bg-white/20 hover:bg-white/30 text-white font-bold py-3 px-6 rounded-lg transition">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Popular States -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Find a Lawyer in Your State</h2>
+          <div class="grid grid-cols-2 gap-3">
+            {popularStates.map(state => (
+              <a 
+                href={`/states/${state.slug}/`} 
+                class="bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-lg transition text-center font-medium"
+              >
+                {state.name}
+              </a>
+            ))}
+          </div>
+          <a href="/states/" class="inline-block mt-6 text-primary font-semibold hover:underline">
+            View All States →
+          </a>
+        </div>
+
+        <!-- Quick Contact Form -->
+        <div class="bg-gray-50 p-8 rounded-xl">
+          <h2 class="text-2xl font-bold mb-4">Get Help Now</h2>
+          <p class="text-gray-600 mb-6">Injured in a bicycle accident? Get a free case evaluation.</p>
+          
+          <form action={webhookUrl} method="POST" class="space-y-4">
+            <input type="hidden" name="source" value="404-page" />
+            <input type="hidden" name="site" value="cyclistaccidentlawyer.com" />
+            
+            <div>
+              <input 
+                type="text" 
+                name="firstName" 
+                required
+                placeholder="First Name"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <input 
+                type="email" 
+                name="email" 
+                required
+                placeholder="Email Address"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            <div>
+              <input 
+                type="tel" 
+                name="phone" 
+                required
+                placeholder="Phone Number"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent"
+              />
+            </div>
+            
+            <div class="flex items-start gap-2">
+              <input type="checkbox" id="consent404" name="consent" required class="mt-1" />
+              <label for="consent404" class="text-xs text-gray-600">
+                I agree to receive communications and understand an attorney will contact me.
+              </label>
+            </div>
+            
+            <button 
+              type="submit"
+              class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-lg transition"
+            >
+              🚴 Get My Free Case Review
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

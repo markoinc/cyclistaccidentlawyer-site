@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { articles, getArticleBySlug, getArticlesByCategory, getRecentArticles } from '../../data/articles';
+
+export function getStaticPaths() {
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article }
+  }));
+}
+
+const { article } = Astro.props;
+const relatedArticles = getArticlesByCategory(article.category)
+  .filter(a => a.slug !== article.slug)
+  .slice(0, 3);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.date,
+  "author": {
+    "@type": "Organization",
+    "name": "Cyclist Accident Lawyer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cyclist Accident Lawyer"
+  }
+};
+---
+
+<BaseLayout 
+  title={article.title}
+  description={article.description}
+  schema={schema}
+>
+  <article class="max-w-4xl mx-auto px-4 py-12">
+    <nav class="text-sm mb-8 text-gray-500">
+      <a href="/" class="hover:text-primary">Home</a> / 
+      <a href="/blog/" class="hover:text-primary">Blog</a> / 
+      <span class="text-gray-700">{article.category}</span>
+    </nav>
+
+    <header class="mb-8">
+      <span class="text-sm text-primary font-semibold uppercase">{article.category}</span>
+      <h1 class="text-4xl font-bold mt-2 mb-4">{article.title}</h1>
+      <p class="text-xl text-gray-600 mb-4">{article.description}</p>
+      <div class="flex items-center text-sm text-gray-500">
+        <span>{article.date}</span>
+        <span class="mx-3">•</span>
+        <span>{article.readTime} read</span>
+      </div>
+      {article.tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-4">
+          {article.tags.map(tag => (
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+      <Fragment set:html={article.content.replace(/\n## /g, '\n<h2 class="text-2xl font-bold mt-8 mb-4">').replace(/## /g, '<h2 class="text-2xl font-bold mt-8 mb-4">').replace(/\n### /g, '\n<h3 class="text-xl font-semibold mt-6 mb-3">').replace(/### /g, '<h3 class="text-xl font-semibold mt-6 mb-3">').replace(/\n\n/g, '</p><p class="mb-4">').replace(/\n- /g, '</p><li class="ml-4 mb-2">• ').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')} />
+    </div>
+
+    <!-- CTA Box -->
+    <div class="mt-12 bg-primary text-white p-8 rounded-xl">
+      <h2 class="text-2xl font-bold mb-4">Were You Injured in a Bicycle Accident?</h2>
+      <p class="text-gray-200 mb-6">This article is for informational purposes only. Every case is unique. Get personalized legal advice from an experienced bicycle accident attorney.</p>
+      <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-3 px-6 rounded-lg transition">
+        🚴 Get Your Free Case Review
+      </a>
+    </div>
+
+    <!-- Related Articles -->
+    {relatedArticles.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">Related Articles</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {relatedArticles.map(related => (
+            <a href={`/blog/${related.slug}/`} class="bg-gray-50 p-4 rounded-lg hover:shadow-md transition">
+              <h3 class="font-semibold hover:text-primary">{related.title}</h3>
+              <p class="text-xs text-gray-500 mt-2">{related.readTime} read</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+
+  <!-- Bottom Form -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-2xl mx-auto px-4">
+      <LeadForm source={`blog-${article.slug}`} />
+    </div>
+  </section>
+</BaseLayout>

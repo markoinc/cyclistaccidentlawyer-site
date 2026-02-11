@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { states } from '../../data/states';
+import { getTopCities, getBikeFriendlyCities, cities } from '../../data/cities';
+
+const topCities = getTopCities(50);
+const bikeFriendlyCities = getBikeFriendlyCities(20);
+
+// Group cities by state
+const citiesByState = states.map(state => ({
+  state,
+  cities: state.cities
+})).filter(s => s.cities.length > 0);
+---
+
+<BaseLayout 
+  title="Bicycle Accident Lawyers by City"
+  description="Find bicycle accident lawyers in major cities across the US. Connect with local attorneys who know your area's roads and laws."
+>
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / <span>Cities</span>
+      </nav>
+      <h1 class="text-4xl font-bold mb-4">🚴 Bicycle Accident Lawyers by City</h1>
+      <p class="text-xl text-gray-200 max-w-3xl">Find an experienced bicycle accident attorney in your city. Local lawyers understand your roads, traffic patterns, and legal jurisdiction.</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-3">
+          <!-- Top Cities -->
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">🏙️ Major Cities</h2>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {topCities.slice(0, 20).map(city => (
+                <a href={`/cities/${city.slug}/`} class="bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-lg transition group">
+                  <h3 class="font-bold">{city.name}</h3>
+                  <p class="text-sm text-gray-500 group-hover:text-gray-200">{city.state}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Bike-Friendly Cities -->
+          <div class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">🚲 Most Bike-Friendly Cities</h2>
+            <p class="text-gray-600 mb-4">Cities with the highest bike scores often have more cyclists—and more accidents.</p>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {bikeFriendlyCities.map(city => (
+                <a href={`/cities/${city.slug}/`} class="bg-green-50 hover:bg-primary hover:text-white p-4 rounded-lg transition group border border-green-200">
+                  <h3 class="font-bold">{city.name}</h3>
+                  <p class="text-sm text-gray-500 group-hover:text-gray-200">{city.state}</p>
+                  {city.bikeScore && (
+                    <p class="text-xs text-green-600 group-hover:text-green-200 mt-1">Bike Score: {city.bikeScore}</p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Cities by State -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">📍 All Cities by State</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+              {citiesByState.map(({ state, cities }) => (
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <h3 class="font-bold text-lg mb-3">
+                    <a href={`/states/${state.slug}/`} class="text-primary hover:underline">
+                      {state.name}
+                    </a>
+                  </h3>
+                  <ul class="space-y-1">
+                    {cities.map(city => (
+                      <li>
+                        <a href={`/cities/${city.slug}/`} class="text-sm text-gray-600 hover:text-primary">
+                          {city.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24">
+            <LeadForm source="cities-index" compact={true} title="Free Case Review" subtitle="Connect with a local attorney" />
+            
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold mb-3">Why Local Matters</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>✓ Knowledge of local courts</li>
+                <li>✓ Understanding of local roads</li>
+                <li>✓ Relationships with judges</li>
+                <li>✓ Familiar with local insurers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

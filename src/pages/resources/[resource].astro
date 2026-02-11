@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { resources, getResourceBySlug } from '../../data/resources';
+
+export function getStaticPaths() {
+  return resources.map(resource => ({
+    params: { resource: resource.slug },
+    props: { resource }
+  }));
+}
+
+const { resource } = Astro.props;
+const otherResources = resources.filter(r => r.slug !== resource.slug).slice(0, 4);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": resource.title,
+  "description": resource.description,
+  "author": {
+    "@type": "Organization",
+    "name": "Cyclist Accident Lawyer"
+  }
+};
+---
+
+<BaseLayout 
+  title={resource.title}
+  description={resource.description}
+  schema={schema}
+>
+  <section class="bg-primary text-white py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/resources/" class="hover:text-white">Resources</a> / 
+        <span>{resource.title}</span>
+      </nav>
+      <div class="text-5xl mb-4">{resource.icon}</div>
+      <h1 class="text-4xl font-bold mb-4">{resource.title}</h1>
+      <p class="text-xl text-gray-200">{resource.description}</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none">
+        <Fragment set:html={resource.content
+          .replace(/\n## /g, '\n<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">')
+          .replace(/## /g, '<h2 class="text-2xl font-bold mt-8 mb-4 text-gray-900">')
+          .replace(/\n### /g, '\n<h3 class="text-xl font-semibold mt-6 mb-3 text-gray-800">')
+          .replace(/### /g, '<h3 class="text-xl font-semibold mt-6 mb-3 text-gray-800">')
+          .replace(/\n\n/g, '</p><p class="mb-4 text-gray-600">')
+          .replace(/\n- /g, '</p><li class="ml-4 mb-2 text-gray-600">• ')
+          .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-gray-900">$1</strong>')} />
+      </div>
+
+      <!-- CTA Box -->
+      <div class="mt-12 bg-gradient-to-r from-primary to-accent text-white p-8 rounded-xl">
+        <h2 class="text-2xl font-bold mb-4">Need Help With Your Case?</h2>
+        <p class="text-gray-200 mb-6">This guide provides general information. For advice specific to your situation, speak with an experienced bicycle accident attorney.</p>
+        <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-3 px-6 rounded-lg transition">
+          🚴 Get Your Free Case Review
+        </a>
+      </div>
+
+      <!-- Related Resources -->
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6">More Resources</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          {otherResources.map(r => (
+            <a href={`/resources/${r.slug}/`} class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:shadow-md transition">
+              <span class="text-3xl">{r.icon}</span>
+              <div>
+                <h3 class="font-semibold hover:text-primary">{r.title}</h3>
+                <p class="text-xs text-gray-500 mt-1">{r.description.slice(0, 60)}...</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Form -->
+  <section class="bg-gray-50 py-12">
+    <div class="max-w-2xl mx-auto px-4">
+      <LeadForm source={`resource-${resource.slug}`} />
+    </div>
+  </section>
+</BaseLayout>

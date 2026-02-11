@@ -1,0 +1,157 @@
+---
+interface Props {
+  source?: string;
+  title?: string;
+  subtitle?: string;
+  dark?: boolean;
+  compact?: boolean;
+}
+
+const { 
+  source = 'cyclistaccidentlawyer-com',
+  title = "Get Your Free Case Review",
+  subtitle = "Speak with an experienced bicycle accident attorney today. No fees unless you win.",
+  dark = false,
+  compact = false
+} = Astro.props;
+
+const webhookUrl = "https://services.leadconnectorhq.com/hooks/OsNgWuy8oZzLbp5BXbnD/webhook-trigger/mva-site-lead";
+---
+
+<div class={`rounded-xl ${compact ? 'p-4' : 'p-8'} ${dark ? 'bg-primary text-white' : 'bg-white shadow-xl'}`}>
+  <h3 class={`${compact ? 'text-xl' : 'text-2xl'} font-bold mb-2`}>{title}</h3>
+  <p class={`${compact ? 'text-sm mb-4' : 'mb-6'} ${dark ? 'text-gray-200' : 'text-gray-600'}`}>{subtitle}</p>
+  
+  <form 
+    action={webhookUrl}
+    method="POST"
+    class="space-y-4"
+  >
+    <input type="hidden" name="source" value={source} />
+    <input type="hidden" name="site" value="cyclistaccidentlawyer.com" />
+    
+    <div class={compact ? '' : 'grid md:grid-cols-2 gap-4'}>
+      <div class={compact ? 'mb-3' : ''}>
+        <label for="firstName" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+          First Name *
+        </label>
+        <input 
+          type="text" 
+          id="firstName" 
+          name="firstName" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+          placeholder="John"
+        />
+      </div>
+      <div>
+        <label for="lastName" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+          Last Name *
+        </label>
+        <input 
+          type="text" 
+          id="lastName" 
+          name="lastName" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+          placeholder="Smith"
+        />
+      </div>
+    </div>
+    
+    <div>
+      <label for="email" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+        Email *
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+        placeholder="john@example.com"
+      />
+    </div>
+    
+    <div>
+      <label for="phone" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+        Phone *
+      </label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+        placeholder="(555) 123-4567"
+      />
+    </div>
+    
+    {!compact && (
+      <div>
+        <label for="accidentType" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+          Type of Accident *
+        </label>
+        <select 
+          id="accidentType" 
+          name="accidentType" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+        >
+          <option value="">Select accident type...</option>
+          <option value="dooring">Dooring Accident</option>
+          <option value="intersection">Intersection Crash</option>
+          <option value="hit-and-run">Hit and Run</option>
+          <option value="right-hook">Right Hook (turning vehicle)</option>
+          <option value="left-cross">Left Cross</option>
+          <option value="rear-end">Rear-End Collision</option>
+          <option value="bike-lane">Bike Lane Violation</option>
+          <option value="road-hazard">Road Hazard/Defect</option>
+          <option value="commercial-vehicle">Commercial Vehicle</option>
+          <option value="pedestrian">Pedestrian Involved</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    )}
+    
+    {!compact && (
+      <div>
+        <label for="description" class={`block text-sm font-medium mb-1 ${dark ? 'text-gray-200' : 'text-gray-700'}`}>
+          Brief Description
+        </label>
+        <textarea 
+          id="description" 
+          name="description" 
+          rows="3"
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent text-gray-900"
+          placeholder="Tell us what happened..."
+        ></textarea>
+      </div>
+    )}
+    
+    <div class="flex items-start gap-2">
+      <input 
+        type="checkbox" 
+        id="consent" 
+        name="consent" 
+        required
+        class="mt-1"
+      />
+      <label for="consent" class={`text-xs ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
+        I agree to receive communications and understand an attorney will contact me. 
+        <a href="/privacy-policy/" class="underline">Privacy Policy</a>
+      </label>
+    </div>
+    
+    <button 
+      type="submit"
+      class="w-full bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-4 px-6 rounded-lg text-lg transition transform hover:scale-[1.02] shadow-lg"
+    >
+      🚴 Get My Free Case Review
+    </button>
+    
+    <p class={`text-center text-xs ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
+      🔒 Your information is secure and confidential
+    </p>
+  </form>
+</div>

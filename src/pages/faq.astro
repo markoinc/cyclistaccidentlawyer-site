@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const faqs = [
+  {
+    question: "What should I do immediately after a bicycle accident?",
+    answer: "First, seek medical attention even if you feel fine. Document the scene with photos, get the driver's information and insurance details, collect witness contact info, and file a police report. Don't admit fault or sign anything from insurance companies before consulting an attorney."
+  },
+  {
+    question: "How much does it cost to hire a bicycle accident lawyer?",
+    answer: "Most bicycle accident attorneys work on a contingency fee basis, meaning you pay nothing upfront. The attorney only gets paid if you win your case, typically taking a percentage (usually 33-40%) of your settlement or verdict."
+  },
+  {
+    question: "What compensation can I receive for my bicycle accident injuries?",
+    answer: "You may be entitled to compensation for medical bills, lost wages, pain and suffering, property damage (bike repairs/replacement), future medical care, loss of earning capacity, and emotional distress."
+  },
+  {
+    question: "How long do I have to file a bicycle accident lawsuit?",
+    answer: "The statute of limitations varies by state, typically ranging from 1-6 years. However, evidence can disappear quickly, so it's crucial to contact an attorney as soon as possible after your accident."
+  },
+  {
+    question: "Can I still recover damages if I wasn't wearing a helmet?",
+    answer: "Yes, in most states. While not wearing a helmet may reduce your compensation in some jurisdictions under comparative negligence rules, it doesn't prevent you from filing a claim if the driver was at fault."
+  },
+  {
+    question: "What if the driver who hit me doesn't have insurance?",
+    answer: "You may still have options. Your own uninsured/underinsured motorist coverage may apply. If the driver has assets, you can pursue a personal lawsuit. An attorney can help identify all possible sources of compensation."
+  },
+  {
+    question: "Who is liable in a dooring accident?",
+    answer: "Typically, the person who opened the car door is liable for a dooring accident. They have a legal duty to check for approaching cyclists before opening their door. The vehicle's owner may also be liable in some cases."
+  },
+  {
+    question: "Can I sue if I was hit by a car while riding in a bike lane?",
+    answer: "Absolutely. Cyclists have the right to use bike lanes safely. If a driver enters the bike lane illegally, fails to yield when crossing it, or otherwise endangers you, they can be held liable for your injuries."
+  },
+  {
+    question: "What if I was partially at fault for the accident?",
+    answer: "Many states follow comparative negligence rules, meaning you can still recover damages even if partially at fault. Your compensation may be reduced by your percentage of fault. Some states bar recovery if you're 50% or more at fault."
+  },
+  {
+    question: "How long does a bicycle accident case take to settle?",
+    answer: "Most cases settle within 6-18 months, though complex cases may take longer. Factors affecting timeline include injury severity, whether liability is disputed, insurance company cooperation, and whether litigation is necessary."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout 
+  title="FAQ | Cyclist Accident Lawyer"
+  description="Frequently asked questions about bicycle accident claims, hiring an attorney, compensation, and your legal rights as a cyclist."
+  schema={faqSchema}
+>
+  <section class="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Frequently Asked Questions</h1>
+      <p class="text-xl text-gray-200">
+        Get answers to common questions about bicycle accident claims and your legal rights.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="space-y-6">
+        {faqs.map((faq, index) => (
+          <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition">
+            <h2 class="text-lg font-bold text-primary mb-3 flex items-start gap-3">
+              <span class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0">
+                {index + 1}
+              </span>
+              {faq.question}
+            </h2>
+            <p class="text-gray-600 ml-11">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Still Have Questions?</h2>
+      <LeadForm source="faq-page" title="Get Personalized Answers" subtitle="Speak with an attorney who can answer your specific questions about your case." />
+    </div>
+  </section>
+</BaseLayout>

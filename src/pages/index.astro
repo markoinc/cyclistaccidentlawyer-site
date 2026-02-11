@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { states, getHighFatalityStates, getContributoryNegligenceStates, getIdahoStopStates } from '../data/states';
+
+const highFatalityStates = getHighFatalityStates();
+const contributoryStates = getContributoryNegligenceStates();
+const idahoStopStates = getIdahoStopStates();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Cyclist Accident Lawyer",
+  "url": "https://cyclistaccidentlawyer.com",
+  "description": "Connect with experienced bicycle accident lawyers nationwide",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://cyclistaccidentlawyer.com/states/{search_term}",
+    "query-input": "required name=search_term"
+  }
+};
+---
+
+<BaseLayout 
+  title="Bicycle Accident Lawyers"
+  description="Injured in a cycling accident? Connect with experienced bicycle accident lawyers who fight for cyclist rights. Free case evaluation. No fees unless you win."
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Injured While Cycling?<br/>
+            <span class="text-secondary">Get the Legal Help You Deserve</span>
+          </h1>
+          <p class="text-xl text-gray-200 mb-8">
+            Every year, over 1,000 cyclists are killed and 130,000 injured in traffic crashes. 
+            If you've been hurt, an experienced bicycle accident lawyer can help you recover compensation for medical bills, lost wages, and pain and suffering.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="flex items-center gap-2">
+              <span class="text-secondary text-2xl">✓</span>
+              <span>Free Case Evaluation</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-secondary text-2xl">✓</span>
+              <span>No Win, No Fee</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-secondary text-2xl">✓</span>
+              <span>Nationwide Network</span>
+            </div>
+          </div>
+          <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105">
+            🚴 Get Your Free Case Review
+          </a>
+        </div>
+        <div>
+          <LeadForm source="home-hero" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Bicycle Accidents by the Numbers</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Understanding the scope of cycling dangers helps us advocate for safer roads and better protections for cyclists.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl font-bold text-primary mb-2">1,000+</div>
+          <div class="text-gray-600">Cyclist Deaths Annually</div>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl font-bold text-primary mb-2">130,000</div>
+          <div class="text-gray-600">Cyclists Injured/Year</div>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl font-bold text-primary mb-2">75%</div>
+          <div class="text-gray-600">Urban Area Crashes</div>
+        </div>
+        <div class="text-center p-6 bg-gray-50 rounded-xl">
+          <div class="text-4xl font-bold text-primary mb-2">$50K+</div>
+          <div class="text-gray-600">Avg. Settlement Value</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Accident Types -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Common Bicycle Accident Types</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🚗</div>
+          <h3 class="text-xl font-bold mb-3">Dooring Accidents</h3>
+          <p class="text-gray-600 mb-4">When a parked car's door opens into a cyclist's path. One of the most common urban cycling accidents, often causing severe injuries.</p>
+          <a href="/case-types/dooring-accidents/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">↩️</div>
+          <h3 class="text-xl font-bold mb-3">Right Hook Crashes</h3>
+          <p class="text-gray-600 mb-4">A vehicle turns right into a cyclist traveling straight. Drivers often fail to check for cyclists before turning.</p>
+          <a href="/case-types/right-hook-accidents/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🏃</div>
+          <h3 class="text-xl font-bold mb-3">Hit and Run</h3>
+          <p class="text-gray-600 mb-4">When a driver flees after striking a cyclist. These cases require immediate action to preserve evidence and identify the driver.</p>
+          <a href="/case-types/hit-and-run/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🔀</div>
+          <h3 class="text-xl font-bold mb-3">Intersection Crashes</h3>
+          <p class="text-gray-600 mb-4">The most dangerous location for cyclists. Drivers running red lights or failing to yield cause countless injuries.</p>
+          <a href="/case-types/intersection-accidents/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🛤️</div>
+          <h3 class="text-xl font-bold mb-3">Bike Lane Violations</h3>
+          <p class="text-gray-600 mb-4">Vehicles entering bike lanes illegally, whether parked, driving, or crossing without yielding to cyclists.</p>
+          <a href="/case-types/bike-lane-violations/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <div class="text-4xl mb-4">🕳️</div>
+          <h3 class="text-xl font-bold mb-3">Road Hazards</h3>
+          <p class="text-gray-600 mb-4">Potholes, debris, poor signage, or defective road design. Government entities may be liable for unsafe conditions.</p>
+          <a href="/case-types/road-hazard-accidents/" class="text-primary font-semibold hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- High-Risk States Warning -->
+  <section class="py-16 bg-red-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">⚠️ Know Your State's Laws</h2>
+        <p class="text-gray-600">Some states have laws that make it harder for injured cyclists to recover compensation</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
+          <h3 class="text-xl font-bold mb-4 text-red-700">Contributory Negligence States</h3>
+          <p class="text-gray-600 mb-4">In these states, if you're found even 1% at fault, you may be completely barred from recovery:</p>
+          <div class="flex flex-wrap gap-2">
+            {contributoryStates.map(state => (
+              <a href={`/states/${state.slug}/`} class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm hover:bg-red-200 transition">
+                {state.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500">
+          <h3 class="text-xl font-bold mb-4 text-amber-700">1-Year Statute of Limitations</h3>
+          <p class="text-gray-600 mb-4">These states give you only ONE YEAR to file a claim. Act fast!</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="/states/kentucky/" class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm hover:bg-amber-200 transition">Kentucky</a>
+            <a href="/states/louisiana/" class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm hover:bg-amber-200 transition">Louisiana</a>
+            <a href="/states/tennessee/" class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm hover:bg-amber-200 transition">Tennessee</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Find by State -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4">Find a Bicycle Accident Lawyer in Your State</h2>
+      <p class="text-center text-gray-600 mb-12">Each state has unique cycling laws. Select your state to learn about local regulations and find an attorney.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+        {states.slice(0, 30).map(state => (
+          <a href={`/states/${state.slug}/`} class="bg-gray-50 hover:bg-primary hover:text-white p-3 rounded-lg text-center transition">
+            {state.abbr}
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/states/" class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition">
+          View All States →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cyclist-Friendly Laws -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">States with Cyclist-Friendly Laws</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/10 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">🚴 Idaho Stop States</h3>
+          <p class="text-gray-200 mb-4">Cyclists can treat stop signs as yields and red lights as stop signs:</p>
+          <div class="flex flex-wrap gap-2">
+            {idahoStopStates.map(state => (
+              <a href={`/states/${state.slug}/`} class="bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm hover:bg-secondary-light transition">
+                {state.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="bg-white/10 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">📏 4+ Feet Passing Laws</h3>
+          <p class="text-gray-200 mb-4">States requiring more than 3 feet when passing cyclists:</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="/states/new-jersey/" class="bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm">New Jersey (4ft)</a>
+            <a href="/states/pennsylvania/" class="bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm">Pennsylvania (4ft)</a>
+            <a href="/states/north-carolina/" class="bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm">North Carolina (4ft)</a>
+            <a href="/states/new-mexico/" class="bg-secondary text-gray-900 px-3 py-1 rounded-full text-sm">New Mexico (5ft)</a>
+          </div>
+        </div>
+        <div class="bg-white/10 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">⚖️ Vulnerable Road User Laws</h3>
+          <p class="text-gray-200 mb-4">Enhanced penalties for drivers who injure cyclists:</p>
+          <p class="text-sm">Over 30 states have VRU laws protecting cyclists, pedestrians, and other vulnerable road users.</p>
+          <a href="/resources/vulnerable-road-user-laws/" class="inline-block mt-4 text-secondary hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Injuries -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Common Cycling Accident Injuries</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🧠 Traumatic Brain Injury</h3>
+          <p class="text-sm text-gray-600">Even with a helmet, head injuries are common. TBI can have lifelong effects.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🦴 Broken Bones</h3>
+          <p class="text-sm text-gray-600">Collarbones, wrists, arms, and legs are frequently fractured in cycling crashes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🩹 Road Rash</h3>
+          <p class="text-sm text-gray-600">Severe abrasions requiring skin grafts and leaving permanent scarring.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🦷 Facial Injuries</h3>
+          <p class="text-sm text-gray-600">Dental damage, broken jaw, and facial lacerations requiring reconstructive surgery.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🔙 Spinal Cord Injuries</h3>
+          <p class="text-sm text-gray-600">Can result in partial or complete paralysis, requiring lifetime care.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🦵 Knee & Hip Injuries</h3>
+          <p class="text-sm text-gray-600">Dislocations, torn ligaments, and joint damage affecting mobility.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">🫀 Internal Injuries</h3>
+          <p class="text-sm text-gray-600">Internal bleeding and organ damage may not be immediately apparent.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h3 class="font-bold mb-2">😰 PTSD</h3>
+          <p class="text-sm text-gray-600">Psychological trauma can prevent victims from ever cycling again.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Injured in a Bicycle Accident?</h2>
+      <p class="text-xl mb-8 text-gray-100">
+        Don't face the insurance companies alone. Get a free case evaluation from an experienced bicycle accident lawyer today. No fees unless you win.
+      </p>
+      <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105">
+        🚴 Get Your Free Case Review
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="bg-gray-50 rounded-lg p-6">
+          <summary class="font-bold cursor-pointer">What should I do immediately after a bicycle accident?</summary>
+          <p class="mt-4 text-gray-600">Call 911 and get medical attention, even if injuries seem minor. Document the scene with photos, get witness information, and file a police report. Don't admit fault or give recorded statements to insurance companies before consulting a lawyer.</p>
+        </details>
+        <details class="bg-gray-50 rounded-lg p-6">
+          <summary class="font-bold cursor-pointer">How much is my bicycle accident case worth?</summary>
+          <p class="mt-4 text-gray-600">Case values depend on injury severity, medical costs, lost wages, pain and suffering, and insurance coverage. Minor cases may settle for $10,000-$50,000, while severe injuries with permanent effects can be worth $500,000 or more.</p>
+        </details>
+        <details class="bg-gray-50 rounded-lg p-6">
+          <summary class="font-bold cursor-pointer">Do I need a lawyer for a bicycle accident case?</summary>
+          <p class="mt-4 text-gray-600">While not required, studies show accident victims with lawyers typically recover 3-4 times more than those without. Insurance companies have teams of lawyers—you should too.</p>
+        </details>
+        <details class="bg-gray-50 rounded-lg p-6">
+          <summary class="font-bold cursor-pointer">What if I wasn't wearing a helmet?</summary>
+          <p class="mt-4 text-gray-600">In most states, adult cyclists aren't required to wear helmets, so not wearing one typically doesn't bar recovery. However, insurance companies may argue your injuries would have been less severe with a helmet.</p>
+        </details>
+        <details class="bg-gray-50 rounded-lg p-6">
+          <summary class="font-bold cursor-pointer">Can I still recover if I was partially at fault?</summary>
+          <p class="mt-4 text-gray-600">Most states use comparative negligence, reducing your recovery by your percentage of fault. However, in Alabama, Maryland, North Carolina, Virginia, and DC (contributory negligence states), any fault can bar recovery entirely.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

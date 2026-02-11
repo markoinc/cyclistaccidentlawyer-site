@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { states, getContributoryNegligenceStates, getVulnerableRoadUserLawStates, getIdahoStopStates } from '../../data/states';
+
+const contributoryStates = getContributoryNegligenceStates();
+const vuruStates = getVulnerableRoadUserLawStates();
+const idahoStopStates = getIdahoStopStates();
+
+const regions = {
+  "Northeast": ["Connecticut", "Maine", "Massachusetts", "New Hampshire", "New Jersey", "New York", "Pennsylvania", "Rhode Island", "Vermont"],
+  "Southeast": ["Alabama", "Florida", "Georgia", "Kentucky", "Louisiana", "Maryland", "Mississippi", "North Carolina", "South Carolina", "Tennessee", "Virginia", "West Virginia", "District of Columbia"],
+  "Midwest": ["Illinois", "Indiana", "Iowa", "Kansas", "Michigan", "Minnesota", "Missouri", "Nebraska", "North Dakota", "Ohio", "South Dakota", "Wisconsin"],
+  "Southwest": ["Arizona", "New Mexico", "Oklahoma", "Texas"],
+  "West": ["Alaska", "California", "Colorado", "Hawaii", "Idaho", "Montana", "Nevada", "Oregon", "Utah", "Washington", "Wyoming", "Arkansas"]
+};
+---
+
+<BaseLayout 
+  title="Bicycle Accident Lawyers by State"
+  description="Find bicycle accident lawyers in your state. Learn about cycling laws, helmet requirements, and safe passing distances. Free case evaluations."
+>
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / <span>States</span>
+      </nav>
+      <h1 class="text-4xl font-bold mb-4">Bicycle Accident Lawyers by State</h1>
+      <p class="text-xl text-gray-200">Every state has different cycling laws. Select your state to learn about local regulations and connect with an experienced bicycle accident attorney.</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-4 gap-8">
+        <!-- States List -->
+        <div class="lg:col-span-3">
+          <!-- Quick Stats -->
+          <div class="grid md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+              <h3 class="font-bold text-red-800 mb-2">⚠️ Contributory Negligence</h3>
+              <p class="text-sm text-red-700">States where any fault bars recovery:</p>
+              <p class="text-sm font-medium mt-1">AL, DC, MD, NC, VA</p>
+            </div>
+            <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+              <h3 class="font-bold text-green-800 mb-2">✓ Idaho Stop States</h3>
+              <p class="text-sm text-green-700">Cyclists can yield at stops:</p>
+              <p class="text-sm font-medium mt-1">{idahoStopStates.map(s => s.abbr).join(', ')}</p>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+              <h3 class="font-bold text-blue-800 mb-2">🛡️ VRU Law States</h3>
+              <p class="text-sm text-blue-700">Enhanced cyclist protections:</p>
+              <p class="text-sm font-medium mt-1">{vuruStates.length} states</p>
+            </div>
+          </div>
+
+          <!-- Regional Groups -->
+          {Object.entries(regions).map(([region, stateNames]) => (
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-4 text-primary">{region}</h2>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {states.filter(s => stateNames.includes(s.name)).map(state => (
+                  <a href={`/states/${state.slug}/`} class="bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-lg transition group">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="font-bold">{state.name}</h3>
+                        <p class="text-sm text-gray-500 group-hover:text-gray-200">{state.cities.length} cities</p>
+                      </div>
+                      <span class="text-2xl">{state.abbr}</span>
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-1">
+                      {state.faultSystem.includes('Contributory') && (
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded group-hover:bg-red-200">Contrib.</span>
+                      )}
+                      {state.vulnerableRoadUserLaw && (
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded group-hover:bg-green-200">VRU</span>
+                      )}
+                      {state.helmetAge !== "None" && (
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded group-hover:bg-blue-200">Helmet Law</span>
+                      )}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <!-- Comparison Table -->
+          <div class="mt-12 overflow-x-auto">
+            <h2 class="text-2xl font-bold mb-6">State Law Comparison</h2>
+            <table class="w-full text-sm">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="p-3 text-left">State</th>
+                  <th class="p-3 text-left">SOL</th>
+                  <th class="p-3 text-left">Fault System</th>
+                  <th class="p-3 text-left">Helmet Law</th>
+                  <th class="p-3 text-left">Safe Passing</th>
+                  <th class="p-3 text-left">VRU Law</th>
+                </tr>
+              </thead>
+              <tbody>
+                {states.map(state => (
+                  <tr class="border-b hover:bg-gray-50">
+                    <td class="p-3">
+                      <a href={`/states/${state.slug}/`} class="text-primary font-medium hover:underline">{state.name}</a>
+                    </td>
+                    <td class="p-3">{state.statOfLimitations}</td>
+                    <td class="p-3">
+                      <span class={state.faultSystem.includes('Contributory') ? 'text-red-600 font-medium' : ''}>
+                        {state.faultSystem.split(' ')[0]}
+                      </span>
+                    </td>
+                    <td class="p-3">{state.helmetAge}</td>
+                    <td class="p-3">{state.safePassingDistance}</td>
+                    <td class="p-3">{state.vulnerableRoadUserLaw ? '✓' : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24">
+            <LeadForm source="states-index" compact={true} title="Free Case Review" subtitle="Connect with a local attorney" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

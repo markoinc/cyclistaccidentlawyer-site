@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import { states, getAllCities } from '../../../data/states';
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const state of states) {
+    for (const city of state.cities) {
+      paths.push({
+        params: { state: state.slug, city: city.slug },
+        props: { state, city }
+      });
+    }
+  }
+  return paths;
+}
+
+const { state, city } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${city.name} Bicycle Accident Lawyer`,
+  "description": `Experienced bicycle accident attorneys in ${city.name}, ${state.name}. Free case evaluation.`,
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+    "containedIn": {
+      "@type": "State",
+      "name": state.name
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cyclistaccidentlawyer.com/" },
+    { "@type": "ListItem", "position": 2, "name": "States", "item": "https://cyclistaccidentlawyer.com/states/" },
+    { "@type": "ListItem", "position": 3, "name": state.name, "item": `https://cyclistaccidentlawyer.com/states/${state.slug}/` },
+    { "@type": "ListItem", "position": 4, "name": city.name, "item": `https://cyclistaccidentlawyer.com/states/${state.slug}/${city.slug}/` }
+  ]
+};
+
+const otherCities = state.cities.filter(c => c.slug !== city.slug).slice(0, 6);
+---
+
+<BaseLayout 
+  title={`${city.name} Bicycle Accident Lawyer`}
+  description={`Injured cycling in ${city.name}, ${state.abbr}? Get a free case review from experienced bicycle accident lawyers. No fees unless you win.`}
+  schema={schema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/states/" class="hover:text-white">States</a> / 
+        <a href={`/states/${state.slug}/`} class="hover:text-white">{state.name}</a> / 
+        <span>{city.name}</span>
+      </nav>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl font-bold mb-4">{city.name} Bicycle Accident Lawyer</h1>
+          <p class="text-xl text-gray-200 mb-6">
+            Cycling in {city.name} can be dangerous. If you've been injured in a bicycle accident, 
+            our network of experienced {city.name} attorneys can help you get the compensation you deserve.
+          </p>
+          {city.bikeScore && (
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white/10 px-4 py-2 rounded-lg">
+                <span class="text-sm text-gray-300">Bike Score</span>
+                <span class="block text-2xl font-bold">{city.bikeScore}/100</span>
+              </div>
+              {city.population && (
+                <div class="bg-white/10 px-4 py-2 rounded-lg">
+                  <span class="text-sm text-gray-300">Population</span>
+                  <span class="block text-2xl font-bold">{city.population.toLocaleString()}</span>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+        <div>
+          <LeadForm source={`city-${state.slug}-${city.slug}`} title={`Free ${city.name} Case Review`} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City-Specific Content -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-3xl font-bold mb-6">Cycling Accidents in {city.name}</h2>
+          
+          <div class="prose max-w-none">
+            <p class="text-lg text-gray-700 mb-6">
+              {city.name}, {state.name} presents unique challenges for cyclists. 
+              {city.bikeScore && city.bikeScore >= 70 
+                ? `With a bike score of ${city.bikeScore}, ${city.name} is considered a bike-friendly city, but accidents still occur regularly.`
+                : city.bikeScore && city.bikeScore >= 50
+                  ? `With a moderate bike score of ${city.bikeScore}, ${city.name} has room for improvement in cycling infrastructure.`
+                  : `${city.name} has limited cycling infrastructure, making it more dangerous for cyclists on the road.`}
+            </p>
+            
+            <h3 class="text-2xl font-bold mb-4">Common Causes of Bicycle Accidents in {city.name}</h3>
+            <ul class="space-y-3 mb-8">
+              <li class="flex gap-3">
+                <span class="text-primary">•</span>
+                <span><strong>Dooring accidents</strong> - Car doors opening into bike lanes or the path of cyclists</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary">•</span>
+                <span><strong>Right hook collisions</strong> - Vehicles turning right and cutting off cyclists</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary">•</span>
+                <span><strong>Intersection crashes</strong> - Drivers failing to yield or running red lights</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary">•</span>
+                <span><strong>Distracted driving</strong> - Drivers texting or not paying attention to cyclists</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary">•</span>
+                <span><strong>Unsafe passing</strong> - Vehicles passing too close (less than {state.safePassingDistance})</span>
+              </li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mb-4">{state.name} Laws That Affect Your Case</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-8">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold">Statute of Limitations</h4>
+                <p class="text-primary font-bold text-xl">{state.statOfLimitations}</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold">Fault System</h4>
+                <p class={`font-bold ${state.faultSystem.includes('Contributory') ? 'text-red-600' : 'text-primary'}`}>{state.faultSystem.split('(')[0]}</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold">Helmet Requirement</h4>
+                <p>{state.helmetLaw}</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold">Safe Passing Law</h4>
+                <p>{state.safePassingDistance}</p>
+              </div>
+            </div>
+
+            {state.faultSystem.includes('Contributory') && (
+              <div class="bg-red-50 border border-red-200 p-6 rounded-xl mb-8">
+                <h4 class="font-bold text-red-800 text-lg mb-2">⚠️ Important: Contributory Negligence State</h4>
+                <p class="text-red-700">
+                  {state.name} follows contributory negligence rules. This means if you're found even 1% at fault 
+                  for your bicycle accident, you may be completely barred from recovering any compensation. 
+                  This makes it critical to work with an experienced attorney who can protect your rights.
+                </p>
+              </div>
+            )}
+
+            <h3 class="text-2xl font-bold mb-4">What to Do After a Bicycle Accident in {city.name}</h3>
+            <ol class="space-y-4 mb-8">
+              <li class="flex gap-3">
+                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</span>
+                <span><strong>Get to safety and call 911</strong> - Move out of traffic if possible and request police and medical assistance.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</span>
+                <span><strong>Document everything</strong> - Take photos of the scene, your injuries, vehicle damage, and road conditions.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</span>
+                <span><strong>Get witness information</strong> - Collect names and contact info from anyone who saw the accident.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</span>
+                <span><strong>Seek medical attention</strong> - Some injuries aren't immediately apparent. Get checked out promptly.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">5</span>
+                <span><strong>Contact a bicycle accident lawyer</strong> - Before speaking to insurance companies, consult with an attorney.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="sticky top-24 space-y-6">
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h3 class="font-bold text-lg mb-4">Other {state.name} Cities</h3>
+              <ul class="space-y-2">
+                {otherCities.map(c => (
+                  <li>
+                    <a href={`/states/${state.slug}/${c.slug}/`} class="text-primary hover:underline">
+                      {c.name}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a href={`/states/${state.slug}/`} class="text-primary font-semibold hover:underline">
+                    View all {state.name} cities →
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-primary text-white p-6 rounded-xl">
+              <h3 class="font-bold text-lg mb-2">Need Help Now?</h3>
+              <p class="text-gray-200 text-sm mb-4">
+                Get a free case evaluation from an experienced {city.name} bicycle accident lawyer.
+              </p>
+              <a href="/free-consultation/" class="block bg-secondary text-gray-900 text-center font-bold py-3 px-4 rounded-lg hover:bg-secondary-light transition">
+                Free Case Review
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Injured Cycling in {city.name}?</h2>
+      <p class="text-xl text-gray-600 mb-8">
+        Don't face the insurance companies alone. Get a free case evaluation from an experienced {city.name} bicycle accident lawyer today.
+      </p>
+      <a href="/free-consultation/" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-lg text-lg transition">
+        🚴 Get Your Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

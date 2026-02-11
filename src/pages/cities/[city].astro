@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { cities, getCityBySlug } from '../../data/cities';
+import { states } from '../../data/states';
+
+export function getStaticPaths() {
+  return cities.map(city => ({
+    params: { city: city.slug },
+    props: { city }
+  }));
+}
+
+const { city } = Astro.props;
+const state = states.find(s => s.slug === city.state.toLowerCase().replace(/\s+/g, '-'));
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${city.name} Bicycle Accident Lawyer`,
+  "description": `Experienced bicycle accident attorneys in ${city.name}, ${city.stateAbbr}. Free case evaluation for cycling injury claims.`,
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+    "containedInPlace": {
+      "@type": "State",
+      "name": city.state
+    }
+  }
+};
+---
+
+<BaseLayout 
+  title={`${city.name}, ${city.stateAbbr} Bicycle Accident Lawyer`}
+  description={`Injured cycling in ${city.name}? Connect with an experienced bicycle accident lawyer who knows local ${city.stateAbbr} laws. Free case evaluation.`}
+  schema={schema}
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/cities/" class="hover:text-white">Cities</a> / 
+        <span>{city.name}</span>
+      </nav>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl font-bold mb-4">{city.name}, {city.stateAbbr} Bicycle Accident Lawyer</h1>
+          <p class="text-xl text-gray-200 mb-6">
+            Cycling in {city.name} comes with unique challenges. From busy downtown streets to suburban roads, 
+            accidents happen. If you've been injured, a local attorney can help you fight for fair compensation.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-6">
+            {city.bikeScore && (
+              <div class="bg-white/10 px-4 py-2 rounded-lg">
+                <span class="text-secondary font-bold">{city.bikeScore}</span>
+                <span class="text-sm"> Bike Score</span>
+              </div>
+            )}
+            {city.population && (
+              <div class="bg-white/10 px-4 py-2 rounded-lg">
+                <span class="text-secondary font-bold">{city.population.toLocaleString()}</span>
+                <span class="text-sm"> Population</span>
+              </div>
+            )}
+          </div>
+
+          {state && (
+            <a href={`/states/${state.slug}/`} class="inline-block text-secondary hover:underline">
+              View all {state.name} bicycle laws →
+            </a>
+          )}
+        </div>
+        <div>
+          <LeadForm source={`city-${city.slug}`} title={`Free ${city.name} Case Review`} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Info Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Cycling in {city.name}</h2>
+          <p class="text-gray-600 mb-4">
+            {city.name} has {city.bikeScore && city.bikeScore > 50 ? 'relatively good' : 'limited'} cycling infrastructure. 
+            {city.bikeScore && city.bikeScore > 70 
+              ? 'The city is considered bike-friendly with dedicated lanes and paths.' 
+              : 'Cyclists often share roads with heavy vehicle traffic, increasing accident risk.'}
+          </p>
+          
+          {city.bikeInfrastructure && (
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+              <h3 class="font-bold mb-2">Bike Infrastructure</h3>
+              <p class="text-sm text-gray-600">{city.bikeInfrastructure}</p>
+            </div>
+          )}
+
+          {city.dangerousIntersections && city.dangerousIntersections.length > 0 && (
+            <div class="bg-red-50 p-4 rounded-lg">
+              <h3 class="font-bold mb-2 text-red-800">⚠️ Known Dangerous Areas</h3>
+              <ul class="space-y-1">
+                {city.dangerousIntersections.map(intersection => (
+                  <li class="text-sm text-red-700">• {intersection}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+        
+        <div>
+          <h2 class="text-2xl font-bold mb-4">{city.state} Bicycle Laws</h2>
+          {state && (
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-bold">Statute of Limitations</h3>
+                <p class="text-xl text-primary">{state.statOfLimitations}</p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-bold">Fault System</h3>
+                <p class={state.faultSystem.includes('Contributory') ? 'text-red-600' : 'text-primary'}>
+                  {state.faultSystem}
+                </p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-bold">Safe Passing Distance</h3>
+                <p class="text-primary">{state.safePassingDistance}</p>
+              </div>
+              <a href={`/states/${state.slug}/`} class="inline-block text-primary hover:underline font-medium">
+                View full {state.name} bicycle laws →
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Accidents -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8">Common Bicycle Accidents in {city.name}</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-3xl mb-3">🚗</div>
+          <h3 class="font-bold mb-2">Dooring Accidents</h3>
+          <p class="text-sm text-gray-600">Common in downtown {city.name} where street parking is prevalent.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-3xl mb-3">↩️</div>
+          <h3 class="font-bold mb-2">Right Hook Crashes</h3>
+          <p class="text-sm text-gray-600">Vehicles turning right across bike lanes or cyclist paths.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-3xl mb-3">🔀</div>
+          <h3 class="font-bold mb-2">Intersection Collisions</h3>
+          <p class="text-sm text-gray-600">The most common location for serious cycling accidents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Local Attorney -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">Why Choose a Local {city.name} Attorney?</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-4xl mb-3">📍</div>
+          <h3 class="font-bold mb-2">Local Knowledge</h3>
+          <p class="text-sm text-gray-600">Knows {city.name}'s roads, dangerous intersections, and traffic patterns.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">⚖️</div>
+          <h3 class="font-bold mb-2">Court Familiarity</h3>
+          <p class="text-sm text-gray-600">Experience with local judges, procedures, and jury tendencies.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold mb-2">Local Connections</h3>
+          <p class="text-sm text-gray-600">Relationships with medical providers and expert witnesses.</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🚴</div>
+          <h3 class="font-bold mb-2">Community Investment</h3>
+          <p class="text-sm text-gray-600">Committed to making {city.name} safer for cyclists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Injured Cycling in {city.name}?</h2>
+      <p class="text-xl text-gray-200 mb-8">
+        Get a free case evaluation from an experienced {city.name} bicycle accident lawyer. No fees unless you win.
+      </p>
+      <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition">
+        🚴 Get Your Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

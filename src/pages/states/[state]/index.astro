@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import { states, getStateBySlug } from '../../../data/states';
+
+export function getStaticPaths() {
+  return states.map(state => ({
+    params: { state: state.slug },
+    props: { state }
+  }));
+}
+
+const { state } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `${state.name} Bicycle Accident Lawyer`,
+  "description": `Experienced bicycle accident attorneys in ${state.name}. Free case evaluation for cycling injury claims.`,
+  "areaServed": {
+    "@type": "State",
+    "name": state.name
+  },
+  "serviceType": "Bicycle Accident Legal Services"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cyclistaccidentlawyer.com/" },
+    { "@type": "ListItem", "position": 2, "name": "States", "item": "https://cyclistaccidentlawyer.com/states/" },
+    { "@type": "ListItem", "position": 3, "name": state.name, "item": `https://cyclistaccidentlawyer.com/states/${state.slug}/` }
+  ]
+};
+---
+
+<BaseLayout 
+  title={`${state.name} Bicycle Accident Lawyer`}
+  description={`Injured cycling in ${state.name}? Learn about ${state.abbr} bicycle laws, helmet requirements, and connect with an experienced attorney. Free case review.`}
+  schema={schema}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / 
+        <a href="/states/" class="hover:text-white">States</a> / 
+        <span>{state.name}</span>
+      </nav>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl font-bold mb-4">{state.name} Bicycle Accident Lawyer</h1>
+          <p class="text-xl text-gray-200 mb-6">
+            With {state.annualCyclistFatalities} cyclist fatalities annually, {state.name} roads can be dangerous. 
+            If you've been injured in a bicycle accident, an experienced {state.abbr} attorney can help you navigate the legal process and fight for fair compensation.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            {state.faultSystem.includes('Contributory') && (
+              <span class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                ⚠️ Contributory Negligence State
+              </span>
+            )}
+            {state.vulnerableRoadUserLaw && (
+              <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                ✓ Vulnerable Road User Law
+              </span>
+            )}
+          </div>
+        </div>
+        <div>
+          <LeadForm source={`state-${state.slug}`} title={`Free ${state.name} Case Review`} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Laws Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">{state.name} Bicycle Laws</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">⏱️ Statute of Limitations</h3>
+          <p class="text-3xl font-bold text-primary mb-2">{state.statOfLimitations}</p>
+          <p class="text-sm text-gray-600">Time limit to file a bicycle accident lawsuit in {state.name}.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">⚖️ Fault System</h3>
+          <p class={`text-lg font-bold mb-2 ${state.faultSystem.includes('Contributory') ? 'text-red-600' : 'text-primary'}`}>
+            {state.faultSystem}
+          </p>
+          <p class="text-sm text-gray-600">
+            {state.faultSystem.includes('Contributory') 
+              ? "Any fault on your part may completely bar recovery."
+              : state.faultSystem.includes('Pure')
+                ? "You can recover even if partially at fault, minus your percentage."
+                : "You can recover if less than 50-51% at fault."}
+          </p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">🪖 Helmet Law</h3>
+          <p class="text-xl font-bold text-primary mb-2">{state.helmetLaw}</p>
+          <p class="text-sm text-gray-600">Age requirement: {state.helmetAge}</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">📏 Safe Passing Distance</h3>
+          <p class="text-xl font-bold text-primary mb-2">{state.safePassingDistance}</p>
+          <p class="text-sm text-gray-600">Minimum distance vehicles must give when passing cyclists.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">🛤️ Bike Lane Rights</h3>
+          <p class="text-sm text-gray-700">{state.bikeLaneRights}</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-xl">
+          <h3 class="font-bold text-lg mb-2">🛡️ VRU Law</h3>
+          <p class="text-xl font-bold mb-2">{state.vulnerableRoadUserLaw ? '✓ Yes' : '✗ No'}</p>
+          <p class="text-sm text-gray-600">
+            {state.vulnerableRoadUserLaw 
+              ? "Enhanced penalties for drivers who injure cyclists."
+              : "No specific vulnerable road user protections."}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unique State Facts -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">What Makes {state.name} Unique for Cyclists</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <ul class="space-y-4">
+            {state.uniqueFacts.map(fact => (
+              <li class="flex gap-3">
+                <span class="text-primary text-xl">•</span>
+                <span>{fact}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-8 p-6 bg-primary/10 rounded-xl">
+            <h3 class="font-bold text-lg mb-2">Annual Cyclist Fatalities</h3>
+            <p class="text-4xl font-bold text-primary">{state.annualCyclistFatalities}</p>
+            <p class="text-sm text-gray-600 mt-2">deaths per year in {state.name}</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-xl mb-4">Most Dangerous Cities for Cyclists</h3>
+          <ul class="space-y-2">
+            {state.dangerousCities.map(city => (
+              <li class="flex items-center gap-2">
+                <span class="text-red-500">⚠️</span>
+                {city}
+              </li>
+            ))}
+          </ul>
+          
+          {state.faultSystem.includes('Contributory') && (
+            <div class="mt-8 p-6 bg-red-50 border border-red-200 rounded-xl">
+              <h3 class="font-bold text-red-800 mb-2">⚠️ Critical Warning</h3>
+              <p class="text-red-700">{state.name} follows contributory negligence rules. If you're found even 1% at fault for your accident, you may be completely barred from recovering any compensation. This makes it essential to work with an experienced attorney.</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cities Section -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">Find a Lawyer in {state.name}</h2>
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {state.cities.map(city => (
+          <a href={`/states/${state.slug}/${city.slug}/`} class="bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-lg transition group">
+            <h3 class="font-bold">{city.name}</h3>
+            {city.bikeScore && (
+              <p class="text-sm text-gray-500 group-hover:text-gray-200">
+                Bike Score: {city.bikeScore}
+              </p>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">{state.name} Bicycle Accident FAQ</h2>
+      <div class="space-y-4">
+        <details class="bg-white p-6 rounded-lg shadow-sm">
+          <summary class="font-bold cursor-pointer">How long do I have to file a bicycle accident claim in {state.name}?</summary>
+          <p class="mt-4 text-gray-600">In {state.name}, you have {state.statOfLimitations} from the date of your accident to file a personal injury lawsuit. Missing this deadline typically means losing your right to compensation forever.</p>
+        </details>
+        <details class="bg-white p-6 rounded-lg shadow-sm">
+          <summary class="font-bold cursor-pointer">Do I need to wear a helmet in {state.name}?</summary>
+          <p class="mt-4 text-gray-600">{state.name} {state.helmetLaw.toLowerCase().includes('no') ? 'does not have a statewide helmet requirement for adults' : `requires helmets for cyclists ${state.helmetAge.toLowerCase()}`}. However, wearing a helmet is always recommended and may affect your case if you suffer head injuries.</p>
+        </details>
+        <details class="bg-white p-6 rounded-lg shadow-sm">
+          <summary class="font-bold cursor-pointer">What if I was partially at fault for my bicycle accident?</summary>
+          <p class="mt-4 text-gray-600">{state.name} follows {state.faultSystem.toLowerCase()} rules. {state.faultSystem.includes('Contributory') ? 'This means even 1% fault on your part could bar you from recovery. However, an experienced attorney may be able to argue exceptions.' : 'This means your compensation will be reduced by your percentage of fault, but you can still recover damages.'}</p>
+        </details>
+        <details class="bg-white p-6 rounded-lg shadow-sm">
+          <summary class="font-bold cursor-pointer">How much is a bicycle accident case worth in {state.name}?</summary>
+          <p class="mt-4 text-gray-600">Case values in {state.name} depend on injury severity, medical costs, lost wages, and available insurance coverage. Minor cases may settle for $10,000-$50,000, while severe injuries can be worth $500,000 or more.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Injured Cycling in {state.name}?</h2>
+      <p class="text-xl text-gray-200 mb-8">
+        Get a free case evaluation from an experienced {state.name} bicycle accident lawyer. No fees unless you win.
+      </p>
+      <a href="/free-consultation/" class="inline-block bg-secondary hover:bg-secondary-dark text-gray-900 font-bold py-4 px-8 rounded-lg text-lg transition">
+        🚴 Get Your Free Case Review
+      </a>
+    </div>
+  </section>
+</BaseLayout>

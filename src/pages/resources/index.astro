@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { resources } from '../../data/resources';
+---
+
+<BaseLayout 
+  title="Bicycle Accident Resources & Legal Guides"
+  description="Free resources for bicycle accident victims. Learn about your rights, insurance claims, state laws, and how to maximize your compensation."
+>
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="text-sm mb-4 text-gray-300">
+        <a href="/" class="hover:text-white">Home</a> / <span>Resources</span>
+      </nav>
+      <h1 class="text-4xl font-bold mb-4">🚴 Bicycle Accident Resources</h1>
+      <p class="text-xl text-gray-200 max-w-3xl">Free guides and resources to help bicycle accident victims understand their rights and navigate the legal process.</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-3">
+          <div class="grid md:grid-cols-2 gap-6">
+            {resources.map(resource => (
+              <a href={`/resources/${resource.slug}/`} class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition group">
+                <div class="text-4xl mb-4">{resource.icon}</div>
+                <h2 class="text-xl font-bold group-hover:text-primary transition">{resource.title}</h2>
+                <p class="text-gray-600 mt-2">{resource.description}</p>
+                <span class="inline-block mt-4 text-primary font-semibold text-sm">Read Guide →</span>
+              </a>
+            ))}
+          </div>
+
+          <!-- Additional Resources Section -->
+          <div class="mt-12 bg-gray-50 p-8 rounded-xl">
+            <h2 class="text-2xl font-bold mb-6">Additional Legal Resources</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              <a href="/blog/" class="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition">
+                <span class="text-2xl">📝</span>
+                <div>
+                  <h3 class="font-semibold">Blog Articles</h3>
+                  <p class="text-sm text-gray-500">In-depth articles on bicycle accident topics</p>
+                </div>
+              </a>
+              <a href="/states/" class="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition">
+                <span class="text-2xl">📍</span>
+                <div>
+                  <h3 class="font-semibold">State Laws</h3>
+                  <p class="text-sm text-gray-500">Bicycle laws for all 50 states</p>
+                </div>
+              </a>
+              <a href="/faq/" class="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition">
+                <span class="text-2xl">❓</span>
+                <div>
+                  <h3 class="font-semibold">FAQ</h3>
+                  <p class="text-sm text-gray-500">Common questions answered</p>
+                </div>
+              </a>
+              <a href="/free-consultation/" class="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition">
+                <span class="text-2xl">💬</span>
+                <div>
+                  <h3 class="font-semibold">Free Consultation</h3>
+                  <p class="text-sm text-gray-500">Speak with an attorney</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24">
+            <LeadForm source="resources-index" compact={true} title="Free Case Review" subtitle="Get legal help today" />
+            
+            <div class="mt-8 bg-red-50 border border-red-200 p-6 rounded-lg">
+              <h3 class="font-bold text-red-800 mb-3">⚠️ Time-Sensitive</h3>
+              <p class="text-sm text-red-700">Statute of limitations may apply. Don't wait to protect your rights.</p>
+              <a href="/resources/statute-of-limitations-guide/" class="block mt-3 text-sm text-red-800 font-semibold hover:underline">
+                Check your state's deadline →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
