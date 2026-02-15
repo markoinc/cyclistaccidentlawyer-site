@@ -1,0 +1,131 @@
+{
+  "ad_set_id": "120242085816600594",
+  "campaign_id": "120242084897650594",
+  "page_id": "103085065727779",
+  "landing_url": "https://cases.kuriosbrand.com",
+  "utm_params": "?utm_source=facebook&utm_medium=paid&utm_campaign={{campaign.name}}&utm_content={{ad.name}}",
+  "ads": [
+    {
+      "name": "AD01 - Quality Volume",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad01-quality-volume.png",
+      "headline": "Quality Problems Hide as Volume",
+      "primary_text": "You don't have a lead volume problem. You have a lead quality problem disguised as volume.\n\nYour vendor sends 100 MVA leads. Your intake qualifies 15. You sign 5. You blame intake for the 85 that didn't qualify.\n\nBut those 85 were never going to sign. They weren't real injury cases. They weren't high intent. They were clicks, not clients.\n\nHere's the real solution:\n\nStop receiving leads. Start receiving signed cases.\n\nWe fund the marketing. We generate the demand. Our PI-trained intake team qualifies prospects and closes retainers on your behalf.\n\nYou don't touch the lead until it's already a case.\n\n~$2,900 average cost per signed case. 30-50% conversion from warm transfer to closed.\n\nNo retainers. No setup fees. No ad spend required.\n\nQuality isn't just upstream. It's delivery.",
+      "description": "We fund the ads. You receive signed cases.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD02 - Intake Defense",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad02-intake-defense.png",
+      "headline": "Your Intake Team Isn't The Problem",
+      "primary_text": "Your intake team isn't the problem.\n\nWhen 85% of \"leads\" are garbage from the start — wrong injury, no treatment, already represented — no training fixes that.\n\nThey're not dropping balls. They were handed garbage.\n\nHere's the fix: Stop handing them garbage.\n\nWe pre-qualify every prospect before you see them:\n✓ Verified MVA injury\n✓ Treatment confirmed\n✓ Not currently represented\n✓ Clear liability indicators\n\nYour team stops sorting trash and starts working real cases.\n\n~$2,900 per signed case\n87% partner retention",
+      "description": "Stop handing your team garbage leads.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD04 - Vendor Secret",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad04-vendor-secret.png",
+      "headline": "The Dirty Secret Your Vendor Won't Tell You",
+      "primary_text": "🚨 PI ATTORNEYS — your lead vendor is playing you.\n\nThey buy leads from aggregators for $50.\nThey sell them to you for $300.\nThey sell the SAME lead to 3 other firms.\n\nYou're racing your competitors to the phone. Fastest dialer wins. And the vendor collects 4x.\n\nYou're not the customer. You're the product.\n\nWe don't sell leads. We deliver signed cases.\n\nYou pay for signed retainers. We handle everything else.\n\n~$2,900 average cost per signed case\n87% partner retention\n\nNo retainers. No setup fees.\n\nStop being the product.",
+      "description": "You're not the customer. You're the product.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD05 - ROI Simple",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad05-roi-simple.png",
+      "headline": "$2,900 → $40,000+ Average Settlement",
+      "primary_text": "The math is simple:\n\n$2,900 per signed MVA case.\n$40,000+ average settlement value.\n\nThat's a 14X return on every case we deliver.\n\nWe fund the ads. We generate the demand. Our MVA-trained intake team qualifies and signs retainers on your behalf.\n\nYou receive signed cases. Ready for your docket.\n\n87% of partners renew after 90 days. There's a reason.\n\nNo retainers. No setup fees. No ad spend from you.\n\nFor PI attorneys signing 10+ cases/month.",
+      "description": "14X ROI on every signed case.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD07 - Rage Bait",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad07-rage-bait.png",
+      "headline": "Still Buying Leads in 2026?",
+      "primary_text": "⚖️ PI ATTORNEYS ⚖️\n\nStill buying leads in 2026?\n\nHere's what that looks like:\n❌ 100 leads\n❌ 85 don't qualify\n❌ 10 \"already have a lawyer\"\n❌ 5 signed cases... maybe\n❌ $4,000+ per case when you add intake costs\n\nHere's what signed case delivery looks like:\n✅ We fund the ads\n✅ We run the campaigns\n✅ We qualify every prospect\n✅ We sign the retainer\n✅ You receive signed cases\n✅ ~$2,900 per case. Done.\n\n87% of partners renew after 90 days 📈\n\nNo retainers. No setup fees.\n\nFor firms signing 10+ cases/month 🎯",
+      "description": "Stop buying leads. Start receiving cases.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD10 - Comparison",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad10-comparison.png",
+      "headline": "The Real Cost Comparison",
+      "primary_text": "How much are you really paying per signed MVA case?\n\n**TV advertising:** $50,000/month. Maybe you get cases. Maybe not.\n\n**Billboards:** $30,000/month. Brand awareness. No tracking.\n\n**Lead vendors:** $200-500/lead. 5% close rate. $4,000+ per case after intake costs.\n\n**Us:** ~$2,900 per signed case. Retainer already signed. Ready for your docket.\n\nNo monthly minimums. No wasted spend. No guessing.\n\nYou pay for signed cases. We handle everything else.\n\n87% partner retention. 8 figures generated for client firms.\n\nFor attorneys signing 10+ cases/month.",
+      "description": "Compare the real cost per signed case.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD11 - Burnout",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad11-burnout.png",
+      "headline": "Your Intake Team is Burning Out",
+      "primary_text": "Every hour your intake team spends chasing bad leads is an hour you're paying for nothing.\n\nEvery consultation with someone who \"already has a lawyer\" is time you'll never get back.\n\nEvery follow-up sequence on a dead lead is opportunity cost bleeding out.\n\nWhat if you got that time back?\n\nWe handle the entire front end:\n→ We fund the marketing\n→ We generate demand\n→ We qualify\n→ We sign the retainer\n\nYou receive signed cases. Period.\n\n~$2,900 per signed case\n87% partner retention\n\nFor firms signing 10+ cases/month.",
+      "description": "Get your time back. Receive signed cases.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "V2-01 - Guarantee Hook",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/v2-01-guarantee-hook.png",
+      "headline": "7 Cases in 30 Days — Or We Work Free",
+      "primary_text": "7 signed MVA cases in 30 days.\n\nOr we work for free until you get them.\n\nThat's not a marketing promise. That's the deal.\n\nWe fund the ads. We generate the demand. Our MVA-trained intake team qualifies and signs retainers on your behalf.\n\nYou receive signed cases. Ready for your docket.\n\n~$2,900 average cost per signed case\n87% of partners renew after 90 days\n\nNo retainers. No setup fees. No ad spend from you.\n\nFor PI attorneys signing 10+ cases/month.",
+      "description": "7 cases in 30 days. Guaranteed.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "V2-03 - Expose Style",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/v2-03-expose-style.png",
+      "headline": "Your Lead Vendor is Playing You",
+      "primary_text": "🚨 PI ATTORNEYS — your lead vendor is playing you.\n\nThey buy leads from aggregators for $50.\nThey sell them to you for $300.\nThey sell the SAME lead to 3 other firms.\n\nYou're racing your competitors to the phone. Fastest dialer wins. And the vendor collects 4x.\n\nYou're not the customer. You're the product.\n\nWe don't sell leads. We deliver signed cases.\n\nYou pay for signed retainers. We handle everything else.\n\n~$2,900 average cost per signed case\n87% partner retention\n\nNo retainers. No setup fees.\n\nStop being the product.",
+      "description": "Stop being the product.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "V2-05 - Guarantee Hook 2",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/v2-05-guarantee-hook-2.png",
+      "headline": "What Would 7 Signed Cases Do For You?",
+      "primary_text": "What would 7 signed MVA cases do for your firm this month?\n\nWe'll deliver them in 30 days. Or we work free until we do.\n\nNo leads to chase. No intake to manage. No hoping your team converts.\n\nJust signed retainers, delivered to your desk.\n\nOur MVA-trained intake team handles everything — from first contact to signed agreement. You focus on what you do best: winning cases.\n\n~$2,900 average per signed case\n8 figures generated for client firms\n87% partner retention after 90 days\n\nFor PI attorneys signing 10+ cases/month.",
+      "description": "7 signed cases. 30 days. Guaranteed.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "11A - Case Study Timeline",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad11a-case-study-timeline.png",
+      "headline": "From Lead to $40K Settlement",
+      "primary_text": "Real case. Real numbers.\n\nDay 1: AT&T delivery truck rear-ends sedan at red light.\nDay 3: Our team contacts victim, verifies injury, confirms treatment.\nDay 7: Signed retainer delivered to partner firm.\nDay 90: $40,000+ settlement.\n\nYou paid: ~$2,900 for the signed case.\nYou earned: 33% of $40K = $13,200+\n\nThat's a 4.5X return on a single case.\n\nWe fund the ads. We qualify the leads. We sign the retainers.\n\nYou receive signed cases. Ready to win.\n\n87% of partners renew after 90 days.",
+      "description": "Real case. Real ROI. Real results.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "11B - Case Study Math",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad11b-case-study-math.png",
+      "headline": "The Math: $2.9K → $40K+",
+      "primary_text": "Here's the math that keeps partners renewing:\n\n📊 INPUT: $2,900 signed case fee\n📊 OUTPUT: $40,000+ average settlement\n📊 YOUR CUT: $13,200+ (at 33%)\n📊 ROI: 14X return\n\nWe handle:\n→ Ad spend (we fund it)\n→ Lead generation\n→ Qualification\n→ Retainer signing\n\nYou handle:\n→ Winning the case\n→ Collecting your fee\n\n87% partner retention. 8 figures generated.\n\nFor firms signing 10+ cases/month.",
+      "description": "14X ROI. Do the math.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "11C - Case Study FOMO",
+      "image_path": "/home/ec2-user/clawd/projects/ad-creatives/v6/ad11c-case-study-fomo.png",
+      "headline": "While You Were Sorting Bad Leads...",
+      "primary_text": "While you were sorting bad leads, this happened for another firm:\n\n✅ AT&T truck accident — signed in 7 days\n✅ $40,000+ settlement\n✅ Partner paid $2,900 for the case\n✅ 14X return on investment\n\nYour competitor isn't buying leads anymore. They're buying outcomes.\n\nWe fund the ads. We sign the retainers. You receive cases.\n\n~$2,900 per signed case.\n7 cases in 30 days — or we work free.\n87% partner retention.\n\nHow many cases did you lose this month to bad leads?\n\nFor PI attorneys signing 10+ cases/month.",
+      "description": "Your competitor stopped buying leads.",
+      "cta": "LEARN_MORE"
+    },
+    {
+      "name": "AD12 - Nothing Style A",
+      "image_path": null,
+      "headline": "Pre-Qualified MVA Live Transfers",
+      "primary_text": null,
+      "description": "Exclusive MVA cases for PI attorneys.",
+      "cta": "LEARN_MORE",
+      "link_only": true
+    },
+    {
+      "name": "AD13 - Nothing Style B",
+      "image_path": null,
+      "headline": "Signed MVA Cases — $2,900 Average",
+      "primary_text": null,
+      "description": "We fund the ads. You receive cases.",
+      "cta": "LEARN_MORE",
+      "link_only": true
+    }
+  ]
+}

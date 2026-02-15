@@ -102,16 +102,26 @@ def get_credentials(force_refresh: bool = False) -> Optional[Credentials]:
     # Need new authentication
     if not creds or not creds.valid:
         try:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                str(CLIENT_SECRET_FILE), scopes
+            from google_auth_oauthlib.flow import Flow
+            
+            flow = Flow.from_client_secrets_file(
+                str(CLIENT_SECRET_FILE),
+                scopes=scopes,
+                redirect_uri='http://localhost'
             )
-            creds = flow.run_local_server(
-                port=8080,
-                prompt="consent",
-                success_message="Authentication successful! You can close this window."
-            )
+            
+            auth_url, _ = flow.authorization_url(prompt='consent', access_type='offline')
+            print('\n🔗 Go to this URL in your browser:\n')
+            print(auth_url)
+            print('\n📝 After you click Allow, it will redirect to a localhost URL that won\'t load.')
+            print('   Copy the ENTIRE URL from your browser address bar and paste it here:\n')
+            
+            redirect_response = input('Paste the full redirect URL: ').strip()
+            flow.fetch_token(authorization_response=redirect_response)
+            creds = flow.credentials
+            
             _save_token(creds)
-            print("[OK] Authentication successful!")
+            print("\n[OK] Authentication successful!")
         except Exception as e:
             print(f"Authentication failed: {e}")
             return None

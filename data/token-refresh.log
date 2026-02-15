@@ -374,3 +374,138 @@
 [2026-02-11T16:41:07.810799] ==================================================
 [2026-02-11T16:41:07.810866] Token Manager - Check complete
 [2026-02-11T16:41:07.810901] ==================================================
+[2026-02-12T08:12:22.423641] ==================================================
+[2026-02-12T08:12:22.424376] Token Manager - Starting check
+[2026-02-12T08:12:22.424434] ==================================================
+[2026-02-12T08:12:22.424573] 🔄 gcal: Token expiring soon, refreshing...
+[2026-02-12T08:12:22.424627] ❌ gcal: Client credentials not found!
+[2026-02-12T08:12:22.424664] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-12T08:12:22.596858] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-12T08:12:22.597314] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-12T08:12:22.851876] ✅ notion: API key valid
+[2026-02-12T08:12:22.852590] ⚠️ x_twitter: No API key found in file!
+[2026-02-12T08:12:22.852660] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-12T08:12:22.942248] ⚠️ ghl: API returned 404
+[2026-02-12T08:12:22.943127] ==================================================
+[2026-02-12T08:12:22.943193] Token Manager - Check complete
+[2026-02-12T08:12:22.943233] ==================================================
+[2026-02-12T23:17:30.375225] ==================================================
+[2026-02-12T23:17:30.375422] Token Manager - Starting check
+[2026-02-12T23:17:30.375491] ==================================================
+[2026-02-12T23:17:30.375703] ⚠️ gcal: Token EXPIRED at 2026-02-12 21:00:07.429191+00:00
+[2026-02-12T23:17:30.375792] ❌ gcal: Client credentials not found!
+[2026-02-12T23:17:30.375852] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-12T23:17:30.599238] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-12T23:17:30.599900] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-12T23:17:30.873610] ✅ notion: API key valid
+[2026-02-12T23:17:30.874277] ⚠️ x_twitter: No API key found in file!
+[2026-02-12T23:17:30.874357] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-12T23:17:30.975806] ⚠️ ghl: API returned 404
+[2026-02-12T23:17:30.976969] ==================================================
+[2026-02-12T23:17:30.977037] Token Manager - Check complete
+[2026-02-12T23:17:30.977074] ==================================================
+[2026-02-13T06:46:16.903641] ==================================================
+[2026-02-13T06:46:16.903792] Token Manager - Starting check
+[2026-02-13T06:46:16.903841] ==================================================
+[2026-02-13T06:46:16.903987] ⚠️ gcal: Token EXPIRED at 2026-02-13 05:00:08.990016+00:00
+[2026-02-13T06:46:16.904046] ❌ gcal: Client credentials not found!
+[2026-02-13T06:46:16.904086] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-13T06:46:17.053691] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-13T06:46:17.054149] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-13T06:46:18.519039] ✅ notion: API key valid
+[2026-02-13T06:46:18.519676] ⚠️ x_twitter: No API key found in file!
+[2026-02-13T06:46:18.519740] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-13T06:46:18.603929] ⚠️ ghl: API returned 404
+[2026-02-13T06:46:18.604669] ==================================================
+[2026-02-13T06:46:18.604728] Token Manager - Check complete
+[2026-02-13T06:46:18.604764] ==================================================
+[2026-02-13T12:46:18.062415] ==================================================
+[2026-02-13T12:46:18.062547] Token Manager - Starting check
+[2026-02-13T12:46:18.062590] ==================================================
+[2026-02-13T12:46:18.062726] 🔄 gcal: Token expiring soon, refreshing...
+[2026-02-13T12:46:18.062798] ❌ gcal: Client credentials not found!
+[2026-02-13T12:46:18.062835] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-13T12:46:18.221275] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-13T12:46:18.221710] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-13T12:46:18.410010] ✅ notion: API key valid
+[2026-02-13T12:46:18.410591] ⚠️ x_twitter: No API key found in file!
+[2026-02-13T12:46:18.410649] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-13T12:46:18.512460] ⚠️ ghl: API returned 404
+[2026-02-13T12:46:18.513263] ==================================================
+[2026-02-13T12:46:18.513341] Token Manager - Check complete
+[2026-02-13T12:46:18.513378] ==================================================
+[2026-02-13T18:46:17.596870] ==================================================
+[2026-02-13T18:46:17.597006] Token Manager - Starting check
+[2026-02-13T18:46:17.597052] ==================================================
+[2026-02-13T18:46:17.597193] ⚠️ gcal: Token EXPIRED at 2026-02-13 17:00:08.502074+00:00
+[2026-02-13T18:46:17.597247] ❌ gcal: Client credentials not found!
+[2026-02-13T18:46:17.597305] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-13T18:46:18.538286] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-13T18:46:18.538724] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-13T18:46:18.886417] ✅ notion: API key valid
+[2026-02-13T18:46:18.887070] ⚠️ x_twitter: No API key found in file!
+[2026-02-13T18:46:18.887134] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-13T18:46:18.986729] ⚠️ ghl: API returned 404
+[2026-02-13T18:46:18.987606] ==================================================
+[2026-02-13T18:46:18.987668] Token Manager - Check complete
+[2026-02-13T18:46:18.987703] ==================================================
+[2026-02-14T00:56:25.200863] ==================================================
+[2026-02-14T00:56:25.201003] Token Manager - Starting check
+[2026-02-14T00:56:25.201049] ==================================================
+[2026-02-14T00:56:25.201188] 🔄 gcal: Token expiring soon, refreshing...
+[2026-02-14T00:56:25.201241] ❌ gcal: Client credentials not found!
+[2026-02-14T00:56:25.201280] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-14T00:56:25.356807] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-14T00:56:25.357264] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-14T00:56:25.569301] ✅ notion: API key valid
+[2026-02-14T00:56:25.569871] ⚠️ x_twitter: No API key found in file!
+[2026-02-14T00:56:25.569930] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-14T00:56:25.673286] ⚠️ ghl: API returned 404
+[2026-02-14T00:56:25.674022] ==================================================
+[2026-02-14T00:56:25.674080] Token Manager - Check complete
+[2026-02-14T00:56:25.674115] ==================================================
+[2026-02-14T06:46:16.895457] ==================================================
+[2026-02-14T06:46:16.895614] Token Manager - Starting check
+[2026-02-14T06:46:16.895666] ==================================================
+[2026-02-14T06:46:16.895804] ⚠️ gcal: Token EXPIRED at 2026-02-14 05:00:09.931869+00:00
+[2026-02-14T06:46:16.895858] ❌ gcal: Client credentials not found!
+[2026-02-14T06:46:16.895893] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-14T06:46:17.037027] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-14T06:46:17.037467] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-14T06:46:17.280711] ✅ notion: API key valid
+[2026-02-14T06:46:17.281256] ⚠️ x_twitter: No API key found in file!
+[2026-02-14T06:46:17.281313] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-14T06:46:17.368292] ⚠️ ghl: API returned 404
+[2026-02-14T06:46:17.368994] ==================================================
+[2026-02-14T06:46:17.369050] Token Manager - Check complete
+[2026-02-14T06:46:17.369085] ==================================================
+[2026-02-14T12:46:17.876190] ==================================================
+[2026-02-14T12:46:17.876324] Token Manager - Starting check
+[2026-02-14T12:46:17.876369] ==================================================
+[2026-02-14T12:46:17.876504] 🔄 gcal: Token expiring soon, refreshing...
+[2026-02-14T12:46:17.876560] ❌ gcal: Client credentials not found!
+[2026-02-14T12:46:17.876597] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-14T12:46:18.047125] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-14T12:46:18.047573] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-14T12:46:18.353894] ✅ notion: API key valid
+[2026-02-14T12:46:18.354457] ⚠️ x_twitter: No API key found in file!
+[2026-02-14T12:46:18.354519] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-14T12:46:18.440455] ⚠️ ghl: API returned 404
+[2026-02-14T12:46:18.441213] ==================================================
+[2026-02-14T12:46:18.441273] Token Manager - Check complete
+[2026-02-14T12:46:18.441308] ==================================================
+[2026-02-15T10:54:08.111063] ==================================================
+[2026-02-15T10:54:08.111210] Token Manager - Starting check
+[2026-02-15T10:54:08.111258] ==================================================
+[2026-02-15T10:54:08.111410] ⚠️ gcal: Token EXPIRED at 2026-02-15 09:00:09.783585+00:00
+[2026-02-15T10:54:08.111470] ❌ gcal: Client credentials not found!
+[2026-02-15T10:54:08.111513] 🚨 ALERT: gcal needs attention - no_client_creds
+[2026-02-15T10:54:08.273125] ❌ cloudflare: API key INVALID/EXPIRED!
+[2026-02-15T10:54:08.273606] 🚨 ALERT: cloudflare needs attention - invalid
+[2026-02-15T10:54:08.500748] ✅ notion: API key valid
+[2026-02-15T10:54:08.501332] ⚠️ x_twitter: No API key found in file!
+[2026-02-15T10:54:08.501390] 🚨 ALERT: x_twitter needs attention - no_key
+[2026-02-15T10:54:08.594607] ⚠️ ghl: API returned 404
+[2026-02-15T10:54:08.595523] ==================================================
+[2026-02-15T10:54:08.595584] Token Manager - Check complete
+[2026-02-15T10:54:08.595624] ==================================================

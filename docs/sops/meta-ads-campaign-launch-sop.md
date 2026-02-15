@@ -568,6 +568,37 @@ Campaign: [TEST] MVA Lead Gen - Feb 2026
 - [ ] UTM parameters are set (if using)
 - [ ] Lead form is connected (if using native forms)
 
+**KuriosBrand.com Pixel Implementation:**
+
+The qualification quiz funnel (`/qualify`) has full Meta Pixel tracking:
+
+| Event | Trigger | Value Signal |
+|-------|---------|--------------|
+| `PageView` | Landing on any page | - |
+| `AddToCart` | Quiz started (email submitted) | $0 |
+| `Lead` | Quiz completed + qualified | $50-$600 (by volume tier) |
+| `QuizDisqualified` (custom) | User disqualified | - |
+
+**Implementation location:** `src/lib/meta-pixel.ts`
+
+```typescript
+// Tracks when user starts quiz (AddToCart)
+trackQuizStart({ email, position, firmUrl });
+
+// Tracks when user qualifies (Lead)
+trackQuizComplete({ email, position, volume, intake, costPerCase });
+
+// Tracks disqualifications for funnel analysis
+trackDisqualification('intake' | 'cost');
+```
+
+**Volume-to-value mapping (for ROAS optimization):**
+- building (5-10/mo): $50
+- scaling (10-20/mo): $100
+- established (20-40/mo): $200
+- high-volume (40-75/mo): $400
+- enterprise (75+/mo): $600
+
 **Test pixel firing:**
 ```bash
 # Use Meta Pixel Helper Chrome extension

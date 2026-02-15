@@ -164,6 +164,8 @@ This keeps history while surfacing only current/relevant docs.
 - **API Base:** https://services.leadconnectorhq.com
 - **Credentials file:** ~/.config/ghl/credentials.json
 - **Use for:** Sales appointments (source of truth over Google Calendar)
+- **Auth:** `Authorization: Bearer <api_key>` (NOT basic auth)
+- **Required header:** `Version: 2021-07-28` (or API-specific version)
 
 ### GHL Users Reference:
 | User | ID | Use For |

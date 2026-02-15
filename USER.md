@@ -4,8 +4,9 @@
 - **What to call them:** Marko (friends/family nickname)
 - **Age:** 24
 - **Stats:** 6'4", ~190 lbs
-- **Location:** Currently in Pisac, Peru (travels frequently)
-- **Timezone:** *(varies — traveling)*
+- **Location:** Currently in Pisac, Peru → Moving to Tel Aviv, Israel (~Feb 2026, 3 months)
+- **Timezone:** Peru Standard Time (UTC-5) → Will be Israel Time (UTC+2/+3) after move
+- **Time preference:** Use local time, NOT UTC
 
 ## Life Outside Work
 

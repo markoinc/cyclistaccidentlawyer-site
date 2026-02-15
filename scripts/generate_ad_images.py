@@ -1,109 +1,176 @@
 #!/usr/bin/env python3
-"""Generate ad images using Gemini's Nano Banana image generation."""
+"""
+Generate MVA Ad Creative Images using Google Gemini API
+Uses Gemini 2.0 Flash for image generation (Nano Banana equivalent)
+"""
 
 import os
-import base64
-import json
-import requests
-from datetime import datetime
+import sys
+import time
+from pathlib import Path
 
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', 'AIzaSyCqkgVGAm6Ki8jN4y42JXxe7Cy5EChGyHk')
-OUTPUT_DIR = '/home/ec2-user/clawd/data/ad-images'
+# Install required packages if not present
+try:
+    from google import genai
+    from google.genai import types
+except ImportError:
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "google-genai", "-q"])
+    from google import genai
+    from google.genai import types
 
-# Create output directory
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+from PIL import Image
+from io import BytesIO
 
-# Ad prompts - dark, professional, no warm colors, sharp corners
-PROMPTS = {
-    "ad1_quality_volume": """Near-black (#1A1A1A) background with subtle data visualization texture. TOP: "THE MATH YOUR VENDOR WON'T SHOW YOU" in white header. CENTER: Side-by-side calculator/breakdown displays. LEFT DISPLAY (labeled "LEAD MODEL"): "100 leads" in white, arrow down, "15 qualified" in amber, arrow down, "5 signed" in muted gray, "CPA: $4,000" stamped. RIGHT DISPLAY (labeled "OUR MODEL"): "100 prospects" in white, arrow down, "65 qualified" in #3399FF, arrow down, "25 signed" in #3399FF with glow, "CPA: $2,000" stamped. BOTTOM: "Same budget × We close = 5X signed cases" in white. Financial calculator aesthetic. Sharp angular design. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis, human faces.""",
-    
-    "ad2_speed_wont_fix": """Near-black (#1A1A1A) background. TOP: "SPEED WON'T FIX THIS" in white header. CENTER: Stopwatch showing "30 SEC" with large red X overlaid. Arrow pointing to "STILL BAD LEAD" in muted red. BELOW: Flow diagram showing "Fast Call" → "Follow Up" → "Still No Case" — all crossed out in gray. ALTERNATIVE: Arrow bypassing to "QUALIFIED PROSPECT" → "SIGNED CASE" in #3399FF with glow. BOTTOM: "The problem isn't speed. It's source." in white. Technical diagnostic aesthetic. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis, human faces.""",
-    
-    "ad3_intake_problem": """Near-black (#1A1A1A) background. TOP: "DIAGNOSTIC: WHERE'S THE REAL PROBLEM?" in white technical header. CENTER: System flowchart. NODE 1: "LEAD SOURCE" with warning triangle, status "UNQUALIFIED INPUTS" in amber — highlighted as problem. Arrow to NODE 2: "WE QUALIFY" with checkmark in #3399FF. Arrow to NODE 3: "YOU CLOSE" with checkmark in #3399FF. DIAGNOSIS box pointing to Node 1: "PROBLEM IDENTIFIED" in amber. BOTTOM: "Before: Your team sorts garbage. After: Your team signs cases." in white. Sharp angular nodes. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis, human faces.""",
-    
-    "ad4_burned_lawyer": """Near-black (#1A1A1A) background. TOP: "STOP GETTING BURNED" in white header with subtle flame icon crossed out. CENTER: Stack of crumpled receipts/invoices labeled "LEAD VENDOR" in grayscale, faded and worn. CONTRAST: Single clean document labeled "SIGNED CASE" in #3399FF with checkmark glow. Arrow from old stack pointing to new document. BOTTOM: "Different model. Different results." in white. Document comparison aesthetic. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, actual fire, soft gradients, emojis, human faces.""",
-    
-    "ad5_hidden_cost": """Near-black (#1A1A1A) background. TOP: "THE REAL COST OF CHEAP LEADS" in white header with calculator icon. CENTER: Two-column comparison. LEFT column: "$50 LEAD" with breakdown stacking up — "$50 lead + $100 intake + $200 attorney time + hidden costs = $800+ REAL COST" in escalating red-gray tones. RIGHT column: "$2,000 SIGNED CASE" in #3399FF — clean and simple, "TOTAL: $2,000" with checkmark. BOTTOM: "Which math works for you?" in white. Financial breakdown aesthetic. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis, human faces.""",
-    
-    "ad6_vendor_question": """Near-black (#1A1A1A) background. TOP: "ASK YOUR VENDOR THIS" in white header. CENTER: Large question mark in #3399FF. BELOW: Two contrasting boxes. LEFT BOX (gray outline): "THEIR MODEL" — "Paid per lead → No accountability → Volume over quality". RIGHT BOX (#3399FF outline): "OUR MODEL" — "Paid per case → We eat bad leads → Quality guaranteed". BOTTOM: "Aligned incentives. Aligned results." in white. Comparison contrast aesthetic. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis, human faces.""",
-    
-    "ad7_top_firms_quiet": """Deep charcoal (#1A1A1A) background. TOP: "THE SILENCE IS STRATEGIC" in bold white header with lock icon. CENTER: Dark-themed social media mockup showing "PI Marketing Discussion" group. Inside: Post previews like "Best lead vendors? 47 comments" with generic replies. OVERLAY: Large "DECOY" stamp in muted blue at angle. ANNOTATION: Arrow pointing with "Where average firms shop" in gray. BELOW: Dark box with #3399FF border showing "What top firms actually use: Signed cases from intake specialists" with lock icon, "LIMITED PER MARKET" badge. BOTTOM: "The best systems aren't crowdsourced." in white. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, real logos, photos, emojis, human faces."""
-}
+# Get API key from environment
+API_KEY = os.environ.get("GEMINI_API_KEY") or os.environ.get("NANOBANANA_API_KEY")
+if not API_KEY:
+    # Try loading from .env.local
+    env_path = Path("/home/ec2-user/clawd/.env.local")
+    if env_path.exists():
+        for line in env_path.read_text().splitlines():
+            if line.startswith("GEMINI_API_KEY="):
+                API_KEY = line.split("=", 1)[1]
+                break
 
-def generate_image(prompt: str, filename: str):
-    """Generate image using Gemini's image generation."""
-    
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key={GEMINI_API_KEY}"
-    
-    headers = {"Content-Type": "application/json"}
-    
-    data = {
-        "contents": [{
-            "parts": [{
-                "text": f"Generate a 1080x1080 social media ad image. Style: Dark, professional, high contrast. {prompt}"
-            }]
-        }],
-        "generationConfig": {
-            "responseModalities": ["image", "text"],
-            "imagePrecision": "high"
-        }
+if not API_KEY:
+    print("Error: No GEMINI_API_KEY found")
+    sys.exit(1)
+
+# Output directory
+OUTPUT_DIR = Path("/home/ec2-user/clawd/ads/mva-feb-2026-v4")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Ad prompts from cases-campaign-v2-ads.md (excluding nothing ads)
+ADS = [
+    {
+        "name": "ad1-guarantee-hook",
+        "prompt": """Near-black (#1A1A1A) background. TOP: Large "7 CASES IN 30 DAYS" in white with #3399FF glow effect. Below: "OR WE WORK FREE" in smaller white text. CENTER: Calendar/timeline graphic showing 30-day window with case icons filling in. Checkmark at day 30. BOTTOM: "That's not marketing. That's the deal." in white. Guarantee-focused aesthetic. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
+    },
+    {
+        "name": "ad2-price-breakdown",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "THE REAL MATH" in white header. CENTER: Two-column comparison. LEFT COLUMN "DIY LEADS": Calculator showing $20k spend, 15 cases, "$1,333" crossed out, "+intake salary +your time" added, final "REAL COST: $2,000+" in amber. RIGHT COLUMN "WE DELIVER": Clean "$3,000/case" in #3399FF with glow, checkmarks for "We fund ads" "We qualify" "We sign". BOTTOM: "For $1k more, never touch intake again." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
+    },
+    {
+        "name": "ad3-expose-style",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "YOUR VENDOR IS PLAYING YOU" in aggressive white font with red alert icon. CENTER: Flow diagram showing: "Aggregator $50" → "Vendor $300" → splits to "YOU + 3 OTHER FIRMS". Red "4X MARKUP" stamp. CONTRAST: Blue box below "OUR MODEL: One campaign = One firm = Your cases". BOTTOM: "Stop being the product." in white. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients."""
+    },
+    {
+        "name": "ad4-model-problem",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "IT'S NOT A LEAD PROBLEM. IT'S A MODEL PROBLEM." in bold white. CENTER: Two models compared. LEFT (faded/gray): "2015 MODEL" — "Buy leads → Hope → Chase → Maybe sign". RIGHT (highlighted #3399FF): "2026 MODEL" — "Buy outcomes → Receive signed cases → Litigate". Arrow pointing to 2026 model. BOTTOM: "Upgrade your model." in white. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
+    },
+    {
+        "name": "ad5-guarantee-hook-2",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "WHAT WOULD 7 SIGNED CASES DO FOR YOU?" in white with question mark icon. CENTER: Stack of 7 case file icons with checkmarks, arranged in grid. Label: "DELIVERED IN 30 DAYS". Blue glow effect. Below: "Or we work free." BOTTOM: Stats row "8 FIGURES GENERATED | 87% RETENTION | $3K AVG/CASE" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
+    },
+    {
+        "name": "ad6-time-angle",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "YOUR TIME ISN'T FREE" with clock icon draining. CENTER: Two paths. LEFT (red tint): Tasks stacking — "Chase leads" "Bad consultations" "Dead follow-ups" — clock running out. RIGHT (blue): Clean path — "Signed cases delivered" — clock full. BOTTOM: "Get your time back." with "$3K/case" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
+    },
+    {
+        "name": "ad7-emoji-attention",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "STILL BUYING LEADS IN 2026?" in bold white with scales of justice icons. CENTER: Two columns with emoji-style icons. LEFT (red Xs): List of failures — "100 leads" "85 don't qualify" etc. RIGHT (blue checkmarks): List of wins — "We fund" "We qualify" "We sign". Large contrast. BOTTOM: "87% renew" with "$3K/case" in #3399FF. Sharp corners. This one can have emoji icons in the image. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients."""
+    },
+    {
+        "name": "ad8-intake-defense",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "YOUR INTAKE TEAM ISN'T THE PROBLEM" in bold white. CENTER: Intake worker icon buried under papers labeled "JUNK LEADS" — then arrow to same worker with clean desk and single "SIGNED CASE" document. Before/after style. BOTTOM: "Stop handing them garbage." Blue checkmarks for qualification criteria. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos of real people, soft gradients, emojis."""
+    },
+    {
+        "name": "ad9-comparison-angle",
+        "prompt": """Near-black (#1A1A1A) background. TOP: "THE REAL COST COMPARISON" in white header. CENTER: Horizontal bar chart. TV ADS: $50K/mo (very tall red bar). BILLBOARDS: $30K/mo (tall red bar). LEAD VENDORS: $4K+/case (medium red bar). KURIOS: $3K/case (short #3399FF bar with glow, checkmark). Clear winner visual. BOTTOM: "The math is simple." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis."""
     }
-    
-    print(f"Generating: {filename}...")
+]
+
+def generate_image(client, prompt: str, name: str) -> Path:
+    """Generate a single image using Gemini"""
+    print(f"\n🎨 Generating: {name}")
+    print(f"   Prompt: {prompt[:100]}...")
     
     try:
-        response = requests.post(url, headers=headers, json=data, timeout=60)
-        response.raise_for_status()
-        result = response.json()
+        # Use gemini-2.0-flash-exp for image generation
+        response = client.models.generate_content(
+            model="gemini-2.0-flash-exp-image-generation",
+            contents=[f"Generate a professional advertising image for a law firm lead generation service. Square format (1:1 aspect ratio). {prompt}"],
+            config=types.GenerateContentConfig(
+                response_modalities=['Image'],
+            )
+        )
         
         # Extract image from response
-        if 'candidates' in result and len(result['candidates']) > 0:
-            parts = result['candidates'][0].get('content', {}).get('parts', [])
-            for part in parts:
-                if 'inlineData' in part:
-                    image_data = part['inlineData']['data']
-                    mime_type = part['inlineData'].get('mimeType', 'image/png')
-                    ext = 'png' if 'png' in mime_type else 'jpg'
-                    
-                    filepath = os.path.join(OUTPUT_DIR, f"{filename}.{ext}")
-                    with open(filepath, 'wb') as f:
-                        f.write(base64.b64decode(image_data))
-                    
-                    print(f"  ✓ Saved: {filepath}")
-                    return filepath
+        for part in response.candidates[0].content.parts:
+            if part.inline_data is not None:
+                image = Image.open(BytesIO(part.inline_data.data))
+                output_path = OUTPUT_DIR / f"{name}.png"
+                image.save(output_path)
+                print(f"   ✅ Saved: {output_path}")
+                return output_path
         
-        print(f"  ✗ No image in response for {filename}")
-        print(f"  Response: {json.dumps(result, indent=2)[:500]}")
+        print(f"   ❌ No image in response")
         return None
         
     except Exception as e:
-        print(f"  ✗ Error generating {filename}: {e}")
+        print(f"   ❌ Error: {e}")
+        
+        # Try fallback to Imagen model
+        try:
+            print(f"   🔄 Trying Imagen fallback...")
+            result = client.models.generate_image(
+                model="imagen-3.0-generate-002",
+                prompt=f"Professional advertising image for law firm lead generation. {prompt}",
+                config=types.GenerateImageConfig(
+                    number_of_images=1,
+                    output_mime_type="image/png",
+                    aspect_ratio="1:1"
+                )
+            )
+            
+            if result.generated_images:
+                image = Image.open(BytesIO(result.generated_images[0].image.image_bytes))
+                output_path = OUTPUT_DIR / f"{name}.png"
+                image.save(output_path)
+                print(f"   ✅ Saved (Imagen): {output_path}")
+                return output_path
+                
+        except Exception as e2:
+            print(f"   ❌ Imagen fallback also failed: {e2}")
+        
         return None
 
 def main():
-    print(f"\n{'='*50}")
-    print("NANO BANANA IMAGE GENERATION")
-    print(f"{'='*50}\n")
+    print("=" * 60)
+    print("MVA Ad Creative Generator")
     print(f"Output directory: {OUTPUT_DIR}")
-    print(f"Generating {len(PROMPTS)} images...\n")
+    print("=" * 60)
     
-    results = {}
-    for name, prompt in PROMPTS.items():
-        filepath = generate_image(prompt, name)
-        results[name] = filepath
+    # Initialize client
+    client = genai.Client(api_key=API_KEY)
     
-    print(f"\n{'='*50}")
+    generated = []
+    failed = []
+    
+    for ad in ADS:
+        result = generate_image(client, ad["prompt"], ad["name"])
+        if result:
+            generated.append(ad["name"])
+        else:
+            failed.append(ad["name"])
+        
+        # Rate limiting
+        time.sleep(2)
+    
+    print("\n" + "=" * 60)
     print("SUMMARY")
-    print(f"{'='*50}")
+    print("=" * 60)
+    print(f"✅ Generated: {len(generated)}")
+    for name in generated:
+        print(f"   - {name}")
     
-    success = sum(1 for v in results.values() if v)
-    print(f"Generated: {success}/{len(PROMPTS)}")
+    if failed:
+        print(f"\n❌ Failed: {len(failed)}")
+        for name in failed:
+            print(f"   - {name}")
     
-    for name, path in results.items():
-        status = "✓" if path else "✗"
-        print(f"  {status} {name}")
-    
-    return results
+    print(f"\n📁 Output: {OUTPUT_DIR}")
 
 if __name__ == "__main__":
     main()

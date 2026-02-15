@@ -1,0 +1,92 @@
+[
+  {
+    "name": "AD01 - Quality Volume",
+    "ad_id": "120242086697510594",
+    "creative_id": "1241872264053018",
+    "image_hash": "c10742c53b7cec624bfadca46eaf8ab5"
+  },
+  {
+    "name": "AD02 - Intake Defense",
+    "ad_id": "120242086698020594",
+    "creative_id": "1665329144815619",
+    "image_hash": "9152f0cba9aa946d20ade7223205f4a8"
+  },
+  {
+    "name": "AD04 - Vendor Secret",
+    "ad_id": "120242086698500594",
+    "creative_id": "1548267102921986",
+    "image_hash": "f1e13bf4f9770b8a6e893c33763aa954"
+  },
+  {
+    "name": "AD05 - ROI Simple",
+    "ad_id": "120242086699180594",
+    "creative_id": "3094105140772576",
+    "image_hash": "7e3af445a03999dc8660057f3a2f78c1"
+  },
+  {
+    "name": "AD07 - Rage Bait",
+    "ad_id": "120242086699960594",
+    "creative_id": "4288805161391878",
+    "image_hash": "17ebccec923c4117fd22c4a125b12a02"
+  },
+  {
+    "name": "AD10 - Comparison",
+    "ad_id": "120242086700800594",
+    "creative_id": "1283568436532958",
+    "image_hash": "2c44047d60cf8717871ccd07a428198d"
+  },
+  {
+    "name": "AD11 - Burnout",
+    "ad_id": "120242086702350594",
+    "creative_id": "1421962012648851",
+    "image_hash": "723b6b51a46282e6c3ffdcead72cae81"
+  },
+  {
+    "name": "V2-01 - Guarantee Hook",
+    "ad_id": "120242086702890594",
+    "creative_id": "770585999424313",
+    "image_hash": "846c0637a639386bea3b033528ac1391"
+  },
+  {
+    "name": "V2-03 - Expose Style",
+    "ad_id": "120242086703470594",
+    "creative_id": "1555027789115298",
+    "image_hash": "8c3fcdb8a287410b799ca67435c4e8f0"
+  },
+  {
+    "name": "V2-05 - Guarantee Hook 2",
+    "ad_id": "120242086704220594",
+    "creative_id": "1201429341973042",
+    "image_hash": "631530ddcf42622d8aa243206db1c3eb"
+  },
+  {
+    "name": "11A - Case Study Timeline",
+    "ad_id": "120242086704850594",
+    "creative_id": "911499751356249",
+    "image_hash": "d99d5dc8a805abc04077887776ced782"
+  },
+  {
+    "name": "11B - Case Study Math",
+    "ad_id": "120242086705330594",
+    "creative_id": "1420342619548295",
+    "image_hash": "ad45e0513a509dbcdc2caf371a9c047e"
+  },
+  {
+    "name": "11C - Case Study FOMO",
+    "ad_id": "120242086705860594",
+    "creative_id": "1650637773014351",
+    "image_hash": "c349397fd8bf11c86550433bc8d96913"
+  },
+  {
+    "name": "AD12 - Nothing Style A",
+    "ad_id": "120242086707250594",
+    "creative_id": "4429737793976627",
+    "image_hash": null
+  },
+  {
+    "name": "AD13 - Nothing Style B",
+    "ad_id": "120242086708270594",
+    "creative_id": "1608323100618757",
+    "image_hash": null
+  }
+]

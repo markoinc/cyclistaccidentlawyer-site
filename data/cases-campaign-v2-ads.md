@@ -6,7 +6,7 @@
 ## CAMPAIGN OVERVIEW
 
 **Offer:** Signed MVA cases delivered
-**Pricing:** ~$3,000 avg per signed case
+**Pricing:** ~$2,900 avg per signed case
 **Guarantee:** 7 signed cases in 30 days (or we work free until delivered)
 **Qualifier:** Firms signing 10+ cases/month
 **Exclusivity:** One-to-one campaigns, leads never shared
@@ -28,7 +28,7 @@ We fund the ads. We generate the demand. Our MVA-trained intake team qualifies a
 
 You receive signed cases. Ready for your docket.
 
-~$3,000 average cost per signed case
+~$2,900 average cost per signed case
 87% of partners renew after 90 days
 
 No retainers. No setup fees. No ad spend from you.
@@ -54,7 +54,7 @@ Cost per case: $1,333
 **Real cost: ~$2,000+ per case**
 
 **Option B: We deliver signed cases**
-You pay ~$3,000 per signed case
+You pay ~$2,900 per signed case
 We fund the ads
 We qualify the leads
 We sign the retainer
@@ -66,7 +66,7 @@ For $1,000 more per case, you never touch intake again.
 
 No retainers. No setup fees.
 
-📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "THE REAL MATH" in white header. CENTER: Two-column comparison. LEFT COLUMN "DIY LEADS": Calculator showing $20k spend, 15 cases, "$1,333" crossed out, "+intake salary +your time" added, final "REAL COST: $2,000+" in amber. RIGHT COLUMN "WE DELIVER": Clean "$3,000/case" in #3399FF with glow, checkmarks for "We fund ads" "We qualify" "We sign". BOTTOM: "For $1k more, never touch intake again." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
+📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "THE REAL MATH" in white header. CENTER: Two-column comparison. LEFT COLUMN "DIY LEADS": Calculator showing $20k spend, 15 cases, "$1,333" crossed out, "+intake salary +your time" added, final "REAL COST: $2,000+" in amber. RIGHT COLUMN "WE DELIVER": Clean "$2,900/case" in #3399FF with glow, checkmarks for "We fund ads" "We qualify" "We sign". BOTTOM: "For $1k more, never touch intake again." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
 
 ---
 
@@ -87,7 +87,7 @@ We don't sell leads. We deliver signed cases.
 
 You pay for signed retainers. We handle everything else.
 
-~$3,000 average cost per signed case
+~$2,900 average cost per signed case
 87% partner retention
 
 No retainers. No setup fees.
@@ -111,7 +111,7 @@ Signed cases. Delivered. Ready to litigate.
 
 We fund the marketing. Our MVA-trained team handles intake and signs retainers. You receive cases — not contacts to chase.
 
-~$3,000 per signed case
+~$2,900 per signed case
 7 cases in 30 days — or we work free until delivered
 87% of partners renew
 
@@ -138,13 +138,13 @@ Just signed retainers, delivered to your desk.
 
 Our MVA-trained intake team handles everything — from first contact to signed agreement. You focus on what you do best: winning cases.
 
-~$3,000 average per signed case
+~$2,900 average per signed case
 8 figures generated for client firms
 87% partner retention after 90 days
 
 For PI attorneys signing 10+ cases/month.
 
-📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "WHAT WOULD 7 SIGNED CASES DO FOR YOU?" in white with question mark icon. CENTER: Stack of 7 case file icons with checkmarks, arranged in grid. Label: "DELIVERED IN 30 DAYS". Blue glow effect. Below: "Or we work free." BOTTOM: Stats row "8 FIGURES GENERATED | 87% RETENTION | $3K AVG/CASE" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
+📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "WHAT WOULD 7 SIGNED CASES DO FOR YOU?" in white with question mark icon. CENTER: Stack of 7 case file icons with checkmarks, arranged in grid. Label: "DELIVERED IN 30 DAYS". Blue glow effect. Below: "Or we work free." BOTTOM: Stats row "8 FIGURES GENERATED | 87% RETENTION | $2,900 AVG/CASE" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
 
 ---
 
@@ -167,12 +167,12 @@ We handle the entire front end:
 
 You receive signed cases. Period.
 
-~$3,000 per signed case
+~$2,900 per signed case
 87% partner retention
 
 For firms signing 10+ cases/month.
 
-📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "YOUR TIME ISN'T FREE" with clock icon draining. CENTER: Two paths. LEFT (red tint): Tasks stacking — "Chase leads" "Bad consultations" "Dead follow-ups" — clock running out. RIGHT (blue): Clean path — "Signed cases delivered" — clock full. BOTTOM: "Get your time back." with "$3K/case" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
+📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "YOUR TIME ISN'T FREE" with clock icon draining. CENTER: Two paths. LEFT (red tint): Tasks stacking — "Chase leads" "Bad consultations" "Dead follow-ups" — clock running out. RIGHT (blue): Clean path — "Signed cases delivered" — clock full. BOTTOM: "Get your time back." with "$2,900/case" in #3399FF. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
 
 ---
 
@@ -196,7 +196,7 @@ Here's what signed case delivery looks like:
 ✅ We qualify every prospect
 ✅ We sign the retainer
 ✅ You receive signed cases
-✅ ~$3,000 per case. Done.
+✅ ~$2,900 per case. Done.
 
 87% of partners renew after 90 days 📈
 
@@ -204,7 +204,7 @@ No retainers. No setup fees.
 
 For firms signing 10+ cases/month 🎯
 
-📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "⚖️ STILL BUYING LEADS IN 2026? ⚖️" in bold white. CENTER: Two columns with emoji-style icons. LEFT (red Xs): List of failures — "100 leads" "85 don't qualify" etc. RIGHT (blue checkmarks): List of wins — "We fund" "We qualify" "We sign". Large contrast. BOTTOM: "87% renew 📈" with "$3K/case" in #3399FF. Sharp corners. This one can have emoji icons in the image. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients.
+📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "⚖️ STILL BUYING LEADS IN 2026? ⚖️" in bold white. CENTER: Two columns with emoji-style icons. LEFT (red Xs): List of failures — "100 leads" "85 don't qualify" etc. RIGHT (blue checkmarks): List of wins — "We fund" "We qualify" "We sign". Large contrast. BOTTOM: "87% renew 📈" with "$2,900/case" in #3399FF. Sharp corners. This one can have emoji icons in the image. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients.
 
 ---
 
@@ -227,7 +227,7 @@ We pre-qualify every prospect before you see them:
 
 Your team stops sorting trash and starts working real cases.
 
-~$3,000 per signed case
+~$2,900 per signed case
 87% partner retention
 
 📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "YOUR INTAKE TEAM ISN'T THE PROBLEM" in bold white. CENTER: Intake worker buried under papers labeled "JUNK LEADS" — then arrow to same worker with clean desk and single "SIGNED CASE" document. Before/after style. BOTTOM: "Stop handing them garbage." Blue checkmarks for qualification criteria. Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos of real people, soft gradients, emojis.
@@ -245,7 +245,7 @@ How much are you really paying per signed MVA case?
 
 **Lead vendors:** $200-500/lead. 5% close rate. $4,000+ per case after intake costs.
 
-**Us:** ~$3,000 per signed case. Retainer already signed. Ready for your docket.
+**Us:** ~$2,900 per signed case. Retainer already signed. Ready for your docket.
 
 No monthly minimums. No wasted spend. No guessing.
 
@@ -255,7 +255,7 @@ You pay for signed cases. We handle everything else.
 
 For attorneys signing 10+ cases/month.
 
-📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "THE REAL COST COMPARISON" in white header. CENTER: Horizontal bar chart. TV ADS: $50K/mo (very tall red bar). BILLBOARDS: $30K/mo (tall red bar). LEAD VENDORS: $4K+/case (medium red bar). KURIOS: $3K/case (short #3399FF bar with glow, checkmark). Clear winner visual. BOTTOM: "The math is simple." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
+📌 **PROMPT:** Near-black (#1A1A1A) background. TOP: "THE REAL COST COMPARISON" in white header. CENTER: Horizontal bar chart. TV ADS: $50K/mo (very tall red bar). BILLBOARDS: $30K/mo (tall red bar). LEAD VENDORS: $4K+/case (medium red bar). KURIOS: $2,900/case (short #3399FF bar with glow, checkmark). Clear winner visual. BOTTOM: "The math is simple." Sharp corners. DO NOT INCLUDE: rounded corners, warm colors, photos, soft gradients, emojis.
 
 ---
 
