@@ -1,4 +1,11 @@
 {
-  "last_run": "2026-02-15T12:02:34Z",
-  "issues": {}
+  "last_run": "2026-02-17T12:00:50Z",
+  "issues": {
+    "Go High Level": {
+      "status": "critical",
+      "message": "Authentication failed (401)",
+      "first_seen": "2026-02-17T00:00:28Z",
+      "last_seen": "2026-02-17T12:00:50Z"
+    }
+  }
 }

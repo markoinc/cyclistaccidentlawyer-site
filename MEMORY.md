@@ -33,8 +33,13 @@
 - **November 2025 Accounting** — `1DmOeIoWJ-K6P4vST4-Sdbf35cZqiuej7AjS0facCsA0`
 - **December 2025 Accounting** — `1sGg3SHDLKAmDz0V79MvF-ZVCHcaxjCYMTDV-fZlLWOo`
 - **Stripe API** — `~/.config/stripe/credentials.json` (read-only, acct_1MYcAaCzRJgQ28gJ)
-  - Stripe Capital Loan: $4,200 received 01/23, $5,035 total to repay, $4,705 remaining
-  - 20% of Stripe deposits after 01/23 go to repayment
+  - Stripe Capital Loan: $4,200 received 01/23, $5,035 total to repay — **PAID OFF** (Feb 2026)
+- **Carlos Partnership (MVA Whitelabel)**
+  - Started: **Jan 30, 2026**
+  - Split: 50/50 on profits
+  - Carlos contributed: $1,050 toward ads
+  - Only counts ads from Jan 30+ for partnership
+  - Referral deals (COD) are Marko solo, whitelabel deals are partnership
 - **MVA Carlos & Mark Partnership** folder — `1qshu4wTkayK-3C_h8nPEy_YWtWoaPAUX`
 - **MVA Sales Process - COD** doc — `1pJ3l9grF0ed_y-eJ5Mt5-CnLfRbtt8Qas880_s3Wts0` (needs Docs API enabled)
 

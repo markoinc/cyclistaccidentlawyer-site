@@ -2,7 +2,7 @@
 
 **Purpose:** Actionable business insights from key books, applied to MVA lead gen and the $9.6M exit goal.
 
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-02-16
 
 ---
 
@@ -11,8 +11,12 @@
 | Book | Author | Topic | Relevance |
 |------|--------|-------|-----------|
 | $100M Offers | Alex Hormozi | Pricing, Offers, Value | ⭐⭐⭐⭐⭐ |
+| $100M Leads | Alex Hormozi | Lead Generation, Marketing | ⭐⭐⭐⭐⭐ |
 | The Mom Test | Rob Fitzpatrick | Customer Research, Sales | ⭐⭐⭐⭐⭐ |
 | Built to Sell | John Warrillow | Exit Strategy, Building to Sell | ⭐⭐⭐⭐⭐ |
+| Profit First | Mike Michalowicz | Cash Flow, Profitability | ⭐⭐⭐⭐⭐ |
+| Blue Ocean Strategy | Kim & Mauborgne | Differentiation, Strategy | ⭐⭐⭐⭐⭐ |
+| 10x Is Easier Than 2x | Dan Sullivan | Exponential Growth, Mindset | ⭐⭐⭐⭐⭐ |
 | Traction | Gabriel Weinberg | Marketing Channels, Growth | ⭐⭐⭐⭐ |
 | The 1-Page Marketing Plan | Allan Dib | Marketing Strategy | ⭐⭐⭐⭐ |
 | Never Split the Difference | Chris Voss | Negotiation, Sales | ⭐⭐⭐⭐⭐ |
@@ -20,6 +24,14 @@
 | The E-Myth Revisited | Michael Gerber | Systemization, Operations | ⭐⭐⭐⭐⭐ |
 | Predictable Revenue | Aaron Ross | Sales Systems, Outbound | ⭐⭐⭐⭐⭐ |
 | The Automatic Customer | John Warrillow | Recurring Revenue, Subscriptions | ⭐⭐⭐⭐⭐ |
+
+### 📰 Research Reports Analyzed (2026)
+
+| Source | Topic | Relevance |
+|--------|-------|-----------|
+| AI SDR Playbook (Jeeva.ai) | Autonomous Sales Agents | ⭐⭐⭐⭐⭐ |
+| 2026 Law Firm Growth Playbook | Legal Marketing Tactics | ⭐⭐⭐⭐⭐ |
+| Agency Valuation Guide 2026 | M&A Benchmarks | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -546,43 +558,298 @@ Never cold call. Email first, then call warm referrals.
 
 ---
 
+## 🆕 NEW INSIGHTS (Week of Feb 16, 2026)
+
+### $100M Leads by Alex Hormozi
+
+**Core Thesis:** How to get strangers to want to buy your stuff through systematic lead generation.
+
+**The Core Four:**
+1. **Warm Outreach** - Your network first (ask who they know, not to buy)
+2. **Content Marketing** - Free value that builds authority
+3. **Cold Outreach** - Direct contact with strangers
+4. **Paid Ads** - Scale with money once organic proven
+
+**Lead Magnet Framework:**
+- Solve a small but significant problem
+- Point to larger problem your core offer solves
+- Make it so valuable they think "if free is this good, paid must be amazing"
+- Best options: First step of multi-step solution, or assessment revealing bigger problem
+
+**The Rule of 100:**
+Do ONE of these for 100 consecutive days:
+- 100 cold calls/messages per day
+- 100 minutes creating content daily
+- $100 spent on ads daily
+
+**More → Better → New:**
+1. Do MORE of what's working
+2. Make it BETTER (test/experiment)
+3. Only then try NEW channels
+
+**Referral Hack:** Get 3-way introductions via text/email immediately after purchase. Don't just ask for names.
+
+**Apply Now:** Create lead magnet (free compliance audit), implement Rule of 100 for LinkedIn outreach.
+
+---
+
+### Profit First by Mike Michalowicz
+
+**The Flip:** Sales - PROFIT = Expenses (not Sales - Expenses = Profit)
+
+**Why It Works:**
+- "Revenue is vanity, profit is sanity, cash is king"
+- When less money available, you find same results with less
+- Profit isn't an event—it's a habit
+- Forces you to cut unprofitable clients/services
+
+**The 5-Account System:**
+1. **INCOME** - All revenue deposits here first
+2. **PROFIT** - Take 1-5% off the top immediately
+3. **OWNER'S PAY** - Salary allocation
+4. **TAX** - Set aside automatically
+5. **OPEX** - Operating expenses (what's left)
+
+**Start Small:**
+- Begin with 1% to profit (if $1,000 works, $990 works)
+- Increase percentages quarterly
+- Build proof the system works
+
+**Apply Now:** Set up 5 accounts this week. Start 1% profit allocation. Creates clean financials for exit.
+
+---
+
+### Blue Ocean Strategy by W. Chan Kim & Renée Mauborgne
+
+**Core Concept:** Create uncontested market space vs. fighting in bloody "red oceans."
+
+**Value Innovation:** Pursue differentiation AND low cost simultaneously.
+
+**Four Actions Framework:**
+
+| Action | Question | KuriosBrand Application |
+|--------|----------|------------------------|
+| **ELIMINATE** | What does industry take for granted that we can cut? | Per-lead pricing, shared leads, complex reporting |
+| **REDUCE** | What can be reduced well below standard? | Time to signed case, client effort, compliance risk |
+| **RAISE** | What should be raised well above standard? | Transparency, guarantee strength, speed-to-lead |
+| **CREATE** | What can we create that industry never offered? | End-to-end signed case delivery, compliance-first approach |
+
+**Three Characteristics of Good Strategy:**
+1. **Focus** - Few key factors, not everything
+2. **Divergence** - Value curve distinct from competitors
+3. **Compelling Tagline** - Clear message
+
+**KuriosBrand Blue Ocean Position:**
+> "We don't sell leads—we deliver signed cases."
+
+This differentiates from every competitor selling commodity lead packages.
+
+---
+
+### 10x Is Easier Than 2x by Dan Sullivan & Benjamin Hardy
+
+**Core Paradox:** 10x growth is EASIER than 2x because it forces clarity.
+
+**Why 10x > 2x:**
+- With 2x, everything seems important—can't cut anything
+- With 10x, only few paths work—forces ruthless prioritization
+- 10x requires letting go of 80% of current activity
+- 10x is about quality/mastery, not just quantity
+
+**The 80/20 Elimination:**
+- Identify 20% producing most results → DOUBLE DOWN
+- Eliminate, delegate, or automate the 80%
+- Includes clients, roles, behaviors, mindsets
+- Mr. Beast insight: 10% better quality = 4x results
+
+**Four Levels of Entrepreneurship:**
+1. **Rugged Individualist** - Doing everything yourself
+2. **Manager** - Team around you
+3. **Leader** - Extracted from operations ← TARGET
+4. **10x Leader** - Everyone 10x-ing themselves
+
+**Free Days Paradox:**
+- Take 150+ free days per year
+- Days away accelerate goals
+- Innovation requires rest and outside exploration
+
+**Apply Now:** 
+- What 20% of clients produce 80% of results? → Only take more like them
+- For $9.6M exit at 5x: Need $1.92M EBITDA—that's the 10x target
+- Extract Marko from operations (Level 2→3 transition)
+
+---
+
+### AI SDR Playbook 2026 - Autonomous Sales Development
+
+**What AI SDRs Do:**
+- Research prospects one-by-one automatically
+- Write highly personalized messages at scale
+- Send 24/7 without human intervention
+- Learn from every interaction
+- Book meetings directly into calendar
+
+**Results:** Pilot programs booking 50+ meetings in 30 days—matching entire human SDR teams.
+
+**System Architecture:**
+1. **AI Agent (Brain):** GPT-4 powered decisions + message generation
+2. **Data Sources:** LinkedIn, company news, CRM, enrichment
+3. **Outreach Channels:** Email + LinkedIn messages
+4. **Pipeline Integration:** CRM logging, calendar booking
+5. **Feedback Loop:** Analytics → learning → optimization
+
+**Prospect Research Module:**
+- Pulls LinkedIn, company news, CRM history
+- AI summarizes and extracts personalization angles
+- Creates "Prospect Brief" in seconds (vs 10-15 min human)
+
+**Top Tools (2026):**
+- 11x.ai (Alice for outbound, Julian for inbound)
+- Instantly.ai (email automation + warmup)
+- Landbase (intent-triggered outreach)
+
+**Apply Now:**
+- Deploy AI SDR for prospecting (frees Patrick for closing)
+- 24/7 personalized outreach to PI lawyers
+- Auto-research from LinkedIn + bar associations
+- Book qualified calls → Patrick's calendar
+- Pattern: AI prospects → Patrick closes (Predictable Revenue model + AI)
+
+---
+
+### 2026 Law Firm Growth Playbook
+
+**Critical Stats for Legal Clients:**
+- 50%+ won't consider firms below 5th search result
+- 72% move on if no response within 24 hours
+- 53% won't consider firms with less than 4 stars
+- 51% won't hire without online chat
+- Clients choose lawyers in under 4 days
+
+**Speed-to-Lead (Non-Negotiable):**
+- Respond within 5 minutes (business hours)
+- Respond within 15 minutes (after hours)
+- Script first call: 90 seconds for jurisdiction/charge/conflicts/urgency
+- Book consultation ON the call—never "follow up later"
+
+**Visibility Requirements:**
+- First 5 seconds: Practice areas, location, attorneys, videos
+- 2-3 short videos (45-60 sec): First consult, attorney intros, FAQ
+- Google Business Profile = second homepage
+
+**Reviews Engine:**
+- Send personal text/email ask after positive outcomes
+- Respond to ALL reviews within 72 hours
+- 62% check up to 5 review sites
+
+**AI Guidelines:**
+- ✅ DO: Triage, summaries, scheduling, chat intake
+- ❌ DON'T: Actual legal advice
+- Balance: Tech handles admin, humans handle trust
+
+**Apply Now (for KuriosBrand clients):**
+- Help PI lawyers hit 5-minute response (intake automation)
+- Build video content packages into service
+- Offer review management as add-on
+- AI intake chatbot that qualifies and books
+
+---
+
+### Agency Valuation 2026 - Updated M&A Benchmarks
+
+**Current EBITDA Multiples:**
+
+| Agency Type | Range | Average |
+|-------------|-------|---------|
+| Digital Marketing | 4.9x - 9x | 6.7x |
+| Growth Marketing | 5.2x - 10.2x | 7.5x |
+| Performance Marketing | 5x - 9.3x | 6.9x |
+| Creative Marketing | 4.6x - 8.1x | 6.5x |
+
+**Multiples by Size:**
+
+| EBITDA | Multiple |
+|--------|----------|
+| $1-3M | 3-5x |
+| $3-5M | 5-7x |
+| $5-10M+ | 7-10x+ |
+
+**Premium Drivers (Ranked):**
+1. Recurring revenue (retainers > projects)
+2. Low owner dependency (<30% of relationships)
+3. Documented processes (SOPs, playbooks)
+4. Client diversification (no client >15%)
+5. AI-ready/automation capabilities
+6. 2+ years clean financials
+
+**Client Concentration Risk:**
+- <10% per client = premium territory
+- 20-30% top client = 10-20% valuation discount
+
+**$9.6M Exit Math (Updated):**
+
+| Multiple | Required EBITDA |
+|----------|-----------------|
+| 4x | $2.4M |
+| 5x | $1.92M |
+| 6x | $1.6M |
+| 7x (growth premium) | $1.37M |
+
+**Action Items for Premium Exit:**
+1. Move to 80%+ recurring revenue
+2. Document everything (operations manual)
+3. Max 15% revenue from any single client
+4. Extract Marko from day-to-day
+5. Build AI automation capabilities
+6. 2 years clean EBITDA-focused financials
+
+---
+
 ## 🎯 IMPLEMENTATION PRIORITY
 
-**This Week (Feb 9-15):**
-1. [ ] **Restructure Patrick's role** - Stop prospecting, closing only (Predictable Revenue)
-2. [ ] **Draft subscription pricing model** - Monthly retainer + performance bonus structure
-3. [ ] **Calculate current cost per signed case** - Establish baseline for optimization
-4. [ ] **Implement 5-minute speed-to-lead** - Automate instant notification system
-5. [ ] Create discovery question script for sales calls
+**This Week (Feb 16-22):**
+1. [ ] **Set up Profit First accounts** - 5 accounts, start 1% profit allocation (Profit First)
+2. [ ] **Deploy AI SDR pilot** - Test 11x.ai or Instantly.ai for automated prospecting
+3. [ ] **Create lead magnet** - Free compliance audit or case study download ($100M Leads)
+4. [ ] **Apply 4 Actions Framework** - Map KuriosBrand's Blue Ocean position
+5. [ ] **Identify the 20%** - Which clients/activities produce 80% of results? (10x thinking)
 
 **This Month (Feb 2026):**
-1. [ ] **Set up SDR function** - Outsource or automate prospecting emails
-2. [ ] **Move to 80%+ recurring revenue** - Convert per-lead clients to retainers
-3. [ ] Complete 1-Page Marketing Plan
-4. [ ] Implement 3 persuasion principles on website
-5. [ ] Create client diversification plan (no client >15%)
+1. [ ] **AI SDR fully operational** - Prospecting automated, Patrick closing only
+2. [ ] **Rule of 100** - 100 LinkedIn touches OR 100 mins content daily
+3. [ ] **Move to 80%+ recurring** - Convert per-lead clients to retainers
+4. [ ] **Client diversification** - No client >15% of revenue
+5. [ ] **Document Blue Ocean tagline** - "We don't sell leads—we deliver signed cases"
 
 **This Quarter (Q1 2026):**
-1. [ ] Full Operations Manual complete
-2. [ ] Patrick closing without Marko involvement
-3. [ ] Financial tracking for sellable business (EBITDA focus)
-4. [ ] Target: 5x EBITDA trajectory ($1.92M for $9.6M exit)
-5. [ ] Reduce cost per signed case by 30%
+1. [ ] **$1.92M EBITDA trajectory** - 5x multiple path to $9.6M exit
+2. [ ] **Operations Manual complete** - Premium valuation driver
+3. [ ] **Marko extracted from operations** - Level 2→3 transition (10x framework)
+4. [ ] **AI capabilities documented** - Premium multiple driver per 2026 benchmarks
+5. [ ] **5-minute speed-to-lead** - For all PI lawyer clients (2026 Playbook standard)
 
 ---
 
 ## 📚 READING LIST (Future)
 
-**High Priority:**
+**Completed:**
 - ~~"The Automatic Customer" by John Warrillow~~ ✅ ANALYZED
 - ~~"Predictable Revenue" by Aaron Ross~~ ✅ ANALYZED
-- "Profit First" by Mike Michalowicz (cash flow management)
-- "Blue Ocean Strategy" (differentiation, uncontested markets)
+- ~~"Profit First" by Mike Michalowicz~~ ✅ ANALYZED (Feb 16)
+- ~~"Blue Ocean Strategy" by Kim & Mauborgne~~ ✅ ANALYZED (Feb 16)
+- ~~"$100M Leads" by Alex Hormozi~~ ✅ ANALYZED (Feb 16)
+- ~~"10x Is Easier Than 2x" by Dan Sullivan~~ ✅ ANALYZED (Feb 16)
+
+**High Priority (Next):**
+- "The Lean Startup" by Eric Ries (validation, iteration)
+- "Good to Great" by Jim Collins (what makes companies exceptional)
+- "Scaling Up" by Verne Harnish (growth systems)
+- "Expert Secrets" by Russell Brunson (positioning, funnels)
 
 **Medium Priority:**
-- "The Lean Startup" by Eric Ries
-- "Good to Great" by Jim Collins
 - "Zero to One" by Peter Thiel
+- "Who Not How" by Dan Sullivan (delegation, leverage)
+- "Buy Back Your Time" by Dan Martell
 
 **Music Industry (for later):**
 - "All You Need to Know About the Music Business" by Donald Passman
@@ -590,4 +857,5 @@ Never cold call. Email first, then call warm referrals.
 
 ---
 
-*All insights stored in Supermemory with tags: book_insight, [book name], [topic], actionable, relevance*
+*All insights stored in Supermemory with tags: type:book_insight, book name, topics*
+*Last research update: 2026-02-16*

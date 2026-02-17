@@ -160,7 +160,7 @@ This keeps history while surfacing only current/relevant docs.
 
 ## Go High Level (GHL)
 - **Location ID:** OsNgWuy8oZzLbp5BXbnD (Kurios subaccount - both Mark & Carlos)
-- **API Key:** pit-9c041df9-b51b-4c7b-9329-241b528dc726
+- **API Key:** pit-f6393ad6-67bf-4062-a6eb-ae7d0fc206b2
 - **API Base:** https://services.leadconnectorhq.com
 - **Credentials file:** ~/.config/ghl/credentials.json
 - **Use for:** Sales appointments (source of truth over Google Calendar)
