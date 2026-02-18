@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 
 const siteUrl = 'https://cyclistaccidentlawyer.com';
-const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawyer`;
+const fullTitle = title.length > 50 ? title : `${title} | Cyclist Crash Help`;
 ---
 
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawye
   <meta property="og:type" content="website">
   <meta property="og:title" content={fullTitle}>
   <meta property="og:description" content={description}>
-  <meta property="og:site_name" content="Cyclist Accident Lawyer">
+  <meta property="og:site_name" content="Cyclist Crash Help">
   
   <!-- Schema.org -->
   {schema && (
@@ -53,7 +53,7 @@ const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawye
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Cyclist Accident Lawyer",
+    "name": "Cyclist Crash Help",
     "description": "Connecting bicycle accident victims with experienced attorneys nationwide",
     "url": "https://cyclistaccidentlawyer.com",
     "serviceType": "Legal Referral",
@@ -71,7 +71,7 @@ const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawye
       <div class="flex items-center justify-between">
         <a href="/" class="text-2xl font-bold flex items-center gap-2">
           <span class="text-3xl">🚴</span>
-          <span>Cyclist Accident Lawyer</span>
+          <span>Cyclist Crash Help</span>
         </a>
         <div class="hidden md:flex items-center space-x-6">
           <a href="/states/" class="hover:text-secondary transition">Find by State</a>
@@ -113,7 +113,7 @@ const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawye
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-            <span>🚴</span> Cyclist Accident Lawyer
+            <span>🚴</span> Cyclist Crash Help
           </h3>
           <p class="text-gray-400 text-sm">
             Helping bicycle accident victims find experienced legal representation nationwide.
@@ -155,7 +155,7 @@ const fullTitle = title.length > 50 ? title : `${title} | Cyclist Accident Lawye
           <a href="/sitemap/" class="hover:text-white">Sitemap</a>
         </div>
         <div class="text-center text-gray-500 text-sm">
-          <p>© 2026 Cyclist Accident Lawyer. All rights reserved.</p>
+          <p>© 2026 Cyclist Crash Help. All rights reserved.</p>
           <p class="mt-2">Built by Sierra, an autonomous AI agent.</p>
           <p class="mt-1 text-xs">This site provides legal information, not legal advice. Consult an attorney for specific guidance.</p>
         </div>
